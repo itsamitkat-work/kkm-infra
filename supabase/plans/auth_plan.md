@@ -7,10 +7,12 @@ Build a secure, scalable, multi-tenant authentication and authorization system w
 - Tenant isolation (strict)
 - Permission-based authorization (no role checks at runtime)
 - JWT-based performance (no joins in RLS)
-- Session management + revocation + rotation
+- Session management + revocation + refresh token reuse detection
 - Abuse detection, rate limiting & account lockout
 - Clean schema separation with enforced access control (GRANT/REVOKE)
 - Audit trail with automatic capture
+- RLS testing automation (pgTAP)
+- Security alerting system (Slack, Email, Dashboard)
 
 ---
 
@@ -986,14 +988,14 @@ create trigger on_tenant_created after insert on public.tenants
 
 > A user can be assigned multiple roles but only one is active at a time (`active_role_id` on `tenant_members`). The user can switch roles via UI without logging out. Each role has its own permission set.
 
-| Role                 | Purpose                                        |
-| -------------------- | ---------------------------------------------- |
-| `project_engineer`   | Day-to-day project work                        |
-| `project_head`       | Oversees project, higher-level decisions       |
-| `project_maker`      | Creates/authors project deliverables           |
-| `project_checker`    | Reviews and checks deliverables for quality    |
-| `project_verifier`   | Verifies and validates completed work          |
-| `project_supervisor` | Supervises across projects, broader oversight  |
+| Role                 | Purpose                                       |
+| -------------------- | --------------------------------------------- |
+| `project_engineer`   | Day-to-day project work                       |
+| `project_head`       | Oversees project, higher-level decisions      |
+| `project_maker`      | Creates/authors project deliverables          |
+| `project_checker`    | Reviews and checks deliverables for quality   |
+| `project_verifier`   | Verifies and validates completed work         |
+| `project_supervisor` | Supervises across projects, broader oversight |
 
 - All roles start with **no permissions** by default
 - `system_admin` assigns permissions to `tenant_admin`
@@ -1088,29 +1090,499 @@ create trigger bump_pv_on_role_change
 
 ---
 
-## 17. Testing Checklist
+## 17. Refresh Token Reuse Detection
 
-- Cross-tenant access blocked (user A cannot see tenant B data)
-- System admin bypasses tenant filter correctly
-- Tenant isolation enforced at RLS level
-- Revoked session returns empty/blocked results
-- Permission version mismatch blocks stale JWT
-- Account lockout prevents all operations
-- Permission checks correct for each operation (select/insert/update/delete)
-- RLS cannot be bypassed via direct table access
-- Member assignment works end-to-end (create user, add to tenant, assign role)
-- Tenant switching issues correct JWT
-- Role switching updates JWT with new role's permissions only
-- User with multiple roles can only use active role's permissions
-- Switching role does not require re-login
-- Audit logs capture insert, update, delete automatically
-- Rate limiting returns 429 and logs event
-- Risk score accumulation triggers lockout at threshold
-- Cascade deletes clean up orphaned data
+Protects against stolen refresh tokens. If a previously used refresh token is replayed, all sessions for that user are revoked immediately.
+
+### How It Works
+
+Supabase Auth already rotates refresh tokens on each use. This section adds **replay detection** on top via the application session layer.
+
+### Schema Addition
+
+```sql
+alter table private.auth_sessions
+  add column refresh_token_seq int default 0;
+```
+
+`refresh_token_seq` is incremented on every legitimate token refresh. If a request arrives with an older sequence number, it's a replay.
+
+### Detection Flow (Edge Function middleware)
+
+```
+On token refresh:
+  1. Read current session from private.auth_sessions using sid from JWT
+  2. Compare incoming refresh_token_hash against stored hash
+  3. If match → legitimate refresh:
+     a. Increment refresh_token_seq
+     b. Store new refresh_token_hash
+     c. Update last_active_at
+     d. Issue new tokens
+  4. If mismatch (token already rotated) → REPLAY DETECTED:
+     a. Revoke ALL sessions for this user (compromised token family)
+     b. Log security_event: type='refresh_token_reuse', severity='critical'
+     c. Increment risk score by +10
+     d. Return 401, force full re-authentication
+```
+
+### Implementation
+
+```sql
+create or replace function private.handle_token_refresh(
+  p_session_id uuid,
+  p_incoming_token_hash text,
+  p_new_token_hash text
+)
+returns boolean
+language plpgsql security definer
+as $$
+declare
+  session_record record;
+begin
+  select * into session_record
+  from private.auth_sessions
+  where id = p_session_id and is_revoked = false;
+
+  if session_record is null then
+    return false;
+  end if;
+
+  if session_record.refresh_token_hash != p_incoming_token_hash then
+    -- REPLAY DETECTED: revoke all sessions for this user
+    update private.auth_sessions
+    set is_revoked = true,
+        revoked_at = now(),
+        revoke_reason = 'refresh_token_reuse'
+    where user_id = session_record.user_id
+      and is_revoked = false;
+
+    insert into private.security_events (user_id, tenant_id, event_type, severity, metadata)
+    values (
+      session_record.user_id,
+      session_record.tenant_id,
+      'refresh_token_reuse',
+      'critical',
+      jsonb_build_object(
+        'session_id', p_session_id,
+        'action', 'all_sessions_revoked'
+      )
+    );
+
+    -- Bump risk score
+    insert into private.user_risk_scores (user_id, score, updated_at)
+    values (session_record.user_id, 10, now())
+    on conflict (user_id) do update
+    set score = private.user_risk_scores.score + 10,
+        updated_at = now();
+
+    return false;
+  end if;
+
+  -- Legitimate refresh: rotate token and bump sequence
+  update private.auth_sessions
+  set refresh_token_hash = p_new_token_hash,
+      refresh_token_seq = refresh_token_seq + 1,
+      last_active_at = now()
+  where id = p_session_id;
+
+  return true;
+end;
+$$;
+```
 
 ---
 
-## 18. Core Principles
+## 18. RLS Testing Automation
+
+Automated tests that verify tenant isolation, permission enforcement, and policy correctness. Run as part of CI or via `supabase test db`.
+
+### Approach: pgTAP tests via `supabase test db`
+
+Each test impersonates a user by setting JWT claims, then asserts that RLS policies allow/deny correctly.
+
+### Test Helpers
+
+```sql
+-- Helper to impersonate a user with specific claims
+create or replace function tests.set_auth_context(
+  p_user_id uuid,
+  p_tenant_id uuid,
+  p_role text default '',
+  p_perms text[] default '{}',
+  p_pv int default 1,
+  p_is_system_admin boolean default false,
+  p_is_locked boolean default false,
+  p_session_revoked boolean default false
+)
+returns void
+language plpgsql
+as $$
+begin
+  perform set_config('role', 'authenticated', true);
+  perform set_config('request.jwt.claims', jsonb_build_object(
+    'sub', p_user_id,
+    'tid', p_tenant_id,
+    'role', p_role,
+    'perms', to_jsonb(p_perms),
+    'pv', p_pv,
+    'is_system_admin', p_is_system_admin,
+    'is_locked', p_is_locked,
+    'session_revoked', p_session_revoked
+  )::text, true);
+end;
+$$;
+
+-- Helper to reset auth context
+create or replace function tests.clear_auth_context()
+returns void
+language plpgsql
+as $$
+begin
+  perform set_config('role', 'postgres', true);
+  perform set_config('request.jwt.claims', '', true);
+end;
+$$;
+```
+
+### Test Cases
+
+```sql
+-- 1. Cross-tenant isolation
+begin;
+  select plan(2);
+
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read'], 1
+  );
+
+  select is(
+    (select count(*) from public.items where tenant_id = 'tenant-2-uuid')::int,
+    0,
+    'User in tenant-1 cannot see tenant-2 items'
+  );
+
+  select is(
+    (select count(*) from public.items where tenant_id = 'tenant-1-uuid')::int > 0,
+    true,
+    'User in tenant-1 can see own tenant items'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+
+-- 2. Permission enforcement
+begin;
+  select plan(2);
+
+  -- User WITHOUT items.manage cannot insert
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read'], 1
+  );
+
+  select throws_ok(
+    'insert into public.items (tenant_id, name) values (''tenant-1-uuid'', ''test'')',
+    null,
+    'User without items.manage cannot insert'
+  );
+
+  -- User WITH items.manage can insert
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read', 'items.manage'], 1
+  );
+
+  select lives_ok(
+    'insert into public.items (tenant_id, name) values (''tenant-1-uuid'', ''test'')',
+    'User with items.manage can insert'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+
+-- 3. Revoked session blocked
+begin;
+  select plan(1);
+
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read'], 1,
+    false, false, true  -- session_revoked = true
+  );
+
+  select is(
+    (select count(*) from public.items)::int,
+    0,
+    'Revoked session returns zero rows'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+
+-- 4. Account lockout blocked
+begin;
+  select plan(1);
+
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read'], 1,
+    false, true, false  -- is_locked = true
+  );
+
+  select is(
+    (select count(*) from public.items)::int,
+    0,
+    'Locked account returns zero rows'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+
+-- 5. System admin bypasses tenant filter
+begin;
+  select plan(1);
+
+  select tests.set_auth_context(
+    'admin-uuid', null, '', '{}', 1,
+    true, false, false  -- is_system_admin = true
+  );
+
+  select is(
+    (select count(*) from public.items)::int > 0,
+    true,
+    'System admin can see all items across tenants'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+
+-- 6. Permission version mismatch
+begin;
+  select plan(1);
+
+  select tests.set_auth_context(
+    'user-a-uuid', 'tenant-1-uuid', 'project_engineer',
+    array['items.read'], 0  -- stale pv
+  );
+
+  select is(
+    (select count(*) from public.items where tenant_id = 'tenant-1-uuid')::int,
+    0,
+    'Stale permission version returns zero rows'
+  );
+
+  select tests.clear_auth_context();
+  select * from finish();
+rollback;
+```
+
+### Running
+
+```bash
+supabase test db
+```
+
+Tests live in `supabase/tests/` as `.sql` files. They run inside transactions and roll back — no test data leaks.
+
+---
+
+## 19. Alerting System
+
+Real-time alerts for security-critical events. Built on `private.security_events` with a notification layer.
+
+### Architecture
+
+```
+security_event inserted
+       ↓
+Postgres trigger (pg_notify)
+       ↓
+Edge Function listener (webhook / cron poll)
+       ↓
+Alert channels: Email, Slack, Dashboard
+```
+
+### Alert Rules
+
+| Event Type             | Severity | Channel        | Action                 |
+| ---------------------- | -------- | -------------- | ---------------------- |
+| `refresh_token_reuse`  | critical | Slack + Email  | Immediate alert        |
+| `account_locked`       | critical | Slack + Email  | Immediate alert        |
+| `all_sessions_revoked` | high     | Slack          | Alert within 1 min     |
+| `failed_login` (>5/hr) | high     | Slack          | Batched alert          |
+| `permission_denied`    | medium   | Dashboard only | Log for review         |
+| `new_ip`               | low      | Dashboard only | Log for review         |
+| `rate_limit_hit`       | medium   | Slack          | Batched alert (>10/hr) |
+
+### Trigger: Notify on Critical/High Events
+
+```sql
+create or replace function private.notify_security_alert()
+returns trigger
+language plpgsql security definer
+as $$
+begin
+  if new.severity in ('critical', 'high') then
+    perform pg_notify('security_alerts', jsonb_build_object(
+      'id', new.id,
+      'event_type', new.event_type,
+      'severity', new.severity,
+      'user_id', new.user_id,
+      'tenant_id', new.tenant_id,
+      'ip_address', new.ip_address,
+      'metadata', new.metadata,
+      'created_at', new.created_at
+    )::text);
+  end if;
+  return new;
+end;
+$$;
+
+create trigger on_security_event after insert on private.security_events
+  for each row execute function private.notify_security_alert();
+```
+
+### Alert Table (for dashboard + delivery tracking)
+
+```sql
+create table private.security_alerts (
+  id uuid primary key default gen_random_uuid(),
+
+  security_event_id uuid not null references private.security_events(id),
+
+  channel text not null check (channel in ('email', 'slack', 'dashboard')),
+  status text not null default 'pending'
+    check (status in ('pending', 'sent', 'failed', 'acknowledged')),
+
+  recipient text,
+  sent_at timestamptz,
+  acknowledged_at timestamptz,
+  acknowledged_by uuid references auth.users(id),
+
+  created_at timestamptz default now()
+);
+
+create index idx_security_alerts_status on private.security_alerts(status, created_at);
+```
+
+### Alert Dispatcher (Edge Function — cron every 1 min)
+
+```
+POST /functions/v1/dispatch-alerts (triggered by pg_cron or Supabase cron)
+
+1. Query pending alerts from private.security_alerts
+2. Group by channel:
+   - Slack: send via webhook (batched per severity)
+   - Email: send via Resend/Postmark to system_admin emails
+   - Dashboard: already visible (status = 'pending' for UI to query)
+3. Update status to 'sent' with sent_at
+4. On failure: update status to 'failed', retry on next run
+```
+
+### Alert Creator (runs after security event insert)
+
+```sql
+create or replace function private.create_security_alerts()
+returns trigger
+language plpgsql security definer
+as $$
+begin
+  -- Critical: email + slack + dashboard
+  if new.severity = 'critical' then
+    insert into private.security_alerts (security_event_id, channel)
+    values
+      (new.id, 'email'),
+      (new.id, 'slack'),
+      (new.id, 'dashboard');
+  -- High: slack + dashboard
+  elsif new.severity = 'high' then
+    insert into private.security_alerts (security_event_id, channel)
+    values
+      (new.id, 'slack'),
+      (new.id, 'dashboard');
+  -- Medium/Low: dashboard only
+  else
+    insert into private.security_alerts (security_event_id, channel)
+    values (new.id, 'dashboard');
+  end if;
+
+  return new;
+end;
+$$;
+
+create trigger on_security_event_create_alerts
+  after insert on private.security_events
+  for each row execute function private.create_security_alerts();
+```
+
+### Dashboard Query (for system_admin UI)
+
+```sql
+select
+  sa.id,
+  sa.channel,
+  sa.status,
+  se.event_type,
+  se.severity,
+  se.user_id,
+  se.tenant_id,
+  se.ip_address,
+  se.metadata,
+  se.created_at as event_at,
+  sa.created_at as alert_at
+from private.security_alerts sa
+join private.security_events se on se.id = sa.security_event_id
+where sa.channel = 'dashboard'
+  and sa.status in ('pending', 'sent')
+order by se.created_at desc;
+```
+
+System admin acknowledges alerts via:
+
+```sql
+update private.security_alerts
+set status = 'acknowledged',
+    acknowledged_at = now(),
+    acknowledged_by = $1
+where id = $2;
+```
+
+---
+
+## 20. Testing Checklist
+
+- [ ] Cross-tenant access blocked (user A cannot see tenant B data)
+- [ ] System admin bypasses tenant filter correctly
+- [ ] Tenant isolation enforced at RLS level
+- [ ] Revoked session returns empty/blocked results
+- [ ] Permission version mismatch blocks stale JWT
+- [ ] Account lockout prevents all operations
+- [ ] Permission checks correct for each operation (select/insert/update/delete)
+- [ ] RLS cannot be bypassed via direct table access
+- [ ] Member assignment works end-to-end (create user, add to tenant, assign role)
+- [ ] Tenant switching issues correct JWT
+- [ ] Role switching updates JWT with new role's permissions only
+- [ ] User with multiple roles can only use active role's permissions
+- [ ] Switching role does not require re-login
+- [ ] Audit logs capture insert, update, delete automatically
+- [ ] Rate limiting returns 429 and logs event
+- [ ] Risk score accumulation triggers lockout at threshold
+- [ ] Cascade deletes clean up orphaned data
+- [ ] Refresh token reuse revokes all user sessions
+- [ ] Refresh token reuse logs critical security event
+- [ ] RLS pgTAP tests pass via `supabase test db`
+- [ ] Critical/high security events generate alerts
+- [ ] Alert dispatch sends to correct channels by severity
+
+---
+
+## 21. Core Principles
 
 - Permissions are the **ONLY** enforcement layer
 - Roles are just grouping containers
