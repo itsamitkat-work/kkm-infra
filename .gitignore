@@ -60,3 +60,8 @@ next-env.d.ts
 
 # data
 data.ts
+
+# repo-local SSH (private keys and machine-specific config)
+.ssh/id_*
+.ssh/known_hosts
+.ssh/config
