@@ -1,0 +1,221 @@
+'use client';
+
+import React from 'react';
+import { ExtendedColumnDef } from '@/components/tables/sheet-table/utils';
+import { EstimationRowData } from '../types';
+import { projectItemZodSchema } from '@/types/project-item';
+import {
+  MasterItemEditorConfig,
+  type MasterItemEditorConfigType,
+} from '@/app/projects/[id]/items/MasterItemEditorConfig';
+import type { MasterItemOption } from '@/app/projects/[id]/components/master-item-options';
+import { getSelectedMasterItem } from '@/app/projects/[id]/items/use-master-item-selection';
+import { buildPatchFromSelection } from '../../utils';
+import { SaveButton } from '@/components/ui/save-button';
+import { Button } from '@/components/ui/button';
+import { Copy, Trash2 } from 'lucide-react';
+
+interface ExtraItemsColumnProps {
+  onItemRemove: (itemId: string) => void;
+  onItemDuplicate?: (item: EstimationRowData) => void;
+  onSave: (item: EstimationRowData) => void;
+  itemErrors: Record<string, string | null>;
+  savingItemIds: Record<string, boolean>;
+}
+
+// Create the onChangeUpdateRow function for master item selection
+function createMasterItemOnChangeUpdateRow() {
+  return ({ draftRow }: { draftRow: EstimationRowData }) => {
+    const rowId = String(draftRow.id);
+    const selectedMasterItem = getSelectedMasterItem(rowId);
+
+    if (!selectedMasterItem) {
+      return { isEdited: true };
+    }
+
+    // Build and return the patch to update all related fields
+    const patch = buildPatchFromSelection(selectedMasterItem);
+    return { ...patch, isEdited: true };
+  };
+}
+
+const masterItemOnChangeUpdateRow = createMasterItemOnChangeUpdateRow();
+
+// Config for code column
+const codeColumnConfig: MasterItemEditorConfigType = {
+  placeholder: 'Code',
+  searchPlaceholder: 'Search by code',
+  searchField: 'code',
+  getOptionLabel: (option: MasterItemOption) => option.code,
+  renderSelectedValue: (
+    option: MasterItemOption | null,
+    placeholder: string,
+    rowValue?: string
+  ) => option?.code || rowValue || placeholder,
+  getOnChangeValue: (option: MasterItemOption | null) => option?.code ?? '',
+  getRowValue: (row: EstimationRowData) => row.code ?? '',
+};
+
+// Config for name column
+const nameColumnConfig: MasterItemEditorConfigType = {
+  placeholder: 'Item',
+  searchPlaceholder: 'Search by name',
+  searchField: 'name',
+  renderSelectedValue: (
+    option: MasterItemOption | null,
+    placeholder: string,
+    rowValue?: string
+  ) => option?.name || rowValue || placeholder,
+  getOnChangeValue: (option: MasterItemOption | null) => option?.name ?? '',
+  getOptionLabel: (option: MasterItemOption) => option.name,
+  getRowValue: (row: EstimationRowData) => row.name ?? '',
+};
+
+export const getExtraItemsColumns = ({
+  onItemRemove,
+  onItemDuplicate,
+  onSave,
+  itemErrors,
+  savingItemIds,
+}: ExtraItemsColumnProps): ExtendedColumnDef<EstimationRowData>[] => {
+  return [
+    {
+      accessorKey: 'srNo',
+      header: 'Wo. No.',
+      inputType: 'input',
+      validationSchema: projectItemZodSchema.shape.srNo,
+      size: 80,
+    },
+    {
+      accessorKey: 'code',
+      header: 'Code',
+      validationSchema: projectItemZodSchema.shape.code,
+      size: 120,
+      inputType: 'combobox' as const,
+      editor: (props) => (
+        <MasterItemEditorConfig
+          row={props.rowData}
+          onChange={props.onChange}
+          autoFocus={props.autoFocus}
+          config={codeColumnConfig}
+        />
+      ),
+      onChangeUpdateRow: masterItemOnChangeUpdateRow,
+    },
+    {
+      accessorKey: 'dsrCode',
+      header: 'DSR Code',
+      inputType: 'input',
+      className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
+      validationSchema: projectItemZodSchema.shape.dsrCode,
+      size: 120,
+      // DSR Code is auto-filled, so we disable editing
+      cell: ({ getValue }) => {
+        const value = getValue() as string;
+        return (
+          <div className='px-2 py-1 text-center text-muted-foreground bg-muted'>
+            {value || ''}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: 'scheduleName',
+      header: 'Schedule',
+      inputType: 'input',
+      className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
+      validationSchema: projectItemZodSchema.shape.scheduleName,
+      size: 120,
+      cell: ({ getValue }) => {
+        const value = getValue() as string;
+        return (
+          <div className='px-2 py-1 text-center bg-muted text-muted-foreground'>
+            {value || ''}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: 'name',
+      header: 'Name',
+      validationSchema: projectItemZodSchema.shape.name,
+      size: 250,
+      minSize: 200,
+      maxSize: 400,
+      inputType: 'combobox' as const,
+      editor: (props) => (
+        <MasterItemEditorConfig
+          row={props.rowData}
+          onChange={props.onChange}
+          autoFocus={props.autoFocus}
+          config={nameColumnConfig}
+        />
+      ),
+      onChangeUpdateRow: masterItemOnChangeUpdateRow,
+    },
+    {
+      accessorKey: 'rate',
+      header: 'Rate',
+      inputType: 'input',
+      validationSchema: projectItemZodSchema.shape.rate,
+      size: 100,
+      onChangeUpdateRow: ({ draftRow, newValue }) => {
+        return {
+          ...draftRow,
+          rate: newValue as string,
+          isEdited: true,
+        };
+      },
+    },
+    {
+      id: 'actions',
+      header: 'Actions',
+      size: 150,
+      enableSorting: false,
+      cell: ({ row }) => {
+        const item = row.original;
+        const isSaveDisabled = !item.isEdited && !item.isNew;
+        const isSaving = Boolean(savingItemIds[item.id]);
+        const errorMessage = itemErrors[item.id] ?? null;
+
+        const handleSave = () => {
+          if (isSaving) return;
+          onSave(item);
+        };
+
+        return (
+          <div className='flex items-center justify-center gap-1 px-2'>
+            <SaveButton
+              onClick={handleSave}
+              disabled={isSaveDisabled || isSaving}
+              isLoading={isSaving}
+              errorMessage={errorMessage}
+              isNew={!!item.isNew}
+              isEdited={!!item.isEdited}
+            />
+            {onItemDuplicate && (
+              <Button
+                variant='ghost'
+                size='icon'
+                className='h-8 w-8'
+                onClick={() => onItemDuplicate(item)}
+                title='Duplicate'
+              >
+                <Copy className='h-4 w-4' />
+              </Button>
+            )}
+            <Button
+              variant='ghost'
+              size='icon'
+              className='h-8 w-8'
+              onClick={() => onItemRemove(item.id)}
+              title='Delete'
+            >
+              <Trash2 className='h-4 w-4 text-destructive' />
+            </Button>
+          </div>
+        );
+      },
+    },
+  ];
+};

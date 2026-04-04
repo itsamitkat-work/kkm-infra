@@ -1,0 +1,38 @@
+---
+alwaysApply: true
+---
+
+Here is a polished version of your rule set that is short, clear, and production-ready. No comments, no arrows, no fluff, and aligned with modern frontend best practices.
+
+⸻
+
+Engineering Rules
+
+Code Style
+• Prefer named functions over inline arrow callbacks.
+• Avoid excessive comments.
+• Use function names that clearly describe behavior.
+• Keep components small and focused.
+
+Architecture
+• Prefer proven production libraries over building custom solutions:
+• Data: TanStack Query, TanStack Table
+• UI: Shadcn UI
+• State: Zustand
+• Forms: React Hook Form
+• Animations: Framer Motion
+
+Performance
+• Avoid unnecessary re-renders by extracting handlers into named functions.
+• Use stable references for callbacks, queries, and memoized values.
+• Use virtualization, infinite queries, and batching for large lists.
+
+API and Data
+• Use cursor-based pagination with deterministic sort order.
+• Always return nextCursor and hasMore.
+• Invalidate cursor when filters or sort change.
+
+UI Behavior
+• Use skeletons, placeholders, and progressive rendering from Shadcn components.
+• Prefer infinite scrolling with TanStack Query for large datasets.
+• Keep UI predictable by using named event handlers.

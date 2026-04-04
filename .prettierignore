@@ -1,0 +1,18 @@
+node_modules
+.next
+out
+build
+dist
+coverage
+.vercel
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+tsconfig.tsbuildinfo
+.next
+.env*.local
+
+# Shadcn UI components - keep original formatting for easier diff resolution
+components/ui/**

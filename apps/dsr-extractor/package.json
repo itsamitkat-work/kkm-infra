@@ -1,0 +1,11 @@
+{
+  "name": "dsr-extractor",
+  "version": "0.0.0",
+  "private": true,
+  "description": "DSR Extractor",
+  "scripts": {
+    "build": "mkdir -p dist && : > dist/.buildstamp",
+    "lint": "node -e \"void 0\"",
+    "test": "node -e \"void 0\""
+  }
+}
