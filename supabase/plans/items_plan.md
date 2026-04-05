@@ -4,11 +4,11 @@
 
 This schema is designed to:
 
-- Store schedule of rates (CPWD, PWD, private)
+- Store schedule of rates (CPWD, PWD, private schedules)
 - Preserve raw data exactly as source (no parsing assumptions)
 - Support hierarchical structure via ltree (section > group > item)
+- Attribute tables are created upfront but populated later (via AI/manual, not during PDF ingestion)
 - Enable full-text search on item descriptions and codes
-- Enable future intelligence (attributes, BOQ, AI)
 - Global read-only reference data shared across all tenants
 
 ---
@@ -61,13 +61,6 @@ create type public.schedule_node_type as enum (
   'section',     -- Top-level category
   'group',       -- Intermediate grouping node
   'item'         -- Leaf node with actual rate
-);
-
--- Semantic classification of a schedule item
-create type public.schedule_item_type as enum (
-  'base',        -- Standard item
-  'extra',       -- Additional/supplementary item
-  'modifier'     -- Modifies or adjusts another item
 );
 
 -- Classification of schedule publisher
@@ -174,9 +167,16 @@ create table public.schedule_items (
 
   path ltree not null,
   -- Materialized hierarchy path for efficient subtree queries
-  -- Auto-computed via trigger from parent_item_id
-  -- Example: 'cpwd.dsr2023.s13.g24.i1'
+  -- Built from short hex IDs derived from each node's UUID
+  -- Auto-computed via trigger from parent_item_id and id
+  -- Example: 'a1b2c3d4e5f6.d7e8f9a0b1c2.f3a4b5c6d7e8'
   -- Use nlevel(path) instead of a depth column
+
+  slug text not null,
+  -- Human-readable, ltree-safe label derived from code at ingestion
+  -- Used for display, breadcrumbs, and API responses
+  -- Example: code "13.24.1(a)" → slug "13_24_1_a"
+  -- Not used in ltree path to avoid collision from sanitization
 
   code text not null,
   -- Original code from schedule (e.g., "13.24.1")
@@ -208,18 +208,40 @@ create table public.schedule_items (
   -- Base monetary rate for leaf items; null for section/group nodes
   -- Contextual rate overrides live in schedule_item_rates
 
-  item_type public.schedule_item_type default 'base',
-  -- Semantic classification (base, extra, modifier)
-  -- Not used during ingestion to avoid assumptions
+  check (
+    (node_type = 'item' and rate is not null)
+    or (node_type != 'item')
+  ),
+  -- Enforces: leaf items must have a rate; non-leaf nodes may have null rate
+
+  check (
+    (parent_item_id is null and node_type = 'section')
+    or (parent_item_id is not null)
+  ),
+  -- Enforces: root-level nodes must be sections; prevents accidental items/groups at root
+
+  item_type text default 'base',
+  -- Semantic classification (e.g., base, extra, modifier)
+  -- Kept as text, not enum — classification semantics vary across sources
+  -- and will evolve; populated later, not during ingestion
 
   order_index int,
   -- Maintains original ordering from source document
   -- Important for UI rendering consistency
 
   search_vector tsvector generated always as (
-    to_tsvector('english', coalesce(description, '') || ' ' || coalesce(code, ''))
+    to_tsvector('simple', coalesce(description, '') || ' ' || coalesce(code, ''))
   ) stored,
   -- Auto-generated full-text search index on description and code
+  -- Uses 'simple' config: no stemming, handles mixed technical terms (RCC, PCC, etc.)
+
+  ingestion_batch_id uuid,
+  -- Links item to the ingestion run that created it
+  -- Useful for debugging, rollback, and tracing data lineage
+
+  source_page_number int,
+  -- Page number in the source PDF where this item appears
+  -- Helps with verification and debugging
 
   status public.record_status default 'active',
   -- Controls visibility and usability of item
@@ -228,8 +250,9 @@ create table public.schedule_items (
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
 
-  unique(schedule_source_version_id, code)
-  -- Prevents duplicate codes within same version
+  unique(schedule_source_version_id, parent_item_id, code)
+  -- Prevents duplicate codes within same parent
+  -- Scoped to parent because DSRs can reuse codes across sections/annexures
 );
 ```
 
@@ -361,6 +384,7 @@ create table public.derived_units (
 
 ```sql
 -- Defines attribute types attachable to items
+-- Schema created now; data populated later via AI extraction or manual entry, not during PDF ingestion
 create table public.attributes (
   id uuid primary key default gen_random_uuid(),
   -- Unique identifier
@@ -422,6 +446,7 @@ create table public.attribute_values (
 
 ```sql
 -- Maps attributes to schedule items
+-- Populated post-ingestion via AI parsing or manual tagging
 create table public.schedule_item_attributes (
   id uuid primary key default gen_random_uuid(),
   -- Unique identifier
@@ -456,18 +481,35 @@ create table public.schedule_item_attributes (
 ## ltree Path Trigger
 
 ```sql
+-- Converts a UUID to a 12-char hex string safe for ltree labels
+-- 12 hex chars = 48 bits of entropy, collision-free within any realistic dataset
+create or replace function public.uuid_to_short_id(uid uuid)
+returns text
+language sql immutable
+as $$
+  select substr(replace(uid::text, '-', ''), 1, 12);
+$$;
+
+-- Auto-computes the ltree path from parent chain using short hex IDs
+-- Also auto-generates the slug from the code if not provided
 create or replace function public.compute_schedule_item_path()
 returns trigger
 language plpgsql
 as $$
 declare
   parent_path ltree;
-  safe_code text;
+  short_id text;
 begin
-  safe_code := replace(replace(new.code, '.', '_'), ' ', '_');
+  short_id := public.uuid_to_short_id(new.id);
+
+  -- Auto-generate slug from code if not explicitly set
+  if new.slug is null or new.slug = '' then
+    new.slug := regexp_replace(lower(new.code), '[^a-z0-9]+', '_', 'g');
+    new.slug := trim(both '_' from new.slug);
+  end if;
 
   if new.parent_item_id is null then
-    new.path := text2ltree(safe_code);
+    new.path := text2ltree(short_id);
   else
     select si.path into parent_path
     from public.schedule_items si
@@ -477,7 +519,7 @@ begin
       raise exception 'Parent item % not found', new.parent_item_id;
     end if;
 
-    new.path := parent_path || text2ltree(safe_code);
+    new.path := parent_path || text2ltree(short_id);
   end if;
 
   return new;
@@ -485,7 +527,7 @@ end;
 $$;
 
 create trigger trg_compute_path
-  before insert or update of parent_item_id, code
+  before insert or update of parent_item_id
   on public.schedule_items
   for each row execute function public.compute_schedule_item_path();
 ```
@@ -552,6 +594,20 @@ create index idx_schedule_items_version on public.schedule_items(schedule_source
 
 -- Full-text search
 create index idx_schedule_items_search on public.schedule_items using gin(search_vector);
+
+-- Active items only (most queries filter by active status)
+create index idx_schedule_items_active
+  on public.schedule_items(schedule_source_version_id)
+  where status = 'active';
+
+-- Root-level node lookup per version
+create index idx_schedule_items_roots
+  on public.schedule_items(schedule_source_version_id)
+  where parent_item_id is null;
+
+-- Ingestion batch tracing
+create index idx_schedule_items_batch on public.schedule_items(ingestion_batch_id)
+  where ingestion_batch_id is not null;
 
 -- Rate lookup
 create index idx_schedule_item_rates_item on public.schedule_item_rates(schedule_item_id);
@@ -746,21 +802,30 @@ create policy "schedule_item_attributes_modify" on public.schedule_item_attribut
 
 ## Example Queries
 
-### Get full subtree under a section
+### Get full subtree under a node (by its ID)
 
 ```sql
 select * from public.schedule_items
-where path <@ 'cpwd.dsr2023.s13'
-  and schedule_source_version_id = $1
+where path <@ (select path from public.schedule_items where id = $1)
+  and schedule_source_version_id = $2
 order by path;
 ```
 
-### Get all ancestors of an item
+### Get all ancestors of an item (breadcrumb trail)
+
+```sql
+select id, code, slug, description, nlevel(path) as depth
+from public.schedule_items
+where path @> (select path from public.schedule_items where id = $1)
+order by nlevel(path);
+```
+
+### Get direct children of a node
 
 ```sql
 select * from public.schedule_items
-where path @> (select path from public.schedule_items where id = $1)
-order by nlevel(path);
+where parent_item_id = $1
+order by order_index;
 ```
 
 ### Get depth of any node
@@ -772,7 +837,7 @@ select nlevel(path) as depth from public.schedule_items where id = $1;
 ### Full-text search
 
 ```sql
-select id, code, description, ts_rank(search_vector, q) as rank
+select id, code, slug, description, ts_rank(search_vector, q) as rank
 from public.schedule_items, to_tsquery('english', 'cement & concrete') q
 where search_vector @@ q
   and schedule_source_version_id = $1
