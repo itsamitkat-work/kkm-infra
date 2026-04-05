@@ -40,12 +40,14 @@ Security Engine (events + scoring + auto-actions)
 
 ## 2. Schema Structure
 
+
 | Schema    | Purpose                            | Access                     |
 | --------- | ---------------------------------- | -------------------------- |
 | `auth`    | Supabase managed (users, sessions) | Supabase internal only     |
 | `public`  | Tenant + app data                  | Authenticated via RLS      |
 | `authz`   | Authorization logic                | Functions only (no direct) |
 | `private` | Sensitive data (sessions, logs)    | Service role only          |
+
 
 ### Schema Access Control
 
@@ -867,6 +869,7 @@ On rate limit hit:
 
 ### Risk Scoring
 
+
 | Event               | Points |
 | ------------------- | ------ |
 | `failed_login`      | +2     |
@@ -875,13 +878,16 @@ On rate limit hit:
 | `new_ip`            | +5     |
 | `session_revoked`   | +1     |
 
+
 ### Thresholds & Actions
+
 
 | Score | Action                                    |
 | ----- | ----------------------------------------- |
 | >= 10 | Require re-authentication (force refresh) |
 | >= 20 | Revoke all sessions                       |
 | >= 30 | Lock account (`private.user_risk_scores`) |
+
 
 ### Score Decay
 
@@ -902,13 +908,13 @@ where score > 0 or (is_locked and locked_until < now());
 On tenant creation (via trigger or Edge Function):
 
 1. Create system roles as empty tenant roles (no permissions assigned by default):
-   - `tenant_admin` (is_system = true, system_role_key = 'tenant_admin')
-   - `project_engineer` (is_system = true, system_role_key = 'project_engineer')
-   - `project_head` (is_system = true, system_role_key = 'project_head')
-   - `project_maker` (is_system = true, system_role_key = 'project_maker')
-   - `project_checker` (is_system = true, system_role_key = 'project_checker')
-   - `project_verifier` (is_system = true, system_role_key = 'project_verifier')
-   - `project_supervisor` (is_system = true, system_role_key = 'project_supervisor')
+  - `tenant_admin` (is_system = true, system_role_key = 'tenant_admin')
+  - `project_engineer` (is_system = true, system_role_key = 'project_engineer')
+  - `project_head` (is_system = true, system_role_key = 'project_head')
+  - `project_maker` (is_system = true, system_role_key = 'project_maker')
+  - `project_checker` (is_system = true, system_role_key = 'project_checker')
+  - `project_verifier` (is_system = true, system_role_key = 'project_verifier')
+  - `project_supervisor` (is_system = true, system_role_key = 'project_supervisor')
 2. System admin assigns permissions to roles after setup
 
 > Permissions are NOT copied from system role templates. System roles only define the role structure. The system admin / tenant admin decides which permissions each role gets.
@@ -988,6 +994,7 @@ create trigger on_tenant_created after insert on public.tenants
 
 > A user can be assigned multiple roles but only one is active at a time (`active_role_id` on `tenant_members`). The user can switch roles via UI without logging out. Each role has its own permission set.
 
+
 | Role                 | Purpose                                       |
 | -------------------- | --------------------------------------------- |
 | `project_engineer`   | Day-to-day project work                       |
@@ -996,6 +1003,7 @@ create trigger on_tenant_created after insert on public.tenants
 | `project_checker`    | Reviews and checks deliverables for quality   |
 | `project_verifier`   | Verifies and validates completed work         |
 | `project_supervisor` | Supervises across projects, broader oversight |
+
 
 - All roles start with **no permissions** by default
 - `system_admin` assigns permissions to `tenant_admin`
@@ -1410,6 +1418,7 @@ Alert channels: Email, Slack, Dashboard
 
 ### Alert Rules
 
+
 | Event Type             | Severity | Channel        | Action                 |
 | ---------------------- | -------- | -------------- | ---------------------- |
 | `refresh_token_reuse`  | critical | Slack + Email  | Immediate alert        |
@@ -1419,6 +1428,7 @@ Alert channels: Email, Slack, Dashboard
 | `permission_denied`    | medium   | Dashboard only | Log for review         |
 | `new_ip`               | low      | Dashboard only | Log for review         |
 | `rate_limit_hit`       | medium   | Slack          | Batched alert (>10/hr) |
+
 
 ### Trigger: Notify on Critical/High Events
 
@@ -1557,28 +1567,28 @@ where id = $2;
 
 ## 20. Testing Checklist
 
-- [ ] Cross-tenant access blocked (user A cannot see tenant B data)
-- [ ] System admin bypasses tenant filter correctly
-- [ ] Tenant isolation enforced at RLS level
-- [ ] Revoked session returns empty/blocked results
-- [ ] Permission version mismatch blocks stale JWT
-- [ ] Account lockout prevents all operations
-- [ ] Permission checks correct for each operation (select/insert/update/delete)
-- [ ] RLS cannot be bypassed via direct table access
-- [ ] Member assignment works end-to-end (create user, add to tenant, assign role)
-- [ ] Tenant switching issues correct JWT
-- [ ] Role switching updates JWT with new role's permissions only
-- [ ] User with multiple roles can only use active role's permissions
-- [ ] Switching role does not require re-login
-- [ ] Audit logs capture insert, update, delete automatically
-- [ ] Rate limiting returns 429 and logs event
-- [ ] Risk score accumulation triggers lockout at threshold
-- [ ] Cascade deletes clean up orphaned data
-- [ ] Refresh token reuse revokes all user sessions
-- [ ] Refresh token reuse logs critical security event
-- [ ] RLS pgTAP tests pass via `supabase test db`
-- [ ] Critical/high security events generate alerts
-- [ ] Alert dispatch sends to correct channels by severity
+- Cross-tenant access blocked (user A cannot see tenant B data)
+- System admin bypasses tenant filter correctly
+- Tenant isolation enforced at RLS level
+- Revoked session returns empty/blocked results
+- Permission version mismatch blocks stale JWT
+- Account lockout prevents all operations
+- Permission checks correct for each operation (select/insert/update/delete)
+- RLS cannot be bypassed via direct table access
+- Member assignment works end-to-end (create user, add to tenant, assign role)
+- Tenant switching issues correct JWT
+- Role switching updates JWT with new role's permissions only
+- User with multiple roles can only use active role's permissions
+- Switching role does not require re-login
+- Audit logs capture insert, update, delete automatically
+- Rate limiting returns 429 and logs event
+- Risk score accumulation triggers lockout at threshold
+- Cascade deletes clean up orphaned data
+- Refresh token reuse revokes all user sessions
+- Refresh token reuse logs critical security event
+- RLS pgTAP tests pass via `supabase test db`
+- Critical/high security events generate alerts
+- Alert dispatch sends to correct channels by severity
 
 ---
 
@@ -1604,3 +1614,4 @@ Data      → public
 Decisions → authz
 Secrets   → private
 ```
+
