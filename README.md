@@ -55,7 +55,7 @@ Do not commit real secrets; `.env*` files are gitignored except `.env.example`.
 
 - **Web (Vercel):** set the Vercel project **Root Directory** to `apps/web`. Install/build are configured in `apps/web/vercel.json` to run from the monorepo root.
 - **`apps/python-api`:** nothing to deploy until you add the PDF tooling.
-- **Supabase:** link the hosted project to this repo’s `supabase/` for migrations and functions.
+- **Supabase:** `.github/workflows/deploy.yml` runs on `develop` / `main` (`supabase link` + `db push`). GitHub secrets: `SUPABASE_ACCESS_TOKEN`, `STAGING_PROJECT_ID`, `STAGING_DB_PASSWORD`, `PRODUCTION_PROJECT_ID`, `PRODUCTION_DB_PASSWORD`. Overview: [Supabase environments](https://supabase.com/blog/the-vibe-coders-guide-to-supabase-environments).
 
 ## API documentation
 
@@ -65,4 +65,4 @@ Swagger UI for the external projects API:
 
 ## Continuous integration
 
-GitHub Actions workflow `.github/workflows/ci.yml` runs `pnpm install`, Turbo `build` / `lint` for `web` and its dependencies, and Turbo `build` / `lint` / `test` for the `python-api` placeholder package.
+Workflow `.github/workflows/ci.yml` runs a **Supabase** job (local DB, migrations, type drift check), **pnpm install**, Turbo `build` / `lint` for `web` and dependencies, and Turbo `build` / `lint` / `test` for `python-api`. `.github/workflows/deploy.yml` pushes migrations on `develop` / `main`.
