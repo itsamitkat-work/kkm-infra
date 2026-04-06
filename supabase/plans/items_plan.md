@@ -6,7 +6,7 @@ This schema is designed to:
 
 - Store schedule of rates (CPWD, PWD, private schedules)
 - Preserve raw data exactly as source (no parsing assumptions)
-- Support hierarchical structure via ltree (section > group > item)
+- Support hierarchical structure via ltree (section > group* > item, unlimited nesting depth)
 - Attribute tables are created upfront but populated later (via AI/manual, not during PDF ingestion)
 - Enable full-text search on item descriptions and codes
 - Global read-only reference data shared across all tenants
@@ -57,10 +57,11 @@ create type public.record_status as enum (
 );
 
 -- Structural role of a node in the schedule hierarchy
+-- Depth is unlimited; groups can nest inside groups
 create type public.schedule_node_type as enum (
-  'section',     -- Top-level category
-  'group',       -- Intermediate grouping node
-  'item'         -- Leaf node with actual rate
+  'section',     -- Root-level category (must be at top, no parent)
+  'group',       -- Intermediate grouping node (can nest: group > group > group)
+  'item'         -- Leaf node with rate data
 );
 
 -- Classification of schedule publisher
