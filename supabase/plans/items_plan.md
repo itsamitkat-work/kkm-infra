@@ -23,7 +23,7 @@ public.schedule_source_versions
 public.schedule_items (ltree hierarchy)
   ↓
 public.schedule_item_rates (contextual overrides)
-public.schedule_item_conditions
+public.schedule_item_annotations
 
 public.units / public.derived_units
 
@@ -206,13 +206,8 @@ create table public.schedule_items (
 
   rate numeric,
   -- Base monetary rate for leaf items; null for section/group nodes
-  -- Contextual rate overrides live in schedule_item_rates
-
-  check (
-    (node_type = 'item' and rate is not null)
-    or (node_type != 'item')
-  ),
-  -- Enforces: leaf items must have a rate; non-leaf nodes may have null rate
+  -- Null for items with only contextual rates (e.g., carriage items with distance-based rates)
+  -- Contextual rate variations live in schedule_item_rates
 
   check (
     (parent_item_id is null and node_type = 'section')
@@ -286,24 +281,35 @@ create table public.schedule_item_rates (
 
 ---
 
-## public.schedule_item_conditions
+## public.schedule_item_annotations
 
 ```sql
--- Stores textual conditions associated with items
-create table public.schedule_item_conditions (
+-- Stores textual annotations associated with any node (section, group, or item)
+-- Covers notes, remarks, conditions, caveats — anything textual from the source
+create table public.schedule_item_annotations (
   id uuid primary key default gen_random_uuid(),
-  -- Unique identifier for condition
+  -- Unique identifier for annotation
 
   schedule_item_id uuid not null
     references public.schedule_items(id) on delete cascade,
-  -- Associated item
+  -- Associated node (can be section, group, or item)
+  -- A section-level note attaches to the section node
+  -- A remark spanning items attaches to their parent group
 
-  raw_condition text not null,
-  -- Condition text exactly as written in source
+  type text not null default 'note',
+  -- Annotation type:
+  -- 'note'      → general note on a section/group (e.g., "Rates are inclusive of GST...")
+  -- 'remark'    → remark column from source table (e.g., applicability conditions)
+  -- 'condition' → prerequisite or constraint for an item
+  -- 'caveat'    → limitation or exception
+  -- Kept as text, not enum — types may evolve as more source formats are ingested
+
+  raw_text text not null,
+  -- Annotation text exactly as written in source
   -- No parsing to preserve accuracy
 
   order_index int,
-  -- Preserves original document ordering
+  -- Preserves original document ordering within a node
 
   created_at timestamptz default now()
 );
@@ -612,8 +618,8 @@ create index idx_schedule_items_batch on public.schedule_items(ingestion_batch_i
 -- Rate lookup
 create index idx_schedule_item_rates_item on public.schedule_item_rates(schedule_item_id);
 
--- Condition lookup
-create index idx_schedule_item_conditions_item on public.schedule_item_conditions(schedule_item_id);
+-- Annotation lookup
+create index idx_schedule_item_annotations_item on public.schedule_item_annotations(schedule_item_id);
 
 -- Attribute joins
 create index idx_schedule_item_attributes_item on public.schedule_item_attributes(schedule_item_id);
@@ -628,7 +634,7 @@ alter table public.schedule_sources enable row level security;
 alter table public.schedule_source_versions enable row level security;
 alter table public.schedule_items enable row level security;
 alter table public.schedule_item_rates enable row level security;
-alter table public.schedule_item_conditions enable row level security;
+alter table public.schedule_item_annotations enable row level security;
 alter table public.units enable row level security;
 alter table public.derived_units enable row level security;
 alter table public.attributes enable row level security;
@@ -728,12 +734,12 @@ create policy "schedule_item_rates_modify" on public.schedule_item_rates
     and (authz.is_system_admin() or authz.has_permission('schedules.manage'))
   );
 
--- schedule_item_conditions
-create policy "schedule_item_conditions_select" on public.schedule_item_conditions
+-- schedule_item_annotations
+create policy "schedule_item_annotations_select" on public.schedule_item_annotations
   for select to authenticated
   using (authz.is_session_valid() and not authz.is_account_locked());
 
-create policy "schedule_item_conditions_modify" on public.schedule_item_conditions
+create policy "schedule_item_annotations_modify" on public.schedule_item_annotations
   for all to authenticated
   using (
     authz.is_session_valid() and not authz.is_account_locked()

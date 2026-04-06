@@ -23,6 +23,8 @@ apps/*/.next
 packages/*/dist
 
 # python
+apps/dsr_pdf_pipeline/input
+apps/dsr_pdf_pipeline/final_output
 apps/python-api/dist
 .venv
 __pycache__

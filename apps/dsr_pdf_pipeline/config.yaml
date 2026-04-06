@@ -1,0 +1,3 @@
+filters:
+  skip_hindi: true
+  min_text_length: 50
