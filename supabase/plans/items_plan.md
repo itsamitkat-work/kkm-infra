@@ -4,9 +4,9 @@
 
 This schema is designed to:
 
-- Store schedule of rates (CPWD, PWD, private schedules)
+- Store schedule of rates (CPWD, BYPL, other state or private schedules)
 - Preserve raw data exactly as source (no parsing assumptions)
-- Support hierarchical structure via ltree (section > group* > item, unlimited nesting depth)
+- Support hierarchical structure via ltree (section > group\* > item, unlimited nesting depth)
 - Attribute tables are created upfront but populated later (via AI/manual, not during PDF ingestion)
 - Enable full-text search on item descriptions and codes
 - Global read-only reference data shared across all tenants
@@ -24,7 +24,6 @@ public.schedule_items (ltree hierarchy)
   ↓
 public.schedule_item_rates (contextual overrides)
 public.schedule_item_annotations
-
 public.units / public.derived_units
 
 public.attributes / public.attribute_values / public.schedule_item_attributes
@@ -70,6 +69,15 @@ create type public.schedule_source_type as enum (
   'govt',        -- Government published (CPWD, State PWD)
   'private'      -- Private/proprietary schedule
 );
+
+-- Type of textual annotation attached to a schedule node
+create type public.schedule_annotation_type as enum (
+  'note',        -- General note on a section/group (e.g., "Rates are inclusive of GST...")
+  'remark',      -- Remark column from source table (e.g., applicability conditions)
+  'condition',   -- Prerequisite or constraint for an item
+  'reference'    -- Cross-schedule reference (e.g., "CPWD DSR 2024 | 13.24.1")
+);
+-- Evolve via: ALTER TYPE public.schedule_annotation_type ADD VALUE 'new_type';
 ```
 
 ---
@@ -287,7 +295,7 @@ create table public.schedule_item_rates (
 
 ```sql
 -- Stores textual annotations associated with any node (section, group, or item)
--- Covers notes, remarks, conditions, caveats — anything textual from the source
+-- Covers notes, remarks, conditions, caveats, linking to another schedule item — anything textual from the source
 create table public.schedule_item_annotations (
   id uuid primary key default gen_random_uuid(),
   -- Unique identifier for annotation
@@ -298,13 +306,10 @@ create table public.schedule_item_annotations (
   -- A section-level note attaches to the section node
   -- A remark spanning items attaches to their parent group
 
-  type text not null default 'note',
-  -- Annotation type:
-  -- 'note'      → general note on a section/group (e.g., "Rates are inclusive of GST...")
-  -- 'remark'    → remark column from source table (e.g., applicability conditions)
-  -- 'condition' → prerequisite or constraint for an item
-  -- 'caveat'    → limitation or exception
-  -- Kept as text, not enum — types may evolve as more source formats are ingested
+  type public.schedule_annotation_type not null default 'note',
+  -- Annotation type (see enum definition for values)
+  -- 'reference' format: "source_name | code" — resolved via lookup at query time
+  -- Supports 1-to-many: one item can have multiple annotations of any type
 
   raw_text text not null,
   -- Annotation text exactly as written in source
@@ -753,6 +758,7 @@ create policy "schedule_item_annotations_modify" on public.schedule_item_annotat
     authz.is_session_valid() and not authz.is_account_locked()
     and (authz.is_system_admin() or authz.has_permission('schedules.manage'))
   );
+
 
 -- units / derived_units (read-only for all, writable by system admin)
 create policy "units_select" on public.units
