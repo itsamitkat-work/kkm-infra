@@ -42,6 +42,7 @@ Schedule data is **global reference data** managed by system admins. All authent
 
 ```sql
 create extension if not exists ltree;
+create extension if not exists pg_trgm;
 ```
 
 ---
@@ -619,6 +620,12 @@ create index idx_schedule_items_batch on public.schedule_items(ingestion_batch_i
 -- Rate lookup
 create index idx_schedule_item_rates_item on public.schedule_item_rates(schedule_item_id);
 
+-- Code prefix search (for tree search: "1.1" → finds "1.1", "1.1.1", "1.1.2")
+create index idx_schedule_items_code on public.schedule_items(schedule_source_version_id, code text_pattern_ops);
+
+-- Code trigram search (for fuzzy/partial code matching)
+create index idx_schedule_items_code_trgm on public.schedule_items using gin(code gin_trgm_ops);
+
 -- Annotation lookup
 create index idx_schedule_item_annotations_item on public.schedule_item_annotations(schedule_item_id);
 
@@ -809,47 +816,142 @@ create policy "schedule_item_attributes_modify" on public.schedule_item_attribut
 
 ## Example Queries
 
-### Get full subtree under a node (by its ID)
+### Tree: Get direct children of a node (lazy load)
 
 ```sql
-select * from public.schedule_items
-where path <@ (select path from public.schedule_items where id = $1)
-  and schedule_source_version_id = $2
-order by path;
+select id, code, slug, description, node_type, rate, order_index
+from public.schedule_items
+where parent_item_id = $1
+  and status = 'active'
+order by order_index;
 ```
 
-### Get all ancestors of an item (breadcrumb trail)
+### Tree: Get root-level sections for a version
+
+```sql
+select id, code, slug, description, order_index
+from public.schedule_items
+where schedule_source_version_id = $1
+  and parent_item_id is null
+  and status = 'active'
+order by order_index;
+```
+
+### Tree: Get all ancestors of an item (breadcrumb trail)
 
 ```sql
 select id, code, slug, description, nlevel(path) as depth
 from public.schedule_items
 where path @> (select path from public.schedule_items where id = $1)
+  and status = 'active'
 order by nlevel(path);
 ```
 
-### Get direct children of a node
+### Tree: Get full subtree under a node
 
 ```sql
 select * from public.schedule_items
-where parent_item_id = $1
-order by order_index;
+where path <@ (select path from public.schedule_items where id = $1)
+  and schedule_source_version_id = $2
+  and status = 'active'
+order by path;
 ```
 
-### Get depth of any node
+### Search: Full-text description search with ranking
 
 ```sql
-select nlevel(path) as depth from public.schedule_items where id = $1;
-```
-
-### Full-text search
-
-```sql
-select id, code, slug, description, ts_rank(search_vector, q) as rank
-from public.schedule_items, to_tsquery('english', 'cement & concrete') q
+select id, code, slug, description, node_type,
+  ts_rank(search_vector, q) as rank
+from public.schedule_items,
+  to_tsquery('simple', 'cement & concrete') q
 where search_vector @@ q
   and schedule_source_version_id = $1
+  and status = 'active'
 order by rank desc
 limit 20;
+```
+
+### Search: Code prefix search (e.g., "1.1" finds "1.1", "1.1.1", "1.1.2")
+
+```sql
+select id, code, slug, description, node_type
+from public.schedule_items
+where schedule_source_version_id = $1
+  and code like $2 || '%'
+  and status = 'active'
+order by code
+limit 50;
+```
+
+### Search: Ranked combined search (exact=3, prefix=2, contains=1)
+
+```sql
+with scored as (
+  select id, code, slug, description, node_type, path,
+    case
+      when code = $2 then 3
+      when code like $2 || '%' then 2
+      else 1
+    end as match_score
+  from public.schedule_items
+  where schedule_source_version_id = $1
+    and status = 'active'
+    and (
+      code like $2 || '%'
+      or search_vector @@ to_tsquery('simple', $3)
+    )
+)
+select * from scored
+order by match_score desc, code
+limit 50;
+```
+
+### Search: Match count aggregation per ancestor (for tree badges)
+
+```sql
+with matches as (
+  select id, path
+  from public.schedule_items
+  where search_vector @@ to_tsquery('simple', $2)
+    and schedule_source_version_id = $1
+    and status = 'active'
+)
+select
+  a.id, a.code, a.slug, a.node_type,
+  count(*) as match_count
+from public.schedule_items a
+join matches m on m.path <@ a.path
+where a.schedule_source_version_id = $1
+  and a.node_type in ('section', 'group')
+  and a.status = 'active'
+group by a.id, a.code, a.slug, a.node_type
+order by a.code;
+```
+
+### Search: Matches with ancestor paths (for API response)
+
+```sql
+with matches as (
+  select id, code, slug, description, node_type, path,
+    ts_rank(search_vector, to_tsquery('simple', $2)) as rank
+  from public.schedule_items
+  where search_vector @@ to_tsquery('simple', $2)
+    and schedule_source_version_id = $1
+    and status = 'active'
+  order by rank desc
+  limit 50
+)
+select
+  m.*,
+  array_agg(a.code order by nlevel(a.path)) as ancestor_codes,
+  array_agg(a.id order by nlevel(a.path)) as ancestor_ids
+from matches m
+left join public.schedule_items a
+  on a.path @> m.path
+  and a.id != m.id
+  and a.schedule_source_version_id = $1
+group by m.id, m.code, m.slug, m.description, m.node_type, m.path, m.rank
+order by m.rank desc;
 ```
 
 ---
