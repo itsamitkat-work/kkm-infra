@@ -383,16 +383,16 @@ s3_access_key = "env(S3_ACCESS_KEY)"
 # Configures AWS_SECRET_ACCESS_KEY for S3 bucket
 s3_secret_key = "env(S3_SECRET_KEY)"
 
-# Optional: persistent Supabase branches (staging / production) override defaults in this file.
+# Optional: persistent Supabase branches (develop / production) override defaults in this file.
 # Create the branch first, then set project_id from `supabase --experimental branches list`.
 # https://supabase.com/docs/guides/deployment/branching/configuration
 #
-# [remotes.staging]
-# project_id = "your-staging-branch-project-ref"
+# [remotes.preview]
+# project_id = "your-develop-branch-project-ref"
 #
-# [remotes.staging.db.seed]
+# [remotes.preview.db.seed]
 # enabled = true
-# sql_paths = ["./seeds/staging.sql"]
+# sql_paths = ["./seeds/preview.sql"]
 #
 # [remotes.production]
 # project_id = "your-production-branch-project-ref"
