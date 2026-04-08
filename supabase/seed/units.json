@@ -1,0 +1,84 @@
+{
+  "units": [
+    {
+      "name": "square_meter",
+      "display_name": "Square Metre",
+      "symbol": "sqm",
+      "dimension": "area",
+      "is_base": true,
+      "conversion_factor": 1
+    },
+    {
+      "name": "cubic_meter",
+      "display_name": "Cubic Metre",
+      "symbol": "cum",
+      "dimension": "volume",
+      "is_base": true,
+      "conversion_factor": 1
+    },
+    {
+      "name": "metre",
+      "display_name": "Metre",
+      "symbol": "metre",
+      "dimension": "length",
+      "is_base": true,
+      "conversion_factor": 1
+    },
+    {
+      "name": "kilogram",
+      "display_name": "Kilogram",
+      "symbol": "kg",
+      "dimension": "mass",
+      "is_base": true,
+      "conversion_factor": 1
+    },
+    {
+      "name": "litre",
+      "display_name": "Litre",
+      "symbol": "litre",
+      "dimension": "volume",
+      "is_base": false,
+      "conversion_factor": 0.001
+    },
+    {
+      "name": "each",
+      "display_name": "Each",
+      "symbol": "each",
+      "dimension": "count",
+      "is_base": true,
+      "conversion_factor": 1
+    },
+    {
+      "name": "lump_sum",
+      "display_name": "Lump Sum",
+      "symbol": "LS",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1
+    },
+    {
+      "name": "running_metre",
+      "display_name": "Running Metre",
+      "symbol": "rm",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1
+    },
+    {
+      "name": "quintal",
+      "display_name": "Quintal",
+      "symbol": "qtl",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 100
+    },
+    {
+      "name": "tonne",
+      "display_name": "Tonne",
+      "symbol": "tonne",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1000
+    }
+  ]
+}

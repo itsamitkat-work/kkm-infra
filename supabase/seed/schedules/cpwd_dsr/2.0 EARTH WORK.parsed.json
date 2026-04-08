@@ -1,0 +1,1364 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/2.0 EARTH WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "EARTH WORK",
+      "code": "2.0",
+      "children_count": 36,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Earth work in surface excavation not exceeding 30 cm in depth but exceeding 1.5 m in width as well as 10 sqm on plan including getting out and disposal of excavated earth upto 50 m and lift upto 1.5 m, as directed by Engineer-in- Charge:",
+          "code": "2.1",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 129.85,
+              "rate_display": "129.85"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Earth work by mechinical / manual means in rough excavation, banking excavated earth in layers not exceeding 20cm in depth, breaking clods, watering, rolling each layer with ½ tonne roller or wooden or steel rammers, and rolling every 3rd and top-most layer with power roller of minimum 8 tonnes and dressing up in embankments for roads, flood banks, marginal banks and guide banks or filling up ground depressions, lead upto 50 m and for all lift :",
+          "code": "2.2",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 395.3,
+              "rate_display": "395.30"
+            }
+          ],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Banking excavated earth by mechanical / manual means in layers not exceeding 20 cm in depth, breaking clods, watering, rolling each layer with ½ tonne roller, or wooden or steel rammers, and rolling every 3rd and top-most layer with power roller of minimum 8 tonnes and dressing up, in embankments for roads, flood banks, marginal banks, and guide banks etc., lead upto 50 m and for all lift :",
+          "code": "2.3",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 197.9,
+              "rate_display": "197.90"
+            }
+          ],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for not rolling with power roller of minimum 8 tonnes for banking excavated earth in layers not exceeding 20 cm in depth.",
+          "code": "2.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5.25,
+          "rate_display": "5.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for not watering the excavated earth for banking",
+          "code": "2.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 14.25,
+          "rate_display": "14.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Earth work in excavation by mechanical means (Hydraulic excavator)/ manual means over areas (exceeding 30 cm in depth, 1.5 m in width as well as 10 sqm on plan) including getting out and disposal of excavated earth lead upto 50 m and for all lift, as directed by Engineer-in-charge.",
+          "code": "2.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 177.5,
+              "rate_display": "177.50"
+            }
+          ],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Earth work in excavation by mechanical means (Hydraulic excavator)/ manual means over areas (exceeding 30 cm in depth, 1.5 m in width as well as 10 sqm on plan) including getting out and disposal of excavated earth lead upto 50 m and lift upto 1.5 m, as directed by Engineer-in-charge.",
+          "code": "2.7",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary rock",
+              "code": "2.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 498.9,
+              "rate_display": "498.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (requiring blasting)",
+              "code": "2.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 874.4,
+              "rate_display": "874.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (blasting prohibited)",
+              "code": "2.7.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1432.95,
+              "rate_display": "1432.95"
+            }
+          ],
+          "order_index": 10,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Earth work in excavation by mechanical means (Hydraulic excavator) / manual means in foundation trenches or drains (not exceeding 1.5 m in width or 10 sqm on plan), including dressing of sides and ramming of bottoms, for all lift, including getting out the excavated soil and disposal of surplus excavated soil as directed, within a lead of 50 m.",
+          "code": "2.8",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil.",
+              "code": "2.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 260.3,
+              "rate_display": "260.30"
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Excavation work by mechanical means (Hydraulic excavator)/ manual means in foundation trenches or drains (not exceeding 1.5m in width or 10 sqm on plan), including dressing of sides and ramming of bottoms, lift upto 1.5 m, including getting out the excavated soil and disposal of surplus excavated soils as directed, within a lead of 50 m.",
+          "code": "2.9",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary rock",
+              "code": "2.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 632.95,
+              "rate_display": "632.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (requiring blasting)",
+              "code": "2.9.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1049.8,
+              "rate_display": "1049.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (blasting prohibited)",
+              "code": "2.9.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 1523.05,
+              "rate_display": "1523.05"
+            }
+          ],
+          "order_index": 16,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Excavating trenches by mechinical / manual means of required width for pipes, cables, etc including excavation for sockets, and dressing of sides, ramming of bottoms, for all depth, including getting out the excavated soil, and then returning the soil as required, in layers not exceeding 20 cm in depth, including consolidating each deposited layer by ramming, watering, etc. and disposing of surplus excavated soil as directed, within a lead of 50 m :",
+          "code": "2.10",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.10.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc, not exceeding 80 mm dia.",
+                  "code": "2.10.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 22,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 215.6,
+                  "rate_display": "215.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia. but not exceeding 300 mm dia",
+                  "code": "2.10.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 23,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 352.15,
+                  "rate_display": "352.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 300 mm dia but not exceeding 600 mm",
+                  "code": "2.10.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 24,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 549.75,
+                  "rate_display": "549.75"
+                }
+              ],
+              "order_index": 21,
+              "source_page": 2
+            }
+          ],
+          "order_index": 20,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Excavating trenches of required width for pipes, cables, etc, including excavation for sockets, depth upto 1.5 m, including getting out the excavated materials, returning the soil as required in layers not exceeding 20 cm in depth, including consolidating each deposited layers by ramming, watering etc., stacking serviceable material for measurements and disposal of unserviceable material as directed, within a lead of 50 m :",
+          "code": "2.13",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary rock :",
+              "code": "2.13.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. not exceeding 80 mm dia",
+                  "code": "2.13.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 27,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 403.3,
+                  "rate_display": "403.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.13.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 28,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 998.65,
+                  "rate_display": "998.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.13.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 29,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 1149.1,
+                  "rate_display": "1149.10"
+                }
+              ],
+              "order_index": 26,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (requiring blasting)",
+              "code": "2.13.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. not exceeding 80 mm dia",
+                  "code": "2.13.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 31,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 603.2,
+                  "rate_display": "603.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.13.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 32,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 1493.6,
+                  "rate_display": "1493.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.13.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 33,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 1718.45,
+                  "rate_display": "1718.45"
+                }
+              ],
+              "order_index": 30,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (blasting prohibited)",
+              "code": "2.13.3",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. not exceeding 80 mm dia",
+                  "code": "2.13.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 35,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 826.8,
+                  "rate_display": "826.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.13.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 2047.3,
+                  "rate_display": "2047.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.13.3.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 37,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 2355.75,
+                  "rate_display": "2355.75"
+                }
+              ],
+              "order_index": 34,
+              "source_page": 2
+            }
+          ],
+          "order_index": 25,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for excavating trenches for pipes, cables, etc. in ordinary/hard rock exceeding 1.5 m in depth but not exceeding 3 m. (Rate is over corresponding basic item for depth upto 1.5 metre)",
+          "code": "2.14",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary rock :",
+              "code": "2.14.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.14.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 40,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 729.8,
+                  "rate_display": "729.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.14.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 41,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 867.45,
+                  "rate_display": "867.45"
+                }
+              ],
+              "order_index": 39,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (requiring blasting)",
+              "code": "2.14.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.14.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 1091.45,
+                  "rate_display": "1091.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.14.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 44,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 1297.4,
+                  "rate_display": "1297.40"
+                }
+              ],
+              "order_index": 42,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (blasting prohibited)",
+              "code": "2.14.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables etc. exceeding 80 mm dia but not exceeding 300 mm dia",
+                  "code": "2.14.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 46,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 1496.1,
+                  "rate_display": "1496.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.14.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 47,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 1778.15,
+                  "rate_display": "1778.15"
+                }
+              ],
+              "order_index": 45,
+              "source_page": 3
+            }
+          ],
+          "order_index": 38,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for excavating trenches for pipes, cables, etc. in ordinary/hard rock exceeding 3m in depth but not exceeding 4.5 m. (Rate is over corresponding basic item for depth upto 1.5 metre)",
+          "code": "2.15",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary rock :",
+              "code": "2.15.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Pipes, cables exceeding 300 mm dia but not exceeding 600 mm dia",
+                  "code": "2.15.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 50,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 2352.25,
+                  "rate_display": "2352.25"
+                }
+              ],
+              "order_index": 49,
+              "source_page": 3
+            }
+          ],
+          "order_index": 48,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Close timbering in trenches including strutting, shoring and packing cavities (wherever required) complete. (Measurements to be taken of the face area timbered).",
+          "code": "2.16",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 139.95,
+              "rate_display": "139.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.16.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 53,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 155.3,
+              "rate_display": "155.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.16.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 189.65,
+              "rate_display": "189.65"
+            }
+          ],
+          "order_index": 51,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Close timbering in case of shafts, wells, cesspits, manholes and the like including strutting, shoring and packing cavities (wherever required) etc. complete. (Measurements to be taken of the face area timbered).",
+          "code": "2.17",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 56,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 151.5,
+              "rate_display": "151.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.17.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 184.0,
+              "rate_display": "184.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.17.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 58,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 218.2,
+              "rate_display": "218.20"
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Close timbering over areas including strutting, shoring and packing cavities (wherever required) etc. complete. (Measurements to be taken of the face area timbered):",
+          "code": "2.18",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 60,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 125.8,
+              "rate_display": "125.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 61,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 144.1,
+              "rate_display": "144.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.18.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 62,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 163.15,
+              "rate_display": "163.15"
+            }
+          ],
+          "order_index": 59,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for planking, strutting and packing materials for cavities (in close timbering) if required to be left permanently in position. (Face area of timber permanently left to be measured).",
+          "code": "2.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 63,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 1692.45,
+          "rate_display": "1692.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Open timbering in trenches including strutting and shoring complete (measurements to be taken of the face area timbered):",
+          "code": "2.20",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.20.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 65,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 72.05,
+              "rate_display": "72.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.20.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 81.6,
+              "rate_display": "81.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.20.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 67,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 97.25,
+              "rate_display": "97.25"
+            }
+          ],
+          "order_index": 64,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Open timbering in case of shafts, wells, cesspits, manholes and the like including strutting and shoring complete (Measurements to be taken of the face area timbered):",
+          "code": "2.21",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.21.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 69,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 66.4,
+              "rate_display": "66.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.21.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 81.65,
+              "rate_display": "81.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.21.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 71,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 101.85,
+              "rate_display": "101.85"
+            }
+          ],
+          "order_index": 68,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Open timbering over areas including strutting, shoring etc. complete. (Measurements to be taken of the face area timbered):",
+          "code": "2.22",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Depth not exceeding 1.5 m",
+              "code": "2.22.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 44.85,
+              "rate_display": "44.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 1.5 m but not exceeding 3 m",
+              "code": "2.22.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 54.95,
+              "rate_display": "54.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Depth exceeding 3 m but not exceeding 4.5 m",
+              "code": "2.22.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 75,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 71.3,
+              "rate_display": "71.30"
+            }
+          ],
+          "order_index": 72,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for planking and strutting in open timbering if required to be left permanently in position. (Face area of the timber permanently left to be measured).",
+          "code": "2.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 76,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 872.55,
+          "rate_display": "872.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra rates for quantities of works, executed:",
+          "code": "2.24",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note for item no. 2.24:- The extra percentage rate is applicable in respect of each item but limited to quantities of work executed in these difficult conditions. The unit, namely, metre depth, to be considered for payment, shall be the depth measured from the sub soil water level up to the centre of gravity of the qty executed in difficult conditions. The depth shall be reckoned correct to 0.10 m, 0.05 m or more shall be taken as 0.10 m and less than 0.05 m ignored.",
+              "source_page": 4,
+              "order_index": 0
+            }
+          ],
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In or under water and/or liquid mud, including pumping out water as required",
+              "code": "2.24.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 78,
+              "source_page": 4,
+              "unit": "metre depth",
+              "rate": 20.0,
+              "rate_display": "20%",
+              "rate_kind": "percentage"
+            },
+            {
+              "node_type": "item",
+              "title": "In or under foul position, including pumping out water as required",
+              "code": "2.24.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 4,
+              "unit": "metre depth",
+              "rate": 25.0,
+              "rate_display": "25%",
+              "rate_kind": "percentage"
+            }
+          ],
+          "order_index": 77,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Filling available excavated earth (excluding rock) in trenches, plinth, sides of foundations etc. in layers not exceeding 20cm in depth, consolidating each deposited layer by ramming and watering, lead up to 50 and for all lift.",
+          "code": "2.25",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Excavating, supplying, stacking and filling of local earth (including royalty) by mechanical transport upto a lead of 5km also including ramming and watering of the earth in layers not exceeding 20 cm in foundation trenches, plinth, sides of foundation etc. complete for all lift.",
+              "code": "2.25(a)",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 700.5,
+              "rate_display": "700.50"
+            }
+          ],
+          "order_index": 80,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 196.0,
+          "rate_display": "196.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for every additional lift of 1.5 m or part thereof in excavation / banking excavated or stacked materials.",
+          "code": "2.26",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 126.8,
+              "rate_display": "126.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary or hard rock",
+              "code": "2.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 84,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 227.4,
+              "rate_display": "227.40"
+            }
+          ],
+          "order_index": 82,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and filling in plinth with sand under floors, including watering, ramming, consolidating and dressing complete.",
+          "code": "2.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 85,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 2123.75,
+          "rate_display": "2123.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing of the ground including removing vegetation and in- equalities not exceeding 15 cm deep and disposal of rubbish, lead up to 50 m and lift up to 1.5 m.",
+          "code": "2.28",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 34.15,
+              "rate_display": "34.15"
+            }
+          ],
+          "order_index": 86,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Ploughing the existing ground to a depth of 15 cm to 25 cm and watering the same.",
+          "code": "2.29",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 34.6,
+              "rate_display": "34.60"
+            }
+          ],
+          "order_index": 88,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Excavating holes more than 0.10 cum & upto 0.5 cum including getting out the excavated soil, then returning the soil as required in layers not exceeding 20cm in depth, including consolidating each deposited layer by ramming, watering etc, disposing of surplus excavated soil, as directed within a lead of 50 m and lift upto 1.5 m.",
+          "code": "2.30",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kinds of soil",
+              "code": "2.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 82.45,
+              "rate_display": "82.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary rock",
+              "code": "2.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 92,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 194.25,
+              "rate_display": "194.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (requiring blasting)",
+              "code": "2.30.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 319.3,
+              "rate_display": "319.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Hard rock (blasting prohibited)",
+              "code": "2.30.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 94,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 461.3,
+              "rate_display": "461.30"
+            }
+          ],
+          "order_index": 90,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Clearing jungle including uprooting of rank vegetation, grass, brush wood, trees and saplings of girth up to 30 cm measured at a height of 1 m above ground level and removal of rubbish up to a distance of 50 m outside the periphery of the area cleared.",
+          "code": "2.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 95,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 17.6,
+          "rate_display": "17.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Clearing grass and removal of the rubbish up to a distance of 50 m outside the periphery of the area cleared.",
+          "code": "2.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 96,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 8.95,
+          "rate_display": "8.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Felling trees of the girth (measured at a height of 1 m above ground level), including cutting of trunks and branches, removing the roots and stacking of serviceable material and disposal of unserviceable material.",
+          "code": "2.33",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Beyond 30 cm girth upto and including 60 cm girth",
+              "code": "2.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 532.35,
+              "rate_display": "532.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Beyond 60 cm girth upto and including 120 cm girth",
+              "code": "2.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 2373.5,
+              "rate_display": "2373.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Beyond 120 cm girth upto and including 240 cm girth",
+              "code": "2.33.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 100,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 11020.15,
+              "rate_display": "11020.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 240 cm girth",
+              "code": "2.33.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 101,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 22075.2,
+              "rate_display": "22075.20"
+            }
+          ],
+          "order_index": 97,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying chemical emulsion in sealed containers including delivery as specified.",
+          "code": "2.34",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Chlorpyriphos/ Lindane emulsifiable concentrate of 20%",
+              "code": "2.34.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 103,
+              "source_page": 5,
+              "unit": "litre",
+              "rate": 234.75,
+              "rate_display": "234.75"
+            }
+          ],
+          "order_index": 102,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Diluting and injecting chemical emulsion for POST-CONSTRUCTIONAL anti-termite treatment (excluding the cost of chemical emulsion) :",
+          "code": "2.35",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Along external wall where the apron is not provided using chemical emulsion @ 7.5 litres / sqm of the vertical surface of the substructure to a depth of 300 mm including excavation channel along the wall & rodding etc. complete:",
+              "code": "2.35.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With Chlorpyriphos/ Lindane E.C. 20% with 1% concentration",
+                  "code": "2.35.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 106,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 38.9,
+                  "rate_display": "38.90"
+                }
+              ],
+              "order_index": 105,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Along the external wall below concrete or masonry apron using chemical emulsion @ 2.25 litres per linear metre including drilling and plugging holes etc.:",
+              "code": "2.35.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With Chlorpyriphos/ Lindane E.C. 20% with 1% concentration",
+                  "code": "2.35.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 108,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 53.45,
+                  "rate_display": "53.45"
+                }
+              ],
+              "order_index": 107,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Treatment of soil under existing floors using chemical emulsion @ one litre per hole, 300 mm apart including drilling 12 mm diameter holes and plugging with cement mortar 1 :2 (1 cement : 2 Coarse sand) to match the existing floor:",
+              "code": "2.35.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With Chlorpyriphos/Lindane E.C. 20% with 1% concentration",
+                  "code": "2.35.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 110,
+                  "source_page": 5,
+                  "unit": "sqm",
+                  "rate": 310.05,
+                  "rate_display": "310.05"
+                }
+              ],
+              "order_index": 109,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Treatment of existing masonry using chemical emulsion @ one litre per hole at 300 mm interval including drilling holes at 45 degree and plugging them with cement mortar 1:2 (1 cement : 2 coarse sand) to the full depth of the hole :",
+              "code": "2.35.4",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With Chlorpyriphos/Lindane E.C. 20% with 1% concentration",
+                  "code": "2.35.4.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 112,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 43.0,
+                  "rate_display": "43.00"
+                }
+              ],
+              "order_index": 111,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Treatment at points of contact of wood work by chemical emulsion Chlorpyriphos/ Lindane (in oil or kerosene based solution) @ 0.5 litres per hole by drilling 6 mm dia holes at downward angle of 45 degree at 150 mm centre to centre and sealing the same.",
+              "code": "2.35.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 279.7,
+              "rate_display": "279.70"
+            }
+          ],
+          "order_index": 104,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for levelling & neatly dressing of disposed soil completely as directed by Engineer-in-charge.",
+          "code": "2.36",
+          "children_count": 0,
+          "children": [],
+          "order_index": 114,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 93.05,
+          "rate_display": "93.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Supply and stacking of Fly ash conforming to IRC- 58 at site, including carriage, loading , unloading & stacking up to any lead (measured stacks will be reduced by 20% for payment).",
+          "code": "2.37",
+          "children_count": 0,
+          "children": [],
+          "order_index": 115,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 281.05,
+          "rate_display": "281.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Filling with available fly ash and earth (excluding rock) in trenches or embankment in layers (each layer should not exceed 15 cm), with intermediate layer of compacted earth (Soil density of 98%) after every four layers of compacted depth of fly ash, sides & top layer of filling shall be done with earth having total minimum compacted thickness 30 cm or as decided by Engineer -in-charge, including compacting each layer by rolling/ ramming and watering, all complete as per drawing and direction of Engineer -in - charge.",
+          "code": "2.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 308.2,
+          "rate_display": "308.20"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/2.0 EARTH WORK.pdf",
+    "row_count": 117,
+    "note_count": 1,
+    "leaf_count": 79,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

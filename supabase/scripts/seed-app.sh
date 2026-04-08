@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+# App seed: authz → units → schedule sources + ingest.
+# JSON lives under supabase/seed/. Requires supabase start, jq, curl.
+#
+#   SEED_AUTHZ_JSON=... SEED_MANIFEST=... SEED_UNITS_JSON=...
+#   ./supabase/scripts/seed-app.sh
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+AUTHZ_JSON="${SEED_AUTHZ_JSON:-$REPO_ROOT/supabase/seed/authz.json}"
+MANIFEST="${SEED_MANIFEST:-$REPO_ROOT/supabase/seed/manifest.json}"
+
+if ! command -v jq &>/dev/null; then
+  echo "seed-app: install jq (e.g. brew install jq)" >&2
+  exit 1
+fi
+
+if ! command -v supabase &>/dev/null; then
+  echo "seed-app: supabase CLI not found" >&2
+  exit 1
+fi
+
+eval "$(supabase status -o env)" || {
+  echo "seed-app: supabase status failed — run: supabase start" >&2
+  exit 1
+}
+
+for i in $(seq 1 60); do
+  if curl -sf -o /dev/null "${API_URL}/rest/v1/" \
+    -H "apikey: ${ANON_KEY}" \
+    -H "Authorization: Bearer ${ANON_KEY}"; then
+    break
+  fi
+  if [[ $i -eq 60 ]]; then
+    echo "seed-app: API not reachable at ${API_URL}" >&2
+    exit 1
+  fi
+  sleep 1
+done
+
+AUTHZ_EP="${API_URL}/functions/v1/ensure-authz-seed"
+UNITS_EP="${API_URL}/functions/v1/ensure-units"
+ENSURE_EP="${API_URL}/functions/v1/ensure-schedule-sources"
+INGEST_EP="${API_URL}/functions/v1/ingest-schedule"
+
+if [[ ! -f "$AUTHZ_JSON" ]]; then
+  echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
+  exit 1
+fi
+
+echo "seed-app: ensure-authz-seed ($AUTHZ_JSON)"
+curl -sfS -X POST "$AUTHZ_EP" \
+  -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+  -H "Content-Type: application/json" \
+  -d @"$AUTHZ_JSON" \
+  | jq .
+
+resolve_units_file() {
+  if [[ -n "${SEED_UNITS_JSON:-}" ]]; then
+    echo "$SEED_UNITS_JSON"
+    return
+  fi
+  local from_manifest
+  from_manifest="$(jq -r '.units_file // empty' "$MANIFEST")"
+  if [[ -n "$from_manifest" ]]; then
+    echo "$REPO_ROOT/$from_manifest"
+    return
+  fi
+  echo "$REPO_ROOT/supabase/seed/units.json"
+}
+
+UNITS_JSON="$(resolve_units_file)"
+
+if [[ ! -f "$UNITS_JSON" ]]; then
+  echo "seed-app: units JSON not found: $UNITS_JSON" >&2
+  exit 1
+fi
+
+if ! jq -e '(.units | type == "array")' "$UNITS_JSON" >/dev/null; then
+  echo "seed-app: $UNITS_JSON must be { \"units\": [ ... ] }" >&2
+  exit 1
+fi
+
+unit_count="$(jq '.units | length' "$UNITS_JSON")"
+if [[ "$unit_count" -gt 0 ]]; then
+  echo "seed-app: ensure-units ($unit_count) via $UNITS_EP"
+  curl -sfS -X POST "$UNITS_EP" \
+    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+    -H "Content-Type: application/json" \
+    -d @"$UNITS_JSON" \
+    | jq .
+else
+  echo "seed-app: skipping ensure-units (empty array)"
+fi
+
+if ! jq -e '
+  (.sources | type == "array")
+  and (.sources | length > 0)
+  and (.sources | all(
+    (.schedule_source | type == "object")
+    and (.versions | type == "array")
+    and (.versions | all(
+      (.schedule_source_version | type == "object")
+      and (.files | type == "array")
+    ))
+  ))
+' "$MANIFEST" >/dev/null; then
+  echo "seed-app: invalid manifest sources tree: $MANIFEST" >&2
+  exit 1
+fi
+
+echo "seed-app: schedule seed (ensure-schedule-sources + ingest)"
+
+while IFS= read -r block; do
+  [[ -z "$block" ]] && continue
+  ensure_payload="$(echo "$block" | jq '{schedule_source, schedule_source_version}')"
+  src_name="$(echo "$block" | jq -r '.schedule_source.name')"
+  ver_name="$(echo "$block" | jq -r '.schedule_source_version.name')"
+  echo "seed-app: ensuring source=$src_name version=$ver_name"
+
+  version_id="$(
+    echo "$ensure_payload" \
+      | curl -sfS -X POST "$ENSURE_EP" \
+        -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+        -H "Content-Type: application/json" \
+        -d @- \
+      | jq -r '.schedule_source_version_id'
+  )"
+
+  if [[ -z "$version_id" || "$version_id" == "null" ]]; then
+    echo "seed-app: ensure-schedule-sources failed for $src_name / $ver_name" >&2
+    exit 1
+  fi
+
+  while IFS= read -r rel; do
+    [[ -z "$rel" || "$rel" == "null" ]] && continue
+    full="$REPO_ROOT/$rel"
+    if [[ ! -f "$full" ]]; then
+      echo "seed-app: file not found: $full" >&2
+      exit 1
+    fi
+    echo "seed-app: ingesting $rel (version=$ver_name)"
+    jq -n \
+      --arg vid "$version_id" \
+      --slurpfile d "$full" \
+      '{schedule_source_version_id: $vid, data: $d[0]}' \
+      | curl -sfS -X POST "$INGEST_EP" \
+        -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+        -H "Content-Type: application/json" \
+        -d @- \
+      | jq .
+  done < <(echo "$block" | jq -r '.files[]')
+done < <(
+  jq -c '
+    .sources[] as $src
+    | $src.versions[]
+    | {
+        schedule_source: $src.schedule_source,
+        schedule_source_version: .schedule_source_version,
+        files: .files
+      }
+  ' "$MANIFEST"
+)
+
+echo "seed-app: done"

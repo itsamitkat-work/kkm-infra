@@ -11,6 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:types": "supabase gen types typescript --local > packages/db/src/database.types.ts",
+    "seed:app": "bash supabase/scripts/seed-app.sh",
+    "seed:schedule": "bash supabase/scripts/seed-app.sh",
+    "db:reset:seed": "supabase db reset && bash supabase/scripts/seed-app.sh",
     "deploy": "pnpm --filter web deploy"
   },
   "devDependencies": {

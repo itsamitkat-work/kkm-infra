@@ -1,0 +1,259 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/3.0 MORTAR.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "MORTAR",
+      "code": "3.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: These rates are exclusive of GST, water charges, overheads and contractor’s profit.",
+          "source_page": 1,
+          "order_index": 0
+        }
+      ],
+      "children_count": 19,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:1 (1 cement : 1 fine sand)",
+          "code": "3.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 6658.25,
+          "rate_display": "6658.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:2 (1 cement : 2 fine sand).",
+          "code": "3.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 1,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5138.0,
+          "rate_display": "5138.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:3 (1 cement : 3 fine sand).",
+          "code": "3.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 4379.05,
+          "rate_display": "4379.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:4 (1 cement : 4 fine sand).",
+          "code": "3.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 3,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3708.8,
+          "rate_display": "3708.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:5 (1 cement : 5 fine sand).",
+          "code": "3.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3347.85,
+          "rate_display": "3347.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:6 (1 cement : 6 fine sand).",
+          "code": "3.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 5,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3038.5,
+          "rate_display": "3038.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:2 (1 cement : 2 coarse sand).",
+          "code": "3.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5584.5,
+          "rate_display": "5584.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:3 (1 cement : 3 coarse sand).",
+          "code": "3.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 4881.95,
+          "rate_display": "4881.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:4 (1 cement : 4 coarse sand).",
+          "code": "3.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 8,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 4211.7,
+          "rate_display": "4211.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:5 (1 cement : 5 coarse sand).",
+          "code": "3.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 9,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3850.75,
+          "rate_display": "3850.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "3.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 10,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3541.4,
+          "rate_display": "3541.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:2 (1 cement : 2 stone dust).",
+          "code": "3.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 11,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5252.0,
+          "rate_display": "5252.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:2 (1 cement : 2 marble dust).",
+          "code": "3.13",
+          "children_count": 0,
+          "children": [],
+          "order_index": 12,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5328.0,
+          "rate_display": "5328.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement mortar 1:5 (1 cement : 5 marble dust).",
+          "code": "3.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3561.85,
+          "rate_display": "3561.85"
+        },
+        {
+          "node_type": "item",
+          "title": "White cement mortar 1:2 (1 white cement : 2 marble dust).",
+          "code": "3.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 14,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 8961.9,
+          "rate_display": "8961.90"
+        },
+        {
+          "node_type": "item",
+          "title": "White cement mortar 1:3 (1 white cement : 3 marble dust).",
+          "code": "3.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 15,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 7318.5,
+          "rate_display": "7318.50"
+        },
+        {
+          "node_type": "item",
+          "title": "White cement mortar 1:5 (1 white cement : 5 marble dust).",
+          "code": "3.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5218.5,
+          "rate_display": "5218.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Mud mortar",
+          "code": "3.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 940.55,
+          "rate_display": "940.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Mortar in lime, surkhi (50% red and 50% light yellow) and marble dust 1:1.5:0.5",
+          "code": "3.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 2880.65,
+          "rate_display": "2880.65"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/3.0 MORTAR.pdf",
+    "row_count": 19,
+    "note_count": 1,
+    "leaf_count": 19,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}
