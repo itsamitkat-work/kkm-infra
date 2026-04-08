@@ -34,6 +34,139 @@ export type Database = {
   }
   public: {
     Tables: {
+      attribute_values: {
+        Row: {
+          attribute_id: string
+          created_at: string | null
+          id: string
+          normalized_unit_id: string | null
+          normalized_value: number | null
+          unit_id: string | null
+          value_number: number | null
+          value_text: string | null
+        }
+        Insert: {
+          attribute_id: string
+          created_at?: string | null
+          id?: string
+          normalized_unit_id?: string | null
+          normalized_value?: number | null
+          unit_id?: string | null
+          value_number?: number | null
+          value_text?: string | null
+        }
+        Update: {
+          attribute_id?: string
+          created_at?: string | null
+          id?: string
+          normalized_unit_id?: string | null
+          normalized_value?: number | null
+          unit_id?: string | null
+          value_number?: number | null
+          value_text?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "attribute_values_attribute_id_fkey"
+            columns: ["attribute_id"]
+            isOneToOne: false
+            referencedRelation: "attributes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "attribute_values_normalized_unit_id_fkey"
+            columns: ["normalized_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "attribute_values_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      attributes: {
+        Row: {
+          created_at: string | null
+          data_type: string
+          dimension: string | null
+          display_name: string
+          id: string
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          data_type: string
+          dimension?: string | null
+          display_name: string
+          id?: string
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          data_type?: string
+          dimension?: string | null
+          display_name?: string
+          id?: string
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      derived_units: {
+        Row: {
+          created_at: string | null
+          denominator_unit_id: string | null
+          display_name: string
+          id: string
+          multiplier: number | null
+          name: string
+          numerator_unit_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          denominator_unit_id?: string | null
+          display_name: string
+          id?: string
+          multiplier?: number | null
+          name: string
+          numerator_unit_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          denominator_unit_id?: string | null
+          display_name?: string
+          id?: string
+          multiplier?: number | null
+          name?: string
+          numerator_unit_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "derived_units_denominator_unit_id_fkey"
+            columns: ["denominator_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "derived_units_numerator_unit_id_fkey"
+            columns: ["numerator_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -67,6 +200,296 @@ export type Database = {
           is_system_admin?: boolean
           updated_at?: string
           username?: string | null
+        }
+        Relationships: []
+      }
+      schedule_item_annotations: {
+        Row: {
+          created_at: string | null
+          id: string
+          order_index: number | null
+          raw_text: string
+          schedule_item_id: string
+          type: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          order_index?: number | null
+          raw_text: string
+          schedule_item_id: string
+          type?: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          order_index?: number | null
+          raw_text?: string
+          schedule_item_id?: string
+          type?: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_item_annotations_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schedule_item_attributes: {
+        Row: {
+          attribute_value_id: string
+          confidence: number | null
+          created_at: string | null
+          created_by: string | null
+          id: string
+          schedule_item_id: string
+          source: string | null
+          status: Database["public"]["Enums"]["record_status"] | null
+          updated_at: string | null
+        }
+        Insert: {
+          attribute_value_id: string
+          confidence?: number | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          schedule_item_id: string
+          source?: string | null
+          status?: Database["public"]["Enums"]["record_status"] | null
+          updated_at?: string | null
+        }
+        Update: {
+          attribute_value_id?: string
+          confidence?: number | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          schedule_item_id?: string
+          source?: string | null
+          status?: Database["public"]["Enums"]["record_status"] | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_item_attributes_attribute_value_id_fkey"
+            columns: ["attribute_value_id"]
+            isOneToOne: false
+            referencedRelation: "attribute_values"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_item_attributes_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schedule_item_rates: {
+        Row: {
+          context: string
+          created_at: string | null
+          id: string
+          rate: number
+          schedule_item_id: string
+        }
+        Insert: {
+          context: string
+          created_at?: string | null
+          id?: string
+          rate: number
+          schedule_item_id: string
+        }
+        Update: {
+          context?: string
+          created_at?: string | null
+          id?: string
+          rate?: number
+          schedule_item_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_item_rates_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schedule_items: {
+        Row: {
+          code: string
+          created_at: string | null
+          derived_unit_id: string | null
+          description: string
+          id: string
+          ingestion_batch_id: string | null
+          item_type: string | null
+          node_type: Database["public"]["Enums"]["schedule_node_type"]
+          order_index: number | null
+          parent_item_id: string | null
+          path: unknown
+          rate: number | null
+          schedule_source_version_id: string
+          search_vector: unknown
+          slug: string
+          source_page_number: number | null
+          status: Database["public"]["Enums"]["record_status"] | null
+          unit_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          code: string
+          created_at?: string | null
+          derived_unit_id?: string | null
+          description: string
+          id?: string
+          ingestion_batch_id?: string | null
+          item_type?: string | null
+          node_type: Database["public"]["Enums"]["schedule_node_type"]
+          order_index?: number | null
+          parent_item_id?: string | null
+          path: unknown
+          rate?: number | null
+          schedule_source_version_id: string
+          search_vector?: unknown
+          slug: string
+          source_page_number?: number | null
+          status?: Database["public"]["Enums"]["record_status"] | null
+          unit_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          code?: string
+          created_at?: string | null
+          derived_unit_id?: string | null
+          description?: string
+          id?: string
+          ingestion_batch_id?: string | null
+          item_type?: string | null
+          node_type?: Database["public"]["Enums"]["schedule_node_type"]
+          order_index?: number | null
+          parent_item_id?: string | null
+          path?: unknown
+          rate?: number | null
+          schedule_source_version_id?: string
+          search_vector?: unknown
+          slug?: string
+          source_page_number?: number | null
+          status?: Database["public"]["Enums"]["record_status"] | null
+          unit_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_items_derived_unit_id_fkey"
+            columns: ["derived_unit_id"]
+            isOneToOne: false
+            referencedRelation: "derived_units"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_parent_item_id_fkey"
+            columns: ["parent_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_schedule_source_version_id_fkey"
+            columns: ["schedule_source_version_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_source_versions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schedule_source_versions: {
+        Row: {
+          created_at: string | null
+          display_name: string
+          id: string
+          metadata: Json | null
+          name: string
+          region: string | null
+          schedule_source_id: string
+          status: Database["public"]["Enums"]["record_status"] | null
+          updated_at: string | null
+          year: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          display_name: string
+          id?: string
+          metadata?: Json | null
+          name: string
+          region?: string | null
+          schedule_source_id: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          updated_at?: string | null
+          year?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          display_name?: string
+          id?: string
+          metadata?: Json | null
+          name?: string
+          region?: string | null
+          schedule_source_id?: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          updated_at?: string | null
+          year?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_source_versions_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_sources"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schedule_sources: {
+        Row: {
+          created_at: string | null
+          display_name: string
+          id: string
+          name: string
+          status: Database["public"]["Enums"]["record_status"] | null
+          type: Database["public"]["Enums"]["schedule_source_type"] | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          display_name: string
+          id?: string
+          name: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          type?: Database["public"]["Enums"]["schedule_source_type"] | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          display_name?: string
+          id?: string
+          name?: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          type?: Database["public"]["Enums"]["schedule_source_type"] | null
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -153,65 +576,47 @@ export type Database = {
         }
         Relationships: []
       }
+      units: {
+        Row: {
+          conversion_factor: number
+          created_at: string | null
+          dimension: string
+          display_name: string
+          id: string
+          is_base: boolean | null
+          name: string
+          symbol: string
+          updated_at: string | null
+        }
+        Insert: {
+          conversion_factor: number
+          created_at?: string | null
+          dimension: string
+          display_name: string
+          id?: string
+          is_base?: boolean | null
+          name: string
+          symbol: string
+          updated_at?: string | null
+        }
+        Update: {
+          conversion_factor?: number
+          created_at?: string | null
+          dimension?: string
+          display_name?: string
+          id?: string
+          is_base?: boolean | null
+          name?: string
+          symbol?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
-      pg_all_foreign_keys: {
-        Row: {
-          fk_columns: unknown[] | null
-          fk_constraint_name: unknown
-          fk_schema_name: unknown
-          fk_table_name: unknown
-          fk_table_oid: unknown
-          is_deferrable: boolean | null
-          is_deferred: boolean | null
-          match_type: string | null
-          on_delete: string | null
-          on_update: string | null
-          pk_columns: unknown[] | null
-          pk_constraint_name: unknown
-          pk_index_name: unknown
-          pk_schema_name: unknown
-          pk_table_name: unknown
-          pk_table_oid: unknown
-        }
-        Relationships: []
-      }
-      tap_funky: {
-        Row: {
-          args: string | null
-          is_definer: boolean | null
-          is_strict: boolean | null
-          is_visible: boolean | null
-          kind: unknown
-          langoid: unknown
-          name: unknown
-          oid: unknown
-          owner: unknown
-          returns: string | null
-          returns_set: boolean | null
-          schema: unknown
-          volatility: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
-      _cleanup: { Args: never; Returns: boolean }
-      _contract_on: { Args: { "": string }; Returns: unknown }
-      _currtest: { Args: never; Returns: number }
-      _db_privs: { Args: never; Returns: unknown[] }
-      _extensions: { Args: never; Returns: unknown[] }
-      _get: { Args: { "": string }; Returns: number }
-      _get_latest: { Args: { "": string }; Returns: number[] }
-      _get_note: { Args: { "": string }; Returns: string }
-      _is_verbose: { Args: never; Returns: boolean }
-      _prokind: { Args: { p_oid: unknown }; Returns: unknown }
-      _query: { Args: { "": string }; Returns: string }
-      _refine_vol: { Args: { "": string }; Returns: string }
-      _retval: { Args: { "": string }; Returns: string }
-      _table_privs: { Args: never; Returns: unknown[] }
-      _temptypes: { Args: { "": string }; Returns: string }
-      _todo: { Args: never; Returns: string }
       apply_risk_event_service: {
         Args: {
           p_event_type: string
@@ -235,66 +640,15 @@ export type Database = {
         }
         Returns: Json
       }
-      col_is_null:
-        | {
-            Args: {
-              column_name: unknown
-              description?: string
-              schema_name: unknown
-              table_name: unknown
-            }
-            Returns: string
-          }
-        | {
-            Args: {
-              column_name: unknown
-              description?: string
-              table_name: unknown
-            }
-            Returns: string
-          }
-      col_not_null:
-        | {
-            Args: {
-              column_name: unknown
-              description?: string
-              schema_name: unknown
-              table_name: unknown
-            }
-            Returns: string
-          }
-        | {
-            Args: {
-              column_name: unknown
-              description?: string
-              table_name: unknown
-            }
-            Returns: string
-          }
+      check_user_permission: {
+        Args: {
+          p_permission_key: string
+          p_tenant_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       custom_access_token_hook: { Args: { event: Json }; Returns: Json }
-      diag:
-        | {
-            Args: { msg: unknown }
-            Returns: {
-              error: true
-            } & "Could not choose the best candidate function between: public.diag(msg => text), public.diag(msg => anyelement). Try renaming the parameters or the function itself in the database so function overloading can be resolved"
-          }
-        | {
-            Args: { msg: string }
-            Returns: {
-              error: true
-            } & "Could not choose the best candidate function between: public.diag(msg => text), public.diag(msg => anyelement). Try renaming the parameters or the function itself in the database so function overloading can be resolved"
-          }
-      diag_test_name: { Args: { "": string }; Returns: string }
-      do_tap:
-        | { Args: never; Returns: string[] }
-        | { Args: { "": string }; Returns: string[] }
-      fail:
-        | { Args: never; Returns: string }
-        | { Args: { "": string }; Returns: string }
-      findfuncs: { Args: { "": string }; Returns: string[] }
-      finish: { Args: { exception_on_failure?: boolean }; Returns: string[] }
-      format_type_string: { Args: { "": string }; Returns: string }
       get_pending_security_alerts: {
         Args: { p_limit?: number }
         Returns: {
@@ -321,11 +675,6 @@ export type Database = {
         }
         Returns: boolean
       }
-      has_unique: { Args: { "": string }; Returns: string }
-      in_todo: { Args: never; Returns: boolean }
-      is_empty: { Args: { "": string }; Returns: string }
-      isnt_empty: { Args: { "": string }; Returns: string }
-      lives_ok: { Args: { "": string }; Returns: string }
       log_security_event_service: {
         Args: {
           p_event_type: string
@@ -341,25 +690,12 @@ export type Database = {
         Args: { p_alert_id: string; p_recipient?: string; p_status: string }
         Returns: Json
       }
-      no_plan: { Args: never; Returns: boolean[] }
-      num_failed: { Args: never; Returns: number }
-      os_name: { Args: never; Returns: string }
-      pass:
-        | { Args: never; Returns: string }
-        | { Args: { "": string }; Returns: string }
-      pg_version: { Args: never; Returns: string }
-      pg_version_num: { Args: never; Returns: number }
-      pgtap_version: { Args: never; Returns: number }
       revoke_user_sessions_service: {
         Args: { p_reason?: string; p_user_id: string }
         Returns: number
       }
-      runtests:
-        | { Args: never; Returns: string[] }
-        | { Args: { "": string }; Returns: string[] }
-      skip:
-        | { Args: { "": string }; Returns: string }
-        | { Args: { how_many: number; why: string }; Returns: string }
+      show_limit: { Args: never; Returns: number }
+      show_trgm: { Args: { "": string }; Returns: string[] }
       switch_active_role: {
         Args: { p_role_slug: string; p_tenant_id: string; p_user_id: string }
         Returns: {
@@ -409,28 +745,21 @@ export type Database = {
           isSetofReturn: false
         }
       }
-      throws_ok: { Args: { "": string }; Returns: string }
-      todo:
-        | { Args: { how_many: number }; Returns: boolean[] }
-        | { Args: { how_many: number; why: string }; Returns: boolean[] }
-        | { Args: { why: string }; Returns: boolean[] }
-        | { Args: { how_many: number; why: string }; Returns: boolean[] }
-      todo_end: { Args: never; Returns: boolean[] }
-      todo_start:
-        | { Args: never; Returns: boolean[] }
-        | { Args: { "": string }; Returns: boolean[] }
+      text2ltree: { Args: { "": string }; Returns: unknown }
       touch_auth_session_service: {
         Args: { p_session_id: string; p_tenant_id?: string }
         Returns: Json
       }
+      uuid_to_short_id: { Args: { uid: string }; Returns: string }
     }
     Enums: {
-      [_ in never]: never
+      record_status: "active" | "inactive" | "deprecated"
+      schedule_annotation_type: "note" | "remark" | "condition" | "reference"
+      schedule_node_type: "section" | "group" | "item"
+      schedule_source_type: "govt" | "private"
     }
     CompositeTypes: {
-      _time_trial_type: {
-        a_time: number | null
-      }
+      [_ in never]: never
     }
   }
 }
@@ -557,7 +886,12 @@ export const Constants = {
     Enums: {},
   },
   public: {
-    Enums: {},
+    Enums: {
+      record_status: ["active", "inactive", "deprecated"],
+      schedule_annotation_type: ["note", "remark", "condition", "reference"],
+      schedule_node_type: ["section", "group", "item"],
+      schedule_source_type: ["govt", "private"],
+    },
   },
 } as const
 
