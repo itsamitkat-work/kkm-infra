@@ -1,107 +1,133 @@
-import { useMutation } from '@tanstack/react-query';
+'use client';
+
+import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import { apiFetch } from '@/lib/apiClient';
-import { logout as logoutUser } from '@/lib/auth';
-import { LoginResponse, LoginCredentials, User } from '@/types/auth';
+import type {
+  AuthChangeEvent,
+  Session,
+  User as SupabaseUser,
+} from '@supabase/supabase-js';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import type { LoginCredentials, User } from '@/types/auth';
 
-// Utility functions for data storage
-const storeAuthData = (data: LoginResponse) => {
-  if (typeof window === 'undefined') return;
-  // Store token in cookie
-  document.cookie = `token=${data.token}; path=/; max-age=86400; secure; samesite=strict`;
+function mapSupabaseUserToAppUser(user: SupabaseUser): User {
+  const meta = user.user_metadata as Record<string, string | undefined> | undefined;
+  return {
+    hashId: meta?.hash_id ?? user.id,
+    userName:
+      meta?.display_name ??
+      meta?.full_name ??
+      user.email?.split('@')[0] ??
+      'User',
+    phone: user.phone ?? meta?.phone ?? '',
+    email: user.email ?? '',
+    designation: meta?.designation ?? null,
+  };
+}
 
-  // Store user data in localStorage for app state
-  localStorage.setItem('user', JSON.stringify(data.user));
-  localStorage.setItem(
-    'userPermissions',
-    JSON.stringify({
-      permissions: Array.isArray(data?.permissionslist?.permissions)
-        ? data.permissionslist.permissions
-        : [],
-      roles: Array.isArray(data?.permissionslist?.roles)
-        ? data.permissionslist.roles
-        : [],
-    })
-  );
-};
+function parseJwtStringArray(accessToken: string, key: string): string[] {
+  try {
+    const payload = accessToken.split('.')[1];
+    if (!payload) return [];
+    const pad = '=='.slice(0, (4 - (payload.length % 4)) % 4);
+    const b64 = payload.replace(/-/g, '+').replace(/_/g, '/') + pad;
+    const claims = JSON.parse(atob(b64)) as Record<string, unknown>;
+    const value = claims[key];
+    return Array.isArray(value) ? (value as string[]) : [];
+  } catch {
+    return [];
+  }
+}
 
-const loginApi = async (
-  credentials: LoginCredentials
-): Promise<LoginResponse> => {
-  return await apiFetch<LoginResponse>('/v2/account/login', {
-    method: 'POST',
-    data: credentials,
-  });
-};
+function syncClaimsFromSession(session: Session | null) {
+  if (!session?.access_token) {
+    return { permissions: [] as string[], roles: [] as string[] };
+  }
+  const token = session.access_token;
+  return {
+    permissions: parseJwtStringArray(token, 'permissions'),
+    roles: parseJwtStringArray(token, 'roles'),
+  };
+}
 
-export const useAuth = () => {
+export function useAuth() {
   const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  const [permissions, setPermissions] = useState<string[]>([]);
+  const [roles, setRoles] = useState<string[]>([]);
+  const [isSessionLoading, setIsSessionLoading] = useState(true);
+  const [sessionError, setSessionError] = useState<Error | null>(null);
+  const [loginPending, setLoginPending] = useState(false);
+  const [loginFailed, setLoginFailed] = useState(false);
 
-  const loginMutation = useMutation({
-    mutationFn: loginApi,
-    onSuccess: (data: LoginResponse) => {
-      storeAuthData(data);
+  useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+
+    function applySession(session: Session | null) {
+      if (!session?.user) {
+        setUser(null);
+        setPermissions([]);
+        setRoles([]);
+        return;
+      }
+      setUser(mapSupabaseUserToAppUser(session.user));
+      const claims = syncClaimsFromSession(session);
+      setPermissions(claims.permissions);
+      setRoles(claims.roles);
+    }
+
+    void (async function loadSession() {
+      const result = await supabase.auth.getSession();
+      if (result.error) setSessionError(result.error);
+      applySession(result.data.session);
+      setIsSessionLoading(false);
+    })();
+
+    const { data: sub } = supabase.auth.onAuthStateChange(
+      (_event: AuthChangeEvent, session: Session | null) => {
+        applySession(session);
+      },
+    );
+
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  const login = useCallback(
+    async (credentials: LoginCredentials) => {
+      setLoginPending(true);
+      setLoginFailed(false);
+      const supabase = createSupabaseBrowserClient();
+      const { error } = await supabase.auth.signInWithPassword({
+        email: credentials.email.trim(),
+        password: credentials.password,
+      });
+      setLoginPending(false);
+      if (error) {
+        setLoginFailed(true);
+        toast.error(`Login failed: ${error.message}`);
+        return;
+      }
       router.push('/dashboard');
     },
-    onError: (error: Error) => {
-      toast.error(`Login failed: ${error.message}`);
-    },
-  });
+    [router],
+  );
 
-  const login = (credentials: LoginCredentials) => {
-    loginMutation.mutate(credentials);
-  };
-
-  const logout = () => {
-    logoutUser();
+  const logout = useCallback(async () => {
+    const supabase = createSupabaseBrowserClient();
+    await supabase.auth.signOut();
     toast.success('Logged out successfully!');
-  };
+    router.push('/login');
+  }, [router]);
 
-  const isAuthenticated = () => {
-    if (typeof window === 'undefined') return false;
-    // Check if token exists in cookies
-    return document.cookie.includes('token=');
-  };
+  const isAuthenticated = useCallback(() => Boolean(user), [user]);
 
-  const getUser = (): User | null => {
-    if (typeof window === 'undefined') return null;
-    try {
-      const userData = localStorage.getItem('user');
-      return userData ? JSON.parse(userData) : null;
-    } catch {
-      return null;
-    }
-  };
+  const getUser = useCallback(() => user, [user]);
 
-  const getUserPermissions = (): { permissions: string[]; roles: string[] } => {
-    if (typeof window === 'undefined') return { permissions: [], roles: [] };
-    try {
-      const permissionsData = localStorage.getItem('userPermissions');
-      if (!permissionsData) {
-        return { permissions: [], roles: [] };
-      }
-      const parsed = JSON.parse(permissionsData);
-
-      // Handle backward compatibility: if stored as array (old format), treat as permissions
-      if (Array.isArray(parsed)) {
-        return { permissions: parsed, roles: [] };
-      }
-
-      // Handle new format: object with permissions and roles
-      return {
-        permissions: Array.isArray(parsed?.permissions)
-          ? parsed.permissions
-          : [],
-        roles: Array.isArray(parsed?.roles) ? parsed.roles : [],
-      };
-    } catch {
-      return { permissions: [], roles: [] };
-    }
-  };
-
-  console.log('getUser', getUser());
-  console.log('userPermissions', getUserPermissions());
+  const getUserPermissions = useCallback(
+    () => ({ permissions, roles }),
+    [permissions, roles],
+  );
 
   return {
     login,
@@ -109,8 +135,8 @@ export const useAuth = () => {
     isAuthenticated,
     getUser,
     getUserPermissions,
-    isLoading: loginMutation.isPending,
-    isError: loginMutation.isError,
-    error: loginMutation.error,
+    isLoading: isSessionLoading || loginPending,
+    isError: loginFailed,
+    error: sessionError,
   };
-};
+}

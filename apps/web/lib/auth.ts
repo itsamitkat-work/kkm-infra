@@ -1,10 +1,8 @@
-export const logout = () => {
-  if (typeof window === 'undefined') return;
-  // Clear token cookie
-  document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
-  // Clear localStorage
-  localStorage.removeItem('user');
-  localStorage.removeItem('userPermissions');
+export async function logoutFromSession(): Promise<void> {
+  if (typeof window === 'undefined') return;
+  const supabase = createSupabaseBrowserClient();
+  await supabase.auth.signOut();
   window.location.href = '/login';
-};
+}

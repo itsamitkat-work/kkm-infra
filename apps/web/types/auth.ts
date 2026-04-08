@@ -1,4 +1,6 @@
+/** App user shape (legacy API fields + Supabase profile). */
 export interface User {
+  /** Business user id from API when synced; falls back to Supabase auth user id. */
   hashId?: string;
   userName: string;
   phone: string;
@@ -6,13 +8,7 @@ export interface User {
   designation: string | null;
 }
 
-export interface LoginResponse {
-  token: string;
-  user: User;
-  permissionslist: { permissions: string[]; roles: string[] };
-}
-
 export interface LoginCredentials {
-  phone: string;
+  email: string;
   password: string;
 }

@@ -20,7 +20,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<'div'>) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
@@ -28,10 +28,10 @@ export function LoginForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login({ phone: username, password });
+    login({ email, password });
   };
 
-  const isFormValid = username.trim() !== '' && password.trim() !== '';
+  const isFormValid = email.trim() !== '' && password.trim() !== '';
 
   return (
     <div className={cn('flex flex-col gap-4 sm:gap-6', className)} {...props}>
@@ -41,7 +41,7 @@ export function LoginForm({
             Login to your account
           </CardTitle>
           <CardDescription className='text-sm'>
-            Enter your username and password to continue
+            Enter your email and password to continue
           </CardDescription>
         </CardHeader>
         <CardContent className='pt-0'>
@@ -49,17 +49,17 @@ export function LoginForm({
             onSubmit={handleSubmit}
             className='flex flex-col gap-4 sm:gap-6'
           >
-            {/* Username */}
             <div className='grid gap-2 sm:gap-3'>
-              <Label htmlFor='username' className='text-sm'>
-                Username
+              <Label htmlFor='email' className='text-sm'>
+                Email
               </Label>
               <Input
-                id='username'
-                type='text'
-                placeholder='Enter your username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                id='email'
+                type='email'
+                autoComplete='email'
+                placeholder='you@example.com'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -105,7 +105,7 @@ export function LoginForm({
             {/* Error Display */}
             {isError && (
               <p className='text-sm text-red-500'>
-                Invalid username or password
+                Invalid email or password
               </p>
             )}
 
