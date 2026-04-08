@@ -1,0 +1,133 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/24.0 CONSERVATION OF HERITAGE BUILDINGS.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "CONSERVATION OF HERITAGE BUILDINGS",
+      "code": "24.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note:- (1) The elevational area of the scaffolding shall be measured for payment purpose. (2) The payment will be made once only for execution of all items for such works. sqm",
+          "source_page": 2,
+          "order_index": 0
+        }
+      ],
+      "children_count": 9,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Raking out joints of stone masonry surface to the required width and depth, with due care and precaution, by mechanical / manual means, including preparing and cleaning the surface for re-pointing/ refilling of joints, including disposal of rubbish to the dumping ground within 50 metre lead.",
+          "code": "24.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 72.45,
+          "rate_display": "72.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double scaffolding system (cup lock type) on the exterior side of building/structure, upto 25 metre height, above ground level, including additional rows of scaffolding in stepped manner as per requirement of site, made with 40 mm dia M.S. tube, placed 1.5 metre centre to centre, horizontal & vertical tubes joint with cup & lock system with M.S. Tubes, M.S. tube challis, M.S. clamps and staircase system in the scaffolding for working platform etc. and maintaining it in a serviceable condition for execution of work of cleaning and/ or pointing and/ or applying chemical and removing it thereafter. The scaffolding system shall be stiffened with bracings, runners, connecting with the building etc, wherever required, if feasible, for inspection of work at required locations with essential safety features for the workmen etc., complete as per directions and approval of Engineer-in-charge.",
+          "code": "24.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 1,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "338.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Cleaning the sand stone surface and removing dirt, dust, bird dropping, grease, oil, algae, fungus, monkey beats, vegetable growth etc., including providing, applying and washing the surface with liquid Ammonia Chemical of 5% solution and other chemical cleaning agent as approved by Archaeological Survey of India/ Engineer-in-charge, of approved brand and manufacturer, with the help of required scrubbers and also cleaning with machine operated water jet mixed with desired quantity of fine silica where ever required, without causing any scratching/ damage to the stone surface and finally washing the surface with clean water with the help of pressure jet machine, complete in all respect, including taking all precautions to safeguard ventilators, windows, doors etc. by suitable covering so as to avoid any damage to the building/structure, all as per direction of Engineer-in-charge (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 3,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 211.05,
+          "rate_display": "211.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying antifungal wash treatment using 3% solution of sodium pentachlorophenate, of reputed brand and manufacturer, on cleaned sand stone surface at desired locations as per direction of Engineer-in-charge (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 77.9,
+          "rate_display": "77.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Ruled / Flush pointing on Red sand stone masonry surface with lime, surkhi and marble dust mortar in the ratio of 1:1.5:1/2 {One lime: 1.5 surkhi (50% red and 50% light yellow surkhi ) : 1/2 marble dust}. (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 5,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 374.3,
+          "rate_display": "374.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Ruled/ Flush pointing on White sand stone masonry surface with lime, surkhi and marble dust mortar in the ratio of 1:1.5:1/2 {One lime : 1.5 surkhi (15% dark red and 85% light yellow surkhi) : 1/2 marble dust}. (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 374.3,
+          "rate_display": "374.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Applying two or more coat of Ethyl Silicate chemical as approved by Archaeological Survey of India/ Engineer-in-charge, of approved brand and manufacturer, with brush or spray on the existing stone masonry surface till there is no further absorption of chemical by stone surface, including protecting the applied surface from direct sunlight by suitable means during application, all complete as per direction of the Engineer- in-Charge (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 329.05,
+          "rate_display": "329.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Applying breathable, non-reactive, antifungal, and water repellant Silane/ Siloxane chemical as approved by Archaeological Survey of India/ Engineer-in-charge, of approved brand and manufacture, diluted with solvent mineral Turpentine oil in the ratio of 1:12 (One part of approved chemical :12 Part of Turpentine oil), on the existing sand stone masonry surface with two or more coats to give uniform application of chemical on the surface, all complete as per direction of Engineer-In-charge (The rate is inclusive of all materials & labours involved except scaffolding).",
+          "code": "24.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 8,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 109.9,
+          "rate_display": "109.90"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/24.0 CONSERVATION OF HERITAGE BUILDINGS.pdf",
+    "row_count": 9,
+    "note_count": 1,
+    "leaf_count": 9,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

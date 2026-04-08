@@ -1,0 +1,1464 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/15.0 DISMANTLING AND DEMOLISHING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "DISMANTLING AND DEMOLISHING",
+      "code": "15.0",
+      "children_count": 74,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Demolishing lime concrete manually/ by mechanical means and disposal of material within 50 metres lead as per direction of Engineer- in-charge.",
+          "code": "15.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 851.5,
+          "rate_display": "851.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing cement concrete manually/ by mechanical means including disposal of material within 50 metres lead as per direction of Engineer - in - charge.",
+          "code": "15.2",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Nominal concrete 1:3:6 or richer mix (including equivalent design mix)",
+              "code": "15.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2434.25,
+              "rate_display": "2434.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Nominal concrete 1:4:8 or leaner mix (including equivalent design mix)",
+              "code": "15.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1503.6,
+              "rate_display": "1503.60"
+            }
+          ],
+          "order_index": 1,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing R.C.C. work manually/ by mechanical means including stacking of steel bars and disposal of unserviceable material within 50 metres lead as per direction of Engineer - in- charge.",
+          "code": "15.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3551.25,
+          "rate_display": "3551.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing R.B. work manually/ by mechanical means including stacking of steel bars and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in- charge.",
+          "code": "15.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 5,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 3177.25,
+          "rate_display": "3177.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for cutting reinforcement bars manually/ by mechanical means in R.C.C. or R.B. work (Payment shall be made on the cross sectional area of R.C.C. or R.B. work) as per direction of Engineer-in-charge.",
+          "code": "15.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 1147.2,
+          "rate_display": "1147.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for scrapping, cleaning and straightening reinforcement from R.C.C. or R.B. work. kg",
+          "code": "15.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "9.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing brick work manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge.",
+          "code": "15.7",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In mud mortar",
+              "code": "15.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 704.9,
+              "rate_display": "704.90"
+            },
+            {
+              "node_type": "item",
+              "title": "In lime mortar with old mughal bricks",
+              "code": "15.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1783.35,
+              "rate_display": "1783.35"
+            },
+            {
+              "node_type": "item",
+              "title": "In lime mortar",
+              "code": "15.7.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 851.5,
+              "rate_display": "851.50"
+            },
+            {
+              "node_type": "item",
+              "title": "In cement mortar",
+              "code": "15.7.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2060.2,
+              "rate_display": "2060.20"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Removing mortar from bricks and cleaning bricks including stacking within a lead of 50 m (stacks of cleaned bricks shall be measured):",
+          "code": "15.8",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From brick work in mud mortar 1000 Nos",
+              "code": "15.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "From brick work in lime mortar 1000 Nos",
+              "code": "15.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "From brick work in cement mortar 1000 Nos",
+              "code": "15.8.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 1
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "4658.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5355.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "6700.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 20,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing stone rubble masonry manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.9",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In lime mortar",
+              "code": "15.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1158.1,
+              "rate_display": "1158.10"
+            },
+            {
+              "node_type": "item",
+              "title": "In cement mortar",
+              "code": "15.9.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2458.95,
+              "rate_display": "2458.95"
+            }
+          ],
+          "order_index": 21,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling dressed stone work ashlar face stone work, marble work or precast concrete work manually/ by mechanical means including stacking of serviceable and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In lime mortar",
+              "code": "15.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1464.25,
+              "rate_display": "1464.25"
+            },
+            {
+              "node_type": "item",
+              "title": "In cement mortar",
+              "code": "15.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2877.75,
+              "rate_display": "2877.75"
+            }
+          ],
+          "order_index": 24,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Removing mortar from and cleaning stones and concrete articles (net quantity of stacks of cleaned materials will be measured):",
+          "code": "15.11",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In lime mortar",
+              "code": "15.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 478.55,
+              "rate_display": "478.55"
+            },
+            {
+              "node_type": "item",
+              "title": "In cement mortar",
+              "code": "15.11.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 689.2,
+              "rate_display": "689.20"
+            }
+          ],
+          "order_index": 27,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling doors, windows and clerestory windows (steel or wood) shutter including chowkhats, architrave, holdfasts etc. complete and stacking within 50 metres lead :",
+          "code": "15.12",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Of area 3 sq. metres and below",
+              "code": "15.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 367.2,
+              "rate_display": "367.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Of area beyond 3 sq. metres",
+              "code": "15.12.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 502.75,
+              "rate_display": "502.75"
+            }
+          ],
+          "order_index": 30,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out doors, windows and clerestory window shutters (steel or wood) including stacking within 50 metres lead :",
+          "code": "15.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Of area 3 sq. metres and below",
+              "code": "15.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 143.5,
+              "rate_display": "143.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Of area beyond 3 sq. metres",
+              "code": "15.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 188.9,
+              "rate_display": "188.90"
+            }
+          ],
+          "order_index": 33,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling wood work in frames, trusses, purlins and rafters up to 10 metres span and 5 metres height including stacking the material within 50 metres lead :",
+          "code": "15.14",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Of sectional area 40 square centimetres and above",
+              "code": "15.14.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 37,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 4459.1,
+              "rate_display": "4459.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Of sectional area below 40 square centimetres",
+              "code": "15.14.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 38,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 17.85,
+              "rate_display": "17.85"
+            }
+          ],
+          "order_index": 36,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of wood work for every additional span of one metre or part thereof beyond 10 metres :",
+          "code": "15.15",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Of sectional area 40 square centimetres and above cum per span",
+              "code": "15.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 2,
+              "unit": "metre"
+            },
+            {
+              "node_type": "item",
+              "title": "Of sectional area below 40 square centimetres metre per span",
+              "code": "15.15.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 2,
+              "unit": "metre"
+            }
+          ],
+          "order_index": 39,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "589.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 41,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "1.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 43,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of wood work for every additional height of one metre or part thereof beyond 5 metres :",
+          "code": "15.16",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Of sectional area 40 square centimetres and above cum per height",
+              "code": "15.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 2,
+              "unit": "metre"
+            },
+            {
+              "node_type": "item",
+              "title": "Of sectional area below 40 square centimetres metre per height",
+              "code": "15.16.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 2,
+              "unit": "metre"
+            }
+          ],
+          "order_index": 44,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "857.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling steel work in single sections including dismembering and stacking within 50 metres lead in:",
+          "code": "15.17",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "R.S. Joists kg",
+              "code": "15.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Channels, angles, tees and flats kg",
+              "code": "15.17.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 2
+            }
+          ],
+          "order_index": 49,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "2.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling steel work in built up sections in angles, tees, flats and channels including all gusset plates, bolts, nuts, cutting rivets, welding etc. including dismembering and stacking within 50 metres lead. kg",
+          "code": "15.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 55,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling steel work manually/ by mechanical means in built up sections without dismembering and stacking within 50 metres lead as per direction of Engineer-in-charge. kg",
+          "code": "15.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 56,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 57,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional span of one metre or part thereof beyond 10 metres kg per span",
+          "code": "15.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 58,
+          "source_page": 2,
+          "unit": "metre"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "0.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 59,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional height of one metre or part thereof beyond 5 metres. kg per height",
+          "code": "15.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 2,
+          "unit": "metre"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for marking of structural steel work required to be re-erected. kg",
+          "code": "15.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 62,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "4.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 63,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling tile work in floors and roofs laid in cement mortar including stacking material within 50 metres lead.",
+          "code": "15.23",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For thickness of tiles 10 mm to 25 mm",
+              "code": "15.23.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 65,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 73.4,
+              "rate_display": "73.40"
+            },
+            {
+              "node_type": "item",
+              "title": "For thickness of tiles above 25 mm and up to 40 mm",
+              "code": "15.23.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 113.35,
+              "rate_display": "113.35"
+            }
+          ],
+          "order_index": 64,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing dry brick pitching in floors, drains etc. including stacking of serviceable material and disposal of unserviceable material within 50 metres lead :",
+          "code": "15.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 67,
+          "source_page": 3,
+          "unit": "cum",
+          "rate": 1317.65,
+          "rate_display": "1317.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling stone slab flooring laid in cement mortar including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 68,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 266.45,
+          "rate_display": "266.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing brick tile covering in terracing including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 69,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 105.35,
+          "rate_display": "105.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing mud phaska in terracing and disposal of material within 50 metres lead.",
+          "code": "15.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 70,
+          "source_page": 3,
+          "unit": "cum",
+          "rate": 914.3,
+          "rate_display": "914.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling roofing including ridges, hips, valleys and gutters etc., and stacking the material within 50 metres lead of:",
+          "code": "15.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "G.S. Sheet",
+              "code": "15.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 164.95,
+              "rate_display": "164.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Asbestos Cement sheet",
+              "code": "15.28.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 77.3,
+              "rate_display": "77.30"
+            }
+          ],
+          "order_index": 71,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling stone slab roofing over wooden karries or R.C.C. battens (dismantling karries and battens to be paid for separately), including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.29",
+          "children_count": 0,
+          "children": [],
+          "order_index": 74,
+          "source_page": 3,
+          "unit": "cum",
+          "rate": 2664.65,
+          "rate_display": "2664.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling jack arch roofing and floors including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 75,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 253.9,
+          "rate_display": "253.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling tiled roofing with battens, boarding etc. complete including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 76,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 209.9,
+          "rate_display": "209.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing thatch roofing including mats, bamboo, jaffari etc. complete including stacking of serviceable material and disposal of unserviceable material within 50 metres lead.",
+          "code": "15.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 77,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 57.7,
+          "rate_display": "57.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling wooden ballies in posts and struts including stacking within 50metres lead.",
+          "code": "15.33",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 3,
+          "unit": "metre",
+          "rate": 20.95,
+          "rate_display": "20.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling and stacking within 50 metres lead, fencing posts or struts including all earth work and dismantling of concrete etc. in base of:",
+          "code": "15.34",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "T’ or ‘L’ iron or pipe",
+              "code": "15.34.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 80,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 230.9,
+              "rate_display": "230.90"
+            },
+            {
+              "node_type": "item",
+              "title": "R.C.C.",
+              "code": "15.34.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 243.3,
+              "rate_display": "243.30"
+            }
+          ],
+          "order_index": 79,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Cutting ballies or wooden posts of fencing at the point of projection above the concrete or ground and stacking the same within 50 metres lead.",
+          "code": "15.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 82,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 13.45,
+          "rate_display": "13.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling barbed wire or flexible wire rope in fencing including making rolls and stacking within 50 metres lead. kg",
+          "code": "15.36",
+          "children_count": 0,
+          "children": [],
+          "order_index": 83,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "36.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 84,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling wooden trellis work excluding frames but including stacking the serviceable material within 50 metres lead.",
+          "code": "15.37",
+          "children_count": 0,
+          "children": [],
+          "order_index": 85,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 64.85,
+          "rate_display": "64.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling expanded metal or I.R.C. fabrics with necessary battens and beading including stacking the serviceable material within 50 metres lead.",
+          "code": "15.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 86,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 75.8,
+          "rate_display": "75.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling wooden boardings in lining of walls and partitions, excluding supporting members but including stacking within 50 metres lead :",
+          "code": "15.39",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Up to 10 mm thick",
+              "code": "15.39.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 61.0,
+              "rate_display": "61.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Thickness above 10 mm up to 25 mm",
+              "code": "15.39.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 77.75,
+              "rate_display": "77.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Thickness above 25 mm up to 40 mm",
+              "code": "15.39.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 90.35,
+              "rate_display": "90.35"
+            }
+          ],
+          "order_index": 87,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling precast concrete or stone slabs in walls, partition walls etc. including stacking within 50 metres lead :",
+          "code": "15.40",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Thickness up to 40 mm",
+              "code": "15.40.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 92,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 289.3,
+              "rate_display": "289.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Thickness above 40 mm up to 75 mm",
+              "code": "15.40.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 433.55,
+              "rate_display": "433.55"
+            }
+          ],
+          "order_index": 91,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling cement asbestos or other hard board ceiling or partition walls including stacking of serviceable materials and disposal of unserviceable materials within 50 metres lead.",
+          "code": "15.41",
+          "children_count": 0,
+          "children": [],
+          "order_index": 94,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 56.35,
+          "rate_display": "56.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling C.I. or asbestos rain water pipe with fittings and clamps including stacking the material within 50 metres lead :",
+          "code": "15.42",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 to 80 mm dia pipe",
+              "code": "15.42.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 96,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 75.7,
+              "rate_display": "75.70"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm dia pipe",
+              "code": "15.42.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 97,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 78.0,
+              "rate_display": "78.00"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm dia pipe",
+              "code": "15.42.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 80.25,
+              "rate_display": "80.25"
+            }
+          ],
+          "order_index": 95,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.43",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Water bound macadam road",
+              "code": "15.43.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 100,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 217.45,
+              "rate_display": "217.45"
+            },
+            {
+              "node_type": "item",
+              "title": "bituminous road",
+              "code": "15.43.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 101,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 428.5,
+              "rate_display": "428.50"
+            }
+          ],
+          "order_index": 99,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling G.I. pipes (external work) including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means including stacking of pipes within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.44",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "15 mm to 40 mm nominal bore",
+              "code": "15.44.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 103,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 149.8,
+              "rate_display": "149.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 40 mm nominal bore",
+              "code": "15.44.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 104,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 161.4,
+              "rate_display": "161.40"
+            }
+          ],
+          "order_index": 102,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling C.I. pipes including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means breaking lead caulked joints, melting of lead and making into blocks including stacking of pipes & lead at site within 50 metre lead as per direction of Engineer-in-charge:",
+          "code": "15.45",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Up to 150 mm diameter",
+              "code": "15.45.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 106,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 332.4,
+              "rate_display": "332.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 150 mm dia up to 300 mm dia",
+              "code": "15.45.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 107,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 456.65,
+              "rate_display": "456.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 300 mm diameter",
+              "code": "15.45.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 108,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 614.3,
+              "rate_display": "614.30"
+            }
+          ],
+          "order_index": 105,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling steel cylinder R.C. pipes including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means breaking lead caulked joints, melting of lead and making into blocks including stacking of pipes & lead at site within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.46",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Up to 600 mm diameter",
+              "code": "15.46.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 110,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 695.25,
+              "rate_display": "695.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 600 mm diameter",
+              "code": "15.46.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 111,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 1752.45,
+              "rate_display": "1752.45"
+            }
+          ],
+          "order_index": 109,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling asbestos cement pressure pipes including excavation and refilling trenches after taking out the pipes manually/ by mechanical means and stacking the pipes within 50 metres lead as per direction of Engineer-in-charge :",
+          "code": "15.47",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Up to 150 mm diameter",
+              "code": "15.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 332.15,
+              "rate_display": "332.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 150 mm diameter",
+              "code": "15.47.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 114,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 403.05,
+              "rate_display": "403.05"
+            }
+          ],
+          "order_index": 112,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out C.I. cover with frame from R.C.C. top slab of manholes of various sizes including demolishing of R.C.C. work manually/ by mechanical means and stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead as per direction of Engineer-in-charge.",
+          "code": "15.48",
+          "children_count": 0,
+          "children": [],
+          "order_index": 115,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 697.4,
+          "rate_display": "697.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out C.I. cover with frame from R.C.C. top slab of inspection chambers of various sizes including demolishing of R.C.C. work manually/ by mechanical means and stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead as per direction of Engineer-in-charge.",
+          "code": "15.49",
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 406.75,
+          "rate_display": "406.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of R.C.C. spun vent shaft including excavating the cement concrete pit completely, taking out the shaft, refilling the excavated gap, stacking the useful materials near the site and disposal of unserviceable materials within 50 metres lead.",
+          "code": "15.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 117,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 4623.7,
+          "rate_display": "4623.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of road gully chamber of various sizes including C.I. grating with frame including stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead including refilling the excavated gap.",
+          "code": "15.51",
+          "children_count": 0,
+          "children": [],
+          "order_index": 118,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 958.75,
+          "rate_display": "958.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of flushing cistern of all types (C.I./PVC/Vitrious China) including stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead.",
+          "code": "15.52",
+          "children_count": 0,
+          "children": [],
+          "order_index": 119,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 112.05,
+          "rate_display": "112.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of C.I. sluice valve including stacking of useful materials within a lead of 50 metres",
+          "code": "15.53",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Up to 150 mm diameter",
+              "code": "15.53.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 121,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 319.5,
+              "rate_display": "319.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Above 150 mm diameter",
+              "code": "15.53.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 122,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1184.15,
+              "rate_display": "1184.15"
+            }
+          ],
+          "order_index": 120,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of spindle fire hydrant including stacking of useful materials within 50 metres lead.",
+          "code": "15.54",
+          "children_count": 0,
+          "children": [],
+          "order_index": 123,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 726.35,
+          "rate_display": "726.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of cement concrete platform along with curtain walls and base concrete etc. including stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead :",
+          "code": "15.55",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "120 x 120 cm (outside to outside)",
+              "code": "15.55.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 125,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1104.05,
+              "rate_display": "1104.05"
+            },
+            {
+              "node_type": "item",
+              "title": "210 x 120 cm (outside to outside)",
+              "code": "15.55.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 126,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1693.35,
+              "rate_display": "1693.35"
+            },
+            {
+              "node_type": "item",
+              "title": "320 x 120 cm (outside to outside)",
+              "code": "15.55.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 127,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 2396.95,
+              "rate_display": "2396.95"
+            }
+          ],
+          "order_index": 124,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling old plaster or skirting raking out joints and cleaning the surface for plaster including disposal of rubbish to the dumping ground within 50 metres lead.",
+          "code": "15.56",
+          "children_count": 0,
+          "children": [],
+          "order_index": 128,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 54.65,
+          "rate_display": "54.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling aluminium/ Gypsum partitions, doors, windows, fixed glazing and false ceiling including disposal of unserviceable material and stacking of serviceable material with in 50 meters lead as directed by Engineer- in-charge.",
+          "code": "15.57",
+          "children_count": 0,
+          "children": [],
+          "order_index": 129,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 56.35,
+          "rate_display": "56.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Demolishing R.C.C. work by mechanical means and stockpiling at designated locations and disposal of dismantled materials up to a lead of 1 kilometre, stacking serviceable and unserviceable material separately including cutting reinforcement bars.",
+          "code": "15.58",
+          "children_count": 0,
+          "children": [],
+          "order_index": 130,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 2818.9,
+          "rate_display": "2818.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of flexible pavement (bituminous courses) by mechanical means and disposal of dismantled material up to a lead of 1 kilometre, as per direction of Engineer-in-charge.",
+          "code": "15.59",
+          "children_count": 0,
+          "children": [],
+          "order_index": 131,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 420.8,
+          "rate_display": "420.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Disposal of building rubbish / malba / similar unserviceable, dismantled or waste materials by mechanical means, including loading, transporting, unloading to approved municipal dumping ground or as approved by Engineer-in-charge, beyond 50 m initial lead, for all leads including all lifts involved.",
+          "code": "15.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 132,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 263.95,
+          "rate_display": "263.95"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/15.0 DISMANTLING AND DEMOLISHING.pdf",
+    "row_count": 133,
+    "note_count": 0,
+    "leaf_count": 106,
+    "duplicate_codes": [
+      "3.40",
+      "0.85"
+    ],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

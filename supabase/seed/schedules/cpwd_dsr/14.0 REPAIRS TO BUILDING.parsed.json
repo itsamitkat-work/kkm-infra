@@ -1,0 +1,1524 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/14.0 REPAIRS TO BUILDING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "REPAIRS TO BUILDING",
+      "code": "14.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: - This item to be used for maintenance work judicially, necessary deduction for scaffolding in the existing item to be done.",
+          "source_page": 5,
+          "order_index": 0
+        }
+      ],
+      "children_count": 73,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Repairs to plaster of thickness 12 mm to 20 mm in patches of area 2.5 sq.meters and under, including cutting the patch in proper shape, raking out joints and preparing and plastering the surface of the walls complete, including disposal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With cement mortar 1:4 (1 cement : 4 fine sand)",
+              "code": "14.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 547.4,
+              "rate_display": "547.40"
+            },
+            {
+              "node_type": "item",
+              "title": "With cement mortar 1:4 (1cement: 4 coarse sand)",
+              "code": "14.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 560.5,
+              "rate_display": "560.50"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing chowkhats in existing opening including embedding chowkhats in floors or walls cutting masonry for holdfasts, embedding hold fasts in cement concrete blocks of size 15 x 10 x 10 cm with cement concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size), painting two coats of approved wood preservative to sides of chowkhats and making good the damages to walls and floors as required complete, including disposal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.2",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Door chowkhats",
+              "code": "14.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 1782.55,
+              "rate_display": "1782.55"
+            },
+            {
+              "node_type": "item",
+              "title": "Window chowkhats",
+              "code": "14.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 1125.15,
+              "rate_display": "1125.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Clerestory window chowkhats",
+              "code": "14.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 851.0,
+              "rate_display": "851.00"
+            }
+          ],
+          "order_index": 3,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing chowkhat in existing opening in brick/ RCC wall with dash fasteners/ Chemical fasteners of appropriate size (3 nos on each vertical member of door chowkhat and 2 nos on each vertical member of window chowkhats), including Cost of dash fasteners/ chemical fastener.",
+          "code": "14.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "each",
+          "rate": 217.1,
+          "rate_display": "217.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Making the opening in brick masonry including dismantling in floor or walls by cutting masonry and making good the damages to walls, flooring and jambs complete, to match existing surface including disposal of mulba/ rubbish to the nearest municipal dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.4",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For door/ window/ clerestory window",
+              "code": "14.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1264.35,
+              "rate_display": "1264.35"
+            }
+          ],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing glass panes, with putty and nails wherever necessary including racking out the old putty:",
+          "code": "14.5",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 4 mm (weight not less than 10kg/sqm)",
+              "code": "14.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1090.65,
+              "rate_display": "1090.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 5 mm (weight not less than 12.5kg/sqm)",
+              "code": "14.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1416.15,
+              "rate_display": "1416.15"
+            }
+          ],
+          "order_index": 10,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing glass panes, with wooden fillets wherever necessary:",
+          "code": "14.6",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 4 mm (weight not less than 10kg/sqm)",
+              "code": "14.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1580.9,
+              "rate_display": "1580.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 5 mm (weight not less than 12.5kg/sqm)",
+              "code": "14.6.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1906.4,
+              "rate_display": "1906.40"
+            }
+          ],
+          "order_index": 13,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing glass panes and refixing existing wooden fillets:",
+          "code": "14.7",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 4 mm (weight not less than 10kg/sqm)",
+              "code": "14.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1227.3,
+              "rate_display": "1227.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Float glass panes of nominal thickness 5 mm (weight not less than 12.5kg/sqm)",
+              "code": "14.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1552.75,
+              "rate_display": "1552.75"
+            }
+          ],
+          "order_index": 16,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and fixing new wooden fillets wherever necessary:",
+          "code": "14.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "2nd class teak wood fillets",
+              "code": "14.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 77.7,
+              "rate_display": "77.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Hollock wood fillets",
+              "code": "14.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 70.75,
+              "rate_display": "70.75"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Renewal of old putty of glass panes (length)",
+          "code": "14.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 22,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 56.15,
+          "rate_display": "56.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Refixing old glass panes with putty and nails",
+          "code": "14.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 23,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 729.85,
+          "rate_display": "729.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing old glass panes with wooden fillets (excluding cost of fillets)",
+          "code": "14.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 24,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 679.6,
+          "rate_display": "679.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 16 mm M.S. Fan clamps of standard shape and size in existing R.C.C. slab, including cutting chase, anchoring clamp to reinforcement bar, including cleaning, refilling, making good the chase with matching concrete, plastering and painting the exposed portion of the clamps complete.",
+          "code": "14.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2,
+          "unit": "each",
+          "rate": 563.9,
+          "rate_display": "563.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Regrading terracing of mud phaska covered with tiles or brick, in cement mortar by dismantling tiles or bricks, removing mud plaster, preparing the surface of mud phaska to proper slope, relaying mud plaster gobri leaping and tiles or bricks, grouted in cement mortar 1:3 (1 cement : 3 fine sand), including replacing unserviceable tiles or bricks with new ones and disposal of unserviceable material to the dumping ground (the cost of the new tiles or brick excluded), all complete as per direction of Engineer-in- Charge.",
+          "code": "14.13",
+          "children_count": 0,
+          "children": [],
+          "order_index": 26,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 696.05,
+          "rate_display": "696.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Replacing sand stone slabs in roofing, laid in cement mortar 1:4 (1 cement : 4 coarse sand), including necessary repairs and cement pointing with same mortar complete, including disposal of rubbish to dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.14",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red/ white sand stone slabs 30 to 50 mm thick",
+              "code": "14.14.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1365.85,
+              "rate_display": "1365.85"
+            }
+          ],
+          "order_index": 27,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing wooden battens in roofs, including making good the holes in wall and painting with oil type wood preservative of approved brand and manufacture complete, including removal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.15",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Sal wood battens",
+              "code": "14.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 99120.65,
+              "rate_display": "99120.65"
+            }
+          ],
+          "order_index": 29,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing wooden beams in roofs including making good the holes in walls and painting with oil type wood preservative of approved brand and manufacture complete, including removal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.16",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Not exceeding 4.00 metres in length.",
+              "code": "14.16.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sal wood beams",
+                  "code": "14.16.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 33,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 104573.95,
+                  "rate_display": "104573.95"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hollock wood beams",
+                  "code": "14.16.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 34,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 70271.7,
+                  "rate_display": "70271.70"
+                }
+              ],
+              "order_index": 32,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Above 4.00 metres and upto 5.00 metres length.",
+              "code": "14.16.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sal wood beams",
+                  "code": "14.16.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 107320.0,
+                  "rate_display": "107320.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hollock wood beams",
+                  "code": "14.16.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 37,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 72987.25,
+                  "rate_display": "72987.25"
+                }
+              ],
+              "order_index": 35,
+              "source_page": 2
+            }
+          ],
+          "order_index": 31,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Raking out joints in lime or cement mortar and preparing the surface for re-pointing or replastering, including disposal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
+          "code": "14.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 38,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 72.45,
+          "rate_display": "72.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Flush pointing with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement for flat tile bricks on top of mud phaska :",
+          "code": "14.18",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With F.P.S. brick tiles",
+              "code": "14.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 137.7,
+              "rate_display": "137.70"
+            },
+            {
+              "node_type": "item",
+              "title": "With modular brick tiles",
+              "code": "14.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 41,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 139.05,
+              "rate_display": "139.05"
+            }
+          ],
+          "order_index": 39,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out wind ties from roof including cutting out rusted bolts, nuts etc. and removing materials to any distance within compound and stacking. kg",
+          "code": "14.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 42,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 43,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing of old wind tie with new fittings including painting two or more coats with anticorrosive bitumastic paint of approved brand & manufacturer over and including priming coat of ready mixed zinc chromate yellow primer of approved brand.",
+          "code": "14.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 44,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 126.0,
+          "rate_display": "126.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing bottom rail and/or top runner of collapsible gate including making good all damages and applying priming coat of zinc chromate yellow primer of approved brand and manufacturer. kg",
+          "code": "14.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 45,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "298.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Renewing Wrought iron or M.S. Wheel or roller of steel door or gate and fitting and fixing the same with necessary clamps, nuts and bolts/welding and erection etc. complete.",
+          "code": "14.22",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Wheel 50 mm dia and below per wheel",
+              "code": "14.22.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 48,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Wheel above 50 mm dia per wheel",
+              "code": "14.22.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 3
+            }
+          ],
+          "order_index": 47,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "123.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 49,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "EARTH WORK",
+          "code": "304.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Pumping out water caused by springs, tidal or river seepage, broken water mains or drains and the like. kilo litre",
+          "code": "14.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 52,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "BRICK WORK",
+          "code": "231.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay bricks of class designation 7.5 in mud mortar",
+          "code": "14.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 3,
+          "unit": "cum",
+          "rate": 6207.25,
+          "rate_display": "6207.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 25 mm thick shutters for cup board etc. :",
+          "code": "14.26",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Panelled or panelled & glazed shutters :",
+              "code": "14.26.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Superior class teak wood including nickel plated bright finished M.S. piano hinges with necessary screws.",
+                  "code": "14.26.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 57,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 5127.0,
+                  "rate_display": "5127.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Ist class teak wood including nickel plated bright finished M.S. piano hinges with necessary screws.",
+                  "code": "14.26.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 58,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 4484.85,
+                  "rate_display": "4484.85"
+                }
+              ],
+              "order_index": 56,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Glazed shutters :",
+              "code": "14.26.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Superior class teak wood including nickel plated bright finished M.S. piano hinges with necessary screws.",
+                  "code": "14.26.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 60,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 5054.05,
+                  "rate_display": "5054.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Ist class teak wood including nickel plated bright finished M.S. piano hinges with necessary screws.",
+                  "code": "14.26.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 61,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 4362.45,
+                  "rate_display": "4362.45"
+                }
+              ],
+              "order_index": 59,
+              "source_page": 3
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing plain jaffri door and window shutters including bright or/and black enamelled M.S. butt hinges with necessary screws 35x10 mm laths placed 35 mm apart (frames to be paid separately), including fixing 50x12 mm beading complete with :",
+          "code": "14.27",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Second class teak wood",
+              "code": "14.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 63,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 4602.65,
+              "rate_display": "4602.65"
+            }
+          ],
+          "order_index": 62,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing brass curtain rods of wall thickness 1.25 mm with two brass brackets fixed with brass screws and wooden plugs etc. wherever necessary complete.",
+          "code": "14.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "20 mm diameter.",
+              "code": "14.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 65,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 343.5,
+              "rate_display": "343.50"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm diameter.",
+              "code": "14.28.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 421.75,
+              "rate_display": "421.75"
+            }
+          ],
+          "order_index": 64,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. round or square bars with M.S. flats at required spacing in wooden frames of windows and clerestory windows. kg",
+          "code": "14.29",
+          "children_count": 0,
+          "children": [],
+          "order_index": 67,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "120.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 68,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing joists (karries) including hoisting, fixing in position and applying wood preservative on unexposed surface etc. complete with :",
+          "code": "14.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Sal wood",
+              "code": "14.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 97978.3,
+              "rate_display": "97978.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Hollock wood",
+              "code": "14.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 71,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 64022.85,
+              "rate_display": "64022.85"
+            }
+          ],
+          "order_index": 69,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass single acting spring hinges with necessary brass screws etc. complete :",
+          "code": "14.31",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "150 mm",
+              "code": "14.31.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 765.05,
+              "rate_display": "765.05"
+            },
+            {
+              "node_type": "item",
+              "title": "125 mm",
+              "code": "14.31.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 546.0,
+              "rate_display": "546.00"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "14.31.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 75,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 485.65,
+              "rate_display": "485.65"
+            }
+          ],
+          "order_index": 72,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass double acting spring hinges with necessary brass screws etc. complete :",
+          "code": "14.32",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "150 mm",
+              "code": "14.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 851.85,
+              "rate_display": "851.85"
+            },
+            {
+              "node_type": "item",
+              "title": "125 mm",
+              "code": "14.32.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 78,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 726.65,
+              "rate_display": "726.65"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "14.32.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 704.75,
+              "rate_display": "704.75"
+            }
+          ],
+          "order_index": 76,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass flush bolts with necessary brass screws etc. complete :",
+          "code": "14.33",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "250 mm",
+              "code": "14.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 285.05,
+              "rate_display": "285.05"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm",
+              "code": "14.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 82,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 245.35,
+              "rate_display": "245.35"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "14.33.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 188.45,
+              "rate_display": "188.45"
+            }
+          ],
+          "order_index": 80,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 150 mm bright finished floor brass door stopper with rubber cushion, necessary brass screws etc. to suit shutter thickness complete",
+          "code": "14.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 84,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 271.45,
+          "rate_display": "271.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass hard drawn hooks and eyes :",
+          "code": "14.35",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "300 mm",
+              "code": "14.35.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 86,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 101.85,
+              "rate_display": "101.85"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm",
+              "code": "14.35.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 97.7,
+              "rate_display": "97.70"
+            },
+            {
+              "node_type": "item",
+              "title": "200 mm",
+              "code": "14.35.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 87.75,
+              "rate_display": "87.75"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm",
+              "code": "14.35.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 70.55,
+              "rate_display": "70.55"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "14.35.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 61.85,
+              "rate_display": "61.85"
+            }
+          ],
+          "order_index": 85,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass fan light pivot with necessary brass screws etc. complete.",
+          "code": "14.36",
+          "children_count": 0,
+          "children": [],
+          "order_index": 91,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 47.3,
+          "rate_display": "47.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 300 mm long bright finished brass chain with hook for fan light including necessary brass screws etc. complete.",
+          "code": "14.37",
+          "children_count": 0,
+          "children": [],
+          "order_index": 92,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 74.8,
+          "rate_display": "74.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass quadrant stay 300 mm long with necessary brass screws etc. complete.",
+          "code": "14.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 93,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 191.45,
+          "rate_display": "191.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass helical door spring (superior quality).",
+          "code": "14.39",
+          "children_count": 0,
+          "children": [],
+          "order_index": 94,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 543.95,
+          "rate_display": "543.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing chromium plated brass butt hinges with necessary chromium plated brass screws etc. complete.",
+          "code": "14.40",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "125x70x4 mm (ordinary type)",
+              "code": "14.40.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 96,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 171.05,
+              "rate_display": "171.05"
+            },
+            {
+              "node_type": "item",
+              "title": "100x70x4 mm (ordinary type)",
+              "code": "14.40.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 97,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 148.75,
+              "rate_display": "148.75"
+            },
+            {
+              "node_type": "item",
+              "title": "75x65x4 mm (heavy type)",
+              "code": "14.40.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 181.0,
+              "rate_display": "181.00"
+            },
+            {
+              "node_type": "item",
+              "title": "75x40x2.5 mm (ordinary type)",
+              "code": "14.40.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 102.6,
+              "rate_display": "102.60"
+            },
+            {
+              "node_type": "item",
+              "title": "50x40x2.5 mm (ordinary type)",
+              "code": "14.40.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 100,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 47.6,
+              "rate_display": "47.60"
+            }
+          ],
+          "order_index": 95,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 85x42 mm chromium plated brass pull bolt lock with necessary chromium plated brass screws, nuts, bolts and washers etc. complete.",
+          "code": "14.41",
+          "children_count": 0,
+          "children": [],
+          "order_index": 101,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 278.6,
+          "rate_display": "278.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double scaffolding system (cup lock type) on the exterior side, up to seven story height made with 40 mm dia M.S. tube 1.5 m centre to centre, horizontal & vertical tubes joining with cup & lock system with M.S. tubes, M.S. tube challies, M.S. clamps and M.S. staircase system in the scaffolding for working platform etc. and maintaining it in a serviceable condition for the required duration as approved and removing it there after. The scaffolding system shall be stiffened with bracings, runners, connection with the building etc wherever required for inspection of work at required locations with essential safety features for the workmen etc. complete as per directions and approval of Engineer-in-charge. The elevational area of the scaffolding shall be measured for payment purpose. The payment will be made once irrespective of duration of scaffolding.",
+          "code": "14.72",
+          "children_count": 0,
+          "children": [],
+          "order_index": 102,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 338.25,
+          "rate_display": "338.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bright finished brass casement window fasteners or peg stays to windows/ ventilators with necessary welding and machine screws etc. complete. kg",
+          "code": "14.73",
+          "children_count": 0,
+          "children": [],
+          "order_index": 103,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "557.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 104,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 14 mm bright finished brass spring catch to steel centre hung ventilators with necessary welding and machine screws etc. complete.",
+          "code": "14.74",
+          "children_count": 0,
+          "children": [],
+          "order_index": 105,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 68.35,
+          "rate_display": "68.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Repair to plaster of thickness 12 mm to 20 mm in patches of area 2.5 sqm and under, including cutting the patch in proper shape, raking out joints and preparing plastering the wall surface with white cement based polymer modified self curing mortar, including disposal of rubbish, all complete as per the direction of Engineer-In-Charge.",
+          "code": "14.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 106,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 670.95,
+          "rate_display": "670.95"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "0.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 107,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Cleaning and desilting of gully trap chamber, including removal of rubbish mixed with earth etc. and disposal of same, all as per the direction of Engineer-in-charge.",
+          "code": "14.76",
+          "children_count": 0,
+          "children": [],
+          "order_index": 108,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 108.3,
+          "rate_display": "108.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Cleaning of chocked sewer line by diesel running vehicle mounting hydraulic operated high pressure suction cum jetting sewer cleaning machine fitted with pump having 4000 litres suction capacity and 6000 litres water jetting tank capacity including skilled operator, supervising engineer etc. for cleaning and partial desilting of manholes and dechocking of sewer lines. Dechocking and flushing of sewer line from one manhole to another by high pressure jetting system of 2200 PSI for sewer line from 150 mm dia upto 300 mm",
+          "code": "14.77",
+          "children_count": 0,
+          "children": [],
+          "order_index": 109,
+          "source_page": 5,
+          "unit": "metre",
+          "rate": 340.75,
+          "rate_display": "340.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Cleaning of under ground sump, Over Head R.C.C. Tank ( independent staging) including disposal of slit and rubbish, all as per direction of Engineer-in-Charge. The cleaning shall consist following operations:-",
+          "code": "14.78",
+          "children_count": 0,
+          "children": [],
+          "order_index": 110,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 84.85,
+          "rate_display": "84.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Disconnecting damaged overhead/terrace PVC water storage tank of any size from water supply line and removing from the terrace including shifting at ground level as per direction of Engineer-in-charge.",
+          "code": "14.79",
+          "children_count": 0,
+          "children": [],
+          "order_index": 111,
+          "source_page": 6,
+          "unit": "each",
+          "rate": 433.75,
+          "rate_display": "433.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing White vitreous china water closet squatting pan (Indian type) along with “S” or “P” trap including dismantling of old WC seat and “S” or “P” trap at site complete with all operations including all necessary materials, labour and disposal of dismantled material including malba, all complete as per the direction of Engineer-in charge.",
+          "code": "14.80",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Long pattern W.C Pan of size 580x440 mm",
+              "code": "14.80.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 3501.7,
+              "rate_display": "3501.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Orissa pattern W.C Pan of size 580x440 mm",
+              "code": "14.80.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 114,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 4478.75,
+              "rate_display": "4478.75"
+            }
+          ],
+          "order_index": 112,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Cutting holes of required size in brick masonry wall for fixing of exhaust fan including providing and fixing 300 mm dia PVC pipe conforming BIS-12818 and making good the same etc. complete as per direction of Engineer-in- charge.",
+          "code": "14.81",
+          "children_count": 0,
+          "children": [],
+          "order_index": 115,
+          "source_page": 6,
+          "unit": "each",
+          "rate": 288.1,
+          "rate_display": "288.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling W.C. Pan of all sizes including disposal of dismantled materials including malba all complete as per directions of Engineer-in-Charge.",
+          "code": "14.82",
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 6,
+          "unit": "each",
+          "rate": 134.1,
+          "rate_display": "134.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Hacking of CC flooring including cleaning for surface etc. complete as per direction of the Engineer-in-Charge.",
+          "code": "14.83",
+          "children_count": 0,
+          "children": [],
+          "order_index": 117,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 3.45,
+          "rate_display": "3.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling 15 to 40 mm dia G.I. pipe including stacking of dismantled pipes (within 50 metres lead) as per direction of Engineer-in-Charge. (a) Internal Work- Exposed on wall",
+          "code": "14.84",
+          "children_count": 0,
+          "children": [],
+          "order_index": 118,
+          "source_page": 6,
+          "unit": "metre",
+          "rate": 3.25,
+          "rate_display": "3.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out existing wooden door shutter, repair by cutting, painting etc. and refixing of repaired door shutters to existing door frames, including replacement of hinges with screws, etc. as required, all complete as per the direction of the Engineer-in-charge.",
+          "code": "14.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 119,
+          "source_page": 6,
+          "unit": "each",
+          "rate": 429.1,
+          "rate_display": "429.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying in situ seven course water proofing treatment with APP (Atactic poly-propylene) modified Polymeric memberane over roof consisting of first coat of bitumen primer @ 0.40 litre per sqm, 2nd, 4th & 6th courses of bonding material @ 1.20 Kg/sqm, which shall consist of blown type bitumen of grade 85/25 conforming to IS : 702, 3rd and 5th layers of roofing membrane APP modified Polymeric membrane 1.5 mm thick of 2.25 Kg/sqm weight consisting of five layers prefabricated with centre core as 20 micron HMHDPE film sandwiched on both sides with polymeric mix and the polymeric mix is protected on both side with 20 micron HMHDPE film. 7th, the top most layer shall be finished with brick tiles of class designation 10 grouted with cement mortar 1:3 (1cement : 3 fine sand) mixed with 2% integral water proofing compound by weight of cement over a 12 mm layer of cement mortar 1:3 (1 cement : 3 fine sand) and finished neat (item of laying brick tiles shall be paid for separately).",
+          "code": "14.86",
+          "children_count": 0,
+          "children": [],
+          "order_index": 120,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 730.55,
+          "rate_display": "730.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying in situ five course water proofing treatment with APP (Atactic Polypropylene) modified Polymeric memberane over roof consisting of first coat of bitumen primer @ 0.40 litre per sqm, 2nd & 4th courses of bonding material @ 1.20 kg/sqm, which shall consist of blown type bitumen of grade 85/25 conforming to IS : 702, 3rd layer of roofing membrane APP modified Polymeric membrane 2.0 mm thick of 3.00 Kg/ sqm weight consisting of five layers prefabricated with centre core as 100 micron HMHDPE film sandwiched on both sides with polymeric mix and the polymeric mix is protected on both side with 20 micron HMHDPE film. 5th, the top most layer shall be finished with brick tiles of class designation 10 grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% integral water proofing compound by weight of cement over a 12 mm layer of cement mortar 1:3 (1 cement : 3 fine sand) and finished neat (item of laying brick tiles shall be paid for separately).",
+          "code": "14.87",
+          "children_count": 0,
+          "children": [],
+          "order_index": 121,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 532.05,
+          "rate_display": "532.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying in situ seven course water proofing treatment with APP (Atactic Polypropylene) modified Polymeric memberane over roof consisting of first coat of bitumen primer @ 0.40 litre per sqm, 2nd, 4th & 6th courses of bonding material @ 1.20 kg/sqm, which shall consist of blown type bitumen of grade 85/25 conforming to IS : 702, 3rd and 5th layers of roofing membrane APP modified Polymeric membrane 2.0 mm thick of 3.00 Kg/sqm weight consisting of five layers prefabricated with centre core as 100 micron HMHDPE film sandwiched on both sides with polymeric mix and the polymeric mix is protected on both side with 20 micron HMHDPE film. 7th, the top most layer shall be finished with brick tiles of class designation 10 grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% integral water proofing compound by weight of cement over a 12 mm layer of cement mortar 1:3 ( 1 cement : 3 fine sand) and finished neat (item of laying brick tiles shall be paid for separately).",
+          "code": "14.88",
+          "children_count": 0,
+          "children": [],
+          "order_index": 122,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 855.7,
+          "rate_display": "855.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing APP (Atactic Polypropylene Polymer) modified prefabricated five layer 2 mm thick water proofing membrane, black finished reinforced with glass fibre matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrance manufacture of density at 25°C, 0.87 - 0.89 kg/ litre and viscocity 70 - 160 cps. Over the primer coat the layer of membrane shall be laid using Butane torch and sealing all joints etc., and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 350/300 N/ 5 cm. Tear strength in longitudinal and transverse direction as 60/80N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacture of membrane.",
+          "code": "14.89",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "2 mm (for corrugated roof sheets)",
+              "code": "14.89.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 124,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 498.35,
+              "rate_display": "498.35"
+            }
+          ],
+          "order_index": 123,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying APP (Atactic Polypropylene Polymer) modified prefabricated five layer, 3 mm thick water proofing membrane, black finished reinforced with glass fibre matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrane manufactured of density at 25°C, 0.87 - 0.89 kg/litre and viscocity 70 - 160 cps. Over the primer coat the layer of membrane shall be laid using butane torch and sealing all joints etc., and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 350/300 N/5 cm. Tear strength in longitudinal and transverse direction as 60/80N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacturer of membrane :",
+          "code": "14.90",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "3 mm thick",
+              "code": "14.90.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 126,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 537.45,
+              "rate_display": "537.45"
+            }
+          ],
+          "order_index": 125,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying APP (Atactic Polypropylene Polymer) modified prefabricated five layer 3 mm thick water proofing membrane, black finished reinforced with non-woven polyester matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrane manufacture of density at 25°C, 0.87-0.89 kg/ litre and viscocity 70-160 cps. Over the primer coat the layer of membrane shall be laid using Butane Torch and sealing all joints etc, and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 650/ 450N/ 5cm. Tear strength in longitudinal and transverse direction as 300/250N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacturer of membrane :",
+          "code": "14.91",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "3 mm thick",
+              "code": "14.91.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 128,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 560.95,
+              "rate_display": "560.95"
+            }
+          ],
+          "order_index": 127,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for covering top of membrane with Geotextile, 120 gsm non woven, 100% polyester of thickness 1 to 1.25 mm bonded to the membrane with intermittent touch by heating the membrane by Butane Torch as per manufactures recommendation.",
+          "code": "14.92",
+          "children_count": 0,
+          "children": [],
+          "order_index": 129,
+          "source_page": 8,
+          "unit": "sqm",
+          "rate": 88.9,
+          "rate_display": "88.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing round the clock security guard without gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete,as per the direction of Engineer-in-charge. (One job means 8 hour’s duty). each job",
+          "code": "14.93",
+          "children_count": 0,
+          "children": [],
+          "order_index": 130,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "1308.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 131,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing round the clock security guard with gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete, as per the direction of Engineer-in-charge.(One job means 8 hour’s duty). each job",
+          "code": "14.94",
+          "children_count": 0,
+          "children": [],
+          "order_index": 132,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "1416.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 133,
+          "source_page": 8
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/14.0 REPAIRS TO BUILDING.pdf",
+    "row_count": 134,
+    "note_count": 1,
+    "leaf_count": 105,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

@@ -1,0 +1,2327 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/12.0 ROOFING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "ROOFING",
+      "code": "12.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note :- Only calcium silicate false ceiling area will be measured from wall to wall. No deduction shall be made for exposed frames/opening (cut outs) having area less than 0.30 sqm.The calcium silicate ceiling tile shall have NRC value of 0.50 (Minimum), light reflection > 85%, non- combustible as per B.S. 476 part IV, 100% humidity resistance and also having thermal conductivity <0.043 w/mK.",
+          "source_page": 9,
+          "order_index": 0
+        },
+        {
+          "type": "note",
+          "text": "Note : For remaining Sub Heads refer Vol. 1",
+          "source_page": 20,
+          "order_index": 1
+        }
+      ],
+      "children_count": 71,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing corrugated G.S. sheet roofing including vertical / curved surface fixed with polymer coated J or L hooks, bolts and nuts 8 mm diameter with bitumen and G.I. limpet washers or with G.I. limpet washers filled with white lead, including a coat of approved steel primer and two coats of approved paint on overlapping of sheets complete (up to any pitch in horizontal/ vertical or curved surfaces), excluding the cost of purlins, rafters and trusses and including cutting to size and shape wherever required.",
+          "code": "12.1",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.00 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1457.15,
+              "rate_display": "1457.15"
+            },
+            {
+              "node_type": "item",
+              "title": "0.80 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1257.55,
+              "rate_display": "1257.55"
+            },
+            {
+              "node_type": "item",
+              "title": "0.63 mm thick with zinc coating not less than 275 gm/ m²",
+              "code": "12.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1087.65,
+              "rate_display": "1087.65"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for straight cutting in C.G.S. sheet roofing for making opening of area exceeding 40 sq. decimeter for chimney stacks, sky light etc.:",
+          "code": "12.2",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.00 mm thick",
+              "code": "12.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 116.15,
+              "rate_display": "116.15"
+            },
+            {
+              "node_type": "item",
+              "title": "0.80 mm thick",
+              "code": "12.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 92.95,
+              "rate_display": "92.95"
+            },
+            {
+              "node_type": "item",
+              "title": "0.63 mm thick",
+              "code": "12.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 92.95,
+              "rate_display": "92.95"
+            }
+          ],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for circular cutting in C.G.S. sheet roofing for making opening of area exceeding 40 sq. decimeter:",
+          "code": "12.3",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.00 mm thick",
+              "code": "12.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 671.45,
+              "rate_display": "671.45"
+            },
+            {
+              "node_type": "item",
+              "title": "0.80 mm thick",
+              "code": "12.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 536.3,
+              "rate_display": "536.30"
+            },
+            {
+              "node_type": "item",
+              "title": "0.63 mm thick",
+              "code": "12.3.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 536.3,
+              "rate_display": "536.30"
+            }
+          ],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing ridges or hips of width 60 cm overall width plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts 8 mm dia G.I. limpet and bitumen washers complete.",
+          "code": "12.4",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "0.80 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1083.3,
+              "rate_display": "1083.30"
+            },
+            {
+              "node_type": "item",
+              "title": "0.63 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 980.5,
+              "rate_display": "980.50"
+            }
+          ],
+          "order_index": 12,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing valleys of 90 cm wide overall in plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts 8 mm dia G.I. limpet and bitumen washers complete :",
+          "code": "12.5",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.60 mm thick with zinc coating not less than 350 gm/m²",
+              "code": "12.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1863.9,
+              "rate_display": "1863.90"
+            }
+          ],
+          "order_index": 15,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing of 40 cm overall width plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts, G.l. limpet and bitumen washer complete, bent to shape and fixed in wall with cement mortar 1:3 (1 cement : 3 coarse sand).",
+          "code": "12.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.00 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 857.55,
+              "rate_display": "857.55"
+            }
+          ],
+          "order_index": 17,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 15 cm wide, 45 cm overall semi-circular plain G.S. sheet gutter with iron brackets 40x3 mm size, bolts, nuts and washers etc., including making necessary connections with rain water pipes complete.",
+          "code": "12.7",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "0.80 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1029.65,
+              "rate_display": "1029.65"
+            },
+            {
+              "node_type": "item",
+              "title": "0.63 mm thick with zinc coating not less than 275 gm/m²",
+              "code": "12.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 944.05,
+              "rate_display": "944.05"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing reinforced by organic fibres and/or inorganic synthetic fibres cement 6 mm thick corrugated sheets (as per IS: 14871) roofing up to any pitch and fixing with polymer coated J or L hooks, bolts and nuts 8 mm dia. G.I. plain and bitumen washers or with self drilling fastener and EPDM washers etc. complete (excluding the cost of purlins, rafters and trusses), including cutting sheets to size and shape wherever required.",
+          "code": "12.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 22,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 536.4,
+          "rate_display": "536.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for straight cutting in reinforced by organic fibres and/or inorganic synthetic fibres cement corrugated, semi corrugated 6 mm thick sheet roofing for making openings of area exceeding 40 square decimeter for chimney stacks, skylights etc.",
+          "code": "12.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 23,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 92.95,
+          "rate_display": "92.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for circular cutting in reinforced by organic fibres and/or inorganic synthetic fibres cement corrugated/ semi corrugated 6 mm thick sheet roofing for making openings of area exceeding 40 square decimeter.",
+          "code": "12.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 24,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 256.7,
+          "rate_display": "256.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and fixing wind ties of 40x 6 mm flat iron section.",
+          "code": "12.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 195.6,
+          "rate_display": "195.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing ridges and hips in fibre cement reinforced by organic fibres and/or inorganic synthetic fibres roofing with suitable fixing accessories or self drilling fastener and EPDM washer etc. complete.",
+          "code": "12.12",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Corrugated serrated adjustable ridges",
+              "code": "12.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 27,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 522.95,
+              "rate_display": "522.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Plain wing adjustable ridges",
+              "code": "12.12.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 522.95,
+              "rate_display": "522.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Close fitting adjustable ridges",
+              "code": "12.12.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 585.7,
+              "rate_display": "585.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Unserrated adjustable hips",
+              "code": "12.12.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 521.85,
+              "rate_display": "521.85"
+            }
+          ],
+          "order_index": 26,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing fibre cement reinforced by organic fibres and/or inorganic synthetic fibres roofing accessories in all colours with polymer coated J or L hooks, bolts and nuts and or G.I. seam bolts and nuts, G.I. plain and bitumen washers or with self drilling fastener and EPDM washer etc. complete:",
+          "code": "12.13",
+          "children_count": 8,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Corrugated apron pieces",
+              "code": "12.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 428.5,
+              "rate_display": "428.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Eave’s filler pieces",
+              "code": "12.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 345.05,
+              "rate_display": "345.05"
+            },
+            {
+              "node_type": "item",
+              "title": "North light curves",
+              "code": "12.13.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 567.2,
+              "rate_display": "567.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Ventilator curves",
+              "code": "12.13.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 627.3,
+              "rate_display": "627.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Barge boards",
+              "code": "12.13.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 36,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 724.65,
+              "rate_display": "724.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Ridge finials pair",
+              "code": "12.13.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 37,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Special north light curves",
+              "code": "12.13.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 1013.85,
+              "rate_display": "1013.85"
+            },
+            {
+              "node_type": "item",
+              "title": "S type louvers",
+              "code": "12.13.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 560.05,
+              "rate_display": "560.05"
+            }
+          ],
+          "order_index": 31,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "303.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 38,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing flat iron brackets 50x3 mm size with necessary bolts, nuts and washers etc. for fixing G.S. sheets gutters with purlins.",
+          "code": "12.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 41,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 92.4,
+          "rate_display": "92.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Painting top of roofs with bitumen of approved quality @ 17kg per 10 sqm impregnated with a coat of coarse sand at 60 cudm per 10 sqm, including cleaning the slab surface with brushes and finally with a piece of cloth lightly soaked in kerosene oil complete :",
+          "code": "12.15",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With residual type petroleum bitumen of grade VG -10",
+              "code": "12.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 43,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 166.2,
+              "rate_display": "166.20"
+            }
+          ],
+          "order_index": 42,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "10 cm thick (average) mud phaska of damped brick earth on roofs laid to slope consolidated and plastered with 25 mm thick mud mortar mixed with bhusa @ 35 kg per cum of earth and gobri leaping with mix 1:1 (1 clay : 1 cow dung) and covered with flat tile bricks, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement and finished neat:",
+          "code": "12.16",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S.(non modular) brick tile of class designation 10",
+              "code": "12.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1050.2,
+              "rate_display": "1050.20"
+            }
+          ],
+          "order_index": 44,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "10 cm thick (average) mud phaska of damped brick earth on roofs laid to slope consolidated and plastered with 25 mm thick mud mortar with bhusha @ 35 kg per cum of earth and gobri leaping with mix 1:1 (1 clay : 1 cow-dung) and covered with machine moulded tile bricks, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement and finished neat.",
+          "code": "12.17",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With machine moulded common burnt clay F.P.S. (non modular) brick tiles of class designation 12.5, conforming to IS 2690",
+              "code": "12.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1074.5,
+              "rate_display": "1074.50"
+            }
+          ],
+          "order_index": 46,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for every additional 1 cm thickness of mud phaska.",
+          "code": "12.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 24.2,
+          "rate_display": "24.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying brick tiles over mumty roofs, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement, over 12 mm layer of cement mortar 1:3 (1 cement : 3 fine sand) and finished neat:",
+          "code": "12.19",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) brick tiles of class designation 10",
+              "code": "12.19.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 607.4,
+              "rate_display": "607.40"
+            }
+          ],
+          "order_index": 49,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying pressed clay tiles (as per approved pattern 20 mm nominal thickness of approved size) on roofs jointed with cement mortar 1:4 (1 cement : 4 coarse sand) mixed with 2% integral water proofing compound, laid over a bed of 20 mm thick cement mortar 1:4 (1 cement : 4 coarse sand) and finished neat complete.",
+          "code": "12.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 709.75,
+          "rate_display": "709.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing gola 75x75 mm in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 stone aggregate 10 mm and down gauge), including finishing with cement mortar 1:3 (1 cement : 3 fine sand) as per standard design :",
+          "code": "12.21",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In 75x75 mm deep chase",
+              "code": "12.21.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 53,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 305.15,
+              "rate_display": "305.15"
+            }
+          ],
+          "order_index": 52,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Making khurras 45x45 cm with average minimum thickness of 5 cm cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate of 20 mm nominal size) over P.V.C. sheet 1 m x1 m x 400 micron, finished with 12 mm cement plaster 1:3 (1 cement : 3 coarse sand) and a coat of neat cement, rounding the edges and making and finishing the outlet complete.",
+          "code": "12.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 298.25,
+          "rate_display": "298.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing sand stone slab for roofing and laying them in cement mortar 1 : 4 (1 cement : 4 coarse sand) over wooden karries or R.C.C. battens or structural steel sections (Karries or battens or structural steel sections to be paid separately), including pointing the ceiling joints with cement mortar 1:3 (1 cement : 3 fine sand ) complete :",
+          "code": "12.23",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone slab",
+              "code": "12.23.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "40 to 50 mm thick",
+                  "code": "12.23.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 57,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 1138.2,
+                  "rate_display": "1138.20"
+                }
+              ],
+              "order_index": 56,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone slab",
+              "code": "12.23.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "40 to 50 mm thick",
+                  "code": "12.23.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 59,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 1106.9,
+                  "rate_display": "1106.90"
+                }
+              ],
+              "order_index": 58,
+              "source_page": 3
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing insulating board ceiling of approved quality with necessary nails etc. complete (frame work to be paid separately) :",
+          "code": "12.24",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Natural colour insulating board",
+              "code": "12.24.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.24.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 62,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 924.35,
+                  "rate_display": "924.35"
+                }
+              ],
+              "order_index": 61,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "White face insulating board",
+              "code": "12.24.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.24.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 64,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 966.6,
+                  "rate_display": "966.60"
+                }
+              ],
+              "order_index": 63,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Flame retardant face insulating board",
+              "code": "12.24.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.24.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 1121.55,
+                  "rate_display": "1121.55"
+                }
+              ],
+              "order_index": 65,
+              "source_page": 3
+            }
+          ],
+          "order_index": 60,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing flat pressed 3 layer medium density particle board or graded particle board (Grade I) IS: 3087 marked, in ceiling with necessary nails etc. complete (frame work to be paid separately):",
+          "code": "12.25",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "12 mm thick",
+              "code": "12.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 68,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1070.6,
+              "rate_display": "1070.60"
+            }
+          ],
+          "order_index": 67,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing plain multipurpose cement board(Hight pressure steam cured) with suitable screws for cement particle board in ceiling etc. complete (frame work to be paid seperatately).",
+          "code": "12.26",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "6 mm thick Cement fiber board, Type-B, Category-III as per IS: 14862 : 2000",
+              "code": "12.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 921.95,
+              "rate_display": "921.95"
+            },
+            {
+              "node_type": "item",
+              "title": "6 mm thick Cement bonded wood particle board as per IS:14276",
+              "code": "12.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 71,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 890.65,
+              "rate_display": "890.65"
+            }
+          ],
+          "order_index": 69,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for Circular cutting including wastages in ceiling with:",
+          "code": "12.27",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "2nd class teak wood planks 20 mm thick",
+              "code": "12.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 726.3,
+              "rate_display": "726.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Natural colour insulating board",
+              "code": "12.27.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.27.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 75,
+                  "source_page": 4,
+                  "unit": "metre",
+                  "rate": 487.0,
+                  "rate_display": "487.00"
+                }
+              ],
+              "order_index": 74,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "White face insulating board:",
+              "code": "12.27.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.27.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 77,
+                  "source_page": 4,
+                  "unit": "metre",
+                  "rate": 492.25,
+                  "rate_display": "492.25"
+                }
+              ],
+              "order_index": 76,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "Flame retardant face insulating board:",
+              "code": "12.27.4",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "12 mm thick",
+                  "code": "12.27.4.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 79,
+                  "source_page": 4,
+                  "unit": "metre",
+                  "rate": 511.5,
+                  "rate_display": "511.50"
+                }
+              ],
+              "order_index": 78,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "Standard quality hard board sheet:",
+              "code": "12.27.5",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "3 mm thick",
+                  "code": "12.27.5.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 81,
+                  "source_page": 4,
+                  "unit": "metre",
+                  "rate": 470.1,
+                  "rate_display": "470.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "4.5 mm thick",
+                  "code": "12.27.5.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 82,
+                  "source_page": 4,
+                  "unit": "metre",
+                  "rate": 485.7,
+                  "rate_display": "485.70"
+                }
+              ],
+              "order_index": 80,
+              "source_page": 4
+            }
+          ],
+          "order_index": 72,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and fixing ceiling to curved surfaces in narrow widths",
+          "code": "12.28",
+          "children_count": 0,
+          "children": [],
+          "order_index": 83,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 453.1,
+          "rate_display": "453.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing 10 mm thick plaster of Paris (gypsum anhydrous) ceiling up to a height of 5 m above floor level, over first class kail wood strips 25x6 mm with 10 mm gap in between and reinforced with rabbit wire mesh fixed to wooden frame (frame work to be paid separately):",
+          "code": "12.31",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flat surfaces",
+              "code": "12.31.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1718.95,
+              "rate_display": "1718.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Curved surfaces",
+              "code": "12.31.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 86,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2067.45,
+              "rate_display": "2067.45"
+            }
+          ],
+          "order_index": 84,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for sunk or raised mouldings in the plaster of Paris (Gypsum anhydrous) ceiling.",
+          "code": "12.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 87,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 607.45,
+          "rate_display": "607.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing plaster of Paris (Gypsum anhydrous) ceiling above 5 metres height from floor level. sqm per height",
+          "code": "12.33",
+          "children_count": 0,
+          "children": [],
+          "order_index": 88,
+          "source_page": 4,
+          "unit": "metre"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "265.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 89,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing fixing thermal insulation of ceiling (under deck insulation) with Resin Bonded Fibre glass wool conforming to IS : 8183, density 24kg / m3, 50 mm thick, wrapped in 200 G Virgin Polythene bags, fixed to ceiling with metallic cleats (50x50x3 mm) @ 60 cm and wire mesh of 12.5 mm x 24 gauge wire mesh, for top most ceiling of building.",
+          "code": "12.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 90,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 703.05,
+          "rate_display": "703.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing thermal insulation with Resin Bonded Fibre glass wool conforming to IS: 8183. Density 16 kg/m³, 50 mm thick, wrapped in 200G Virgin Polythene bags placed over existing false ceiling and held in position by criss-crossing GI wire.",
+          "code": "12.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 91,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 297.25,
+          "rate_display": "297.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Thermal Insulation of roofing with Expanded polystyrene fixed with suitable adhesive to the false ceiling as per the directions of the Engineer- in-charge:",
+          "code": "12.36",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With Type N - Normal 50 mm thick",
+              "code": "12.36.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 321.75,
+              "rate_display": "321.75"
+            },
+            {
+              "node_type": "item",
+              "title": "With Type SE - Self Extinguishing type 50 mm thick",
+              "code": "12.36.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 94,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 353.05,
+              "rate_display": "353.05"
+            }
+          ],
+          "order_index": 92,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 100 mm diameter and 60 cm long rain water spout in cement mortar 1:4 (1 cement : 4 fine sand).",
+          "code": "12.37",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Stone ware spout",
+              "code": "12.37.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 96,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 164.2,
+              "rate_display": "164.20"
+            }
+          ],
+          "order_index": 95,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. holder bat clamps of approved design to C.I. or S.C.I. rain water pipes embedded in and including cement concrete blocks 10x10x10 cm of 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) and cost of cutting holes and making good the walls etc. :",
+          "code": "12.38",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter",
+              "code": "12.38.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 362.85,
+              "rate_display": "362.85"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter",
+              "code": "12.38.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 395.6,
+              "rate_display": "395.60"
+            }
+          ],
+          "order_index": 97,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing lead caulked joints to sand cast iron rain water pipes and fittings:",
+          "code": "12.39",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia Pipe",
+              "code": "12.39.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 101,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 580.5,
+              "rate_display": "580.50"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm dia Pipe",
+              "code": "12.39.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 102,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 798.0,
+              "rate_display": "798.00"
+            }
+          ],
+          "order_index": 100,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, fixing and embedding sand cast iron accessories for rain water pipes in the masonry surrounded with 12 mm thick cement mortar of the same mix, as that of masonry (lead caulking will be paid for separately):",
+          "code": "12.40",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Sand cast iron plain shoes :",
+              "code": "12.40.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "150 mm diameter",
+                  "code": "12.40.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 105,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 511.9,
+                  "rate_display": "511.90"
+                }
+              ],
+              "order_index": 104,
+              "source_page": 5
+            }
+          ],
+          "order_index": 103,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing on wall face unplasticised Rigid PVC rain water pipes conforming to IS : 13592 Type A, including jointing with seal ring conforming to IS : 5382, leaving 10 mm gap for thermal expansion, (i) Single socketed pipes.",
+          "code": "12.41",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm diameter",
+              "code": "12.41.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 107,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 248.8,
+              "rate_display": "248.80"
+            },
+            {
+              "node_type": "item",
+              "title": "110 mm diameter",
+              "code": "12.41.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 108,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 377.4,
+              "rate_display": "377.40"
+            }
+          ],
+          "order_index": 106,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing on wall face unplasticised - PVC moulded fittings/ accessories for unplasticised Rigid PVC rain water pipes conforming to IS : 13592 Type A, including jointing with seal ring conforming to IS : 5382, leaving 10 mm gap for thermal expansion.",
+          "code": "12.42",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Coupler",
+              "code": "12.42.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75 mm",
+                  "code": "12.42.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 111,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 91.7,
+                  "rate_display": "91.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110 mm",
+                  "code": "12.42.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 112,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 136.15,
+                  "rate_display": "136.15"
+                }
+              ],
+              "order_index": 110,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Single pushfit Coupler",
+              "code": "12.42.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75 mm",
+                  "code": "12.42.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 114,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 93.1,
+                  "rate_display": "93.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110 mm",
+                  "code": "12.42.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 115,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 127.6,
+                  "rate_display": "127.60"
+                }
+              ],
+              "order_index": 113,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Single tee with door",
+              "code": "12.42.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75x75x75 mm",
+                  "code": "12.42.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 117,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 164.2,
+                  "rate_display": "164.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110x110x110 mm",
+                  "code": "12.42.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 118,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 234.15,
+                  "rate_display": "234.15"
+                }
+              ],
+              "order_index": 116,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Single tee without door",
+              "code": "12.42.4",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75x75x75 mm",
+                  "code": "12.42.4.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 120,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 144.3,
+                  "rate_display": "144.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110x110x110 mm",
+                  "code": "12.42.4.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 121,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 221.35,
+                  "rate_display": "221.35"
+                }
+              ],
+              "order_index": 119,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Bend 87.5°",
+              "code": "12.42.5",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75 mm bend",
+                  "code": "12.42.5.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 123,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 105.9,
+                  "rate_display": "105.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110 mm bend",
+                  "code": "12.42.5.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 124,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 150.35,
+                  "rate_display": "150.35"
+                }
+              ],
+              "order_index": 122,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Shoe (Plain)",
+              "code": "12.42.6",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "75 mm Shoe",
+                  "code": "12.42.6.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 126,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 93.1,
+                  "rate_display": "93.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "110 mm Shoe",
+                  "code": "12.42.6.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 127,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 131.85,
+                  "rate_display": "131.85"
+                }
+              ],
+              "order_index": 125,
+              "source_page": 5
+            }
+          ],
+          "order_index": 109,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing unplasticised -PVC pipe clips of approved design to unplasticised - PVC rain water pipes by means of 50x50x50 mm hard wood plugs, screwed with M.S. screws of required length, including cutting brick work and fixing in cement mortar 1:4 (1 cement : 4 coarse sand) and making good the wall etc. complete.",
+          "code": "12.43",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "12.43.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 129,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 369.85,
+              "rate_display": "369.85"
+            },
+            {
+              "node_type": "item",
+              "title": "110 mm",
+              "code": "12.43.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 130,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 371.3,
+              "rate_display": "371.30"
+            }
+          ],
+          "order_index": 128,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing to the inlet mouth of rain water pipe cast iron grating 15 cm diameter and weighing not less than 440 grams.",
+          "code": "12.44",
+          "children_count": 0,
+          "children": [],
+          "order_index": 131,
+          "source_page": 6,
+          "unit": "each",
+          "rate": 54.7,
+          "rate_display": "54.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing false ceiling at all heights including providing and fixing of frame work made of special sections, power pressed from M.S. sheets and galvanized with zinc coating of 120 gms/sqm (both side inclusive) as per IS : 277 and consisting of angle cleats of size 25 mm wide x 1.6 mm thick with flanges of 27 mm and 37mm, at 1200 mm centre to centre, one flange fixed to the ceiling with dash fastener 12.5 mm dia x 50 mm long with 6 mm dia bolts, other flange of cleat fixed to the angle hangers of 25x10x0.50 mm of required length with nuts & bolts of required size and other end of angle hanger fixed with intermediate G.I. channels 45x15x0.9 mm running at the spacing of 1200 mm centre to centre, to which the ceiling section 0.5 mm thick bottom wedge of 80 mm with tapered flanges of 26 mm each having lips of 10.5 mm, at 450 mm centre to centre, shall be fixed in a direction perpendicular to G.I. intermediate channel with connecting clips made out of 2.64 mm dia x 230 mm long G.I. wire at every junction, including fixing perimeter channels 0.5 mm thick 27 mm high having flanges of 20 mm and 30 mm long, the perimeter of ceiling fixed to wall/partition with the help of rawl plugs at 450 mm centre, with 25 mm long dry wall screws @ 230 mm interval, including fixing of gypsum board to ceiling section and perimeter channel with the help of dry wall screws of size 3.5 x 25 mm at 230 mm c/c, including jointing and finishing to a flush finish of tapered and square edges of the board with recommended jointing compound , jointing tapes , finishing with jointing compound in 3 layers covering upto 150 mm on both sides of joint and two coats of primer suitable for board, all as per manufacturer’s specification and also including the cost of making openings for light fittings, grills, diffusers, cutouts made with frame of perimeter channels suitably fixed, all complete as per drawings, specification and direction of the Engineer in Charge but excluding the cost of painting with :",
+          "code": "12.45",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "12.5 mm thick tapered edge gypsum plain board conforming to IS: 2095- (Part I) :2011 (Board with BIS certification marks)",
+              "code": "12.45.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 133,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1355.8,
+              "rate_display": "1355.80"
+            },
+            {
+              "node_type": "item",
+              "title": "12.5 mm thick tapered edge Glass Reinforced Gypsum (GRG) board conforming to IS: 2095- (Part 3):1996 (Boards with BIS certification marks)",
+              "code": "12.45.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 134,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1520.1,
+              "rate_display": "1520.10"
+            },
+            {
+              "node_type": "item",
+              "title": "12.5 mm thick tapered edge gypsum moisture resistant board",
+              "code": "12.45.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 135,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1529.1,
+              "rate_display": "1529.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Fully Perforated Gypsum Plaster Board of size 1200 x 2400x12.5 mm having approx. 15 % perforated area with perforation size and pattern as approved by the Engineer- in-charge and as per manufacturer’s specification, with all 4 sides tapered and backed by acoustical tissue with NRC value not less than 0.60",
+              "code": "12.45.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 136,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1744.15,
+              "rate_display": "1744.15"
+            }
+          ],
+          "order_index": 132,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing to the inlet mouth of rain water pipe PTMT (an Engineering Thermoplastic) grating square (Slit) 150 mm square with a height of 8 mm and weighing not less than 100 gms.",
+          "code": "12.46",
+          "children_count": 0,
+          "children": [],
+          "order_index": 137,
+          "source_page": 7,
+          "unit": "each",
+          "rate": 84.55,
+          "rate_display": "84.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing UV stabilised fiberglass reinforced plastic sheet roofing up to any pitch, including fixing with polymer coated ‘J’ or ‘L’ hooks, bolts & nuts 8 mm dia. G.I plain/bitumen washers complete but excluding the cost of purlins, rafters, trusses etc. The sheets shall be manufactured out of 2400 TEX panel rovigs incorporating minimum 0.3% ultra-violet stabiliser in resin system under approximately 2400 psi and hot cured. They shall be of uniform pigmentation and thickness without air pockets and shall conform to IS 10192 and IS 12866.The sheets shall be opaque or translucent, clear or pigmented, textured or smooth as specified.",
+          "code": "12.47",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "2 mm thick corrugated (2.5” or 4.2” or 6”) or step-down (2” or 3” or 6” ) as specified",
+              "code": "12.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 139,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 1401.35,
+              "rate_display": "1401.35"
+            },
+            {
+              "node_type": "item",
+              "title": "2 mm thick flat",
+              "code": "12.47.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 1245.65,
+              "rate_display": "1245.65"
+            }
+          ],
+          "order_index": 138,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing on roof pressed clay tile (Mangalore tile) of 20 mm nominal thickness and of approved size and as per approved pattern on steel frame work complete (steel frame work to be paid separately).",
+          "code": "12.48",
+          "children_count": 0,
+          "children": [],
+          "order_index": 141,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 433.45,
+          "rate_display": "433.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & laying on roof pressed clay tile ridge (Mangalore tile) of 20 mm thickness and of approved pattern on steel frame work complete (steel frame work to be paid separately).",
+          "code": "12.49",
+          "children_count": 0,
+          "children": [],
+          "order_index": 142,
+          "source_page": 7,
+          "unit": "metre",
+          "rate": 96.9,
+          "rate_display": "96.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing precoated galvanised iron profile sheets (size, shape and pitch of corrugation as approved by Engineer-in-Charge) of total coated thickness 0.50 mm (base metal of minimum 0.45 mm thickness with total coating thickness of 0.05mm) with zinc coating 120 grams per sqm as per IS: 277, in 240 mpa steel grade, 5-7 microns epoxy primer on both side of the sheet and polyester top coat 15-18 microns. Sheet should have protective guard film of 25 microns minimum to avoid scratches during transportation and should be supplied in single length upto 12 metre or as desired by Engineer-in-charge. The sheet shall be fixed using self drilling /self tapping screws of size (5.5x 55 mm) with EPDM seal, complete upto any pitch in horizontal/ vertical or curved surfaces, excluding the cost of purlins, rafters and trusses and including cutting to size and shape wherever required.",
+          "code": "12.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 143,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 738.65,
+          "rate_display": "738.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing precoated galvanised steel sheet roofing accessories of total coated thickness 0.50 mm (base metal of minimum 0.45 mm thickness with total coating thickness of 0.05 mm) with Zinc coating 120 gram per sqm as per IS: 277, in 240 mpa steel grade, 5-7 microns epoxy primer on both side of the sheet and polyester top coat 15-18 microns using self drilling/ self tapping screws complete :",
+          "code": "12.51",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ridges plain (500 - 600mm)",
+              "code": "12.51.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 145,
+              "source_page": 7,
+              "unit": "metre",
+              "rate": 532.35,
+              "rate_display": "532.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Flashings/ Aprons.( Upto 600 mm)",
+              "code": "12.51.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 146,
+              "source_page": 7,
+              "unit": "metre",
+              "rate": 485.6,
+              "rate_display": "485.60"
+            },
+            {
+              "node_type": "item",
+              "title": "North light curves",
+              "code": "12.51.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 147,
+              "source_page": 7,
+              "unit": "metre",
+              "rate": 546.1,
+              "rate_display": "546.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Barge board (Upto 300 mm)",
+              "code": "12.51.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 148,
+              "source_page": 7,
+              "unit": "metre",
+              "rate": 451.5,
+              "rate_display": "451.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Crimp curve",
+              "code": "12.51.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 149,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 496.75,
+              "rate_display": "496.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Gutter (600 mm over all girth)",
+              "code": "12.51.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 150,
+              "source_page": 7,
+              "unit": "metre",
+              "rate": 1313.7,
+              "rate_display": "1313.70"
+            }
+          ],
+          "order_index": 144,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing tiled false ceiling of specified materials of size 595x595 mm in true horizontal level, suspended on inter locking metal grid of hot dipped galvanized steel sections ( galvanized @ 120 grams/ sqm, both side inclusive) consisting of main “T” runner with suitably spaced joints to get required length and of size 24x38 mm made from 0.30 mm thick (minimum) sheet, spaced at 1200 mm center to center and cross “T” of size 24x25 mm made of 0.30 mm thick (minimum) sheet, 1200 mm long spaced between main “T” at 600 mm center to center to form a grid of 1200x600 mm and secondary cross “T” of length 600 mm and size 24x25 mm made of 0.30 mm thick (minimum) sheet to be interlocked at middle of the 1200x600 mm panel to form grids of 600x600 mm and wall angle of size 24x24x0.3 mm and laying false ceiling tiles of approved texture in the grid including, required cutting/making, opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc. Main “T” runners to be suspended from ceiling using GI slotted cleats of size 27 x 37 x 25 x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm GI adjustable rods with galvanised butterfly level clips of size 85 x 30 x 0.8 mm spaced at 1200 mm center to center along main T, bottom exposed width of 24 mm of all T-sections shall be pre-painted with polyester paint, all complete for all heights as per specifications, drawings and as directed by Engineer-in-charge.",
+          "code": "12.52",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "GI Metal Ceiling Lay in plain Tegular edge Global white color tiles of size 595x595 mm, and 0.5 mm thick with 8 mm drop; made of G I sheet having galvanizing of 100 gms/sqm (both sides inclusive) and electro statically polyester powder coated of thickness 60 microns (minimum), including factory painted after bending.",
+              "code": "12.52.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 152,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1902.95,
+              "rate_display": "1902.95"
+            },
+            {
+              "node_type": "item",
+              "title": "GI Metal Ceiling Lay in perforated Tegular edge global white color tiles of size 595x595 mm and 0.5 mm thick with 8 mm drop; made of GI sheet having galvanizing of 100 gms/sqm (both sides inclusive) and 20% perforation area with 1.8 mm dia holes and having NRC (Noise Reduction Coefficient ) of 0.5, electro statically polyester powder coated of thickness 60 microns (minimum), including factory painted after bending and perforation and backed with a black Glass fiber acoustical fleece.",
+              "code": "12.52.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 153,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2068.75,
+              "rate_display": "2068.75"
+            },
+            {
+              "node_type": "item",
+              "title": "12.5 mm thick square edge PVC Laminated Gypsum Tile of size 595x595 mm, made of Gypsum plasterboard, manufactured from natural gypsum as per IS 2095 part I and laminated with white 0.16 mm thick fire retardant PVC film on the face side and 12 micron metalized polyester on the back side with all edges sealed with the face side PVC film which goes around and wraps the edges and is bonded to the edges and the back side metalized polyester film so as to make the tile a completely sealed unit.",
+              "code": "12.52.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 154,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2215.15,
+              "rate_display": "2215.15"
+            },
+            {
+              "node_type": "item",
+              "title": "12.5 mm thick fully Perforated Gypsum Board tile made from plasterboard having glass fibre conforming to IS: 2095 part I, of size 595x595 mm, having perforation of 9.7x9.7 mm at 19.4 mm c/c with center borders of 48 mm and the side borders of 30 mm, backed with non woven tissue on the back side, having an NRC (Noise Reduction Coefficient) of 0.79, with 50 mm resin bonded glass wool backing.",
+              "code": "12.52.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 155,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1528.0,
+              "rate_display": "1528.00"
+            }
+          ],
+          "order_index": 151,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and Fixing 15 mm thick densified tegular edged eco friendly light weight calcium silicate false ceiling tiles of approved texture of size 595 x 595 mm in true horizontal level, suspended on inter locking metal grid of hot dipped galvanised steel sections (galvanising @ 120 grams per sqm including both side) consisting of main ‘T’ runner suitably spaced at joints to get required length and of size 24x38 mm made from 0.33 mm thick (minimum) sheet, spaced 1200 mm centre to centre, and cross “T” of size 24x28 mm made out of 0.33 mm (Minimum) sheet, 1200 mm long spaced between main’T’ at 600 mm centre to centre to form a grid of 1200x600 mm and secondary cross ‘T’ of length 600 mm and size 24 x28 mm made of 0.33 mm thick (Minimum) sheet to be inter locked at middle of the 1200x 600 mm panel to from grid of size 600x600 mm, resting on periphery walls /partitions on a Perimeter wall angle pre-coated steel of size(24x24X3000 mm made of 0.40 mm thick (minimum) sheet with the help of rawl plugs at 450 mm centre to centre with 25 mm long dry wall screws @ 230 mm interval and laying 15 mm thick densified edges calicum silicate ceiling tiles of approved texture in the grid, including, cutting/ making opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc., wherever required. Main ‘T’ runners to be suspended from ceiling using G.I. slotted cleats of size 25x35x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm G.I. adjustable rods with galvanised steel level clips of size 85 x 30 x 0.8 mm, spaced at 1200 mm centre to centre along main ‘T’. Bottom exposed with 24 mm of all T-sections shall be pre-painted with polyster baked paint, for all heights, as per specifications, drawings and as directed by Engineer-in-Charge.",
+          "code": "12.53",
+          "children_count": 0,
+          "children": [],
+          "order_index": 156,
+          "source_page": 9,
+          "unit": "sqm",
+          "rate": 2158.15,
+          "rate_display": "2158.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Gl Clip in Metal Ceiling System of 600x600 mm module which includes providing and fixing ‘C’ wall angle of size 20x30x20 mm made of 0.5 mm thick pre painted steel along the perimeter of the room with help of nylon sleeves and wooden screws at 300 mm center to centre, suspending the main C carrier of size 10x38x10 mm made of G.I steel 0.7 mm thick from the soffit with the help of soffit cleat 37x27x25x1.6 mm, rawl plugs of size 38x12 mm and C carrier suspension clip and main carrier bracket at 1000 mm c/c. Inverted triangle shaped Spring Tee having height of 24 mm and width of 34 mm made of Gl steel 0.45 mm thick is then fixed to the main C carrier and in direction perpendicular to it at 600 mm centers with the help of suspension brackets. Wherever the main C carrier and spring T have to join, C carrier and spring T connectors have to be used. All sections to be galvanized @ 120 gms/sqm (both side inclusive), fixing with clip in tiles into spring T with :",
+          "code": "12.54",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "GI Metal Ceiling Clip in plain Beveled edge global white color tiles of size 600x600 and 0.5 mm thick with 25 mm height, made of G I sheet having galvanizing of 100 gms/ sqm (both sides inclusive) and electro statically polyester powder coated of thickness 60 microns (minimum), including factory painted after bending.",
+              "code": "12.54.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 158,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 2221.7,
+              "rate_display": "2221.70"
+            },
+            {
+              "node_type": "item",
+              "title": "GI Metal Ceiling Clip in plain Beveled edge global white color tiles of size 600x600 and 0.5 mm thick with 25 mm height, made of G I sheet having galvanizing of 100 gms/ sqm (both sides inclusive) and 20% perforation area with 1.8 mm dia holes and having NRC of 0.5, electro statically polyester powder coated of thickness 60 microns (minimum), including factory painted after bending and perforation.",
+              "code": "12.54.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 159,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 2354.65,
+              "rate_display": "2354.65"
+            }
+          ],
+          "order_index": 157,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Heat Resistant Terrace Tiles (300 mm x 300 mm x 20 mm) with SRI (solar refractive index) > 78, solar reflection > 0.70 and initial emittance > 0.75 on waterproof and sloped surface of terrace, laid on 20 mm thick cement sand mortar in the ratio of 1:4 (1 cement : 4 coarse sand) and grouting the joints with mix of white cement & marble powder in ratio of 1:1, including rubbing and polishing of the surface upto 3 cuts complete, including providing skirting upto 150 mm height along the parapet walls in the same manner.",
+          "code": "12.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 160,
+          "source_page": 10,
+          "unit": "sqm",
+          "rate": 1703.95,
+          "rate_display": "1703.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying roof insulation with 40 mm thick impervious sprayed, closed cell free Rigid Polyurethane foam over deck insulation conforming to IS - 12432 Pt. III (density of foam being 40-45 kg/ cum), over a coat of polyurethane primer applied @ 6-8 sqm per litre, laying 400 G polythene sheet over PUF spray and providing a wearing course of 40 mm thick cement screed 1:2:4 (1 cement : 2 coarse sand : 4 stone aggregate 20 mm nominal size) in chequered rough finish, in panels of 2.5 m x 2.5 m and embedding with 24 G wire netting and sealing the joints with polymerized mastic, all complete as per direction of Engineer-in-Charge.",
+          "code": "12.56",
+          "children_count": 0,
+          "children": [],
+          "order_index": 161,
+          "source_page": 10,
+          "unit": "sqm",
+          "rate": 1570.0,
+          "rate_display": "1570.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing thermal insulation with Resin Bonded Fibre glass wool conforming to IS: 8183 having density 24 kg/m3, 50 mm thick, wrapped in 200G Virgin Polythene Bags fixed to wall with screw, rawel plug & washers and held in position by criss crossing GI wire etc. complete as per directions of Engineer-in-Charge.",
+          "code": "12.57",
+          "children_count": 0,
+          "children": [],
+          "order_index": 162,
+          "source_page": 10,
+          "unit": "sqm",
+          "rate": 358.5,
+          "rate_display": "358.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing tiled false ceiling of specified materials of size 595x595 mm in true horizontal level, suspended on interlocking metal grid of hot dipped galvanized steel sections ( galvanized @ 120 grams/ sqm, both side inclusive) consisting of main “T” runner with suitably spaced joints to get required length and of size 24x38 mm made from 0.30 mm thick (minimum) sheet, spaced at 1200 mm center to center and cross “T” of size 24x25 mm made of 0.30 mm thick (minimum) sheet, 1200 mm long spaced between main “T” at 600 mm center to center to form a grid of 1200x600 mm and secondary cross “T” of length 600 mm and size 24x25 mm made of 0.30 mm thick (minimum) sheet to be interlocked at middle of the 1200x600 mm panel to form grids of 600x600 mm and wall angle of size 24x24x0.3 mm and laying false ceiling tiles of approved texture in the grid including, required cutting/making, opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc. Main “T” runners to be suspended from ceiling using GI slotted cleats of size 27 x 37 x 25 x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm GI adjustable rods with galvanized butterfly level clips of size 85 x 30 x 0.8 mm spaced at 1200 mm center to center along main T, bottom exposed width of 24 mm of all T-sections shall be pre-painted with polyester paint, all complete for all heights as per specifications, drawings and as directed by Engineer-in-charge.",
+          "code": "12.58",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "8 mm thick fully perforated calcium silicate board made with Calcareous & Siliceous materials reinforced with cellulose fiber manufactured through autoclaving process to give stable crystalline structure with minimum compressive strength 225 kg/ sq. cm, bending strength 100 kg/sq. cm , of size 595x595 mm, having perforation of dia. 10 mm with minimum perforated area 18 % with non woven tissue on the back side, having an NRC ( Noise Reduction Coefficient) of 0.85, with 50 mm thick rockwool of 48 kg /cum backing.",
+              "code": "12.58.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 164,
+              "source_page": 11,
+              "unit": "sqm",
+              "rate": 1789.45,
+              "rate_display": "1789.45"
+            }
+          ],
+          "order_index": 163,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing false ceiling at all height including providing & fixing of framework made of special section, power pressed from M.S. sheets and galvanised with zinc coating of 120 gms/ sqm (both side inclusive) as per IS : 277 and consisting of angle cleat of size 25 mm wide x 1.6 mm thick with flanges of 27 mm and 37mm, at 1200 mm c/c, one flange fixed to the ceiling with dash fastener 12.5 mm dia x 50 mm long with 6 mm dia bolts, other flange of cleat fixed to the angle hangers of 25 x10 x0.50 mm of required length with nuts & bolts of required size and other end of angle hanger fixed with intermediate G.I chanels 45 x15 x 0.90 mm running at the spacing of 1200 mm c/c, to which the ceiling section 0.5 mm thick bottom wedge of 80 mm with tapered flanges of 26 mm each having lips of 10.5mm, at 450 mm c/c, shall be fixed in a direction perpendicular to G.I intermediate channel with connecting clip made out of 2.64 mm dia x 230 mm long G.I wire at every junction, including fixing perimeter channels 0.50 mm thick 27 mm high having flanges of 20 mm and 30 mm long, the perimeter of ceiling fixed to wall/ partitions with the help of Rawl plugs at 450 mm centre, with 25 mm long dry wall screws @ 230 mm interval, including fixing of Calcium Silicate Board to ceiling section and perimeter channels with the help of dry wall screws of size 3.5 x25 mm at 230 mm c/c, including jointing & finishing to a flush finish of tapered and square edges of the board with recommended jointing compounds, jointing tapes,finishing with jointing compounds in three layers covering up to 150 mm on both sides of joints and two coats of primer suitable for boards, all as per manufacture’s specification and also including the cost of making opening for light fittings, grills, diffusers, cut outs made with frame of perimeter channels suitably fixed, all complete as per drawings, specificaton and direction of the Engineer in charge but excluding the cost of painting with:",
+          "code": "12.59",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "8 mm thick Calcium Silicate Board made with Calcareous & Siliceous materials reinforced with cellulose fiber manufactured through autoclaving process.",
+              "code": "12.59.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 166,
+              "source_page": 11,
+              "unit": "sqm",
+              "rate": 1572.3,
+              "rate_display": "1572.30"
+            }
+          ],
+          "order_index": 165,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing thermal insulation of ceiling (under deck insulation) with Resin Bonded Rockwool conforming to IS: 8183,density 48 kg/ m3, 50 mm thick, wrapped in 200 G Virgin Polythene bags fixed to ceiling with metallic cleats (50x50x3 mm) @ 60 cm and wire mesh of 12.5 mm x 24 gauge wire mesh, for top most ceiling of building.",
+          "code": "12.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 167,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 667.05,
+          "rate_display": "667.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing thermal insulation with Resin bonded rock wool conforming to IS: 8183, density 48 kg/m3, 50 mm thick, wrapped in 200 G virgin Polythene bags placed over existing false ceilng and held in position by criss-crossing Gl wire.",
+          "code": "12.61",
+          "children_count": 0,
+          "children": [],
+          "order_index": 168,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 316.05,
+          "rate_display": "316.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing thermal insulation with Resin Bonded rock wool conforming to IS: 8183, having density 48 kg/m3, 50 mm thick,wrapped in 200 G Virgin Polythene Bags fixed to wall with screw, rawel plug & washers and held and in position by criss cossing GI wire etc. complete as per directions of Engineer-in-Charge.",
+          "code": "12.62",
+          "children_count": 0,
+          "children": [],
+          "order_index": 169,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 322.5,
+          "rate_display": "322.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying two coats of High Albedo paint having minimum Solar Reflective Index (SRI) 108 (with solar reflectance & thermal emittance tested as per ASTMC 1549 and ASTMC 1371 respectively), VOC less than 10 cc/gm. The coating thickness and the methodology of application shall be strctly as per manufacturer’s specifications and as approved by Engineer-in-Charge. Surface preparation includes cleaning with metal wire brush to remove all dust, fungus etc., washing with water all complete. The contractor shall give guarantee for the perfomance of SRI and also the durabitity of coating, all complete as per direction of Engineer-in-Charge.",
+          "code": "12.63",
+          "children_count": 0,
+          "children": [],
+          "order_index": 170,
+          "source_page": 12,
+          "unit": "sqm",
+          "rate": 357.6,
+          "rate_display": "357.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing at all heights, levels and locations Mill finish Aluminium alloy roofing sheets of alloy IS designation 31500, temper Hx8 conforming to IS 737 and dimensions as per IS code 2676 with characteristics of good formability and corrosion resistance. The profile sheets shall be fixed to truss members in slope or required pitch or curvature with Hex cap headed self drilling/tapping Stainless steel screws M6, 50 mm long with 3 mm EPDM seal washer etc. all inclusive of labour, scaffolding, T&P and sundries etc. complete as per directions of the Engineer-In-Charge. (Cost of truss/frame work shall be paid separately).",
+          "code": "12.64",
+          "children_count": 9,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "0.56 mm, Aluminium troughed profile with center to center pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.64.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 172,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1034.1,
+              "rate_display": "1034.10"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm, Aluminium troughed profile with centre to centre pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.64.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 173,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1252.75,
+              "rate_display": "1252.75"
+            },
+            {
+              "node_type": "item",
+              "title": "0.91 mm, troughed profile with center to center pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.64.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 174,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1572.8,
+              "rate_display": "1572.80"
+            },
+            {
+              "node_type": "item",
+              "title": "0.56 mm Aluminium profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.64.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 175,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1313.7,
+              "rate_display": "1313.70"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm Aluminium profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.64.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 176,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1616.45,
+              "rate_display": "1616.45"
+            },
+            {
+              "node_type": "item",
+              "title": "0.91 mm Aluminium profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.64.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 177,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 2026.4,
+              "rate_display": "2026.40"
+            },
+            {
+              "node_type": "item",
+              "title": "0.56 mm Aluminium Circular (sinusoidal) profile with center to center pitch of 75 mm, depth of 19 mm, overall profile width 1250 mm,cover width 1150 mm.",
+              "code": "12.64.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 178,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1012.15,
+              "rate_display": "1012.15"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm Aluminium Circular (sinusoidal) profile with center to center pitch of 75 mm, depth of 19 mm, overall profile width 1250 mm,cover width 1150 mm.",
+              "code": "12.64.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 179,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1256.95,
+              "rate_display": "1256.95"
+            },
+            {
+              "node_type": "item",
+              "title": "0.91 mm Aluminium Circular (sinusoidal) profile with center to center pitch of 75 mm, depth of 19 mm, overall profile width 1250 mm,cover width 1150 mm.",
+              "code": "12.64.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 180,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1596.45,
+              "rate_display": "1596.45"
+            }
+          ],
+          "order_index": 171,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing at all heights, levels and locations colour finish Aluminium alloy roofing sheets of alloy IS designation 31500, temper Hx8 conforming to IS 737 and dimensions as per IS code 2676 with characteristics of good formability and corrosion resistance. The profile sheets shall be fixed to truss members in slope or required pitch or curvature with Hex cap headed self drilling/tapping Stainless steel screws M6, 50 mm long with 3 mm EPDM seal washer etc. all inclusive of labour, scaffolding, T&P and sundries etc. complete as per directions of the Engineer-In-Charge. (Cost of truss/frame work shall be paid separately).",
+          "code": "12.65",
+          "children_count": 8,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "0.56 mm, Aluminium Colour coated troughed profile with center to center pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.65.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 182,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1176.7,
+              "rate_display": "1176.70"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm, Aluminium Colour coated troughed profile with center to center pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.65.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 183,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1430.2,
+              "rate_display": "1430.20"
+            },
+            {
+              "node_type": "item",
+              "title": "0.91 mm, Aluminium Colour coated troughed profile with center to center pitch of 200 mm, depth of 32 mm, overall profile width 1092 mm, cover width 1000 mm.",
+              "code": "12.65.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 184,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1797.75,
+              "rate_display": "1797.75"
+            },
+            {
+              "node_type": "item",
+              "title": "0.56 mm Aluminium Colour profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.65.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 185,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1484.0,
+              "rate_display": "1484.00"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm Aluminium Colour coated profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.65.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 186,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1865.6,
+              "rate_display": "1865.60"
+            },
+            {
+              "node_type": "item",
+              "title": "0.91 mm Aluminium Colour coated profile with center to center pitch of 175 mm, depth of 46 mm, top crest width of 41 mm, bottom valley width of 80 mm, overall profile width of 1144 mm, cover width 1050 mm.",
+              "code": "12.65.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 187,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 2335.45,
+              "rate_display": "2335.45"
+            },
+            {
+              "node_type": "item",
+              "title": "0.56 mm Aluminium profile with center to center pitch of 177.5 mm, depth of 28.5 mm, 987 mm overall profile width, cover width 900 mm",
+              "code": "12.65.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 188,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1221.15,
+              "rate_display": "1221.15"
+            },
+            {
+              "node_type": "item",
+              "title": "0.71 mm Aluminium profile with center to center pitch of 177.5 mm, depth of 28.5 mm, 987 mm overall profile width, cover width 900 mm",
+              "code": "12.65.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 189,
+              "source_page": 13,
+              "unit": "sqm",
+              "rate": 1533.0,
+              "rate_display": "1533.00"
+            }
+          ],
+          "order_index": 181,
+          "source_page": 13
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing of Pre-coated colour or mill finish Aluminium Roofing Accessories in 0.71 mm thickness ,Alloy 31500 (IS designation) [Aluminium Alloy (AA) 3004 (ISO designation)]. For colour, coating shall be 5-7 microns epoxy primer on both sides of the sheet and polyester top coat 15-18 microns, using self drilling/tapping SS screws of size 6 x 50 mm with 3 mm thick EPDM seal and SS plain washer complete :",
+          "code": "12.66",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium Ridges plain (500- 600mm)",
+              "code": "12.66.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 191,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 1066.2,
+              "rate_display": "1066.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium Flashings/ Aprons (Upto 600 mm)",
+              "code": "12.66.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 192,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 977.15,
+              "rate_display": "977.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium North light curves",
+              "code": "12.66.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 193,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 1055.9,
+              "rate_display": "1055.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium Barge board (Upto 200 mm)",
+              "code": "12.66.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 194,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 813.25,
+              "rate_display": "813.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium Crimp curve",
+              "code": "12.66.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 195,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 914.7,
+              "rate_display": "914.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Precoated/mill finish aluminium Gutter (600 mm over all girth)",
+              "code": "12.66.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 196,
+              "source_page": 13,
+              "unit": "metre",
+              "rate": 1808.65,
+              "rate_display": "1808.65"
+            }
+          ],
+          "order_index": 190,
+          "source_page": 13
+        },
+        {
+          "node_type": "item",
+          "title": "\u0007DSR 2023 is bilingual in two volumes. In case of any discrepancy between English and Hindi versions, the English version will prevail.",
+          "code": "6.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 197,
+          "source_page": 17
+        },
+        {
+          "node_type": "item",
+          "title": "\u0007The effect of GST @18% on works contract has been incorporated in all items. 7. Major modifications in the form of correction in nomenclature of items, deletion of misleading content etc. have been undertaken. 8. Wholehearted commitment and considerable efforts have been put for preparation of this edition of Delhi Schedule of Rates. I convey my deep appreciation and sincere thanks to: Shri Prem Mohan, CE, CSQ (Civil), Shri Vinayak Rai, Shri Dinesh Kumar Ujjainia, SE (TAS), Shri M. Seetarama Rao, Shri S.N. Jaiswal EE (TAS), Shri Akhileshwar Sah Chief Estimator (TAS), Shri Durga Ram Chowdhary, AE (TAS), Shri Gian Chand Singla, AE (TAS), Shri Hemant Panrui, AE (TAS), Shri Raghvendra, Dharmesh Chandra Goel Addl. Director General (Tech) Central Public Works Department Nirman Bhawan, New Delhi- 110011 Tel : 23063389, Fax : 23061833 E-Mail : adgtd@nic.in Government of India .. .. . . . . .. . ....... .. . . . . .. . .... . . . .. . . . . . . . . . . . ... . . . . .. . . . . . . . . . . . ... . . .... . . . . . . . . . . . . . .. . . ..... . . .. . . .. . .. . .. . . .. . . . . . . .. . . . .. . . .. . .. . .. . . . . . .. . . . . .. .. . . .. . .. . .. . .. . . . . . .... . . .. ...... . .. . .. . .. . . . . . .... . . .. ..... . .. . .. . . . . . . . .... . . .. ........ . . . . . . . . . ... . . . . . . .. . . . . . . . . . . . . . . . . . . .... vi AE (TAS) and Shri A.K. Jha AD (OL) and his team for the translation of DSR- 2023 in Hindi and Shri Kamal Passi, Assistant Architect for design of cover page and other officers and staff of CSQ unit whose names are not mentioned here for the sake brevity for their sincere efforts put in the preparation of this document in such a short time. CSQ unit is indebted for the support & immense contribution for their substantial inputs by various individuals and field units for providing suggestions. 9. I convey my gratitude to committees members under the chairmanship of CE (NDZ-I), CE (NDZ-II), CE (NDZ-III) & CE Flyover Zone at Delhi who provided the market rates of material to CSQ which enabled CSQ to come out with this edition of DSR 2023 10. Although, due care has been taken in bringing out DSR-2023, still there is possibility that some errors are left inadvertently. Errors & omission may be brought to the notice of Superintending Engineer (TAS), CPWD, Room No. 418, A-wing, Nirman Bhawan, New Delhi -110011 delsetascsq.cpwd@nic.in / cecsq.cpwd@nic.in Suggestions from everyone who are using this document are welcome as these have scope for further improvement. (Dharmesh Chandra Goel) ADG (Tech) CPWD vii SH. No. NAME OF SUB-HEAD PAGE No. A. BASIC RATES",
+          "code": "6.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 198,
+          "source_page": 17
+        },
+        {
+          "node_type": "item",
+          "title": "HIRE CHARGES OF PLANTS & MACHINERY",
+          "code": "0.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 199,
+          "source_page": 19
+        },
+        {
+          "node_type": "item",
+          "title": "LABOUR",
+          "code": "0.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 200,
+          "source_page": 19
+        },
+        {
+          "node_type": "item",
+          "title": "MATERIALS B. SUB -HEADS 1. Carriage of Materials 2. Earth Work 3. Mortars 4. Concrete Work 5. Reinforced Cement Concrete 6. Masonry Work 7. Stone Work 8. Cladding Work 9. Wood and PVC Work 10. Steel Work 11. Flooring 12. Roofing C O N T E N T S Vol. 1 viii C O N T E N T S Vol. 2 SH. No. NAME OF SUB-HEAD PAGE No. 13. Finishing 14. Repairs to Building 15. Dismantling and Demolishing 16. Road Work 17. Sanitary Installations 18. Water Supply 19. Drainage 20. Pile work 21. Aluminium Work 22. Water Proofing 23. Rain Water Harvesting & Tubewells 24. Conservation of Heritage Buildings 25. Structural Glazing Aluminium Composite Panel 26. New Technologies and Materials C. COEFFICIENTS FOR CEMENT CONSUMPTION D. COEFFICIENTS FOR BITUMEN CONSUMPTION",
+          "code": "0.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 201,
+          "source_page": 19
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/12.0 ROOFING.pdf",
+    "row_count": 202,
+    "note_count": 2,
+    "leaf_count": 148,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

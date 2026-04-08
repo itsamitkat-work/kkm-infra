@@ -1,0 +1,889 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/4.0 CONCRETE WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "CONCRETE WORK",
+      "code": "4.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+          "source_page": 6,
+          "order_index": 1
+        },
+        {
+          "type": "note",
+          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement. 4.20A.1 All works upto plinth level 4.20A.1.1 Concrete of M10 grade with minimum cement content of 220 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 100% each). cum",
+          "source_page": 7,
+          "order_index": 2
+        }
+      ],
+      "children_count": 45,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing and laying in position cement concrete of specified grade excluding the cost of centering and shuttering - All work up to plinth level :",
+          "code": "4.1",
+          "children_count": 10,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 Cement: 1½ coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8340.85,
+              "rate_display": "8340.85"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:4 (1 cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7878.5,
+              "rate_display": "7878.50"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:4 (1 Cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7780.3,
+              "rate_display": "7780.30"
+            },
+            {
+              "node_type": "item",
+              "title": "1:3:6 (1 Cement : 3 coarse sand (zone-III) derived from natural sources : 6 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.1.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7294.7,
+              "rate_display": "7294.70"
+            },
+            {
+              "node_type": "item",
+              "title": "1:3:6 (1 Cement : 3 coarse sand (zone-III) derived from natural sources : 6 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7178.75,
+              "rate_display": "7178.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1:4:8 (1 Cement : 4 coarse sand (zone-III) derived from natural sources : 8 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 6812.0,
+              "rate_display": "6812.00"
+            },
+            {
+              "node_type": "item",
+              "title": "1:5:10 (1 cement : 5 coarse sand (zone-III) derived from natural sources : 10 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 6518.6,
+              "rate_display": "6518.60"
+            },
+            {
+              "node_type": "item",
+              "title": "1:5:10 (1 cement : 5 fine sand derived from natural sources : 10 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 6189.65,
+              "rate_display": "6189.65"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:3½:9 (1 ordinary portland cement : 2 Fly ash : 3½ coarse sand (zone-III) derived from natural sources : 9 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.12",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 6667.25,
+              "rate_display": "6667.25"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2½:4:11 (1 ordinary portland cement : 2½ fly ash : 4 coarse sand(zone-III) derived from natural sources : 11 graded stone aggregate 40 mm nominal size derived from natural sources)",
+              "code": "4.1.13",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 6311.95,
+              "rate_display": "6311.95"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8127.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "7654.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "4.1.5B 1:3:6 (1 cement : 3 manufactured sand derived from Recycled concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size Recycled Aggregate (RA) )",
+          "code": "6347.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 5639.85,
+          "rate_display": "5639.85"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5572.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5205.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 11,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "4911.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5130.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "4796.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying cement concrete in retaining walls, return walls, walls (any thickness) including attached pilasters, columns, piers, abutments, pillars, posts, struts, buttresses, string or lacing courses, parapets, coping, bed blocks, anchor blocks, plain window sills, fillets, sunken floor etc., up to floor five level, excluding the cost of centering, shuttering and finishing:",
+          "code": "4.2",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 cement : 1½ coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+              "code": "4.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 10357.55,
+              "rate_display": "10357.55"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:4 (1 Cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 9895.2,
+              "rate_display": "9895.20"
+            },
+            {
+              "node_type": "item",
+              "title": "1:3:6 (1 cement : 3 coarse sand (zone-III) derived from natural sources : 6 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.2.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 9311.4,
+              "rate_display": "9311.40"
+            },
+            {
+              "node_type": "item",
+              "title": "1:5:10 (1 cement : 5 coarse sand (zone-III) derived from natural sources : 10 graded stone aggregate 40 mm nominal size derived from natural sources).",
+              "code": "4.2.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8519.2,
+              "rate_display": "8519.20"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "10144.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 21,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "9671.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 23,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "4.2.5B 1:3:6 (1 cement : 3 manufactured sand derived from Recycled Concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size Recycled Aggregate (RA))",
+          "code": "8364.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 7656.55,
+          "rate_display": "7656.55"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "6912.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 27,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Centering and shuttering including strutting, propping etc. and removal of form work for :",
+          "code": "4.3",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Foundations, footings, bases for columns",
+              "code": "4.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 392.15,
+              "rate_display": "392.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Retaining walls, return walls, walls (any thickness) including attached pilasters, buttresses, plinth and string courses fillets, kerbs and steps etc.",
+              "code": "4.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 842.5,
+              "rate_display": "842.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Columns, piers, abutments, pillars, posts and struts",
+              "code": "4.3.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 961.3,
+              "rate_display": "961.30"
+            }
+          ],
+          "order_index": 28,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying cement concrete in kerbs, steps and the like at or near ground level excluding the cost of centering, shuttering and finishing.",
+          "code": "4.4",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 Cement: 1½ coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8340.85,
+              "rate_display": "8340.85"
+            }
+          ],
+          "order_index": 32,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing up to floor five level precast cement concrete string or lacing courses, copings, bed plates, anchor blocks, plain window sills, shelves, louvers, steps, stair cases, etc., including hoisting and setting in position with cement mortar 1:3 (1 Cement : 3 coarse sand), cost of required Centering complete.",
+          "code": "4.5",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "4.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 36,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 10105.1,
+              "rate_display": "10105.10"
+            }
+          ],
+          "order_index": 35,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "9893.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing at or near ground level precast cement concrete in kerbs, edgings etc. as per approved pattern and setting in position with cement mortar 1:3 (1 Cement : 3 coarse sand), including the cost of required centering, shuttering complete.",
+          "code": "4.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 Cement: 1½ coarse sand (zone-III) derived from natural sources: 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+              "code": "4.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8726.85,
+              "rate_display": "8726.85"
+            }
+          ],
+          "order_index": 38,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8514.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 40,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing up to floor five level precast cement concrete solid block, including hoisting and setting in position with cement mortar 1:3 (1 cement : 3 coarse sand), cost of required centering, shuttering complete :",
+          "code": "4.7",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 Cement: 1½ coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+              "code": "4.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 17889.25,
+              "rate_display": "17889.25"
+            }
+          ],
+          "order_index": 41,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "17677.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 43,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing up to floor five level precast cement concrete hollow block, including hoisting and setting in position with cement mortar 1:3 (1 cement : 3 coarse sand), cost of required centering, shuttering complete.",
+          "code": "4.8",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1½:3 (1 Cement: 1½ coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources) .",
+              "code": "4.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 14624.2,
+              "rate_display": "14624.20"
+            }
+          ],
+          "order_index": 44,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "14526.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Precasting and placing in position 125 mm dia Bollards 600 mm high of required shape including providing M.S. Pipe Sleeve 50 mm dia 300 mm long in the Bollard and M.S. Pipes 40 mm dia and 450 mm long with 150x150x6 mm M.S. plate welded at bottom and embedded 150 mm in cement concrete 1:3:6 (1 Cement : 3 coarse sand (zone-III) derived from natural sources : 6 graded stone aggregate 20 mm nominal size derived from natural sources), including necessary excavation of size 250x250x450 mm deep for the same in bitumen/concrete pavement at specified spacing.",
+          "code": "4.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 47,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 929.8,
+          "rate_display": "929.80"
+        },
+        {
+          "node_type": "item",
+          "title": "4.9 B Precasting and placing in position 125 mm dia Bollards 600 mm high of required shape including providing M.S. Pipe Sleeve 50 mm dia 300 mm long in the Bollard and M.S. Pipes 40 mm dia and 450 mm long with 150x150x6 mm M.S. plate welded at bottom and embedded 150 mm in cement concrete 1:3:6 (1 Cement : 3 manufactured sand derived from Recycled Concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size (Recycled Aggregate (RA), including necessary excavation of size 250x250x450 mm deep for the same in bitumen/ concrete pavement at specified spacing",
+          "code": "900.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 878.9,
+          "rate_display": "878.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying damp-proof course 40 mm thick with cement concrete 1:2:4 (1 cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 12.5 mm nominal size derived from natural sources)",
+          "code": "4.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 49,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 410.85,
+          "rate_display": "410.85"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "402.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 50,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying damp-proof course 50 mm thick with cement concrete 1:2:4 (1 cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "4.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 495.75,
+          "rate_display": "495.75"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "484.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 52,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and mixing water proofing material in cement concrete work in doses by weight of cement as per manufacturer’s specification. per bag of 50kg cement used",
+          "code": "4.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "18.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & applying a coat of residual petroleum bitumen of grade of VG-10 of approved quality using 1.7 kg per square metre on damp proof course after cleaning the surface with brushes and finally with a piece of cloth lightly soaked in kerosene oil.",
+          "code": "4.13",
+          "children_count": 0,
+          "children": [],
+          "order_index": 55,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 146.15,
+          "rate_display": "146.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for concrete work in superstructure above floor V level for each four floors or part thereof by mechnical means.",
+          "code": "4.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 56,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 169.45,
+          "rate_display": "169.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying concrete in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
+          "code": "4.15",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note for item No. 4.15 :- The quantity will be calculated by multiplying the depth measured from the sub-soil water level up to centre of gravity of concrete under sub-soil water level with quantity of concrete in cum executed under sub-soil water. The depth of centre of gravity shall be reckoned correct to 0.1m. (0.05m or more shall be taken as 0.1m and less than 0.05m ignored).",
+              "source_page": 5,
+              "order_index": 0
+            }
+          ],
+          "children_count": 0,
+          "children": [],
+          "order_index": 57,
+          "source_page": 5,
+          "unit": "metre depth",
+          "rate": 1098.8,
+          "rate_display": "1098.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying concrete in or under foul positions.",
+          "code": "4.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 58,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 467.55,
+          "rate_display": "467.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Making plinth protection 50 mm thick of cement concrete 1:3:6 (1 cement : 3 coarse sand (zone-III) derived from natural sources : 6 graded stone aggregate 20 mm nominal size derived from natural sources) over 75 mm thick bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including necessary excavation, levelling & dressing & finishing the top smooth.",
+          "code": "4.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 59,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 749.3,
+          "rate_display": "749.30"
+        },
+        {
+          "node_type": "item",
+          "title": "4.17B Making plinth protection 50 mm thick of cement concrete 1:3:6 (1 cement : 3 manufactured sand derived from Recycled Concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size Recycled Aggregate (RA) over 75 mm thick bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including necessary excavation, levelling & dressing & finishing the top smooth.",
+          "code": "702.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 666.9,
+          "rate_display": "666.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for addition of synthetic Polyester triangular fibre of length 12mm, effective diameter 10-40 microns and specific gravity of 1.34 to 1.40 in cement concrete/RCC/Flooring/water retaining structures by using 125 gram of synthetic Polyester triangular fibre for 50 kg cement used as per direction of Engineer-in-Charge. per bag of 50 kg of cement",
+          "code": "4.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 61,
+          "source_page": 6,
+          "rate": 70.35,
+          "unit": "per bag of 50 kg of cement"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "70.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 62,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for plain cement concrete work; using coarse aggregate and fine aggregate derived from natural sources, Portland Pozzolana/ Ordinary Portland /Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering and finishing as per direction of the engineer-in-charge; for the following grades of concrete.",
+          "code": "4.20",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All works upto plinth level :",
+              "code": "4.20.1",
+              "children_count": 4,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M10 grade with minimum cement content of 220 kg /cum",
+                  "code": "4.20.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 65,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 8835.15,
+                  "rate_display": "8835.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M15 grade with minimum cement content of 240 kg /cum",
+                  "code": "4.20.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 8986.15,
+                  "rate_display": "8986.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M20 grade with minimum cement content of 270 kg /cum",
+                  "code": "4.20.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 67,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 9212.6,
+                  "rate_display": "9212.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 300 kg /cum",
+                  "code": "4.20.1.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 68,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 9439.05,
+                  "rate_display": "9439.05"
+                }
+              ],
+              "order_index": 64,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "All works above plinth and upto floor V level",
+              "code": "4.20.2",
+              "children_count": 4,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M10 grade with minimum cement content of 220 kg /cum",
+                  "code": "4.20.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 70,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 9190.8,
+                  "rate_display": "9190.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M15 grade with minimum cement content of 240 kg /cum",
+                  "code": "4.20.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 71,
+                  "source_page": 6,
+                  "unit": "cum",
+                  "rate": 9341.8,
+                  "rate_display": "9341.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M20 grade with minimum cement content of 270 kg /cum",
+                  "code": "4.20.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 72,
+                  "source_page": 7,
+                  "unit": "cum",
+                  "rate": 9568.25,
+                  "rate_display": "9568.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 300 kg /cum",
+                  "code": "4.20.2.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 73,
+                  "source_page": 7,
+                  "unit": "cum",
+                  "rate": 9794.7,
+                  "rate_display": "9794.70"
+                }
+              ],
+              "order_index": 69,
+              "source_page": 6
+            }
+          ],
+          "order_index": 63,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "4.20A.1.2 Concrete of M15 grade with minimum cement content of 240 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
+          "code": "7936.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 74,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 8779.4,
+          "rate_display": "8779.40"
+        },
+        {
+          "node_type": "item",
+          "title": "4.20A.1.4 Concrete of M25 grade with minimum cement content of 300 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
+          "code": "9005.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 75,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 9232.3,
+          "rate_display": "9232.30"
+        },
+        {
+          "node_type": "item",
+          "title": "4.20A.2.2 Concrete of M15 grade with minimum cement content of 240 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
+          "code": "8291.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 76,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 9135.05,
+          "rate_display": "9135.05"
+        },
+        {
+          "node_type": "item",
+          "title": "4.20A.2.4 Concrete of M25 grade with minimum cement content of 300 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
+          "code": "9361.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 77,
+          "source_page": 8,
+          "unit": "cum",
+          "rate": 9587.95,
+          "rate_display": "9587.95"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/4.0 CONCRETE WORK.pdf",
+    "row_count": 78,
+    "note_count": 3,
+    "leaf_count": 66,
+    "duplicate_codes": ["8127.80"],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

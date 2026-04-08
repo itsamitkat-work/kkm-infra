@@ -24,7 +24,30 @@
           },
           "files": [
             "supabase/seed/schedules/cpwd_dsr/2.0 EARTH WORK.parsed.json",
-            "supabase/seed/schedules/cpwd_dsr/3.0 MORTAR.parsed.json"
+            "supabase/seed/schedules/cpwd_dsr/3.0 MORTAR.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/4.0 CONCRETE WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/5.0 REINFORCED CEMENT CONCRETE.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/6.0 MASONRY WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/7.0 STONE WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/8.0 CLADDING WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/9.0 WOOD AND P.V.C. WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/10.0 STEEL WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/11.0 FLOORING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/12.0 ROOFING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/13.0 FINISHING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/14.0 REPAIRS TO BUILDING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/15.0 DISMANTLING AND DEMOLISHING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/16.0 ROAD WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/17.0 SANITARY INSTALLATIONS.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/18.0 WATER SUPPLY.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/19.0 DRAINAGE.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/20.0 PILE WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/21.0 ALUMINIUM WORK.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/22.0 WATER PROOFING.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/23.0 RAIN WATER HARVESTING & TUBEWELLS.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/24.0 CONSERVATION OF HERITAGE BUILDINGS.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/25.0 STRUCTURAL GLAZING ALUMINIUM COMPOSITE PANEL.parsed.json",
+            "supabase/seed/schedules/cpwd_dsr/26.0 NEW TECHNOLOGIES AND MATERIALS.parsed.json"
           ]
         }
       ]

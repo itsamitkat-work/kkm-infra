@@ -1,0 +1,907 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/6.0 MASONRY WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "MASONRY WORK",
+      "code": "6.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub - soil water level up to the centre of gravity of brick work under sub - soil water with the quantity of brick work in cum. executed under the sub - soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
+          "source_page": 2,
+          "order_index": 0
+        }
+      ],
+      "children_count": 41,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in foundation and plinth in:",
+          "code": "6.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7370.65,
+              "rate_display": "7370.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "6.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7132.25,
+              "rate_display": "7132.25"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay modular bricks of class designation 7.5 in foundation and plinth in:",
+          "code": "6.2",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 6504.9,
+              "rate_display": "6504.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement Mortar 1:6 (1 cement : 6 coarse sand).",
+              "code": "6.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 6295.15,
+              "rate_display": "6295.15"
+            }
+          ],
+          "order_index": 3,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay machine moulded perforated bricks of class designation 12.5 conforming to IS: 2222 in superstructure above plinth level up to floor five level in cement mortar 1:6 (1 cement : 6 coarse sand) :",
+          "code": "6.3",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With F.P.S.(non modular) bricks",
+              "code": "6.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 9299.9,
+              "rate_display": "9299.90"
+            },
+            {
+              "node_type": "item",
+              "title": "With Modular bricks",
+              "code": "6.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8942.35,
+              "rate_display": "8942.35"
+            }
+          ],
+          "order_index": 6,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in superstructure above plinth level up to floor V level in all shapes and sizes in :",
+          "code": "6.4",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 9344.35,
+              "rate_display": "9344.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "6.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 9105.95,
+              "rate_display": "9105.95"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for brick work / AAC block masonry / Tile brick masonry in superstructure above floor V level, for each four floors or part thereof by mechanical means.",
+          "code": "6.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 12,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 169.45,
+          "rate_display": "169.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for forming cavity 5 cm to 11.5 cm wide in cavity walls with necessary weep and vent holes including use of cores and cost of providing and fixing bitumastic coated M .S. ties 300 mm long of 25x3 mm section at not less than 3 ties per sqm as per approved design.",
+          "code": "6.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 234.2,
+          "rate_display": "234.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing half brick masonry with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in cement mortar 1:3 (1 Cement : 3 coarse sand) in superstructure for closing cavity 5 to 7.5 cm wide in cavity wall complete with 10cm / 11.4 cm wide bitumen felt type 3 grade 1.",
+          "code": "6.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 14,
+          "source_page": 1,
+          "unit": "metre",
+          "rate": 300.75,
+          "rate_display": "300.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work 7 cm thick with common burnt clay F.P.S. (non modular) brick of class designation 7.5 in cement mortar 1:3 (1 cement : 3 coarse sand) in superstructure above plinth level and upto floor five level.",
+          "code": "6.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 15,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 865.65,
+          "rate_display": "865.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work in plain arches in superstructure above plinth level and upto floor five level including centering and shuttering complete for span up to 6 metres with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in cement mortar 1:3 (1 cement : 3 coarse sand).",
+          "code": "6.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 15077.95,
+          "rate_display": "15077.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work in gauged arches in superstructure above plinth level and upto floor five level in cement mortar 1:3 (1 cement : 3 coarse sand) including centering and shuttering complete, for span up to 6 meters with common burnt clay F.P.S. (non modular) bricks of class designation 7.5.",
+          "code": "6.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 19066.1,
+          "rate_display": "19066.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for additional cost of centering for arches exceeding 6m span including all shuttering, bolting, wedging and removal (Area of the soffit to be measured).",
+          "code": "6.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 608.15,
+          "rate_display": "608.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Half brick masonry with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in foundations and plinth in :",
+          "code": "6.12",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:3 (1 cement : 3 coarse sand)",
+              "code": "6.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 931.75,
+              "rate_display": "931.75"
+            },
+            {
+              "node_type": "item",
+              "title": "cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.12.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 905.05,
+              "rate_display": "905.05"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Half brick masonry with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 in superstructure above plinth level up to floor V level.",
+          "code": "6.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:3 (1 cement :3 coarse sand)",
+              "code": "6.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1150.5,
+              "rate_display": "1150.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement :4 coarse sand)",
+              "code": "6.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1123.8,
+              "rate_display": "1123.80"
+            }
+          ],
+          "order_index": 22,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for half brick masonry in superstructure, above floor V level for every four floors or part thereof by mechanical means.",
+          "code": "6.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 15.0,
+          "rate_display": "15.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and placing in position 2 Nos 6 mm dia. M.S. bars at every third course of half brick masonry.",
+          "code": "6.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 26,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 104.8,
+          "rate_display": "104.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry with common burnt clay F.P.S. (non modular) tile bricks of class designation 10 in foundation and plinth in:",
+          "code": "6.16",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 11212.5,
+              "rate_display": "11212.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "6.16.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 10831.05,
+              "rate_display": "10831.05"
+            }
+          ],
+          "order_index": 27,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry with common burnt clay machine moulded tile bricks of class designation 12.5 conforming to IS : 2690 (Part I) in foundation and plinth in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 30,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 11328.5,
+          "rate_display": "11328.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry with common burnt clay F.P.S. (non modular) tile bricks of class designation 10 in superstructure above plinth level up to floor V level in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 31,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 12883.05,
+          "rate_display": "12883.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry with common burnt clay F.P.S. (non modular) tile bricks of class designation 10 in plain arch work in superstructure above plinth and upto floor five level in cement mortar 1:4 (1 cement : 4 coarse sand) including centering and shuttering complete.",
+          "code": "6.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 32,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 18975.15,
+          "rate_display": "18975.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry with common burnt clay F.P.S. (non modular) tile bricks of class designation 10 in gauged arch work in superstructure above plinth and upto floor five level in cement mortar 1:4 (1 cement : 4 coarse sand) including centering and shuttering complete.",
+          "code": "6.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 33,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 23019.75,
+          "rate_display": "23019.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Tile brick masonry work 5 cm thick with common burnt clay F.P.S. (non modular) tile bricks of class designation 10 in cement mortar 1:3 (1 cement : 3 coarse sand) in superstructure above plinth and upto floor five level.",
+          "code": "6.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 34,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 885.45,
+          "rate_display": "885.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Honey-comb brick work 10 / 11.4 cm thick with common burnt clay bricks of class designation 7.5 in super structure above plinth level upto floor V level with cement mortar 1:4 (1 cement : 4 coarse sand).",
+          "code": "6.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 35,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 711.5,
+          "rate_display": "711.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying brick work in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
+          "code": "6.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 36,
+          "source_page": 2,
+          "unit": "metre depth",
+          "rate": 1098.8,
+          "rate_display": "1098.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying brick work in or under foul position.",
+          "code": "6.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 467.55,
+          "rate_display": "467.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay selected F.P.S. (non modular) bricks of class designation 7.5 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand)",
+          "code": "6.26",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 7361.35,
+              "rate_display": "7361.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9439.75,
+              "rate_display": "9439.75"
+            }
+          ],
+          "order_index": 38,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay modular bricks of class designation 7.5 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.27",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 6339.2,
+              "rate_display": "6339.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.27.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 43,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8312.9,
+              "rate_display": "8312.90"
+            }
+          ],
+          "order_index": 41,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay machine moulded modular bricks of class designation 12.5 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 6997.4,
+              "rate_display": "6997.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.28.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 46,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8971.1,
+              "rate_display": "8971.10"
+            }
+          ],
+          "order_index": 44,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay machine moulded F.P.S. (non modular) bricks of class designation 12.5 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.29",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 48,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 7581.15,
+              "rate_display": "7581.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.29.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 49,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9481.7,
+              "rate_display": "9481.70"
+            }
+          ],
+          "order_index": 47,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay machine moulded perforated F.P.S. (non modular) bricks of class designation 12.5 conforming IS : 2222 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 51,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 7370.3,
+              "rate_display": "7370.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9344.0,
+              "rate_display": "9344.00"
+            }
+          ],
+          "order_index": 50,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with common burnt clay machine moulded perforated modular bricks of class designation 12.5 conforming to IS : 2222 in exposed brick work including making horizontal and vertical grooves 10 mm wide 12 mm deep complete in cement mortar 1:6 (1 cement : 6 coarse sand).",
+          "code": "6.31",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "From ground level upto plinth level",
+              "code": "6.31.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 7032.05,
+              "rate_display": "7032.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Above plinth level upto floor V level",
+              "code": "6.31.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 55,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9005.75,
+              "rate_display": "9005.75"
+            }
+          ],
+          "order_index": 53,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with clay flyash F.P.S. (non modular) brick of class designation 7.5 in superstructure above plinth level up to floor five level in :",
+          "code": "6.32",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9333.45,
+              "rate_display": "9333.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "6.32.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 58,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 9095.05,
+              "rate_display": "9095.05"
+            }
+          ],
+          "order_index": 56,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with non modular fly ash bricks conforming to IS:12894, class designation 10 average compressive strength in super structure above plinth level up to floor V level in :",
+          "code": "6.34",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.34.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 60,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8962.35,
+              "rate_display": "8962.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 Coarse sand)",
+              "code": "6.34.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 61,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8752.55,
+              "rate_display": "8752.55"
+            }
+          ],
+          "order_index": 59,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with modular calcium silicate bricks machine moulded conforming to IS:4139, class designation 10 average compressive strength in super structure above plinth level up to floor V level in :",
+          "code": "6.35",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1 cement : 4 coarse sand)",
+              "code": "6.35.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 63,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 9793.75,
+              "rate_display": "9793.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 Coarse sand)",
+              "code": "6.35.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 64,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 9583.95,
+              "rate_display": "9583.95"
+            }
+          ],
+          "order_index": 62,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with modular extruded brunt fly ash clay sewer bricks (Conforming to IS: 4885) in cement mortar 1:4 (1 cement : 4 coarse sand) in foundation and plinth :",
+          "code": "6.36",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement Mortar 1:4 ( 1 cement : 4 coarse sand)",
+              "code": "6.36.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 4,
+              "unit": "cum",
+              "rate": 7197.75,
+              "rate_display": "7197.75"
+            }
+          ],
+          "order_index": 65,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Brick work with modular extruded brunt fly ash clay sewer bricks (conforming to IS : 4885) in arches in foundation and plinth in cement mortar 1:3 ( 1 cement : 3 fine sand).",
+          "code": "6.37",
+          "children_count": 0,
+          "children": [],
+          "order_index": 67,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 13427.3,
+          "rate_display": "13427.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Autoclaved Aerated concrete(AAC) blocks masonry 100 mm/ 125 mm thick with Grade-1 AAC blocks of density 551 to 650 kg/cum conforming to IS:2185 (Part 3) in super structure above plinth level up to floor V level in cement mortar 1:4 (1 cement : 4 coarse sand ). The rate includes providing and placing in position 2 Nos 6 mm dia M.S. bars at every third course of masonry work.",
+          "code": "6.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 68,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 10195.45,
+          "rate_display": "10195.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Gypsum panel partitions 100 mm thick with water proof Gypsum panels of size 666x500x100 mm, made of calcite phosphor Gypsum fixed with tongue and groove edges and jointed with bonding plaster as per manufacturer’s specifications in superstructure above plinth level up to floor V level. Gypsum blocks will have a minimum compressive strength of 9.3 kg/cm2",
+          "code": "6.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 69,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 1023.6,
+          "rate_display": "1023.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for Gypsum panel Partitions in superstructure above floor V level for every four floors or part thereof.",
+          "code": "6.41",
+          "children_count": 0,
+          "children": [],
+          "order_index": 70,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 181.15,
+          "rate_display": "181.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Brick edging 7cm wide 11.4 cm deep to plinth protection with common burnt clay F.P.S. (non modular) bricks of class designation 7.5 including grouting with cement mortar 1:4 (1 cement : 4 fine sand).",
+          "code": "6.44",
+          "children_count": 0,
+          "children": [],
+          "order_index": 71,
+          "source_page": 4,
+          "unit": "metre",
+          "rate": 60.85,
+          "rate_display": "60.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Half brick masonry with non modular fly ash bricks of class designation 10, conforming to IS :12894, in super structure above plinth upto floor V level.",
+          "code": "6.45",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1 : 3 (1 cement : 3 coarse sand)",
+              "code": "6.45.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1132.5,
+              "rate_display": "1132.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1 : 4 (1 cement : 4 coarse sand)",
+              "code": "6.45.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1105.8,
+              "rate_display": "1105.80"
+            }
+          ],
+          "order_index": 72,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Autoclaved Aerated concrete(AAC) blocks masonry with 150 mm to 300 mm thick with Grade-1 AAC blocks of density 551 to 650 kg/cum conforming to IS:2185 (Part 3) in super structure above plinth level up to floor V level with RCC band at sill level and lintel level with approved block laying polymer modified adhesive mortar all complete as per direction of Engineer-in-Charge. (The payment of RCC band and reinforcement shall be made for seperately).",
+          "code": "6.47",
+          "children_count": 0,
+          "children": [],
+          "order_index": 75,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 8333.65,
+          "rate_display": "8333.65"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/6.0 MASONRY WORK.pdf",
+    "row_count": 76,
+    "note_count": 1,
+    "leaf_count": 58,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

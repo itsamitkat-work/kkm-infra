@@ -1,0 +1,1206 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/8.0 CLADDING WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "CLADDING WORK",
+      "code": "8.0",
+      "children_count": 33,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Marble work gang saw cut (polished and machine cut) of thickness 18 mm for wall lining (veneer work), backing filled with a grout of average 12 mm thick in cement mortar 1:3 (1 cement : 3 coarse sand), including pointing with white cement mortar 1:2 (1 white cement : 2 marble dust) with an admixture of pigment to match the marble shade (To be secured to the backing by means of cramps, which shall be paid for separately).",
+          "code": "8.1",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Raj Nagar Plain white marble/ Udaipur green marble/ Zebra black marble.",
+              "code": "8.1.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Area of slab upto 0.50 sqm",
+                  "code": "8.1.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 2,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 5742.55,
+                  "rate_display": "5742.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Area of slab over 0.50 sqm",
+                  "code": "8.1.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 3,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 5938.0,
+                  "rate_display": "5938.00"
+                }
+              ],
+              "order_index": 1,
+              "source_page": 1
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 18 mm thick gang saw cut, mirror polished, premoulded and prepolished, machine cut for kitchen platforms, vanity counters, window sills, facias and similar locations of required size, approved shade, colour and texture laid over 20 mm thick base cement mortar 1:4 (1 cement : 4 coarse sand), joints treated with white cement, mixed with matching pigment, epoxy touch ups, including rubbing, curing, moulding and polishing of edges to give high gloss finish etc. complete at all levels.",
+          "code": "8.2",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Raj Nagar Plain white marble/ Udaipur green marble/ Zebra black marble",
+              "code": "8.2.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Area of slab upto 0.50 sqm",
+                  "code": "8.2.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 6,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 3414.8,
+                  "rate_display": "3414.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Area of slab over 0.50 sqm",
+                  "code": "8.2.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 7,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 3078.4,
+                  "rate_display": "3078.40"
+                }
+              ],
+              "order_index": 5,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "Granite stone slab of colour black, Cherry/Ruby red",
+              "code": "8.2.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Area of slab upto 0.50 sqm",
+                  "code": "8.2.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 9,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 5413.5,
+                  "rate_display": "5413.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Area of slab over 0.50 sqm",
+                  "code": "8.2.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 10,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 5136.3,
+                  "rate_display": "5136.30"
+                }
+              ],
+              "order_index": 8,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "Granite stone slab of all colour and texture except black, Cherry/Ruby red",
+              "code": "8.2.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Area of slab upto 0.50 sqm",
+                  "code": "8.2.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 12,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 4170.7,
+                  "rate_display": "4170.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Area of slab over 0.50 sqm",
+                  "code": "8.2.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 13,
+                  "source_page": 1,
+                  "unit": "sqm",
+                  "rate": 3848.7,
+                  "rate_display": "3848.70"
+                }
+              ],
+              "order_index": 11,
+              "source_page": 1
+            }
+          ],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing edge moulding to 18 mm thick marble stone counters, Vanities etc., including machine polishing to edge to give high gloss finish etc. complete as per design approved by Engineer-in-Charge.",
+          "code": "8.3",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Marble work",
+              "code": "8.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 298.6,
+              "rate_display": "298.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Granite work",
+              "code": "8.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 510.95,
+              "rate_display": "510.95"
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for fixing marble /granite stone, over and above corresponding basic item, in facia and drops of width upto 150 mm with epoxy resin based adhesive, including cleaning etc. complete.",
+          "code": "8.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 1,
+          "unit": "metre",
+          "rate": 568.55,
+          "rate_display": "568.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing opening of required size & shape for wash basin/ kitchen sink in kitchen platform, vanity counter and similar location in marble/ Granite/ stone work, including necessary holes for pillar taps etc. including moulding, rubbing and polishing of cut edges etc. complete.",
+          "code": "8.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 1,
+          "unit": "each",
+          "rate": 978.7,
+          "rate_display": "978.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Mirror polishing on marble work/Granite work/stone work where ever required to give high gloss finish complete.",
+          "code": "8.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 19,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 506.7,
+          "rate_display": "506.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing cramps of required size & shape in RCC/ CC / Brick masonry backing with cement mortar 1:2 ( 1 cement :2 coarse sand), including drilling necessary hole in stones and embedding the cramp in the hole (fastener to be paid separately).",
+          "code": "8.7",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Gunmetal cramps kg",
+              "code": "8.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Stainless steel cramps kg",
+              "code": "8.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 2
+            }
+          ],
+          "order_index": 20,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "723.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 22,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "714.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 24,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing expansion hold fasteners on C.C. /R.C.C./Brick masonry surface backing including drilling necessary holes and the cost of bolt etc complete.",
+          "code": "8.8",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Wedge expansion type",
+              "code": "8.8.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Fastener with threaded dia 6 mm",
+                  "code": "8.8.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 27,
+                  "source_page": 2,
+                  "unit": "each",
+                  "rate": 36.75,
+                  "rate_display": "36.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Fastener with threaded dia 10 mm",
+                  "code": "8.8.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 28,
+                  "source_page": 2,
+                  "unit": "each",
+                  "rate": 40.0,
+                  "rate_display": "40.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Fastener with threaded dia 12 mm",
+                  "code": "8.8.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 29,
+                  "source_page": 2,
+                  "unit": "each",
+                  "rate": 61.7,
+                  "rate_display": "61.70"
+                }
+              ],
+              "order_index": 26,
+              "source_page": 2
+            }
+          ],
+          "order_index": 25,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Stone tile (polished) work for wall lining over 12 mm thick bed of cement mortar 1:3 (1 cement : 3 coarse sand) and cement slurry @ 3.3 kg/sqm including pointing in white cement complete.",
+          "code": "8.9",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "8 mm thick",
+              "code": "8.9.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Raj nagar plain white marble/ Udaipur green marble/ Zebra black marble",
+                  "code": "8.9.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 32,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 3190.3,
+                  "rate_display": "3190.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Granite of any colour and shade",
+                  "code": "8.9.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 33,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 3617.55,
+                  "rate_display": "3617.55"
+                }
+              ],
+              "order_index": 31,
+              "source_page": 2
+            }
+          ],
+          "order_index": 30,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing stone slab with table rubbed, edges rounded and polished, of size 75x50 cm deep and 1.8 cm thick, fixed in urinal partitions by cutting a chase of appropriate width with chase cutter and embedding the stone in the chase with epoxy grout or with cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 6 mm nominal size) as per direction of Engineer-in-charge and finished smooth.",
+          "code": "8.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White Agaria Marble Stone",
+              "code": "8.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 3500.45,
+              "rate_display": "3500.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Granite Stone of approved shade",
+              "code": "8.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 36,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 4051.85,
+              "rate_display": "4051.85"
+            }
+          ],
+          "order_index": 34,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing machine cut, mirror/ eggshell polished , Marble stone work for wall lining (veneer work) including dado, skirting, risers of steps etc., in required design and pattern wherever required, stones of different finished surface texture, on 12 mm (average) thick cement mortar 1:3 (1 cement : 3 coarse sand) laid and jointed with white cement slurry @ 3.3 kg/sqm including pointing with white cement slurry admixed with pigment of matching shade, including rubbing, curing, polishing etc. all complete as per Architectural drawings, and as directed by the Engineer-in-Charge.",
+          "code": "8.11",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick Italian Marble stone slab,Perlato, Rosso verona, Fire Red or Dark Emperadore etc.",
+              "code": "8.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 38,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 10414.8,
+              "rate_display": "10414.80"
+            }
+          ],
+          "order_index": 37,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work (machine cut edges) for wall lining etc. (veneer work) upto 10 metre height, backing filled with a grout of average 12 mm thick cement mortar 1:3 (1 cement : 3 coarse sand) including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade : (To be secured to the backing and the sides by means of cramps and pins which shall be paid for separately) :",
+          "code": "8.14",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone - exposed face fine dressed with rough backing.",
+              "code": "8.14.1",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "70 mm thick",
+                  "code": "8.14.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 41,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 6282.4,
+                  "rate_display": "6282.40"
+                },
+                {
+                  "node_type": "item",
+                  "title": "60 mm thick",
+                  "code": "8.14.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 42,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 6035.85,
+                  "rate_display": "6035.85"
+                },
+                {
+                  "node_type": "item",
+                  "title": "50 mm thick",
+                  "code": "8.14.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 5789.9,
+                  "rate_display": "5789.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm thick",
+                  "code": "8.14.1.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 44,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 5542.6,
+                  "rate_display": "5542.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick",
+                  "code": "8.14.1.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 45,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 5295.9,
+                  "rate_display": "5295.90"
+                }
+              ],
+              "order_index": 40,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Red sand stone - Exposed face machine cut and table rubbed with rough backing.",
+              "code": "8.14.2",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "70 mm thick",
+                  "code": "8.14.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 47,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 8502.25,
+                  "rate_display": "8502.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "60 mm thick",
+                  "code": "8.14.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 48,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 8255.75,
+                  "rate_display": "8255.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "50 mm thick",
+                  "code": "8.14.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 49,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 8009.75,
+                  "rate_display": "8009.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm thick",
+                  "code": "8.14.2.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 50,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 7762.5,
+                  "rate_display": "7762.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick",
+                  "code": "8.14.2.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 51,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 7515.8,
+                  "rate_display": "7515.80"
+                }
+              ],
+              "order_index": 46,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone - exposed face fine dressed with rough backing .",
+              "code": "8.14.3",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "70 mm thick",
+                  "code": "8.14.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 53,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 7278.2,
+                  "rate_display": "7278.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "60 mm thick",
+                  "code": "8.14.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 54,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 6889.45,
+                  "rate_display": "6889.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "50 mm thick",
+                  "code": "8.14.3.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 55,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 6501.55,
+                  "rate_display": "6501.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm thick",
+                  "code": "8.14.3.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 56,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 6110.75,
+                  "rate_display": "6110.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick",
+                  "code": "8.14.3.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 57,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 5722.6,
+                  "rate_display": "5722.60"
+                }
+              ],
+              "order_index": 52,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone - Exposed face machine cut and table rubbed with rough backing.",
+              "code": "8.14.4",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "70 mm thick",
+                  "code": "8.14.4.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 59,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 9498.1,
+                  "rate_display": "9498.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "60 mm thick",
+                  "code": "8.14.4.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 60,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 9109.3,
+                  "rate_display": "9109.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "50 mm thick",
+                  "code": "8.14.4.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 61,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 8721.45,
+                  "rate_display": "8721.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm thick",
+                  "code": "8.14.4.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 62,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 8330.65,
+                  "rate_display": "8330.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick",
+                  "code": "8.14.4.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 63,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 7942.5,
+                  "rate_display": "7942.50"
+                }
+              ],
+              "order_index": 58,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Gang saw cut stone",
+              "code": "8.14.5",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick White sand stone",
+                  "code": "8.14.5.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 65,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 3256.65,
+                  "rate_display": "3256.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "30 mm thick Red sand stone",
+                  "code": "8.14.5.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 3119.2,
+                  "rate_display": "3119.20"
+                }
+              ],
+              "order_index": 64,
+              "source_page": 3
+            }
+          ],
+          "order_index": 39,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing stainless steel cramps of required size and shape for anchoring stone wall lining to the backing or securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases in stone and holes in walls wherever required. kg",
+          "code": "8.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 67,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing copper pins 7.5 cm long 6 mm diameter for securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases.",
+          "code": "8.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 69,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 43.9,
+          "rate_display": "43.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Wall lining butch work upto 10m height with Dholpur stone 40 mm thick rough facing on the exposed surface with stone strips of minimum length 300 mm and required width, including embedding every tenth layer and bottom most layer in masonry or concrete after making necessary chases of size 75x75 mm and by providing layer of 75 mm thick strips i/c 12 mm thick bed of cement mortar 1:3 (1 Cement : 3 coarse sand) i/c ruled pointing in cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment to match the shade of stone complete as per direction of Engineer-in-charge.",
+          "code": "8.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 70,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 3135.0,
+          "rate_display": "3135.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work (machine cut edges in veneer work) for wall lining upto 10 m height, backing filled with a grout of 12 mm thick cement mortar 1:3 (1 Cement : 3 coarse sand) and jointed with Cement mortar 1:2 (1 cement : 2 stone dust), including grinding with hand grinder on joints, rubbing and polishing complete. (To be secured to the backing and the sides by means of cramps and pins which shall be paid for separately).",
+          "code": "8.18",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Prepolished kota stone slabs on exposed face.",
+              "code": "8.18.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "25 mm thick",
+                  "code": "8.18.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 73,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 2651.35,
+                  "rate_display": "2651.35"
+                }
+              ],
+              "order_index": 72,
+              "source_page": 3
+            }
+          ],
+          "order_index": 71,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work for wall lining on exterior walls of height more than 10 m from ground level for every additional height of 3 m or part there of.",
+          "code": "8.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 74,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 165.85,
+          "rate_display": "165.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing dry cladding upto 10 metre height with 30 mm thick gang saw cut stone with machine cut edges of uniform colour and size upto 1mx1m, fixed to structural steel frame work and/ or with the help of cramps, pins etc. and sealing the joints with approved weather sealant as per Architectural drawing and direction of Engineer-in-charge. (The steel frame work, stainless steel cramps and pins etc. shall be paid for separately).",
+          "code": "8.20",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone - 30 mm thick gang saw cut stone",
+              "code": "8.20.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2902.65,
+              "rate_display": "2902.65"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone - 30 mm thick gang saw cut stone",
+              "code": "8.20.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 3040.1,
+              "rate_display": "3040.10"
+            }
+          ],
+          "order_index": 75,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing structural steel frame (for dry cladding with 30 mm thick gang saw cut with machine cut edges sand stone) on walls at all heights using M.S. square/ rectangular tube in the required pattern as per architectural drawing, including cost of cutting, bending, welding etc. The frame work shall be fixed to the wall with the help of M.S. brackets/ lugs of angle iron/ flats etc. which shall be welded to the frame and embedded in brick wall with cement concrete block 1:2:4 (1 cement :2 coarse sand :4 graded stone aggregate 20 mm nominal size) of size 300x230x300 mm, including cost of necessary centring and shuttering and with approved expansion hold fasteners on CC/RCC surface, including drilling necessary holes. Approved cramps/ pins etc. shall be welded to the frame work to support stone cladding, the steel work will be given a priming coat of Zinc primer as approved by Engineer-in-charge and painted with two or more coats of epoxy paint (Shop drawings shall be submitted by the contractor to the Engineer-in-charge for approval before execution). The frame work shall be fixed in true horizontal & vertical lines/planes. (Only structural steel frame work shall be measured for the purpose of payment, stainless steel cramps shall be paid for separately and nothing extra shall be paid). kg",
+          "code": "8.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "269.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 79,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing adjustable stainless steel cramps of approved quality, required shape and size, adjustable with stainless steel nuts, bolts and washer (total weight not less than 260 gram), for dry stone cladding fixed on frame work at suitable location, including making necessary recesses in stone slab, drilling required holes etc complete as per direction of the Engineer-in-charge.",
+          "code": "8.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 80,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 437.0,
+          "rate_display": "437.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing 50x50x50 mm 2nd class teak wood plugs including cutting brick work and fixing in cement mortar 1:3 (1 cement : 3 fine sand) and making good the walls etc.",
+          "code": "8.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 81,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 40.85,
+          "rate_display": "40.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing expandable fasteners of specified size with necessary plastic sleeves and galvanised M.S. screws including drilling holes in masonry work /CC/ R.C.C. and making good etc. complete.",
+          "code": "8.24",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "25 mm long",
+              "code": "8.24.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 22.35,
+              "rate_display": "22.35"
+            },
+            {
+              "node_type": "item",
+              "title": "32 mm long",
+              "code": "8.24.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 84,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 24.05,
+              "rate_display": "24.05"
+            },
+            {
+              "node_type": "item",
+              "title": "40 mm long",
+              "code": "8.24.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 28.3,
+              "rate_display": "28.30"
+            },
+            {
+              "node_type": "item",
+              "title": "50 mm long",
+              "code": "8.24.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 86,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 29.75,
+              "rate_display": "29.75"
+            }
+          ],
+          "order_index": 82,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 2nd class teak wood plain lining tongued and grooved, including wooden plugs complete with necessary screws and priming coat on unexposed surface.",
+          "code": "8.25",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "40 mm thick",
+              "code": "8.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 6646.7,
+              "rate_display": "6646.70"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "8.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 4437.8,
+              "rate_display": "4437.80"
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm thick",
+              "code": "8.25.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 3601.3,
+              "rate_display": "3601.30"
+            },
+            {
+              "node_type": "item",
+              "title": "12 mm thick",
+              "code": "8.25.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2423.25,
+              "rate_display": "2423.25"
+            }
+          ],
+          "order_index": 87,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in wall lining flat pressed three layer (medium density) particle board or graded wood Pre-laminated one side decorative lamination and other side balancing lamination Grade I, Type II, IS : 12823 marked, including priming coat on unexposed arrangement and screws etc. complete :",
+          "code": "8.26",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "12 mm thick",
+              "code": "8.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1430.2,
+              "rate_display": "1430.20"
+            },
+            {
+              "node_type": "item",
+              "title": "18 mm thick",
+              "code": "8.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 94,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1492.8,
+              "rate_display": "1492.80"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "8.26.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 95,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1979.5,
+              "rate_display": "1979.50"
+            }
+          ],
+          "order_index": 92,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing specified wood frame work consisting of battens 50x25 mm fixed with rawl plug and drilling necessary holes for rawl plug etc. including priming coat complete.",
+          "code": "8.27",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Kiln seasoned and chemically treated hollock wood",
+              "code": "8.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 97,
+              "source_page": 5,
+              "unit": "cum",
+              "rate": 187277.65,
+              "rate_display": "187277.65"
+            }
+          ],
+          "order_index": 96,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing plywood 4 mm thick, one side decorative veneer conforming to IS: 1328 (type-1), for plain lining / cladding with necessary screws, including priming coat on unexposed surface with :",
+          "code": "8.28",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Decorative veneer facings of approved manufacture",
+              "code": "8.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1946.25,
+              "rate_display": "1946.25"
+            }
+          ],
+          "order_index": 98,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 4 mm thick coir veneer board, ISI marked IS : 14842, plain lining with necessary screws, priming coat on unexposed surface etc., complete.",
+          "code": "8.29",
+          "children_count": 0,
+          "children": [],
+          "order_index": 100,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 1825.05,
+          "rate_display": "1825.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing skirting with Pre-laminated (one side decorative and other side balancing lamination) flat pressed 3 layer or graded particle board (medium density) Grade I, Type II, IS :12823 marked, with necessary fixing arrangements and screws, including drilling necessary holes for rawl plugs etc. and priming coat on unexposed surface complete :",
+          "code": "8.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick",
+              "code": "8.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 102,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1976.45,
+              "rate_display": "1976.45"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "8.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 103,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 2463.1,
+              "rate_display": "2463.10"
+            }
+          ],
+          "order_index": 101,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Ist quality ceramic glazed wall tiles conforming to IS: 15622 (thickness to be specified by the manufacturer), of approved make, in all colours, shades except burgundy, bottle green, black of any size as approved by Engineer-in-Charge, in skirting, risers of steps and dados, over 12 mm thick bed of cement mortar 1:3 (1 cement : 3 coarse sand) and jointing with grey cement slurry @ 3.3kg per sqm, including pointing in white cement mixed with pigment of matching shade complete.",
+          "code": "8.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 104,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 1267.95,
+          "rate_display": "1267.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Designing, fabricating, testing, installing and fixing in position Curtain Wall with Aluminium Composite Panel Cladding, with open grooves for linear as well as curvilinear portions of the building , for all heights and all levels etc. including: (a) Structural analysis & design and preparation of shop drawings for pressure equalisation or rain screen principle as required, proper drainage of water to make it watertight including checking of all the structural and functional design. (b) Providing, fabricating and supplying and fixing panels of aluminium composite panel cladding in pan shape in metalic colour of approved shades made out of 4 mm thick aluminium composite panel material consisting of 3 mm thick FR grade mineral core sandwiched between two Aluminium sheets (each 0.5 mm thick). The aluminium composite panel cladding sheet shall be coil coated, with Kynar 500 based PVDF / Lumiflon based fluoropolymer resin coating of approved colour and shade on face # 1 and polymer (Service) coating on face # 2 as specified using stainless steel screws, nuts, bolts, washers, cleats, weather silicone sealant, backer rods etc. (c) The fastening brackets of Aluminium alloy 6005 T5 / MS with Hot Dip Galvanised with serrations and serrated washers to arrest the wind load movement, fasteners, SS 316 Pins and anchor bolts of approved make in SS 316, Nylon separators to prevent bi-metallic contacts all complete required to perform as per specification and drawing The item includes cost of all material & labour component, the cost of all mock ups at site, cost of all samples of the individual components for testing in an approved laboratory, field tests on the assembled working curtain wall with aluminium composite panel cladding, cleaning and protection of the curtain wall with aluminium composite panel cladding till the handing over of the building for occupation. Base frame work for ACP cladding is payable under the relevant aluminium items. The Contractor shall provide curtain wall with aluminium composite panel cladding, having all the performance characteristics all complete , as per the Architectural drawings, as per item description, as specified, as per the approved shop drawings and as directed by the Engineer-in-Charge. However, for the purpose of payment, only the actual area on the external face of the curtain wall with Aluminum Composite Panel Cladding (including width of groove) shall be measured in sqm. up to two decimal places.",
+          "code": "8.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 105,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 5015.05,
+          "rate_display": "5015.05"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/8.0 CLADDING WORK.pdf",
+    "row_count": 106,
+    "note_count": 0,
+    "leaf_count": 76,
+    "duplicate_codes": [
+      "714.40"
+    ],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

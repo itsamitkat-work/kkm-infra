@@ -1,0 +1,2047 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/19.0 DRAINAGE.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "DRAINAGE",
+      "code": "19.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "NOTE : - The rates given for all the items under sub-head ‘Drainage’ are applicable to work executed in soils above sub- soil water level. Extra allowance has to be made for work under sub- soil water level. STONE WARE PIPES AND FITTINGS",
+          "source_page": 1,
+          "order_index": 0
+        }
+      ],
+      "children_count": 36,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing, laying and jointing glazed stoneware pipes class SP-1 with stiff mixture of cement mortar in the proportion of 1:1 (1 cement : 1 fine sand) including testing of joints etc. complete :",
+          "code": "19.1",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter",
+              "code": "19.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 443.6,
+              "rate_display": "443.60"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter",
+              "code": "19.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 695.8,
+              "rate_display": "695.80"
+            },
+            {
+              "node_type": "item",
+              "title": "200 mm diameter",
+              "code": "19.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 970.35,
+              "rate_display": "970.35"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm diameter",
+              "code": "19.1.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1505.6,
+              "rate_display": "1505.60"
+            },
+            {
+              "node_type": "item",
+              "title": "300 mm diameter",
+              "code": "19.1.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 2064.15,
+              "rate_display": "2064.15"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying cement concrete 1:5:10 (1 cement : 5 coarse sand : 10 graded stone aggregate 40 mm nominal size) all-round S.W. pipes including bed concrete as per standard design :",
+          "code": "19.2",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter S.W. pipe",
+              "code": "19.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 964.75,
+              "rate_display": "964.75"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter S.W. pipe",
+              "code": "19.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1179.85,
+              "rate_display": "1179.85"
+            },
+            {
+              "node_type": "item",
+              "title": "200 mm diameter S.W. pipe",
+              "code": "19.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1375.45,
+              "rate_display": "1375.45"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm diameter S.W. pipe",
+              "code": "19.2.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1590.55,
+              "rate_display": "1590.55"
+            }
+          ],
+          "order_index": 6,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying cement concrete 1:5:10 (1 cement : 5 coarse sand : 10 graded stone aggregate 40 mm nominal size) up to haunches of S.W. pipes including bed concrete as per standard design :",
+          "code": "19.3",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter S.W. pipe",
+              "code": "19.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 458.5,
+              "rate_display": "458.50"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter S.W. pipe",
+              "code": "19.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 743.1,
+              "rate_display": "743.10"
+            },
+            {
+              "node_type": "item",
+              "title": "200 mm diameter S.W. pipe",
+              "code": "19.3.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 873.5,
+              "rate_display": "873.50"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm diameter S.W. pipe",
+              "code": "19.3.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1016.9,
+              "rate_display": "1016.90"
+            },
+            {
+              "node_type": "item",
+              "title": "300 mm diameter S.W. pipe",
+              "code": "19.3.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 1173.35,
+              "rate_display": "1173.35"
+            }
+          ],
+          "order_index": 11,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing square-mouth S.W. gully trap class SP-1 complete with C.I. grating brick masonry chamber with water tight C.I. cover with frame of 300 x 300 mm size (inside) the weight of cover to be not less than 4.50 kg and frame to be not less than 2.70 kg as per standard design:",
+          "code": "19.4",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100 mm size P type",
+              "code": "19.4.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.4.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 19,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2707.65,
+                  "rate_display": "2707.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.4.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 20,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2685.2,
+                  "rate_display": "2685.20"
+                }
+              ],
+              "order_index": 18,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "150 x 100 mm size P type",
+              "code": "19.4.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.4.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 22,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2734.2,
+                  "rate_display": "2734.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With sewer bricks conforming to IS : 4885",
+                  "code": "19.4.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 23,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2711.7,
+                  "rate_display": "2711.70"
+                }
+              ],
+              "order_index": 21,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "180x150 mm size P type",
+              "code": "19.4.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.4.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 25,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2802.15,
+                  "rate_display": "2802.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.4.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 26,
+                  "source_page": 1,
+                  "unit": "each",
+                  "rate": 2779.65,
+                  "rate_display": "2779.65"
+                }
+              ],
+              "order_index": 24,
+              "source_page": 1
+            }
+          ],
+          "order_index": 17,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of old S.W. pipes including breaking of joints and bed concrete stacking of useful materials near the site within 50 m lead and disposal of unserviceable materials into municipal dumps :",
+          "code": "19.5",
+          "children_count": 8,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter",
+              "code": "19.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 89.0,
+              "rate_display": "89.00"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter",
+              "code": "19.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 98.45,
+              "rate_display": "98.45"
+            },
+            {
+              "node_type": "item",
+              "title": "200 mm diameter",
+              "code": "19.5.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 104.7,
+              "rate_display": "104.70"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm diameter",
+              "code": "19.5.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 111.0,
+              "rate_display": "111.00"
+            },
+            {
+              "node_type": "item",
+              "title": "300 mm diameter",
+              "code": "19.5.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 117.25,
+              "rate_display": "117.25"
+            },
+            {
+              "node_type": "item",
+              "title": "350 mm diameter",
+              "code": "19.5.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 135.05,
+              "rate_display": "135.05"
+            },
+            {
+              "node_type": "item",
+              "title": "400 mm diameter",
+              "code": "19.5.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 147.65,
+              "rate_display": "147.65"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm diameter",
+              "code": "19.5.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 153.9,
+              "rate_display": "153.90"
+            }
+          ],
+          "order_index": 27,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying non-pressure NP2 class (light duty) R.C.C. pipes with collars jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete :",
+          "code": "19.6",
+          "children_count": 13,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia. R.C.C. pipe",
+              "code": "19.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 37,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 507.05,
+              "rate_display": "507.05"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm dia. R.C.C. pipe",
+              "code": "19.6.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 38,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 556.45,
+              "rate_display": "556.45"
+            },
+            {
+              "node_type": "item",
+              "title": "250 mm dia. R.C.C. pipe",
+              "code": "19.6.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 899.8,
+              "rate_display": "899.80"
+            },
+            {
+              "node_type": "item",
+              "title": "300 mm dia. R.C.C. pipe",
+              "code": "19.6.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 994.3,
+              "rate_display": "994.30"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm dia. R.C.C. pipe",
+              "code": "19.6.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 41,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 1620.95,
+              "rate_display": "1620.95"
+            },
+            {
+              "node_type": "item",
+              "title": "500 mm dia. R.C.C. pipe",
+              "code": "19.6.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 1918.9,
+              "rate_display": "1918.90"
+            },
+            {
+              "node_type": "item",
+              "title": "600 mm dia. R.C.C. pipe",
+              "code": "19.6.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 43,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 2243.4,
+              "rate_display": "2243.40"
+            },
+            {
+              "node_type": "item",
+              "title": "700 mm dia. R.C.C. pipe",
+              "code": "19.6.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 44,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 2932.5,
+              "rate_display": "2932.50"
+            },
+            {
+              "node_type": "item",
+              "title": "800 mm dia. R.C.C. pipe",
+              "code": "19.6.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 3511.95,
+              "rate_display": "3511.95"
+            },
+            {
+              "node_type": "item",
+              "title": "900 mm dia. R.C.C. pipe",
+              "code": "19.6.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 46,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 4750.85,
+              "rate_display": "4750.85"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia. R.C.C. pipe",
+              "code": "19.6.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 5562.6,
+              "rate_display": "5562.60"
+            },
+            {
+              "node_type": "item",
+              "title": "1100 mm dia. R.C.C. pipe",
+              "code": "19.6.12",
+              "children_count": 0,
+              "children": [],
+              "order_index": 48,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 6276.6,
+              "rate_display": "6276.60"
+            },
+            {
+              "node_type": "item",
+              "title": "1200 mm dia. R.C.C. pipe",
+              "code": "19.6.13",
+              "children_count": 0,
+              "children": [],
+              "order_index": 49,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 7102.15,
+              "rate_display": "7102.15"
+            }
+          ],
+          "order_index": 36,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry manhole in cement mortar 1:4 ( 1 cement : 4 coarse sand ) with R.C.C. top slab with 1:1.5:3 mix (1 cement : 1.5 coarse sand (zone-III) : 3 graded stone aggregate 20 mm nominal size), foundation concrete 1:4:8 mix (1 cement : 4 coarse sand (zone-III) : 8 graded stone aggregate 40 mm nominal size), inside plastering 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with floating coat of neat cement and making channels in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement complete as per standard design :",
+          "code": "19.7",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Inside size 90x80 cm and 45 cm deep including C.I. cover with frame (light duty) 455x610 mm internal dimensions, total weight of cover and frame to be not less than 38 kg (weight of cover 23 kg and weight of frame 15 kg) :",
+              "code": "19.7.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.7.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 52,
+                  "source_page": 2,
+                  "unit": "each",
+                  "rate": 12770.55,
+                  "rate_display": "12770.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.7.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 53,
+                  "source_page": 2,
+                  "unit": "each",
+                  "rate": 12711.8,
+                  "rate_display": "12711.80"
+                }
+              ],
+              "order_index": 51,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Inside size 120x90 cm and 90 cm deep including C.I. cover with frame (medium duty) 500 mm internal diameter, total weight of cover and frame to be not less than 116 kg (weight of cover 58 kg and weight of frame 58 kg) :",
+              "code": "19.7.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.7.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 55,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 26405.5,
+                  "rate_display": "26405.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.7.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 56,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 26244.7,
+                  "rate_display": "26244.70"
+                }
+              ],
+              "order_index": 54,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Inside size 120x90 cm and 90 cm deep including C.I. cover with frame (heavy duty) 560 mm internal diameter, total weight of cover and frame to be not less than 208 kg (weight of cover 108 kg and weight of frame 100 kg) :",
+              "code": "19.7.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.7.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 58,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 32857.85,
+                  "rate_display": "32857.85"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.7.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 59,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 32719.5,
+                  "rate_display": "32719.50"
+                }
+              ],
+              "order_index": 57,
+              "source_page": 3
+            }
+          ],
+          "order_index": 50,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for depth for manholes :",
+          "code": "19.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size 90x80 cm",
+              "code": "19.8.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.8.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 62,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 8825.4,
+                  "rate_display": "8825.40"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.8.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 63,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 8654.25,
+                  "rate_display": "8654.25"
+                }
+              ],
+              "order_index": 61,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Size 120x90 cm",
+              "code": "19.8.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.8.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 65,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 10585.5,
+                  "rate_display": "10585.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.8.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 10381.45,
+                  "rate_display": "10381.45"
+                }
+              ],
+              "order_index": 64,
+              "source_page": 3
+            }
+          ],
+          "order_index": 60,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry circular type manhole 0.91 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement : 4 coarse sand), inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement, foundation concrete 1:3:6 mix (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size), and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
+          "code": "19.9",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "0.91 m deep with S.F.R.C. cover and frame (heavy duty, HD-20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg., fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
+              "code": "19.9.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.9.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 69,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 12725.0,
+                  "rate_display": "12725.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming to IS : 4885",
+                  "code": "19.9.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 70,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 12600.4,
+                  "rate_display": "12600.40"
+                }
+              ],
+              "order_index": 68,
+              "source_page": 3
+            }
+          ],
+          "order_index": 67,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra depth for circular type manhole 0.91m internal dia (at bottom) beyond 0.91 m to 1.67 m",
+          "code": "19.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 7591.8,
+              "rate_display": "7591.80"
+            },
+            {
+              "node_type": "item",
+              "title": "With Sewer bricks conforming IS : 4885",
+              "code": "19.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 7448.45,
+              "rate_display": "7448.45"
+            }
+          ],
+          "order_index": 71,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry circular manhole 1.22 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement :4 coarse sand) inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement foundation concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size) and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
+          "code": "19.11",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1.68 m deep with SFRC Cover and frame (heavy duty HD-20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg. fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
+              "code": "19.11.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.11.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 76,
+                  "source_page": 4,
+                  "unit": "each",
+                  "rate": 24702.75,
+                  "rate_display": "24702.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming IS : 4885",
+                  "code": "19.11.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 77,
+                  "source_page": 4,
+                  "unit": "each",
+                  "rate": 24446.7,
+                  "rate_display": "24446.70"
+                }
+              ],
+              "order_index": 75,
+              "source_page": 4
+            }
+          ],
+          "order_index": 74,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra depth for circular type manhole 1.22 m internal dia (at bottom) beyond 1.68 m to 2.29 m :",
+          "code": "19.12",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 9861.45,
+              "rate_display": "9861.45"
+            },
+            {
+              "node_type": "item",
+              "title": "With Sewer bricks conforming IS : 4885",
+              "code": "19.12.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 80,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 9674.4,
+              "rate_display": "9674.40"
+            }
+          ],
+          "order_index": 78,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry circular manhole 1.52 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement : 4 coarse sand) inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement, foundation concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size) and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
+          "code": "19.13",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "2.30 m deep with SFRC Cover and frame (heavy duty HD- 20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg. fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
+              "code": "19.13.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.13.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 83,
+                  "source_page": 4,
+                  "unit": "each",
+                  "rate": 52969.1,
+                  "rate_display": "52969.10"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With Sewer bricks conforming IS : 4885",
+                  "code": "19.13.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 84,
+                  "source_page": 4,
+                  "unit": "each",
+                  "rate": 52266.8,
+                  "rate_display": "52266.80"
+                }
+              ],
+              "order_index": 82,
+              "source_page": 4
+            }
+          ],
+          "order_index": 81,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra depth for circular type manhole 1.52 m internal dia (at bottom) beyond 2.30 m :",
+          "code": "19.14",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.14.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 86,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 22771.85,
+              "rate_display": "22771.85"
+            },
+            {
+              "node_type": "item",
+              "title": "With Sewer bricks conforming IS : 4885",
+              "code": "19.14.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "metre",
+              "rate": 22288.1,
+              "rate_display": "22288.10"
+            }
+          ],
+          "order_index": 85,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing M.S. foot rests including fixing in manholes with 20x20x10 cm cement concrete blocks 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) as per standard design :",
+          "code": "19.15",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With 20x20 mm square bar",
+              "code": "19.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 544.7,
+              "rate_display": "544.70"
+            },
+            {
+              "node_type": "item",
+              "title": "With 20 mm diameter round bar",
+              "code": "19.15.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 496.5,
+              "rate_display": "496.50"
+            }
+          ],
+          "order_index": 88,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing orange colour safety foot rest of minimum 6 mm thick plastic encapsulated as per IS : 10910, on 12 mm dia steel bar conforming to IS: 1786, having minimum cross section as 23 mmx25 mm and over all minimum length 263 mm and width as 165 mm with minimum 112 mm space between protruded legs having 2 mm tread on top surface by ribbing or chequering besides necessary and adequate anchoring projections on tail length on 138 mm as per standard drawing and suitable to with stand the bend test and chemical resistance test as per specifications and having manufacture’s permanent identification mark to be visible even after fixing, including fixing in manholes with 30x20x15 cm cement concrete block 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) complete as per design.",
+          "code": "19.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 91,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 553.7,
+          "rate_display": "553.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Replacement of M.S. foot rests in manholes including dismantling concrete blocks and fixing with 20x20x10 cm cement concrete blocks 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size):",
+          "code": "19.17",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With 20x20 mm square bar",
+              "code": "19.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 670.2,
+              "rate_display": "670.20"
+            },
+            {
+              "node_type": "item",
+              "title": "With 20 mm diameter round bar",
+              "code": "19.17.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 94,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 621.95,
+              "rate_display": "621.95"
+            }
+          ],
+          "order_index": 92,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and fixing C.I. cover without frame for manholes :",
+          "code": "19.18",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "455x610 mm rectangular C.I. cover (light duty) the weight of the cover to be not less than 23 kg",
+              "code": "19.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 96,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1358.0,
+              "rate_display": "1358.00"
+            },
+            {
+              "node_type": "item",
+              "title": "500 mm diameter C.I. cover (medium duty) the weight of the cover to be not less than 58 kg",
+              "code": "19.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 97,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 3441.2,
+              "rate_display": "3441.20"
+            },
+            {
+              "node_type": "item",
+              "title": "560 mm diameter C.I. cover (heavy duty) the weight of the cover to be not less than 108 kg",
+              "code": "19.18.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 7575.4,
+              "rate_display": "7575.40"
+            }
+          ],
+          "order_index": 95,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position pre-cast R.C.C. manhole cover and frame of required shape and approved quality",
+          "code": "19.19",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "L D- 2.5",
+              "code": "19.19.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Rectangular shape 600x450 mm internal dimensions",
+                  "code": "19.19.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 101,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1437.65,
+                  "rate_display": "1437.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Square shape 450 mm internal dimensions",
+                  "code": "19.19.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 102,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1155.45,
+                  "rate_display": "1155.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Circular shape 450 mm internal diameter",
+                  "code": "19.19.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 103,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1169.65,
+                  "rate_display": "1169.65"
+                }
+              ],
+              "order_index": 100,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "M D - 10",
+              "code": "19.19.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Square shape 450 mm internal dimension",
+                  "code": "19.19.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 105,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1386.55,
+                  "rate_display": "1386.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Circular shape 500 mm internal diameter",
+                  "code": "19.19.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 106,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1172.6,
+                  "rate_display": "1172.60"
+                }
+              ],
+              "order_index": 104,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "H D - 20",
+              "code": "19.19.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Circular shape 560 mm internal diameter",
+                  "code": "19.19.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 108,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 1675.7,
+                  "rate_display": "1675.70"
+                }
+              ],
+              "order_index": 107,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "EHD - 35",
+              "code": "19.19.4",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Circular shape 560 mm internal dia",
+                  "code": "19.19.4.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 110,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 2123.8,
+                  "rate_display": "2123.80"
+                }
+              ],
+              "order_index": 109,
+              "source_page": 5
+            }
+          ],
+          "order_index": 99,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and fixing C.I. cover 300x300 mm without frame for gully trap (standard pattern) the weight of cover to be not less than 4.5 kg",
+          "code": "19.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 111,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 787.0,
+          "rate_display": "787.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Making connection of drain or sewer line with existing manhole including breaking into and making good the walls, floors with cement concrete 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) cement plastered on both sides with cement mortar 1:3 (1 cement : 3 coarse sand), finished with a floating coat of neat cement and making necessary channels for the drain etc. complete :",
+          "code": "19.21",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For pipes 100 to 250 mm diameter",
+              "code": "19.21.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 810.45,
+              "rate_display": "810.45"
+            },
+            {
+              "node_type": "item",
+              "title": "For pipes 250 to 300 mm diameter",
+              "code": "19.21.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 114,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 922.4,
+              "rate_display": "922.40"
+            },
+            {
+              "node_type": "item",
+              "title": "For pipes 350 to 450 mm diameter",
+              "code": "19.21.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 115,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 1328.45,
+              "rate_display": "1328.45"
+            }
+          ],
+          "order_index": 112,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing sand cast iron drop connection externally for 60 cm drop from branch sewer line to main sewer manhole including inspection and cleaning eye with chain and lid, sand cast iron drop pipe and bend encased all-round with cement concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size) with all centering and shuttering required, cutting holes in walls and making good with brick work in cement mortar 1:4 (1 cement : 4 coarse sand) plastered with cement mortar 1:3 (1 cement : 3 coarse sand) on inside of the manhole wall, lead caulked joints between sand cast iron pipes and fittings, stiff cement mortar 1:1 (1 cement : 1 fine sand) joints between sand cast iron tee and S.W. pipe, making required channels complete as per standard design and specifications :",
+          "code": "19.22",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia sand cast iron drop connection",
+              "code": "19.22.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 117,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 12172.05,
+              "rate_display": "12172.05"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm dia sand cast iron drop connection",
+              "code": "19.22.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 118,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 16577.8,
+              "rate_display": "16577.80"
+            }
+          ],
+          "order_index": 116,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for depths beyond 60 cm of sand cast iron drop connection complete:",
+          "code": "19.23",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For 100 mm dia sand cast iron drop connection",
+              "code": "19.23.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 120,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 3240.45,
+              "rate_display": "3240.45"
+            },
+            {
+              "node_type": "item",
+              "title": "For 150 mm dia sand cast iron drop connection",
+              "code": "19.23.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 121,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 4126.9,
+              "rate_display": "4126.90"
+            }
+          ],
+          "order_index": 119,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Dismantling of manhole including R.C.C. top slab, C.I. cover with frame, including stacking of useful materials near the site and disposal of unserviceable materials within 50 m lead as per direction of Engineer-in- charge:",
+          "code": "19.24",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 90x80 cm and 45 cm deep",
+              "code": "19.24.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 123,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 2540.85,
+              "rate_display": "2540.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 120x90 cm and 90 cm deep",
+              "code": "19.24.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 124,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 4475.5,
+              "rate_display": "4475.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular arch type manhole 140x90 cm and 2.45 m deep",
+              "code": "19.24.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 125,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 8466.35,
+              "rate_display": "8466.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular manhole 122 cm diameter and 1.68 m deep",
+              "code": "19.24.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 126,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 6472.4,
+              "rate_display": "6472.40"
+            }
+          ],
+          "order_index": 122,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for depth of manholes dismantled :",
+          "code": "19.25",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 90x80 cm and beyond 45 cm depth",
+              "code": "19.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 128,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 2045.5,
+              "rate_display": "2045.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 120x90 cm and beyond 90 cm depth",
+              "code": "19.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 129,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 2436.9,
+              "rate_display": "2436.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular arch type manhole 140x90 cm and beyond 2.45 m depth (up to 4.25 m depth)",
+              "code": "19.25.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 130,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 1975.85,
+              "rate_display": "1975.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular manhole 122 cm diameter and beyond 1.68 m depth (up to 2.29 m depth)",
+              "code": "19.25.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 131,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 2229.2,
+              "rate_display": "2229.20"
+            }
+          ],
+          "order_index": 127,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Raising manhole cover and frame slab to required level including dismantling existing slab and making good the damage as required (Raising depth of manhole to be paid separately) :",
+          "code": "19.26",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 90x80 cm with rectangular cover 600 x 450 mm of grade LD - 2.5",
+              "code": "19.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 133,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 2625.5,
+              "rate_display": "2625.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 120x90 cm with circular cover 500 mm dia of grade MD - 10",
+              "code": "19.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 134,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 4168.05,
+              "rate_display": "4168.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular manhole 120x90 cm with circular cover 560 mm dia of grade HD - 20",
+              "code": "19.26.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 135,
+              "source_page": 7,
+              "unit": "each",
+              "rate": 3881.5,
+              "rate_display": "3881.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular manhole 140 cm dia with circular cover 600 mm dia of grade EHD - 35",
+              "code": "19.26.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 136,
+              "source_page": 7,
+              "unit": "each",
+              "rate": 320.15,
+              "rate_display": "320.15"
+            }
+          ],
+          "order_index": 132,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry road gully chamber 50x45x60 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) including 500x450 mm pre-cast R.C.C. horizontal grating with frame complete as per standard design :",
+          "code": "19.27",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 138,
+              "source_page": 7,
+              "unit": "each",
+              "rate": 5957.9,
+              "rate_display": "5957.90"
+            }
+          ],
+          "order_index": 137,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry road gully chamber 45x45x77.5 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand ) with precast R.C.C. vertical grating complete as per standard design :",
+          "code": "19.28",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 7,
+              "unit": "each",
+              "rate": 6889.8,
+              "rate_display": "6889.80"
+            }
+          ],
+          "order_index": 139,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry road gully chamber 110x50x77.5 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) including 500x450 mm precast R.C.C. horizontal grating with frame and vertical grating complete as per standard design :",
+          "code": "19.29",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 142,
+              "source_page": 7,
+              "unit": "each",
+              "rate": 11520.55,
+              "rate_display": "11520.55"
+            }
+          ],
+          "order_index": 141,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing brick masonry chamber for underground C.I. inspection chamber and bends with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) C.I. cover with frame (light duty) 455x610 mm internal dimensions, total weight of cover with frame to be not less than 38 kg (weight of cover 23 kg and weight of frame 15 kg), R.C.C. top slab with 1:1.5:3 mix (1 cement : 1.5 fine sand : 3 graded stone aggregate 20 mm nominal size), foundation concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size), inside plastering 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand), finished smooth with a floating coat of neat cement on walls and bed concrete etc. complete as per standard design:",
+          "code": "19.30",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Inside dimensions 455x610 mm and 45 cm deep for single pipe line :",
+              "code": "19.30.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.30.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 145,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 6937.9,
+                  "rate_display": "6937.90"
+                }
+              ],
+              "order_index": 144,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "Inside dimensions 500x700 mm and 45 cm deep for pipe line with one or two inlets :",
+              "code": "19.30.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.30.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 147,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 8150.5,
+                  "rate_display": "8150.50"
+                }
+              ],
+              "order_index": 146,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "Inside dimensions 600x 850 mm and 45 cm deep for pipe line with three or more inlets :",
+              "code": "19.30.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.30.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 149,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 9594.35,
+                  "rate_display": "9594.35"
+                }
+              ],
+              "order_index": 148,
+              "source_page": 7
+            }
+          ],
+          "order_index": 143,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for depth beyond 45 cm of brick masonry chamber :",
+          "code": "19.31",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For 455x610 mm size",
+              "code": "19.31.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.31.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 152,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 6117.0,
+                  "rate_display": "6117.00"
+                }
+              ],
+              "order_index": 151,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "For 500x700 mm size",
+              "code": "19.31.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.31.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 154,
+                  "source_page": 8,
+                  "unit": "metre",
+                  "rate": 6680.6,
+                  "rate_display": "6680.60"
+                }
+              ],
+              "order_index": 153,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "For 600x850 mm size",
+              "code": "19.31.3",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+                  "code": "19.31.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 156,
+                  "source_page": 8,
+                  "unit": "metre",
+                  "rate": 7789.85,
+                  "rate_display": "7789.85"
+                }
+              ],
+              "order_index": 155,
+              "source_page": 8
+            }
+          ],
+          "order_index": 150,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Making soak pit 2.5 m diameter 3.0 metre deep with 45 x 45 cm dry brick honey comb shaft with bricks and S.W. drain pipe 100 mm diameter, 1.8 m long complete as per standard design.",
+          "code": "19.32",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "19.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 158,
+              "source_page": 8,
+              "unit": "each",
+              "rate": 26861.9,
+              "rate_display": "26861.90"
+            }
+          ],
+          "order_index": 157,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing soak pit 1.20x1.20x1.20 m filled with brick bats including S.W. drain pipe 100 mm diameter and 1.20 m long complete as per standard design.",
+          "code": "19.33",
+          "children_count": 0,
+          "children": [],
+          "order_index": 159,
+          "source_page": 8,
+          "unit": "each",
+          "rate": 2890.1,
+          "rate_display": "2890.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing S.W. intercepting trap in manholes with stiff mixture of cement mortar 1:1 (1 cement : 1 fine sand) including testing of joints etc. complete :",
+          "code": "19.34",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "19.34.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 161,
+              "source_page": 8,
+              "unit": "each",
+              "rate": 441.4,
+              "rate_display": "441.40"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm dia",
+              "code": "19.34.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 162,
+              "source_page": 8,
+              "unit": "each",
+              "rate": 602.65,
+              "rate_display": "602.65"
+            }
+          ],
+          "order_index": 160,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Non Pressure NP-3 class (Medium duty) R.C.C. pipes including collars/spigot jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete",
+          "code": "19.35",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "450 mm dia RCC pipes.",
+              "code": "19.35.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 164,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 2676.55,
+              "rate_display": "2676.55"
+            },
+            {
+              "node_type": "item",
+              "title": "600 mm dia RCC pipes.",
+              "code": "19.35.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 165,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 3401.25,
+              "rate_display": "3401.25"
+            },
+            {
+              "node_type": "item",
+              "title": "900 mm dia RCC pipes.",
+              "code": "19.35.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 166,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 5377.25,
+              "rate_display": "5377.25"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia RCC pipes. (Laying by manual/ machanical means)",
+              "code": "19.35.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 167,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 6656.55,
+              "rate_display": "6656.55"
+            },
+            {
+              "node_type": "item",
+              "title": "1200 mm dia RCC pipes. (Laying by manual/ machanical means)",
+              "code": "19.35.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 168,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 9126.2,
+              "rate_display": "9126.20"
+            },
+            {
+              "node_type": "item",
+              "title": "1800 mm dia RCC pipes. (Laying by manual/ machenical means)",
+              "code": "19.35.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 169,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 16184.0,
+              "rate_display": "16184.00"
+            }
+          ],
+          "order_index": 163,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Non Pressure NP-4 class (Heavy duty) R.C.C. pipes including collars/spigot jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete",
+          "code": "19.36",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "450 mm dia RCC pipes.",
+              "code": "19.36.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 171,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 3053.55,
+              "rate_display": "3053.55"
+            },
+            {
+              "node_type": "item",
+              "title": "600 mm dia RCC pipes.",
+              "code": "19.36.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 172,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 3934.75,
+              "rate_display": "3934.75"
+            },
+            {
+              "node_type": "item",
+              "title": "900 mm dia RCC pipes.",
+              "code": "19.36.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 173,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 7397.4,
+              "rate_display": "7397.40"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia RCC pipes. (Laying by manual/ machanical means)",
+              "code": "19.36.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 174,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 9181.75,
+              "rate_display": "9181.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1200 mm dia RCC pipes. (Laying by manual/ machanical means)",
+              "code": "19.36.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 175,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 11119.35,
+              "rate_display": "11119.35"
+            },
+            {
+              "node_type": "item",
+              "title": "1800 mm dia RCC pipes. (Laying by manual/ machanical means)",
+              "code": "19.36.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 176,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 22578.75,
+              "rate_display": "22578.75"
+            }
+          ],
+          "order_index": 170,
+          "source_page": 8
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/19.0 DRAINAGE.pdf",
+    "row_count": 177,
+    "note_count": 1,
+    "leaf_count": 123,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

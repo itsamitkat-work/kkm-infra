@@ -1,0 +1,966 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/10.0 STEEL WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "STEEL WORK",
+      "code": "10.0",
+      "children_count": 52,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Structural steel work in single section, fixed with or without connecting plate, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg",
+          "code": "10.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "117.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 1,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Structural steel work riveted, bolted or welded in built up sections, trusses and framed work, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg",
+          "code": "10.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "133.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 3,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position collapsible steel shutters with vertical channels 20x10x2 mm and braced with flat iron diagonals 20x5 mm size, with top and bottom rail of T-iron 40x40x6 mm, with 40 mm dia steel pulleys, complete with bolts, nuts, locking arrangement, stoppers, handles, including applying a priming coat of approved steel primer.",
+          "code": "10.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 11439.6,
+          "rate_display": "11439.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 1 mm thick M.S. sheet sliding-shutters, with frame and diagonal braces of 40x40x6 mm angle iron, 3 mm M.S. gusset plates at the junctions and corners, 25 mm dia pulley, 40x40x6 mm angle and T- iron guide at the top and bottom respectively, including applying a priming coat of approved steel primer",
+          "code": "10.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 5,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 6566.2,
+          "rate_display": "6566.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 1 mm thick M.S. sheet door with frame of 40x40x6 mm angle iron and 3 mm M.S. gusset plates at the junctions and corners, all necessary fittings complete, including applying a priming coat of approved steel primer.",
+          "code": "10.5",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Using M.S. angels 40x40x6 mm for diagonal braces",
+              "code": "10.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 5804.35,
+              "rate_display": "5804.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Using flats 30x6 mm for diagonal braces and central cross piece",
+              "code": "10.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 5563.75,
+              "rate_display": "5563.75"
+            }
+          ],
+          "order_index": 6,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and fixing rolling shutters of approved make, made of required size M.S. laths, interlocked together through their entire length and jointed together at the end by end locks, mounted on specially designed pipe shaft with brackets, side guides and arrangements for inside and outside locking with push and pull operation complete, including the cost of providing and fixing necessary 27.5 cm long wire springs manufactured from high tensile steel wire of adequate strength conforming to IS: 4454 - part 1 and M.S. top cover of required thickness for rolling shutters.",
+          "code": "10.6",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "80x1.25 mm M.S. laths with 1.25 mm thick top cover",
+              "code": "10.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 3653.2,
+              "rate_display": "3653.20"
+            },
+            {
+              "node_type": "item",
+              "title": "80x1.20 mm M.S. laths with 1.20 mm thick top cover",
+              "code": "10.6.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 3307.05,
+              "rate_display": "3307.05"
+            },
+            {
+              "node_type": "item",
+              "title": "80x0.90 mm M.S. laths with 0.90 mm thick top cover",
+              "code": "10.6.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 3191.35,
+              "rate_display": "3191.35"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing ball bearing for rolling shutters.",
+          "code": "10.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 1,
+          "unit": "each",
+          "rate": 492.35,
+          "rate_display": "492.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing mechanical device chain and crank operation for operating rolling shutters.",
+          "code": "10.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Exceeding 10.00 sqm and upto 16.80 sqm in the area",
+              "code": "10.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1281.35,
+              "rate_display": "1281.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Exceeding 16.80 sqm in area",
+              "code": "10.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1181.8,
+              "rate_display": "1181.80"
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing grilled rolling shutters manufactured out of 8 mm dia M.S. bar instead of laths as per design approved by Engineer-in- charge, (area of grill to be measured).",
+          "code": "10.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 768.25,
+          "rate_display": "768.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing standard steel glazed doors, windows and ventilators in walls, including fixing of float glass panes with glazing clips and special metal- sash putty of approved make, or metal beading with screws, (only steel windows, glass panes cut to size and glazing clips or metal beading with screws, shall be supplied by department free of cost).",
+          "code": "10.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "code": "10.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "code": "10.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2
+            }
+          ],
+          "order_index": 18,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "82.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 20,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "40.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 22,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing factory made ISI marked steel glazed doors, windows and ventilators, side /top /centre hung, with beading and all members such as F7D,F4B, K11 B and K12 B etc. complete of standard rolled steel sections, joints mitred and flash butt welded and sash bars tenoned and riveted, including providing and fixing of hinges, pivots, priming coat of approved steel primer, but excluding the cost of other fittings,glass panes complete all as per approved design, (sectional weight of only steel members shall be measured for payment).",
+          "code": "10.11",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "code": "10.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "code": "10.11.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 2
+            }
+          ],
+          "order_index": 23,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "131.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "128.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 27,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and fixing steel beading of size 10 x 10 x 1.6 mm (box type), approved shape and section with screws instead of glazing clips and metal sash putty, in steel doors, windows, ventilators and composite units.",
+          "code": "10.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 28,
+          "source_page": 2,
+          "unit": "metre",
+          "rate": 49.6,
+          "rate_display": "49.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing T-iron frames for doors, windows and ventilators of mild steel Tee-sections, joints mitred and welded, including fixing of necessary butt hinges and screws and applying a priming coat of approved steel primer.",
+          "code": "10.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size). kg",
+              "code": "10.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "code": "10.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2
+            }
+          ],
+          "order_index": 29,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "141.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 31,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "136.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 33,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing pressed steel door frames conforming to IS: 4351, manufactured from commercial mild steel sheet of 1.60 mm thickness, including hinges, jamb, lock jamb, bead and if required angle threshold of mild steel angle of section 50x25 mm, or base ties of 1.60 mm, pressed mild steel welded or rigidly fixed together by mechanical means, including M.S. pressed butt hinges 2.5 mm thick with mortar guards, lock strike- plate and shock absorbers as specified and applying a coat of approved steel primer after pre-treatment of the surface as directed by Engineer- in-charge:",
+          "code": "10.14",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Profile B",
+              "code": "10.14.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Fixing with adjustable lugs with split end tail to each jamb",
+                  "code": "10.14.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 583.3,
+                  "rate_display": "583.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately)",
+                  "code": "10.14.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 37,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 570.4,
+                  "rate_display": "570.40"
+                }
+              ],
+              "order_index": 35,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Profile C",
+              "code": "10.14.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Fixing with adjustable lugs with split end tail to each jamb",
+                  "code": "10.14.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 39,
+                  "source_page": 2,
+                  "unit": "metre",
+                  "rate": 611.75,
+                  "rate_display": "611.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately)",
+                  "code": "10.14.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 40,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 598.85,
+                  "rate_display": "598.85"
+                }
+              ],
+              "order_index": 38,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Profile E",
+              "code": "10.14.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Fixing with adjustable lugs with split end tail to each jamb",
+                  "code": "10.14.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 42,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 640.2,
+                  "rate_display": "640.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately)",
+                  "code": "10.14.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 627.3,
+                  "rate_display": "627.30"
+                }
+              ],
+              "order_index": 41,
+              "source_page": 3
+            }
+          ],
+          "order_index": 34,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. Tubular frames for doors, windows, ventilators and cupboard with rectangular/ L-Type sections, made of 1.60 mm thick M.S. Sheet, joints mitred, welded and grinded finish, with profiles of required size, including fixing of necessary butt hinges and screws and applying a priming coat of approved steel primer.",
+          "code": "10.15",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "code": "10.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "code": "10.15.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 3
+            }
+          ],
+          "order_index": 44,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "195.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "181.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Steel work in built up tubular (round, square or rectangular hollow tubes etc.) trusses etc., including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer, including welding and bolted with special shaped washers etc. complete.",
+          "code": "10.16",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Hot finished welded type tubes kg",
+              "code": "10.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Hot finished seamless type tubes kg",
+              "code": "10.16.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Electric resistance or induction butt welded tubes kg",
+              "code": "10.16.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 3
+            }
+          ],
+          "order_index": 49,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "194.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "206.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. fan clamp type I or II of 16 mm dia M.S. bar, bent to shape with hooked ends in R.C.C. slabs or beams during laying, including painting the exposed portion of loop, all as per standard design complete.",
+          "code": "10.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 56,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 226.0,
+          "rate_display": "226.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing circular/ Hexagonal cast iron or M.S. sheet box for ceiling fan clamp, of internal dia 140 mm, 73 mm height, top lid of 1.5 mm thick M.S. sheet with its top surface hacked for proper bonding, top lid shall be screwed into the cast iron/ M.S. sheet box by means of 3.3 mm dia round headed screws, one lock at the corners. Clamp shall be made of 12 mm dia M.S. bar bent to shape as per standard drawing.",
+          "code": "10.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 57,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 220.65,
+          "rate_display": "220.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing mild steel round holding down bolts with nuts and washer plates complete. kg",
+          "code": "10.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 58,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "97.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 59,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bolts including nuts and washers complete. kg",
+          "code": "10.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "159.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 61,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. rivets of sizes in position. kg",
+          "code": "10.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 62,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "278.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 63,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Welding by gas or electric plant including transportation of plant at site etc. complete. cm",
+          "code": "10.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 64,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 65,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Steel work welded in built up sections/ framed work, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer using structural steel etc. as required.",
+          "code": "10.25",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In stringers, treads, landings etc. of stair cases, including use of chequered plate wherever required, all complete kg",
+              "code": "10.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 67,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "In gratings, frames, guard bar, ladder, railings, brackets, gates and similar works kg",
+              "code": "10.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 69,
+              "source_page": 3
+            }
+          ],
+          "order_index": 66,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "123.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 68,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "172.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 70,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing hand rail of approved size by welding etc. to steel ladder railing, balcony railing, staircase railing and similar works, including applying priming coat of approved steel primer.",
+          "code": "10.26",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "M.S. tube kg",
+              "code": "10.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "E.R.W. tubes kg",
+              "code": "10.26.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "G.I. pipes kg",
+              "code": "10.26.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 4
+            }
+          ],
+          "order_index": 71,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "196.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 73,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "205.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 75,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "203.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 77,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing carbon steel galvanised ( minimum coating 5 micron) dash fastener of 10 mm dia double threaded 6.8 grade (yield strength 480 N/mm2), counter sunk head, comprising of 10 mm dia polyamide PA 6 grade sleeve, including drilling of hole in frame , concrete/ masonry, etc. as per direction of Engineer-in-charge.",
+          "code": "10.27",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "10 x 60 mm",
+              "code": "10.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 131.1,
+              "rate_display": "131.10"
+            },
+            {
+              "node_type": "item",
+              "title": "10 x 80 mm",
+              "code": "10.27.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 80,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 137.65,
+              "rate_display": "137.65"
+            },
+            {
+              "node_type": "item",
+              "title": "10 x 120 mm",
+              "code": "10.27.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 170.95,
+              "rate_display": "170.95"
+            },
+            {
+              "node_type": "item",
+              "title": "10 x 140 mm",
+              "code": "10.27.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 82,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 182.2,
+              "rate_display": "182.20"
+            },
+            {
+              "node_type": "item",
+              "title": "10 x 160 mm",
+              "code": "10.27.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 224.5,
+              "rate_display": "224.50"
+            }
+          ],
+          "order_index": 78,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing stainless steel ( Grade 304) railing made of Hollow tubes, channels, plates etc., including welding, grinding, buffing, polishing and making curvature (wherever required) and fitting the same with necessary stainless steel nuts and bolts complete, i/c fixing the railing with necessary accessories & stainless steel dash fasteners , stainless steel bolts etc., of required size, on the top of the floor or the side of waist slab with suitable arrangement as per approval of Engineer-in-charge, (for payment purpose only weight of stainless steel members shall be considered excluding fixing accessories such as nuts, bolts, fasteners etc.). kg",
+          "code": "10.28",
+          "children_count": 0,
+          "children": [],
+          "order_index": 84,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "772.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 85,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing fly proof wire gauze to windows, clerestory windows & doors with M.S. Flat 15x3 mm and nuts & bolts complete.",
+          "code": "10.29",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Galvanised M.S. Wire gauze with 0.63 mm dia wire and 1.4 mm aperture on both sides",
+              "code": "10.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 844.7,
+              "rate_display": "844.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Stainless steel (grade 304) wire gauze of 0.5 mm dia wire and 1.4 mm aperture on both sides",
+              "code": "10.29.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1133.55,
+              "rate_display": "1133.55"
+            }
+          ],
+          "order_index": 86,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing glass panes with putty and glazing clips in steel doors, windows, clerestory windows, all complete with :",
+          "code": "10.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "4.0 mm thick glass panes",
+              "code": "10.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1064.65,
+              "rate_display": "1064.65"
+            },
+            {
+              "node_type": "item",
+              "title": "5.5 mm thick glass panes",
+              "code": "10.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1390.15,
+              "rate_display": "1390.15"
+            }
+          ],
+          "order_index": 89,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing angle iron frames for doors, windows and ventilators of mild steel Angle sections of size 35x35x5 mm, joints mitred and welded by angle iron 35x35x5 mm or 35x 5 mm flat pieces to the existing T-iron frame or to the wall with dash fastener, including fixing of necessary butt hinges and screws and applying a priming coat of approved steel primer, all complete as per the direction of Engineer-In-charge. kg",
+          "code": "10.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 92,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "130.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 93,
+          "source_page": 4
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/10.0 STEEL WORK.pdf",
+    "row_count": 94,
+    "note_count": 0,
+    "leaf_count": 76,
+    "duplicate_codes": [
+      "194.40"
+    ],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

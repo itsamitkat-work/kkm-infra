@@ -1,0 +1,127 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/25.0 STRUCTURAL GLAZING ALUMINIUM COMPOSITE PANEL.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "STRUCTURAL GLAZING ALUMINIUM COMPOSITE PANEL",
+      "code": "25.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note:- 1. The cost of providing extruded aluminium frames, shadow boxes, extruded aluminium section capping for fixing in the grooves of the curtain glazing and vermin proof stainless steel wire mesh shall be paid for separately under relevant items under this sub- head. However, for the purpose of payment, only the actual area of structural glazing (including width of grooves) on the external face shall be measured in sqm. up to two decimal places. Note:-2. The following performance test are to be conducted on structural glazing system if area of structural glazing exceeds 2500 Sqm from the certified laboratories accreditated by NABL(National Accreditation Board for Testing and Calibration Laboratories), Department of Science & Technologies, India. Cost of testing is payable separately. The NIT approving authority will decide the necessity of testing on the basis of cost of the work, cost of the test and importance of the work. Performance Testing of Structural glazing system Tests to be conducted in the NABL accredited lab or any other accreditation body which operates in accordance with ISO/IEC 17011 and accredits labs as per ISO/IEC 17025 1. Performance Laboratory Test for Air Leakage Test (-50pa to - 300pa) & (+50pa to +300pa) as per ASTM E-283-04 testing method for a range of testing limit 1 to 200 mVhr 2. Static Water Penetration Test. (50pa to 1500pa) as per ASTME- 331-09 testing method for a range up to 2000 ml. 3. Dynamic Water Penetration (50pa to 1500pa) as per AAMA 501.01- 05 testing method for a range upto 2000 ml 4. Structural Performance Deflection and deformation by static air pressure test (1.5 times design wind pressure without any failure) as per ASTME-330-10 testing method for a range upto 50 mm 5. Seismic Movement Test (upto 30 mm) as per AAMA 501.4-09 testing method for Qualitative test, Tests to be conducted on site. 6. Onsite Test for Water Leakage for a pressure range 50 kpa to 240 kpa (35psi) upto 2000 ml sqm",
+          "source_page": 3,
+          "order_index": 0
+        }
+      ],
+      "children_count": 9,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing and supplying aluminium extruded tubular and other aluminium sections as per the architectural drawings and approved shop drawings , the aluminium quality as per grade 6063 T5 or T6 as per BS 1474,including super durable powder coating of 60-80 microns conforming to AAMA 2604 of required colour and shade as approved by the Engineer-in-Charge. ( The item includes cost of material such as cleats, sleeves, screws etc. necessary for fabrication of extruded aluminium frame work. Nothing extra shall be paid on this account). The weight of aluminium extruded section shall be taken for purpose of payment. kg",
+          "code": "25.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "414.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 1,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Designing, fabricating, testing, protection, installing and fixing in position semi (grid) unitized system of structural glazing (with open joints) for linear as well as curvilinear portions of the building for all heights and all levels, including: (a) Structural analysis & design and preparation of shop drawings for the specified design loads conforming to IS 875 part III (the system must passed the proof test at 1.5 times design wind pressure without any failure), including functional design of the aluminum sections for fixing glazing panels of various thicknesses, aluminium cleats, sleeves and splice plates etc. gaskets, screws, toggles, nuts, bolts, clamps etc., structural and weather silicone sealants, flashings, fire stop (barrier)- cum-smoke seals, microwave cured EPDM gaskets for water tightness, pressure equalisation & drainage and protection against fire hazard including: (b) Fabricating and supplying serrated M.S. hot dip galvanised / Aluminium alloy of 6005 T5 brackets of required sizes, sections and profiles etc. to accommodate 3 Dimentional movement for achieving perfect verticality and fixing structural glazing system rigidly to the RCC/ masonry/structural steel framework of building structure using stainless steel anchor fasteners/ bolts, nylon seperator to prevent bimetallic contacts with nuts and washers etc. of stainless steel grade 316, of the required capacity and in required numbers. (c) Providing and filling, two part pump filled, structural silicone sealant and one part weather silicone sealant compatible with the structural silicone sealant of required bite size in a clean and controlled factory / work shop environment, including double sided spacer tape, setting blocks and backer rod, all of approved grade, brand and manufacture, as per the approved sealant design, within and all around the perimeter for holding glass. (d) Providing and fixing in position flashings of solid aluminium sheet 1 mm thick and of sizes, shapes and profiles, as required as per the site conditions, to seal the gap between the building structure and all its interfaces with curtain glazing to make it watertight. (e) Making provision for drainage of moisture/ water that enters the curtain glazing system to make it watertight, by incorporating principles of pressure equalization, providing suitable gutter profiles at bottom (if required), making necessary holes of required sizes and of required numbers etc. complete. This item includes cost of all inputs of designing, labour for fabricating and installation of aluminium grid, installation of glazed units, T&P, scaffolding and other incidental charges including wastages etc., enabling temporary structures and services, cranes or cradles etc. as described above and as specified. The item includes the cost of getting all the structural and functional design including shop drawings checked by a structural designer, dully approved by Engineer-in-charge. The item also includes the cost of all mock ups at site, cost of all samples of the individual components for testing in an approved laboratory, field tests on the assembled working structural glazing as specified, cleaning and protection till the handing over of the building for occupation. In the end, the Contractor shall provide a water tight structural glazing having all the performance characteristics etc. all complete as required, as per the Architectural drawings, as per item description, as specified, as per the approved shop drawings and as directed by the Engineer- in-Charge.",
+          "code": "25.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3510.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 3,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, assembling and supplying vision glass panels (IGUs) comprising of hermetically-sealed 6-12- 6 mm insulated glass (double glazed) vision panel units of size and shape as required and specified, comprising of an outer heat strengthened float glass 6 mm thick, of approved colour and shade with reflective soft coating on surface # 2 of approved colour and shade, an inner Heat strengthned clear float glass 6 mm thick, spacer tube 12 mm wide, dessicants, including primary seal and secondary seal (structural silicone sealant) etc. all complete for the required performances, as per the Architectural drawings, as per the approved shop drawings, as specified and as directed by the Engineer- in-Charge. The IGUs shall be assembled in the factory/ workshop of the glass processor. (Payment for fixing of IGU Panels in the curtain glazing is included in cost of item No.25.2) For payment, only the actual area of glass on face # 1 of the glass panels (excluding the areas of the grooves and weather silicone sealant) provided and fixed in position, shall be measured in sqm. (i) Coloured tinted float glass 6 mm thick substrate with reflective soft coating on face # 2, + 12 mm Airgap + 6 mm Heat Strengthened clear Glass of approved make having properties as visible Light transmittance (VLT) of 25 to 35 %, Light reflection internal 10 to 15%, light reflection external 10 to 20 %, shading coefficient (0.25- 0.28) and U value of 3.0 to 3.3 W/m2 degree K etc. The properties of performance glass shall be decided by technical sanctioning authority as per the site requirement.",
+          "code": "25.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 3718.7,
+          "rate_display": "3718.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for openable side / top hung vision glass panels (IGUs) including providing and supplying at site all accessories and hardwares for the openable panels as specified and of the approved make such as heavy duty stainless steel friction hinges, min 4 -point cremone locking sets with stainless steel plates, handles, buffers etc. including necessary stainless steel screws/ fasteners, nuts, bolts, washers etc. all complete as per the Architectural drawings, as per the approved shop drawings, as specified and as directed by the Engineer- in-Charge.",
+          "code": "25.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 5,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 3671.5,
+          "rate_display": "3671.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, fabricating and supplying shadow box of required size and shape, for fixing in the spandrel portion of the structural glazing, in linear as well as curvilinear portions of the building by providing semi -rigid, inorganic, non-combustible fibre glass wool insulation 50 mm thick, conforming to IS: 8183 and BS: 3958 Part 5. The insulation layer shall have facing (factory bonded on surface # 1 of the fibre glass insulation layer), of black non-woven fibre glass tissue of nominal thickness 0.5 mm and nominal mass not less than 60 gm /sqm, made of randomly oriented glass fibres distributed in a binder by a wet-lay process including fixing 1.5 mm thick solid aluminum sheet backing using, 6 mm thick cement board including SS rivets, nuts, bolts, washers etc complete.",
+          "code": "25.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 2159.65,
+          "rate_display": "2159.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and supplying Spandrel Glass Panels comprising of 6 mm thick heat strengthened monolithic float glass of approved colour and shade with reflective soft coating on surface # 2 of approved colour and shade so as to match the colour and shade of the IGUs in the vision panels etc. ,all complete for the required performances as specified, as per the Architectural drawings, as per the approved shop drawings, as specified, and as directed by the Engineer- in- Charge. For payment, only the actual area of glass on face # 1 of the glass panels (but excluding the area of grooves and weather silicone sealant) provided and fixed in position, shall be measured in sqm. (Payment for fixing of Spandrel Glass Panels in the curtain glazing is included in cost of relevent Item*).“(i) Coloured tinted float glass 6 mm thick substrate with reflective soft coating on face # 2, having properties as visible Light transmittance (VLT) of 25 to 35 %, Light reflection internal 10 to 15%, light reflection external 10 to 20 %, shading coefficient (0.25- 0.28) and U value of 3.0 to 3.3 W/m2 K etc. . The properties of performance glass shall be decided by technical sanctioning authority as per the site requirement.",
+          "code": "25.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 2450.15,
+          "rate_display": "2450.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Design supply & installation of suspended Spider Glazing system designed to withstand the wind pressure as per IS 875 (Part-III). The Suspended System held with Spider Fittings of SS-316 Grade Steel of approved manufacturer with glass panel having 12 mm thick clear toughened glass held together with SS- 316 Grade Stainless steel Spider & bolt assembly with laminated glass fins 21 mm thick. The Glass fins and glass panel assembly shall be connected to Slab/beams by means of SS- 316 Grade stainless steel brackets & Anchor bolts and at the bottom using SS channel of 50x25x2 mm using fastener & anchor bolts, non staining weather sealants of approved make, Teflon/ nylon bushes and separators to prevent bi-metallic contacts, all complete to perform as per specification and approved drawings. The complete system to be designed to accommodate thermal expansion & seismic movements etc. The joints between glass panels (6 to 8 mm) and gaps at the perimeter & in U channel of the assembly to be filled with non staining weather sealant, so as to make the entire system fully water proof & dust proof. The rate shall include all design, Engineering and shop drawing including approval from structural designer, labour, T&P, scaffolding, other incidental charges including wastage, enabling temporary services all fitting fixers nut bolts, washer, Buffer plates, fastener, anchors, SS channel laminated glass etc. all complete. For the purpose of payment, actual elevation area of Glazing including thickness of joints and the portion of Glass panel inside the SS channel shall be measured.",
+          "code": "25.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 8,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 9502.35,
+          "rate_display": "9502.35"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/25.0 STRUCTURAL GLAZING ALUMINIUM COMPOSITE PANEL.pdf",
+    "row_count": 9,
+    "note_count": 1,
+    "leaf_count": 9,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

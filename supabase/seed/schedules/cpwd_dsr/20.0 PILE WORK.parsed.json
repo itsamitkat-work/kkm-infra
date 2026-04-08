@@ -1,0 +1,703 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/20.0 PILE WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "PILE WORK",
+      "code": "20.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: Truck Mounted rotary/TMR/Tube well boring machine shall not be used. 20.2A.1 600 mm dia piles metre",
+          "source_page": 1,
+          "order_index": 0
+        },
+        {
+          "type": "note",
+          "text": "Note: 1. Initial and Routine Load Test shall not be carried out by Dynamic method of testing. Note: 2. Testing agency shall submit the design of loading platform for the approval of Engineer-in-charge.",
+          "source_page": 2,
+          "order_index": 1
+        },
+        {
+          "type": "note",
+          "text": "Note :- The inclusion of the above item in the schedule of work shall be judiciously decided by the technical sanctioning authority, keeping in view the quality control, type of soil strata & importance of the project.",
+          "source_page": 3,
+          "order_index": 2
+        }
+      ],
+      "children_count": 20,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing, driving with hydraulic piling rigs with power units and installing driven cast-in-situ reinforced cement concrete piles of grade M-25 of specified diameter and length below the pile cap, to carry safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of shoe and the length of pile to be embedded in the pile cap etc. all complete. (Length of pile for payment shall be measured from top of shoe to the bottom of pile cap) :",
+          "code": "20.1",
+          "children_count": 8,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "400 mm dia piles",
+              "code": "20.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 2767.0,
+              "rate_display": "2767.00"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm dia piles",
+              "code": "20.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 3430.65,
+              "rate_display": "3430.65"
+            },
+            {
+              "node_type": "item",
+              "title": "500 mm dia piles",
+              "code": "20.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 4129.95,
+              "rate_display": "4129.95"
+            },
+            {
+              "node_type": "item",
+              "title": "550 mm dia piles",
+              "code": "20.1.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 4530.9,
+              "rate_display": "4530.90"
+            },
+            {
+              "node_type": "item",
+              "title": "750 mm dia piles",
+              "code": "20.1.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 7738.55,
+              "rate_display": "7738.55"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia piles",
+              "code": "20.1.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 12748.45,
+              "rate_display": "12748.45"
+            },
+            {
+              "node_type": "item",
+              "title": "1200 mm dia piles",
+              "code": "20.1.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 16671.05,
+              "rate_display": "16671.05"
+            },
+            {
+              "node_type": "item",
+              "title": "1500 mm dia piles",
+              "code": "20.1.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 23577.75,
+              "rate_display": "23577.75"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Boring, providing and installation bored cast-in-situ reinforced cement concrete piles of grade M-25 of specified diameter and length below the pile cap, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and temporary casing of appropriate length for setting out and removal of same and the length of the pile to be embedded in the pile cap etc. by percussion drilling using Direct mud circulation (DMC) or Bailer and chisel technique by tripod and mechanical Winch Machine all complete, including removal of excavated earth with all its lifts and leads (length of pile for payment shall be measured up to bottom of pile cap).",
+          "code": "20.2",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "450 mm dia piles",
+              "code": "20.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 2278.3,
+              "rate_display": "2278.30"
+            },
+            {
+              "node_type": "item",
+              "title": "500 mm dia piles",
+              "code": "20.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 2703.25,
+              "rate_display": "2703.25"
+            },
+            {
+              "node_type": "item",
+              "title": "600 mm dia piles",
+              "code": "20.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 3637.2,
+              "rate_display": "3637.20"
+            },
+            {
+              "node_type": "item",
+              "title": "750 mm dia piles",
+              "code": "20.2.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 5581.2,
+              "rate_display": "5581.20"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "20.2A.2 750 mm dia piles",
+          "code": "5386.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 14,
+          "source_page": 1,
+          "unit": "metre",
+          "rate": 7758.75,
+          "rate_display": "7758.75"
+        },
+        {
+          "node_type": "item",
+          "title": "20.2A.4 1200 mm dia piles",
+          "code": "12990.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 15,
+          "source_page": 1,
+          "unit": "metre",
+          "rate": 17025.75,
+          "rate_display": "17025.75"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "24408.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Boring with hydraulic piling rigs with power units, providing and installing cast in situ single under reamed piles of specified diameter and length below pile cap in M-25 cement concrete, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and the length of the pile to be embedded in pile cap etc. all complete. (Length of pile for payment shall be measured upto to the bottom of pile cap) :",
+          "code": "20.3",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "300 mm dia piles",
+              "code": "20.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 3065.6,
+              "rate_display": "3065.60"
+            },
+            {
+              "node_type": "item",
+              "title": "400 mm dia piles",
+              "code": "20.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 3797.3,
+              "rate_display": "3797.30"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm dia piles",
+              "code": "20.3.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 4232.75,
+              "rate_display": "4232.75"
+            },
+            {
+              "node_type": "item",
+              "title": "550 mm dia piles",
+              "code": "20.3.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 4721.15,
+              "rate_display": "4721.15"
+            }
+          ],
+          "order_index": 17,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra over single under ream for providing additional bulbs in under reamed piles, under specified diameter(only the nos. of extra bulbs are to be paid)",
+          "code": "20.4",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "300 mm dia piles",
+              "code": "20.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2626.3,
+              "rate_display": "2626.30"
+            },
+            {
+              "node_type": "item",
+              "title": "400 mm dia piles",
+              "code": "20.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2924.45,
+              "rate_display": "2924.45"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm dia piles",
+              "code": "20.4.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 3104.2,
+              "rate_display": "3104.20"
+            },
+            {
+              "node_type": "item",
+              "title": "550 mm dia piles",
+              "code": "20.4.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 3360.15,
+              "rate_display": "3360.15"
+            }
+          ],
+          "order_index": 22,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, driving (with vibrating pile driving hammer complete with power units & accessories) and installing driven Pre-cast reinforced cement concrete piles of specified diameter and length below the pile cap in M-25 cement concrete to carry safe working load not less than specified with a central through preformed hole with M.S. black pipe of dia, 40 mm for grouting with cement sand grouting of mix 1:2 (1cement : 2 coarse sand) under sufficient positive pressure to ensure complete filling including centring, shuttering, driving and removing the steel casing pipe and lifting casing etc. complete but excluding the cost of steel reinforcement. (Length of pile for payment shall be measured from top of the shoe to the bottom of pile cap).",
+          "code": "20.5",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "400 mm dia piles",
+              "code": "20.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 3727.8,
+              "rate_display": "3727.80"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm dia piles",
+              "code": "20.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 4766.25,
+              "rate_display": "4766.25"
+            },
+            {
+              "node_type": "item",
+              "title": "500 mm dia piles",
+              "code": "20.5.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 4931.35,
+              "rate_display": "4931.35"
+            },
+            {
+              "node_type": "item",
+              "title": "550 mm dia piles",
+              "code": "20.5.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 5633.0,
+              "rate_display": "5633.00"
+            },
+            {
+              "node_type": "item",
+              "title": "750 mm dia piles",
+              "code": "20.5.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 10846.8,
+              "rate_display": "10846.80"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia piles",
+              "code": "20.5.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 14946.4,
+              "rate_display": "14946.40"
+            }
+          ],
+          "order_index": 27,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Vertical load testing of piles in accordance with IS 2911 (Part IV) including installation of loading platform by Kentledge/Anchor piles method and preparation of pile head or construction of test cap and dismantling of test cap after test etc. complete as per specification & the direction of Engineer in-charge.",
+          "code": "20.6",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Single pile upto 50 tonne Safe capacity",
+              "code": "20.6.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "code": "20.6.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2
+                },
+                {
+                  "node_type": "item",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "code": "20.6.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 38,
+                  "source_page": 2
+                }
+              ],
+              "order_index": 35,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Single pile above 50 tonne and upto 100 tonne Safe capacity",
+              "code": "20.6.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "code": "20.6.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 41,
+                  "source_page": 3
+                },
+                {
+                  "node_type": "item",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "code": "20.6.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 3
+                }
+              ],
+              "order_index": 40,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Group of two or more piles upto 50 tonne Safe capacity",
+              "code": "20.6.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "code": "20.6.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 46,
+                  "source_page": 3
+                },
+                {
+                  "node_type": "item",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "code": "20.6.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 48,
+                  "source_page": 3
+                }
+              ],
+              "order_index": 45,
+              "source_page": 3
+            }
+          ],
+          "order_index": 34,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "54771.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "19632.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 39,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "61173.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 42,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "32436.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 44,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "70420.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 47,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "40545.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 49,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Cyclic vertical load testing of pile in accordance with IS Code of practice IS:2911 (part IV) by Kentledge method including preparation of pile head etc for.",
+          "code": "20.7",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Single pile",
+              "code": "20.7.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Upto 50 tonne Safe capacity pile per test",
+                  "code": "20.7.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 52,
+                  "source_page": 3
+                },
+                {
+                  "node_type": "item",
+                  "title": "Above 50 tonne and upto 100 tonne Safe capacity pile per test",
+                  "code": "20.7.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 54,
+                  "source_page": 3
+                }
+              ],
+              "order_index": 51,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Group of two or more piles",
+              "code": "20.7.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Upto 400 tonne Safe capacity of group per test",
+                  "code": "20.7.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 57,
+                  "source_page": 3
+                }
+              ],
+              "order_index": 56,
+              "source_page": 3
+            }
+          ],
+          "order_index": 50,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Lateral load testing of single pile in accordance with IS : Code of practice IS: 2911 (Part IV) for determining safe allowable lateral load on pile :",
+          "code": "20.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Upto 50 tonne capacity pile per test",
+              "code": "20.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 60,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Above 50 tonne and upto 100 tonne capacity pile per test",
+              "code": "20.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 62,
+              "source_page": 3
+            }
+          ],
+          "order_index": 59,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "32862.90",
+          "children_count": 0,
+          "children": [],
+          "order_index": 63,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge. per test",
+          "code": "20.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 64,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "1153.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 65,
+          "source_page": 3
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/20.0 PILE WORK.pdf",
+    "row_count": 66,
+    "note_count": 3,
+    "leaf_count": 49,
+    "duplicate_codes": [
+      "19632.40",
+      "32436.10",
+      "40545.15",
+      "19632.40"
+    ],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

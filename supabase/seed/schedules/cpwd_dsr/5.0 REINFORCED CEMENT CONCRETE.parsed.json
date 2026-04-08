@@ -1,0 +1,1807 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/5.0 REINFORCED CEMENT CONCRETE.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "REINFORCED CEMENT CONCRETE",
+      "code": "5.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+          "source_page": 8,
+          "order_index": 1
+        },
+        {
+          "type": "note",
+          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement. 5.33A.1 All works upto plinth level 5.33A.1.1 Concrete of M25 grade with minimum cement content of 330 kg /cum cum",
+          "source_page": 8,
+          "order_index": 2
+        },
+        {
+          "type": "note",
+          "text": "Note:- Cement content considered in this item is 480 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
+          "source_page": 11,
+          "order_index": 3
+        }
+      ],
+      "children_count": 76,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing and laying in position specified grade of reinforced cement concrete, excluding the cost of centering, shuttering, finishing and reinforcement - All work up to plinth level :",
+          "code": "5.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "5.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 9045.75,
+              "rate_display": "9045.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:4 (1 cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "5.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8583.4,
+              "rate_display": "8583.40"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8874.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8404.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in walls (any thickness), including attached pilasters, buttresses, plinth and string courses, fillets, columns, pillars, piers, abutments, posts and struts etc. above plinth level up to floor five level, excluding cost of centering, shuttering, finishing and reinforcement :",
+          "code": "5.2",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+              "code": "5.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 10852.95,
+              "rate_display": "10852.95"
+            }
+          ],
+          "order_index": 5,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "10682.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in beams, suspended floors, roofs having slope up to 15° landings, balconies, shelves, chajjas, lintels, bands, plain window sills, staircases and spiral stair cases above plinth level up to floor five level, excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 8,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 11505.5,
+          "rate_display": "11505.50"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "11334.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying reinforced cement concrete in kerbs, steps and the like at or near ground level excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 10,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 8821.65,
+          "rate_display": "8821.65"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8650.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 11,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in arches, archribs, domes, vaults, shells, folded plate and roofs having slope more than 15° up to floor five level, excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 12,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 12205.85,
+          "rate_display": "12205.85"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "12035.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in chimneys, shafts, up to floor five level, excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 14,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 11125.2,
+          "rate_display": "11125.20"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "10954.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 15,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in well-steining, excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 8424.6,
+          "rate_display": "8424.60"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "8253.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Reinforced cement concrete work in vertical and horizontal fins individually or forming box louvers, facias and eaves boards above plinth level up to floor five level, excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 11454.35,
+          "rate_display": "11454.35"
+        },
+        {
+          "node_type": "item",
+          "title": "FORM WORK",
+          "code": "11283.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 19,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Centering and shuttering including strutting, propping etc. and removal of form for",
+          "code": "5.9",
+          "children_count": 21,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Foundations, footings, bases of columns, etc. for mass concrete",
+              "code": "5.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 392.15,
+              "rate_display": "392.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Walls (any thickness) including attached pilasters, butteresses, plinth and string courses etc.",
+              "code": "5.9.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 842.5,
+              "rate_display": "842.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Suspended floors, roofs, landings, balconies and access platform",
+              "code": "5.9.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 927.25,
+              "rate_display": "927.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Shelves (Cast in situ)",
+              "code": "5.9.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 927.25,
+              "rate_display": "927.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Lintels, beams, plinth beams, girders, bressumers and cantilevers",
+              "code": "5.9.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 736.4,
+              "rate_display": "736.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Columns, Pillars, Piers, Abutments, Posts and Struts",
+              "code": "5.9.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 961.3,
+              "rate_display": "961.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Stairs, (excluding landings) except spiral-staircases",
+              "code": "5.9.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 27,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 764.95,
+              "rate_display": "764.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Spiral staircases (including landing)",
+              "code": "5.9.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 798.35,
+              "rate_display": "798.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Arches, domes, vaults up to 6 m span",
+              "code": "5.9.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 2154.35,
+              "rate_display": "2154.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Extra for arches, domes, vaults exceeding 6 m span",
+              "code": "5.9.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 608.15,
+              "rate_display": "608.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Chimneys and shafts",
+              "code": "5.9.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 803.25,
+              "rate_display": "803.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Well steining",
+              "code": "5.9.12",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 263.65,
+              "rate_display": "263.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Vertical and horizontal fins individually or forming box louvers band, facias and eaves boards",
+              "code": "5.9.13",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1296.7,
+              "rate_display": "1296.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Extra for shuttering in circular work (20% of respective centering and shuttering items)",
+              "code": "5.9.14",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 20.0,
+              "rate_display": "20%",
+              "rate_kind": "percentage"
+            },
+            {
+              "node_type": "item",
+              "title": "Small lintels not exceeding 1.5 m clear span, moulding as in cornices, window sills, string courses, bands, copings, bed plates, anchor blocks and the like",
+              "code": "5.9.15",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 392.15,
+              "rate_display": "392.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Edges of slabs and breaks in floors and walls",
+              "code": "5.9.16",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Under 20 cm wide",
+                  "code": "5.9.16.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 37,
+                  "source_page": 3,
+                  "unit": "metre",
+                  "rate": 208.55,
+                  "rate_display": "208.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Above 20 cm wide",
+                  "code": "5.9.16.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 38,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 879.05,
+                  "rate_display": "879.05"
+                }
+              ],
+              "order_index": 36,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Cornices and mouldings",
+              "code": "5.9.17",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 856.8,
+              "rate_display": "856.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Small surfaces such as cantilever ends, brackets and ends of steps, caps and bases to pilasters and columns and the like",
+              "code": "5.9.18",
+              "children_count": 0,
+              "children": [],
+              "order_index": 40,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 964.85,
+              "rate_display": "964.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Weather shed, Chajjas, corbels etc., including edges",
+              "code": "5.9.19",
+              "children_count": 0,
+              "children": [],
+              "order_index": 41,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 951.1,
+              "rate_display": "951.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Suspended floors, roofs, landings, balconies and access platform with water proof ply 12 mm thick",
+              "code": "5.9.20",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1028.4,
+              "rate_display": "1028.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Lintels, beams, plinth beams, girders, bressumers and cantilevers with water proof ply 12 mm thick",
+              "code": "5.9.21",
+              "children_count": 0,
+              "children": [],
+              "order_index": 43,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 841.95,
+              "rate_display": "841.95"
+            }
+          ],
+          "order_index": 20,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing tie bolt, spring coil and plastic cone in wall shuttering complete as per the direction of Engineer-in-charge.",
+          "code": "5.10",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "12 mm dia. & 100 mm length each set",
+              "code": "5.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "12 mm dia. & 150 mm length each set",
+              "code": "5.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm dia. & 150 mm length each set",
+              "code": "5.10.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 49,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm dia.& 225 mm length each set",
+              "code": "5.10.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 51,
+              "source_page": 3
+            }
+          ],
+          "order_index": 44,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "156.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "170.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "184.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 50,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "201.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 52,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for additional height in centering, shuttering where ever required with adequate bracing, propping etc., including cost of de-shuttering and decentering at all levels, over a height of 3.5 m, for every additional height of 1 metre or part thereof (Plan area to be measured).",
+          "code": "5.11",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Suspended floors, roofs, landings, beams and balconies (Plan area to be measured)",
+              "code": "5.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 384.3,
+              "rate_display": "384.30"
+            }
+          ],
+          "order_index": 53,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete work in string courses, bands, copings, bed plates, anchor blocks, plain window sills and the like, including the cost of required centering, shuttering but excluding cost of reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 55,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 10585.9,
+          "rate_display": "10585.90"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "10416.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 56,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, hoisting and fixing up to floor five level precast reinforced cement concrete in small lintels not exceeding 1.5m clear span up to floor five level, including the cost of required centering, shuttering but , excluding the cost of reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.13",
+          "children_count": 0,
+          "children": [],
+          "order_index": 57,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 14325.95,
+          "rate_display": "14325.95"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "14155.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 58,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in mouldings as in cornices, windows sills etc, including setting in cement mortar 1:3 (1 cement : 3 coarse sand) cost of required centering, shuttering but, excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 59,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 18234.95,
+          "rate_display": "18234.95"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "18064.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in lintels, beams and bressumers, including setting in cement mortar 1:3 (1 cement : 3 coarse sand), cost of required centering and shuttering but , excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources)",
+          "code": "5.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 61,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 13899.2,
+          "rate_display": "13899.20"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "13728.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 62,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in shelves, including setting in cement mortar 1:3 (1cement : 3 coarse sand), cost of required centering, shuttering and finishing with neat cement punning on exposed surfaces but , excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 63,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 20355.8,
+          "rate_display": "20355.80"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "20185.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 64,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in vertical & horizontal fins, individually or forming box louvers, setting in cement mortar 1:2 (1 cement : 2 coarse sand), including the cost of required centering, shuttering but , excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources).",
+          "code": "5.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 65,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 12043.35,
+          "rate_display": "12043.35"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "11872.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 66,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing precast cement concrete Jali 1:2:4 (1 cement : 2 coarse sand (zone-III) : 4 graded stone aggregate 6 mm nominal size ), reinforced with 1.6 mm dia mild steel wire, including centering and shuttering, roughening cleaning, fixing and finishing in cement mortar 1:3 (1 cement: 3 fine sand) etc. complete, excluding plastering of the jambs, sills and soffits.",
+          "code": "5.18",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "50 mm thick",
+              "code": "5.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 68,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1886.9,
+              "rate_display": "1886.90"
+            },
+            {
+              "node_type": "item",
+              "title": "40 mm thick",
+              "code": "5.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 69,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1706.55,
+              "rate_display": "1706.55"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "5.18.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1539.0,
+              "rate_display": "1539.00"
+            }
+          ],
+          "order_index": 67,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Encasing rolled steel sections, in beams and columns, with cement concrete 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources) including centering and shuttering complete but , excluding cost of reinforcement.",
+          "code": "5.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 71,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 16089.4,
+          "rate_display": "16089.40"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "15918.60",
+          "children_count": 0,
+          "children": [],
+          "order_index": 72,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Encasing rolled steel section in grillages with cement concrete 1:1.5:3 (1 cement : 1.5 coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 20 mm nominal size derived from natural sources) including centering and shuttering but, excluding cost of expanded metal and hangers.",
+          "code": "5.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 73,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 9663.25,
+          "rate_display": "9663.25"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "9492.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 74,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and fixing expanded metal mesh of size 20x60 mm and strands 3.25 mm wide 1.6 mm thick weighing 3.64 kg per sqm for encasing of rolled steel sections in beams, columns and grillages, excluding cost of hangers.",
+          "code": "5.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 75,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 485.05,
+          "rate_display": "485.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Steel reinforcement for R.C.C. work including straightening, cutting, bending, placing in position and binding all complete upto plinth level.",
+          "code": "5.22",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Mild steel and Medium Tensile steel bars kg",
+              "code": "5.22.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hard drawn steel wire kg",
+              "code": "5.22.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Cold twisted bars kg",
+              "code": "5.22.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hot rolled deformed bars kg",
+              "code": "5.22.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hard drawn steel wire fabric kg",
+              "code": "5.22.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg",
+              "code": "5.22.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 6
+            }
+          ],
+          "order_index": 76,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "107.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "95.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 80,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "107.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 82,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "102.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 86,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "5.22C Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete above plinth level. 5.22C.1 Thermo-Mechanically Treated bars of grade Fe-500D or more. kg",
+          "code": "99.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 95,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Smooth finishing of the exposed surface of R.C.C. work with 6 mm thick cement mortar 1:3 (1 Cement : 3 fine sand).",
+          "code": "5.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 97,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 300.45,
+          "rate_display": "300.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for rendering smooth the top of suspended floors, landings and staircases (treads and risers) with cement mortar 1:2 (1 cement : 2 coarse sand), including a floating coat of neat cement and protecting the surface with a layer of 7.5 cm of earth laid over 15 mm of fine sand in case of suspended floor and bricks laid in mud mortar in case of landings and steps, including subsequent removal and cleaning of the same.",
+          "code": "5.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 98,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 150.5,
+          "rate_display": "150.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position copper plate as per design for expansion joints. kg",
+          "code": "5.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 99,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "811.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 100,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and filling in position, blown bitumen in expansion joints.",
+          "code": "5.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 101,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 74854.65,
+          "rate_display": "74854.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and filling in position bitumen mix filler of proportion 80 kg. of hot bitumen, 1 kg. of cement and 0.25 cubic metre of coarse sand for expansion joints.",
+          "code": "5.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 102,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 28212.6,
+          "rate_display": "28212.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position 12 mm thick bitumen impregnated fiber board conforming to IS: 1838, including cost of primer, sealing compound Grade-A in expansion joints. per cm depth per 100m",
+          "code": "5.28",
+          "children_count": 0,
+          "children": [],
+          "order_index": 103,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "655.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 104,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing sheet covering over expansion joints with iron screws as per design.",
+          "code": "5.29",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Non-asbestos 6 mm thick fibre cement board, Type-A, Category-III as per IS: 14862:2000",
+              "code": "5.29.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "150 mm wide",
+                  "code": "5.29.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 107,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 245.45,
+                  "rate_display": "245.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm wide",
+                  "code": "5.29.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 108,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 330.2,
+                  "rate_display": "330.20"
+                }
+              ],
+              "order_index": 106,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "Aluminium fluted strips 3.15 mm thick.",
+              "code": "5.29.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "150 mm wide",
+                  "code": "5.29.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 110,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 567.6,
+                  "rate_display": "567.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm wide",
+                  "code": "5.29.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 111,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 753.85,
+                  "rate_display": "753.85"
+                }
+              ],
+              "order_index": 109,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "Cement bonded wood particle board 6 mm thick as per IS : 14276",
+              "code": "5.29.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "150 mm wide",
+                  "code": "5.29.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 113,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 237.4,
+                  "rate_display": "237.40"
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm wide",
+                  "code": "5.29.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 114,
+                  "source_page": 7,
+                  "unit": "metre",
+                  "rate": 319.4,
+                  "rate_display": "319.40"
+                }
+              ],
+              "order_index": 112,
+              "source_page": 7
+            }
+          ],
+          "order_index": 105,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Add for plaster drip course/ groove in plastered surface or moulding to R.C.C. projections.",
+          "code": "5.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 115,
+          "source_page": 7,
+          "unit": "metre",
+          "rate": 78.4,
+          "rate_display": "78.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying reinforced cement concrete in or under water and/ or liquid mud, including cost of pumping or bailing out water and removing slush etc., complete.",
+          "code": "5.31",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note For Item No. 5.31:- The quantity will be calculated by multiplying the depth measured from the subsoil water level up to the centre of gravity of the R.C.C. under subsoil water with the quantity of R.C.C. in cubic metre executed under subsoil water. The depth of centre of gravity shall be reckoned correct to 0.1 m (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored). No extra payment shall be made for placing reinforcement or centering & shuttering under sub - soil water conditions.",
+              "source_page": 7,
+              "order_index": 0
+            }
+          ],
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 1098.8,
+          "rate_display": "1098.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying reinforced cement concrete in or under foul positions.",
+          "code": "5.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 117,
+          "source_page": 7,
+          "unit": "cum",
+          "rate": 467.55,
+          "rate_display": "467.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources, Portland Pozzolana / Ordinary Portland /Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge, for the following grades of concrete.:",
+          "code": "5.33",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All works upto plinth level",
+              "code": "5.33.1",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 330 kg /cum",
+                  "code": "5.33.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 120,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 9504.75,
+                  "rate_display": "9504.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M30 grade with minimum cement content of 350 kg /cum",
+                  "code": "5.33.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 121,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 9655.7,
+                  "rate_display": "9655.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M35 grade with minimum cement content of 370 kg /cum",
+                  "code": "5.33.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 122,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 9806.7,
+                  "rate_display": "9806.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M40 grade with minimum cement content of 390 kg/cum",
+                  "code": "5.33.1.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 123,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 9957.65,
+                  "rate_display": "9957.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M50 grade with minimum cement content of 410 kg/cum",
+                  "code": "5.33.1.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 124,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 10108.65,
+                  "rate_display": "10108.65"
+                }
+              ],
+              "order_index": 119,
+              "source_page": 8
+            },
+            {
+              "node_type": "item",
+              "title": "All works above plinth level upto floor V level",
+              "code": "5.33.2",
+              "children_count": 5,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 330 kg /cum",
+                  "code": "5.33.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 126,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 9860.4,
+                  "rate_display": "9860.40"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M30 grade with minimum cement content of 350 kg /cum",
+                  "code": "5.33.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 127,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 10011.35,
+                  "rate_display": "10011.35"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M35 grade with minimum cement content of 370 kg /cum",
+                  "code": "5.33.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 128,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 10162.35,
+                  "rate_display": "10162.35"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M40 grade with minimum cement content of 390 kg /cum",
+                  "code": "5.33.2.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 129,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 10313.3,
+                  "rate_display": "10313.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M50 grade with minimum cement content of 410 kg /cum",
+                  "code": "5.33.2.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 130,
+                  "source_page": 8,
+                  "unit": "cum",
+                  "rate": 10464.3,
+                  "rate_display": "10464.30"
+                }
+              ],
+              "order_index": 125,
+              "source_page": 8
+            }
+          ],
+          "order_index": 118,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "5.33A.2 All works above plinth level up to floor V level 5.33A.2.1 Concrete of M25 grade with minimum cement content of 330 kg /cum",
+          "code": "9333.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 131,
+          "source_page": 9,
+          "unit": "cum",
+          "rate": 9689.6,
+          "rate_display": "9689.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Add for using extra cement in the items of design mix over and above the specified cement content therein. quintal",
+          "code": "5.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 132,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "733.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 133,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and placing in position precast reinforced cement concrete waffle units, square or rectangular, as per design and shape for floors and roofs in 1:1½:3 (1 Cement : 1½ coarse sand (zone-III) derived from natural sources : 3 graded stone aggregate 10 mm nominal size derived from natural sources), including flush or deep ruled pointing at joints in Cement mortar 1:2 (1 Cement : 2 Fine sand), making necessary holes of required sizes for carrying through service lines etc., providing steel hooks for lifting etc, form work in precasting, handling, hoisting, centering and erection complete for all floor levels but, excluding the cost of reinforcement.",
+          "code": "5.36",
+          "children_count": 0,
+          "children": [],
+          "order_index": 134,
+          "source_page": 9,
+          "unit": "cum",
+          "rate": 33018.75,
+          "rate_display": "33018.75"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "32847.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 135,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for R.C.C./ B.M.C/ R.M.C. work above floor V level for each four floors or part thereof.",
+          "code": "5.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 136,
+          "source_page": 9,
+          "unit": "cum",
+          "rate": 355.65,
+          "rate_display": "355.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and applying pre tested and approved water based concrete curing compound to concrete/ masonry surface, all as per manufacturer’s specification and direction of Engineer-in-charge.",
+          "code": "5.41",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Non pigmented wet curing compound",
+              "code": "5.41.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 138,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 69.05,
+              "rate_display": "69.05"
+            }
+          ],
+          "order_index": 137,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing parallel threaded couplers conforming to IS code on “Reinforcement Couplers for Mechanical Splices of Bars for Concrete Reinforcement - Specification”, to reinforcement bars including threading, enlargement at connection by forging, protecting the prepared reinforcement bars and related operations as required to complete the works per direction of Engineer- in-Charge.",
+          "code": "5.42",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Coupler for 16 mm diameter reinforcement bar",
+              "code": "5.42.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 115.1,
+              "rate_display": "115.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Coupler for 20 mm diameter reinforcement bar",
+              "code": "5.42.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 141,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 160.1,
+              "rate_display": "160.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Coupler for 25 mm diameter reinforcement bar",
+              "code": "5.42.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 142,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 228.95,
+              "rate_display": "228.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Coupler for 28 mm diameter reinforcement bar",
+              "code": "5.42.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 143,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 267.55,
+              "rate_display": "267.55"
+            },
+            {
+              "node_type": "item",
+              "title": "Coupler for 32 mm diameter reinforcement bar",
+              "code": "5.42.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 144,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 318.8,
+              "rate_display": "318.80"
+            }
+          ],
+          "order_index": 139,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position Stainless steel Grade 304 plate-1.0 mm thick as per design for expansion joints.",
+          "code": "5.43",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "200 mm wide.",
+              "code": "5.43.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 146,
+              "source_page": 9,
+              "unit": "metre",
+              "rate": 859.75,
+              "rate_display": "859.75"
+            },
+            {
+              "node_type": "item",
+              "title": "300 mm wide.",
+              "code": "5.43.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 147,
+              "source_page": 9,
+              "unit": "metre",
+              "rate": 1208.05,
+              "rate_display": "1208.05"
+            }
+          ],
+          "order_index": 145,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing of expansion joint system related with floor location as per drawings and direction of Engineer-In-Charge. The joints system will be of extruded aluminum base members, self aligning / self centering arrangement and support plates etc. as per ASTM B221-02. The system shall be such that it provides floor to floor /floor to wall expansion control system for various vertical localtion in load application areas that accommodates multi directional seismic movement without stress to it’s components. System shall consist of metal profiles with an universal aluminum base member designed to accommodate various project conditions and finish floor treatments. The cover plate shall be designed of width and thickness required to satisfy projects movement and loading requirements and secured to base members by utilizing manufacturer’s pre-engineered self- centering arrangement that freely rotates / moves in all directions. The Self - centering arrangement shall exhibit circular sphere ends that lock and slide inside the corresponding aluminum extrusion cavity to allow freedom of movement and flexure in all directions including vertical displacement. Provision of Moisture Barrier Membrane in the Joint System to have watertight joint is mandatory requirement all as per the manufactures design and as approved by Engineer -in- Charge. (Material shall conform to ASTM 6063).",
+          "code": "5.44",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Floor Joint of 100 mm gap",
+              "code": "5.44.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 149,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 6392.55,
+              "rate_display": "6392.55"
+            },
+            {
+              "node_type": "item",
+              "title": "Floor Joint of 150 mm gap",
+              "code": "5.44.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 150,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 7812.35,
+              "rate_display": "7812.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Floor Joint of 200 mm gap",
+              "code": "5.44.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 151,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 9903.65,
+              "rate_display": "9903.65"
+            }
+          ],
+          "order_index": 148,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing of expansion joint system related with wall joint (internal/external) location as per drawings and direction of Engineer-In- Charge. The joints shall be of extruded aluminum base members, self aligning / centering arrangement and support plates as per ASTM B221- 02. The material shall be such that it provides an Expansion Joints System suitable for vertical wall to wall/ wall to corner application, both new and existing construction in office Buildings & complexes with no slipping down tendency amongst the components of the Joint System. The Joint System shall utilize light weight aluminum profiles exhibiting minimal exposed aluminum surfaces mechanically snap locking the multicellular to facilitate movement. (Material shall conform to ASTM 6063).",
+          "code": "5.45",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Wall Joint of 100 mm gap",
+              "code": "5.45.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 153,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 5305.65,
+              "rate_display": "5305.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Wall Joint of 150 mm gap",
+              "code": "5.45.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 154,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 5981.4,
+              "rate_display": "5981.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Wall Joint of 200 mm gap",
+              "code": "5.45.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 155,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 6889.05,
+              "rate_display": "6889.05"
+            }
+          ],
+          "order_index": 152,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing of expansion joint system of approved make and manufactures for various roof locations as per approved drawings and direction of Engineer-In-Charge. The joints shall be of extruded aluminum base members with, self aligning and self centering arragement support plates as per ASTM B221-02. The system shall be such that it provides watertight roof to roof/roof to corner joint cover expansion control system that is capable of accommodating multidirectional seismic movement without stress to its components. System shall consist of metal profile that incorporates an universal aluminum base member designed to accommodate various project conditions and roof treatments. The cover plate shall be designed of width and thickness required to satisfy movement and loading requirements and secured to base members by utilizing manufacturer’s pre-engineered self-centering arrangement that freely rotates / moves in all directions. The Self centering arrangement shall exhibit circular sphere ends that lock and slide inside the corresponding aluminum extrusion cavity to allow freedom of movement and flexure in all directions including vertical displacement. The Joint System shall resists damage or deterioration from the impact of falling ice, exposure to UV, airborne contaminants and occasional foot traffic from maintenance personnel. Provision of Moisture Barrier Membrane in the Joint System to have water tight joint is mandatory requirement. (Material shall conform to ASTM 6063).",
+          "code": "5.46",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Roof Joint of 100 mm gap",
+              "code": "5.46.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 157,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 5985.7,
+              "rate_display": "5985.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Roof Joint of 150 mm gap",
+              "code": "5.46.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 158,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 6699.85,
+              "rate_display": "6699.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Roof Joint of 200 mm gap",
+              "code": "5.46.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 159,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 7927.6,
+              "rate_display": "7927.60"
+            }
+          ],
+          "order_index": 156,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position factory made precast RCC M-40 door and window frame fixing with hold fast embedded in 1:3:6 concrete block, having excellent smooth finish as per IS: 6523 with reinforcement of 3 Nos, 6 mm dia main bars tied with 3 mm M.S stirrups placed @ 200 mm C/C and 6 numbers high strength polymer blocks of required size for fixing hinges including providing 6 nos. specially designed M.S. galvanised sleeves for accomodating 6 mm dia fully threaded bolts for fixing hold fast on vertical members, providing suitable arrangement for recieving sliding door bolts and tower bolt etc. all complete, as per the direction of Engineer-in-charge. The frame shall be measured in running metre correct to two places of decimal.",
+          "code": "5.47",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Door frame 125 mmx 60 mm",
+              "code": "5.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 161,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 814.85,
+              "rate_display": "814.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Door frame 100 mmx 60 mm",
+              "code": "5.47.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 162,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 757.1,
+              "rate_display": "757.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Door frame 85 mmx60 mm",
+              "code": "5.47.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 163,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 727.3,
+              "rate_display": "727.30"
+            }
+          ],
+          "order_index": 160,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Reinforced cement concrete for construction of piers, abutments, portal frames, pier caps and bearing pedestals and seismic arresters over pier/ abutment caps at all locations with specified grade using Ordinary Portland Cement (conforming to strength requirement of IS:8112) including the cost of steel centering and shuttering etc. complete, including testing of materials etc. for casting pier & pier cap in one/two stage, necessary tools, plants, machinery and all related operations as required to complete the work as per drawings and Specifications with all leads, lifts and depths true to level and position but excluding the cost of providing reinforcement. Reinforcement shall be measured and paid separately.",
+          "code": "5.48",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Reinforced Cement Concrete -M-50",
+              "code": "5.48.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 165,
+              "source_page": 11,
+              "unit": "cum",
+              "rate": 8509.95,
+              "rate_display": "8509.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Reinforced Cement Concrete -M-60",
+              "code": "5.48.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 166,
+              "source_page": 11,
+              "unit": "cum",
+              "rate": 9500.3,
+              "rate_display": "9500.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Extra for using M-50/ M-60 Grade Self-compacting Cement Concrete",
+              "code": "5.48.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 167,
+              "source_page": 11,
+              "unit": "cum",
+              "rate": 664.85,
+              "rate_display": "664.85"
+            }
+          ],
+          "order_index": 164,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Constructing cast-in situ RCC diaphragm wall by providing and laying machine batched, machine mixed, self compacting, ready mix reinforced cement concrete, tramie controlled, of M 30 grade using minimum 400 kg cement per cum of concrete including providing and mixing required admixtures in recommended proportions as per IS : 9103, as approved by the Engineer-in-charge, for achieving 150 - 200 mm slump, for diaphragm wall having thickness as per approved structural design not exceeding 600 mm, in pannels of required depth and lengths as per approved drawing, including constructing necessary guide walls as required and as specified including boring in all kinds of soils and rocks, including working in or under water and / or liquid mud, in foul conditions and pumping or bailing out of water and removing slush, including disposal of earth/ rock / slush etc. for all leads and all lifts, including preparing, providing and re-circulating bentonite slurry in the trench as and when required for all depths, including agitating bentonite slurry during trenching etc., providing and fixing stop ends or form tubes, upto the required depth of diaphragm wall including extracting the same after casting, including chipping off the bentonite adulterated concrete or unsound concrete up to the cut off level for obtaining the sound concrete, dressing undulations on the exposed face of diaphragm wall after excavation by chipping / chiseling etc. including filling the depression/ cavities with sound concrete etc. complete and as directed by the Engineer-in-charge, including providing recess for bearing plates and fixing insert boxes for inclined rock anchors etc. complete as per the specifications and approved design and as directed by the Engineer-in-charge, but excluding the cost of reinforcement and inserts. (rates include cost of all inputs of labour, material and T & P, cost of handling, lifting & placing in position the reinforcement cage in the trench, including the additional cost of welding the reinforcement bars etc. involved in the work and all other incidental expenditure for completing the work as directed by the Engineer-in- charge), However, the actual area of the diaphragm wall, correct to two places of decimal, from design bottom level to the design cut off level (including portion anchored in the rock upto the design bottom level) only shall be measured for payment.",
+          "code": "5.49",
+          "children_count": 0,
+          "children": [],
+          "order_index": 168,
+          "source_page": 11,
+          "unit": "cum",
+          "rate": 20460.45,
+          "rate_display": "20460.45"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/5.0 REINFORCED CEMENT CONCRETE.pdf",
+    "row_count": 169,
+    "note_count": 4,
+    "leaf_count": 137,
+    "duplicate_codes": [
+      "107.85",
+      "107.85",
+      "107.10",
+      "95.80",
+      "107.85",
+      "107.85",
+      "102.20",
+      "107.85",
+      "99.65"
+    ],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

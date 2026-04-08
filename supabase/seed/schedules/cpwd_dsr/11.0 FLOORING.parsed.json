@@ -1,0 +1,1879 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/11.0 FLOORING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "FLOORING",
+      "code": "11.0",
+      "children_count": 67,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Brick on edge flooring with bricks of class designation 7.5 on a bed of 12 mm cement mortar, including filling the joints with same mortar, with common burnt clay non modular bricks:",
+          "code": "11.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement : 4 coarse sand)",
+              "code": "11.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1006.95,
+              "rate_display": "1006.95"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1cement : 6 coarse sand)",
+              "code": "11.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 965.55,
+              "rate_display": "965.55"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Dry brick on edge flooring in required pattern with bricks of class designation 7.5 on a bed of 12 mm mud mortar, including filling joints with Jamuna sand, with common burnt clay non modular bricks.",
+          "code": "11.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 3,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 792.05,
+          "rate_display": "792.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement concrete flooring 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate) finished with a floating coat of neat cement, including cement slurry, but excluding the cost of nosing of steps etc. complete.",
+          "code": "11.3",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "40 mm thick with 20 mm nominal size stone aggregate",
+              "code": "11.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 614.2,
+              "rate_display": "614.20"
+            }
+          ],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "52 mm thick cement concrete flooring with concrete hardener topping, under layer 40 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) and top layer 12 mm thick cement hardener consisting of mix 1:2 (1 cement hardener mix : 2 graded stone aggregate 6 mm nominal size) by volume, hardening compound mixed @ 2 litre per 50 kg of cement or as per manufacturer’s specifications. This includes cost of cement slurry, but excluding the cost of nosing of steps etc. complete.",
+          "code": "11.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 6,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 978.45,
+          "rate_display": "978.45"
+        },
+        {
+          "node_type": "item",
+          "title": "62 mm thick cement concrete flooring with concrete hardener topping, under layer 50 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) and top layer 12 mm thick cement hardener consisting of mix 1:2 (1 cement hardener mix : 2 graded stone aggregate, 6 mm nominal size) by volume, hardening compound mixed @ 2 litre per 50 kg of cement or as per manufacture’s specifications. This includes cost of cement slurry, but excluding the cost of nosing of steps etc. complete.",
+          "code": "11.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 1056.15,
+          "rate_display": "1056.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement plaster skirting up to 30 cm height, with cement mortar 1:3 (1 cement : 3 coarse sand), finished with a floating coat of neat cement.",
+          "code": "11.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick",
+              "code": "11.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 662.05,
+              "rate_display": "662.05"
+            }
+          ],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Cement concrete pavement with 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size), including finishing complete.",
+          "code": "11.7",
+          "children_count": 0,
+          "children": [],
+          "order_index": 10,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 8595.15,
+          "rate_display": "8595.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for making chequers of approved pattern on cement concrete floors, steps, landings, pavements etc.",
+          "code": "11.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 11,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 83.85,
+          "rate_display": "83.85"
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick marble chips flooring rubbed and polished to granolithic finish, under layer 34 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 12.5 mm nominal size) and top layer 6 mm thick with white, black, chocolate, grey, yellow or green marble chips of sizes from 1 mm to 4 mm nominal size, laid in cement marble powder mix 3:1 (3 cement : 1 marble powder) by weight in proportion of 4:7 (4 cement marble powder mix : 7 marble chips) by volume, including cement slurry etc. complete :",
+          "code": "11.9",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment with ordinary cement",
+              "code": "11.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1065.75,
+              "rate_display": "1065.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with white cement",
+              "code": "11.9.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1092.5,
+              "rate_display": "1092.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment with 50% white cement and 50% ordinary cement",
+              "code": "11.9.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1075.1,
+              "rate_display": "1075.10"
+            },
+            {
+              "node_type": "item",
+              "title": "White cement without any pigment",
+              "code": "11.9.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1067.5,
+              "rate_display": "1067.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with ordinary cement",
+              "code": "11.9.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1061.7,
+              "rate_display": "1061.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.9.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1034.25,
+              "rate_display": "1034.25"
+            }
+          ],
+          "order_index": 12,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick marble chips flooring, rubbed and polished to granolithic finish, under layer 31 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 12.5 mm nominal size) and top layer 9 mm thick with white, black, chocolate, grey, yellow or green marble chips of sizes from 4 mm to 7 mm nominal size, laid in cement marble powder mix 3:1 (3 cement : 1 marble powder) by weight in proportion of 4:7 (4 cement marble powder : 7 marble chips) by volume, including cement slurry etc. complete",
+          "code": "11.10",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment with Ordinary cement",
+              "code": "11.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1072.1,
+              "rate_display": "1072.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with white cement",
+              "code": "11.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1110.3,
+              "rate_display": "1110.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment with 50% white cement and 50% ordinary cement",
+              "code": "11.10.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1085.45,
+              "rate_display": "1085.45"
+            },
+            {
+              "node_type": "item",
+              "title": "White cement without any pigment",
+              "code": "11.10.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1071.05,
+              "rate_display": "1071.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with ordinary cement",
+              "code": "11.10.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1066.35,
+              "rate_display": "1066.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.10.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1027.1,
+              "rate_display": "1027.10"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick marble chips flooring, rubbed and polished to granolithic finish, under layer 28 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 12.5 mm nominal size) and top layer 12 mm thick with white, black, chocolate, grey yellow or green marble chips of sizes from 7 mm to 10 mm nominal size, laid in cement marble powder mix 3:1 (3 cement : 1 marble powder) by weight in proportion of 2:3 (2 cement marble powder mix : 3 marble chips) by volume, including cement slurry etc. complete",
+          "code": "11.11",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment with ordinary cement",
+              "code": "11.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 27,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1110.75,
+              "rate_display": "1110.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with white cement",
+              "code": "11.11.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1164.25,
+              "rate_display": "1164.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment with 50% white cement and 50% ordinary cement",
+              "code": "11.11.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1129.45,
+              "rate_display": "1129.45"
+            },
+            {
+              "node_type": "item",
+              "title": "White cement without any pigment",
+              "code": "11.11.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1109.85,
+              "rate_display": "1109.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Light shade pigment with ordinary cement",
+              "code": "11.11.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1102.7,
+              "rate_display": "1102.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.11.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1048.25,
+              "rate_display": "1048.25"
+            }
+          ],
+          "order_index": 26,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Marble chips skirting up to 30 cm height, rubbed and polished to granolithic finish, top layer 6 mm thick with white, black, chocolate, grey, yellow or green marble chips of sizes from smallest to 4 mm nominal size, laid in cement marble powder mix 3:1 (3 cement : 1 marble powder) by weight in proportion of 4:7 (4 cement marble powder mix : 7 marble chips) by volume:",
+          "code": "11.12",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick with under layer 12 mm thick in cement plaster 1:3 (1 cement : 3 coarse sand) :",
+              "code": "11.12.1",
+              "children_count": 6,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Dark shade pigment with ordinary cement",
+                  "code": "11.12.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 35,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1864.3,
+                  "rate_display": "1864.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Light shade pigment with white cement",
+                  "code": "11.12.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1891.05,
+                  "rate_display": "1891.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Medium shade pigment with 50% white cement and 50% ordinary cement",
+                  "code": "11.12.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 37,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1873.65,
+                  "rate_display": "1873.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White cement without any pigment",
+                  "code": "11.12.1.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 38,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1863.6,
+                  "rate_display": "1863.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Light shade pigment with ordinary cement",
+                  "code": "11.12.1.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 39,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1860.25,
+                  "rate_display": "1860.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Ordinary cement without any pigment",
+                  "code": "11.12.1.6",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 40,
+                  "source_page": 2,
+                  "unit": "sqm",
+                  "rate": 1832.8,
+                  "rate_display": "1832.80"
+                }
+              ],
+              "order_index": 34,
+              "source_page": 2
+            }
+          ],
+          "order_index": 33,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing glass strips in joints of terrazo/ cement concrete floors.",
+          "code": "11.13",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "40 mm wide and 4 mm thick",
+              "code": "11.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 42,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 91.75,
+              "rate_display": "91.75"
+            }
+          ],
+          "order_index": 41,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying terrazo flooring on staircase treads not exceeding 30 cm in width, including cost of forming, nosing etc.",
+          "code": "11.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 43,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 97.65,
+          "rate_display": "97.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Crazy marble stone flooring, including filling the gaps with light shade pigment with white cement marble powder mixture (3 parts of white cement : 1 part of marble powder) by weight in proportion of 4:7 (4 cement marble powder mix : 7 white, black or white and black marble chips of sizes from 1 mm to 4 mm nominal size by volume), with under layer 25 mm thick cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 12.5 mm nominal size), including rubbing, polishing and cement slurry etc. complete :",
+          "code": "11.15",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick crazy marble stone white, black or as specified",
+              "code": "11.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1714.8,
+              "rate_display": "1714.80"
+            }
+          ],
+          "order_index": 44,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Precast terrazo tiles 22 mm thick with graded marble chips of size upto 12 mm, laid in floors, and landings, jointed with neat cement slurry mixed with pigment to match the shade of the tiles, including rubbing and polishing complete, on 20 mm thick bed of cement mortar 1:4 (1 cement:4 coarse sand) :",
+          "code": "11.16",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Light shade pigment using white cement",
+              "code": "11.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1549.45,
+              "rate_display": "1549.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment using 50% white cement and 50% ordinary cement",
+              "code": "11.16.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 48,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1507.1,
+              "rate_display": "1507.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment using ordinary cement",
+              "code": "11.16.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 49,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1450.0,
+              "rate_display": "1450.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.16.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1386.8,
+              "rate_display": "1386.80"
+            }
+          ],
+          "order_index": 46,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra if terrazo tiles are laid in treads of steps not exceeding 30 cm in width.",
+          "code": "11.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 124.05,
+          "rate_display": "124.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Precast terrazo tiles 22 mm thick with graded marble chips of sizes upto 12 mm, in skirting and risers of steps not exceeding 30 cm in height, on 12 mm thick cement plaster 1:3 (1 cement : 3 coarse sand), jointed with neat cement slurry mixed with pigment to match the shade of the tiles, including rubbing and polishing complete with tiles of :",
+          "code": "11.18",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Light shade pigment using white cement",
+              "code": "11.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 53,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 2422.8,
+              "rate_display": "2422.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shades pigment using 50% white cement and 50% ordinary cement",
+              "code": "11.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 2370.95,
+              "rate_display": "2370.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment using ordinary cement",
+              "code": "11.18.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 55,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 2308.75,
+              "rate_display": "2308.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.18.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 56,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 2229.15,
+              "rate_display": "2229.15"
+            }
+          ],
+          "order_index": 52,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Chequered terrazo tiles 22 mm thick with graded marble chips of size up to 6 mm in floors, jointed with neat cement slurry mixed with pigment to match the shade of the tiles, including rubbing and polishing complete, on 20 mm thick bed of cement mortar 1:4 (1 cement :4 coarse sand) :",
+          "code": "11.19",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Light shade pigment using white cement",
+              "code": "11.19.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 58,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1533.8,
+              "rate_display": "1533.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment using 50% white cement, 50% ordinary cement",
+              "code": "11.19.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 59,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1483.6,
+              "rate_display": "1483.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment using ordinary cement",
+              "code": "11.19.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 60,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1442.15,
+              "rate_display": "1442.15"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.19.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 61,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1379.0,
+              "rate_display": "1379.00"
+            }
+          ],
+          "order_index": 57,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Chequerred precast cement concrete tiles 22 mm thick in footpath & courtyard, jointed with neat cement slurry mixed with pigment to match the shade of tiles, including rubbing and cleaning etc. complete, on 20 mm thick bed of cement mortar 1:4 (1 cement: 4 coarse sand).",
+          "code": "11.20",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Light shade pigment using white cement",
+              "code": "11.20.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 63,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1402.0,
+              "rate_display": "1402.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Medium shade pigment using 50% white cement 50% Grey cement",
+              "code": "11.20.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 64,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1328.35,
+              "rate_display": "1328.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Dark shade pigment using ordinary cement",
+              "code": "11.20.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 65,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1119.5,
+              "rate_display": "1119.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Ordinary cement without any pigment",
+              "code": "11.20.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1056.35,
+              "rate_display": "1056.35"
+            }
+          ],
+          "order_index": 62,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 10 mm thick acid and/or alkali resistant tiles of approved make and colour using acid and/or alkali resisting mortar bedding, and joints filled with acid and/or alkali resisting cement as per IS : 4457, complete as per the direction of Engineer-in- Charge.",
+          "code": "11.21",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In flooring on a bed of 10 mm thick mortar 1:4 (1 acid proof cement : 4 coarse sand)",
+              "code": "11.21.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Acid and alkali resistant tile",
+                  "code": "11.21.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 69,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 1738.15,
+                  "rate_display": "1738.15"
+                }
+              ],
+              "order_index": 68,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "In dado/skirting on 12 mm thick mortar 1:4 (1 acid proof cement : 4 coarse sand)",
+              "code": "11.21.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Acid and alkali resistant tile",
+                  "code": "11.21.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 71,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 1884.9,
+                  "rate_display": "1884.90"
+                }
+              ],
+              "order_index": 70,
+              "source_page": 4
+            }
+          ],
+          "order_index": 67,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Tile work in skirting, risers of steps and dado up to 2 m height over 12 mm thick bed of cement mortar 1:3 (1 cement :3 coarse sand) and jointed with grey cement slurry @ 3.3 kg/sqm, including pointing in white cement mixed with pigment of matching shade complete.",
+          "code": "11.22",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Marble tiles (polished) Raj Nagar",
+              "code": "11.22.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "8 mm thick",
+                  "code": "11.22.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 74,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 1475.35,
+                  "rate_display": "1475.35"
+                }
+              ],
+              "order_index": 73,
+              "source_page": 4
+            }
+          ],
+          "order_index": 72,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Marble stone flooring with 18 mm thick marble stone, as per sample of marble approved by Engineer-in-charge, over 20 mm (average) thick base of cement mortar 1:4 (1 cement : 4 coarse sand) laid and jointed with grey cement slurry, including rubbing and polishing complete with :",
+          "code": "11.23",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Makrana white second quality",
+              "code": "11.23.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 3737.45,
+              "rate_display": "3737.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Raj Nagar plain",
+              "code": "11.23.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2346.8,
+              "rate_display": "2346.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Agaria White",
+              "code": "11.23.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 78,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 3164.8,
+              "rate_display": "3164.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Black Zebra",
+              "code": "11.23.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 3001.2,
+              "rate_display": "3001.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Udaipur green marble",
+              "code": "11.23.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 80,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2428.6,
+              "rate_display": "2428.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Pink plain marble",
+              "code": "11.23.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 2510.4,
+              "rate_display": "2510.40"
+            }
+          ],
+          "order_index": 75,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for pre finished nosing to treads of steps of marble stone.",
+          "code": "11.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 82,
+          "source_page": 4,
+          "unit": "metre",
+          "rate": 719.9,
+          "rate_display": "719.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for marble stone flooring in treads of steps and risers using single length up to 2.00 metre.",
+          "code": "11.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 83,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 851.8,
+          "rate_display": "851.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Kota stone slab flooring over 20 mm (average) thick base laid over and jointed with grey cement slurry mixed with pigment to match the shade of the slab, including rubbing and polishing complete with base of cement mortar 1 : 4 (1 cement : 4 coarse sand) :",
+          "code": "11.26",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "11.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1948.25,
+              "rate_display": "1948.25"
+            }
+          ],
+          "order_index": 84,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Kota stone slabs 20 mm thick in risers of steps, skirting, dado and pillars laid on 12 mm (average) thick cement mortar 1:3 (1 cement: 3 coarse sand) and jointed with grey cement slurry mixed with pigment to match the shade of the slabs, including rubbing and polishing complete.",
+          "code": "11.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 86,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 2354.7,
+          "rate_display": "2354.70"
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick fine dressed stone flooring over 20 mm (average) thick base of cement mortar 1:5 (1 cement : 5 coarse sand) with joints finished flush.",
+          "code": "11.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "11.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 1280.1,
+              "rate_display": "1280.10"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "11.28.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1342.65,
+              "rate_display": "1342.65"
+            }
+          ],
+          "order_index": 87,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick fine dressed stone flooring over 20 mm (average) thick base of cement mortar 1:5 (1 cement : 5 coarse sand), including pointing with cement mortar 1:2 (1 cement : 2 stone dust) with an admixture of pigment to match the shade of stone.",
+          "code": "11.29",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "11.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1526.05,
+              "rate_display": "1526.05"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "11.29.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 92,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1588.65,
+              "rate_display": "1588.65"
+            }
+          ],
+          "order_index": 90,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "40 mm thick rubbed stone flooring over 20 mm (average) thick base of cement mortar 1:5 (1 cement : 5 coarse sand) with joints 3 mm thick, side buttered with cement mortar 1:2 (1 cement : 2 stone dust) admixed with pigment to match the shade of stone and pointing with same mortar.",
+          "code": "11.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "11.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 94,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1647.0,
+              "rate_display": "1647.00"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "11.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 95,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1709.6,
+              "rate_display": "1709.60"
+            }
+          ],
+          "order_index": 93,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for pre finished nosing in treads of steps of Kota stone/ sand stone slab.",
+          "code": "11.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 96,
+          "source_page": 5,
+          "unit": "metre",
+          "rate": 191.4,
+          "rate_display": "191.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for Kota stone/ sand stone in treads of steps and risers using single length above normal size up to 2.00 metre.",
+          "code": "11.32",
+          "children_count": 0,
+          "children": [],
+          "order_index": 97,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 44.15,
+          "rate_display": "44.15"
+        },
+        {
+          "node_type": "item",
+          "title": "25 mm wooden planking, tongued and grooved in flooring, including fixing with iron screws complete with :",
+          "code": "11.33",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Second class teak wood",
+              "code": "11.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 4508.95,
+              "rate_display": "4508.95"
+            },
+            {
+              "node_type": "item",
+              "title": "Second class deodar wood",
+              "code": "11.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 100,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 3029.75,
+              "rate_display": "3029.75"
+            }
+          ],
+          "order_index": 98,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "38 mm thick wood block flooring of first class teak wood laid over 25 mm thick leveling layer of cement concrete 1:2:4 (1 cement : 2 coarse sand: 4 graded stone aggregate 10 mm nominal size) to be paid separately, coated with a thin layer of hot bitumen penetration 80/25 (blown type) @ 2.45 kg per sqm, including fixing blocks in position after dipping in hot bitumen (blown type) up to half depth, planed, levelled smooth and finished complete.",
+          "code": "11.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 101,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 12020.45,
+          "rate_display": "12020.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. angle 50x50x5 mm to act as nosing with lugs of M.S. flat 10x5 mm, 10 cm long, forked at end 60cm apart (minimum three lugs to be provided), including necessary welding and applying a priming coat of approved primer on exposed surface etc. complete. kg",
+          "code": "11.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 102,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "CERAMIC GLAZED TILES",
+          "code": "177.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 103,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Ceramic glazed floor tiles of size 300x300 mm (thickness to be specified by the manufacturer) of 1st quality conforming to IS : 15622 of approved make in colours such as White, Ivory, Grey, Fume Red Brown, laid on 20 mm thick cement mortar 1:4 (1 Cement : 4 Coarse sand), Jointing with grey cement slurry @ 3.3 kg/sqm including pointing the joints with white cement and matching pigment etc., complete.",
+          "code": "11.37",
+          "children_count": 0,
+          "children": [],
+          "order_index": 104,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 1096.55,
+          "rate_display": "1096.55"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "1112.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 105,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Ceramic glazed floor tiles of size 300x300 mm (thickness to be specified by the manufacturer), of 1st quality conforming to IS : 15622, of approved make, in all colours, shades, except White, Ivory, Grey, Fume Red Brown, laid on 20 mm thick bed of cement mortar 1:4 (1 Cement : 4 Coarse sand), jointing with grey cement slurry @ 3.3 kg/ sq.m including pointing the joints with white cement and matching pigments etc., complete.",
+          "code": "11.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 106,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1315.3,
+          "rate_display": "1315.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying rectified Glazed Ceramic floor tiles of size 300x300 mm or more (thickness to be specified by the manufacturer), of 1st quality conforming to IS : 15622, of approved make, in colours White, Ivory, Grey, Fume Red Brown, laid on 20 mm thick cement mortar 1:4 (1 Cement: 4 Coarse sand), jointing with grey cement slurry @ 3.3 kg/ sqm including grouting the joints with white cement and matching pigments etc., complete.",
+          "code": "11.39",
+          "children_count": 0,
+          "children": [],
+          "order_index": 107,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1330.0,
+          "rate_display": "1330.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying rectified Glazed Ceramic floor tiles of size 300x300 mm or more (thickness to be specified by the manufacturer), of 1st quality conforming to IS : 15622, of approved make, in all colours, shades, except White, Ivory, Grey, Fume Red Brown, laid on 20 mm thick Cement Mortar 1:4 (1 Cement : 4 Coarse sand), jointing with grey cement slurry @ 3.3 kg/ sqm including pointing the joints with white cement and matching pigments etc., complete.",
+          "code": "11.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 108,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1439.4,
+          "rate_display": "1439.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying vitrified floor tiles in different sizes (thickness to be specified by the manufacturer) with water absorption less than 0.08% and conforming to IS: 15622, of approved make, in all colours and shades, laid on 20 mm thick cement mortar 1:4 (1 cement : 4 coarse sand), jointing with grey cement slurry @ 3.3 kg/ sqm including grouting the joints with white cement and matching pigments etc., complete.",
+          "code": "11.41",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size of Tile 500x500 mm",
+              "code": "11.41.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 110,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1524.3,
+              "rate_display": "1524.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 600x600 mm",
+              "code": "11.41.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 111,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1553.45,
+              "rate_display": "1553.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 800x800 mm",
+              "code": "11.41.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 112,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 1885.5,
+              "rate_display": "1885.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 1000x1000 mm",
+              "code": "11.41.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 2089.65,
+              "rate_display": "2089.65"
+            }
+          ],
+          "order_index": 109,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.1.2 Size of Tile 800 x 800 mm",
+          "code": "1453.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 114,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1534.85,
+          "rate_display": "1534.85"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.1.4 Size of Tile 800 x 1600 mm",
+          "code": "1577.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 115,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1870.25,
+          "rate_display": "1870.25"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.2 Glazed vitrified floor tiles polished finish of size 11.41A.2.1 Size of Tile 600 x 600 mm",
+          "code": "1801.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1502.75,
+          "rate_display": "1502.75"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.2.3 Size of Tile 800 x 800 mm",
+          "code": "1798.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 117,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1728.8,
+          "rate_display": "1728.80"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.2.5 Size of Tile 1200 x 1200 mm",
+          "code": "2056.90",
+          "children_count": 0,
+          "children": [],
+          "order_index": 118,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 2541.0,
+          "rate_display": "2541.00"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.3.2 Size of Tile 600 x 1200 mm",
+          "code": "1464.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 119,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 1797.3,
+          "rate_display": "1797.30"
+        },
+        {
+          "node_type": "item",
+          "title": "11.41A.3.4 Size of Tile 800 x 1200 mm",
+          "code": "1724.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 120,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 2056.9,
+          "rate_display": "2056.90"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "2838.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 121,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for not using 20 mm thick cement mortar 1:4 (1 cement : 4 coarse sand) bedding in laying of floor tiles and jointing with grey cement slurry @ 3.3 kg/ sqm.",
+          "code": "11.42",
+          "children_count": 0,
+          "children": [],
+          "order_index": 122,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 850.1,
+          "rate_display": "850.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Fixing glazed/ Ceramic/ Vitrified floor tiles with cement based high polymer modified quick-set tile adhesive (Water based) conforming to IS: 15477, in average 3 mm thickness.",
+          "code": "11.43",
+          "children_count": 0,
+          "children": [],
+          "order_index": 123,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 753.25,
+          "rate_display": "753.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Crazy ceramic tile flooring, with under layer 12 mm thick cement mortar 1:4 (1 cement: 4 coarse sand), with joints not exceeding 5 mm, including filling the gaps with ordinary cement mixture & mixing with synthetic polyester fibre, triangular in shape having specific gravity of 1.34 to 1.40, cross section size ranging from 10 to 40 micron & length upto 6 mm , mixing fibre @ 125 grams per 50 kg of cement in cement mortar, including providing and mixing water proofing material in mortar @ 1 kg per 50 kg of cement, all complete as per direction of Engineer-in-charge.",
+          "code": "11.44",
+          "children_count": 0,
+          "children": [],
+          "order_index": 124,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 954.15,
+          "rate_display": "954.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying 500x500x40 mm thick Turf paver (Turfpave XD) on 150 mm thick sub grade of compacted bed of 20 mm thick nominal size stone aggregate and base course and filling with 150 mm thick Jamuna sand, including spreading, well ramming, consolidating and finishing smooth etc. all complete as per direction of Engineer-in-charge.",
+          "code": "11.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 125,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 1708.1,
+          "rate_display": "1708.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Vitrified tiles in different sizes (thickness to be specified by manufacturer), with water absorption less than 0.08 % and conforming to I.S. 15622, of approved make, in all colours & shade, in skirting, riser of steps, over 12 mm thick bed of cement mortar 1:3 (1 cement: 3 coarse sand), jointing with grey cement slurry @ 3.3 kg/ sqm including grouting the joint with white cement & matching pigments etc. complete.",
+          "code": "11.46",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size of Tile 500x500 mm",
+              "code": "11.46.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 127,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 1593.9,
+              "rate_display": "1593.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 600x600 mm",
+              "code": "11.46.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 128,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 1623.05,
+              "rate_display": "1623.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 800x800 mm",
+              "code": "11.46.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 129,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 1958.45,
+              "rate_display": "1958.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 1000x1000 mm",
+              "code": "11.46.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 130,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 2162.6,
+              "rate_display": "2162.60"
+            }
+          ],
+          "order_index": 126,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "216.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 131,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Vitrified tiles in different sizes (thickness to be specified by the manufacturer), with water absorption less than 0.08% and conforming to IS: 15622, of approved brand & manufacturer, in all colours and shade, in skirting, riser of steps, laid with cement based high polymer modified quick set tile adhesive (water based) conforming to IS: 15477, in average 6 mm thickness, including grouting of joints (Payment for grouting of joints to be made separately).",
+          "code": "11.47",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size of Tile 500x500 mm",
+              "code": "11.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 133,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1864.75,
+              "rate_display": "1864.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 600x600 mm",
+              "code": "11.47.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 134,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1893.9,
+              "rate_display": "1893.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 800x800 mm",
+              "code": "11.47.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 135,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2229.25,
+              "rate_display": "2229.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 1000x1000 mm",
+              "code": "11.47.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 136,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2433.4,
+              "rate_display": "2433.40"
+            }
+          ],
+          "order_index": 132,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Grouting the joints of flooring tiles having joints of 3 mm width, using epoxy grout mix of 0.70 kg of organic coated filler of desired shade (0.10 kg of hardener and 0.20 kg of resin per kg), including filling / grouting and finishing complete as per direction of Engineer-in-charge.",
+          "code": "11.48",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size of Tile 500x500 mm",
+              "code": "11.48.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 138,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 373.35,
+              "rate_display": "373.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 600x600 mm",
+              "code": "11.48.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 139,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 309.05,
+              "rate_display": "309.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 800x800 mm",
+              "code": "11.48.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 244.75,
+              "rate_display": "244.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 1000x1000 mm",
+              "code": "11.48.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 141,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 174.5,
+              "rate_display": "174.50"
+            }
+          ],
+          "order_index": 137,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Vitrified tiles in floor with different sizes (thickness to be specified by the manufacturer), with water absorption less than 0.08% and conforming to IS:15622, of approved brand & manufacturer, in all colours and shade, laid with cement based high polymer modified quick set tile adhesive (water based) conforming to IS : 15477, in average 6 mm thickness, including grouting of joints (Payment for grouting of joints to be made separately).",
+          "code": "11.49",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size of Tile 500x500 mm",
+              "code": "11.49.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 143,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1696.2,
+              "rate_display": "1696.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 600x600 mm",
+              "code": "11.49.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 144,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 1725.35,
+              "rate_display": "1725.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 800x800 mm",
+              "code": "11.49.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 145,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2060.75,
+              "rate_display": "2060.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Size of Tile 1000x1000 mm",
+              "code": "11.49.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 146,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 2264.9,
+              "rate_display": "2264.90"
+            }
+          ],
+          "order_index": 142,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3623.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 147,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for not grouting the joints with white cement and matching pigment in the items of fixing of vitrified tiles.",
+          "code": "11.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 148,
+          "source_page": 8,
+          "unit": "sqm",
+          "rate": 13.3,
+          "rate_display": "13.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying machine cut, mirror polished, Italian Marble stone flooring laid in required pattern in linear portion of the building all complete as per architectural drawings, with 18 mm thick stone slab laid over 20 mm (average) thick base of cement mortar 1:4 (1 cement : 4 coarse sand) laid and jointed with white cement slurry @ 4.4 kg/sqm including pointing with white cement slurry admixed with pigment to match the marble shade including rubbing, curing and polishing etc. all complete as specified and as directed by the Engineer-in-Charge.",
+          "code": "11.51",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick Italian Marble stone slab, Perlato, Rosso verona, Fire Red or Dark Emperadore etc.",
+              "code": "11.51.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 150,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 6603.35,
+              "rate_display": "6603.35"
+            }
+          ],
+          "order_index": 149,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying machine cut, mirror polished Marble stone flooring, in required design (Simple geometrical, abstract etc.) and in patterns in combination with Italian marble stones of different colours, shades and finished surface texture etc., in linear portions of the building, all complete as per the architectural drawings, with 18 mm thick stone slab laid over 20 mm (average) thick base of cement mortar 1:4 (1 cement : 4 coarse sand) laid and jointed with white cement slurry @ 4.4 kg/sqm, including pointing with white cement slurry admixed with pigment to match the marble shade, including rubbing, curing and polishing etc. all complete as specified and as directed by the Engineer-in-Charge.",
+          "code": "11.52",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "18 mm thick Italian Marble stone slab, Perlato, Rosso verona, Fire Red or Dark Emperadore etc.",
+              "code": "11.52.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 152,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 6927.35,
+              "rate_display": "6927.35"
+            }
+          ],
+          "order_index": 151,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Glass mossaic tiles on finished plain wall surface of size 20 mm x 20 mm x 4 mm in all colour, design , fixing in customize design as per direction of Engineer-in- Charge. The glass mosaic tiles to be fixed on the wall surface with the help of approved adhesive applied at the rate of 2.5 kg per sqm and grouting of the same. The rate is inclusive of all operation, material and required pattern approved by Engineer-in- Charge:",
+          "code": "11.53",
+          "children_count": 0,
+          "children": [],
+          "order_index": 153,
+          "source_page": 9,
+          "unit": "sqm",
+          "rate": 3891.15,
+          "rate_display": "3891.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing removable raised/false access flooring with system and its components of approved make for different plenum height with possible height adjustment upto 50 mm, comprising of modular load bearing floor panels supported on G.I. rectangular stinger frame work and G.I. Pedestal etc. all complete, as per the architectural drawings, as specified and as directed by Engineer-in-charge consisting of: (a) Providing at required spacing to form modular framework, pedestals made out of GI tube of thickness minimum 2 mm and 25 mm outer diameter, fully welded on to the G.I. Base plate of size 100 mm x 100 mm x 3 mm at the bottom of the pedestal tube, G.I. pedestal head of size 75mmx75mmx3.5 mm welded with GI fully threaded stud 16 mm outer diameter with two GI Check nuts screwed on the stud for level adjustment upto 50mm, locking and stabilizing the pedestal head in position at the required level. The pedestals shall be fixed to the subfloor (base) through base plate using epoxy based adhesive of approved make or the machine screw with rawl plug. (b) Stringers system in all steel construction hot dipped galvanized of rectangular size 570x20x30x0.80 mm thick having holes at both ends for securing the stringers on to the pedestal head using fully threaded screws ensuring maximum lateral stability in all directions, the grid formed by the pedestal and stringer assembly shall receive the floor panel, this system shall provide adequate solid, rigid support for access floor panel, the system shall provide a minimum clear uninterrupted clearance between the bottom of the floor for electrical conduits and wiring etc. all complete as per the architectural drawings, as specified and as directed by the Engineer-in-charge. (c) Providing and fixing Access Floor panel of 600x600x32 mm medium grade Filled Steel anti static high pressure Lamination of 800H grade (FS800H). Access Floor panel shall be steel welded construction with an enclosed bottom pan with uniform pattern of 64 hemispherical cones. The top and bottom plates of Steel Gauges: top 0.6 mm and bottom 0.7 mm fused spot welded together (minimum 64 welds in each dome and 20 welds along each flange). The panel should be Corroresist epoxy coated for lifetime rust protection and cavity formed by the top and bottom plate is filled with Pyrogrip noncombustible Portland cementitious core mixed with light weight foaming compound. The access floor shall be factory finished with Anti-static High Pressure laminate with Non Warp technology upto 1 mm thickness for superior adhesion and Surface flatness within 0.75mm. The panel is to withstand a Concentrated Load of 363 kgs applied on area 25 mm x 25 mm without collapse in the centre of the panel which is placed on four steel blocks. The panel will withstand and Uniformly Distributed Load (UDL) minimum 1250 kg/sqm and an impact load of 50kg all complete as per the approved manufacturers specification and as per the direction of Engineer-in-charge. All specification must be printed on the side of the panel to ensure the quality of the product.",
+          "code": "11.54",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "300 mm Finished Floor Height (FFH)",
+              "code": "11.54.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 155,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 5623.95,
+              "rate_display": "5623.95"
+            },
+            {
+              "node_type": "item",
+              "title": "450 mm Finished Floor Height (FFH).",
+              "code": "11.54.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 156,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 5977.35,
+              "rate_display": "5977.35"
+            }
+          ],
+          "order_index": 154,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying flamed finish Granite stone flooring in required design and patterns, in linear as well as curvilinear portions of the building all complete as per the architectural drawings with 18 mm thick stone slab over 20 mm (average) thick base of cement mortar 1:4 (1 cement : 4 coarse sand) laid and jointed with cement slurry and pointing with white cement slurry admixed with pigment of matching shade including rubbing, curing and polishing etc. all complete as specified and as directed by the Engineer-in-Charge :",
+          "code": "11.55",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flamed finish granite stone slab Jet Black, Cherry Red, Elite Brown, Cat Eye or equivalent.",
+              "code": "11.55.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 158,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 3186.7,
+              "rate_display": "3186.70"
+            }
+          ],
+          "order_index": 157,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Polished Granite stone flooring in required design and patterns, in linear as well as curvilinear portions of the building all complete as per the architectural drawings with 18 mm thick stone slab over 20 mm (average) thick base of cement mortar 1:4 (1 cement : 4 coarse sand) laid and jointed with cement slurry and pointing with white cement slurry admixed with pigment of matching shade including rubbing , curing and polishing etc. all complete as specified and as directed by the Engineer-in-Charge.",
+          "code": "11.56",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Polished Granite stone slab of colour Black, Cherry/Ruby Red or equivalent",
+              "code": "11.56.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 160,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 4481.3,
+              "rate_display": "4481.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Polished Granite stone slab of all colour and texture except Black, Cherry/Ruby Red",
+              "code": "11.56.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 161,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 3071.05,
+              "rate_display": "3071.05"
+            }
+          ],
+          "order_index": 159,
+          "source_page": 10
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/11.0 FLOORING.pdf",
+    "row_count": 162,
+    "note_count": 0,
+    "leaf_count": 127,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

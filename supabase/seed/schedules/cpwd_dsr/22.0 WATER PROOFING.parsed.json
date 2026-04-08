@@ -1,0 +1,458 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/22.0 WATER PROOFING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "WATER PROOFING",
+      "code": "22.0",
+      "children_count": 23,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing and laying integral cement based treatment for water proofing on horizontal surface at all depth below ground level for under ground structures as directed by Engineer-in-Charge and consisting of : (i) Ist layer of 22 mm to 25 mm thick approved and specified rough stone slab over a 25 mm thick base of cement mortar 1:3 (1 cement : 3 coarse sand) including applying of twice ( at base and top of mortar ) cement slurry @ 2.2kg/m2 (each time) mixed with water proofing compound conforming to IS:2645 in the recommended proportion over the leveling course (leveling course to be paid separately). Joints sealed and grouted with cement slurry mixed with water proofing compound. (ii) 2nd layer of 25 mm thick cement mortar 1:3 (1 cement: 3 coarse sand) mixed with water proofing compound in recommended proportions. (iii) Finishing top with stone aggregate of 10 mm to 12 mm nominal size spreading @ 8 cudm/sqm thoroughly embedded in the 2nd layer.",
+          "code": "22.1",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Using rough kota stone.",
+              "code": "22.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 1515.6,
+              "rate_display": "1515.60"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying integral cement based treatment for water proofing on the vertical surface by fixing specified stone slab 22 mm to 25 mm thick with cement slurry mixed with water proofing compound conforming to IS:2645 in recommended proportions with a gap of 20 mm (minimum) between stone slabs and the receiving surfaces and filling the gaps with neat cement slurry mixed with water proofing compound and finishing the exterior of stone slab with cement mortar 1:3 (1 cement : 3 coarse sand) 20 mm thick with neat cement punning mixed with water proofing compound in recommended proportion complete at all levels and as directed by Engineer-in-charge :",
+          "code": "22.2",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Using rough Kota stone",
+              "code": "22.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 2024.7,
+              "rate_display": "2024.70"
+            }
+          ],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying water proofing treatment to vertical and horizontal surfaces of depressed portions of W.C., kitchen and the like consisting of: (i) Ist course of applying cement slurry @ 4.4 kg/sqm mixed with water proofing compound conforming to IS : 2645 in recommended proportions including rounding off junction of vertical and horizontal surface. (ii) IInd course of 20 mm cement plaster 1:3 (1 cement : 3 coarse sand) mixed with water proofing compound in recommended proportion including rounding off junction of vertical and horizontal surface. (iii) IIIrd course of applying blown or residual bitumen applied hot at 1.7 kg. per sqm of area. (iv) IVth course of 400 micron thick PVC sheet. (Overlaps at joints of PVC sheet should be 100 mm wide and pasted to each other with bitumen @ 1.7 kg/sqm).",
+          "code": "22.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 4,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 769.6,
+          "rate_display": "769.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and Placing in position suitable PVC water stops conforming to IS:12200 for construction/ expansion joints between two RCC members and fixed to the reinforcement with binding wire before pouring concrete etc. complete :",
+          "code": "22.4",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Serrated with central bulb (225 mm wide, 8-11 mm thick)",
+              "code": "22.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 327.65,
+              "rate_display": "327.65"
+            },
+            {
+              "node_type": "item",
+              "title": "Dumb bell with central bulb (180 mm wide, 8 mm thick)",
+              "code": "22.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 267.9,
+              "rate_display": "267.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Kickers (320 mm wide, 5 mm thick)",
+              "code": "22.4.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 263.65,
+              "rate_display": "263.65"
+            }
+          ],
+          "order_index": 5,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying water proofing treatment in sunken portion of WCs, bathroom etc., by applying cement slurry mixed with water proofing cement compound consisting of applying : (a) First layer of slurry of cement @ 0.488 kg/sqm mixed with water proofing cement compound @ 0.253 kg/ sqm. This layer will be allowed to air cure for 4 hours. (b) Second layer of slurry of cement @ 0.242 kg/sqm mixed with water proofing cement compound @ 0.126 kg/sqm. This layer will be allowed to air cure for 4 hours followed with water curing for 48 hours. The rate includes preparation of surface, treatment and sealing of all joints, corners, junctions of pipes and masonry with polymer mixed slurry.",
+          "code": "22.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 9,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 617.05,
+          "rate_display": "617.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying water proofing treatment on roofs of slabs by applying cement slurry mixed with water proofing cement compound consisting of applying: (a) after surface preparation, first layer of slurry of cement @ 0.488 kg/ sqm mixed with water proofing cement compound @ 0.253 kg/sqm. (b) laying second layer of Fibre glass cloth when the first layer is still green. Overlaps of joints of fibre cloth should not be less than 10 cm. (c) third layer of 1.5 mm thickness consisting of slurry of cement @ 1.289 kg/sqm mixed with water proofing cement compound @ 0.670 kg/sqm and coarse sand @ 1.289 kg/sqm. This will be allowed to air cure for 4 hours followed by water curing for 48 hours. The entire treatment will be taken upto 30 cm on parapet wall and tucked into groove in parapet all around. (d) fourth and final layer of brick tiling with cement mortar (which will be paid for separately. For the purpose of measurement the entire treated surface will be measured.",
+          "code": "22.6",
+          "children_count": 0,
+          "children": [],
+          "order_index": 10,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 688.9,
+          "rate_display": "688.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying integral cement based water proofing treatment including preparation of surface as required for treatment of roofs, balconies, terraces etc consisting of following operations: (a) Applying a slurry coat of neat cement using 2.75 kg/sqm of cement admixed with water proofing compound conforming to IS. 2645 and approved by Engineer-in-charge over the RCC slab including adjoining walls upto 300 mm height including cleaning the surface before treatment. (b) Laying brick bats with mortar using broken bricks/brick bats 25 mm to 115 mm size with 50% of cement mortar 1:5 (1 cement : 5 coarse sand) admixed with water proofing compound conforming to IS : 2645 and approved by Engineer-in-charge over 20 mm thick layer of cement mortar of mix 1:5 (1 cement :5 coarse sand) admixed with water proofing compound conforming to IS : 2645 and approved by Engineer-in-charge to required slope and treating similarly the adjoining walls upto 300 mm height including rounding of junctions of walls and slabs. (c) After two days of proper curing applying a second coat of cement slurry using 2.75 kg/ sqm of cement admixed with water proofing compound conforming to IS : 2645 and approved by Engineer-in-charge. (d) Finishing the surface with 20 mm thick jointless cement mortar of mix 1:4 (1 cement :4 coarse sand) admixed with water proofing compound conforming to IS : 2645 and approved by Engineer-in-charge including laying glass fibre cloth of approved quality in top layer of plaster and finally finishing the surface with trowel with neat cement slurry and making pattern of 300x300 mm square 3 mm deep. (e) The whole terrace so finished shall be flooded with water for a minimum period of two weeks for curing and for final test. “All above operations to be done in order and as directed and specified by the Engineer-in-Charge”:",
+          "code": "22.7",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With average thickness of 120 mm and minimum thickness at khurra as 65 mm.",
+              "code": "22.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1684.6,
+              "rate_display": "1684.60"
+            }
+          ],
+          "order_index": 11,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying four courses water proofing treatment with bitumen felt over roofs consisting of first and third courses of blown bitumen 85/25 or 90/15 conforming to IS : 702 applied hot @ 1.45 Kg per square metre of area for each course, second course of roofing felt type 3 grade-I (hessian based self finished bitumen felt) and fourth and final course of stone grit 6 mm and down size or pea sized gravel spread at 6 cubic decimeter per square metre, including preparation of surface but excluding grading complete with :",
+          "code": "22.8",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Bitumen felt (hessian base) type 3 grade I conforming to IS : 1322",
+              "code": "22.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 515.05,
+              "rate_display": "515.05"
+            }
+          ],
+          "order_index": 13,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying six courses water proofing treatment with bitumen felt over roofs consisting of first, third and fifth course of blown bitumen 85/25 or 90/15 conforming to IS : 702 applied hot @ 1.45, 1.20 and 1.45 Kg per square metre of area respectively, second and fourth courses of roofing felt type 3 grade I conforming to IS : 1322 (Hessian based self finished bitumen felt) , sixth and final course of stone grit 6 mm and down size or pea sized gravel spread at 6 cubic decimeter per sqm including preparation of surface but excluding grading, complete.",
+          "code": "22.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 15,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 806.45,
+          "rate_display": "806.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying six courses water proofing treatment with bitumen felt over roofs consisting of first, third and fifth courses of blown or / and residual bitumen applied hot at 1.45, 1.20 and 1.70 kg per square metre of area respectively, second and fourth courses of roofing felt type 2 grade I (fibre base self finished bitumen felt) six and final courses of stone grit 6 mm and down size or pea sized gravel spread at 6 cubic decimeter per sqm including preparation of surface, excluding grading, compete.",
+          "code": "22.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 16,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 910.85,
+          "rate_display": "910.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying six courses water proofing treatment with bitumen felt over roofs consisting of first, third and fifth courses of blown or / and residual bitumen applied hot at 1.45, 1.20 and 1.70 kg per square metre of area respectively, second and fourth courses of roofing felt type 2 grade II (glass fibre base self finished bitumen felt) and sixth and final course of stone grit 6 mm and down size or pea sized gravel spread at 6 cubic decimeter per sqm including preparation of surface but excluding grading, complete.",
+          "code": "22.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 17,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 910.85,
+          "rate_display": "910.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and applying bituminous solution primer on roof and / or wall surface at 0.24 litre per sqm.",
+          "code": "22.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 59.45,
+          "rate_display": "59.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for omitting in water proofing treatment final course of spreading stone grit 6 mm down size or pea sized gravel :",
+          "code": "22.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "at 6 cudm per sqm",
+              "code": "22.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 17.55,
+              "rate_display": "17.55"
+            },
+            {
+              "node_type": "item",
+              "title": "at 8 cudm per sqm",
+              "code": "22.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 22.1,
+              "rate_display": "22.10"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Grading roof for water proofing treatment with",
+          "code": "22.14",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size)",
+              "code": "22.14.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 8042.3,
+              "rate_display": "8042.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:3 (1 cement : 3 coarse sand)",
+              "code": "22.14.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 24,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 16112.1,
+              "rate_display": "16112.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:4 (1cement : 4 coarse sand)",
+              "code": "22.14.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 15155.6,
+              "rate_display": "15155.60"
+            }
+          ],
+          "order_index": 22,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and mixing integral crystalline admixture for water proofing treatment to RCC structures like basement raft, retaining walls, reservior, sewage & water treatment plant, tunnels / subway and bridge deck etc. at the time of transporting of concrete into the drum of the ready-mix truck , using integral crystalline admixture @0.80% (minimum) to the weight of cement content per cubic meter of concrete) or higher as recommended by the manufacturer’s specification in reinforced cement concrete at site of work. The material shall meet the requirements as specified in ACI- 212-3R-2010 i.e. by reducing permeability of concrete by more than 90%, compared with control concrete as per DIN 1048 and resistant to 16 bar hydrostatic pressure. The crystalline admixture shall be capable of self- healing of cracks up to a width of 0.50 mm. The work shall be carried out all complete as per specification and the direction of the Engineer- in-charge. The product performance shall carry guarantee for 10 years against any leakage. kg",
+          "code": "22.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 26,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "22.22A Providing and applying fibre reinforced elastomeric liquid water proofing membrane with resilient acrylic polymers having Sun Reflectivity Index (SRI) of 105 on top of concrete roof in three coats @10.76 litre/ 10 sqm. One coat of self-priming of elastomeric waterproofing liquid (dilution with water in the ratio of 3:1) and two coats of undiluted elastomeric waterproofing liquid (dry film thickness of complete application/system not less than 500 microns). The operation shall be carried out after scrapping and properly cleaning the surface to remove loose particles with wire brushes, complete in all respect as per the direction of Engineer- in-Charge.",
+          "code": "388.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 27,
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 563.1,
+          "rate_display": "563.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying integral crystalline slurry of hydrophilic in nature for waterproofing treatment to the RCC structures like retaining walls of the basement, water tanks, roof slabs, podiums, reservior, sewage & water treatment plant, tunnels / subway and bridge deck etc., prepared by mixing in the ratio of 5 : 2 (5 parts integral crystalline slurry : 2 parts water) for vertical surfaces and 3 : 1 (3 parts integral crystalline slurry : 1 part water) for horizontal surfaces and applying the same from negative (internal) side with the help of synthetic fiber brush. The material shall meet the requirements as specified in ACI-212-3R-2010 i.e by reducing permeability of concrete by more than 90% compared with control concrete as per DIN 1048 and resistant to 16 bar hydrostatic pressure on negative side. The crystalline slurry shall be capable of self-healing of cracks up to a width of 0.50 mm. The work shall be carried out all complete as per specification and the direction of the engineer-in-charge. The product performance shall carry guarantee for 10 years against any leakage.",
+          "code": "22.23",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For vertical surface two coats @ 0.70 kg per sqm per coat",
+              "code": "22.23.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 472.9,
+              "rate_display": "472.90"
+            },
+            {
+              "node_type": "item",
+              "title": "For horizontal surface one coat @1.10 kg per sqm.",
+              "code": "22.23.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 362.8,
+              "rate_display": "362.80"
+            }
+          ],
+          "order_index": 28,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "447.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 31,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying integral crystalline (dry shake) of hydrophilic in nature for waterproofing treatment to the RCC structures like basement raft, foundation slab, sewage & water treatment plant slab, warehouses floor, parking structures and water tank base slab etc. sprinkled @0.60 kg per sqm or higher as recommended by the manufacturer’s specification over the lean concrete of above cited structures. The material shall meet the requirements as specified in ACI-212-3R-2010 i.e. by reducing permeability of concrete by more than 85%, compared control concrete as per DIN 1048 and resistant to 16 bar hydrostatic pressure on negative side. The crystalline dry-shake shall be capable of self-healing of cracks up to a width of 0.50 mm. The work shall be carried out all complete as per specification and the direction of the Engineer-in-charge. The product performance shall carry guarantee for 10 years against any leakage.",
+          "code": "22.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 32,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 309.6,
+          "rate_display": "309.60"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "597.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 33,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying crystalline mortar by mixing in the ratio of 4.5 : 1 (4.5 parts crystalline mortar : 1 part water) for the treatment of faulty construction joints, cracks, tie rod holes and spalled & honeycombed surface of RCC underground structures like basement, water tanks, bridge deck etc. to ensure water tightness. The crystallie mortar shall conform to the EN 1504- 3 having compressive strength Class R4 ≥45 MPa and adhesive bond strength Class R3 ≥1.5 MPa. The work shall be carried out all complete as per specification and the direction of the engineer-in-charge. The product performance shall carry guarantee for 10 years against any leakage.",
+          "code": "22.25",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For sealing cracks and faulty construction joints, routed out/ making U-shape groove size 25x25 mm and then primed the area with integral crystalline slurry @0.05 kg/running metre and while the surface is tacky filled the groove upto surface with crystalline mortar @1.50 kg/running metre. Once crystalline mortar is touch dry then finally applied two coats of integral crystalline slurry @0.05 kg/running metre per coat.",
+              "code": "22.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 547.7,
+              "rate_display": "547.70"
+            },
+            {
+              "node_type": "item",
+              "title": "For patching of tie rod holes, prepared tie rod hole surface and then primed the area with integral crystalline slurry @0.070 kg/sqm and while the surface is tacky repair and then filled the tie rod holes with crystalline mortar@0.040kg per hole. The crystalline mortar should be tightly rodded into tie rod holes or packed tightly (For 25x25x25 mm tie rod hole, use 0.040 kg to fill the hole) each hole",
+              "code": "22.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 36,
+              "source_page": 5
+            }
+          ],
+          "order_index": 34,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "23.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying of swellable type water stop tape, 19 mm x 25 mm thick in linear metre (expansive nature) for construction joints treatment of RCC structure such as raft slab, retaining walls, water storage tank and at the junctions of raft slab with the retaining walls etc.. After cleaning the surface, one coat of required primer for swellable water stop tape shall be applied throughout the length of the joint @3.78 litre per 240 running metre. Over the primed surface swellable type water stop tape shall be placed. The work shall be carried out all complete as per specification and the direction of the Engineer-In-Charge. The product performance shall carry guarantee for 10 years against any leakage.",
+          "code": "22.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 38,
+          "source_page": 5,
+          "unit": "metre",
+          "rate": 573.45,
+          "rate_display": "573.45"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/22.0 WATER PROOFING.pdf",
+    "row_count": 39,
+    "note_count": 0,
+    "leaf_count": 30,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

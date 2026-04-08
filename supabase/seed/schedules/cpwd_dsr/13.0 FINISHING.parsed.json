@@ -1,0 +1,2593 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/13.0 FINISHING.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "FINISHING",
+      "code": "13.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note :- Rates for external plastic are for height upto 10m from ground level in less otherwise stated. CEMENT PLASTER (IN FINE SAND)",
+          "source_page": 1,
+          "order_index": 0
+        }
+      ],
+      "children_count": 110,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "12 mm cement plaster of mix :",
+          "code": "13.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 fine sand)",
+              "code": "13.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 347.05,
+              "rate_display": "347.05"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 fine sand)",
+              "code": "13.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 333.35,
+              "rate_display": "333.35"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "15 mm cement plaster on the rough side of single or half brick wall of mix :",
+          "code": "13.2",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 fine sand)",
+              "code": "13.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 399.45,
+              "rate_display": "399.45"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 fine sand)",
+              "code": "13.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 383.0,
+              "rate_display": "383.00"
+            }
+          ],
+          "order_index": 3,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "20 mm cement plaster of mix :",
+          "code": "13.3",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 fine sand)",
+              "code": "13.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 471.35,
+              "rate_display": "471.35"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 fine sand)",
+              "code": "13.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 450.0,
+              "rate_display": "450.00"
+            }
+          ],
+          "order_index": 6,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "12 mm cement plaster of mix :",
+          "code": "13.4",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 coarse sand)",
+              "code": "13.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 357.35,
+              "rate_display": "357.35"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 coarse sand)",
+              "code": "13.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 343.65,
+              "rate_display": "343.65"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "15 mm cement plaster on rough side of single or half brick wall of mix:",
+          "code": "13.5",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 coarse sand)",
+              "code": "13.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 411.75,
+              "rate_display": "411.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 coarse sand)",
+              "code": "13.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 395.35,
+              "rate_display": "395.35"
+            }
+          ],
+          "order_index": 12,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "20 mm cement plaster of mix :",
+          "code": "13.6",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 coarse sand)",
+              "code": "13.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 487.4,
+              "rate_display": "487.40"
+            },
+            {
+              "node_type": "item",
+              "title": "1:6 (1 cement: 6 coarse sand)",
+              "code": "13.6.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 466.05,
+              "rate_display": "466.05"
+            }
+          ],
+          "order_index": 15,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "12 mm cement plaster finished with a floating coat of neat cement of mix :",
+          "code": "13.7",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:3 (1 cement: 3 fine sand)",
+              "code": "13.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 439.25,
+              "rate_display": "439.25"
+            },
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 fine sand)",
+              "code": "13.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 425.55,
+              "rate_display": "425.55"
+            }
+          ],
+          "order_index": 18,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "15 mm cement plaster on rough side of single or half brick wall finished with a floating coat of neat cement of mix :",
+          "code": "13.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:3 (1 cement: 3 fine sand)",
+              "code": "13.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 494.3,
+              "rate_display": "494.30"
+            },
+            {
+              "node_type": "item",
+              "title": "1:4 (1 cement: 4 fine sand)",
+              "code": "13.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 477.9,
+              "rate_display": "477.90"
+            }
+          ],
+          "order_index": 21,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Cement plaster 1:3 (1 cement: 3 coarse sand) finished with a floating coat of neat cement.",
+          "code": "13.9",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "12 mm cement plaster",
+              "code": "13.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 449.55,
+              "rate_display": "449.55"
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm cement plaster",
+              "code": "13.9.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 587.2,
+              "rate_display": "587.20"
+            }
+          ],
+          "order_index": 24,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "15 mm cement plaster 1:3 (1 cement: 3 coarse sand) finished with a floating coat of neat cement on the rough side of single or half brick wall.",
+          "code": "13.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 27,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 506.6,
+          "rate_display": "506.60"
+        },
+        {
+          "node_type": "item",
+          "title": "18 mm cement plaster in two coats under layer 12 mm thick cement plaster 1:5 (1 cement : 5 coarse sand) finished with a top layer 6 mm thick cement plaster 1:6 (1 cement : 6 fine sand).",
+          "code": "13.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 28,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 518.55,
+          "rate_display": "518.55"
+        },
+        {
+          "node_type": "item",
+          "title": "18 mm cement plaster in two coats under layer 12 mm thick cement plaster 1:5 (1 cement : 5 coarse sand) and a top layer 6 mm thick cement plaster 1:3 (1 cement : 3 coarse sand) finished rough with sponge.",
+          "code": "13.12",
+          "children_count": 0,
+          "children": [],
+          "order_index": 29,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 537.45,
+          "rate_display": "537.45"
+        },
+        {
+          "node_type": "item",
+          "title": "12 mm cement plaster 1:2 (1 cement : 2 stone dust).",
+          "code": "13.13",
+          "children_count": 0,
+          "children": [],
+          "order_index": 30,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 378.7,
+          "rate_display": "378.70"
+        },
+        {
+          "node_type": "item",
+          "title": "15 mm cement plaster 1:2 (1 cement : 2 stone dust) on the rough side of single or half brick wall.",
+          "code": "13.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 31,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 437.2,
+          "rate_display": "437.20"
+        },
+        {
+          "node_type": "item",
+          "title": "20 mm cement plaster 1:2 (1 cement : 2 stone dust).",
+          "code": "13.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 32,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 520.55,
+          "rate_display": "520.55"
+        },
+        {
+          "node_type": "item",
+          "title": "6 mm cement plaster of mix :",
+          "code": "13.16",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "1:3 (1 cement : 3 fine sand)",
+              "code": "13.16.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 300.45,
+              "rate_display": "300.45"
+            }
+          ],
+          "order_index": 33,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "6 mm cement plaster 1:3 (1 cement : 3 fine sand) finished with a floating coat of neat cement and thick coat of Lime wash on top of walls when dry for bearing of R.C.C. slabs and beams.",
+          "code": "13.17",
+          "children_count": 0,
+          "children": [],
+          "order_index": 35,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 396.65,
+          "rate_display": "396.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Neat cement punning.",
+          "code": "13.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 36,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 79.95,
+          "rate_display": "79.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Rough cast plaster upto 10 m height above ground level with a mixture of sand and gravel or crushed stone from 6 mm to 10 mm nominal size, dashed over and including the fresh plaster in two layers, under layer 12 mm cement plaster 1:4 (1 cement : 4 coarse sand) and top layer 10 mm cement plaster 1:3 (1 cement : 3 fine sand) mixed with 10% finely grounded hydrated lime by volume of cement.",
+          "code": "13.19",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Ordinary cement finish using ordinary cement",
+              "code": "13.19.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 38,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 886.6,
+              "rate_display": "886.60"
+            }
+          ],
+          "order_index": 37,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Pebble dash plaster upto 10 m height above ground level with a mixture of washed pebble or crushed stone 6 mm to 12.5 mm nominal size, dashed over and including fresh plaster in two layers under layer 12 mm cement plaster 1:4 (1 cement : 4 coarse sand) and top layer 10 mm cement plaster with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 10% finely grounded hydrated lime by volume of cement.",
+          "code": "13.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 39,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 829.95,
+          "rate_display": "829.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and mixing water proofing material in cement plaster work in proportion recommended by the manufacturers. per bag of 50kg cement used in the mix",
+          "code": "13.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 40,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "22.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 41,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for plastering exterior walls of height more than 10 m from ground level for every additional height of 3 m or part thereof.",
+          "code": "13.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 42,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 87.1,
+          "rate_display": "87.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for plastering on circular work not exceeding 6 m in radius:",
+          "code": "13.23",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In one coat",
+              "code": "13.23.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 44,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 47.65,
+              "rate_display": "47.65"
+            },
+            {
+              "node_type": "item",
+              "title": "In two coats",
+              "code": "13.23.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 45,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 72.3,
+              "rate_display": "72.30"
+            }
+          ],
+          "order_index": 43,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for plastering done on moulding, cornices or architraves including neat finish to line and level:",
+          "code": "13.24",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "In one coat",
+              "code": "13.24.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 47,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 713.2,
+              "rate_display": "713.20"
+            },
+            {
+              "node_type": "item",
+              "title": "In two coats",
+              "code": "13.24.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 48,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 1175.75,
+              "rate_display": "1175.75"
+            }
+          ],
+          "order_index": 46,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for plastering:",
+          "code": "13.25",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Spherical ceiling",
+              "code": "13.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 177.6,
+              "rate_display": "177.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Groined ceiling",
+              "code": "13.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 51,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 192.3,
+              "rate_display": "192.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Flewing soffits",
+              "code": "13.25.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 117.65,
+              "rate_display": "117.65"
+            }
+          ],
+          "order_index": 49,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying plaster of paris putty of 2 mm thickness over plastered surface to prepare the surface even and smooth complete.",
+          "code": "13.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 262.7,
+          "rate_display": "262.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for lining out plaster to imitate stone or concrete blocks walling.",
+          "code": "13.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 113.9,
+          "rate_display": "113.90"
+        },
+        {
+          "node_type": "item",
+          "title": "12 mm thick plain cement mortar bands in cement mortar 1:4 (1 cement : 4 fine sand):",
+          "code": "13.28",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush Band cm per",
+              "code": "13.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 56,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 7.5,
+              "rate_display": "7.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Sunk Band cm per",
+              "code": "13.28.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 8.2,
+              "rate_display": "8.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Raised Band cm per",
+              "code": "13.28.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 58,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 9.35,
+              "rate_display": "9.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Moulded Band cm per",
+              "code": "13.28.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 59,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 16.1,
+              "rate_display": "16.10"
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "18 mm thick plain cement mortar band in cement mortar 1:4 (1 cement : 4 fine sand):",
+          "code": "13.29",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush Band cm per",
+              "code": "13.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 61,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 9.05,
+              "rate_display": "9.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Sunk Band cm per",
+              "code": "13.29.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 62,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 10.0,
+              "rate_display": "10.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Raised Band cm per",
+              "code": "13.29.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 63,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 11.4,
+              "rate_display": "11.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Moulded Band cm per",
+              "code": "13.29.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 64,
+              "source_page": 3,
+              "unit": "metre",
+              "rate": 21.4,
+              "rate_display": "21.40"
+            }
+          ],
+          "order_index": 60,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "18 mm thick moulded cement mortar band in two coats under layer 12 mm thick with cement mortar 1:5 (1 cement : 5 coarse sand) top layer 6 mm thick with cement mortar 1:4 (1 cement : 4 fine sand). cm per",
+          "code": "13.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 65,
+          "source_page": 3,
+          "unit": "metre",
+          "rate": 21.45,
+          "rate_display": "21.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Pointing on brick work or brick flooring with cement mortar 1:3 (1 cement : 3 fine sand):",
+          "code": "13.31",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush / Ruled/ Struck or weathered pointing",
+              "code": "13.31.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 67,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 257.35,
+              "rate_display": "257.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Raised and cut pointing",
+              "code": "13.31.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 68,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 419.9,
+              "rate_display": "419.90"
+            }
+          ],
+          "order_index": 66,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Pointing on tile brick work with cement mortar 1:3 (1 cement : 3 fine sand):",
+          "code": "13.32",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush/ Ruled/ Struck or weathered pointing",
+              "code": "13.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 350.2,
+              "rate_display": "350.20"
+            }
+          ],
+          "order_index": 69,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Pointing on stone work with cement mortar 1:3 (1 cement : 3 fine sand) :",
+          "code": "13.33",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush/ Ruled pointing",
+              "code": "13.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 385.4,
+              "rate_display": "385.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Raised and cut pointing",
+              "code": "13.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 701.05,
+              "rate_display": "701.05"
+            }
+          ],
+          "order_index": 71,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Raised and cut pointing on stone work in white cement mortar 1:3 (1 white cement : 3 marble dust).",
+          "code": "13.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 74,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 716.95,
+          "rate_display": "716.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Pointing on stone slab ceiling with cement mortar 1:2 (1 cement : 2 fine sand):",
+          "code": "13.35",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flush/ Ruled pointing",
+              "code": "13.35.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 214.2,
+              "rate_display": "214.20"
+            }
+          ],
+          "order_index": 75,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for pointing on walls on the outside at height more than 10 m from ground level for every additional height of 3 m or part there of.",
+          "code": "13.36",
+          "children_count": 0,
+          "children": [],
+          "order_index": 77,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 8.65,
+          "rate_display": "8.65"
+        },
+        {
+          "node_type": "item",
+          "title": "White washing with lime to give an even shade :",
+          "code": "13.37",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (three or more coats)",
+              "code": "13.37.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 79,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 39.05,
+              "rate_display": "39.05"
+            }
+          ],
+          "order_index": 78,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Satna lime wash on walls with one coat.",
+          "code": "13.38",
+          "children_count": 0,
+          "children": [],
+          "order_index": 80,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 15.75,
+          "rate_display": "15.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Colour washing such as green, blue or buff to give an even shade :",
+          "code": "13.39",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (two or more coats) with a base coat of white washing with lime",
+              "code": "13.39.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 82,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 53.3,
+              "rate_display": "53.30"
+            },
+            {
+              "node_type": "item",
+              "title": "New work (two or more coats) with a base coat of whiting",
+              "code": "13.39.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 52.75,
+              "rate_display": "52.75"
+            }
+          ],
+          "order_index": 81,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Distempering with 1st quality acrylic distemper (ready mixed) having VOC content less than 50 gram/litre, of approved manufacturer and of required shade and colour all complete to achieve even shade and colour :",
+          "code": "13.41",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (two or more coats) over and including water thinnable priming coat with cement primer having VOC content less than 50 gram/litre",
+              "code": "13.41.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 185.65,
+              "rate_display": "185.65"
+            }
+          ],
+          "order_index": 84,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with water proofing cement paint of required shade :",
+          "code": "13.44",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coats applied @ 3.84 kg/10 sqm)",
+              "code": "13.44.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 116.9,
+              "rate_display": "116.90"
+            }
+          ],
+          "order_index": 86,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with textured exterior paint of required shade :",
+          "code": "13.45",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coats applied @ 3.28 ltr/10 sqm) over and including priming coat of exterior primer applied @ 2.20kg/10 sqm",
+              "code": "13.45.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 223.6,
+              "rate_display": "223.60"
+            }
+          ],
+          "order_index": 88,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with Acrylic Smooth exterior paint of required shade :",
+          "code": "13.46",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coat applied @ 1.67 ltr/10 sqm over and including priming coat of exterior primer applied @ 0.90 litre/10 sqm)",
+              "code": "13.46.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 160.6,
+              "rate_display": "160.60"
+            }
+          ],
+          "order_index": 90,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with Premium Acrylic Smooth exterior paint with Silicone additives of required shade:",
+          "code": "13.47",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coats applied @ 1.43 ltr/10 sqm over and including priming coat of exterior primer applied @ 0.90 litre/10 sqm)",
+              "code": "13.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 171.1,
+              "rate_display": "171.10"
+            }
+          ],
+          "order_index": 92,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing with Deluxe Multi surface paint system for interiors and exteriors using Primer as per manufacturers specifications :",
+          "code": "13.48",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats applied on walls @ 1.25 ltr/10 sqm over and including one coat of Special primer applied @ 0.75 ltr /10 sqm",
+              "code": "13.48.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 95,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 193.7,
+              "rate_display": "193.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Painting wood work with Deluxe Multi Surface Paint of required shade. Two or more coat applied @ 0.90 ltr/10 sqm over an under coat of primer applied @0.75 ltr/10 sqm of approved brand and manufacture",
+              "code": "13.48.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 96,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 176.25,
+              "rate_display": "176.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Painting Steel work with Deluxe Multi Surface Paint to give an even shade. Two or more coat applied @ 0.90 ltr/10 sqm over an under coat of primer applied @ 0.80 ltr/10 sqm of approved brand and manufacture",
+              "code": "13.48.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 97,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 170.7,
+              "rate_display": "170.70"
+            }
+          ],
+          "order_index": 94,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "181.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 98,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Applying priming coat:",
+          "code": "13.50",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With ready mixed aluminium primer of approved brand and manufacture on resinous wood and plywood",
+              "code": "13.50.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 100,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 74.65,
+              "rate_display": "74.65"
+            },
+            {
+              "node_type": "item",
+              "title": "With ready mixed red oxide zinc chromate primer of approved brand and manufacture on steel galvanised iron/ steel works",
+              "code": "13.50.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 101,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 67.4,
+              "rate_display": "67.40"
+            },
+            {
+              "node_type": "item",
+              "title": "With ready mixed red oxide zinc chromate primer of approved brand and manufacture on steel work (second coat)",
+              "code": "13.50.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 102,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 36.1,
+              "rate_display": "36.10"
+            }
+          ],
+          "order_index": 99,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with silicon & acrylic emulsion based water thinnable sealer of approved brand and manufacture on wet or patchy portion of plastered surfaces :",
+          "code": "13.51",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One coat",
+              "code": "13.51.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 104,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 101.7,
+              "rate_display": "101.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Two coats",
+              "code": "13.51.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 105,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 161.7,
+              "rate_display": "161.70"
+            }
+          ],
+          "order_index": 103,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing with Epoxy paint (two or more coats) at all locations prepared and applied as per manufacturer’s specifications including appropriate priming coat, preparation of surface, etc. complete.",
+          "code": "13.52",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "On steel work",
+              "code": "13.52.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 107,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 241.75,
+              "rate_display": "241.75"
+            },
+            {
+              "node_type": "item",
+              "title": "On concrete work",
+              "code": "13.52.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 108,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 235.15,
+              "rate_display": "235.15"
+            }
+          ],
+          "order_index": 106,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Painting on G.S. sheet with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.53",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (two or more coats) including a coat of approved steel primer but excluding a coat of mordant solution",
+              "code": "13.53.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 110,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 180.85,
+              "rate_display": "180.85"
+            }
+          ],
+          "order_index": 109,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Applying a coat of mordant solution on G.S. sheet:",
+          "code": "13.54",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With a solution of 38 gms of copper acetate in a litre of soft water",
+              "code": "13.54.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 112,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 63.35,
+              "rate_display": "63.35"
+            },
+            {
+              "node_type": "item",
+              "title": "With a solution made of 13 gms of hydrochloric acid in a solution of 13 gms each of copper chloride, copper nitrate and ammonium chloride dissolved in a litre of soft water",
+              "code": "13.54.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 113,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 63.05,
+              "rate_display": "63.05"
+            }
+          ],
+          "order_index": 111,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture, over and including a priming of ready mixed zinc chromate yellow primer on new work:",
+          "code": "13.55",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipes",
+              "code": "13.55.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 115,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 76.35,
+              "rate_display": "76.35"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter pipes",
+              "code": "13.55.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 116,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 113.8,
+              "rate_display": "113.80"
+            }
+          ],
+          "order_index": 114,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with synthetic enamel paint of approved brand and manufacture and required colour over a priming coat of approved steel primer on new work.",
+          "code": "13.56",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipes",
+              "code": "13.56.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 118,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 82.0,
+              "rate_display": "82.00"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter pipes",
+              "code": "13.56.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 119,
+              "source_page": 5,
+              "unit": "metre",
+              "rate": 122.15,
+              "rate_display": "122.15"
+            }
+          ],
+          "order_index": 117,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Paintting with oil type wood preservative of approved brand and manufacture:",
+          "code": "13.57",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (two or more coats)",
+              "code": "13.57.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 121,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 54.4,
+              "rate_display": "54.40"
+            }
+          ],
+          "order_index": 120,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying two coats of fire retardant paint on cleaned wood / ply surface @ 3.5 sqm per litre per coat including preparation of base surface as per recommendations of manufacturer to make the surface fire retardant.",
+          "code": "13.58",
+          "children_count": 0,
+          "children": [],
+          "order_index": 122,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 334.5,
+          "rate_display": "334.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Coal tarring two coats on new work using 0.16 Litre and 0.12 litre coal tar per sqm in the first coat and second coat respectively.",
+          "code": "13.59",
+          "children_count": 0,
+          "children": [],
+          "order_index": 123,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 66.9,
+          "rate_display": "66.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with synthetic enamel paint of approved brand and manufacture to give an even shade :",
+          "code": "13.61",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new work",
+              "code": "13.61.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 125,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 155.9,
+              "rate_display": "155.90"
+            }
+          ],
+          "order_index": 124,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.62",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new work over an under coat of suitable shade with ordinary paint of approved brand and manufacture",
+              "code": "13.62.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 127,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 226.25,
+              "rate_display": "226.25"
+            }
+          ],
+          "order_index": 126,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with aluminium paint of approved brand and manufacture to give an even shade .",
+          "code": "13.63",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new work",
+              "code": "13.63.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 129,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 146.8,
+              "rate_display": "146.80"
+            }
+          ],
+          "order_index": 128,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with acid proof paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.64",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new work",
+              "code": "13.64.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 131,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 163.35,
+              "rate_display": "163.35"
+            }
+          ],
+          "order_index": 130,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with black anti-corrosive bitumastic paint of approved brand and manufacture to give an even shade :",
+          "code": "13.65",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new work",
+              "code": "13.65.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 133,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 140.25,
+              "rate_display": "140.25"
+            }
+          ],
+          "order_index": 132,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Varnishing with varnish of approved brand and manufacture :",
+          "code": "13.67",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats of glue sizing with copal varnish over an under coat of flatting varnish",
+              "code": "13.67.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 135,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 236.1,
+              "rate_display": "236.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Two or more coats glue sizing with spar varnish or an under coat of flatting varnish",
+              "code": "13.67.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 136,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 236.9,
+              "rate_display": "236.90"
+            }
+          ],
+          "order_index": 134,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "French spirit polishing :",
+          "code": "13.68",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Two or more coats on new works including a coat of wood filler",
+              "code": "13.68.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 138,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 446.25,
+              "rate_display": "446.25"
+            }
+          ],
+          "order_index": 137,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Polishing on wood work with ready mixed wax polish of approved brand and manufacture :",
+          "code": "13.69",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work",
+              "code": "13.69.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 197.65,
+              "rate_display": "197.65"
+            }
+          ],
+          "order_index": 139,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Floor polishing on masonry or concrete floors with wax polish of approved brand and manufacture.",
+          "code": "13.70",
+          "children_count": 0,
+          "children": [],
+          "order_index": 141,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 96.1,
+          "rate_display": "96.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Lettering with black Japan paint of approved brand and manufacture per letter per cm height",
+          "code": "13.71",
+          "children_count": 0,
+          "children": [],
+          "order_index": 142,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "6.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 143,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Washed stone grit plaster on exterior walls height upto 10 metre above ground level, in two layers, under layer 12 mm cement plaster 1:4 (1 cement : 4 coarse sand ), furrowing the under layer with scratching tool, applying cement slurry on the under layer @ 2 Kg of cement per square metre, top layer 15 mm cement plaster 1:1/ 2:2 (1 cement: 1/2 coarse sand : 2 stone chipping 10 mm nominal size), in panels with groove all around as per approved pattern, including scrubbing and washing the top layer with brushes and water to expose the stone chippings ,complete as per specification and direction of Engineer-in-charge (payment for providing grooves shall be made separately).",
+          "code": "13.72",
+          "children_count": 0,
+          "children": [],
+          "order_index": 144,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 1162.25,
+          "rate_display": "1162.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Forming groove of uniform size in the top layer of washed stone grit plaster as per approved pattern using wooden battens, nailed to the under layer, including removal of wooden battens, repair to the edges of panels and finishing the groove complete as per specifications and direction of the Engineer-in-charge :",
+          "code": "13.73",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "15 mm wide and 15 mm deep groove",
+              "code": "13.73.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 146,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 75.15,
+              "rate_display": "75.15"
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm wide and 15 mm deep groove",
+              "code": "13.73.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 147,
+              "source_page": 6,
+              "unit": "metre",
+              "rate": 75.8,
+              "rate_display": "75.80"
+            }
+          ],
+          "order_index": 145,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for washed grit plaster on exterior walls of height more than 10 m from ground level for every additional height of 3 m or part thereof.",
+          "code": "13.74",
+          "children_count": 0,
+          "children": [],
+          "order_index": 148,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 165.85,
+          "rate_display": "165.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for washed stone grit plaster on circular work not exceeding 6 m in radius (in two coats).",
+          "code": "13.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 149,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 133.55,
+          "rate_display": "133.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Forming groove of uniform size from 12x12 mm and upto 25x15 mm in the top layer of washed stone grit plastered surface as per approved pattern, including providing and fixing aluminum channels of appropriate size and thickness (not less than 2 mm), nailed to the under layer with rust proof screws and nails and finishing the groove complete as per specifications and direction of the Engineer-in-Charge.",
+          "code": "13.76",
+          "children_count": 0,
+          "children": [],
+          "order_index": 150,
+          "source_page": 7,
+          "unit": "metre",
+          "rate": 100.6,
+          "rate_display": "100.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for using white cement in place of ordinary cement in the top layer of the item of washed stone grit plaster.",
+          "code": "13.77",
+          "children_count": 0,
+          "children": [],
+          "order_index": 151,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 76.05,
+          "rate_display": "76.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying 12 mm thick (average) premixed formulated one coat gypsum lightweight plaster having additives and light weight aggregates as vermiculite/ perlite respectively conforming to IS: 2547 (Part - 1 & II) 1976, applied on hacked / uneven background such as bare brick/ block/ RCC work on walls & ceiling at all floors and locations, finished in smooth line and level etc. complete.",
+          "code": "13.78",
+          "children_count": 0,
+          "children": [],
+          "order_index": 152,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 468.9,
+          "rate_display": "468.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for addition of synthetic Polyester triangular fibre of length 6 mm, effective diameter 10-40 microns and specific gravity of 1.34 to 1.40 in cement plaster/mortar by using 125 gms. of synthetic Polyester triangular fibre for 50 Kgs. cement used in cement mortar as per directions of Engineer-in-Charge. per bag of 50kg of cement",
+          "code": "13.79",
+          "children_count": 0,
+          "children": [],
+          "order_index": 153,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "78.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 154,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying white cement based putty of average thickness 1 mm, of approved brand and manufacturer, over the plastered wall surface to prepare the surface even and smooth complete.",
+          "code": "13.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 155,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 156.05,
+          "rate_display": "156.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Distempering with 1st quality acrylic distemper (ready mixed) having VOC (Volatile Organic Compound ) content less than 50 gram/ litre, of approved brand and manufacturer including applying additional coats wherever required to achieve even shade and colour",
+          "code": "13.81",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats)",
+              "code": "13.81.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 157,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 62.7,
+              "rate_display": "62.70"
+            }
+          ],
+          "order_index": 156,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Wall painting with acrylic emulsion paint, having VOC (Volatile Organic Compound ) content less than 50 grams/ litre, of approved brand and manufacture, including applying additional coats wherever required, to achieve even shade and colour.",
+          "code": "13.82",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One coat",
+              "code": "13.82.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 159,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 92.0,
+              "rate_display": "92.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Two coats",
+              "code": "13.82.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 160,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 137.45,
+              "rate_display": "137.45"
+            }
+          ],
+          "order_index": 158,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Wall painting with premium acrylic emulsion paint of interior grade, having VOC (Volatile Organic Compound ) content less than 50 grams/ litre of approved brand and manufacture, including applying additional coats wherever required to achieve even shade and colour.",
+          "code": "13.83",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One coat",
+              "code": "13.83.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 162,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 95.45,
+              "rate_display": "95.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Two coats",
+              "code": "13.83.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 163,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 142.8,
+              "rate_display": "142.80"
+            }
+          ],
+          "order_index": 161,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Applying priming coats with primer of approved brand and manufacture, having low VOC (Volatile Organic Compound ) content.",
+          "code": "13.85",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With ready mixed pink or grey primer on wood work (hard and soft wood) having VOC content less than 50 grams/ litre",
+              "code": "13.85.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 165,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 70.35,
+              "rate_display": "70.35"
+            },
+            {
+              "node_type": "item",
+              "title": "With water thinnable cement primer on wall surface having VOC content less than 50 grams/litre",
+              "code": "13.85.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 166,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 73.95,
+              "rate_display": "73.95"
+            }
+          ],
+          "order_index": 164,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "6 mm plaster on cement concrete or reinforced cement concrete work with white cement based polymer modified self curing mortar of approved make as per the direction of Engineer-In-Charge.",
+          "code": "13.86",
+          "children_count": 0,
+          "children": [],
+          "order_index": 167,
+          "source_page": 7,
+          "unit": "sqm",
+          "rate": 269.15,
+          "rate_display": "269.15"
+        },
+        {
+          "node_type": "item",
+          "title": "White washing with lime to give an even shade :",
+          "code": "13.87",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (two or more coats)",
+              "code": "13.87.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 169,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 22.85,
+              "rate_display": "22.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats)",
+              "code": "13.87.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 170,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 13.9,
+              "rate_display": "13.90"
+            }
+          ],
+          "order_index": 168,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Removing white or colour wash by scrapping and sand papering and preparing the surface smooth including necessary repairs to scratches etc. complete",
+          "code": "13.88",
+          "children_count": 0,
+          "children": [],
+          "order_index": 171,
+          "source_page": 8,
+          "unit": "sqm",
+          "rate": 19.75,
+          "rate_display": "19.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Removing dry or oil bound distemper, water proofing cement paint and the like by scrapping, sand papering and preparing the surface smooth including necessary repairs to scratches etc. complete.",
+          "code": "13.91",
+          "children_count": 0,
+          "children": [],
+          "order_index": 172,
+          "source_page": 8,
+          "unit": "sqm",
+          "rate": 25.15,
+          "rate_display": "25.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Painting on G.S. sheet with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.92",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats)",
+              "code": "13.92.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 174,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 93.3,
+              "rate_display": "93.30"
+            }
+          ],
+          "order_index": 173,
+          "source_page": 8,
+          "unit": "sqm"
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (two or more coats) on rain water, soil, waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture over and including a priming coat of ready mixed zinc chromate yellow primer on new work :",
+          "code": "13.93",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipes",
+              "code": "13.93.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 176,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 57.25,
+              "rate_display": "57.25"
+            }
+          ],
+          "order_index": 175,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (one or more coats) on rain water, soil waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture on old work :",
+          "code": "13.94",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipes",
+              "code": "13.94.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 178,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 26.85,
+              "rate_display": "26.85"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipes",
+              "code": "13.94.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 179,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 35.5,
+              "rate_display": "35.50"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter pipes",
+              "code": "13.94.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 180,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 51.2,
+              "rate_display": "51.20"
+            }
+          ],
+          "order_index": 177,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with aluminium paint of approved brand and manufacture over a priming coat of ready mixed zinc chromate yellow primer on new work :",
+          "code": "13.95",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipes",
+              "code": "13.95.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 182,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 58.9,
+              "rate_display": "58.90"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipes",
+              "code": "13.95.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 183,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 81.45,
+              "rate_display": "81.45"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter pipes",
+              "code": "13.95.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 184,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 121.35,
+              "rate_display": "121.35"
+            }
+          ],
+          "order_index": 181,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (one or more coats) on rain water, soil waste and vent pipes and fittings with synthetic enamel paint of approved brand and manufacture and required colour on old work :",
+          "code": "13.96",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipes",
+              "code": "13.96.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 186,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 28.2,
+              "rate_display": "28.20"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipes",
+              "code": "13.96.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 187,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 36.25,
+              "rate_display": "36.25"
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm diameter pipes",
+              "code": "13.96.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 188,
+              "source_page": 8,
+              "unit": "metre",
+              "rate": 52.25,
+              "rate_display": "52.25"
+            }
+          ],
+          "order_index": 185,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with oil type wood preservative of approved brand and manufacture:",
+          "code": "13.97",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats)",
+              "code": "13.97.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 190,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 41.2,
+              "rate_display": "41.20"
+            }
+          ],
+          "order_index": 189,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.99",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats on old work",
+              "code": "13.99.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 192,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 102.8,
+              "rate_display": "102.80"
+            }
+          ],
+          "order_index": 191,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with aluminium paint of approved brand and manufacture to give an even shade:",
+          "code": "13.100",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats on old work",
+              "code": "13.100.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 194,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 96.0,
+              "rate_display": "96.00"
+            }
+          ],
+          "order_index": 193,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with acid proof paint of approved brand and manufacture of required colour to give an even shade :",
+          "code": "13.101",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats on old work",
+              "code": "13.101.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 196,
+              "source_page": 8,
+              "unit": "sqm",
+              "rate": 107.25,
+              "rate_display": "107.25"
+            }
+          ],
+          "order_index": 195,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Painting with black anti-corrosive bitumastic paint of approved brand and manufacture to give an even shade :",
+          "code": "13.102",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats on old work",
+              "code": "13.102.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 198,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 93.7,
+              "rate_display": "93.70"
+            }
+          ],
+          "order_index": 197,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "French spirit polishing :",
+          "code": "13.103",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats on old work",
+              "code": "13.103.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 200,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 224.8,
+              "rate_display": "224.80"
+            }
+          ],
+          "order_index": 199,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Polishing on wood work with ready made wax polish of approved brand and manufacture :",
+          "code": "13.104",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work",
+              "code": "13.104.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 202,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 99.8,
+              "rate_display": "99.80"
+            }
+          ],
+          "order_index": 201,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Re-lettering with black Japan paint of approved brand and manufacture. per letter per cm height",
+          "code": "13.105",
+          "children_count": 0,
+          "children": [],
+          "order_index": 203,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "3.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 204,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Painting (one or more coats) with black Japan paint of approved brand and manufacture to give an even shade.",
+          "code": "13.106",
+          "children_count": 0,
+          "children": [],
+          "order_index": 205,
+          "source_page": 9,
+          "unit": "sqm",
+          "rate": 95.8,
+          "rate_display": "95.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing C.P. brass chain and rubber plug complete for sink or wash basin:",
+          "code": "13.107",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "32 mm dia",
+              "code": "13.107.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 207,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 80.1,
+              "rate_display": "80.10"
+            },
+            {
+              "node_type": "item",
+              "title": "40 mm dia",
+              "code": "13.107.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 208,
+              "source_page": 9,
+              "unit": "each",
+              "rate": 78.65,
+              "rate_display": "78.65"
+            }
+          ],
+          "order_index": 206,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with water proofing cement paint of required shade :",
+          "code": "13.109",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats applied @ 2.20 kg/10 sqm) over priming coat of primer applied @ 0.80 litrs/10 sqm complete including cost of Priming coat.",
+              "code": "13.109.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 210,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 112.9,
+              "rate_display": "112.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats @ 2.20 kg/10 sqm) complete.",
+              "code": "13.109.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 211,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 75.8,
+              "rate_display": "75.80"
+            }
+          ],
+          "order_index": 209,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with textured exterior paint of required shade :",
+          "code": "13.110",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (Two or more coats on existing cement paint surface applied @ 3.28 ltr/10 sqm.",
+              "code": "13.110.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 213,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 169.2,
+              "rate_display": "169.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (One or more coats) applied @ 1.82 ltr/10 sqm.",
+              "code": "13.110.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 214,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 109.1,
+              "rate_display": "109.10"
+            }
+          ],
+          "order_index": 212,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with Acrylic Smooth exterior paint of required shade :",
+          "code": "13.111",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (Two or more coat applied @ 1.67 ltr/ 10 sqm) on existing cement paint surface",
+              "code": "13.111.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 216,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 120.75,
+              "rate_display": "120.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (One or more coat applied @ 0.90 ltr/10 sqm).",
+              "code": "13.111.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 217,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 80.65,
+              "rate_display": "80.65"
+            }
+          ],
+          "order_index": 215,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Finishing walls with Premium Acrylic Smooth exterior paint with Silicone additives of required shade",
+          "code": "13.112",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Old work (Two or more coats applied @ 1.43 ltr/ 10 sqm) over existing cement paint surface",
+              "code": "13.112.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 219,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 131.3,
+              "rate_display": "131.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (one or more coats applied @ 0.83 ltr/10 sqm).",
+              "code": "13.112.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 220,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 88.55,
+              "rate_display": "88.55"
+            }
+          ],
+          "order_index": 218,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Varnishing with varnish of approved brand and manufacture:",
+          "code": "13.113",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One or more coats with copal varnish",
+              "code": "13.113.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 222,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 94.6,
+              "rate_display": "94.60"
+            },
+            {
+              "node_type": "item",
+              "title": "One or more coats with spar varnish",
+              "code": "13.113.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 223,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 95.05,
+              "rate_display": "95.05"
+            }
+          ],
+          "order_index": 221,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Melamine polishing on wood work (one or more coat).",
+          "code": "13.114",
+          "children_count": 0,
+          "children": [],
+          "order_index": 224,
+          "source_page": 9,
+          "unit": "sqm",
+          "rate": 138.1,
+          "rate_display": "138.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Varnishing with flatting varnish of approved brand and manufacture one or more coats on old work.",
+          "code": "13.115",
+          "children_count": 0,
+          "children": [],
+          "order_index": 225,
+          "source_page": 9,
+          "unit": "sqm",
+          "rate": 99.7,
+          "rate_display": "99.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Polishing in high gloss/matt finish melamine clear polish on wood work in required color/wooden shade texture with following process in the sequence as detailed below: 1. \u0007The surface to be polished is rubbed with sand paper 80/120 no. and then with sand paper of 160/180 nos. 2. \u0007Applying two coats of sealer with spray gun and allowing sufficient drying time for 1st coat and 2nd coat is allowed to dry for 8 to 12 hrs. 3. \u0007On drying of sealer coat, wet rubbing with emery cloth of finer grading with ample water to remove excess sealer layer and make the surface further smooth after this wet rubbing, then surface is applied with special grade melamine fillers to fill all the small and big holes/grooves etc. Filler coat to be allowed to dry for 4 to 6 hrs on which again a light wet rubbing is done this surface is further allowed to dry for 12 hrs. 4. \u0007On this, 1st coat of melamine polish is applied with spray gun using melamine clear polish and melamine thinner in required proportion. This 1st coat is allowed to dry for 24 hrs then this dry surface is again fine wet rubbed smooth, which is further allowed to dry for 12 hrs. The final melamine polish is applied with compressor pressure spray gun using melamine clear polish and melamine thinner mixed in required proportion complete as per direction of Engineer-in-Charge. (Final coat to be done in 1 or 2 layers without gap of time.)",
+          "code": "13.116",
+          "children_count": 0,
+          "children": [],
+          "order_index": 226,
+          "source_page": 10,
+          "unit": "sqm",
+          "rate": 1360.45,
+          "rate_display": "1360.45"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/13.0 FINISHING.pdf",
+    "row_count": 227,
+    "note_count": 1,
+    "leaf_count": 159,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

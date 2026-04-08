@@ -1,0 +1,3718 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/17.0 SANITARY INSTALLATIONS.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "SANITARY INSTALLATIONS",
+      "code": "17.0",
+      "children_count": 88,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Providing and fixing water closet squatting pan (Indian type W.C. pan ) with 100 mm sand cast Iron P or S trap, 10 litre low level white P.V.C. flushing cistern, including flush pipe, with manually controlled device (handle lever) conforming to IS : 7231, with all fittings and fixtures complete, including cutting and making good the walls and floors wherever required:",
+          "code": "17.1",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White Vitreous china Orissa pattern W.C. pan of size 580x440 mm with integral type foot rests",
+              "code": "17.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 6767.4,
+              "rate_display": "6767.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Stainless Steel AISI-304(18/8) Orissa pattern W.C. pan of size 585x480 mm with flush pipe and integrated type foot rests",
+              "code": "17.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 11390.95,
+              "rate_display": "11390.95"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china pedestal type water closet (European type W.C. pan) with seat and lid, 10 litre low level white P.V.C. flushing cistern, including flush pipe, with manually controlled device (handle lever), conforming to IS : 7231, with all fittings and fixtures complete, including cutting and making good the walls and floors wherever required :",
+          "code": "17.2",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "W.C. pan with ISI marked white solid plastic seat and lid",
+              "code": "17.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 6515.55,
+              "rate_display": "6515.55"
+            },
+            {
+              "node_type": "item",
+              "title": "W.C. pan with ISI marked black solid plastic seat and lid",
+              "code": "17.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 6383.25,
+              "rate_display": "6383.25"
+            }
+          ],
+          "order_index": 3,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china pedestal type water closet (European type) with seat and lid, 10 litre low level white vitreous china flushing cistern & C.P. flush bend with fittings & C.I. brackets, 40 mm flush bend, overflow arrangement with specials of standard make and mosquito proof coupling of approved municipal design complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required :",
+          "code": "17.3",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "W.C. pan with ISI marked white solid plastic seat and lid",
+              "code": "17.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 8006.6,
+              "rate_display": "8006.60"
+            },
+            {
+              "node_type": "item",
+              "title": "W.C. pan with ISI marked black solid plastic seat and lid",
+              "code": "17.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 7874.3,
+              "rate_display": "7874.30"
+            }
+          ],
+          "order_index": 6,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china flat back or wall corner type lipped front urinal basin of 430x260x350 mm and 340x410x265 mm sizes respectively with automatic flushing cistern with standard flush pipe and C.P. brass spreaders with brass unions and G.I clamps complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required :",
+          "code": "17.4",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One urinal basin with 5 litre white P.V.C. automatic flushing cistern",
+              "code": "17.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 6258.75,
+              "rate_display": "6258.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of two urinal basins with 5 litre white P.V.C. automatic flushing cistern",
+              "code": "17.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 9612.4,
+              "rate_display": "9612.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of three urinal basins with 10litre white P.V.C. automatic flushing cistern",
+              "code": "17.4.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 13417.3,
+              "rate_display": "13417.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of four urinal basins with 10 litre white P.V.C. automatic flushing cistern",
+              "code": "17.4.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 18579.95,
+              "rate_display": "18579.95"
+            }
+          ],
+          "order_index": 9,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china flat back half stall urinal of size 580x380x350 mm with white PVC automatic flushing cistern, with fittings, standard size C.P. brass flush pipe, spreaders with unions and clamps (all in C.P. brass) with waste fitting as per IS : 2556, C.I. trap with outlet grating and other couplings in C.P. brass, including painting of fittings and cutting and making good the walls and floors wherever required :",
+          "code": "17.5",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Single half stall urinal with 5 litre P.V.C. automatic flushing cistern",
+              "code": "17.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "each",
+              "rate": 12071.75,
+              "rate_display": "12071.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of two half stall urinals with 5 litre P.V.C. automatic flushing cistern",
+              "code": "17.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 18008.75,
+              "rate_display": "18008.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of three half stall urinals with 10 litre P.V.C. automatic flushing cistern",
+              "code": "17.5.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 22058.25,
+              "rate_display": "22058.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of four half stall urinals with 10 litre P.V.C. automatic flushing cistern",
+              "code": "17.5.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 25969.45,
+              "rate_display": "25969.45"
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing one piece construction white vitreous china squatting plate with an integral longitudinal flushing pipe, white P.V.C. automatic flushing cistern, with fittings, standard size G.I. / PVC flush pipe for back and front flush with standard spreader pipes with fittings, G.I clamps and C.P. brass coupling complete, including painting of fittings and cutting and making good the walls and floors etc. wherever required :",
+          "code": "17.6",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Single squatting plate with 5 litre P.V.C. automatic flushing cistern",
+              "code": "17.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 9256.45,
+              "rate_display": "9256.45"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of two squatting plates with 5 litre P.V.C. automatic flushing cistern",
+              "code": "17.6.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 21,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 13476.35,
+              "rate_display": "13476.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of three squatting plates with 10 litre P.V.C. automatic flushing cistern",
+              "code": "17.6.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 17702.2,
+              "rate_display": "17702.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Range of four squatting plates with 10 litre P.V.C. automatic flushing cistern",
+              "code": "17.6.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 23,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 21203.2,
+              "rate_display": "21203.20"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing wash basin with C.I. brackets, 15 mm C.P. brass pillar taps, 32 mm C.P. brass waste of standard pattern, including painting of fittings and brackets, cutting and making good the walls wherever require:",
+          "code": "17.7",
+          "children_count": 11,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Wash basin size 630x450 mm with a pair of 15 mm C.P. brass pillar taps",
+              "code": "17.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 25,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2648.85,
+              "rate_display": "2648.85"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Wash basin size 630x450 mm with a single 15 mm C.P. brass pillar tap",
+              "code": "17.7.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 26,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2226.35,
+              "rate_display": "2226.35"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Wash basin size 550x400 mm with a pair of 15 mm C.P. brass pillar taps",
+              "code": "17.7.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 27,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2301.75,
+              "rate_display": "2301.75"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Flat back wash basin size 550x 400 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 28,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 1879.2,
+              "rate_display": "1879.20"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Angle back wash basin size 600 x 480 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2226.35,
+              "rate_display": "2226.35"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Angle back wash basin size 400 x 400 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 1756.85,
+              "rate_display": "1756.85"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Flat back wash basin size 450x 300 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 31,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 1513.6,
+              "rate_display": "1513.60"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Surgeon type wash basin of size 660x460 mm with a pair of 15 mm C.P. brass pillar taps with elbow including operated levers",
+              "code": "17.7.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 32,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 3600.6,
+              "rate_display": "3600.60"
+            },
+            {
+              "node_type": "item",
+              "title": "White Vitreous China Surgeon type wash basin of size 660x460 mm with single 15 mm C.P. brass pillar taps with elbow operated levers ISI Marked",
+              "code": "17.7.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 2940.5,
+              "rate_display": "2940.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Stainless Steel AISI-304(18/8) Round basin 405x355 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 3438.4,
+              "rate_display": "3438.40"
+            },
+            {
+              "node_type": "item",
+              "title": "Stainless Steel AISI-304(18/8) Wash basin 530x345 mm with single 15 mm C.P. brass pillar tap",
+              "code": "17.7.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 35,
+              "source_page": 2,
+              "unit": "each",
+              "rate": 4149.75,
+              "rate_display": "4149.75"
+            }
+          ],
+          "order_index": 24,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "17.7B Providing and fixing wash basin with C.I. brackets, 15 mm PTMT pillar cock, 32 mm PTMT waste coupling of standard pattern, including painting of fittings and brackets, cutting and making good the walls wherever required. White Vitreous China Flat back wash basin size 550x400 mm with single 15 mm PTMT pillar cock.",
+          "code": "3960.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 36,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 1550.6,
+          "rate_display": "1550.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china pedestal for wash basin completely recessed at the back for the reception of pipes and fittings.",
+          "code": "17.8",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 1683.35,
+          "rate_display": "1683.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing kitchen sink with C.I. brackets, C.P. brass chain with rubber plug, 40 mm C.P. brass waste complete, including painting the fittings and brackets, cutting and making good the walls wherever required:",
+          "code": "17.9",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White glazed fire clay kitchen sink of size 600x450x 250 mm",
+              "code": "17.9.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 3892.75,
+              "rate_display": "3892.75"
+            }
+          ],
+          "order_index": 38,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Stainless Steel A ISI 304 (18/8) kitchen sink as per IS:13983 with C.I. brackets and stainless steel plug 40 mm, including painting of fittings and brackets, cutting and making good the walls wherever required :",
+          "code": "17.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Kitchen sink with drain board",
+              "code": "17.10.1",
+              "children_count": 4,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "510x1040 mm bowl depth 250 mm",
+                  "code": "17.10.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 42,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 6945.6,
+                  "rate_display": "6945.60"
+                },
+                {
+                  "node_type": "item",
+                  "title": "510x1040 mm bowl depth 225 mm",
+                  "code": "17.10.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 7514.65,
+                  "rate_display": "7514.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "510x1040 mm bowl depth 200 mm",
+                  "code": "17.10.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 44,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 7159.0,
+                  "rate_display": "7159.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "510x1040 mm bowl depth 178 mm",
+                  "code": "17.10.1.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 45,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 6917.2,
+                  "rate_display": "6917.20"
+                }
+              ],
+              "order_index": 41,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "Kitchen sink without drain board",
+              "code": "17.10.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "610x510 mm bowl depth 200 mm",
+                  "code": "17.10.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 47,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 4940.8,
+                  "rate_display": "4940.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "610x460 mm bowl depth 200 mm",
+                  "code": "17.10.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 48,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 3873.8,
+                  "rate_display": "3873.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "470x420 mm bowl depth 178 mm",
+                  "code": "17.10.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 49,
+                  "source_page": 3,
+                  "unit": "each",
+                  "rate": 3407.2,
+                  "rate_display": "3407.20"
+                }
+              ],
+              "order_index": 46,
+              "source_page": 3
+            }
+          ],
+          "order_index": 40,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china laboratory sink with C.I. brackets, C.P. brass chain with rubber plug, 40 mm C.P brass waste and 40 mm C.P. brass trap with necessary C.P. brass unions complete, including painting of fittings and brackets, cutting and making good the wall wherever required :",
+          "code": "17.11",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size 450x300x150 mm",
+              "code": "17.11.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 51,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 5020.85,
+              "rate_display": "5020.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Size 600x450x200 mm",
+              "code": "17.11.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 6585.8,
+              "rate_display": "6585.80"
+            }
+          ],
+          "order_index": 50,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing draining board with C.I. brackets including painting of brackets, cutting and making good the walls wherever required :",
+          "code": "17.12",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White glazed fire clay draining board of size 600x450x 25 mm",
+              "code": "17.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 1579.65,
+              "rate_display": "1579.65"
+            }
+          ],
+          "order_index": 53,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china water closet squatting pan (Indian type) :",
+          "code": "17.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Long pattern W.C. pan of size 580 mm",
+              "code": "17.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 56,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 1959.8,
+              "rate_display": "1959.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Orissa pattern W.C. pan of size 580x440 mm",
+              "code": "17.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 3169.05,
+              "rate_display": "3169.05"
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for using coloured W.C. pan instead of white W.C. pan :",
+          "code": "17.14",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Orissa pattern W.C. pan 580x440 mm",
+              "code": "17.14.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 59,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 426.8,
+              "rate_display": "426.80"
+            }
+          ],
+          "order_index": 58,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china pedestal type (European type/ wash down type) water closet pan.",
+          "code": "17.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 2784.95,
+          "rate_display": "2784.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for using coloured pedestal type W.C pan (European type) with low level cistern of same colour instead of white vitreous china W.C pan and cistern.",
+          "code": "17.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 61,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 170.7,
+          "rate_display": "170.70"
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "349.15",
+          "children_count": 0,
+          "children": [],
+          "order_index": 62,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing a pair of white vitreous china foot rests of standard pattern for squatting pan water closet :",
+          "code": "17.17",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "250x130x30 mm pair",
+              "code": "17.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 64,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "250x125x25 mm pair",
+              "code": "17.17.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 66,
+              "source_page": 4
+            }
+          ],
+          "order_index": 63,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "244.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 65,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "256.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 67,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing P.V.C. low level flushing cistern with manually controlled device (handle lever) conforming to IS : 7231, with all fittings and fixtures complete.",
+          "code": "17.18",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "10 litre capacity - White",
+              "code": "17.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 69,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 1190.65,
+              "rate_display": "1190.65"
+            },
+            {
+              "node_type": "item",
+              "title": "10 litre capacity - coloured",
+              "code": "17.18.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 70,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 1136.6,
+              "rate_display": "1136.60"
+            }
+          ],
+          "order_index": 68,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing controlled flush, low level cistern made of vitreous china with all fittings complete.",
+          "code": "17.19",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "10 litre (full flush) capacity-white",
+              "code": "17.19.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 2243.75,
+              "rate_display": "2243.75"
+            },
+            {
+              "node_type": "item",
+              "title": "10 litre (full flush) capacity-coloured",
+              "code": "17.19.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 2912.4,
+              "rate_display": "2912.40"
+            }
+          ],
+          "order_index": 71,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing solid plastic seat with lid for pedestal type W.C. pan complete :",
+          "code": "17.20",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White solid plastic seat with lid",
+              "code": "17.20.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 75,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 684.85,
+              "rate_display": "684.85"
+            },
+            {
+              "node_type": "item",
+              "title": "Black solid plastic seat with lid",
+              "code": "17.20.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 552.55,
+              "rate_display": "552.55"
+            },
+            {
+              "node_type": "item",
+              "title": "Coloured (other than black & white) solid plastic seat with lid",
+              "code": "17.20.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 590.95,
+              "rate_display": "590.95"
+            }
+          ],
+          "order_index": 74,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing G.I. inlet connection for flush pipe connecting with W.C. pan.",
+          "code": "17.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 142.85,
+          "rate_display": "142.85"
+        },
+        {
+          "node_type": "item",
+          "title": "17.22B Providing and fixing CP Brass Single lever telephonic wall mixer of quality & make as approved by Engineer in charge. (a) 15 mm nominal dia",
+          "code": "1034.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 79,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 6940.75,
+          "rate_display": "6940.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china flat back or wall corner type lipped front urinal basin of 430x260x350 mm or 340x410x265 mm sizes respectively.",
+          "code": "17.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 80,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 1648.95,
+          "rate_display": "1648.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china squatting plate urinal with integral rim longitudinal flush pipe.",
+          "code": "17.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 81,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 4048.65,
+          "rate_display": "4048.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china wash basin including making all connections but excluding the cost of fittings :",
+          "code": "17.25",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Flat back wash basin of size 630x450 mm",
+              "code": "17.25.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 83,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 1339.7,
+              "rate_display": "1339.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Flat back wash basin of size 550x400 mm",
+              "code": "17.25.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 84,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 992.6,
+              "rate_display": "992.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Angle back wash basin of size 600x480 mm",
+              "code": "17.25.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 1339.7,
+              "rate_display": "1339.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Angle back wash basin of size 400x400 mm",
+              "code": "17.25.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 86,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 870.25,
+              "rate_display": "870.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Flat back wash basin of size 450x300 mm",
+              "code": "17.25.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 627.0,
+              "rate_display": "627.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Surgeon type wash basin of size 660x460 mm",
+              "code": "17.25.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 1816.3,
+              "rate_display": "1816.30"
+            }
+          ],
+          "order_index": 82,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing kitchen sink including making all connections excluding cost of fittings.",
+          "code": "17.26",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White glazed fire clay sink of size 600x450x250 mm",
+              "code": "17.26.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 90,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 2199.8,
+              "rate_display": "2199.80"
+            }
+          ],
+          "order_index": 89,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china laboratory sink including making all connections excluding cost of fittings :",
+          "code": "17.27",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Size 450x300x150 mm",
+              "code": "17.27.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 92,
+              "source_page": 4,
+              "unit": "each",
+              "rate": 2512.75,
+              "rate_display": "2512.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Size 600x450x200 mm",
+              "code": "17.27.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 4077.65,
+              "rate_display": "4077.65"
+            }
+          ],
+          "order_index": 91,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing P.V.C. waste pipe for sink or wash basin including P.V.C. waste fittings complete.",
+          "code": "17.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Semi rigid pipe",
+              "code": "17.28.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "32 mm dia",
+                  "code": "17.28.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 96,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 103.9,
+                  "rate_display": "103.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm dia",
+                  "code": "17.28.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 97,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 116.7,
+                  "rate_display": "116.70"
+                }
+              ],
+              "order_index": 95,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "Flexible pipe",
+              "code": "17.28.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "32 mm dia",
+                  "code": "17.28.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 99,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 119.55,
+                  "rate_display": "119.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "40 mm dia",
+                  "code": "17.28.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 100,
+                  "source_page": 5,
+                  "unit": "each",
+                  "rate": 119.55,
+                  "rate_display": "119.55"
+                }
+              ],
+              "order_index": 98,
+              "source_page": 5
+            }
+          ],
+          "order_index": 94,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 100 mm sand cast Iron grating for gully trap.",
+          "code": "17.29",
+          "children_count": 0,
+          "children": [],
+          "order_index": 101,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 53.25,
+          "rate_display": "53.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing in position 25 mm diameter mosquito proof coupling of approved municipal design.",
+          "code": "17.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 102,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 55.65,
+          "rate_display": "55.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 600x450 mm beveled edge mirror of superior glass (of approved quality) complete with 6 mm thick hard board ground fixed to wooden cleats with C.P. brass screws and washers complete.",
+          "code": "17.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 103,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 1607.95,
+          "rate_display": "1607.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing mirror of superior glass (of approved quality) and of required shape and size with plastic moulded frame of approved make and shade with 6 mm thick hard board backing :",
+          "code": "17.32",
+          "children_count": 4,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Circular shape 450 mm dia",
+              "code": "17.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 105,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1479.05,
+              "rate_display": "1479.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular shape 453x357 mm",
+              "code": "17.32.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 106,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1361.8,
+              "rate_display": "1361.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Oval shape 450x350 mm (outer dimensions)",
+              "code": "17.32.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 107,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 1377.1,
+              "rate_display": "1377.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Rectangular shape 1500x450 mm",
+              "code": "17.32.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 108,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 2093.0,
+              "rate_display": "2093.00"
+            }
+          ],
+          "order_index": 104,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 600x120x5 mm glass shelf with edges round off, supported on anodised aluminium angle frame with C.P. brass brackets and guard rail complete fixed with 40 mm long screws, rawl plugs etc., complete.",
+          "code": "17.33",
+          "children_count": 0,
+          "children": [],
+          "order_index": 109,
+          "source_page": 5,
+          "unit": "each",
+          "rate": 1083.5,
+          "rate_display": "1083.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing toilet paper holder :",
+          "code": "17.34",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "C.P. brass",
+              "code": "17.34.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 111,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 803.7,
+              "rate_display": "803.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Vitreous china",
+              "code": "17.34.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 112,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 546.35,
+              "rate_display": "546.35"
+            }
+          ],
+          "order_index": 110,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing soil, waste and vent pipes :",
+          "code": "17.35",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.35.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S pipe as per IS: 1729",
+                  "code": "17.35.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 115,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 1151.9,
+                  "rate_display": "1151.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Centrifugally cast (spun) iron socket & spigot (S&S) pipe as per IS: 3989",
+                  "code": "17.35.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 116,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 1180.75,
+                  "rate_display": "1180.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.35.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 117,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 1169.3,
+                  "rate_display": "1169.30"
+                }
+              ],
+              "order_index": 114,
+              "source_page": 5
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm diameter :",
+              "code": "17.35.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S pipe as per IS: 1729",
+                  "code": "17.35.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 119,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 1044.75,
+                  "rate_display": "1044.75"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Centrifugally cast (spun) iron socketed pipe as per IS: 3989",
+                  "code": "17.35.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 120,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 1186.0,
+                  "rate_display": "1186.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.35.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 121,
+                  "source_page": 5,
+                  "unit": "metre",
+                  "rate": 964.25,
+                  "rate_display": "964.25"
+                }
+              ],
+              "order_index": 118,
+              "source_page": 5
+            }
+          ],
+          "order_index": 113,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and filling the joints with spun yarn, cement slurry and cement mortar 1:2 ( 1 cement : 2 fine sand) in S.C.I./ C.I. Pipes :",
+          "code": "17.36",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm dia pipe",
+              "code": "17.36.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 123,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 168.2,
+              "rate_display": "168.20"
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm dia pipe",
+              "code": "17.36.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 124,
+              "source_page": 5,
+              "unit": "each",
+              "rate": 198.15,
+              "rate_display": "198.15"
+            }
+          ],
+          "order_index": 122,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. holder-bat clamps of approved design to Sand Cast iron/cast iron (spun) pipe embedded in and including cement concrete blocks 10x10x10 cm of 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size), including cost of cutting holes and making good the walls etc. :",
+          "code": "17.37",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For 100 mm dia pipe",
+              "code": "17.37.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 126,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 362.85,
+              "rate_display": "362.85"
+            },
+            {
+              "node_type": "item",
+              "title": "For 75 mm dia pipe",
+              "code": "17.37.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 127,
+              "source_page": 6,
+              "unit": "each",
+              "rate": 360.0,
+              "rate_display": "360.00"
+            }
+          ],
+          "order_index": 125,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing bend of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete.",
+          "code": "17.38",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.38.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.38.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 130,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 598.5,
+                  "rate_display": "598.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.38.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 131,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 705.2,
+                  "rate_display": "705.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.38.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 132,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 567.2,
+                  "rate_display": "567.20"
+                }
+              ],
+              "order_index": 129,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm dia",
+              "code": "17.38.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.38.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 134,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 501.45,
+                  "rate_display": "501.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS- 3989",
+                  "code": "17.38.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 135,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 522.8,
+                  "rate_display": "522.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.38.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 136,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 418.95,
+                  "rate_display": "418.95"
+                }
+              ],
+              "order_index": 133,
+              "source_page": 6
+            }
+          ],
+          "order_index": 128,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing plain bend of required degree.",
+          "code": "17.39",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.39.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.39.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 139,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 470.45,
+                  "rate_display": "470.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS : 3989",
+                  "code": "17.39.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 140,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 570.05,
+                  "rate_display": "570.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.39.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 141,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 368.0,
+                  "rate_display": "368.00"
+                }
+              ],
+              "order_index": 138,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm dia",
+              "code": "17.39.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS -1729",
+                  "code": "17.39.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 143,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 376.25,
+                  "rate_display": "376.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.39.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 144,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 390.5,
+                  "rate_display": "390.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.39.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 145,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 252.5,
+                  "rate_display": "252.50"
+                }
+              ],
+              "order_index": 142,
+              "source_page": 6
+            }
+          ],
+          "order_index": 137,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing heel rest sanitary bend",
+          "code": "17.40",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.40.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.40.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 148,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 584.25,
+                  "rate_display": "584.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.40.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 149,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 548.7,
+                  "rate_display": "548.70"
+                }
+              ],
+              "order_index": 147,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm dia",
+              "code": "17.40.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.40.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 151,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 490.05,
+                  "rate_display": "490.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.40.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 152,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 504.3,
+                  "rate_display": "504.30"
+                }
+              ],
+              "order_index": 150,
+              "source_page": 6
+            }
+          ],
+          "order_index": 146,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double equal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete :",
+          "code": "17.41",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100x100 mm",
+              "code": "17.41.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.41.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 155,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 1138.65,
+                  "rate_display": "1138.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.41.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 156,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 1103.1,
+                  "rate_display": "1103.10"
+                }
+              ],
+              "order_index": 154,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75x75 mm",
+              "code": "17.41.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.41.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 158,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 842.9,
+                  "rate_display": "842.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.41.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 159,
+                  "source_page": 6,
+                  "unit": "each",
+                  "rate": 885.6,
+                  "rate_display": "885.60"
+                }
+              ],
+              "order_index": 157,
+              "source_page": 6
+            }
+          ],
+          "order_index": 153,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double equal plain junction of required degree.",
+          "code": "17.42",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100x100 mm",
+              "code": "17.42.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.42.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 162,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 939.9,
+                  "rate_display": "939.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.42.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 163,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 1075.05,
+                  "rate_display": "1075.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.42.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 164,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 760.7,
+                  "rate_display": "760.70"
+                }
+              ],
+              "order_index": 161,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75x75 mm",
+              "code": "17.42.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.42.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 166,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 625.2,
+                  "rate_display": "625.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.42.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 167,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 803.05,
+                  "rate_display": "803.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron pipes epoxy coated inside & outside IS:15905",
+                  "code": "17.42.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 168,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 418.95,
+                  "rate_display": "418.95"
+                }
+              ],
+              "order_index": 165,
+              "source_page": 7
+            }
+          ],
+          "order_index": 160,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single equal plain junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete.",
+          "code": "17.43",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100 mm",
+              "code": "17.43.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.43.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 171,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 726.55,
+                  "rate_display": "726.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.43.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 172,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 925.7,
+                  "rate_display": "925.70"
+                }
+              ],
+              "order_index": 170,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75 mm",
+              "code": "17.43.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.43.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 174,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 629.5,
+                  "rate_display": "629.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.43.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 175,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 665.05,
+                  "rate_display": "665.05"
+                }
+              ],
+              "order_index": 173,
+              "source_page": 7
+            }
+          ],
+          "order_index": 169,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single equal plain junction of required degree :",
+          "code": "17.44",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100 mm",
+              "code": "17.44.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.44.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 178,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 626.95,
+                  "rate_display": "626.95"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.44.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 179,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 811.9,
+                  "rate_display": "811.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.44.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 180,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 581.45,
+                  "rate_display": "581.45"
+                }
+              ],
+              "order_index": 177,
+              "source_page": 7
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75 mm",
+              "code": "17.44.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.44.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 182,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 504.3,
+                  "rate_display": "504.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.44.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 183,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 561.2,
+                  "rate_display": "561.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.44.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 184,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 337.85,
+                  "rate_display": "337.85"
+                }
+              ],
+              "order_index": 181,
+              "source_page": 7
+            }
+          ],
+          "order_index": 176,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double unequal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete:",
+          "code": "17.45",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75x75 mm",
+              "code": "17.45.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.45.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 187,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 1153.3,
+                  "rate_display": "1153.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.45.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 188,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 1601.45,
+                  "rate_display": "1601.45"
+                }
+              ],
+              "order_index": 186,
+              "source_page": 7
+            }
+          ],
+          "order_index": 185,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double unequal plain junction of required degree :",
+          "code": "17.46",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75x75 mm",
+              "code": "17.46.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.46.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 191,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 954.15,
+                  "rate_display": "954.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.46.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 192,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 1402.3,
+                  "rate_display": "1402.30"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.46.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 193,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 607.05,
+                  "rate_display": "607.05"
+                }
+              ],
+              "order_index": 190,
+              "source_page": 7
+            }
+          ],
+          "order_index": 189,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single unequal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete :",
+          "code": "17.47",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75 mm",
+              "code": "17.47.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.47.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 196,
+                  "source_page": 7,
+                  "unit": "each",
+                  "rate": 911.45,
+                  "rate_display": "911.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.47.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 197,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 1146.2,
+                  "rate_display": "1146.20"
+                }
+              ],
+              "order_index": 195,
+              "source_page": 7
+            }
+          ],
+          "order_index": 194,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single unequal plain junction of required degree :",
+          "code": "17.48",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75 mm",
+              "code": "17.48.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.48.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 200,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 811.9,
+                  "rate_display": "811.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.48.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 201,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 1032.4,
+                  "rate_display": "1032.40"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.48.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 202,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 551.55,
+                  "rate_display": "551.55"
+                }
+              ],
+              "order_index": 199,
+              "source_page": 8
+            }
+          ],
+          "order_index": 198,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double equal plain invert branch of required degree:",
+          "code": "17.49",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100x100 mm",
+              "code": "17.49.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.49.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 205,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 883.0,
+                  "rate_display": "883.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS 3989",
+                  "code": "17.49.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 206,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 989.7,
+                  "rate_display": "989.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.49.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 207,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 1106.35,
+                  "rate_display": "1106.35"
+                }
+              ],
+              "order_index": 204,
+              "source_page": 8
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75x75 mm",
+              "code": "17.49.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.49.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 209,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 660.8,
+                  "rate_display": "660.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.49.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 210,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 803.05,
+                  "rate_display": "803.05"
+                }
+              ],
+              "order_index": 208,
+              "source_page": 8
+            }
+          ],
+          "order_index": 203,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single equal plain invert branch of required degree :",
+          "code": "17.50",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x100 mm",
+              "code": "17.50.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per iron 1729",
+                  "code": "17.50.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 213,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 698.05,
+                  "rate_display": "698.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.50.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 214,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 747.85,
+                  "rate_display": "747.85"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.50.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 215,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 645.45,
+                  "rate_display": "645.45"
+                }
+              ],
+              "order_index": 212,
+              "source_page": 8
+            },
+            {
+              "node_type": "item",
+              "title": "75x75x75 mm",
+              "code": "17.50.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.50.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 217,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 575.45,
+                  "rate_display": "575.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.50.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 218,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 575.45,
+                  "rate_display": "575.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.50.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 219,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 401.9,
+                  "rate_display": "401.90"
+                }
+              ],
+              "order_index": 216,
+              "source_page": 8
+            }
+          ],
+          "order_index": 211,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing double unequal invert branch of required degree :",
+          "code": "17.51",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75x75 mm",
+              "code": "17.51.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.51.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 222,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 1011.05,
+                  "rate_display": "1011.05"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.51.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 223,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 1274.25,
+                  "rate_display": "1274.25"
+                }
+              ],
+              "order_index": 221,
+              "source_page": 8
+            }
+          ],
+          "order_index": 220,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing single unequal plain invert branch of required degree:",
+          "code": "17.52",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100x100x75 mm",
+              "code": "17.52.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.52.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 226,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 804.8,
+                  "rate_display": "804.80"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.52.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 227,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 996.85,
+                  "rate_display": "996.85"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.52.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 228,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 658.25,
+                  "rate_display": "658.25"
+                }
+              ],
+              "order_index": 225,
+              "source_page": 8
+            }
+          ],
+          "order_index": 224,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing sand cast iron S&S off sets as per IS: 1729",
+          "code": "17.53",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "76 mm off sets",
+              "code": "17.53.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.53.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 231,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 376.25,
+                  "rate_display": "376.25"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia pipe",
+                  "code": "17.53.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 232,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 603.9,
+                  "rate_display": "603.90"
+                }
+              ],
+              "order_index": 230,
+              "source_page": 8
+            },
+            {
+              "node_type": "item",
+              "title": "114 mm off sets",
+              "code": "17.53.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.53.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 234,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 527.35,
+                  "rate_display": "527.35"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia pipe",
+                  "code": "17.53.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 235,
+                  "source_page": 8,
+                  "unit": "each",
+                  "rate": 648.3,
+                  "rate_display": "648.30"
+                }
+              ],
+              "order_index": 233,
+              "source_page": 8
+            },
+            {
+              "node_type": "item",
+              "title": "152 mm off sets",
+              "code": "17.53.3",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.53.3.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 237,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 619.9,
+                  "rate_display": "619.90"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia pipe",
+                  "code": "17.53.3.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 238,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 769.25,
+                  "rate_display": "769.25"
+                }
+              ],
+              "order_index": 236,
+              "source_page": 9
+            }
+          ],
+          "order_index": 229,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "17.53A.1.2 With 75 mm dia pipe",
+          "code": "547.00",
+          "children_count": 0,
+          "children": [],
+          "order_index": 239,
+          "source_page": 9,
+          "unit": "each",
+          "rate": 454.5,
+          "rate_display": "454.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing sand cast iron S&S off sets as per IS: 3989 :",
+          "code": "17.54",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "75 mm off sets",
+              "code": "17.54.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.54.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 242,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 418.95,
+                  "rate_display": "418.95"
+                }
+              ],
+              "order_index": 241,
+              "source_page": 9
+            },
+            {
+              "node_type": "item",
+              "title": "150 mm off sets",
+              "code": "17.54.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.54.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 244,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 585.55,
+                  "rate_display": "585.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia pipe",
+                  "code": "17.54.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 245,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 734.95,
+                  "rate_display": "734.95"
+                }
+              ],
+              "order_index": 243,
+              "source_page": 9
+            }
+          ],
+          "order_index": 240,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "17.54A.1.2 With 75 mm dia",
+          "code": "632.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 246,
+          "source_page": 9,
+          "unit": "each",
+          "rate": 465.9,
+          "rate_display": "465.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing door piece, insertion rubber washer 3 mm thick, bolts & nuts complete :",
+          "code": "17.55",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "17.55.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.55.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 249,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 783.45,
+                  "rate_display": "783.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.55.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 250,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 683.85,
+                  "rate_display": "683.85"
+                }
+              ],
+              "order_index": 248,
+              "source_page": 9
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "17.55.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.55.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 252,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 501.45,
+                  "rate_display": "501.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.55.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 253,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 537.0,
+                  "rate_display": "537.00"
+                }
+              ],
+              "order_index": 251,
+              "source_page": 9
+            }
+          ],
+          "order_index": 247,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing terminal guard :",
+          "code": "17.56",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "17.56.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.56.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 256,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 442.0,
+                  "rate_display": "442.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.56.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 257,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 506.0,
+                  "rate_display": "506.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.56.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 258,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 427.8,
+                  "rate_display": "427.80"
+                }
+              ],
+              "order_index": 255,
+              "source_page": 9
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "17.56.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.56.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 260,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 340.7,
+                  "rate_display": "340.70"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.56.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 261,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 404.75,
+                  "rate_display": "404.75"
+                }
+              ],
+              "order_index": 259,
+              "source_page": 9
+            }
+          ],
+          "order_index": 254,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing collar :",
+          "code": "17.57",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "17.57.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.57.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 264,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 463.35,
+                  "rate_display": "463.35"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.57.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 265,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 513.15,
+                  "rate_display": "513.15"
+                }
+              ],
+              "order_index": 263,
+              "source_page": 9
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "17.57.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 1729",
+                  "code": "17.57.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 267,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 305.15,
+                  "rate_display": "305.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.57.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 268,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 362.05,
+                  "rate_display": "362.05"
+                }
+              ],
+              "order_index": 266,
+              "source_page": 9
+            }
+          ],
+          "order_index": 262,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "17.57A.2 75 mm dia 17.57A.2.1 SS 304 grade coupling with EPDM rubber gasket",
+          "code": "432.05",
+          "children_count": 0,
+          "children": [],
+          "order_index": 269,
+          "source_page": 10,
+          "unit": "each",
+          "rate": 389.05,
+          "rate_display": "389.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing lead caulked joints to sand cast iron/centrifugally cast (spun) iron pipes and fittings of diameter :",
+          "code": "17.58",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "17.58.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 271,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 622.5,
+              "rate_display": "622.50"
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "17.58.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 272,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 526.25,
+              "rate_display": "526.25"
+            },
+            {
+              "node_type": "item",
+              "title": "50 mm",
+              "code": "17.58.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 273,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 423.15,
+              "rate_display": "423.15"
+            }
+          ],
+          "order_index": 270,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. stays and clamps for sand cast iron/ centrifugally cast (spun) iron pipes of diameter :",
+          "code": "17.59",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm",
+              "code": "17.59.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 275,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 139.7,
+              "rate_display": "139.70"
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm",
+              "code": "17.59.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 276,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 90.3,
+              "rate_display": "90.30"
+            },
+            {
+              "node_type": "item",
+              "title": "50 mm",
+              "code": "17.59.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 277,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 81.85,
+              "rate_display": "81.85"
+            }
+          ],
+          "order_index": 274,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing trap of self cleansing design with screwed down or hinged grating with or without vent arm complete, including cost of cutting and making good the walls and floors :",
+          "code": "17.60",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm inlet and 100 mm outlet",
+              "code": "17.60.1",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS: 3989",
+                  "code": "17.60.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 280,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 1996.5,
+                  "rate_display": "1996.50"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand Cast Iron S&S as per IS: 1729",
+                  "code": "17.60.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 281,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 1683.55,
+                  "rate_display": "1683.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.60.1.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 282,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 854.55,
+                  "rate_display": "854.55"
+                }
+              ],
+              "order_index": 279,
+              "source_page": 10
+            },
+            {
+              "node_type": "item",
+              "title": "100 mm inlet and 75 mm outlet",
+              "code": "17.60.2",
+              "children_count": 3,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Sand cast iron S&S as per IS - 3989",
+                  "code": "17.60.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 284,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 1975.15,
+                  "rate_display": "1975.15"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Sand Cast Iron S&S as per IS- 1729",
+                  "code": "17.60.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 285,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 1558.35,
+                  "rate_display": "1558.35"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Hubless centrifugally cast (spun) iron epoxy coated inside & outside as per IS:15905",
+                  "code": "17.60.2.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 286,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 591.4,
+                  "rate_display": "591.40"
+                }
+              ],
+              "order_index": 283,
+              "source_page": 10
+            }
+          ],
+          "order_index": 278,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Cutting chases in brick masonry walls for following diameter sand cast iron/ centrifugally cast (spun) iron pipes and making good the same with cement concrete 1:3:6 ( 1 cement : 3 coarse sand :6 graded stone aggregate 12.5 mm nominal size), including necessary plaster and pointing in cement mortar 1:4 (1 cement : 4 coarse sand) :",
+          "code": "17.61",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.61.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 288,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 713.2,
+              "rate_display": "713.20"
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm dia",
+              "code": "17.61.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 289,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 513.25,
+              "rate_display": "513.25"
+            },
+            {
+              "node_type": "item",
+              "title": "50 mm dia",
+              "code": "17.61.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 290,
+              "source_page": 10,
+              "unit": "metre",
+              "rate": 336.0,
+              "rate_display": "336.00"
+            }
+          ],
+          "order_index": 287,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Painting C.I. cistern with bitumastic or any other anti-corrosive paint inside and white paint over a coat of zinc chromate yellow primer (of approved quality ) on the outside surface of the cistern, flush pipe, other fittings, etc. complete for new work.",
+          "code": "17.62",
+          "children_count": 0,
+          "children": [],
+          "order_index": 291,
+          "source_page": 10,
+          "unit": "each",
+          "rate": 1020.6,
+          "rate_display": "1020.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Re-painting C.I. cistern with bitumastic or any other anti-corrosive paint inside and white paint on the outside surface of the cistern, flush pipe, other fittings, etc. complete, including polishing of wooden seat and lid and cleaning of W.C. pan with acid wherever necessary.",
+          "code": "17.63",
+          "children_count": 0,
+          "children": [],
+          "order_index": 292,
+          "source_page": 10,
+          "unit": "each",
+          "rate": 673.7,
+          "rate_display": "673.70"
+        },
+        {
+          "node_type": "item",
+          "title": "Repainting C.I. cistern with synthetic enamel paint of approved colour, brand and manufacture on the outside surface of cistern, flush pipe, other fittings etc. complete.",
+          "code": "17.64",
+          "children_count": 0,
+          "children": [],
+          "order_index": 293,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 292.55,
+          "rate_display": "292.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Painting sand cast iron/ centrifugally cast (spun) iron soil, waste vent pipes and fittings with two coats of synthetic enamel paint of any colour such as chocolate grey, or buff etc. over a coat of primer (of approved quality) for new work :",
+          "code": "17.65",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipe",
+              "code": "17.65.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 295,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 82.8,
+              "rate_display": "82.80"
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipe",
+              "code": "17.65.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 296,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 62.95,
+              "rate_display": "62.95"
+            }
+          ],
+          "order_index": 294,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Repainting sand cast iron/ centrifugally cast iron (spun) iron, soil, waste, vent pipes and fittings with one coat of synthetic enamel paint of any colour such as chocolate, grey or buff etc :",
+          "code": "17.66",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm diameter pipe",
+              "code": "17.66.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 298,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 39.5,
+              "rate_display": "39.50"
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm diameter pipe",
+              "code": "17.66.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 299,
+              "source_page": 11,
+              "unit": "metre",
+              "rate": 29.55,
+              "rate_display": "29.55"
+            }
+          ],
+          "order_index": 297,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Repainting bath tub of size 1700x730x430 mm with enamel paint.",
+          "code": "17.67",
+          "children_count": 0,
+          "children": [],
+          "order_index": 300,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 804.3,
+          "rate_display": "804.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing vitreous china dual purpose closet suitable for use as squatting pan or European type water closet (Anglo Indian W.C pan) with seat & lid fixed with C.P. brass hinges and rubber buffers, 10 litre low level flushing cistern with fitting and brackets, 40 mm flush bend, 20 mm over flow pipe, with specials of standard make and mosquito proof coupling of approved municipal design complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required:",
+          "code": "17.68",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "White vitreous china dual purpose WC pan with white solid plastic seat and lid with white vitreous china flushing cistern and C.P. flush bend.",
+              "code": "17.68.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 302,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 11847.65,
+              "rate_display": "11847.65"
+            }
+          ],
+          "order_index": 301,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT Waste Coupling for wash basin and sink, of approved quality and colour.",
+          "code": "17.69",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Waste coupling 31 mm dia of 79 mm length and 62 mm breadth weighing not less than 45 gms",
+              "code": "17.69.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 304,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 115.3,
+              "rate_display": "115.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Waste coupling 38 mm dia of 83 mm length and 77 mm breadth, weighing not less than 60 gms",
+              "code": "17.69.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 305,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 122.4,
+              "rate_display": "122.40"
+            }
+          ],
+          "order_index": 303,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT Bottle Trap for Wash basin and sink.",
+          "code": "17.70",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Bottle trap 31 mm single piece moulded with height of 270 mm, effective length of tail pipe 260 mm from the centre of the waste coupling, 77 mm breadth with 25 mm minimum water seal, weighing not less than 260 gms",
+              "code": "17.70.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 307,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 367.1,
+              "rate_display": "367.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Bottle trap 38 mm single piece moulded with height of 270 mm, effective length of tail pipe 260 mm from the centre of the waste coupling, 77 mm breadth with 25 mm minimum water seal, weighing not less than 263 gms",
+              "code": "17.70.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 308,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 375.65,
+              "rate_display": "375.65"
+            }
+          ],
+          "order_index": 306,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT liquid soap container 109 mm wide, 125 mm high and 112 mm distance from wall of standard shape with bracket of the same materials with snap fittings of approved quality and colour, weighing not less than 105 gms.",
+          "code": "17.71",
+          "children_count": 0,
+          "children": [],
+          "order_index": 309,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 168.35,
+          "rate_display": "168.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT towel ring trapezoidal shape 215 mm long, 200 mm wide with minimum distances of 37 mm from wall face with concealed fittings arrangement of approved quality and colour, weighing not less than 88 gms.",
+          "code": "17.72",
+          "children_count": 0,
+          "children": [],
+          "order_index": 310,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 231.95,
+          "rate_display": "231.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT towel rail complete with brackets fixed to wooden cleats with CP brass screws with concealed fittings arrangement of approved quality and colour.",
+          "code": "17.73",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "450 mm long towel rail with total length of 495 mm, 78 mm wide and effective height of 88 mm, weighing not less than 170 gms",
+              "code": "17.73.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 312,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 673.4,
+              "rate_display": "673.40"
+            },
+            {
+              "node_type": "item",
+              "title": "600 mm long towel rail with total length of 645 mm, width 78 mm and effective height of 88 mm, weighing not less than 190 gms.",
+              "code": "17.73.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 313,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 708.95,
+              "rate_display": "708.95"
+            }
+          ],
+          "order_index": 311,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT shelf 440 mm long, 124 mm width and 36 mm height of approved quality and colour, weighing not less than 300 gms.",
+          "code": "17.74",
+          "children_count": 0,
+          "children": [],
+          "order_index": 314,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 713.2,
+          "rate_display": "713.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT 15 mm Urinal spreader size 95x69x100 mm with 1/2” BSP thread and shapes, weighing not less than 60 gms.",
+          "code": "17.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 315,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 107.2,
+          "rate_display": "107.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing PTMT urinal cock of approved quality and colour.",
+          "code": "17.76",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "15 mm nominal bore, 80 mm long, 42 mm high and 30 mm wide with BSP female threads weighing not less than 48 gms",
+              "code": "17.76.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 317,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 175.4,
+              "rate_display": "175.40"
+            }
+          ],
+          "order_index": 316,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing M.S. holder bat clamp of approved design to sand cast iron/ cast iron (spun) pipes comprising of M.S. flat brackets made of 50x5 mm flat of specified shape, projecting 75 mm outside the wall surface and fixed on wall with 4nos, 6 mm dia expansion hold fasteners, including drilling necessary holes in brick wall/ CC/ RCC surface and the cost of bolts etc. The pipes shall be fixed to the already fixed brackets with the help of 30 mm x1.6 mm galvanised M.S. flats of specified shape and of total length 420 mm and shall be fixed with M.S. nuts, bolts, & washers of size 25x6 mm, one bolts on each side of the pipe.",
+          "code": "17.77",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Total bracket length 580 mm of approved shape and design (for single 100 mm dia pipe)",
+              "code": "17.77.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 319,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 304.05,
+              "rate_display": "304.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Total bracket length 810 mm of approved shape and design (for two 100 mm dia pipes)",
+              "code": "17.77.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 320,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 378.1,
+              "rate_display": "378.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Total bracket length 1040 mm of approved shape and design (for three 100 mm dia pipes)",
+              "code": "17.77.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 321,
+              "source_page": 12,
+              "unit": "each",
+              "rate": 451.9,
+              "rate_display": "451.90"
+            }
+          ],
+          "order_index": 318,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china extended wall mounting water closet of size 780x370x690 mm of approved shape including providing & fixing white vitreous china cistern with dual flush fitting, of flushing capacity 3 litre/ 6 litre (adjustable to 4 litre/ 8 litres), including seat cover, and cistern fittings, nuts, bolts and gasket etc complete.",
+          "code": "17.78",
+          "children_count": 0,
+          "children": [],
+          "order_index": 322,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 14999.15,
+          "rate_display": "14999.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & fixing white vitreous china water less urinal of size 600 x 330 x 315 mm having antibacterial /germs free ceramic surface, fixed with cartridge having debris catcher and hygiene seal.",
+          "code": "17.79",
+          "children_count": 0,
+          "children": [],
+          "order_index": 323,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 18088.45,
+          "rate_display": "18088.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing white vitreous china battery based infrared sensor operated urinal of approx. size 610 x 390 x 370 mm having pre & post flushing with water (250 ml & 500 ml consumption), having water inlet from back side, including fixing to wall with suitable brackets all as per manufacturers specification and direction of Engineer-in-charge.",
+          "code": "17.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 324,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 7979.2,
+          "rate_display": "7979.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing floor mounted, white vitreous china single piece, double traps syphonic water closet of approved brand/make, shape, size and pattern including integrated white vitreous china cistern of capacity 10 litre with dual flushing system, including all fittings and fixtures with seat cover, cistern fittings, nuts, bolts and gasket etc including making connection with the existing P/S trap, complete in all respect as per directions of Engineer-in-Charge.",
+          "code": "17.81",
+          "children_count": 0,
+          "children": [],
+          "order_index": 325,
+          "source_page": 12,
+          "unit": "each",
+          "rate": 18212.9,
+          "rate_display": "18212.90"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/17.0 SANITARY INSTALLATIONS.pdf",
+    "row_count": 326,
+    "note_count": 0,
+    "leaf_count": 225,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

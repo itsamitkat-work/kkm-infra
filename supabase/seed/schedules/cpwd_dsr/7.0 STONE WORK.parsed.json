@@ -1,0 +1,973 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/7.0 STONE WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "STONE WORK",
+      "code": "7.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub-soil water level up to the centre of gravity of stone work under sub - water with the quantity of stone work in cum executed under the sub-soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
+          "source_page": 4,
+          "order_index": 0
+        }
+      ],
+      "children_count": 32,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Random rubble masonry with hard stone in foundation and plinth including levelling up with cement concrete 1:6:12 (1 cement : 6 coarse sand : 12 graded stone aggregate 20 mm nominal size) upto plinth level with :",
+          "code": "7.1",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "7.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 7311.25,
+              "rate_display": "7311.25"
+            }
+          ],
+          "order_index": 0,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Random rubble masonry with hard stone in superstructure above plinth level and upto floor five level, including leveling up with cement concrete 1:6:12 (1 cement : 6 coarse sand : 12 graded stone aggregate 20 mm nominal size) at window sills, ceiling level and the like.",
+          "code": "7.2",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "7.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 9275.45,
+              "rate_display": "9275.45"
+            }
+          ],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for random rubble masonry with hard stone in :",
+          "code": "7.4",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Square or rectangular pillars",
+              "code": "7.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 956.0,
+              "rate_display": "956.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular pillars",
+              "code": "7.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2530.6,
+              "rate_display": "2530.60"
+            }
+          ],
+          "order_index": 4,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for random rubble masonry with hard stone curved on plan for a mean radius not exceeding 6 m.",
+          "code": "7.5",
+          "children_count": 0,
+          "children": [],
+          "order_index": 7,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 1046.2,
+          "rate_display": "1046.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Coursed rubble masonry (first sort) with hard stone in foundation and plinth with :",
+          "code": "7.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "7.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8812.05,
+              "rate_display": "8812.05"
+            }
+          ],
+          "order_index": 8,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Coursed rubble masonry (second sort) with hard stone in foundation & plinth with :",
+          "code": "7.7",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "7.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8198.55,
+              "rate_display": "8198.55"
+            }
+          ],
+          "order_index": 10,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Coursed rubble masonry with hard stone (first or second sort) in superstructure above plinth level and upto floor five level.",
+          "code": "7.8",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Masonry work (first sort), in cement mortar 1:6 (1 cement : 6 coarse sand)",
+              "code": "7.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 10741.6,
+              "rate_display": "10741.60"
+            },
+            {
+              "node_type": "item",
+              "title": "Masonry work (second sort), in cement mortar 1:6 (1 cement: 6 coarse sand)",
+              "code": "7.8.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 10128.1,
+              "rate_display": "10128.10"
+            }
+          ],
+          "order_index": 12,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for coursed rubble masonry with hard stone (first or second sort) in:",
+          "code": "7.10",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Square or rectangular pillars",
+              "code": "7.10.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1060.5,
+              "rate_display": "1060.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular pillars",
+              "code": "7.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2874.2,
+              "rate_display": "2874.20"
+            }
+          ],
+          "order_index": 15,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for coursed rubble masonry with hard stone (first or second sort) curved on plan for a mean radius not exceeding 6 m.",
+          "code": "7.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 18,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 1133.65,
+          "rate_display": "1133.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work in plain ashlar in super structure upto floor five level in cement mortar 1:6 (1 cement : 6 coarse sand) including pointing with cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
+          "code": "7.12",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One face dressed",
+              "code": "7.12.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.12.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 21,
+                  "source_page": 1,
+                  "unit": "cum",
+                  "rate": 68294.0,
+                  "rate_display": "68294.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.12.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 22,
+                  "source_page": 1,
+                  "unit": "cum",
+                  "rate": 82518.0,
+                  "rate_display": "82518.00"
+                }
+              ],
+              "order_index": 20,
+              "source_page": 1
+            },
+            {
+              "node_type": "item",
+              "title": "Both face dressed",
+              "code": "7.12.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.12.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 24,
+                  "source_page": 1,
+                  "unit": "cum",
+                  "rate": 91295.0,
+                  "rate_display": "91295.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.12.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 25,
+                  "source_page": 1,
+                  "unit": "cum",
+                  "rate": 105519.0,
+                  "rate_display": "105519.00"
+                }
+              ],
+              "order_index": 23,
+              "source_page": 1
+            }
+          ],
+          "order_index": 19,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work plain ashlar in arches in super structure upto floor V level in cement mortar 1:3 (1 cement : 3 coarse sand) including centering, shuttering and pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
+          "code": "7.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One face dressed",
+              "code": "7.13.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.13.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 28,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 75263.0,
+                  "rate_display": "75263.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.13.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 29,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 89487.0,
+                  "rate_display": "89487.00"
+                }
+              ],
+              "order_index": 27,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Both face dressed",
+              "code": "7.13.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.13.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 31,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 98265.0,
+                  "rate_display": "98265.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.13.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 32,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 112488.0,
+                  "rate_display": "112488.00"
+                }
+              ],
+              "order_index": 30,
+              "source_page": 2
+            }
+          ],
+          "order_index": 26,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work plain ashlar in domes , in super structure upto floor V level in cement mortar 1:3 (1 cement : 3 coarse sand) including centering, shuttering and pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
+          "code": "7.14",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One face dressed",
+              "code": "7.14.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.14.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 35,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 114277.0,
+                  "rate_display": "114277.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.14.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 36,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 128500.0,
+                  "rate_display": "128500.00"
+                }
+              ],
+              "order_index": 34,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Both face dressed",
+              "code": "7.14.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.14.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 38,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 169953.0,
+                  "rate_display": "169953.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.14.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 39,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 184177.0,
+                  "rate_display": "184177.00"
+                }
+              ],
+              "order_index": 37,
+              "source_page": 2
+            }
+          ],
+          "order_index": 33,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work ashlar punched (ordinary) in superstructure upto floor five level in cement mortar 1:6 (1 white cement : 6 coarse sand) including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
+          "code": "7.15",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "One face dressed",
+              "code": "7.15.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.15.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 42,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 64926.0,
+                  "rate_display": "64926.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.15.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 43,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 79150.0,
+                  "rate_display": "79150.00"
+                }
+              ],
+              "order_index": 41,
+              "source_page": 2
+            },
+            {
+              "node_type": "item",
+              "title": "Both faced punched",
+              "code": "7.15.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Red sand stone",
+                  "code": "7.15.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 45,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 84560.0,
+                  "rate_display": "84560.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "White sand stone",
+                  "code": "7.15.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 46,
+                  "source_page": 2,
+                  "unit": "cum",
+                  "rate": 98784.0,
+                  "rate_display": "98784.00"
+                }
+              ],
+              "order_index": 44,
+              "source_page": 2
+            }
+          ],
+          "order_index": 40,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work, random rubble / coursed rubble masonry / ashlar masonry above floor V level for every four floors or part thereof by mechnical means.",
+          "code": "7.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 47,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 169.45,
+          "rate_display": "169.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for plain ashlar or ashlar punched in :",
+          "code": "7.17",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Square or rectangular pillars",
+              "code": "7.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 49,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 2896.0,
+              "rate_display": "2896.00"
+            }
+          ],
+          "order_index": 48,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work; plain ashlar or ashlar punched curved on plan with a mean radius not exceeding 6 m.",
+          "code": "7.18",
+          "children_count": 0,
+          "children": [],
+          "order_index": 50,
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 2014.0,
+          "rate_display": "2014.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for additional cost of centering for arches exceeding 6m span including all strutting, bolting, wedging etc. and removal (area of soffit to be measured).",
+          "code": "7.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 51,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 608.15,
+          "rate_display": "608.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work ashlar sunk or moulded or sunk and moulded upto floor five level in cement mortar 1:6 (1 cement : 6 coarse sand) including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
+          "code": "7.20",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "7.20.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 53,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 94463.0,
+              "rate_display": "94463.00"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "7.20.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 54,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 108686.0,
+              "rate_display": "108686.00"
+            }
+          ],
+          "order_index": 52,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work ashlar sunk or moulded or sunk and moulded or carved in :",
+          "code": "7.21",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Triangular or Square or rectangular pillars",
+              "code": "7.21.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 56,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 3779.0,
+              "rate_display": "3779.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Circular or polygonal pillars",
+              "code": "7.21.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 10706.0,
+              "rate_display": "10706.00"
+            }
+          ],
+          "order_index": 55,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work ashlar sunk or moulded in cornices. per metre per cm girth (60cm deep)",
+          "code": "7.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 58,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "MISCELLANEOUS STONE WORK",
+          "code": "303.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 59,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for stone work (veneer work) curved on plan with a mean radius not exceeding 6 m.",
+          "code": "7.24",
+          "children_count": 0,
+          "children": [],
+          "order_index": 60,
+          "source_page": 3,
+          "unit": "cum",
+          "rate": 2896.0,
+          "rate_display": "2896.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing stone dowels 10x5x2.50 cm cut to double wedge shape as per design in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases.",
+          "code": "7.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 61,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 54.55,
+          "rate_display": "54.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing sloping chajja of stone 40 mm thick and upto 80 cm wide beyond the wall as measured along the slope in cement mortar 1:4 (1 cement : 4 coarse sand) with 12 mm diameter anchoring steel bar, 45 cm long, fixed in each stone and supported on and including with bricks cove in cement mortar 1:4 (1 cement : 4 coarse sand), including pointing in cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
+          "code": "7.28",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone :",
+              "code": "7.28.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S.(non modular) bricks of class designation 7.5",
+                  "code": "7.28.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 64,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 2854.35,
+                  "rate_display": "2854.35"
+                }
+              ],
+              "order_index": 63,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone :",
+              "code": "7.28.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With common burnt clay F.P.S.(non modular) bricks of class designation 7.5",
+                  "code": "7.28.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 3,
+                  "unit": "sqm",
+                  "rate": 2932.6,
+                  "rate_display": "2932.60"
+                }
+              ],
+              "order_index": 65,
+              "source_page": 3
+            }
+          ],
+          "order_index": 62,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing horizontal chajja of stone 40 mm thick and upto 80 cm projection in cement mortar 1:4 (1 cement : 4 coarse sand), including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
+          "code": "7.29",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "7.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 68,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1833.25,
+              "rate_display": "1833.25"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "7.29.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 69,
+              "source_page": 3,
+              "unit": "sqm",
+              "rate": 1901.55,
+              "rate_display": "1901.55"
+            }
+          ],
+          "order_index": 67,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "30 mm red sand stone sun-shade (chisel-dressed) supported on red sand stone brackets, fixed in walls with cement mortar 1:4 (1 cement : 4 coarse sand), including finishing complete.",
+          "code": "7.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 70,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 2159.9,
+          "rate_display": "2159.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing red sand stone brackets 55x22.5x45 cm sunk and moulded including providing and fixing with 4 Nos gun metal cramp 25x6 mm 30 cm long",
+          "code": "7.31",
+          "children_count": 0,
+          "children": [],
+          "order_index": 71,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 6788.85,
+          "rate_display": "6788.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Stone work, plain in copings, cornices, string courses and plinth courses, upto 75 mm thick in Cement mortar 1:6 (1 cement : 6 coarse sand), including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
+          "code": "7.32",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "7.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 93741.1,
+              "rate_display": "93741.10"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "7.32.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 3,
+              "unit": "cum",
+              "rate": 107965.1,
+              "rate_display": "107965.10"
+            }
+          ],
+          "order_index": 72,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing stone jali 40 mm thick throughout in cement mortar 1:3 (1 cement : 3 coarse sand), including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment, matching the stone shade, jali slab without any chamfers etc.",
+          "code": "7.33",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Red sand stone",
+              "code": "7.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 14931.55,
+              "rate_display": "14931.55"
+            },
+            {
+              "node_type": "item",
+              "title": "White sand stone",
+              "code": "7.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 14994.15,
+              "rate_display": "14994.15"
+            }
+          ],
+          "order_index": 75,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying stone work in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
+          "code": "7.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 4,
+          "unit": "metre depth",
+          "rate": 1098.8,
+          "rate_display": "1098.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for laying stone work in or under foul condition.",
+          "code": "7.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 79,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 467.55,
+          "rate_display": "467.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Stone tile work for wall lining upto 10 m height with special adhesive over 12 mm thick bed of cement mortar 1:3 (1 cement : 3 coarse sand), including pointing in white cement with an admixture of pigment to match the stone shade.",
+          "code": "7.38",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "8 mm thick (mirror polished and machine cut edge)",
+              "code": "7.38.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Granite stone of any colour and shade",
+                  "code": "7.38.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 82,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 3094.55,
+                  "rate_display": "3094.55"
+                },
+                {
+                  "node_type": "item",
+                  "title": "Raj Nagar plain white marble/ Udaipur green marble/ Zebra black marble",
+                  "code": "7.38.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 83,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 2766.45,
+                  "rate_display": "2766.45"
+                }
+              ],
+              "order_index": 81,
+              "source_page": 4
+            }
+          ],
+          "order_index": 80,
+          "source_page": 4
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/7.0 STONE WORK.pdf",
+    "row_count": 84,
+    "note_count": 1,
+    "leaf_count": 54,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}

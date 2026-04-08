@@ -1,0 +1,2211 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/16.0 ROAD WORK.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "ROAD WORK",
+      "code": "16.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "Note: Seal coat items to be operated only with the prior approval of chief Engineer concerned. CONCRETE PAVEMENTS",
+          "source_page": 6,
+          "order_index": 1
+        },
+        {
+          "type": "note",
+          "text": "Note:- Cement content considered in M-30 is @ 340 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
+          "source_page": 6,
+          "order_index": 2
+        }
+      ],
+      "children_count": 101,
+      "children": [
+        {
+          "node_type": "item",
+          "title": "Preparation and consolidation of sub grade with power road roller of 8 to 12 tonne capacity after excavating earth to an average of 22.5 cm depth, dressing to camber and consolidating with road roller including making good the undulations etc. and re-rolling the sub grade and disposal of surplus earthwith lead upto 50 metres.",
+          "code": "16.1",
+          "children_count": 0,
+          "children": [],
+          "order_index": 0,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 218.9,
+          "rate_display": "218.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for compaction of earth work in embankment under optimum moisture conditions to give at least 95% of the maximum dry density (proctor density).",
+          "code": "16.2",
+          "children_count": 0,
+          "children": [],
+          "order_index": 1,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 24.85,
+          "rate_display": "24.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and stacking at site.",
+          "code": "16.3",
+          "children_count": 10,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "90 mm to 45 mm size stone aggregate",
+              "code": "16.3.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2098.4,
+              "rate_display": "2098.40"
+            },
+            {
+              "node_type": "item",
+              "title": "63 mm to 45 mm size stone aggregate",
+              "code": "16.3.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1636.05,
+              "rate_display": "1636.05"
+            },
+            {
+              "node_type": "item",
+              "title": "53 mm to 22.4 mm size stone aggregate",
+              "code": "16.3.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1842.3,
+              "rate_display": "1842.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Over burnt (Jhama) brick aggregate 120 mm to 40 mm",
+              "code": "16.3.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 798.1,
+              "rate_display": "798.10"
+            },
+            {
+              "node_type": "item",
+              "title": "Over burnt (Jhama) brick aggregate 90 mm to 45 mm",
+              "code": "16.3.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 872.05,
+              "rate_display": "872.05"
+            },
+            {
+              "node_type": "item",
+              "title": "Stone screening 13.2 mm nominal size (Type A)",
+              "code": "16.3.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2034.35,
+              "rate_display": "2034.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Stone screening 11.2 mm nominal size (Type B)",
+              "code": "16.3.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 2247.75,
+              "rate_display": "2247.75"
+            },
+            {
+              "node_type": "item",
+              "title": "Red bajri",
+              "code": "16.3.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 1564.9,
+              "rate_display": "1564.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Good earth",
+              "code": "16.3.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 775.5,
+              "rate_display": "775.50"
+            },
+            {
+              "node_type": "item",
+              "title": "Moorum",
+              "code": "16.3.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 768.25,
+              "rate_display": "768.25"
+            }
+          ],
+          "order_index": 2,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Laying, spreading and compacting stone aggregate of specified sizes to WBM specifications in uniform thickness, hand picking, rolling with 3 wheeled road/vibratory roller 8-10 tonne capacity in stages to proper grade and camber, applying and brooming requisite type of screening / binding material to fill up interstices of coarse aggregate, watering and compacting to the required density .",
+          "code": "16.4",
+          "children_count": 0,
+          "children": [],
+          "order_index": 13,
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 1046.95,
+          "rate_display": "1046.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Laying water bound macadam sub-base with brick aggregate and binding material, earth etc. including screening, sorting and spreading to template and consolidation with light power road-roller etc. complete.(payment for brick aggregate and moorum etc. to be made separately)",
+          "code": "16.5",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Over burnt (Jhama) brick aggregate 120 mm to 40 mm",
+              "code": "16.5.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 879.7,
+              "rate_display": "879.70"
+            },
+            {
+              "node_type": "item",
+              "title": "Over burnt (Jhama) brick aggregate 90 mm to 45 mm",
+              "code": "16.5.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 879.7,
+              "rate_display": "879.70"
+            }
+          ],
+          "order_index": 14,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying, stacking and Spreading 6 mm thick red bajri, watering and rolling complete including preparation of the surface and rolling.",
+          "code": "16.6",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With road roller/ hand roller",
+              "code": "16.6.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 1,
+              "unit": "sqm",
+              "rate": 24.45,
+              "rate_display": "24.45"
+            }
+          ],
+          "order_index": 17,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Brick edging in full brick width and half brick depth including excavation, refilling and disposal of surplus earth lead upto 50 metres.",
+          "code": "16.7",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "16.7.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 20,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 194.3,
+              "rate_display": "194.30"
+            }
+          ],
+          "order_index": 19,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Brick edging laid lengthwise with half brick depth including excavation, refilling and disposal of surplus earth lead upto 50 metres :",
+          "code": "16.8",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "16.8.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 22,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 53.45,
+              "rate_display": "53.45"
+            }
+          ],
+          "order_index": 21,
+          "source_page": 1
+        },
+        {
+          "node_type": "item",
+          "title": "Scarifying metalled (water-bound) road surface including disposal of rubbish, lead upto 50 m and consolidation of the aggregate received from scarifying with power road roller of 8 to 10 tonne capacity.",
+          "code": "16.9",
+          "children_count": 0,
+          "children": [],
+          "order_index": 23,
+          "source_page": 1,
+          "unit": "sqm",
+          "rate": 33.3,
+          "rate_display": "33.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Making bajri path including preparation of subgrade, supplying and laying brick aggregate of 50 mm nominal size 7.5 cm deep with blinding material consisting of 12 mm moorum and 12 mm red bajri consolidated with road roller.",
+          "code": "16.10",
+          "children_count": 0,
+          "children": [],
+          "order_index": 24,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 191.25,
+          "rate_display": "191.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Dry stone pitching 22.5 cm thick including supply of stones and preparing surface complete.",
+          "code": "16.11",
+          "children_count": 0,
+          "children": [],
+          "order_index": 25,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 883.15,
+          "rate_display": "883.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Dry brick pitching half brick thick in drains including supply of bricks and preparing the surface complete :",
+          "code": "16.12",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With common burnt clay F.P.S. (non modular) bricks of class designation 7.5",
+              "code": "16.12.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 27,
+              "source_page": 2,
+              "unit": "sqm",
+              "rate": 644.05,
+              "rate_display": "644.05"
+            }
+          ],
+          "order_index": 26,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Cutting road and making good the same including supply of extra quantities of materials i.e. aggregate, moorum screening, red bajri and labour required.",
+          "code": "16.13",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "bituminous portion",
+              "code": "16.13.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 29,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 5032.25,
+              "rate_display": "5032.25"
+            },
+            {
+              "node_type": "item",
+              "title": "Water bound macadam",
+              "code": "16.13.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 30,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 3078.05,
+              "rate_display": "3078.05"
+            }
+          ],
+          "order_index": 28,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Cutting bajri paths and making good the same including supply of extra quantities of brick aggregate, moorum and red bajri required.",
+          "code": "16.14",
+          "children_count": 0,
+          "children": [],
+          "order_index": 31,
+          "source_page": 2,
+          "unit": "sqm",
+          "rate": 284.2,
+          "rate_display": "284.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying at site :",
+          "code": "16.15",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "R.C.C. Standards post/ struts/rails/ pales of mix 1:1.5:3 (1 cement : 1.5 coarsesand : 3 graded stone aggregate 12.5 mm nominal size) with wooden plugs or 6 mm bar nibs wherever required as per direction of Engineer-in- charge (cost of earth works in excavation, concrete works in foundation to be paid separately).",
+              "code": "16.15.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 33,
+              "source_page": 2,
+              "unit": "cum",
+              "rate": 32891.2,
+              "rate_display": "32891.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Welded steel wire fabric of required width having rectangular mesh painted with two or more coats of enamel paint of approved shade over a coat of primer (Priming & Painting to be paid for separately). kg",
+              "code": "16.15.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 34,
+              "source_page": 2
+            }
+          ],
+          "order_index": 32,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "78.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 35,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and fixing turn buckles and straining bolts for barbed wire fencing. each set",
+          "code": "16.16",
+          "children_count": 0,
+          "children": [],
+          "order_index": 36,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "274.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Fencing with R.C.C. post placed at required distance, embedded in cement concrete blocks, every 15th post, last but one end post and corner post shall be strutted on both sides and end post one side only, provided with horizontal lines and two diagonals of barbed wire weighing 9.38 kg per 100 metres (minimum), between the two posts fitted and fixed with G.I. staples on wooden plugs or G.I. binding wire tied to 6 mm bar nibs fixed while casting the post (cost of R.C.C. posts, struts, earth work and concrete to be paid for separately) :- Payment to be made per metre cost of total length of barbed wire used.",
+          "code": "16.17",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With G.I. barbed wire",
+              "code": "16.17.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 39,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 14.0,
+              "rate_display": "14.00"
+            }
+          ],
+          "order_index": 38,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Fencing with angle iron post placed at required distance embedded in cement concrete blocks, every 15th post, last but one end post and corner post shall be strutted on both sides and end post on one side only and provided with horizontal lines and two diagonals interwoven with horizontal wires, of barbed wire weighing 9.38 kg per 100 m (minimum), between the two posts fitted and fixed with G.I. staples, turn buckles etc. complete. (Cost of posts, struts, earth work and concrete work to be paid for separately). Payment to be made per metre cost of total length of barbed wire used.",
+          "code": "16.18",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With G.I. barbed wire",
+              "code": "16.18.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 41,
+              "source_page": 2,
+              "unit": "metre",
+              "rate": 22.1,
+              "rate_display": "22.10"
+            }
+          ],
+          "order_index": 40,
+          "source_page": 2
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying at site Angle iron post & strut of required size including bottom to be split and bent at right angle in opposite direction for 10 cm length and drilling holes upto 10 mm dia. etc. complete. kg",
+          "code": "16.19",
+          "children_count": 0,
+          "children": [],
+          "order_index": 42,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "125.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 43,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Welded steel wire fabric fencing with posts of specified material and of standard design placed and embedded in cement concrete blocks 45x45x 60 cm of mix 1:5:10 (1 cement:5 fine sand : 10 graded stone aggregate 40 mm nominal size), every 15th post, last but one end post and corner post shall be strutted on both sides and end post on one side only and struts embedded in cement concrete blocks 70x45x50 cm of the same mix, provided with welded steel wire fabric fixed between the posts fitted and fixed with G.I. staples on wooden plugs or tied to 6 mm bar nibs with G.I. binding wire (cost of posts, welded steel wire fabric, painting, earth work in excavation and concrete to be paid for separately).",
+          "code": "16.20",
+          "children_count": 0,
+          "children": [],
+          "order_index": 44,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 66.15,
+          "rate_display": "66.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Engraving letters in hard stone per cm height per letter",
+          "code": "16.21",
+          "children_count": 0,
+          "children": [],
+          "order_index": 45,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "10.55",
+          "children_count": 0,
+          "children": [],
+          "order_index": 46,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 15x15x90 cm boundary stone of hard stone with top 30 cm chisel dressed on all four sides including top (cost of excavation, refilling and concrete etc. to be paid for separately).",
+          "code": "16.22",
+          "children_count": 0,
+          "children": [],
+          "order_index": 47,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 252.9,
+          "rate_display": "252.90"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 15 cm dia at top, 20 cm at bottom and 90 cm high precast reinforced cement concrete 1:1.5:3 (1 cement : 1.5 coarse sand: 3 graded stone aggregate 20 mm nominal size) boundary stone as per standard design, including finishing smooth with cement mortar 1:3 (1 cement : 3 fine sand) (cost of excavation, refilling and concreting to be paid for separately).",
+          "code": "16.23",
+          "children_count": 0,
+          "children": [],
+          "order_index": 48,
+          "source_page": 3,
+          "unit": "each",
+          "rate": 852.4,
+          "rate_display": "852.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing precast reinforced cement concrete 1:1.5:3 (1 cement: 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size) kilometre stone as per standard design, including finishing smooth in 1:3 cement mortar (1 cement : 3 fine sand) but excluding the cost of earth work, concrete in foundation, painting and lettering etc. which shall be paid for separately.",
+          "code": "16.24",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "35x111x25 cm size",
+              "code": "16.24.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 50,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 2876.7,
+              "rate_display": "2876.70"
+            },
+            {
+              "node_type": "item",
+              "title": "50x152.5x25 cm size",
+              "code": "16.24.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 51,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 5170.25,
+              "rate_display": "5170.25"
+            },
+            {
+              "node_type": "item",
+              "title": "35x93.5x18 cm size",
+              "code": "16.24.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 52,
+              "source_page": 3,
+              "unit": "each",
+              "rate": 1924.5,
+              "rate_display": "1924.50"
+            }
+          ],
+          "order_index": 49,
+          "source_page": 3
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing on new surface with paving bitumen of grade VG - 10 of approved quality using 2.25 kg of bitumen per sqm with 1.65 cum of stone chippings 13.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity etc. complete:",
+          "code": "16.25",
+          "children_count": 0,
+          "children": [],
+          "order_index": 53,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 225.35,
+          "rate_display": "225.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing on new surface in two coats with bitumen of grade VG -10 of approved quality using 1.8 kg of bitumen per sqm with 1.5 cum of stone chippings 13.2 mm nominal size per 100 sqm of road surface for first coat and 1.1 kg. of bitumen per sqm with 1.00 cu. metre of stone chippings 11.2 mm nominal size per 100 sqm of road surface for second coat, including consolidation of each coat separately with road roller of 6 to 8 tonne capacity etc. complete.",
+          "code": "16.26",
+          "children_count": 0,
+          "children": [],
+          "order_index": 54,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 311.85,
+          "rate_display": "311.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing on old surface with hot bitumen of grade VG - 10 of approved quality using 1.95 kg of bitumen per sqm with 1.50 cum of stone chippings 11.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity, etc. complete.",
+          "code": "16.27",
+          "children_count": 0,
+          "children": [],
+          "order_index": 55,
+          "source_page": 3,
+          "unit": "sqm",
+          "rate": 175.1,
+          "rate_display": "175.10"
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing one coat on new surface with bitumen of specified grade at a rate of 1.95 kg/sqm of surface area with 1.5 cum of stone chippings 13.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity , etc. complete :",
+          "code": "16.28",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Using bitumen emulsion (minimum 50% bitumen content- RS grade conforming to IS : 8887)",
+              "code": "16.28.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 57,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 198.45,
+              "rate_display": "198.45"
+            }
+          ],
+          "order_index": 56,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Surface dressing one coat on old surface with bitumen of specified grade at the rate of 1.22 kg/ sqm of surface area with 1.10 cum of stone chippings 11.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity etc. complete :",
+          "code": "16.29",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Using bitumen emulsion (minimum 50% bitumen content- RS grade conforming to IS : 8887)",
+              "code": "16.29.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 59,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 125.3,
+              "rate_display": "125.30"
+            }
+          ],
+          "order_index": 58,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying tack coat using hot straight run bitumen of grade VG - 10, including heating the bitumen, spraying the bitumen with mechanically operated spray unit fitted on bitumen boiler, cleaning and preparing the existing road surface as per specifications :",
+          "code": "16.30",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "On W.B.M. @ 0.75 Kg / sqm",
+              "code": "16.30.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 61,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 60.5,
+              "rate_display": "60.50"
+            },
+            {
+              "node_type": "item",
+              "title": "On bituminous surface @ 0.50 Kg / sqm",
+              "code": "16.30.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 62,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 48.2,
+              "rate_display": "48.20"
+            }
+          ],
+          "order_index": 60,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying tack coat using bitumen emulsion conforming to IS:8887, using emulsion pressure distributer including preparing the surface & cleaning with mechanical broom.",
+          "code": "16.31",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With rapid setting bitumen emulsion",
+              "code": "16.31.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "On W.B.M / W.M.M. @ 0.4kg/sqm",
+                  "code": "16.31.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 65,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 13.45,
+                  "rate_display": "13.45"
+                },
+                {
+                  "node_type": "item",
+                  "title": "On bituminous surface @ 0.25kg/sqm",
+                  "code": "16.31.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 66,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 9.2,
+                  "rate_display": "9.20"
+                }
+              ],
+              "order_index": 64,
+              "source_page": 4
+            },
+            {
+              "node_type": "item",
+              "title": "With medium setting bitumen emulsion",
+              "code": "16.31.2",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "On W.B.M / W.M.M. @ 0.4kg/sqm",
+                  "code": "16.31.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 68,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 21.2,
+                  "rate_display": "21.20"
+                },
+                {
+                  "node_type": "item",
+                  "title": "On bituminous surface @ 0.25kg/sqm",
+                  "code": "16.31.2.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 69,
+                  "source_page": 4,
+                  "unit": "sqm",
+                  "rate": 14.05,
+                  "rate_display": "14.05"
+                }
+              ],
+              "order_index": 67,
+              "source_page": 4
+            }
+          ],
+          "order_index": 63,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "2 cm premix carpet surfacing with 1.8 cum and 0.90 cum of stone chippings of 13.2 mm size and 11.2 mm size respectively per 100 sqm and 52 kg and 56 kg of hot bitumen per cum of stone chippings of 13.2 mm and 11.2 mm size respectively, including a tack coat with hot straight run bitumen, including consolidation with road roller of 6 to 9 tonne capacity etc. complete (tack coat to be paid for separately).",
+          "code": "16.32",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 10 heated and then mixed with solvent at the rate of 70 grams per kg of asphalt",
+              "code": "16.32.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 71,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 234.05,
+              "rate_display": "234.05"
+            },
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 30 with no solvent",
+              "code": "16.32.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 72,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 245.15,
+              "rate_display": "245.15"
+            },
+            {
+              "node_type": "item",
+              "title": "With Refinery Modified Bitumen CRMB 55 conforming to IRC: SP: 53",
+              "code": "16.32.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 233.15,
+              "rate_display": "233.15"
+            }
+          ],
+          "order_index": 70,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "2.5 cm premix carpet surfacing with 2.25 cum and 1.12 cum of stone chippings of 13.2 mm and 11.2 mm size respectively per 100 sqm and 52 kg and 56 kg of hot bitumen per cum of stone chippings of 13.2 mm and 11.2 mm size respectively, including a tack coat with hot straight run bitumen, including consolidation with road roller of 6 to 9 tonne capacity etc. complete (tack coat to be paid for separately).",
+          "code": "16.33",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 10 heated and then mixed with solvent at the rate of 70 grams per kg of asphalt",
+              "code": "16.33.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 75,
+              "source_page": 4,
+              "unit": "sqm",
+              "rate": 281.0,
+              "rate_display": "281.00"
+            },
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 30 with no solvent",
+              "code": "16.33.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 294.95,
+              "rate_display": "294.95"
+            },
+            {
+              "node_type": "item",
+              "title": "With Refinery Modified Bitumen CRMB 55 conforming to IRC: SP: 53",
+              "code": "16.33.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 77,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 279.9,
+              "rate_display": "279.90"
+            }
+          ],
+          "order_index": 74,
+          "source_page": 4
+        },
+        {
+          "node_type": "item",
+          "title": "2 cm premix carpet surfacing with 2.4 cum of stone chippings 11.2 mm nominal size per 100 sqm and bitumen emulsion (medium setting min. 65% bitumen content) complying with IS : 8887, using 96 kg per cum of chippings, including consolidation with road roller of 6 to 9 tonne capacity etc. complete.",
+          "code": "16.34",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 208.9,
+          "rate_display": "208.90"
+        },
+        {
+          "node_type": "item",
+          "title": "2.5 cm premix carpet surfacing with 3 cum of stone chippings 10 mm nominal size per 100 sqm and bitumen emulsion (medium setting min. 65% bitumen contents) complying with IS : 8887, using 96 kg per cum of chippings of road surface, including consolidation with road roller etc complete .",
+          "code": "16.35",
+          "children_count": 0,
+          "children": [],
+          "order_index": 79,
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 252.15,
+          "rate_display": "252.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Bitumen Penetration Macadam with hard stone aggregate of quality, size and grading as specified, with bitumen of suitable penetration grade, including required key aggregate as specified, spreading coarse aggregate with the help of self propelled/ tipper tail mounted aggregate spreader and applying bitumen by a pressure distributor and then spreading key aggregate with the help of aggregate spreader complete, including consolidation with road roller of minimum 8 to 10 tonne capacity to achieve specified values of compaction and surface accuracy :",
+          "code": "16.36",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "For 50 mm compacted thickness using coarse aggregate of size 50-20 mm graded @ 0.60 cum per 10 sqm key aggregate of size 12.5 mm graded @ 0.15 cum per 10 sqm. With paving asphalt grade VG - 10 @ 50 kg/ 10 sqm.",
+              "code": "16.36.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 81,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 505.65,
+              "rate_display": "505.65"
+            },
+            {
+              "node_type": "item",
+              "title": "For 75 mm compacted thickness in two layers using stone aggregate of size 63-41 mm graded @ 0.90 cum per 10 sqm key aggregate of size 20.0 mm graded @ 0.18 cum per 10 sqm. With paving asphalt grade VG - 10 @ 68 kg/10 sqm.",
+              "code": "16.36.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 82,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 744.15,
+              "rate_display": "744.15"
+            }
+          ],
+          "order_index": 80,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying bitumen mastic wearing course (as per specifications) with industrial bitumen of grade 85/25 conforming to IS : 702, prepared by using mastic cooker and laid to required level and slope, including providing antiskid surface with bitumen precoated fine grained hard stone chipping of approved size at the rate of 0.005 cum per 10 sqm and at approximate spacing of 10 cm centre to centre in both directions, pressed into surface protruding 1 mm to 4 mm over mastic surface, including cleaning the surface, removal of debris etc. all complete. (Considering bitumen using 10.2% as per MORTH specification).",
+          "code": "16.37",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "25 mm thick",
+              "code": "16.37.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 84,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 854.15,
+              "rate_display": "854.15"
+            },
+            {
+              "node_type": "item",
+              "title": "40 mm thick",
+              "code": "16.37.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 1365.5,
+              "rate_display": "1365.50"
+            }
+          ],
+          "order_index": 83,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "2.5 cm thick bitumastic sheet with hot bitumen of approved quality, using stone chippings (60% with 12.5 mm nominal size and 40% with 10 mm nominal size) @ 1.65 cum per 100 sqm and coarse sand @ 1.65 cum per 100 sqm of road surface and with bitumen @ 56 kg/cum of stone chippings and @ 128 kg/cum of sand over a tack coat with hot straight run bitumen, including consolidation with road roller of 8 to 10 tonne etc. complete. (tack coat to be paid separately) :",
+          "code": "16.38",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 10 heated and then mixed with solvent at the rate of 70 grams per kg of asphalt",
+              "code": "16.38.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 87,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 353.65,
+              "rate_display": "353.65"
+            },
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 30",
+              "code": "16.38.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 88,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 377.05,
+              "rate_display": "377.05"
+            },
+            {
+              "node_type": "item",
+              "title": "With Refinery Modified Bitumen CRMB 55 conforming to IRC: SP : 53",
+              "code": "16.38.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 5,
+              "unit": "sqm",
+              "rate": 351.8,
+              "rate_display": "351.80"
+            }
+          ],
+          "order_index": 86,
+          "source_page": 5
+        },
+        {
+          "node_type": "item",
+          "title": "4 cm thick bitumastic sheet with hot bitumen of approved quality, using stone chippings (60% with 12.5 mm nominal size and 40% with 10 mm nominal size) @ 2.60 cum per 100 sqm and coarse sand @ 2.60 cum per 100 sqm of road surface and with bitumen @ 56 kg/cum of stone chippings and @ 128 kg/cum of sand over a tack coat with hot straight run bitumen, including consolidation with road roller of 8 to 10 tonne etc. complete. (tack coat to be paid separately) :",
+          "code": "16.39",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With paving Asphalt grade VG - 10 heated and then mixed with solvent at the rate of 70 grams per kg of asphalt",
+              "code": "16.39.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 91,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 531.6,
+              "rate_display": "531.60"
+            },
+            {
+              "node_type": "item",
+              "title": "With paving asphalt grade VG - 30 with no solvent",
+              "code": "16.39.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 92,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 568.6,
+              "rate_display": "568.60"
+            },
+            {
+              "node_type": "item",
+              "title": "With Refinery Modified Bitumen CRMB 55 conforming to IRC: SP : 53",
+              "code": "16.39.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 93,
+              "source_page": 6,
+              "unit": "sqm",
+              "rate": 528.65,
+              "rate_display": "528.65"
+            }
+          ],
+          "order_index": 90,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying seal coat of premixed fine aggregate ( passing 2.36 mm and retained on 180 micron sieve) with bitumen using 128 kg of bitumen of grade VG - 10 bitumen per cum of fine aggregate and 0.60 cum of fine aggregate per 100 sqm of road surface, including rolling and finishing with road roller all complete.",
+          "code": "16.40",
+          "children_count": 0,
+          "children": [],
+          "order_index": 94,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 88.55,
+          "rate_display": "88.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying seal coat over prepared surface of road with bitumen heated in bitumen boiler fitted with the spray set spraying using 98 kg of bitumen of grade VG - 10 and blinding surface with 0.90 cum of stone aggregate of 6.7 mm size (Passing 11.2 mm sieve and retained on 2.36 mm sieve) per 100 sqm of road surface, including rolling and finishing with power road roller all complete.",
+          "code": "16.41",
+          "children_count": 0,
+          "children": [],
+          "order_index": 95,
+          "source_page": 6,
+          "unit": "sqm",
+          "rate": 130.85,
+          "rate_display": "130.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 40 mm nominal size) in pavements, laid to required slope and camber in panels as required including consolidation finishing and tamping complete.",
+          "code": "16.42",
+          "children_count": 0,
+          "children": [],
+          "order_index": 96,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 7993.8,
+          "rate_display": "7993.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying design mix cement concrete of M-30 grade, in roads/ taxi tracks/ runways, using cement content as per design mix, using coarse sand and graded stone aggregate of 40 mm nominal size in appropriate proportions as per approved & specified design criteria, providing dowel bars with sleeve/ tie bars wherever required, laying at site, spreading and compacting mechanically by using needle and surface vibrators, levelling to required slope/ camber, finishing with required texture, including steel form work with sturdy M.S. channel sections, curing, making provision for contraction/ expansion, construction & longitudinal joints (10 mm wide x 50 mm deep) by groove cutting machine, providing and filling joints with approved joint filler and sealants, complete all as per direction of Engineer- in-charge (Item of joint fillers, sealants, dowel bars with sleeve/ tie bars to be paid separately).",
+          "code": "16.43",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Cement concrete prepared with batch mixing machine",
+              "code": "16.43.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 98,
+              "source_page": 6,
+              "unit": "cum",
+              "rate": 10529.35,
+              "rate_display": "10529.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Cement concrete manufactured in automatic batching plant (RMC plant) including transportation to site in transit mixer",
+              "code": "16.43.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 99,
+              "source_page": 6,
+              "unit": "cum",
+              "rate": 11098.45,
+              "rate_display": "11098.45"
+            }
+          ],
+          "order_index": 97,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Extra for providing and mixing hardening compound of approved quality as per manufacturer’s specification in cement concrete.",
+          "code": "16.44",
+          "children_count": 0,
+          "children": [],
+          "order_index": 100,
+          "source_page": 6,
+          "unit": "litre",
+          "rate": 55.5,
+          "rate_display": "55.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing pre-moulded joint filler in expansion joints of RCC roads / CC pavements after making the joints dust free with high pressure air jet cleaners, all complete as per direction of the Engineer-in-Charge. (Pre-moulded joint fillers shall be made of bitumen hot sealing compound impregnated fibre board having impregnation more than 35%, conforming to IS:1838 for fibre board and IS: 1834 for hot sealing bitumen compound grade A.) per cm depth per cm width per metre length",
+          "code": "16.45",
+          "children_count": 0,
+          "children": [],
+          "order_index": 101,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "",
+          "code": "5.30",
+          "children_count": 0,
+          "children": [],
+          "order_index": 102,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and filling in position rubberized bitumen hot sealing compound for sealing of expansion joints in roads / pavements all complete as per direction of the Engineer-in-Charge.",
+          "code": "16.46",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Providing and filling in position rubberized bitumen hot sealing compound for sealing of expansion joints in roads / pavements all complete as per direction of the Engineer-in-Charge. per cm depth per cm width per metre length",
+              "code": "16.46.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 104,
+              "source_page": 7
+            }
+          ],
+          "order_index": 103,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "PAINTING AREA/RUNWAY MARKING",
+          "code": "8.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 105,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Painting runway/taxi track/apron marking with adequate nos of coats to give uniform finish with road marking paint of superior make as approved by the Engineer-in-charge, including cleaning the surface of ail dirt, scales, oil, grease and other foreign material etc. and lining out complete.",
+          "code": "16.47",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coats)",
+              "code": "16.47.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 107,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 188.2,
+              "rate_display": "188.20"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (One or more coats)",
+              "code": "16.47.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 108,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 120.8,
+              "rate_display": "120.80"
+            }
+          ],
+          "order_index": 106,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Painting road surface marking with adequate nos of coats to give uniform finish with ready mixed road marking paint conforming to IS : 164, on bituminous surface in white/yellow shade, including cleaning the surface of all dirt, scales, oil, grease and foreign material etc. complete.",
+          "code": "16.48",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "New work (Two or more coats)",
+              "code": "16.48.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 110,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 288.9,
+              "rate_display": "288.90"
+            },
+            {
+              "node_type": "item",
+              "title": "Old work (One or more coats)",
+              "code": "16.48.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 111,
+              "source_page": 7,
+              "unit": "sqm",
+              "rate": 189.85,
+              "rate_display": "189.85"
+            }
+          ],
+          "order_index": 109,
+          "source_page": 7
+        },
+        {
+          "node_type": "item",
+          "title": "Making bell mouth opening/ entrance of size 100x50x50 cm for drainage pipe under footpath, including providing cement concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) for shape of bell mouth, including plastering providing and fixing precast R.C.C./ S.F.R.C. slab including plastering with cement mortar 1:3 (1 cement : 3 fine sand) of 6 mm thickness on exposed surface of the slab & bell mouth including centring, shuttering & neat cement punning inside the bell mouth etc. all complete.",
+          "code": "16.49",
+          "children_count": 0,
+          "children": [],
+          "order_index": 112,
+          "source_page": 7,
+          "unit": "each",
+          "rate": 3050.4,
+          "rate_display": "3050.40"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing Glow studs of size 100x20 mm made of heavy duty body shall be moulded ASA (Acrylic styrene Acryloretrite ) or HIP (High impact polystyrene) or ABS having electronically welded micro- prismatic lens with abrasion resistant coating as approved by Engineer in charge. The glow stud shall support a load of 13635 kg tested in accordance with ASTM D4280. The slope of retro- reflective surface shall be 35 (+/- 5) degress to base .The reflective panels on both sides with at least 12 cm of reflective area up each side. The luminance intensity should be as per the specification and shall be tested as described in ASTM I: 809 as recommended in BS: 873 part 4 : 1973. The studs shall be fixed to the Road surface using the adhesive conforming to IS, as per procedure recommended by the manufacturer complete and as per direction of Engineer-in-charge.",
+          "code": "16.50",
+          "children_count": 0,
+          "children": [],
+          "order_index": 113,
+          "source_page": 7,
+          "unit": "each",
+          "rate": 206.3,
+          "rate_display": "206.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Preparation of sub-base road pavement with commercial dry lime (slaked), fly ash stabilised soil with a mix of 3% lime, 12% fly ash and 85% local suitable soil by weight, so as to achieve minimum field C.B.R. of 20, including mixing, rolling with road roller curing etc. all complete.",
+          "code": "16.51",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Minimum thickness 15 cm",
+              "code": "16.51.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 115,
+              "source_page": 8,
+              "unit": "cum",
+              "rate": 1514.4,
+              "rate_display": "1514.40"
+            }
+          ],
+          "order_index": 114,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing precast lime fly ash concrete blocks 1:2:3:6 (1 lime: 2 fly ash : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size), including finishing with 10 mm thick cement mortar 1:3 (1 cement : 3 coarse sand) in foot paths, including preparation of sub grade with a hand rammer, laying 10 mm thick leveling course of fine sand (jamuna sand) and filling the joints with fine sand.",
+          "code": "16.52",
+          "children_count": 0,
+          "children": [],
+          "order_index": 116,
+          "source_page": 8,
+          "unit": "cum",
+          "rate": 13719.05,
+          "rate_display": "13719.05"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing concertina coil fencing with punched tape concertina coil 600 mm dia 10 metre openable length ( total length 90 m), having 50 nos rounds per 6 metre length, upto 3 m height of wall with existing angle iron ‘Y’ shaped placed 2.4m or 3.00 m apart and with 9 horizontal R.B.T. reinforced barbed wire, stud tied with G.I. staples and G.I. clips to retain horizontal, including necessary bolts or G.I. barbed wire tied to angle iron, all complete as per direction of Engineer-in-charge, with reinforced barbed tape(R.B.T.) / Spring core (2.5 mm thick) wire of high tensile strength of 165 kg/ sq. mm with tape (0.52 mm thick) and weight 43.478 gm/ metre (cost of M.S. angle, C.C. blocks shall be paid separately)",
+          "code": "16.53",
+          "children_count": 0,
+          "children": [],
+          "order_index": 117,
+          "source_page": 8,
+          "unit": "metre",
+          "rate": 375.8,
+          "rate_display": "375.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Dense Graded Bituminous Macadam using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers as per specifications to achieve the desired compaction and density, complete as per specificatons and directions of Engineer-in-Charge.",
+          "code": "16.54",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "50 to 100 mm average compacted thickness with bitumen of grade VG-30 @ 5% (percentage by weight of total mix) and lime filler @ 2% (percentage by weight of Aggregate) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.54.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 119,
+              "source_page": 8,
+              "unit": "cum",
+              "rate": 11129.55,
+              "rate_display": "11129.55"
+            },
+            {
+              "node_type": "item",
+              "title": "50 to 100 mm average compacted thickness with bitumen of grade VG-30 @ 5% (percentage by weight of total mix) and lime filler @ 2% (percentage by weight of Aggregate) prepared in Drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.54.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 120,
+              "source_page": 8,
+              "unit": "cum",
+              "rate": 11032.2,
+              "rate_display": "11032.20"
+            }
+          ],
+          "order_index": 118,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying bituminous macadam using crushed stone aggregates of specified grading premixed with bituminous binder, transported to site by tippers, laid over a previously prepared surface with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers as per specifications to achieve the desired compaction and density, complete as per specificatons and directions of Engineer-in-Charge.",
+          "code": "16.55",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "50 to 100 mm average compacted thickness with bitumen of grade VG-30 @ 3.50% (percentage by weight of total mix) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.55.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 122,
+              "source_page": 8,
+              "unit": "cum",
+              "rate": 8505.65,
+              "rate_display": "8505.65"
+            },
+            {
+              "node_type": "item",
+              "title": "50 to 100 mm average compacted thickness with bitumen of grade VG-30 @ 3.50% (percentage by weight of total mix) prepared in Drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.55.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 123,
+              "source_page": 8,
+              "unit": "cum",
+              "rate": 8413.0,
+              "rate_display": "8413.00"
+            }
+          ],
+          "order_index": 121,
+          "source_page": 8
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying semi- dense Bituminous concrete using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers to achieve the desired compaction and density as per specification, complete and as per directions of Engineer-in-Charge.",
+          "code": "16.56",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "25 mm compacted thickness with bitumen of grade VG-30 @ 5% (percentage by weight of total mix) and lime filler @ 2% (percentage by weight of Aggregate) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.56.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 125,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 277.7,
+              "rate_display": "277.70"
+            },
+            {
+              "node_type": "item",
+              "title": "25 mm compacted thickness with bitumen of grade VG-30 @ 5% (percentage by weight of total mix) and lime filler @ 2% (percentage by weight of Aggregate) prepared in Drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.56.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 126,
+              "source_page": 9,
+              "unit": "sqm",
+              "rate": 275.3,
+              "rate_display": "275.30"
+            }
+          ],
+          "order_index": 124,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying Bituminous concrete using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers to achieve the desired compaction and density as per specification, complete and as per directions of Engineer-in-Charge.",
+          "code": "16.57",
+          "children_count": 8,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade VG-30 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.57.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 128,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 12126.2,
+              "rate_display": "12126.20"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade VG- 30 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) and waste plastic additive @ 8% (percentage by weight of bitumen) prepared in Batch Type Hot Mix Plant of 100- 120 TPH capacity.",
+              "code": "16.57.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 129,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 12708.75,
+              "rate_display": "12708.75"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade PMB- 40 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.57.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 130,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 11204.1,
+              "rate_display": "11204.10"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade CRMB- 60 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in Batch Type Hot Mix Plant of 100-120 TPH capacity.",
+              "code": "16.57.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 131,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 10660.3,
+              "rate_display": "10660.30"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade VG- 30 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.57.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 132,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 12026.8,
+              "rate_display": "12026.80"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade VG- 30 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) and waste plastic additive @ 8% (percentage by weight of bitumen) prepared in drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.57.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 133,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 12609.3,
+              "rate_display": "12609.30"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade PMB- 40 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.57.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 134,
+              "source_page": 9,
+              "unit": "cum",
+              "rate": 11104.65,
+              "rate_display": "11104.65"
+            },
+            {
+              "node_type": "item",
+              "title": "40/50 mm compacted thickness with bitumen of grade CRMB- 60 @ 5.5% (percentage by weight of total mix) and lime filler @ 3% (percentage by weight of Aggregate) prepared in Drum Type Hot Mix Plant of 60-90 TPH capacity.",
+              "code": "16.57.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 135,
+              "source_page": 10,
+              "unit": "cum",
+              "rate": 10560.85,
+              "rate_display": "10560.85"
+            }
+          ],
+          "order_index": 127,
+          "source_page": 9
+        },
+        {
+          "node_type": "item",
+          "title": "Manufacturing, supplying and fixing retro reflective sign boards made up of 2 mm thick aluminium sheet, face to be fully covered with high intensity encapsulated type heat activated retro reflective sheeting conforming to type - IV of ASTM-D 4956-01 in blue and silver white or other colour combination including subject matter, message (bi-lingual), symbols and borders etc. as per IRC ; 67:2001, pasted on substrate by an adhesive backing which shall be activated by applying heat and pressure conforming to class -2 of ASTM-D-4956-01 and fixing the same with suitable sized aluminium alloy rivets @ 20 cm c/c to back support frame of M.S. angle iron of size 25x25x3 mm along with theft resistant measures, mounted and fixed with 2 Nos. M.S. angles of size 35x35x5 mm to a vertical post made up to M.S. Tee section ISMT 50x50x6 mm welded with base plate of size 100x100x5 mm at the bottom end and including making holes in pipes, angles flats, providing & fixing M.S. message plate of required size, steel work to be painted with two or more coats of synthetic enamel paint of required shade and of approved brand & manufacture over priming coat of zinc chromate yellow primer (vertical MS-Tee support to be painted in black and white colours).Backside of aluminium sheet to be painted with two or more coats of epoxy paint over and including appropriate priming coat including all leads and lifts etc. complete as per drawing , specification and direction of Engineer-in-charge.",
+          "code": "16.59",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Mandatory/ Regulatory sign boards of 900 mm diametre with support length of 3750 mm",
+              "code": "16.59.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 137,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 7183.35,
+              "rate_display": "7183.35"
+            },
+            {
+              "node_type": "item",
+              "title": "Cautionary /warning sign boards of equilateral triangular shape having each side of 900 mm with support length of 3650 mm",
+              "code": "16.59.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 138,
+              "source_page": 10,
+              "unit": "each",
+              "rate": 5559.75,
+              "rate_display": "5559.75"
+            }
+          ],
+          "order_index": 136,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Manufacturing, supplying and fixing retro reflective overhead signage boards made up of 2 mm thick aluminium sheet, face to be fully covered with high intensity and encapsulated lens type heat activated retro reflective sheeting conforming to type - III of ASTM-D-4956-01 as approved by Engineer-in-charge, letters, borders etc. as per IRC : 67-2001 in silver white with blue colour back ground and with high intensity grade, pasted on substrate by pressure sensitive adhesive backing which shall be activated by applying pressure conforming to class II of ASTM-D-4956-01 and fixing the same to the plate of structural frame work by means of suitable sized aluminium alloys, rivets or bolts & nuts @ 300 mm centre to centre all along the periphery as well as in two vertical rows along with theft resistant measures, including the cost of painting with two or more coats of epoxy paint in grey colour on the back side of aluminium sheet including appropriate priming coat. The rate includes the cost of rounding off the corners, lowering down the structural frame work from the gantry, fixing and erecting the same in position all complete as per drawings, specification and direction of the engineer-in-charge.(Structural frame work including M.S. plate to be provided separately. Rectangular area of the sheet only shall be measured for payment).",
+          "code": "16.60",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Overhead informatory road signage",
+              "code": "16.60.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 140,
+              "source_page": 10,
+              "unit": "sqm",
+              "rate": 5879.9,
+              "rate_display": "5879.90"
+            }
+          ],
+          "order_index": 139,
+          "source_page": 10
+        },
+        {
+          "node_type": "item",
+          "title": "Providing Retro-reflective regulatory sign board of size 900 mm dia metre made out of 2 mm thick aluminium sheet, face to be fully covered with high intensity encapsulated lens type retro -reflective sheeting as approved by Engineer-in-charge . Letter, symbols, borders etc. will be as per IRC - 67 with required colour scheme on the boards and with the high intensity grade A. The aluminium sheet to be riveted to M.S. frame of angle iron of size 40x40x4 mm. The boards will be fixed to 1 No. 50x50 mm square post made of M.S. angle 50x50x4 mm, 4 m long welded to the frame with adequate anti-theft arrangement .Sheet work to be painted with two or more coats of synthetic enamel paint over an under coat (primer) and back side of aluminium sheet to be painted with two or more coats of epoxy paint including appropriate priming coat complete in all respects as per direction of Engineer-in-charge.",
+          "code": "16.61",
+          "children_count": 0,
+          "children": [],
+          "order_index": 141,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 8154.35,
+          "rate_display": "8154.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and applying 2.5 mm thick road marking strips (retro- reflective) of specified shade/ colour using hot thermoplastic material by fully/ semi automatic thermoplastic paint applicator machine fitted with profile shoe, glass beads dispenser, propane tank heater and profile shoe heater, driven by experienced operator on road surface including cost of material, labour, T&P, cleaning the road surface of all dirt, seals, oil, grease and foreign material etc. complete as per direction of Engineer-in-charge and accordance with applicable specifications.",
+          "code": "16.62",
+          "children_count": 0,
+          "children": [],
+          "order_index": 142,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 747.8,
+          "rate_display": "747.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, laying and making kerb channel 30 cm wide and 50 mm thick with cement concrete 1:3:6 (1 cement: 3 coarse sand:6 graded stone aggregate 20 mm nominal size) over 75 mm bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including finishing the top smooth etc. complete and as per direction of Engineer-in-charge.",
+          "code": "16.63",
+          "children_count": 0,
+          "children": [],
+          "order_index": 143,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 558.3,
+          "rate_display": "558.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying 75 mm thick compacted bed of dry brick aggregate of 40 mm thick nominal size including spreading, well ramming, consolidating and grouting with jamuna sand, including finishing smooth etc. complete as per direction of Engineer-in-charge.",
+          "code": "16.64",
+          "children_count": 0,
+          "children": [],
+          "order_index": 144,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 199.35,
+          "rate_display": "199.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing post delineators made of ABS round body fitted with 2 nos 100 mm dia high reflective reflectors and mounted on MS pipe of 65 mm dia duly powder coated anti-rust and anti theft steel to be installed as per direction of Engineer-in-charge.",
+          "code": "16.65",
+          "children_count": 0,
+          "children": [],
+          "order_index": 145,
+          "source_page": 11,
+          "unit": "each",
+          "rate": 904.2,
+          "rate_display": "904.20"
+        },
+        {
+          "node_type": "item",
+          "title": "Excavating holes upto 0.10 cum, including getting out the excavated soil, then returning the soil as deported in layers not exceeding 20 cm in depth, including consolidating and deposited layer by ramming watering etc., disposing of surplus excavated soil as directed with in a lead of 50 mm and lift upto 1.5 m.",
+          "code": "16.66",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All kind of soil",
+              "code": "16.66.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 147,
+              "source_page": 11,
+              "unit": "each",
+              "rate": 27.5,
+              "rate_display": "27.50"
+            }
+          ],
+          "order_index": 146,
+          "source_page": 11
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing at or near ground level factory made RCC pavement slab of M-30 grade of size 450x450x50 mm, including reinforcement with 6 mm dia M.S. bars 4 nos on each side, including setting in position in footpath to the required level and line over a bed of 20 mm average thick cement mortar 1:5 (1 cement : 5 coarse sand), having joint thickness not more than 5 mm except on curve, including filling of joints with same cement mortar and making grooves etc. complete as per direction of Engineer-in-charge.",
+          "code": "16.67",
+          "children_count": 0,
+          "children": [],
+          "order_index": 148,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 1600.55,
+          "rate_display": "1600.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying 60 mm thick faciory made cement concrete interlocking paver block of M -30 grade made by block making machine with strong vibratory compaction, of approved size, design & shape, laid in required colour and pattern over and including 50 mm thick compacted bed of coarse sand, filling the joints with line sand etc. all complete as per the direction of Engineer-in-charge.",
+          "code": "16.68",
+          "children_count": 0,
+          "children": [],
+          "order_index": 149,
+          "source_page": 11,
+          "unit": "sqm",
+          "rate": 972.0,
+          "rate_display": "972.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying at or near ground level factory made kerb stone of M-25 grade cement concrete in position to the required line, level and curvature, jointed with cement mortar 1:3 (1 cement: 3 coarse sand), including making joints with or without grooves (thickness of joints except at sharp curve shall not to more than 5 mm), including making drainage opening wherever required complete etc. as per direction of Engineer- in-charge (length of finished kerb edging shall be measured to calculate volume for payment). (Precast C.C. kerb stone shall be approved by Engineer-in-charge).",
+          "code": "16.69",
+          "children_count": 0,
+          "children": [],
+          "order_index": 150,
+          "source_page": 12,
+          "unit": "cum",
+          "rate": 10117.6,
+          "rate_display": "10117.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing G.I. chain link fabric fencing of required width in mesh size 50x50 mm including strengthening with 2 mm dia wire or nuts, bolts and washers as required complete as per the direction of Engineer-in- charge.",
+          "code": "16.70",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Made of G.I. wire of dia 4 mm",
+              "code": "16.70.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 152,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1017.8,
+              "rate_display": "1017.80"
+            },
+            {
+              "node_type": "item",
+              "title": "Made of G.I. wire of dia. 4 mm, PVC coated to achieve outer dia not less than 5 mm in required colour and shade",
+              "code": "16.70.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 153,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 1067.1,
+              "rate_display": "1067.10"
+            }
+          ],
+          "order_index": 151,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing G.I. chain link fabric fencing of required width in mesh size 25x25 mm made of G.I. wire of dia 3 mm including strengthening with 2 mm dia wire or nuts, bolts and washers as required complete as per the direction of Engineer-in-charge.",
+          "code": "16.71",
+          "children_count": 0,
+          "children": [],
+          "order_index": 154,
+          "source_page": 12,
+          "unit": "sqm",
+          "rate": 1149.25,
+          "rate_display": "1149.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Supplying and stacking of hard stone (for stone pitching) 22.5 cm thick at site.",
+          "code": "16.72",
+          "children_count": 0,
+          "children": [],
+          "order_index": 155,
+          "source_page": 12,
+          "unit": "cum",
+          "rate": 995.85,
+          "rate_display": "995.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Dry stone pitching 22.5 cm thick laid in courses and required profile with hammer dressed stones having no side less than 15 cm, with minimum depth of 20 cm including preparing the bedding surface etc. all complete. (Payment for Stone to be made separately).",
+          "code": "16.73",
+          "children_count": 0,
+          "children": [],
+          "order_index": 156,
+          "source_page": 12,
+          "unit": "sqm",
+          "rate": 659.05,
+          "rate_display": "659.05"
+        },
+        {
+          "node_type": "item",
+          "title": "75 mm thick back filling for pitching including supplying of required materials and consolidation etc. complete with :",
+          "code": "16.74",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Moorum",
+              "code": "16.74.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 158,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 76.3,
+              "rate_display": "76.30"
+            },
+            {
+              "node_type": "item",
+              "title": "Stone aggregate 20 mm nominal size",
+              "code": "16.74.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 159,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 175.0,
+              "rate_display": "175.00"
+            },
+            {
+              "node_type": "item",
+              "title": "Stone aggregate 40 mm nominal size",
+              "code": "16.74.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 160,
+              "source_page": 12,
+              "unit": "sqm",
+              "rate": 172.35,
+              "rate_display": "172.35"
+            }
+          ],
+          "order_index": 157,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying C.C. pavement of mix M-25 with ready mixed concrete from batching plant. The ready mixed concrete shall be laid and finished with screed board vibrator , vacuum dewatering process and finally finished by floating, brooming with wire brush etc. complete as per specifications and directions of Engineer-in-charge. (The panel shuttering work shall be paid for separately). (Note:- Cement content considered in this item is @ 330 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately).",
+          "code": "16.75",
+          "children_count": 0,
+          "children": [],
+          "order_index": 161,
+          "source_page": 12,
+          "unit": "cum",
+          "rate": 9823.8,
+          "rate_display": "9823.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Deduct for using of M-20 grade concrete instead of M-25 grade concrete in C.C. pavement.",
+          "code": "16.76",
+          "children_count": 0,
+          "children": [],
+          "order_index": 162,
+          "source_page": 12,
+          "unit": "cum",
+          "rate": 203.8,
+          "rate_display": "203.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Scarifying the existing bituminous road surface to a depth of 50 mm and disposal of scarified material within all lifts and lead upto 1km (by mechanical means).",
+          "code": "16.77",
+          "children_count": 0,
+          "children": [],
+          "order_index": 163,
+          "source_page": 12,
+          "unit": "sqm",
+          "rate": 7.0,
+          "rate_display": "7.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Construction of granular sub-base by providing close graded Material conforming to specifications, mixing in a mechanical mix plant at OMC, carriage of mixed material by tippers to work site, for all leads & lifts, spreading in uniform layers of specified thickness with motor grader on prepared surface and compacting with vibratory power roller to achieve the desired density, complete as per specifications and directions of Engineer- in-Charge.",
+          "code": "16.78",
+          "children_count": 3,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With material conforming to Grade-I (size range 75 mm to 0.075 mm) having CBR Value-30",
+              "code": "16.78.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 165,
+              "source_page": 13,
+              "unit": "cum",
+              "rate": 2784.0,
+              "rate_display": "2784.00"
+            },
+            {
+              "node_type": "item",
+              "title": "With material conforming to Grade-II (size range 53 mm to 0.075 mm ) having CBR Value-25",
+              "code": "16.78.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 166,
+              "source_page": 13,
+              "unit": "cum",
+              "rate": 2924.85,
+              "rate_display": "2924.85"
+            },
+            {
+              "node_type": "item",
+              "title": "With material conforming to Grade-III (size range 26.5 mm to 0.075 mm ) having CBR Value-20",
+              "code": "16.78.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 167,
+              "source_page": 13,
+              "unit": "cum",
+              "rate": 2808.55,
+              "rate_display": "2808.55"
+            }
+          ],
+          "order_index": 164,
+          "source_page": 12
+        },
+        {
+          "node_type": "item",
+          "title": "Providing, laying, spreading and compacting graded stone aggregate (size range 53 mm to 0.075 mm ) to wet mix macadam (WMM) specification including premixing the material with water at OMC in for all leads & lifts, laying in uniform layers with mechanical paver finisher in sub- base / base course on well prepared surface and compacting with vibratory roller of 8 to 10 tonne capacity to achievethe desired density, complete as per specifications and directions of Engineer-in-Charge.",
+          "code": "16.79",
+          "children_count": 0,
+          "children": [],
+          "order_index": 168,
+          "source_page": 13,
+          "unit": "cum",
+          "rate": 2914.3,
+          "rate_display": "2914.30"
+        },
+        {
+          "node_type": "item",
+          "title": "Construction of dry lean cement concrete sub base over a prepared sub- grade with coarse and fine aggregate conforming to IS:383, the size of coarse aggregate not exceeding 25 mm, aggregate cement ratio not to exceed 15:1, aggregate gradation after blending to be as per specifications, cement content not to be less than 150 Kg/cum, optimum moisture content to be determined during trial length construction, concrete strength not to be less than 10 Mpa at 7 days, mixed in a batching plant, transported to site, for all leads & lifts, laid with a mechanical paver, compacting with 8-10 tonne vibratory roller, finishing and curing etc. complete as per direction of Engineer-in- charge.",
+          "code": "16.80",
+          "children_count": 0,
+          "children": [],
+          "order_index": 169,
+          "source_page": 13,
+          "unit": "cum",
+          "rate": 4148.65,
+          "rate_display": "4148.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and erecting 2.00 metre high temporary barricading at site; each panel of size 2.50 m x2.00 m made of 40x40x6 mm angle iron or 50x50x3 mm hollow MS tube posts/horizontal members/bracings covered with 1.63 mm thick MS sheet. The sheet shall be fixed with 30x5 mm MS flat by suitable welding/riveting. The panels shall be made so that gap of 50cm above the ground is available making overall height as 2.5 m. MS channel ISLC 75 @ 5.70 kg/m, 50 cm long shall be provided at the bottom having oval shaped holes of size 50x25 mm at both ends with 50 cm long MS angle 40x40x6 mm bracing. Suitable arrangement shall be made to fix the barricading to avoid from overturning by providing 250 mm long expansion fasteners at both ends. The work shall be executed as per drawing/direction of Engineer-in-Charge which includes writing and painting, arrangement for traffic diversion such as traffic signals during construction at site for day and night, glow lamps, reflective signs, marking, flags, caution tape as directed by the Engineer-in-Charge. The barricading provided shall be retained in position at site continuously including shifting of barricading from one location to another location as many times as required during the execution of the entire work till its completion. Rate include its maintenance for damages, painting, all incidentals, labour materials, equipments and works required to execute the job. The barricading shall not be removed without prior approval of Engineer-in-Charge. (Note :- One time payment shall be made for providing barricading from start of work till completion of work including shifting. The barricading provided shall remain to be the property of the contractor on completion of the work).",
+          "code": "16.81",
+          "children_count": 0,
+          "children": [],
+          "order_index": 170,
+          "source_page": 13,
+          "unit": "metre",
+          "rate": 3439.5,
+          "rate_display": "3439.50"
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out existing kerb stones of all types from footpath/ central verge, including removal of mortar etc., disposal of unserviceable material to the dumping ground, for which payment shall be made separately and stacking of serviceable material within 50 metre lead as per direction of Engineer-in-Charge.",
+          "code": "16.82",
+          "children_count": 0,
+          "children": [],
+          "order_index": 171,
+          "source_page": 13,
+          "unit": "metre",
+          "rate": 39.35,
+          "rate_display": "39.35"
+        },
+        {
+          "node_type": "item",
+          "title": "Taking out existing CC interlocking paver blocks from footpath/ central verge, including removal of rubbish etc., disposal of unserviceable material to the dumping ground, for which payment shall be made separately and stacking of serviceable material within 50 metre lead as per direction of Engineer-in-Charge.",
+          "code": "16.83",
+          "children_count": 0,
+          "children": [],
+          "order_index": 172,
+          "source_page": 14,
+          "unit": "sqm",
+          "rate": 131.75,
+          "rate_display": "131.75"
+        },
+        {
+          "node_type": "item",
+          "title": "Laying old cement cocrete interlocking paver blocks of any design/ shape laid in required line, level, curvature, colour and pattern over and including 50 mm thick compacted bed of coarse sand, filling the joints with fine sand etc. all complete as per the direction of Engineer-in-charge. (Old CC paver blocks shall be supplied by the department free of cost).",
+          "code": "16.84",
+          "children_count": 0,
+          "children": [],
+          "order_index": 173,
+          "source_page": 14,
+          "unit": "sqm",
+          "rate": 402.95,
+          "rate_display": "402.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Laying at or near ground level old kerb stones of all types in position to the required line, level and curvature, jointed with cement mortar 1:3 (1 cement : 3 coarse sand), including making joints with or without grooves (thickness of joints, except at sharp curve, shall not be more than 5 mm), including making drainage opening wherever required etc. complete as per direction of Engineer-in-charge. (Length of finished kerb edging shall be measured for payment). (Old kerb stones shall be supplied by the department free of cost)",
+          "code": "16.85",
+          "children_count": 0,
+          "children": [],
+          "order_index": 174,
+          "source_page": 14,
+          "unit": "metre",
+          "rate": 109.45,
+          "rate_display": "109.45"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying gang saw cut 18 mm thick, mirror polished pre moulded and pre polished machine cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring in road side plazas and similar locations, laid over 20 mm thick base of cement mortar 1:4 (1cement : 4 coarse sand) including grouting the joints with white cement mixed with matching pigment, epoxy touch ups etc. complete as per direction of Engineer-in-Charge.",
+          "code": "16.86",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With granite stone of area less than 0.50 sqm.",
+              "code": "16.86.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 176,
+              "source_page": 14,
+              "unit": "sqm",
+              "rate": 4746.2,
+              "rate_display": "4746.20"
+            }
+          ],
+          "order_index": 175,
+          "source_page": 14
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying gang saw cut 30 mm thick, mirror polished pre moulded and pre polished machine cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring in road side plazas and similar locations, laid over 20 mm thick base of cement mortar 1:4 (1 cement : 4 coarse sand) including grouting the joints with white cement mixed with matching pigment, epoxy touch ups etc. complete as per direction of Engineer-in-Charge.",
+          "code": "16.87",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "With granite stone of colour black, cherry/ruby red of area less than 0.50 sqm.",
+              "code": "16.87.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 178,
+              "source_page": 14,
+              "unit": "sqm",
+              "rate": 4950.9,
+              "rate_display": "4950.90"
+            },
+            {
+              "node_type": "item",
+              "title": "With granite stone of all colour except black, cherry/ruby red of area less than 0.50 sqm.",
+              "code": "16.87.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 179,
+              "source_page": 14,
+              "unit": "sqm",
+              "rate": 5272.05,
+              "rate_display": "5272.05"
+            }
+          ],
+          "order_index": 177,
+          "source_page": 14
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying matt finished vitrified tile of size 100x100x16 mm having water absorption less than 0.5% and conforming to IS: 15622 of approved make in all colours and shades in out door floors such as footpath, court yard multi models etc., laid on 20 mm thick base of cement mortar 1:4 (1cement : 4 coarse sand) in all shapes & patterns including grouting the joints with white cement mixed with matching pigments etc. complete as direction of Engineer-in-Charge.",
+          "code": "16.88",
+          "children_count": 0,
+          "children": [],
+          "order_index": 180,
+          "source_page": 14,
+          "unit": "sqm",
+          "rate": 2159.85,
+          "rate_display": "2159.85"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying matt finished vitrified tile of size 300x300x9.8 mm having with water absorption less than 0.5% and conforming to IS: 15622 of approved make in all colours and shades in for outdoor floors such as footpath, court yard, multi modals location etc., laid on 20 mm thick base of cement mortar 1:4 (1 cement : 4 coarse sand) in all shapes & patterns including grouting the joints with white cement mixed with matching pigments etc. complete as per direction of Engineer-in-Charge.",
+          "code": "16.89",
+          "children_count": 0,
+          "children": [],
+          "order_index": 181,
+          "source_page": 14,
+          "unit": "sqm",
+          "rate": 1455.65,
+          "rate_display": "1455.65"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying tactile tile (for vision impaired persons as per standards) of size 300x300x9.8 mm having with water absorption less than 0.5% and conforming to IS:15622 of approved make in all colours and shades in for outdoor floors such as footpath, court yard, multi modals location etc., laid on 20 mm thick base of cement mortar 1:4 (1 cement : 4 coarse sand) in all shapes & patterns including grouting the joints with white cement mixed with matching pigments etc. complete as per direction of Engineer-in-Charge.",
+          "code": "16.90",
+          "children_count": 0,
+          "children": [],
+          "order_index": 182,
+          "source_page": 15,
+          "unit": "sqm",
+          "rate": 2017.6,
+          "rate_display": "2017.60"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and laying factory made chamfered edge Cement Concrete paver blocks in footpath, parks, lawns, drive ways or light traffic parking etc, of required strength, thickness & size/ shape, made by table vibratory method using PU mould, laid in required colour & pattern over 50 mm thick compacted bed of sand, compacting and proper embedding/laying of inter locking paver blocks into the sand bedding layer through vibratory compaction by using plate vibrator, filling the joints with sand and cutting of paver blocks as per required size and pattern, finishing and sweeping extra sand. complete all as per direction of Engineer-in-Charge.",
+          "code": "16.91",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "60 mm thick cement concrete paver block of M-35 grade with approved colour, design & pattern.",
+              "code": "16.91.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 184,
+              "source_page": 15,
+              "unit": "sqm",
+              "rate": 1045.65,
+              "rate_display": "1045.65"
+            },
+            {
+              "node_type": "item",
+              "title": "80 mm thick C.C. paver block of M-35 grade with approved colour design and pattern.",
+              "code": "16.91.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 185,
+              "source_page": 15,
+              "unit": "sqm",
+              "rate": 1091.5,
+              "rate_display": "1091.50"
+            }
+          ],
+          "order_index": 183,
+          "source_page": 15
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing 10x10x7.50 cm Granite stone block hand cut and chisel dressed on top, for paving in floors, drains etc. laid over 20 mm thick base mortar 1:4 (1 cement : 4 coarse sand) with joints 10 mm wide filled with same mortar including ruled pointing etc. complete as per direction of engineer-in-charge.",
+          "code": "16.92",
+          "children_count": 0,
+          "children": [],
+          "order_index": 186,
+          "source_page": 15,
+          "unit": "sqm",
+          "rate": 2189.15,
+          "rate_display": "2189.15"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and placing in position 100 mm thick factory made machine batched & machine mixed Precast RCC Rectangular Covers on drains of footpath of various sizes, of M-25 grade cement concrete for RCC work, including cost of centering, shuttering, reinforcement of 8 mm dia TMT bars of Fe 500 grade @ maximum 100 mm c/c on both ways, neat cement punning on finished surface, properly encased on all edges with 1.6 mm thick, 100 mm wide MS sheet duly painted over priming coat, reinforcement to be welded at edges with MS sheet and providing 2 Nos. 12 mm dia bar for hooks etc including cost of cartage, all leads & lift, handling at site etc. all complete as per direction of Engineer-in-Charge.",
+          "code": "16.93",
+          "children_count": 0,
+          "children": [],
+          "order_index": 187,
+          "source_page": 15,
+          "unit": "sqm",
+          "rate": 3081.95,
+          "rate_display": "3081.95"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & making Gabion structure with Mechanically Woven Double Twisted Hexagonal Shaped Wire mesh Gabion Boxes as per IS 16014:2012,MORTH Clause 2500, of required size, Mesh Type 10x12 (D=100 mm with tolerance of ± 2%) Zinc coated, Mesh wire diameter 3.0 mm, mechanically edged/selvedged with partitions at every 1m interval and shall have minimum 10 numbers of openings per meter of mesh perpendicular to twist, tying with lacing wire of diameter 2.2 mm, supplied @ 3% by weight of Gabion boxes, filled with boulders with least dimension of 200 mm, as per drawing, all complete as per direction of Engineer-in-charge.",
+          "code": "16.94",
+          "children_count": 0,
+          "children": [],
+          "order_index": 188,
+          "source_page": 15,
+          "unit": "cum",
+          "rate": 4178.0,
+          "rate_display": "4178.00"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & making Gabion structure with Mechanically Woven Double Twisted Hexagonal Shaped Wire mesh Gabion Boxes as per IS 16014:2012,MORTH Clause 2500, of required size, Mesh Type 10x12 (D=100 mm with tolerance of ± 2%) Zinic+PVC coated, Mesh wire diameter 2.7/3.7 mm, mechanically edged/selvedged with partitions at every 1m interval and shall have minimum 10 numbers of openings per meter of mesh perpendicular to twist, tying with lacing wire of diameter 2.2/3.2mm(ID/OD), supplied @3% by weight of Gabion boxes, filled with boulders with least dimension of 200 mm, as per drawing, all complete as per directions of Engineer-in-charge.",
+          "code": "16.95",
+          "children_count": 0,
+          "children": [],
+          "order_index": 189,
+          "source_page": 15,
+          "unit": "cum",
+          "rate": 4569.25,
+          "rate_display": "4569.25"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing & making Gabion structure with Mechanically Woven Double Twisted Hexagonal Shaped Wire mesh Gabion Boxes as per IS 16014:2012,MORTH Clause 2500, of required size, Mesh Type 10x12 (D=100 mm with tolerance of ±2%), Zinic+10% Al alloy+PVC coated, Mesh wire diameter 2.7/3.7 mm (ID/OD), mechanically edged/selvedged with partitions at every 1m interval and shall have minimum 10 numbers of openings per meter of mesh perpendicular to twist, tying with lacing wire of diameter 2.2/3.2 mm(ID/OD), supplied @3% by weight of Gabion boxes, filled with boulders with least dimension of 200 mm, as per drawing, all complete as per directions of Engineer-in-charge.",
+          "code": "16.96",
+          "children_count": 0,
+          "children": [],
+          "order_index": 190,
+          "source_page": 16,
+          "unit": "cum",
+          "rate": 4882.2,
+          "rate_display": "4882.20"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/16.0 ROAD WORK.pdf",
+    "row_count": 191,
+    "note_count": 3,
+    "leaf_count": 150,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
+}
