@@ -32,6 +32,7 @@ const ROUTE_LABELS: Record<string, string> = {
   pool: 'Resource Pool',
   clients: 'Clients',
   items: 'Items',
+  'items-tree': 'Schedule items tree',
   'basic-rates': 'Basic Rates',
   factors: 'Factors',
   administration: 'Administration',

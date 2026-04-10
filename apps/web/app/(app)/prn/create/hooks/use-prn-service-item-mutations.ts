@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import {
   createPrnServiceItem,
   updatePrnServiceItem,
@@ -15,7 +15,7 @@ const PRN_SERVICE_ITEMS_BY_PROJECT_QUERY_KEY = 'prn-service-items-by-project';
 
 export function useCreatePrnServiceItemMutation(projectId: string) {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: async ({
@@ -27,7 +27,7 @@ export function useCreatePrnServiceItemMutation(projectId: string) {
       userItemCode: string;
       userRequestedQuantity: number;
     }) => {
-      const makerHashId = getUser()?.hashId;
+      const makerHashId = user?.hashId;
       if (!makerHashId) throw new Error('User not found');
       const payload: CreatePrnServiceItemPayload = {
         projectHashId: projectId,
@@ -59,7 +59,7 @@ export function useCreatePrnServiceItemMutation(projectId: string) {
 
 export function useUpdatePrnServiceItemMutation(projectId: string) {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: async ({
@@ -70,7 +70,7 @@ export function useUpdatePrnServiceItemMutation(projectId: string) {
         'checkerHashID' | 'verifierHashID' | 'projectHashId' | 'makerHashId'
       >;
     }) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       const fullPayload: UpdatePrnServiceItemPayload = {
         ...payload,

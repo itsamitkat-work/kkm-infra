@@ -19,7 +19,7 @@ import {
 } from '../types';
 import { useProjectSegments } from '../../hooks/use-project-segments';
 import { ALL_SEGMENTS_TOGGLE_VALUE } from '../../hooks/use-project-segments-filter';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 interface UseItemMeasurementLogicProps {
   projectItemHashId: string;
@@ -536,8 +536,7 @@ export function useItemMeasurementLogic({
     setUpdatedQuantity,
   ]);
 
-  const { getUserPermissions } = useAuth();
-  const { permissions } = getUserPermissions();
+  const { permissions } = useAuth();
 
   const measurementPermissions = React.useMemo(() => {
     const hasPermission = (permission: string) =>

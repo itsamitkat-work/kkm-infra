@@ -1,7 +1,10 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { logoutFromSession } from '@/lib/auth';
+import { signOutAndRedirectToLogin } from '@/lib/auth';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+const autoLogoutOn401 =
+  process.env.NEXT_PUBLIC_API_AUTO_LOGOUT_ON_401 === 'true';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -16,9 +19,8 @@ apiClient.interceptors.request.use(
       return config;
     }
 
-    const { createSupabaseBrowserClient } = await import(
-      '@/lib/supabase/client'
-    );
+    const { createSupabaseBrowserClient } =
+      await import('@/lib/supabase/client');
     const supabase = createSupabaseBrowserClient();
     const {
       data: { session },
@@ -35,11 +37,12 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (
+      autoLogoutOn401 &&
       typeof window !== 'undefined' &&
       error.response &&
       error.response.status === 401
     ) {
-      void logoutFromSession();
+      void signOutAndRedirectToLogin();
       return Promise.reject(new Error('Session expired. Please log in again.'));
     }
     return Promise.reject(error);

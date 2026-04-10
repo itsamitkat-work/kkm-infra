@@ -7,7 +7,7 @@ import {
   AssignedProjectType,
   useAssignedProjectsQuery,
 } from '../../../hooks/projects/use-assigned-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { Card } from '@/components/ui/card';
 import {
   ResizablePanelGroup,
@@ -16,8 +16,7 @@ import {
 } from '@/components/ui/resizable';
 
 export default function AttendancePoolPage() {
-  const { getUser } = useAuth();
-  const user = getUser();
+  const { user } = useAuth();
 
   const [activeProjectId, setActiveProjectId] = React.useState<string>('all');
 

@@ -1,25 +1,4 @@
--- ==========================================================================
--- Migration: Custom Access Token Hook
--- ==========================================================================
--- Supabase Auth hook that enriches JWTs with MINIMAL multi-tenant claims.
---
--- Injected claims (kept small to avoid JWT bloat / ~8KB header limit):
---   sid            – Session ID (from auth.sessions)
---   tid            – Active tenant ID (from private.auth_sessions)
---   active_role    – Current role slug within the active tenant
---   roles          – All assigned role slugs in the active tenant
---   pv             – Permission version (for stale-JWT detection)
---   is_system_admin – From profiles.is_system_admin
---   is_locked      – From user_risk_scores (risk threshold >= 30)
---   session_revoked – From auth_sessions.is_revoked or expiry
---
--- IMPORTANT: `perms` is NOT included in the JWT. Permissions are resolved
--- at the DB level by authz.has_permission() which queries role_permissions
--- directly. This keeps the token size constant regardless of how many
--- permissions a role has.
---
--- Granted ONLY to supabase_auth_admin; revoked from authenticated/anon.
--- ==========================================================================
+-- Fix PL/pgSQL variable `user_id` shadowing table columns (SQLSTATE 42702).
 
 create or replace function public.custom_access_token_hook(event jsonb)
 returns jsonb
@@ -120,17 +99,3 @@ begin
   return jsonb_set(event, '{claims}', claims, true);
 end;
 $$;
-
-grant execute on function public.custom_access_token_hook(jsonb) to supabase_auth_admin;
-revoke execute on function public.custom_access_token_hook(jsonb) from authenticated, anon, public;
-
-grant usage on schema public to supabase_auth_admin;
-grant usage on schema authz to supabase_auth_admin;
-grant usage on schema private to supabase_auth_admin;
-
-grant select, update on public.tenant_members to supabase_auth_admin;
-grant select on public.profiles to supabase_auth_admin;
-grant select on authz.tenant_member_roles to supabase_auth_admin;
-grant select on authz.roles to supabase_auth_admin;
-grant select on private.auth_sessions to supabase_auth_admin;
-grant select on private.user_risk_scores to supabase_auth_admin;

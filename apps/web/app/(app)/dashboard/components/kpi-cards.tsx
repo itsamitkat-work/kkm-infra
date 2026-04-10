@@ -8,14 +8,11 @@ import {
   AssignedProjectType,
   useAssignedProjectsQuery,
 } from '@/hooks/projects/use-assigned-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 export function KPICards() {
-  const { getUser } = useAuth();
-  const currentUser = getUser();
+  const { user: currentUser } = useAuth();
   const userHashId = currentUser?.hashId ?? null;
-
-  console.log('currentUser', currentUser);
 
   // Get assigned projects with employee counts
   const { projects, query } = useAssignedProjectsQuery(

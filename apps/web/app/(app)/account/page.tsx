@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { TableLoadingState } from '@/components/tables/table-loading';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import {
   User as UserIcon,
   Mail,
@@ -50,19 +50,9 @@ function InfoItem({ icon: Icon, label, children, className }: InfoItemProps) {
 }
 
 export default function AccountPage() {
-  const { getUser, getUserPermissions } = useAuth();
-  const [isClient, setIsClient] = React.useState(false);
+  const { user, roles, isLoading } = useAuth();
 
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const user = isClient ? getUser() : null;
-  const permissions = isClient
-    ? getUserPermissions()
-    : { permissions: [], roles: [] };
-
-  if (!isClient) {
+  if (isLoading) {
     return <TableLoadingState />;
   }
 
@@ -174,7 +164,7 @@ export default function AccountPage() {
           </Card>
 
           {/* Permissions from Auth (if available) */}
-          {permissions.roles && permissions.roles.length > 0 && (
+          {roles.length > 0 && (
             <Card>
               <CardHeader>
                 <CardTitle className='flex items-center gap-2'>
@@ -184,7 +174,7 @@ export default function AccountPage() {
               </CardHeader>
               <CardContent>
                 <div className='flex flex-wrap gap-2'>
-                  {permissions.roles.map((roleCode, index) => (
+                  {roles.map((roleCode, index) => (
                     <Badge
                       key={index}
                       variant='outline'

@@ -27,7 +27,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 type UserData = {
   name: string;
@@ -85,27 +85,17 @@ const ThemeSwitcher = () => {
 export function NavUser() {
   const router = useRouter();
   const { isMobile } = useSidebar();
-  const { logout, getUser } = useAuth();
-  const [isClient, setIsClient] = React.useState(false);
+  const { signOut, user, isLoading } = useAuth();
 
-  // Ensure client-side rendering only
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Get user data from auth context (only on client)
-  const user = isClient ? getUser() : null;
-
-  // Fallback user data if not authenticated
   const userData: UserData = user
     ? {
         name: user.userName,
         email: user.email,
-        avatar: '', // You can add avatar URL to user data if needed
+        avatar: '',
       }
     : {
-        name: 'Guest',
-        email: 'guest@example.com',
+        name: isLoading ? 'Loading…' : 'Guest',
+        email: isLoading ? '' : 'guest@example.com',
         avatar: '',
       };
 
@@ -160,7 +150,7 @@ export function NavUser() {
             <DropdownMenuSeparator />
             <ThemeSwitcher />
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={logout}>
+            <DropdownMenuItem onClick={signOut}>
               <IconLogout />
               Log out
             </DropdownMenuItem>

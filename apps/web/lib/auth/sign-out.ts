@@ -1,6 +1,6 @@
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
-export async function logoutFromSession(): Promise<void> {
+export async function signOutAndRedirectToLogin(): Promise<void> {
   if (typeof window === 'undefined') return;
   const supabase = createSupabaseBrowserClient();
   await supabase.auth.signOut();

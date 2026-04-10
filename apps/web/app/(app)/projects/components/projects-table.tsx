@@ -19,15 +19,14 @@ import {
   PROJECTS_TABLE_ID,
   useProjectsQuery,
 } from '../hooks/use-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 export function ProjectsTable() {
   const router = useRouter();
   const drawer = useOpenClose<Project | null>();
   const deleteConfirmation = useDeleteConfirmation();
   const deleteProjectMutation = useDeleteProject();
-  const { getUserPermissions } = useAuth();
-  const { permissions } = getUserPermissions();
+  const { permissions } = useAuth();
 
   const permissionFlags = React.useMemo(
     () => ({

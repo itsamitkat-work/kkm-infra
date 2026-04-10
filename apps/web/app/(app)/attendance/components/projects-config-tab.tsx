@@ -11,7 +11,7 @@ import {
   AssignedProjectType,
   useAssignedProjectsQuery,
 } from '../../../../hooks/projects/use-assigned-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { NumberInput, TimeInput } from '@/components/inputs';
 import {
   useAttendanceConfig,
@@ -25,8 +25,7 @@ interface Props {
 }
 
 export function ProjectOverridesTab({ overrides, globalDefaults }: Props) {
-  const { getUser } = useAuth();
-  const user = getUser();
+  const { user } = useAuth();
   const {
     query: { isLoading },
     projects,

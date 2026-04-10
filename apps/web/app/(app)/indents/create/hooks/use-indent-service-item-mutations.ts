@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import {
   createIndentServiceItem,
   updateIndentServiceItem,
@@ -16,7 +16,7 @@ const INDENT_SERVICE_ITEMS_BY_PROJECT_QUERY_KEY =
 
 export function useCreateIndentServiceItemMutation(projectId: string) {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: async ({
@@ -28,7 +28,7 @@ export function useCreateIndentServiceItemMutation(projectId: string) {
       serviceItemCode: string;
       serviceItemQty: number;
     }) => {
-      const makerHashId = getUser()?.hashId;
+      const makerHashId = user?.hashId;
       if (!makerHashId) throw new Error('User not found');
       const payload: CreateIndentServiceItemPayload = {
         projectId,
@@ -60,7 +60,7 @@ export function useCreateIndentServiceItemMutation(projectId: string) {
 
 export function useUpdateIndentServiceItemMutation(projectId: string) {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: async ({
@@ -73,7 +73,7 @@ export function useUpdateIndentServiceItemMutation(projectId: string) {
         'verifierHashId' | 'checkerHashId'
       >;
     }) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       const fullPayload: UpdateIndentServiceItemPayload = {
         ...payload,

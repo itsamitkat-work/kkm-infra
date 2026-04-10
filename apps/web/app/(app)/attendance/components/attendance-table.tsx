@@ -36,7 +36,7 @@ import { useHeadsSubheads } from '@/hooks/use-heads-subheads';
 import { getConfigForProject } from '../config/attendance-config';
 import { useQueryState } from 'nuqs';
 import type { SortingState } from '@tanstack/react-table';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { usePoolMutations } from '../../pool/hooks/use-pool-mutations';
 import type { AttendanceDataHook } from '../data/attendance-collection';
 import { useAttendanceLockMutations } from '../hooks/use-attendance-lock-mutations';
@@ -461,8 +461,7 @@ export function AttendanceTable({
 
   const { headOptions: allHeads } = useHeadsSubheads();
 
-  const { getUserPermissions } = useAuth();
-  const { permissions } = getUserPermissions();
+  const { permissions } = useAuth();
 
   const { releaseUsers, isReleasing } = usePoolMutations();
 

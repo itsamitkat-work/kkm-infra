@@ -28,7 +28,6 @@ import {
 } from '@/components/ui/sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
-  IconAlignJustified,
   IconFileText,
   IconHome,
   IconShieldLock,
@@ -37,7 +36,7 @@ import {
 } from '@tabler/icons-react';
 import { FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 type NavItem = {
   title: string;
@@ -66,6 +65,11 @@ const constructionToolsItems: NavItem[] = [
     title: 'Clients',
     url: '/clients',
     icon: IconUsers,
+  },
+  {
+    title: 'Items Tree',
+    url: '/items-tree',
+    icon: IconFileText,
   },
   {
     title: 'Items',
@@ -130,8 +134,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const { state } = useSidebar();
   const isMobile = useIsMobile();
-  const { getUserPermissions } = useAuth();
-  const { permissions, roles } = getUserPermissions();
+  const { permissions, roles } = useAuth();
 
   const attendanceItems = React.useMemo(() => {
     // Only filter when in browser (client-side)

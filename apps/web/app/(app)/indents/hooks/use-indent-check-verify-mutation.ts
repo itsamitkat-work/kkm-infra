@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { postIndent, type IndentItemPayload } from '../api/indent-api';
 import { INDENT_DETAILS_QUERY_KEY } from './use-indent-details-query';
 
@@ -62,11 +62,11 @@ function buildVerifyPayload(
 
 export function useIndentCheckMutation() {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: (payload: IndentCheckPayload) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       return postIndent(buildCheckPayload(payload, userHashId));
     },
@@ -82,11 +82,11 @@ export function useIndentCheckMutation() {
 
 export function useIndentVerifyMutation() {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: (payload: IndentVerifyPayload) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       return postIndent(buildVerifyPayload(payload, userHashId));
     },

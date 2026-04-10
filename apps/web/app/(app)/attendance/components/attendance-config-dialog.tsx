@@ -17,11 +17,10 @@ import { AttendanceTimeConfig } from '../config/attendance-config';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { GlobalConfigTab } from './global-config-tab';
 import { ProjectOverridesTab } from './projects-config-tab';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 export function AttendanceConfigDialog() {
-  const { getUserPermissions } = useAuth();
-  const { roles } = getUserPermissions();
+  const { roles } = useAuth();
   const isAdmin = React.useMemo(() => roles.includes('Admin'), [roles]);
 
   const { config, updateGlobal, isLoading, isUpdatingGlobal } =

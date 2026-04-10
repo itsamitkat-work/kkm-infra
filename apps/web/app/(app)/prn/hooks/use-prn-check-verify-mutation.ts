@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { postPrn, type PrnItemPayload } from '../api/prn-api';
 import { PRN_DETAILS_QUERY_KEY } from './use-prn-details-query';
 
@@ -62,11 +62,11 @@ function buildVerifyPayload(
 
 export function usePrnCheckMutation() {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: (payload: PrnCheckPayload) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       return postPrn(buildCheckPayload(payload, userHashId));
     },
@@ -82,11 +82,11 @@ export function usePrnCheckMutation() {
 
 export function usePrnVerifyMutation() {
   const queryClient = useQueryClient();
-  const { getUser } = useAuth();
+  const { user } = useAuth();
 
   return useMutation({
     mutationFn: (payload: PrnVerifyPayload) => {
-      const userHashId = getUser()?.hashId;
+      const userHashId = user?.hashId;
       if (!userHashId) throw new Error('User not found');
       return postPrn(buildVerifyPayload(payload, userHashId));
     },

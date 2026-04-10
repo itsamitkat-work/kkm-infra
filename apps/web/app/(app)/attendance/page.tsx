@@ -7,7 +7,7 @@ import { format, startOfToday } from 'date-fns';
 import { useQueryState, parseAsString, parseAsIsoDate } from 'nuqs';
 import { SearchInput } from '@/components/ui/search-input';
 import { KpiCard } from './components/attendance-kpi';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { useAttendanceConfig } from './hooks/use-attendance-config';
 import { useAttendanceData } from './data/attendance-collection';
 import { calculateAttendanceSummary } from './utils/calculate-summary';
@@ -44,8 +44,7 @@ const DateSelector = dynamic(
 );
 
 function AttendancePageContent() {
-  const { getUser } = useAuth();
-  const user = getUser();
+  const { user } = useAuth();
   const { config } = useAttendanceConfig();
 
   // Use nuqs for userId from query params, fallback to user's hashId

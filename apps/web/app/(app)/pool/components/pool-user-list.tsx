@@ -43,7 +43,7 @@ import { usePoolMutations } from '../hooks/use-pool-mutations';
 import { useDebouncedSearch } from '@/hooks/use-debounced-search';
 import { PoolUser } from '../types';
 import { AssignedProject } from '@/hooks/projects/use-assigned-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import {
   Dialog,
   DialogContent,
@@ -123,8 +123,7 @@ export function PoolUserList({
   const { searchTerm, setSearchTerm } = useDebouncedSearch(300);
   const { query, users } = usePoolUsersQuery();
   const { assignUsers, isAssigning } = usePoolMutations();
-  const { getUserPermissions } = useAuth();
-  const { permissions } = getUserPermissions();
+  const { permissions } = useAuth();
   const canUpdate = permissions.includes('kkm.resourcepool.update');
 
   const table = useReactTable({

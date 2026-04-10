@@ -54,7 +54,7 @@ import {
 } from '../../../../hooks/projects/use-assigned-projects-query';
 import { type HeadOption } from '@/hooks/use-heads-subheads';
 import { useProjectHeadsQuery } from '../hooks/use-project-heads-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import {
   STATUS_CONFIG,
   PRESENT_STATUS_OPTIONS,
@@ -542,8 +542,7 @@ function EditableProjectCell({
 }: EditableProjectCellProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [mode, setMode] = React.useState<string>('change');
-  const { getUser } = useAuth();
-  const currentUser = getUser();
+  const { user: currentUser } = useAuth();
   const userHashId = currentUser?.hashId ?? null;
 
   const { projects } = useAssignedProjectsQuery(

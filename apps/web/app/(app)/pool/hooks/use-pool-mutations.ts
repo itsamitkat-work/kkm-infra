@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiFetch } from '@/lib/apiClient';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { toast } from 'sonner';
 import { POOL_USERS_QUERY_ID } from './use-pool-users-query';
 import { ASSIGNED_PROJECTS_QUERY_KEY } from '../../../../hooks/projects/use-assigned-projects-query';
@@ -102,7 +102,7 @@ const releaseWorkersFromUser = async (
 };
 
 export function usePoolMutations() {
-  const { getUser } = useAuth();
+  const { user } = useAuth();
   const queryClient = useQueryClient();
 
   const invalidateAll = () => {
@@ -121,7 +121,6 @@ export function usePoolMutations() {
       userIds: string[];
       assignDate?: string;
     }) => {
-      const user = getUser();
       if (!user?.hashId) throw new Error('User not authenticated');
       return assignWorkersToUser(user.hashId, userIds, projectId, assignDate);
     },
@@ -140,7 +139,6 @@ export function usePoolMutations() {
 
   const releaseMutation = useMutation({
     mutationFn: async (userIds: string[]) => {
-      const user = getUser();
       if (!user?.hashId) throw new Error('User not authenticated');
       return releaseWorkersFromUser(user.hashId, userIds);
     },
@@ -167,9 +165,7 @@ export function usePoolMutations() {
       userIds: string[];
       assignDate?: string;
     }) => {
-      const user = getUser();
       if (!user?.hashId) throw new Error('User not authenticated');
-      // Change project is essentially assigning them to a new project
       return assignWorkersToUser(
         user.hashId,
         userIds,

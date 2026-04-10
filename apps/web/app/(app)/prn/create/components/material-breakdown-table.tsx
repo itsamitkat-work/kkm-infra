@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { useBillItemBreakdownQuery } from '@/app/(app)/bom&bol/hooks/use-bill-item-breakdown-query';
 import type {
   BolBomType,
@@ -51,7 +51,7 @@ export function MaterialBreakdownTable({
   type = 'Material',
   itemType = 'GEN',
 }: MaterialBreakdownTableProps) {
-  const { getUser } = useAuth();
+  const { user } = useAuth();
   const {
     data: rows,
     isLoading,
@@ -111,7 +111,7 @@ export function MaterialBreakdownTable({
 
   function handleSave() {
     if (!rows?.length) return;
-    const createdBy = getUser()?.hashId;
+    const createdBy = user?.hashId;
     if (!createdBy) {
       toast.error('User not found');
       return;

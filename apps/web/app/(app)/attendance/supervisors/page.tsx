@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
 import { TableErrorState } from '@/components/tables/table-error';
 import { getSupervisorsColumns } from '../components/supervisors-columns';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { type FilterFieldConfig } from '@/components/ui/filters';
 import {
   SUPERVISORS_QUERY_KEY,
@@ -34,8 +34,7 @@ export default function SupervisorsPage() {
 
 const SupervisorsTable = () => {
   const router = useRouter();
-  const { getUser } = useAuth();
-  const currentUser = getUser();
+  const { user: currentUser } = useAuth();
   const projectEngineerId = currentUser?.hashId ?? null;
 
   const controls = useDataTableControls(SUPERVISORS_QUERY_KEY);

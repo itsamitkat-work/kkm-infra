@@ -51,7 +51,7 @@ import {
 } from '../hooks/use-project-users-query';
 import { usePoolMutations } from '../hooks/use-pool-mutations';
 import { useDebouncedSearch } from '@/hooks/use-debounced-search';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 import { AssignedProject } from '@/hooks/projects/use-assigned-projects-query';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
 
@@ -69,10 +69,7 @@ export function ProjectUsersSection({
   onProjectChange,
 }: ProjectUsersSectionProps) {
   const [changeProjectOpen, setChangeProjectOpen] = React.useState(false);
-  const { getUser, getUserPermissions } = useAuth();
-  const currentUser = getUser();
-
-  const { permissions } = getUserPermissions();
+  const { user: currentUser, permissions } = useAuth();
   const canUpdate = permissions.includes('kkm.resourcepool.update');
 
   const { releaseUsers, changeProject, isReleasing } = usePoolMutations();

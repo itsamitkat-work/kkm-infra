@@ -5,6 +5,7 @@ create or replace view public.schedule_items_tree
 with (security_invoker = true)
 as
 select
+  si.code,
   si.id,
   si.schedule_source_version_id,
   si.parent_item_id,
@@ -18,7 +19,6 @@ select
       and si_root.path = subpath(si.path, 0, 1)
   ) as root_item_id,
   si.slug,
-  si.code,
   si.description,
   si.node_type,
   si.unit_id,

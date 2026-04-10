@@ -13,7 +13,7 @@ import {
   useAssignedProjectsQuery,
   AssignedProjectType,
 } from '@/hooks/projects/use-assigned-projects-query';
-import { useAuth } from '@/hooks/auth/use-auth';
+import { useAuth } from '@/hooks/auth';
 
 interface AssignFromPoolDialogProps {
   open: boolean;
@@ -26,8 +26,7 @@ export function AssignFromPoolDialog({
   onOpenChange,
   onAssignComplete,
 }: AssignFromPoolDialogProps) {
-  const { getUser } = useAuth();
-  const user = getUser();
+  const { user } = useAuth();
   const { projects } = useAssignedProjectsQuery(
     user?.hashId ?? null,
     AssignedProjectType.ForAttendance
