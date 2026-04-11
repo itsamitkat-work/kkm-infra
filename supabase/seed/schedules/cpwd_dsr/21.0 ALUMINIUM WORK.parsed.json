@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "ALUMINIUM WORK",
       "code": "21.0",
-      "children_count": 31,
+      "children_count": 20,
       "children": [
         {
           "node_type": "item",
@@ -22,7 +22,7 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg",
+                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 495.05",
                   "code": "21.1.1.1",
                   "children_count": 0,
                   "children": [],
@@ -31,20 +31,20 @@
                 },
                 {
                   "node_type": "item",
-                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg",
+                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg 530.90",
                   "code": "21.1.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 4,
+                  "order_index": 3,
                   "source_page": 1
                 },
                 {
                   "node_type": "item",
-                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg",
+                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg 539.85",
                   "code": "21.1.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 6,
+                  "order_index": 4,
                   "source_page": 1
                 }
               ],
@@ -59,91 +59,37 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg",
+                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 598.60",
                   "code": "21.1.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 9,
+                  "order_index": 6,
                   "source_page": 1
                 },
                 {
                   "node_type": "item",
-                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg",
+                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg 634.45",
                   "code": "21.1.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 11,
+                  "order_index": 7,
                   "source_page": 1
                 },
                 {
                   "node_type": "item",
-                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg",
+                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg 643.45",
                   "code": "21.1.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 13,
+                  "order_index": 8,
                   "source_page": 1
                 }
               ],
-              "order_index": 8,
+              "order_index": 5,
               "source_page": 1
             }
           ],
           "order_index": 0,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "495.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 3,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "530.90",
-          "children_count": 0,
-          "children": [],
-          "order_index": 5,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "539.85",
-          "children_count": 0,
-          "children": [],
-          "order_index": 7,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "598.60",
-          "children_count": 0,
-          "children": [],
-          "order_index": 10,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "634.45",
-          "children_count": 0,
-          "children": [],
-          "order_index": 12,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "643.45",
-          "children_count": 0,
-          "children": [],
-          "order_index": 14,
           "source_page": 1
         },
         {
@@ -158,7 +104,7 @@
               "code": "21.2.1",
               "children_count": 0,
               "children": [],
-              "order_index": 16,
+              "order_index": 10,
               "source_page": 1,
               "unit": "sqm",
               "rate": 1139.3,
@@ -170,14 +116,14 @@
               "code": "21.2.2",
               "children_count": 0,
               "children": [],
-              "order_index": 17,
+              "order_index": 11,
               "source_page": 1,
               "unit": "sqm",
               "rate": 1115.4,
               "rate_display": "1115.40"
             }
           ],
-          "order_index": 15,
+          "order_index": 9,
           "source_page": 1
         },
         {
@@ -192,7 +138,7 @@
               "code": "21.3.1",
               "children_count": 0,
               "children": [],
-              "order_index": 19,
+              "order_index": 13,
               "source_page": 1,
               "unit": "sqm",
               "rate": 1176.8,
@@ -204,7 +150,7 @@
               "code": "21.3.2",
               "children_count": 0,
               "children": [],
-              "order_index": 20,
+              "order_index": 14,
               "source_page": 2,
               "unit": "sqm",
               "rate": 1505.25,
@@ -216,14 +162,14 @@
               "code": "21.3.3",
               "children_count": 0,
               "children": [],
-              "order_index": 21,
+              "order_index": 15,
               "source_page": 2,
               "unit": "sqm",
               "rate": 1685.4,
               "rate_display": "1685.40"
             }
           ],
-          "order_index": 18,
+          "order_index": 12,
           "source_page": 1
         },
         {
@@ -238,7 +184,7 @@
               "code": "21.4.1",
               "children_count": 0,
               "children": [],
-              "order_index": 23,
+              "order_index": 17,
               "source_page": 2,
               "unit": "each",
               "rate": 2823.85,
@@ -250,32 +196,23 @@
               "code": "21.4.2",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
+              "order_index": 18,
               "source_page": 2,
               "unit": "each",
               "rate": 2966.1,
               "rate_display": "2966.10"
             }
           ],
-          "order_index": 22,
+          "order_index": 16,
           "source_page": 2
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing powder coated aluminium work (minimum thickness of powder coating 50 micron) consisting of tee/ angle sections, of approved make conforming to IS : 733 in frames of false ceiling including aluminium angle cleats with necessary C.P. brass/ stainless steel sunk screws, aluminium perimeter angles fixed to wall with stainless steel rawl plugs @ 450 mm centre to centre and fixing the frame work to G.I. level adjusting hangers 6 mm dia. with necessary cadmium plated machine screws all complete as per approved architectural drawings and direction of the Engineer-in-charge (level adjusting hangers, ceiling cleats and expansion hold fasteners to be paid for separately). kg",
+          "title": "Providing and fixing powder coated aluminium work (minimum thickness of powder coating 50 micron) consisting of tee/ angle sections, of approved make conforming to IS : 733 in frames of false ceiling including aluminium angle cleats with necessary C.P. brass/ stainless steel sunk screws, aluminium perimeter angles fixed to wall with stainless steel rawl plugs @ 450 mm centre to centre and fixing the frame work to G.I. level adjusting hangers 6 mm dia. with necessary cadmium plated machine screws all complete as per approved architectural drawings and direction of the Engineer-in-charge (level adjusting hangers, ceiling cleats and expansion hold fasteners to be paid for separately). kg 817.15",
           "code": "21.5",
           "children_count": 0,
           "children": [],
-          "order_index": 25,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "817.15",
-          "children_count": 0,
-          "children": [],
-          "order_index": 26,
+          "order_index": 19,
           "source_page": 2
         },
         {
@@ -284,7 +221,7 @@
           "code": "21.6",
           "children_count": 0,
           "children": [],
-          "order_index": 27,
+          "order_index": 20,
           "source_page": 2,
           "unit": "each",
           "rate": 82.45,
@@ -298,42 +235,24 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Anodised aluminium sheet 2.5 mm thick (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg",
+              "title": "Anodised aluminium sheet 2.5 mm thick (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 680.55",
               "code": "21.7.1",
               "children_count": 0,
               "children": [],
-              "order_index": 29,
+              "order_index": 22,
               "source_page": 2
             },
             {
               "node_type": "item",
-              "title": "Powder coated aluminium sheet 2.5 mm thick (minimum thickness of powder coating 50 micron) kg",
+              "title": "Powder coated aluminium sheet 2.5 mm thick (minimum thickness of powder coating 50 micron) kg 716.40",
               "code": "21.7.2",
               "children_count": 0,
               "children": [],
-              "order_index": 31,
+              "order_index": 23,
               "source_page": 2
             }
           ],
-          "order_index": 28,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "680.55",
-          "children_count": 0,
-          "children": [],
-          "order_index": 30,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "716.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 32,
+          "order_index": 21,
           "source_page": 2
         },
         {
@@ -348,14 +267,14 @@
               "code": "21.8.1",
               "children_count": 0,
               "children": [],
-              "order_index": 34,
+              "order_index": 25,
               "source_page": 2,
               "unit": "metre",
               "rate": 96.75,
               "rate_display": "96.75"
             }
           ],
-          "order_index": 33,
+          "order_index": 24,
           "source_page": 2
         },
         {
@@ -370,7 +289,7 @@
               "code": "21.9.1",
               "children_count": 0,
               "children": [],
-              "order_index": 36,
+              "order_index": 27,
               "source_page": 3
             },
             {
@@ -379,11 +298,11 @@
               "code": "21.9.2",
               "children_count": 0,
               "children": [],
-              "order_index": 38,
+              "order_index": 29,
               "source_page": 3
             }
           ],
-          "order_index": 35,
+          "order_index": 26,
           "source_page": 3
         },
         {
@@ -392,7 +311,7 @@
           "code": "12.80",
           "children_count": 0,
           "children": [],
-          "order_index": 37,
+          "order_index": 28,
           "source_page": 3
         },
         {
@@ -401,7 +320,7 @@
           "code": "21.10",
           "children_count": 0,
           "children": [],
-          "order_index": 40,
+          "order_index": 31,
           "source_page": 3,
           "unit": "sqm",
           "rate": 4997.7,
@@ -419,7 +338,7 @@
               "code": "21.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 42,
+              "order_index": 33,
               "source_page": 3,
               "unit": "each",
               "rate": 344.3,
@@ -431,7 +350,7 @@
               "code": "21.11.2",
               "children_count": 0,
               "children": [],
-              "order_index": 43,
+              "order_index": 34,
               "source_page": 3,
               "unit": "each",
               "rate": 387.0,
@@ -443,7 +362,7 @@
               "code": "21.11.3",
               "children_count": 0,
               "children": [],
-              "order_index": 44,
+              "order_index": 35,
               "source_page": 3,
               "unit": "each",
               "rate": 325.8,
@@ -455,7 +374,7 @@
               "code": "21.11.4",
               "children_count": 0,
               "children": [],
-              "order_index": 45,
+              "order_index": 36,
               "source_page": 3,
               "unit": "each",
               "rate": 802.4,
@@ -467,14 +386,14 @@
               "code": "21.11.5",
               "children_count": 0,
               "children": [],
-              "order_index": 46,
+              "order_index": 37,
               "source_page": 3,
               "unit": "each",
               "rate": 1478.15,
               "rate_display": "1478.15"
             }
           ],
-          "order_index": 41,
+          "order_index": 32,
           "source_page": 3
         },
         {
@@ -489,7 +408,7 @@
               "code": "21.12.1",
               "children_count": 0,
               "children": [],
-              "order_index": 48,
+              "order_index": 39,
               "source_page": 3,
               "unit": "each",
               "rate": 575.75,
@@ -501,7 +420,7 @@
               "code": "21.12.2",
               "children_count": 0,
               "children": [],
-              "order_index": 49,
+              "order_index": 40,
               "source_page": 3,
               "unit": "each",
               "rate": 631.55,
@@ -513,14 +432,14 @@
               "code": "21.12.3",
               "children_count": 0,
               "children": [],
-              "order_index": 50,
+              "order_index": 41,
               "source_page": 3,
               "unit": "each",
               "rate": 645.5,
               "rate_display": "645.50"
             }
           ],
-          "order_index": 47,
+          "order_index": 38,
           "source_page": 3
         },
         {
@@ -529,7 +448,7 @@
           "code": "21.13",
           "children_count": 0,
           "children": [],
-          "order_index": 51,
+          "order_index": 42,
           "source_page": 3,
           "unit": "each",
           "rate": 528.85,
@@ -537,20 +456,11 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868. Minimum anodic coating of grade AC 15) sub frame work for windows and ventilators with extruded built up standard tubular sections of approved make conforming to IS: 733 and IS: 1285, fixed with dash fastener of required dia and size (Dash fastener to be paid for separately). kg",
+          "title": "Providing and fixing anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868. Minimum anodic coating of grade AC 15) sub frame work for windows and ventilators with extruded built up standard tubular sections of approved make conforming to IS: 733 and IS: 1285, fixed with dash fastener of required dia and size (Dash fastener to be paid for separately). kg 402.80",
           "code": "21.14",
           "children_count": 0,
           "children": [],
-          "order_index": 52,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "402.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 53,
+          "order_index": 43,
           "source_page": 3
         },
         {
@@ -565,7 +475,7 @@
               "code": "21.15.1",
               "children_count": 0,
               "children": [],
-              "order_index": 55,
+              "order_index": 45,
               "source_page": 3,
               "unit": "each",
               "rate": 89.4,
@@ -577,7 +487,7 @@
               "code": "21.15.2",
               "children_count": 0,
               "children": [],
-              "order_index": 56,
+              "order_index": 46,
               "source_page": 3,
               "unit": "each",
               "rate": 97.95,
@@ -589,14 +499,14 @@
               "code": "21.15.3",
               "children_count": 0,
               "children": [],
-              "order_index": 57,
+              "order_index": 47,
               "source_page": 3,
               "unit": "each",
               "rate": 95.1,
               "rate_display": "95.10"
             }
           ],
-          "order_index": 54,
+          "order_index": 44,
           "source_page": 3
         },
         {
@@ -611,7 +521,7 @@
               "code": "21.16.1",
               "children_count": 0,
               "children": [],
-              "order_index": 59,
+              "order_index": 49,
               "source_page": 3,
               "unit": "each",
               "rate": 107.9,
@@ -623,7 +533,7 @@
               "code": "21.16.2",
               "children_count": 0,
               "children": [],
-              "order_index": 60,
+              "order_index": 50,
               "source_page": 3,
               "unit": "each",
               "rate": 109.3,
@@ -635,32 +545,23 @@
               "code": "21.16.3",
               "children_count": 0,
               "children": [],
-              "order_index": 61,
+              "order_index": 51,
               "source_page": 3,
               "unit": "each",
               "rate": 112.15,
               "rate_display": "112.15"
             }
           ],
-          "order_index": 58,
+          "order_index": 48,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing anodised aluminium grill (anodised transparent or dyed to required shade according to IS: 1868 with minimum anodic coating of grade AC 15) of approved design/pattern, with approved standard section and fixed to the existing window frame with C.P. brass/ stainless steel screws @ 200 mm centre to centre, including cutting the grill to proper opening size for fixing and operation of handles and fixing approved anodised aluminium standard section around the opening, all complete as per requirement and direction of Engineer-in-charge. (Only weight of grill to be measured for payment). kg",
+          "title": "Providing and fixing anodised aluminium grill (anodised transparent or dyed to required shade according to IS: 1868 with minimum anodic coating of grade AC 15) of approved design/pattern, with approved standard section and fixed to the existing window frame with C.P. brass/ stainless steel screws @ 200 mm centre to centre, including cutting the grill to proper opening size for fixing and operation of handles and fixing approved anodised aluminium standard section around the opening, all complete as per requirement and direction of Engineer-in-charge. (Only weight of grill to be measured for payment). kg 638.35",
           "code": "21.17",
           "children_count": 0,
           "children": [],
-          "order_index": 62,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "638.35",
-          "children_count": 0,
-          "children": [],
-          "order_index": 63,
+          "order_index": 52,
           "source_page": 4
         },
         {
@@ -669,7 +570,7 @@
           "code": "21.18",
           "children_count": 0,
           "children": [],
-          "order_index": 64,
+          "order_index": 53,
           "source_page": 4,
           "unit": "sqm",
           "rate": 5325.9,
@@ -687,7 +588,7 @@
               "code": "21.19.1",
               "children_count": 0,
               "children": [],
-              "order_index": 66,
+              "order_index": 55,
               "source_page": 4,
               "unit": "metre",
               "rate": 148.1,
@@ -699,7 +600,7 @@
               "code": "21.19.2",
               "children_count": 0,
               "children": [],
-              "order_index": 67,
+              "order_index": 56,
               "source_page": 4,
               "unit": "metre",
               "rate": 200.95,
@@ -711,14 +612,14 @@
               "code": "21.19.3",
               "children_count": 0,
               "children": [],
-              "order_index": 68,
+              "order_index": 57,
               "source_page": 4,
               "unit": "metre",
               "rate": 363.2,
               "rate_display": "363.20"
             }
           ],
-          "order_index": 65,
+          "order_index": 54,
           "source_page": 4
         }
       ]
@@ -726,9 +627,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/21.0 ALUMINIUM WORK.pdf",
-    "row_count": 69,
+    "row_count": 58,
     "note_count": 0,
-    "leaf_count": 54,
+    "leaf_count": 43,
     "duplicate_codes": [
       "12.80"
     ],

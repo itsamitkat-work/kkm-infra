@@ -6,14 +6,6 @@
       "node_type": "subhead",
       "title": "MASONRY WORK",
       "code": "6.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub - soil water level up to the centre of gravity of brick work under sub - soil water with the quantity of brick work in cum. executed under the sub - soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
-          "source_page": 2,
-          "order_index": 0
-        }
-      ],
       "children_count": 41,
       "children": [
         {
@@ -438,6 +430,14 @@
           "node_type": "item",
           "title": "Extra for laying brick work in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
           "code": "6.24",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub - soil water level up to the centre of gravity of brick work under sub - soil water with the quantity of brick work in cum. executed under the sub - soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
+              "source_page": 2,
+              "order_index": 0
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 36,

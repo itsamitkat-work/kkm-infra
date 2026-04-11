@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "RAIN WATER HARVESTING & TUBEWELLS",
       "code": "23.0",
-      "children_count": 16,
+      "children_count": 15,
       "children": [
         {
           "node_type": "item",
@@ -458,20 +458,11 @@
         },
         {
           "node_type": "item",
-          "title": "Development of tube well in accordance with IS : 2800 (part I) and IS: 11189, to establish maximum rate of useable water yield without sand content (beyond permissible limit), with required capacity air compressor, running the compressor for required time till well is fully developed, measuring yield of well by “V” notch method or any other approved method, measuring static level & draw down etc. by step draw down method, collecting water samples & getting tested in approved laboratory, including disinfection of tubewell, all complete, including hire & labour charges of air compressor, tools & accessories etc., all as per requirement and direction of Engineer-in-charge. hour",
+          "title": "Development of tube well in accordance with IS : 2800 (part I) and IS: 11189, to establish maximum rate of useable water yield without sand content (beyond permissible limit), with required capacity air compressor, running the compressor for required time till well is fully developed, measuring yield of well by “V” notch method or any other approved method, measuring static level & draw down etc. by step draw down method, collecting water samples & getting tested in approved laboratory, including disinfection of tubewell, all complete, including hire & labour charges of air compressor, tools & accessories etc., all as per requirement and direction of Engineer-in-charge. hour 1085.05",
           "code": "23.12",
           "children_count": 0,
           "children": [],
           "order_index": 39,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "1085.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 40,
           "source_page": 3
         },
         {
@@ -486,7 +477,7 @@
               "code": "23.13.1",
               "children_count": 0,
               "children": [],
-              "order_index": 42,
+              "order_index": 41,
               "source_page": 4,
               "unit": "each",
               "rate": 224.1,
@@ -498,7 +489,7 @@
               "code": "23.13.2",
               "children_count": 0,
               "children": [],
-              "order_index": 43,
+              "order_index": 42,
               "source_page": 4,
               "unit": "each",
               "rate": 246.45,
@@ -510,14 +501,14 @@
               "code": "23.13.3",
               "children_count": 0,
               "children": [],
-              "order_index": 44,
+              "order_index": 43,
               "source_page": 4,
               "unit": "each",
               "rate": 321.15,
               "rate_display": "321.15"
             }
           ],
-          "order_index": 41,
+          "order_index": 40,
           "source_page": 4
         },
         {
@@ -532,7 +523,7 @@
               "code": "23.14.1",
               "children_count": 0,
               "children": [],
-              "order_index": 46,
+              "order_index": 45,
               "source_page": 4,
               "unit": "each",
               "rate": 1911.4,
@@ -544,7 +535,7 @@
               "code": "23.14.2",
               "children_count": 0,
               "children": [],
-              "order_index": 47,
+              "order_index": 46,
               "source_page": 4,
               "unit": "each",
               "rate": 2019.05,
@@ -556,14 +547,14 @@
               "code": "23.14.3",
               "children_count": 0,
               "children": [],
-              "order_index": 48,
+              "order_index": 47,
               "source_page": 4,
               "unit": "each",
               "rate": 2293.65,
               "rate_display": "2293.65"
             }
           ],
-          "order_index": 45,
+          "order_index": 44,
           "source_page": 4
         },
         {
@@ -578,7 +569,7 @@
               "code": "23.15.1",
               "children_count": 0,
               "children": [],
-              "order_index": 50,
+              "order_index": 49,
               "source_page": 4,
               "unit": "each",
               "rate": 265.1,
@@ -590,7 +581,7 @@
               "code": "23.15.2",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 50,
               "source_page": 4,
               "unit": "each",
               "rate": 322.0,
@@ -602,14 +593,14 @@
               "code": "23.15.3",
               "children_count": 0,
               "children": [],
-              "order_index": 52,
+              "order_index": 51,
               "source_page": 4,
               "unit": "each",
               "rate": 357.6,
               "rate_display": "357.60"
             }
           ],
-          "order_index": 49,
+          "order_index": 48,
           "source_page": 4
         }
       ]
@@ -617,9 +608,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/23.0 RAIN WATER HARVESTING & TUBEWELLS.pdf",
-    "row_count": 53,
+    "row_count": 52,
     "note_count": 0,
-    "leaf_count": 40,
+    "leaf_count": 39,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

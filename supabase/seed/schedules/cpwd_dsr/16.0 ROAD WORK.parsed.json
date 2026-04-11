@@ -20,7 +20,7 @@
           "order_index": 2
         }
       ],
-      "children_count": 101,
+      "children_count": 98,
       "children": [
         {
           "node_type": "item",
@@ -412,7 +412,7 @@
             },
             {
               "node_type": "item",
-              "title": "Welded steel wire fabric of required width having rectangular mesh painted with two or more coats of enamel paint of approved shade over a coat of primer (Priming & Painting to be paid for separately). kg",
+              "title": "Welded steel wire fabric of required width having rectangular mesh painted with two or more coats of enamel paint of approved shade over a coat of primer (Priming & Painting to be paid for separately). kg 78.95",
               "code": "16.15.2",
               "children_count": 0,
               "children": [],
@@ -425,29 +425,11 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "78.95",
-          "children_count": 0,
-          "children": [],
-          "order_index": 35,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "Supplying and fixing turn buckles and straining bolts for barbed wire fencing. each set",
+          "title": "Supplying and fixing turn buckles and straining bolts for barbed wire fencing. each set 274.30",
           "code": "16.16",
           "children_count": 0,
           "children": [],
-          "order_index": 36,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "274.30",
-          "children_count": 0,
-          "children": [],
-          "order_index": 37,
+          "order_index": 35,
           "source_page": 2
         },
         {
@@ -462,14 +444,14 @@
               "code": "16.17.1",
               "children_count": 0,
               "children": [],
-              "order_index": 39,
+              "order_index": 37,
               "source_page": 2,
               "unit": "metre",
               "rate": 14.0,
               "rate_display": "14.00"
             }
           ],
-          "order_index": 38,
+          "order_index": 36,
           "source_page": 2
         },
         {
@@ -484,32 +466,23 @@
               "code": "16.18.1",
               "children_count": 0,
               "children": [],
-              "order_index": 41,
+              "order_index": 39,
               "source_page": 2,
               "unit": "metre",
               "rate": 22.1,
               "rate_display": "22.10"
             }
           ],
-          "order_index": 40,
+          "order_index": 38,
           "source_page": 2
         },
         {
           "node_type": "item",
-          "title": "Supplying at site Angle iron post & strut of required size including bottom to be split and bent at right angle in opposite direction for 10 cm length and drilling holes upto 10 mm dia. etc. complete. kg",
+          "title": "Supplying at site Angle iron post & strut of required size including bottom to be split and bent at right angle in opposite direction for 10 cm length and drilling holes upto 10 mm dia. etc. complete. kg 125.75",
           "code": "16.19",
           "children_count": 0,
           "children": [],
-          "order_index": 42,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "125.75",
-          "children_count": 0,
-          "children": [],
-          "order_index": 43,
+          "order_index": 40,
           "source_page": 3
         },
         {
@@ -518,7 +491,7 @@
           "code": "16.20",
           "children_count": 0,
           "children": [],
-          "order_index": 44,
+          "order_index": 41,
           "source_page": 3,
           "unit": "sqm",
           "rate": 66.15,
@@ -530,7 +503,7 @@
           "code": "16.21",
           "children_count": 0,
           "children": [],
-          "order_index": 45,
+          "order_index": 42,
           "source_page": 3
         },
         {
@@ -539,7 +512,7 @@
           "code": "10.55",
           "children_count": 0,
           "children": [],
-          "order_index": 46,
+          "order_index": 43,
           "source_page": 3
         },
         {
@@ -548,7 +521,7 @@
           "code": "16.22",
           "children_count": 0,
           "children": [],
-          "order_index": 47,
+          "order_index": 44,
           "source_page": 3,
           "unit": "each",
           "rate": 252.9,
@@ -560,7 +533,7 @@
           "code": "16.23",
           "children_count": 0,
           "children": [],
-          "order_index": 48,
+          "order_index": 45,
           "source_page": 3,
           "unit": "each",
           "rate": 852.4,
@@ -578,7 +551,7 @@
               "code": "16.24.1",
               "children_count": 0,
               "children": [],
-              "order_index": 50,
+              "order_index": 47,
               "source_page": 3,
               "unit": "each",
               "rate": 2876.7,
@@ -590,7 +563,7 @@
               "code": "16.24.2",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 48,
               "source_page": 3,
               "unit": "each",
               "rate": 5170.25,
@@ -602,14 +575,14 @@
               "code": "16.24.3",
               "children_count": 0,
               "children": [],
-              "order_index": 52,
+              "order_index": 49,
               "source_page": 3,
               "unit": "each",
               "rate": 1924.5,
               "rate_display": "1924.50"
             }
           ],
-          "order_index": 49,
+          "order_index": 46,
           "source_page": 3
         },
         {
@@ -618,7 +591,7 @@
           "code": "16.25",
           "children_count": 0,
           "children": [],
-          "order_index": 53,
+          "order_index": 50,
           "source_page": 3,
           "unit": "sqm",
           "rate": 225.35,
@@ -630,7 +603,7 @@
           "code": "16.26",
           "children_count": 0,
           "children": [],
-          "order_index": 54,
+          "order_index": 51,
           "source_page": 3,
           "unit": "sqm",
           "rate": 311.85,
@@ -642,7 +615,7 @@
           "code": "16.27",
           "children_count": 0,
           "children": [],
-          "order_index": 55,
+          "order_index": 52,
           "source_page": 3,
           "unit": "sqm",
           "rate": 175.1,
@@ -660,14 +633,14 @@
               "code": "16.28.1",
               "children_count": 0,
               "children": [],
-              "order_index": 57,
+              "order_index": 54,
               "source_page": 4,
               "unit": "sqm",
               "rate": 198.45,
               "rate_display": "198.45"
             }
           ],
-          "order_index": 56,
+          "order_index": 53,
           "source_page": 4
         },
         {
@@ -682,14 +655,14 @@
               "code": "16.29.1",
               "children_count": 0,
               "children": [],
-              "order_index": 59,
+              "order_index": 56,
               "source_page": 4,
               "unit": "sqm",
               "rate": 125.3,
               "rate_display": "125.30"
             }
           ],
-          "order_index": 58,
+          "order_index": 55,
           "source_page": 4
         },
         {
@@ -704,7 +677,7 @@
               "code": "16.30.1",
               "children_count": 0,
               "children": [],
-              "order_index": 61,
+              "order_index": 58,
               "source_page": 4,
               "unit": "sqm",
               "rate": 60.5,
@@ -716,14 +689,14 @@
               "code": "16.30.2",
               "children_count": 0,
               "children": [],
-              "order_index": 62,
+              "order_index": 59,
               "source_page": 4,
               "unit": "sqm",
               "rate": 48.2,
               "rate_display": "48.20"
             }
           ],
-          "order_index": 60,
+          "order_index": 57,
           "source_page": 4
         },
         {
@@ -744,7 +717,7 @@
                   "code": "16.31.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 65,
+                  "order_index": 62,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 13.45,
@@ -756,14 +729,14 @@
                   "code": "16.31.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 66,
+                  "order_index": 63,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 9.2,
                   "rate_display": "9.20"
                 }
               ],
-              "order_index": 64,
+              "order_index": 61,
               "source_page": 4
             },
             {
@@ -778,7 +751,7 @@
                   "code": "16.31.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 68,
+                  "order_index": 65,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 21.2,
@@ -790,18 +763,18 @@
                   "code": "16.31.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 69,
+                  "order_index": 66,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 14.05,
                   "rate_display": "14.05"
                 }
               ],
-              "order_index": 67,
+              "order_index": 64,
               "source_page": 4
             }
           ],
-          "order_index": 63,
+          "order_index": 60,
           "source_page": 4
         },
         {
@@ -816,7 +789,7 @@
               "code": "16.32.1",
               "children_count": 0,
               "children": [],
-              "order_index": 71,
+              "order_index": 68,
               "source_page": 4,
               "unit": "sqm",
               "rate": 234.05,
@@ -828,7 +801,7 @@
               "code": "16.32.2",
               "children_count": 0,
               "children": [],
-              "order_index": 72,
+              "order_index": 69,
               "source_page": 4,
               "unit": "sqm",
               "rate": 245.15,
@@ -840,14 +813,14 @@
               "code": "16.32.3",
               "children_count": 0,
               "children": [],
-              "order_index": 73,
+              "order_index": 70,
               "source_page": 4,
               "unit": "sqm",
               "rate": 233.15,
               "rate_display": "233.15"
             }
           ],
-          "order_index": 70,
+          "order_index": 67,
           "source_page": 4
         },
         {
@@ -862,7 +835,7 @@
               "code": "16.33.1",
               "children_count": 0,
               "children": [],
-              "order_index": 75,
+              "order_index": 72,
               "source_page": 4,
               "unit": "sqm",
               "rate": 281.0,
@@ -874,7 +847,7 @@
               "code": "16.33.2",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 73,
               "source_page": 5,
               "unit": "sqm",
               "rate": 294.95,
@@ -886,14 +859,14 @@
               "code": "16.33.3",
               "children_count": 0,
               "children": [],
-              "order_index": 77,
+              "order_index": 74,
               "source_page": 5,
               "unit": "sqm",
               "rate": 279.9,
               "rate_display": "279.90"
             }
           ],
-          "order_index": 74,
+          "order_index": 71,
           "source_page": 4
         },
         {
@@ -902,7 +875,7 @@
           "code": "16.34",
           "children_count": 0,
           "children": [],
-          "order_index": 78,
+          "order_index": 75,
           "source_page": 5,
           "unit": "sqm",
           "rate": 208.9,
@@ -914,7 +887,7 @@
           "code": "16.35",
           "children_count": 0,
           "children": [],
-          "order_index": 79,
+          "order_index": 76,
           "source_page": 5,
           "unit": "sqm",
           "rate": 252.15,
@@ -932,7 +905,7 @@
               "code": "16.36.1",
               "children_count": 0,
               "children": [],
-              "order_index": 81,
+              "order_index": 78,
               "source_page": 5,
               "unit": "sqm",
               "rate": 505.65,
@@ -944,14 +917,14 @@
               "code": "16.36.2",
               "children_count": 0,
               "children": [],
-              "order_index": 82,
+              "order_index": 79,
               "source_page": 5,
               "unit": "sqm",
               "rate": 744.15,
               "rate_display": "744.15"
             }
           ],
-          "order_index": 80,
+          "order_index": 77,
           "source_page": 5
         },
         {
@@ -966,7 +939,7 @@
               "code": "16.37.1",
               "children_count": 0,
               "children": [],
-              "order_index": 84,
+              "order_index": 81,
               "source_page": 5,
               "unit": "sqm",
               "rate": 854.15,
@@ -978,14 +951,14 @@
               "code": "16.37.2",
               "children_count": 0,
               "children": [],
-              "order_index": 85,
+              "order_index": 82,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1365.5,
               "rate_display": "1365.50"
             }
           ],
-          "order_index": 83,
+          "order_index": 80,
           "source_page": 5
         },
         {
@@ -1000,7 +973,7 @@
               "code": "16.38.1",
               "children_count": 0,
               "children": [],
-              "order_index": 87,
+              "order_index": 84,
               "source_page": 5,
               "unit": "sqm",
               "rate": 353.65,
@@ -1012,7 +985,7 @@
               "code": "16.38.2",
               "children_count": 0,
               "children": [],
-              "order_index": 88,
+              "order_index": 85,
               "source_page": 5,
               "unit": "sqm",
               "rate": 377.05,
@@ -1024,14 +997,14 @@
               "code": "16.38.3",
               "children_count": 0,
               "children": [],
-              "order_index": 89,
+              "order_index": 86,
               "source_page": 5,
               "unit": "sqm",
               "rate": 351.8,
               "rate_display": "351.80"
             }
           ],
-          "order_index": 86,
+          "order_index": 83,
           "source_page": 5
         },
         {
@@ -1046,7 +1019,7 @@
               "code": "16.39.1",
               "children_count": 0,
               "children": [],
-              "order_index": 91,
+              "order_index": 88,
               "source_page": 6,
               "unit": "sqm",
               "rate": 531.6,
@@ -1058,7 +1031,7 @@
               "code": "16.39.2",
               "children_count": 0,
               "children": [],
-              "order_index": 92,
+              "order_index": 89,
               "source_page": 6,
               "unit": "sqm",
               "rate": 568.6,
@@ -1070,14 +1043,14 @@
               "code": "16.39.3",
               "children_count": 0,
               "children": [],
-              "order_index": 93,
+              "order_index": 90,
               "source_page": 6,
               "unit": "sqm",
               "rate": 528.65,
               "rate_display": "528.65"
             }
           ],
-          "order_index": 90,
+          "order_index": 87,
           "source_page": 6
         },
         {
@@ -1086,7 +1059,7 @@
           "code": "16.40",
           "children_count": 0,
           "children": [],
-          "order_index": 94,
+          "order_index": 91,
           "source_page": 6,
           "unit": "sqm",
           "rate": 88.55,
@@ -1098,7 +1071,7 @@
           "code": "16.41",
           "children_count": 0,
           "children": [],
-          "order_index": 95,
+          "order_index": 92,
           "source_page": 6,
           "unit": "sqm",
           "rate": 130.85,
@@ -1110,7 +1083,7 @@
           "code": "16.42",
           "children_count": 0,
           "children": [],
-          "order_index": 96,
+          "order_index": 93,
           "source_page": 6,
           "unit": "cum",
           "rate": 7993.8,
@@ -1128,7 +1101,7 @@
               "code": "16.43.1",
               "children_count": 0,
               "children": [],
-              "order_index": 98,
+              "order_index": 95,
               "source_page": 6,
               "unit": "cum",
               "rate": 10529.35,
@@ -1140,14 +1113,14 @@
               "code": "16.43.2",
               "children_count": 0,
               "children": [],
-              "order_index": 99,
+              "order_index": 96,
               "source_page": 6,
               "unit": "cum",
               "rate": 11098.45,
               "rate_display": "11098.45"
             }
           ],
-          "order_index": 97,
+          "order_index": 94,
           "source_page": 6
         },
         {
@@ -1156,7 +1129,7 @@
           "code": "16.44",
           "children_count": 0,
           "children": [],
-          "order_index": 100,
+          "order_index": 97,
           "source_page": 6,
           "unit": "litre",
           "rate": 55.5,
@@ -1168,7 +1141,7 @@
           "code": "16.45",
           "children_count": 0,
           "children": [],
-          "order_index": 101,
+          "order_index": 98,
           "source_page": 7
         },
         {
@@ -1177,7 +1150,7 @@
           "code": "5.30",
           "children_count": 0,
           "children": [],
-          "order_index": 102,
+          "order_index": 99,
           "source_page": 7
         },
         {
@@ -1192,11 +1165,11 @@
               "code": "16.46.1",
               "children_count": 0,
               "children": [],
-              "order_index": 104,
+              "order_index": 101,
               "source_page": 7
             }
           ],
-          "order_index": 103,
+          "order_index": 100,
           "source_page": 7
         },
         {
@@ -1205,7 +1178,7 @@
           "code": "8.65",
           "children_count": 0,
           "children": [],
-          "order_index": 105,
+          "order_index": 102,
           "source_page": 7
         },
         {
@@ -1220,7 +1193,7 @@
               "code": "16.47.1",
               "children_count": 0,
               "children": [],
-              "order_index": 107,
+              "order_index": 104,
               "source_page": 7,
               "unit": "sqm",
               "rate": 188.2,
@@ -1232,14 +1205,14 @@
               "code": "16.47.2",
               "children_count": 0,
               "children": [],
-              "order_index": 108,
+              "order_index": 105,
               "source_page": 7,
               "unit": "sqm",
               "rate": 120.8,
               "rate_display": "120.80"
             }
           ],
-          "order_index": 106,
+          "order_index": 103,
           "source_page": 7
         },
         {
@@ -1254,7 +1227,7 @@
               "code": "16.48.1",
               "children_count": 0,
               "children": [],
-              "order_index": 110,
+              "order_index": 107,
               "source_page": 7,
               "unit": "sqm",
               "rate": 288.9,
@@ -1266,14 +1239,14 @@
               "code": "16.48.2",
               "children_count": 0,
               "children": [],
-              "order_index": 111,
+              "order_index": 108,
               "source_page": 7,
               "unit": "sqm",
               "rate": 189.85,
               "rate_display": "189.85"
             }
           ],
-          "order_index": 109,
+          "order_index": 106,
           "source_page": 7
         },
         {
@@ -1282,7 +1255,7 @@
           "code": "16.49",
           "children_count": 0,
           "children": [],
-          "order_index": 112,
+          "order_index": 109,
           "source_page": 7,
           "unit": "each",
           "rate": 3050.4,
@@ -1294,7 +1267,7 @@
           "code": "16.50",
           "children_count": 0,
           "children": [],
-          "order_index": 113,
+          "order_index": 110,
           "source_page": 7,
           "unit": "each",
           "rate": 206.3,
@@ -1312,14 +1285,14 @@
               "code": "16.51.1",
               "children_count": 0,
               "children": [],
-              "order_index": 115,
+              "order_index": 112,
               "source_page": 8,
               "unit": "cum",
               "rate": 1514.4,
               "rate_display": "1514.40"
             }
           ],
-          "order_index": 114,
+          "order_index": 111,
           "source_page": 8
         },
         {
@@ -1328,7 +1301,7 @@
           "code": "16.52",
           "children_count": 0,
           "children": [],
-          "order_index": 116,
+          "order_index": 113,
           "source_page": 8,
           "unit": "cum",
           "rate": 13719.05,
@@ -1340,7 +1313,7 @@
           "code": "16.53",
           "children_count": 0,
           "children": [],
-          "order_index": 117,
+          "order_index": 114,
           "source_page": 8,
           "unit": "metre",
           "rate": 375.8,
@@ -1358,7 +1331,7 @@
               "code": "16.54.1",
               "children_count": 0,
               "children": [],
-              "order_index": 119,
+              "order_index": 116,
               "source_page": 8,
               "unit": "cum",
               "rate": 11129.55,
@@ -1370,14 +1343,14 @@
               "code": "16.54.2",
               "children_count": 0,
               "children": [],
-              "order_index": 120,
+              "order_index": 117,
               "source_page": 8,
               "unit": "cum",
               "rate": 11032.2,
               "rate_display": "11032.20"
             }
           ],
-          "order_index": 118,
+          "order_index": 115,
           "source_page": 8
         },
         {
@@ -1392,7 +1365,7 @@
               "code": "16.55.1",
               "children_count": 0,
               "children": [],
-              "order_index": 122,
+              "order_index": 119,
               "source_page": 8,
               "unit": "cum",
               "rate": 8505.65,
@@ -1404,14 +1377,14 @@
               "code": "16.55.2",
               "children_count": 0,
               "children": [],
-              "order_index": 123,
+              "order_index": 120,
               "source_page": 8,
               "unit": "cum",
               "rate": 8413.0,
               "rate_display": "8413.00"
             }
           ],
-          "order_index": 121,
+          "order_index": 118,
           "source_page": 8
         },
         {
@@ -1426,7 +1399,7 @@
               "code": "16.56.1",
               "children_count": 0,
               "children": [],
-              "order_index": 125,
+              "order_index": 122,
               "source_page": 9,
               "unit": "sqm",
               "rate": 277.7,
@@ -1438,14 +1411,14 @@
               "code": "16.56.2",
               "children_count": 0,
               "children": [],
-              "order_index": 126,
+              "order_index": 123,
               "source_page": 9,
               "unit": "sqm",
               "rate": 275.3,
               "rate_display": "275.30"
             }
           ],
-          "order_index": 124,
+          "order_index": 121,
           "source_page": 9
         },
         {
@@ -1460,7 +1433,7 @@
               "code": "16.57.1",
               "children_count": 0,
               "children": [],
-              "order_index": 128,
+              "order_index": 125,
               "source_page": 9,
               "unit": "cum",
               "rate": 12126.2,
@@ -1472,7 +1445,7 @@
               "code": "16.57.2",
               "children_count": 0,
               "children": [],
-              "order_index": 129,
+              "order_index": 126,
               "source_page": 9,
               "unit": "cum",
               "rate": 12708.75,
@@ -1484,7 +1457,7 @@
               "code": "16.57.3",
               "children_count": 0,
               "children": [],
-              "order_index": 130,
+              "order_index": 127,
               "source_page": 9,
               "unit": "cum",
               "rate": 11204.1,
@@ -1496,7 +1469,7 @@
               "code": "16.57.4",
               "children_count": 0,
               "children": [],
-              "order_index": 131,
+              "order_index": 128,
               "source_page": 9,
               "unit": "cum",
               "rate": 10660.3,
@@ -1508,7 +1481,7 @@
               "code": "16.57.5",
               "children_count": 0,
               "children": [],
-              "order_index": 132,
+              "order_index": 129,
               "source_page": 9,
               "unit": "cum",
               "rate": 12026.8,
@@ -1520,7 +1493,7 @@
               "code": "16.57.6",
               "children_count": 0,
               "children": [],
-              "order_index": 133,
+              "order_index": 130,
               "source_page": 9,
               "unit": "cum",
               "rate": 12609.3,
@@ -1532,7 +1505,7 @@
               "code": "16.57.7",
               "children_count": 0,
               "children": [],
-              "order_index": 134,
+              "order_index": 131,
               "source_page": 9,
               "unit": "cum",
               "rate": 11104.65,
@@ -1544,14 +1517,14 @@
               "code": "16.57.8",
               "children_count": 0,
               "children": [],
-              "order_index": 135,
+              "order_index": 132,
               "source_page": 10,
               "unit": "cum",
               "rate": 10560.85,
               "rate_display": "10560.85"
             }
           ],
-          "order_index": 127,
+          "order_index": 124,
           "source_page": 9
         },
         {
@@ -1566,7 +1539,7 @@
               "code": "16.59.1",
               "children_count": 0,
               "children": [],
-              "order_index": 137,
+              "order_index": 134,
               "source_page": 10,
               "unit": "each",
               "rate": 7183.35,
@@ -1578,14 +1551,14 @@
               "code": "16.59.2",
               "children_count": 0,
               "children": [],
-              "order_index": 138,
+              "order_index": 135,
               "source_page": 10,
               "unit": "each",
               "rate": 5559.75,
               "rate_display": "5559.75"
             }
           ],
-          "order_index": 136,
+          "order_index": 133,
           "source_page": 10
         },
         {
@@ -1600,14 +1573,14 @@
               "code": "16.60.1",
               "children_count": 0,
               "children": [],
-              "order_index": 140,
+              "order_index": 137,
               "source_page": 10,
               "unit": "sqm",
               "rate": 5879.9,
               "rate_display": "5879.90"
             }
           ],
-          "order_index": 139,
+          "order_index": 136,
           "source_page": 10
         },
         {
@@ -1616,7 +1589,7 @@
           "code": "16.61",
           "children_count": 0,
           "children": [],
-          "order_index": 141,
+          "order_index": 138,
           "source_page": 11,
           "unit": "each",
           "rate": 8154.35,
@@ -1628,7 +1601,7 @@
           "code": "16.62",
           "children_count": 0,
           "children": [],
-          "order_index": 142,
+          "order_index": 139,
           "source_page": 11,
           "unit": "sqm",
           "rate": 747.8,
@@ -1640,7 +1613,7 @@
           "code": "16.63",
           "children_count": 0,
           "children": [],
-          "order_index": 143,
+          "order_index": 140,
           "source_page": 11,
           "unit": "sqm",
           "rate": 558.3,
@@ -1652,7 +1625,7 @@
           "code": "16.64",
           "children_count": 0,
           "children": [],
-          "order_index": 144,
+          "order_index": 141,
           "source_page": 11,
           "unit": "sqm",
           "rate": 199.35,
@@ -1664,7 +1637,7 @@
           "code": "16.65",
           "children_count": 0,
           "children": [],
-          "order_index": 145,
+          "order_index": 142,
           "source_page": 11,
           "unit": "each",
           "rate": 904.2,
@@ -1682,14 +1655,14 @@
               "code": "16.66.1",
               "children_count": 0,
               "children": [],
-              "order_index": 147,
+              "order_index": 144,
               "source_page": 11,
               "unit": "each",
               "rate": 27.5,
               "rate_display": "27.50"
             }
           ],
-          "order_index": 146,
+          "order_index": 143,
           "source_page": 11
         },
         {
@@ -1698,7 +1671,7 @@
           "code": "16.67",
           "children_count": 0,
           "children": [],
-          "order_index": 148,
+          "order_index": 145,
           "source_page": 11,
           "unit": "sqm",
           "rate": 1600.55,
@@ -1710,7 +1683,7 @@
           "code": "16.68",
           "children_count": 0,
           "children": [],
-          "order_index": 149,
+          "order_index": 146,
           "source_page": 11,
           "unit": "sqm",
           "rate": 972.0,
@@ -1722,7 +1695,7 @@
           "code": "16.69",
           "children_count": 0,
           "children": [],
-          "order_index": 150,
+          "order_index": 147,
           "source_page": 12,
           "unit": "cum",
           "rate": 10117.6,
@@ -1740,7 +1713,7 @@
               "code": "16.70.1",
               "children_count": 0,
               "children": [],
-              "order_index": 152,
+              "order_index": 149,
               "source_page": 12,
               "unit": "sqm",
               "rate": 1017.8,
@@ -1752,14 +1725,14 @@
               "code": "16.70.2",
               "children_count": 0,
               "children": [],
-              "order_index": 153,
+              "order_index": 150,
               "source_page": 12,
               "unit": "sqm",
               "rate": 1067.1,
               "rate_display": "1067.10"
             }
           ],
-          "order_index": 151,
+          "order_index": 148,
           "source_page": 12
         },
         {
@@ -1768,7 +1741,7 @@
           "code": "16.71",
           "children_count": 0,
           "children": [],
-          "order_index": 154,
+          "order_index": 151,
           "source_page": 12,
           "unit": "sqm",
           "rate": 1149.25,
@@ -1780,7 +1753,7 @@
           "code": "16.72",
           "children_count": 0,
           "children": [],
-          "order_index": 155,
+          "order_index": 152,
           "source_page": 12,
           "unit": "cum",
           "rate": 995.85,
@@ -1792,7 +1765,7 @@
           "code": "16.73",
           "children_count": 0,
           "children": [],
-          "order_index": 156,
+          "order_index": 153,
           "source_page": 12,
           "unit": "sqm",
           "rate": 659.05,
@@ -1810,7 +1783,7 @@
               "code": "16.74.1",
               "children_count": 0,
               "children": [],
-              "order_index": 158,
+              "order_index": 155,
               "source_page": 12,
               "unit": "sqm",
               "rate": 76.3,
@@ -1822,7 +1795,7 @@
               "code": "16.74.2",
               "children_count": 0,
               "children": [],
-              "order_index": 159,
+              "order_index": 156,
               "source_page": 12,
               "unit": "sqm",
               "rate": 175.0,
@@ -1834,14 +1807,14 @@
               "code": "16.74.3",
               "children_count": 0,
               "children": [],
-              "order_index": 160,
+              "order_index": 157,
               "source_page": 12,
               "unit": "sqm",
               "rate": 172.35,
               "rate_display": "172.35"
             }
           ],
-          "order_index": 157,
+          "order_index": 154,
           "source_page": 12
         },
         {
@@ -1850,7 +1823,7 @@
           "code": "16.75",
           "children_count": 0,
           "children": [],
-          "order_index": 161,
+          "order_index": 158,
           "source_page": 12,
           "unit": "cum",
           "rate": 9823.8,
@@ -1862,7 +1835,7 @@
           "code": "16.76",
           "children_count": 0,
           "children": [],
-          "order_index": 162,
+          "order_index": 159,
           "source_page": 12,
           "unit": "cum",
           "rate": 203.8,
@@ -1874,7 +1847,7 @@
           "code": "16.77",
           "children_count": 0,
           "children": [],
-          "order_index": 163,
+          "order_index": 160,
           "source_page": 12,
           "unit": "sqm",
           "rate": 7.0,
@@ -1892,7 +1865,7 @@
               "code": "16.78.1",
               "children_count": 0,
               "children": [],
-              "order_index": 165,
+              "order_index": 162,
               "source_page": 13,
               "unit": "cum",
               "rate": 2784.0,
@@ -1904,7 +1877,7 @@
               "code": "16.78.2",
               "children_count": 0,
               "children": [],
-              "order_index": 166,
+              "order_index": 163,
               "source_page": 13,
               "unit": "cum",
               "rate": 2924.85,
@@ -1916,14 +1889,14 @@
               "code": "16.78.3",
               "children_count": 0,
               "children": [],
-              "order_index": 167,
+              "order_index": 164,
               "source_page": 13,
               "unit": "cum",
               "rate": 2808.55,
               "rate_display": "2808.55"
             }
           ],
-          "order_index": 164,
+          "order_index": 161,
           "source_page": 12
         },
         {
@@ -1932,7 +1905,7 @@
           "code": "16.79",
           "children_count": 0,
           "children": [],
-          "order_index": 168,
+          "order_index": 165,
           "source_page": 13,
           "unit": "cum",
           "rate": 2914.3,
@@ -1944,7 +1917,7 @@
           "code": "16.80",
           "children_count": 0,
           "children": [],
-          "order_index": 169,
+          "order_index": 166,
           "source_page": 13,
           "unit": "cum",
           "rate": 4148.65,
@@ -1956,7 +1929,7 @@
           "code": "16.81",
           "children_count": 0,
           "children": [],
-          "order_index": 170,
+          "order_index": 167,
           "source_page": 13,
           "unit": "metre",
           "rate": 3439.5,
@@ -1968,7 +1941,7 @@
           "code": "16.82",
           "children_count": 0,
           "children": [],
-          "order_index": 171,
+          "order_index": 168,
           "source_page": 13,
           "unit": "metre",
           "rate": 39.35,
@@ -1980,7 +1953,7 @@
           "code": "16.83",
           "children_count": 0,
           "children": [],
-          "order_index": 172,
+          "order_index": 169,
           "source_page": 14,
           "unit": "sqm",
           "rate": 131.75,
@@ -1992,7 +1965,7 @@
           "code": "16.84",
           "children_count": 0,
           "children": [],
-          "order_index": 173,
+          "order_index": 170,
           "source_page": 14,
           "unit": "sqm",
           "rate": 402.95,
@@ -2004,7 +1977,7 @@
           "code": "16.85",
           "children_count": 0,
           "children": [],
-          "order_index": 174,
+          "order_index": 171,
           "source_page": 14,
           "unit": "metre",
           "rate": 109.45,
@@ -2022,14 +1995,14 @@
               "code": "16.86.1",
               "children_count": 0,
               "children": [],
-              "order_index": 176,
+              "order_index": 173,
               "source_page": 14,
               "unit": "sqm",
               "rate": 4746.2,
               "rate_display": "4746.20"
             }
           ],
-          "order_index": 175,
+          "order_index": 172,
           "source_page": 14
         },
         {
@@ -2044,7 +2017,7 @@
               "code": "16.87.1",
               "children_count": 0,
               "children": [],
-              "order_index": 178,
+              "order_index": 175,
               "source_page": 14,
               "unit": "sqm",
               "rate": 4950.9,
@@ -2056,14 +2029,14 @@
               "code": "16.87.2",
               "children_count": 0,
               "children": [],
-              "order_index": 179,
+              "order_index": 176,
               "source_page": 14,
               "unit": "sqm",
               "rate": 5272.05,
               "rate_display": "5272.05"
             }
           ],
-          "order_index": 177,
+          "order_index": 174,
           "source_page": 14
         },
         {
@@ -2072,7 +2045,7 @@
           "code": "16.88",
           "children_count": 0,
           "children": [],
-          "order_index": 180,
+          "order_index": 177,
           "source_page": 14,
           "unit": "sqm",
           "rate": 2159.85,
@@ -2084,7 +2057,7 @@
           "code": "16.89",
           "children_count": 0,
           "children": [],
-          "order_index": 181,
+          "order_index": 178,
           "source_page": 14,
           "unit": "sqm",
           "rate": 1455.65,
@@ -2096,7 +2069,7 @@
           "code": "16.90",
           "children_count": 0,
           "children": [],
-          "order_index": 182,
+          "order_index": 179,
           "source_page": 15,
           "unit": "sqm",
           "rate": 2017.6,
@@ -2114,7 +2087,7 @@
               "code": "16.91.1",
               "children_count": 0,
               "children": [],
-              "order_index": 184,
+              "order_index": 181,
               "source_page": 15,
               "unit": "sqm",
               "rate": 1045.65,
@@ -2126,14 +2099,14 @@
               "code": "16.91.2",
               "children_count": 0,
               "children": [],
-              "order_index": 185,
+              "order_index": 182,
               "source_page": 15,
               "unit": "sqm",
               "rate": 1091.5,
               "rate_display": "1091.50"
             }
           ],
-          "order_index": 183,
+          "order_index": 180,
           "source_page": 15
         },
         {
@@ -2142,7 +2115,7 @@
           "code": "16.92",
           "children_count": 0,
           "children": [],
-          "order_index": 186,
+          "order_index": 183,
           "source_page": 15,
           "unit": "sqm",
           "rate": 2189.15,
@@ -2154,7 +2127,7 @@
           "code": "16.93",
           "children_count": 0,
           "children": [],
-          "order_index": 187,
+          "order_index": 184,
           "source_page": 15,
           "unit": "sqm",
           "rate": 3081.95,
@@ -2166,7 +2139,7 @@
           "code": "16.94",
           "children_count": 0,
           "children": [],
-          "order_index": 188,
+          "order_index": 185,
           "source_page": 15,
           "unit": "cum",
           "rate": 4178.0,
@@ -2178,7 +2151,7 @@
           "code": "16.95",
           "children_count": 0,
           "children": [],
-          "order_index": 189,
+          "order_index": 186,
           "source_page": 15,
           "unit": "cum",
           "rate": 4569.25,
@@ -2190,7 +2163,7 @@
           "code": "16.96",
           "children_count": 0,
           "children": [],
-          "order_index": 190,
+          "order_index": 187,
           "source_page": 16,
           "unit": "cum",
           "rate": 4882.2,
@@ -2201,9 +2174,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/16.0 ROAD WORK.pdf",
-    "row_count": 191,
+    "row_count": 188,
     "note_count": 3,
-    "leaf_count": 150,
+    "leaf_count": 147,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

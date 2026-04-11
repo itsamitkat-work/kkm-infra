@@ -9,7 +9,7 @@
       "annotations": [
         {
           "type": "note",
-          "text": "Note: Truck Mounted rotary/TMR/Tube well boring machine shall not be used. 20.2A.1 600 mm dia piles metre",
+          "text": "Note: Truck Mounted rotary/TMR/Tube well boring machine shall not be used.",
           "source_page": 1,
           "order_index": 0
         },
@@ -26,7 +26,7 @@
           "order_index": 2
         }
       ],
-      "children_count": 20,
+      "children_count": 10,
       "children": [
         {
           "node_type": "item",
@@ -194,36 +194,74 @@
         },
         {
           "node_type": "item",
-          "title": "20.2A.2 750 mm dia piles",
-          "code": "5386.25",
-          "children_count": 0,
-          "children": [],
+          "title": "Boring, providing and installation bored cast-in-situ reinforced cement concrete piles of garde M-25 of specified diameter and length below pile cap, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and temporary casing of appropriate length for setting out and removal of same and the length of the pile to be embedded in the pile cap etc. by Crawler mounted, telescopic boom hydraulic pilling Rig all complete, including removal of excavated earth with all its lifts and leads (length of pile for payment shall be measured up to bottom of pile cap).",
+          "code": "20.2A",
+          "children_count": 5,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "600 mm dia piles",
+              "code": "20.2A.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 15,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 5386.25,
+              "rate_display": "5386.25"
+            },
+            {
+              "node_type": "item",
+              "title": "750 mm dia piles",
+              "code": "20.2A.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 16,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 7758.75,
+              "rate_display": "7758.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1000 mm dia piles",
+              "code": "20.2A.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 12990.8,
+              "rate_display": "12990.80"
+            },
+            {
+              "node_type": "item",
+              "title": "1200 mm dia piles",
+              "code": "20.2A.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 18,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 17025.75,
+              "rate_display": "17025.75"
+            },
+            {
+              "node_type": "item",
+              "title": "1500 mm dia piles",
+              "code": "20.2A.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 19,
+              "source_page": 1,
+              "unit": "metre",
+              "rate": 24408.8,
+              "rate_display": "24408.80"
+            }
+          ],
           "order_index": 14,
           "source_page": 1,
-          "unit": "metre",
-          "rate": 7758.75,
-          "rate_display": "7758.75"
-        },
-        {
-          "node_type": "item",
-          "title": "20.2A.4 1200 mm dia piles",
-          "code": "12990.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 15,
-          "source_page": 1,
-          "unit": "metre",
-          "rate": 17025.75,
-          "rate_display": "17025.75"
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "24408.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 16,
-          "source_page": 1
+          "unit": "metre"
         },
         {
           "node_type": "item",
@@ -237,7 +275,7 @@
               "code": "20.3.1",
               "children_count": 0,
               "children": [],
-              "order_index": 18,
+              "order_index": 21,
               "source_page": 2,
               "unit": "metre",
               "rate": 3065.6,
@@ -249,7 +287,7 @@
               "code": "20.3.2",
               "children_count": 0,
               "children": [],
-              "order_index": 19,
+              "order_index": 22,
               "source_page": 2,
               "unit": "metre",
               "rate": 3797.3,
@@ -261,7 +299,7 @@
               "code": "20.3.3",
               "children_count": 0,
               "children": [],
-              "order_index": 20,
+              "order_index": 23,
               "source_page": 2,
               "unit": "metre",
               "rate": 4232.75,
@@ -273,14 +311,14 @@
               "code": "20.3.4",
               "children_count": 0,
               "children": [],
-              "order_index": 21,
+              "order_index": 24,
               "source_page": 2,
               "unit": "metre",
               "rate": 4721.15,
               "rate_display": "4721.15"
             }
           ],
-          "order_index": 17,
+          "order_index": 20,
           "source_page": 2
         },
         {
@@ -295,7 +333,7 @@
               "code": "20.4.1",
               "children_count": 0,
               "children": [],
-              "order_index": 23,
+              "order_index": 26,
               "source_page": 2,
               "unit": "each",
               "rate": 2626.3,
@@ -307,7 +345,7 @@
               "code": "20.4.2",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
+              "order_index": 27,
               "source_page": 2,
               "unit": "each",
               "rate": 2924.45,
@@ -319,7 +357,7 @@
               "code": "20.4.3",
               "children_count": 0,
               "children": [],
-              "order_index": 25,
+              "order_index": 28,
               "source_page": 2,
               "unit": "each",
               "rate": 3104.2,
@@ -331,14 +369,14 @@
               "code": "20.4.4",
               "children_count": 0,
               "children": [],
-              "order_index": 26,
+              "order_index": 29,
               "source_page": 2,
               "unit": "each",
               "rate": 3360.15,
               "rate_display": "3360.15"
             }
           ],
-          "order_index": 22,
+          "order_index": 25,
           "source_page": 2
         },
         {
@@ -353,7 +391,7 @@
               "code": "20.5.1",
               "children_count": 0,
               "children": [],
-              "order_index": 28,
+              "order_index": 31,
               "source_page": 2,
               "unit": "metre",
               "rate": 3727.8,
@@ -365,7 +403,7 @@
               "code": "20.5.2",
               "children_count": 0,
               "children": [],
-              "order_index": 29,
+              "order_index": 32,
               "source_page": 2,
               "unit": "metre",
               "rate": 4766.25,
@@ -377,7 +415,7 @@
               "code": "20.5.3",
               "children_count": 0,
               "children": [],
-              "order_index": 30,
+              "order_index": 33,
               "source_page": 2,
               "unit": "metre",
               "rate": 4931.35,
@@ -389,7 +427,7 @@
               "code": "20.5.4",
               "children_count": 0,
               "children": [],
-              "order_index": 31,
+              "order_index": 34,
               "source_page": 2,
               "unit": "metre",
               "rate": 5633.0,
@@ -401,7 +439,7 @@
               "code": "20.5.5",
               "children_count": 0,
               "children": [],
-              "order_index": 32,
+              "order_index": 35,
               "source_page": 2,
               "unit": "metre",
               "rate": 10846.8,
@@ -413,14 +451,14 @@
               "code": "20.5.6",
               "children_count": 0,
               "children": [],
-              "order_index": 33,
+              "order_index": 36,
               "source_page": 2,
               "unit": "metre",
               "rate": 14946.4,
               "rate_display": "14946.40"
             }
           ],
-          "order_index": 27,
+          "order_index": 30,
           "source_page": 2
         },
         {
@@ -437,24 +475,24 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 54771.50",
                   "code": "20.6.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 36,
+                  "order_index": 39,
                   "source_page": 2
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 19632.40",
                   "code": "20.6.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 38,
+                  "order_index": 40,
                   "source_page": 2
                 }
               ],
-              "order_index": 35,
+              "order_index": 38,
               "source_page": 2
             },
             {
@@ -465,16 +503,16 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 61173.35",
                   "code": "20.6.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 41,
+                  "order_index": 42,
                   "source_page": 3
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 32436.10",
                   "code": "20.6.2.2",
                   "children_count": 0,
                   "children": [],
@@ -482,7 +520,7 @@
                   "source_page": 3
                 }
               ],
-              "order_index": 40,
+              "order_index": 41,
               "source_page": 3
             },
             {
@@ -493,83 +531,29 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 70420.50",
                   "code": "20.6.3.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 46,
+                  "order_index": 45,
                   "source_page": 3
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 40545.15",
                   "code": "20.6.3.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 48,
+                  "order_index": 46,
                   "source_page": 3
                 }
               ],
-              "order_index": 45,
+              "order_index": 44,
               "source_page": 3
             }
           ],
-          "order_index": 34,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "54771.50",
-          "children_count": 0,
-          "children": [],
           "order_index": 37,
           "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "19632.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 39,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "61173.35",
-          "children_count": 0,
-          "children": [],
-          "order_index": 42,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "32436.10",
-          "children_count": 0,
-          "children": [],
-          "order_index": 44,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "70420.50",
-          "children_count": 0,
-          "children": [],
-          "order_index": 47,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "40545.15",
-          "children_count": 0,
-          "children": [],
-          "order_index": 49,
-          "source_page": 3
         },
         {
           "node_type": "item",
@@ -585,24 +569,24 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Upto 50 tonne Safe capacity pile per test",
+                  "title": "Upto 50 tonne Safe capacity pile per test 19632.40",
                   "code": "20.7.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 52,
+                  "order_index": 49,
                   "source_page": 3
                 },
                 {
                   "node_type": "item",
-                  "title": "Above 50 tonne and upto 100 tonne Safe capacity pile per test",
+                  "title": "Above 50 tonne and upto 100 tonne Safe capacity pile per test 32436.10",
                   "code": "20.7.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 54,
+                  "order_index": 50,
                   "source_page": 3
                 }
               ],
-              "order_index": 51,
+              "order_index": 48,
               "source_page": 3
             },
             {
@@ -613,19 +597,19 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Upto 400 tonne Safe capacity of group per test",
+                  "title": "Upto 400 tonne Safe capacity of group per test 40545.15",
                   "code": "20.7.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 57,
+                  "order_index": 52,
                   "source_page": 3
                 }
               ],
-              "order_index": 56,
+              "order_index": 51,
               "source_page": 3
             }
           ],
-          "order_index": 50,
+          "order_index": 47,
           "source_page": 3
         },
         {
@@ -636,51 +620,33 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Upto 50 tonne capacity pile per test",
+              "title": "Upto 50 tonne capacity pile per test 19632.40",
               "code": "20.8.1",
               "children_count": 0,
               "children": [],
-              "order_index": 60,
+              "order_index": 54,
               "source_page": 3
             },
             {
               "node_type": "item",
-              "title": "Above 50 tonne and upto 100 tonne capacity pile per test",
+              "title": "Above 50 tonne and upto 100 tonne capacity pile per test 32862.90",
               "code": "20.8.2",
               "children_count": 0,
               "children": [],
-              "order_index": 62,
+              "order_index": 55,
               "source_page": 3
             }
           ],
-          "order_index": 59,
+          "order_index": 53,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "32862.90",
-          "children_count": 0,
-          "children": [],
-          "order_index": 63,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge. per test",
+          "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge. per test 1153.20",
           "code": "20.9",
           "children_count": 0,
           "children": [],
-          "order_index": 64,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "1153.20",
-          "children_count": 0,
-          "children": [],
-          "order_index": 65,
+          "order_index": 56,
           "source_page": 3
         }
       ]
@@ -688,15 +654,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/20.0 PILE WORK.pdf",
-    "row_count": 66,
+    "row_count": 57,
     "note_count": 3,
-    "leaf_count": 49,
-    "duplicate_codes": [
-      "19632.40",
-      "32436.10",
-      "40545.15",
-      "19632.40"
-    ],
+    "leaf_count": 43,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }

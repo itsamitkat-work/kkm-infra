@@ -6,33 +6,13 @@
       "node_type": "subhead",
       "title": "REINFORCED CEMENT CONCRETE",
       "code": "5.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
-          "source_page": 8,
-          "order_index": 1
-        },
-        {
-          "type": "note",
-          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement. 5.33A.1 All works upto plinth level 5.33A.1.1 Concrete of M25 grade with minimum cement content of 330 kg /cum cum",
-          "source_page": 8,
-          "order_index": 2
-        },
-        {
-          "type": "note",
-          "text": "Note:- Cement content considered in this item is 480 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
-          "source_page": 11,
-          "order_index": 3
-        }
-      ],
-      "children_count": 76,
+      "children_count": 64,
       "children": [
         {
           "node_type": "item",
           "title": "Providing and laying in position specified grade of reinforced cement concrete, excluding the cost of centering, shuttering, finishing and reinforcement - All work up to plinth level :",
           "code": "5.1",
-          "children_count": 2,
+          "children_count": 4,
           "children": [
             {
               "node_type": "item",
@@ -48,6 +28,18 @@
             },
             {
               "node_type": "item",
+              "title": "1:1.5:3 (1 cement : 1.5 coarse sand(zone-III) including manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size of Recycled Concrete Aggregate (RCA) upto 20%.",
+              "code": "5.1.2A",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8874.95,
+              "rate_display": "8874.95"
+            },
+            {
+              "node_type": "item",
               "title": "1:2:4 (1 cement : 2 coarse sand (zone-III) derived from natural sources : 4 graded stone aggregate 20 mm nominal size derived from natural sources)",
               "code": "5.1.3",
               "children_count": 0,
@@ -57,6 +49,18 @@
               "unit": "cum",
               "rate": 8583.4,
               "rate_display": "8583.40"
+            },
+            {
+              "node_type": "item",
+              "title": "1:2:4 (1 cement : 2 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 4 graded stone aggregate 20 mm nominal size of Recycled Concrete Aggregate (RCA) upto 20%).",
+              "code": "5.1.3A",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 8404.05,
+              "rate_display": "8404.05"
             }
           ],
           "order_index": 0,
@@ -64,27 +68,9 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "8874.95",
-          "children_count": 0,
-          "children": [],
-          "order_index": 2,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "8404.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 4,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
           "title": "Reinforced cement concrete work in walls (any thickness), including attached pilasters, buttresses, plinth and string courses, fillets, columns, pillars, piers, abutments, posts and struts etc. above plinth level up to floor five level, excluding cost of centering, shuttering, finishing and reinforcement :",
           "code": "5.2",
-          "children_count": 1,
+          "children_count": 2,
           "children": [
             {
               "node_type": "item",
@@ -97,18 +83,21 @@
               "unit": "cum",
               "rate": 10852.95,
               "rate_display": "10852.95"
+            },
+            {
+              "node_type": "item",
+              "title": "1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%",
+              "code": "5.2.2A",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 10682.15,
+              "rate_display": "10682.15"
             }
           ],
           "order_index": 5,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "10682.15",
-          "children_count": 0,
-          "children": [],
-          "order_index": 7,
           "source_page": 1
         },
         {
@@ -125,12 +114,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "11334.70",
+          "title": "Reinforced cement concrete work in beams, suspended floors, roofs having slope up to 15° landings, balconies, shelves, chajjas, lintels, bands, plain window sills, staircases and spiral staircases above plinth level up to floor five level excluding the cost of centering, shuttering, finishing and reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20%: 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%)",
+          "code": "5.3A",
           "children_count": 0,
           "children": [],
           "order_index": 9,
-          "source_page": 1
+          "source_page": 1,
+          "unit": "cum",
+          "rate": 11334.7,
+          "rate_display": "11334.70"
         },
         {
           "node_type": "item",
@@ -146,12 +138,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "8650.85",
+          "title": "Providing and laying reinforced cement concrete in kerbs, steps and the like at or near ground level excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.4A",
           "children_count": 0,
           "children": [],
           "order_index": 11,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 8650.85,
+          "rate_display": "8650.85"
         },
         {
           "node_type": "item",
@@ -167,12 +162,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "12035.00",
+          "title": "Reinforced cement concrete work in arches, archribs, domes, vaults, shells, folded plate and roofs having slope more than 15° up to floor five level excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.5A",
           "children_count": 0,
           "children": [],
           "order_index": 13,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 12035.0,
+          "rate_display": "12035.00"
         },
         {
           "node_type": "item",
@@ -188,12 +186,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "10954.40",
+          "title": "Reinforced cement concrete work in chimneys, shafts, up to floor five level excluding the cost of centering, shuttering, finishing and reinforcement with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.6A",
           "children_count": 0,
           "children": [],
           "order_index": 15,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 10954.4,
+          "rate_display": "10954.40"
         },
         {
           "node_type": "item",
@@ -209,12 +210,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "8253.80",
+          "title": "Reinforced cement concrete work in well-steining excluding the cost of centering, shuttering, finishing and reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.7A",
           "children_count": 0,
           "children": [],
           "order_index": 17,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 8253.8,
+          "rate_display": "8253.80"
         },
         {
           "node_type": "item",
@@ -230,12 +234,15 @@
         },
         {
           "node_type": "item",
-          "title": "FORM WORK",
-          "code": "11283.55",
+          "title": "Reinforced cement concrete work in vertical and horizontal fins individually or forming box louvers, facias and eaves boards above plinth level up to floor five level excluding the cost of centering, shuttering, finishing and reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.8A",
           "children_count": 0,
           "children": [],
           "order_index": 19,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "cum",
+          "rate": 11283.55,
+          "rate_display": "11283.55"
         },
         {
           "node_type": "item",
@@ -530,7 +537,7 @@
           "children": [
             {
               "node_type": "item",
-              "title": "12 mm dia. & 100 mm length each set",
+              "title": "12 mm dia. & 100 mm length each set 156.05",
               "code": "5.10.1",
               "children_count": 0,
               "children": [],
@@ -539,8 +546,17 @@
             },
             {
               "node_type": "item",
-              "title": "12 mm dia. & 150 mm length each set",
+              "title": "12 mm dia. & 150 mm length each set 170.25",
               "code": "5.10.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 46,
+              "source_page": 3
+            },
+            {
+              "node_type": "item",
+              "title": "20 mm dia. & 150 mm length each set 184.50",
+              "code": "5.10.3",
               "children_count": 0,
               "children": [],
               "order_index": 47,
@@ -548,60 +564,15 @@
             },
             {
               "node_type": "item",
-              "title": "20 mm dia. & 150 mm length each set",
-              "code": "5.10.3",
-              "children_count": 0,
-              "children": [],
-              "order_index": 49,
-              "source_page": 3
-            },
-            {
-              "node_type": "item",
-              "title": "20 mm dia.& 225 mm length each set",
+              "title": "20 mm dia.& 225 mm length each set 201.55",
               "code": "5.10.4",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 48,
               "source_page": 3
             }
           ],
           "order_index": 44,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "156.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 46,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "170.25",
-          "children_count": 0,
-          "children": [],
-          "order_index": 48,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "184.50",
-          "children_count": 0,
-          "children": [],
-          "order_index": 50,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "201.55",
-          "children_count": 0,
-          "children": [],
-          "order_index": 52,
           "source_page": 3
         },
         {
@@ -616,14 +587,14 @@
               "code": "5.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 54,
+              "order_index": 50,
               "source_page": 4,
               "unit": "sqm",
               "rate": 384.3,
               "rate_display": "384.30"
             }
           ],
-          "order_index": 53,
+          "order_index": 49,
           "source_page": 3
         },
         {
@@ -632,7 +603,7 @@
           "code": "5.12",
           "children_count": 0,
           "children": [],
-          "order_index": 55,
+          "order_index": 51,
           "source_page": 4,
           "unit": "cum",
           "rate": 10585.9,
@@ -640,12 +611,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "10416.75",
+          "title": "Providing, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete work in string courses, bands, copings, bed plates, anchor blocks, plain window sills and the like, including the cost of required centering, shuttering but excluding cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.12A",
           "children_count": 0,
           "children": [],
-          "order_index": 56,
-          "source_page": 4
+          "order_index": 52,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 10416.75,
+          "rate_display": "10416.75"
         },
         {
           "node_type": "item",
@@ -653,7 +627,7 @@
           "code": "5.13",
           "children_count": 0,
           "children": [],
-          "order_index": 57,
+          "order_index": 53,
           "source_page": 4,
           "unit": "cum",
           "rate": 14325.95,
@@ -661,12 +635,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "14155.35",
+          "title": "Providing, hoisting and fixing up to floor five level precast reinforced cement concrete in small lintels not exceeding 1.5 m clear span up to floor five level, including the cost of required centering, shuttering but excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.13A",
           "children_count": 0,
           "children": [],
-          "order_index": 58,
-          "source_page": 4
+          "order_index": 54,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 14155.35,
+          "rate_display": "14155.35"
         },
         {
           "node_type": "item",
@@ -674,7 +651,7 @@
           "code": "5.14",
           "children_count": 0,
           "children": [],
-          "order_index": 59,
+          "order_index": 55,
           "source_page": 4,
           "unit": "cum",
           "rate": 18234.95,
@@ -682,12 +659,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "18064.15",
+          "title": "Providing, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in mouldings as in cornices, windows sills etc. including setting in cement mortar 1:3 (1 cement : 3 coarse sand) cost of required centering, shuttering but excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.14A",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
-          "source_page": 4
+          "order_index": 56,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 18064.15,
+          "rate_display": "18064.15"
         },
         {
           "node_type": "item",
@@ -695,7 +675,7 @@
           "code": "5.15",
           "children_count": 0,
           "children": [],
-          "order_index": 61,
+          "order_index": 57,
           "source_page": 4,
           "unit": "cum",
           "rate": 13899.2,
@@ -703,12 +683,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "13728.40",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in lintels, beams and bressumers including setting in cement mortar 1:3 (1 cement : 3 coarse sand), cost of required centering and shuttering but excluding the cost of reinforcement with, 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.15A",
           "children_count": 0,
           "children": [],
-          "order_index": 62,
-          "source_page": 5
+          "order_index": 58,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 13728.4,
+          "rate_display": "13728.40"
         },
         {
           "node_type": "item",
@@ -716,7 +699,7 @@
           "code": "5.16",
           "children_count": 0,
           "children": [],
-          "order_index": 63,
+          "order_index": 59,
           "source_page": 5,
           "unit": "cum",
           "rate": 20355.8,
@@ -724,12 +707,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "20185.00",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in shelves including setting in cement mortar 1:3 (1 cement : 3 coarse sand), cost of required centering, shuttering and finishing with neat cement punning on exposed surfaces but excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.16A",
           "children_count": 0,
           "children": [],
-          "order_index": 64,
-          "source_page": 5
+          "order_index": 60,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 20185.0,
+          "rate_display": "20185.00"
         },
         {
           "node_type": "item",
@@ -737,7 +723,7 @@
           "code": "5.17",
           "children_count": 0,
           "children": [],
-          "order_index": 65,
+          "order_index": 61,
           "source_page": 5,
           "unit": "cum",
           "rate": 12043.35,
@@ -745,12 +731,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "11872.55",
+          "title": "Providing, transporting, hoisting and fixing above plinth level up to floor five level precast reinforced cement concrete in vertical & horizontal fins individually or forming box louvers setting in cement mortar 1:2 (1 cement : 2 coarse sand), including the cost of required centering, shuttering but excluding the cost of reinforcement, with 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%).",
+          "code": "5.17A",
           "children_count": 0,
           "children": [],
-          "order_index": 66,
-          "source_page": 5
+          "order_index": 62,
+          "source_page": 5,
+          "unit": "cum",
+          "rate": 11872.55,
+          "rate_display": "11872.55"
         },
         {
           "node_type": "item",
@@ -764,7 +753,7 @@
               "code": "5.18.1",
               "children_count": 0,
               "children": [],
-              "order_index": 68,
+              "order_index": 64,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1886.9,
@@ -776,7 +765,7 @@
               "code": "5.18.2",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 65,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1706.55,
@@ -788,14 +777,14 @@
               "code": "5.18.3",
               "children_count": 0,
               "children": [],
-              "order_index": 70,
+              "order_index": 66,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1539.0,
               "rate_display": "1539.00"
             }
           ],
-          "order_index": 67,
+          "order_index": 63,
           "source_page": 5
         },
         {
@@ -804,7 +793,7 @@
           "code": "5.19",
           "children_count": 0,
           "children": [],
-          "order_index": 71,
+          "order_index": 67,
           "source_page": 5,
           "unit": "cum",
           "rate": 16089.4,
@@ -812,12 +801,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "15918.60",
+          "title": "Encasing rolled steel sections, in beams and columns, with cement concrete 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20%: 3 graded stone aggregate 20 mm nominal size Recycled Concrete Aggregate (RCA) upto 20%) including centering and shuttering complete but excluding cost of reinforcement.",
+          "code": "5.19A",
           "children_count": 0,
           "children": [],
-          "order_index": 72,
-          "source_page": 6
+          "order_index": 68,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 15918.6,
+          "rate_display": "15918.60"
         },
         {
           "node_type": "item",
@@ -825,7 +817,7 @@
           "code": "5.20",
           "children_count": 0,
           "children": [],
-          "order_index": 73,
+          "order_index": 69,
           "source_page": 6,
           "unit": "cum",
           "rate": 9663.25,
@@ -833,12 +825,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "9492.45",
+          "title": "Encasing rolled steel section in grillages with cement concrete 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 20 mm nominal size Recycled Concrete Aggregate (RCA) upto 20%), including centering and shuttering but excluding cost of expanded metal and hangers.",
+          "code": "5.20A",
           "children_count": 0,
           "children": [],
-          "order_index": 74,
-          "source_page": 6
+          "order_index": 70,
+          "source_page": 6,
+          "unit": "cum",
+          "rate": 9492.45,
+          "rate_display": "9492.45"
         },
         {
           "node_type": "item",
@@ -846,7 +841,7 @@
           "code": "5.21",
           "children_count": 0,
           "children": [],
-          "order_index": 75,
+          "order_index": 71,
           "source_page": 6,
           "unit": "sqm",
           "rate": 485.05,
@@ -860,8 +855,44 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Mild steel and Medium Tensile steel bars kg",
+              "title": "Mild steel and Medium Tensile steel bars kg 107.10",
               "code": "5.22.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 73,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hard drawn steel wire kg 95.80",
+              "code": "5.22.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 74,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Cold twisted bars kg 107.85",
+              "code": "5.22.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 75,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hot rolled deformed bars kg 107.85",
+              "code": "5.22.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 76,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hard drawn steel wire fabric kg 102.20",
+              "code": "5.22.5",
               "children_count": 0,
               "children": [],
               "order_index": 77,
@@ -869,17 +900,36 @@
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire kg",
-              "code": "5.22.2",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 107.85",
+              "code": "5.22.6",
               "children_count": 0,
               "children": [],
-              "order_index": 79,
+              "order_index": 78,
+              "source_page": 6
+            }
+          ],
+          "order_index": 72,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Steel reinforcement for R.C.C. work including straightening, cutting, bending, placing in position and binding all complete above plinth level.",
+          "code": "5.22A",
+          "children_count": 6,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Mild steel and Medium Tensile steel bars kg 107.10",
+              "code": "5.22A.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 80,
               "source_page": 6
             },
             {
               "node_type": "item",
-              "title": "Cold twisted bars kg",
-              "code": "5.22.3",
+              "title": "Hard drawn steel wire kg 95.80",
+              "code": "5.22A.2",
               "children_count": 0,
               "children": [],
               "order_index": 81,
@@ -887,8 +937,17 @@
             },
             {
               "node_type": "item",
-              "title": "Hot rolled deformed bars kg",
-              "code": "5.22.4",
+              "title": "Cold twisted bars kg 107.85",
+              "code": "5.22A.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 82,
+              "source_page": 6
+            },
+            {
+              "node_type": "item",
+              "title": "Hot rolled deformed bars kg 107.85",
+              "code": "5.22A.4",
               "children_count": 0,
               "children": [],
               "order_index": 83,
@@ -896,70 +955,63 @@
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire fabric kg",
-              "code": "5.22.5",
+              "title": "Hard drawn steel wire fabric kg 102.20",
+              "code": "5.22A.5",
               "children_count": 0,
               "children": [],
-              "order_index": 85,
+              "order_index": 84,
               "source_page": 6
             },
             {
               "node_type": "item",
-              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg",
-              "code": "5.22.6",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 107.85",
+              "code": "5.22A.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 85,
+              "source_page": 6
+            }
+          ],
+          "order_index": 79,
+          "source_page": 6
+        },
+        {
+          "node_type": "item",
+          "title": "Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete upto plinth level.",
+          "code": "5.22B",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 99.65",
+              "code": "5.22B.1",
               "children_count": 0,
               "children": [],
               "order_index": 87,
               "source_page": 6
             }
           ],
-          "order_index": 76,
-          "source_page": 6
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "107.10",
-          "children_count": 0,
-          "children": [],
-          "order_index": 78,
-          "source_page": 6
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "95.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 80,
-          "source_page": 6
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "107.85",
-          "children_count": 0,
-          "children": [],
-          "order_index": 82,
-          "source_page": 6
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "102.20",
-          "children_count": 0,
-          "children": [],
           "order_index": 86,
           "source_page": 6
         },
         {
           "node_type": "item",
-          "title": "5.22C Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete above plinth level. 5.22C.1 Thermo-Mechanically Treated bars of grade Fe-500D or more. kg",
-          "code": "99.65",
-          "children_count": 0,
-          "children": [],
-          "order_index": 95,
-          "source_page": 6
+          "title": "Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete above plinth level.",
+          "code": "5.22C",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 99.65 MISCELLANEOUS",
+              "code": "5.22C.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 89,
+              "source_page": 7
+            }
+          ],
+          "order_index": 88,
+          "source_page": 7
         },
         {
           "node_type": "item",
@@ -967,7 +1019,7 @@
           "code": "5.23",
           "children_count": 0,
           "children": [],
-          "order_index": 97,
+          "order_index": 90,
           "source_page": 7,
           "unit": "sqm",
           "rate": 300.45,
@@ -979,7 +1031,7 @@
           "code": "5.24",
           "children_count": 0,
           "children": [],
-          "order_index": 98,
+          "order_index": 91,
           "source_page": 7,
           "unit": "sqm",
           "rate": 150.5,
@@ -987,20 +1039,14 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing in position copper plate as per design for expansion joints. kg",
+          "title": "Providing and fixing in position copper plate as per design for expansion joints. kg 811.85",
           "code": "5.25",
           "children_count": 0,
           "children": [],
-          "order_index": 99,
-          "source_page": 7
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "811.85",
-          "children_count": 0,
-          "children": [],
-          "order_index": 100,
+          "unit": "kg",
+          "rate": 811.85,
+          "rate_display": "811.85",
+          "order_index": 92,
           "source_page": 7
         },
         {
@@ -1009,7 +1055,7 @@
           "code": "5.26",
           "children_count": 0,
           "children": [],
-          "order_index": 101,
+          "order_index": 93,
           "source_page": 7,
           "unit": "cum",
           "rate": 74854.65,
@@ -1021,7 +1067,7 @@
           "code": "5.27",
           "children_count": 0,
           "children": [],
-          "order_index": 102,
+          "order_index": 94,
           "source_page": 7,
           "unit": "cum",
           "rate": 28212.6,
@@ -1029,21 +1075,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing in position 12 mm thick bitumen impregnated fiber board conforming to IS: 1838, including cost of primer, sealing compound Grade-A in expansion joints. per cm depth per 100m",
+          "title": "Providing and fixing in position 12 mm thick bitumen impregnated fiber board conforming to IS: 1838, including cost of primer, sealing compound Grade-A in expansion joints. per cm depth per 100m 655.75",
           "code": "5.28",
           "children_count": 0,
           "children": [],
-          "order_index": 103,
-          "source_page": 7
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "655.75",
-          "children_count": 0,
-          "children": [],
-          "order_index": 104,
-          "source_page": 7
+          "order_index": 95,
+          "source_page": 7,
+          "unit": "per cm depth per 100m",
+          "rate": 655.75,
+          "rate_display": "655.75"
         },
         {
           "node_type": "item",
@@ -1063,7 +1103,7 @@
                   "code": "5.29.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 107,
+                  "order_index": 98,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 245.45,
@@ -1075,14 +1115,14 @@
                   "code": "5.29.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 108,
+                  "order_index": 99,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 330.2,
                   "rate_display": "330.20"
                 }
               ],
-              "order_index": 106,
+              "order_index": 97,
               "source_page": 7
             },
             {
@@ -1097,7 +1137,7 @@
                   "code": "5.29.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 110,
+                  "order_index": 101,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 567.6,
@@ -1109,14 +1149,14 @@
                   "code": "5.29.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 111,
+                  "order_index": 102,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 753.85,
                   "rate_display": "753.85"
                 }
               ],
-              "order_index": 109,
+              "order_index": 100,
               "source_page": 7
             },
             {
@@ -1131,7 +1171,7 @@
                   "code": "5.29.3.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 113,
+                  "order_index": 104,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 237.4,
@@ -1143,18 +1183,18 @@
                   "code": "5.29.3.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 114,
+                  "order_index": 105,
                   "source_page": 7,
                   "unit": "metre",
                   "rate": 319.4,
                   "rate_display": "319.40"
                 }
               ],
-              "order_index": 112,
+              "order_index": 103,
               "source_page": 7
             }
           ],
-          "order_index": 105,
+          "order_index": 96,
           "source_page": 7
         },
         {
@@ -1163,7 +1203,7 @@
           "code": "5.30",
           "children_count": 0,
           "children": [],
-          "order_index": 115,
+          "order_index": 106,
           "source_page": 7,
           "unit": "metre",
           "rate": 78.4,
@@ -1183,7 +1223,7 @@
           ],
           "children_count": 0,
           "children": [],
-          "order_index": 116,
+          "order_index": 107,
           "source_page": 7,
           "unit": "cum",
           "rate": 1098.8,
@@ -1195,7 +1235,7 @@
           "code": "5.32",
           "children_count": 0,
           "children": [],
-          "order_index": 117,
+          "order_index": 108,
           "source_page": 7,
           "unit": "cum",
           "rate": 467.55,
@@ -1219,7 +1259,7 @@
                   "code": "5.33.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 120,
+                  "order_index": 111,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 9504.75,
@@ -1231,7 +1271,7 @@
                   "code": "5.33.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 121,
+                  "order_index": 112,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 9655.7,
@@ -1243,7 +1283,7 @@
                   "code": "5.33.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 122,
+                  "order_index": 113,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 9806.7,
@@ -1255,7 +1295,7 @@
                   "code": "5.33.1.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 123,
+                  "order_index": 114,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 9957.65,
@@ -1267,14 +1307,14 @@
                   "code": "5.33.1.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 124,
+                  "order_index": 115,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 10108.65,
                   "rate_display": "10108.65"
                 }
               ],
-              "order_index": 119,
+              "order_index": 110,
               "source_page": 8
             },
             {
@@ -1289,7 +1329,7 @@
                   "code": "5.33.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 126,
+                  "order_index": 117,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 9860.4,
@@ -1301,7 +1341,7 @@
                   "code": "5.33.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 127,
+                  "order_index": 118,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 10011.35,
@@ -1313,7 +1353,7 @@
                   "code": "5.33.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 128,
+                  "order_index": 119,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 10162.35,
@@ -1325,7 +1365,7 @@
                   "code": "5.33.2.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 129,
+                  "order_index": 120,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 10313.3,
@@ -1337,49 +1377,85 @@
                   "code": "5.33.2.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 130,
+                  "order_index": 121,
                   "source_page": 8,
                   "unit": "cum",
                   "rate": 10464.3,
                   "rate_display": "10464.30"
                 }
               ],
-              "order_index": 125,
+              "order_index": 116,
               "source_page": 8
             }
           ],
-          "order_index": 118,
+          "order_index": 109,
           "source_page": 8
         },
         {
           "node_type": "item",
-          "title": "5.33A.2 All works above plinth level up to floor V level 5.33A.2.1 Concrete of M25 grade with minimum cement content of 330 kg /cum",
-          "code": "9333.95",
-          "children_count": 0,
-          "children": [],
-          "order_index": 131,
-          "source_page": 9,
-          "unit": "cum",
-          "rate": 9689.6,
-          "rate_display": "9689.60"
+          "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources and using recycled concrete aggregate (RCA) as coarse aggregate and fine aggregate within permissible utilization of 20% each, Portland Pozzolana /Ordinary Portland/Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge; for the following grades of concrete.",
+          "code": "5.33A",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "All works upto plinth level",
+              "code": "5.33A.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 330 kg /cum",
+                  "code": "5.33A.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 124,
+                  "source_page": 9,
+                  "unit": "cum",
+                  "rate": 9333.95,
+                  "rate_display": "9333.95"
+                }
+              ],
+              "order_index": 123,
+              "source_page": 9
+            },
+            {
+              "node_type": "item",
+              "title": "All works above plinth level up to floor V level",
+              "code": "5.33A.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "Concrete of M25 grade with minimum cement content of 330 kg /cum",
+                  "code": "5.33A.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 126,
+                  "source_page": 9,
+                  "unit": "cum",
+                  "rate": 9689.6,
+                  "rate_display": "9689.60"
+                }
+              ],
+              "order_index": 125,
+              "source_page": 9
+            }
+          ],
+          "order_index": 122,
+          "source_page": 8
         },
         {
           "node_type": "item",
-          "title": "Add for using extra cement in the items of design mix over and above the specified cement content therein. quintal",
+          "title": "Add for using extra cement in the items of design mix over and above the specified cement content therein. quintal 733.50",
           "code": "5.35",
           "children_count": 0,
           "children": [],
-          "order_index": 132,
-          "source_page": 9
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "733.50",
-          "children_count": 0,
-          "children": [],
-          "order_index": 133,
-          "source_page": 9
+          "order_index": 127,
+          "source_page": 9,
+          "unit": "quintal",
+          "rate": 733.5,
+          "rate_display": "733.50"
         },
         {
           "node_type": "item",
@@ -1387,7 +1463,7 @@
           "code": "5.36",
           "children_count": 0,
           "children": [],
-          "order_index": 134,
+          "order_index": 128,
           "source_page": 9,
           "unit": "cum",
           "rate": 33018.75,
@@ -1395,12 +1471,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "32847.95",
+          "title": "Providing and placing in position precast reinforced cement concrete waffle units, square or rectangular as per design and shape for floors and roofs in 1:1.5:3 (1 cement : 1.5 coarse sand incuding manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 20% : 3 graded stone aggregate 10 mm nominal size including Recycled Concrete Aggregate (RCA) upto 20%), including flush or deep ruled pointing at joints in cement mortar 1:2 (1 cement : 2 Fine sand), making necessary holes of required sizes for carrying through service lines etc., providing steel hooks for lifting etc, form work in precasting, handling, hoisting, centering and erection complete for all floor levels but excluding the cost of reinforcement.",
+          "code": "5.36A",
           "children_count": 0,
           "children": [],
-          "order_index": 135,
-          "source_page": 9
+          "order_index": 129,
+          "source_page": 9,
+          "unit": "cum",
+          "rate": 32847.95,
+          "rate_display": "32847.95"
         },
         {
           "node_type": "item",
@@ -1408,7 +1487,7 @@
           "code": "5.38",
           "children_count": 0,
           "children": [],
-          "order_index": 136,
+          "order_index": 130,
           "source_page": 9,
           "unit": "cum",
           "rate": 355.65,
@@ -1426,14 +1505,14 @@
               "code": "5.41.1",
               "children_count": 0,
               "children": [],
-              "order_index": 138,
+              "order_index": 132,
               "source_page": 9,
               "unit": "sqm",
               "rate": 69.05,
               "rate_display": "69.05"
             }
           ],
-          "order_index": 137,
+          "order_index": 131,
           "source_page": 9
         },
         {
@@ -1448,7 +1527,7 @@
               "code": "5.42.1",
               "children_count": 0,
               "children": [],
-              "order_index": 140,
+              "order_index": 134,
               "source_page": 9,
               "unit": "each",
               "rate": 115.1,
@@ -1460,7 +1539,7 @@
               "code": "5.42.2",
               "children_count": 0,
               "children": [],
-              "order_index": 141,
+              "order_index": 135,
               "source_page": 9,
               "unit": "each",
               "rate": 160.1,
@@ -1472,7 +1551,7 @@
               "code": "5.42.3",
               "children_count": 0,
               "children": [],
-              "order_index": 142,
+              "order_index": 136,
               "source_page": 9,
               "unit": "each",
               "rate": 228.95,
@@ -1484,7 +1563,7 @@
               "code": "5.42.4",
               "children_count": 0,
               "children": [],
-              "order_index": 143,
+              "order_index": 137,
               "source_page": 9,
               "unit": "each",
               "rate": 267.55,
@@ -1496,14 +1575,14 @@
               "code": "5.42.5",
               "children_count": 0,
               "children": [],
-              "order_index": 144,
+              "order_index": 138,
               "source_page": 9,
               "unit": "each",
               "rate": 318.8,
               "rate_display": "318.80"
             }
           ],
-          "order_index": 139,
+          "order_index": 133,
           "source_page": 9
         },
         {
@@ -1518,7 +1597,7 @@
               "code": "5.43.1",
               "children_count": 0,
               "children": [],
-              "order_index": 146,
+              "order_index": 140,
               "source_page": 9,
               "unit": "metre",
               "rate": 859.75,
@@ -1530,14 +1609,14 @@
               "code": "5.43.2",
               "children_count": 0,
               "children": [],
-              "order_index": 147,
+              "order_index": 141,
               "source_page": 9,
               "unit": "metre",
               "rate": 1208.05,
               "rate_display": "1208.05"
             }
           ],
-          "order_index": 145,
+          "order_index": 139,
           "source_page": 9
         },
         {
@@ -1552,7 +1631,7 @@
               "code": "5.44.1",
               "children_count": 0,
               "children": [],
-              "order_index": 149,
+              "order_index": 143,
               "source_page": 10,
               "unit": "metre",
               "rate": 6392.55,
@@ -1564,7 +1643,7 @@
               "code": "5.44.2",
               "children_count": 0,
               "children": [],
-              "order_index": 150,
+              "order_index": 144,
               "source_page": 10,
               "unit": "metre",
               "rate": 7812.35,
@@ -1576,14 +1655,14 @@
               "code": "5.44.3",
               "children_count": 0,
               "children": [],
-              "order_index": 151,
+              "order_index": 145,
               "source_page": 10,
               "unit": "metre",
               "rate": 9903.65,
               "rate_display": "9903.65"
             }
           ],
-          "order_index": 148,
+          "order_index": 142,
           "source_page": 10
         },
         {
@@ -1598,7 +1677,7 @@
               "code": "5.45.1",
               "children_count": 0,
               "children": [],
-              "order_index": 153,
+              "order_index": 147,
               "source_page": 10,
               "unit": "metre",
               "rate": 5305.65,
@@ -1610,7 +1689,7 @@
               "code": "5.45.2",
               "children_count": 0,
               "children": [],
-              "order_index": 154,
+              "order_index": 148,
               "source_page": 10,
               "unit": "metre",
               "rate": 5981.4,
@@ -1622,14 +1701,14 @@
               "code": "5.45.3",
               "children_count": 0,
               "children": [],
-              "order_index": 155,
+              "order_index": 149,
               "source_page": 10,
               "unit": "metre",
               "rate": 6889.05,
               "rate_display": "6889.05"
             }
           ],
-          "order_index": 152,
+          "order_index": 146,
           "source_page": 10
         },
         {
@@ -1644,7 +1723,7 @@
               "code": "5.46.1",
               "children_count": 0,
               "children": [],
-              "order_index": 157,
+              "order_index": 151,
               "source_page": 11,
               "unit": "metre",
               "rate": 5985.7,
@@ -1656,7 +1735,7 @@
               "code": "5.46.2",
               "children_count": 0,
               "children": [],
-              "order_index": 158,
+              "order_index": 152,
               "source_page": 11,
               "unit": "metre",
               "rate": 6699.85,
@@ -1668,14 +1747,14 @@
               "code": "5.46.3",
               "children_count": 0,
               "children": [],
-              "order_index": 159,
+              "order_index": 153,
               "source_page": 11,
               "unit": "metre",
               "rate": 7927.6,
               "rate_display": "7927.60"
             }
           ],
-          "order_index": 156,
+          "order_index": 150,
           "source_page": 10
         },
         {
@@ -1690,7 +1769,7 @@
               "code": "5.47.1",
               "children_count": 0,
               "children": [],
-              "order_index": 161,
+              "order_index": 155,
               "source_page": 11,
               "unit": "metre",
               "rate": 814.85,
@@ -1702,7 +1781,7 @@
               "code": "5.47.2",
               "children_count": 0,
               "children": [],
-              "order_index": 162,
+              "order_index": 156,
               "source_page": 11,
               "unit": "metre",
               "rate": 757.1,
@@ -1714,14 +1793,14 @@
               "code": "5.47.3",
               "children_count": 0,
               "children": [],
-              "order_index": 163,
+              "order_index": 157,
               "source_page": 11,
               "unit": "metre",
               "rate": 727.3,
               "rate_display": "727.30"
             }
           ],
-          "order_index": 160,
+          "order_index": 154,
           "source_page": 11
         },
         {
@@ -1736,7 +1815,7 @@
               "code": "5.48.1",
               "children_count": 0,
               "children": [],
-              "order_index": 165,
+              "order_index": 159,
               "source_page": 11,
               "unit": "cum",
               "rate": 8509.95,
@@ -1748,7 +1827,7 @@
               "code": "5.48.2",
               "children_count": 0,
               "children": [],
-              "order_index": 166,
+              "order_index": 160,
               "source_page": 11,
               "unit": "cum",
               "rate": 9500.3,
@@ -1760,23 +1839,31 @@
               "code": "5.48.3",
               "children_count": 0,
               "children": [],
-              "order_index": 167,
+              "order_index": 161,
               "source_page": 11,
               "unit": "cum",
               "rate": 664.85,
               "rate_display": "664.85"
             }
           ],
-          "order_index": 164,
+          "order_index": 158,
           "source_page": 11
         },
         {
           "node_type": "item",
           "title": "Constructing cast-in situ RCC diaphragm wall by providing and laying machine batched, machine mixed, self compacting, ready mix reinforced cement concrete, tramie controlled, of M 30 grade using minimum 400 kg cement per cum of concrete including providing and mixing required admixtures in recommended proportions as per IS : 9103, as approved by the Engineer-in-charge, for achieving 150 - 200 mm slump, for diaphragm wall having thickness as per approved structural design not exceeding 600 mm, in pannels of required depth and lengths as per approved drawing, including constructing necessary guide walls as required and as specified including boring in all kinds of soils and rocks, including working in or under water and / or liquid mud, in foul conditions and pumping or bailing out of water and removing slush, including disposal of earth/ rock / slush etc. for all leads and all lifts, including preparing, providing and re-circulating bentonite slurry in the trench as and when required for all depths, including agitating bentonite slurry during trenching etc., providing and fixing stop ends or form tubes, upto the required depth of diaphragm wall including extracting the same after casting, including chipping off the bentonite adulterated concrete or unsound concrete up to the cut off level for obtaining the sound concrete, dressing undulations on the exposed face of diaphragm wall after excavation by chipping / chiseling etc. including filling the depression/ cavities with sound concrete etc. complete and as directed by the Engineer-in-charge, including providing recess for bearing plates and fixing insert boxes for inclined rock anchors etc. complete as per the specifications and approved design and as directed by the Engineer-in-charge, but excluding the cost of reinforcement and inserts. (rates include cost of all inputs of labour, material and T & P, cost of handling, lifting & placing in position the reinforcement cage in the trench, including the additional cost of welding the reinforcement bars etc. involved in the work and all other incidental expenditure for completing the work as directed by the Engineer-in- charge), However, the actual area of the diaphragm wall, correct to two places of decimal, from design bottom level to the design cut off level (including portion anchored in the rock upto the design bottom level) only shall be measured for payment.",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: rates include cost of all inputs of labour, material and T & P, cost of handling, lifting & placing in position the reinforcement cage in the trench, including the additional cost of welding the reinforcement bars etc. involved in the work and all other incidental expenditure for completing the work as directed by the Engineer-in-charge), However, the actual area of the diaphragm wall, correct to two places of decimal, from design bottom level to the design cut off level (including portion anchored in the rock upto the design bottom level) only shall be measured for payment. Excess/less cement used for design mix including the extra cement required for under water concreting is payable / recoverable separately",
+              "source_page": 11,
+              "order_index": 0
+            }
+          ],
           "code": "5.49",
           "children_count": 0,
           "children": [],
-          "order_index": 168,
+          "order_index": 162,
           "source_page": 11,
           "unit": "cum",
           "rate": 20460.45,
@@ -1787,20 +1874,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/5.0 REINFORCED CEMENT CONCRETE.pdf",
-    "row_count": 169,
+    "row_count": 163,
     "note_count": 4,
-    "leaf_count": 137,
-    "duplicate_codes": [
-      "107.85",
-      "107.85",
-      "107.10",
-      "95.80",
-      "107.85",
-      "107.85",
-      "102.20",
-      "107.85",
-      "99.65"
-    ],
+    "leaf_count": 134,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }

@@ -68,7 +68,13 @@ type ScheduleNodeType = "section" | "group" | "item";
 
 function resolveNodeType(node: ParsedNode): ScheduleNodeType {
   if (node.node_type === "subhead") return "section";
-  const hasChildren = node.children && node.children.length > 0;
+  if (node.node_type === "group") return "group";
+  if (node.node_type === "item") {
+    const hasChildren = Boolean(node.children && node.children.length > 0);
+    if (!hasChildren) return "item";
+    return node.rate != null ? "item" : "group";
+  }
+  const hasChildren = Boolean(node.children && node.children.length > 0);
   return hasChildren ? "group" : "item";
 }
 

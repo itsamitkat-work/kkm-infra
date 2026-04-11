@@ -6,15 +6,7 @@
       "node_type": "subhead",
       "title": "STONE WORK",
       "code": "7.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub-soil water level up to the centre of gravity of stone work under sub - water with the quantity of stone work in cum executed under the sub-soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
-          "source_page": 4,
-          "order_index": 0
-        }
-      ],
-      "children_count": 32,
+      "children_count": 31,
       "children": [
         {
           "node_type": "item",
@@ -670,21 +662,15 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for stone work ashlar sunk or moulded in cornices. per metre per cm girth (60cm deep)",
+          "title": "Extra for stone work ashlar sunk or moulded in cornices. per metre per cm girth (60cm deep) 303.50 MISCELLANEOUS STONE WORK",
           "code": "7.22",
           "children_count": 0,
           "children": [],
           "order_index": 58,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "MISCELLANEOUS STONE WORK",
-          "code": "303.50",
-          "children_count": 0,
-          "children": [],
-          "order_index": 59,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "per metre per cm girth (60cm deep)",
+          "rate": 303.5,
+          "rate_display": "303.50"
         },
         {
           "node_type": "item",
@@ -692,7 +678,7 @@
           "code": "7.24",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
+          "order_index": 59,
           "source_page": 3,
           "unit": "cum",
           "rate": 2896.0,
@@ -704,7 +690,7 @@
           "code": "7.26",
           "children_count": 0,
           "children": [],
-          "order_index": 61,
+          "order_index": 60,
           "source_page": 3,
           "unit": "each",
           "rate": 54.55,
@@ -728,14 +714,14 @@
                   "code": "7.28.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 64,
+                  "order_index": 63,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 2854.35,
                   "rate_display": "2854.35"
                 }
               ],
-              "order_index": 63,
+              "order_index": 62,
               "source_page": 3
             },
             {
@@ -750,18 +736,18 @@
                   "code": "7.28.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 66,
+                  "order_index": 65,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 2932.6,
                   "rate_display": "2932.60"
                 }
               ],
-              "order_index": 65,
+              "order_index": 64,
               "source_page": 3
             }
           ],
-          "order_index": 62,
+          "order_index": 61,
           "source_page": 3
         },
         {
@@ -776,7 +762,7 @@
               "code": "7.29.1",
               "children_count": 0,
               "children": [],
-              "order_index": 68,
+              "order_index": 67,
               "source_page": 3,
               "unit": "sqm",
               "rate": 1833.25,
@@ -788,14 +774,14 @@
               "code": "7.29.2",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 68,
               "source_page": 3,
               "unit": "sqm",
               "rate": 1901.55,
               "rate_display": "1901.55"
             }
           ],
-          "order_index": 67,
+          "order_index": 66,
           "source_page": 3
         },
         {
@@ -804,7 +790,7 @@
           "code": "7.30",
           "children_count": 0,
           "children": [],
-          "order_index": 70,
+          "order_index": 69,
           "source_page": 3,
           "unit": "sqm",
           "rate": 2159.9,
@@ -816,7 +802,7 @@
           "code": "7.31",
           "children_count": 0,
           "children": [],
-          "order_index": 71,
+          "order_index": 70,
           "source_page": 3,
           "unit": "each",
           "rate": 6788.85,
@@ -834,7 +820,7 @@
               "code": "7.32.1",
               "children_count": 0,
               "children": [],
-              "order_index": 73,
+              "order_index": 72,
               "source_page": 3,
               "unit": "cum",
               "rate": 93741.1,
@@ -846,14 +832,14 @@
               "code": "7.32.2",
               "children_count": 0,
               "children": [],
-              "order_index": 74,
+              "order_index": 73,
               "source_page": 3,
               "unit": "cum",
               "rate": 107965.1,
               "rate_display": "107965.10"
             }
           ],
-          "order_index": 72,
+          "order_index": 71,
           "source_page": 3
         },
         {
@@ -868,7 +854,7 @@
               "code": "7.33.1",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 75,
               "source_page": 4,
               "unit": "sqm",
               "rate": 14931.55,
@@ -880,14 +866,14 @@
               "code": "7.33.2",
               "children_count": 0,
               "children": [],
-              "order_index": 77,
+              "order_index": 76,
               "source_page": 4,
               "unit": "sqm",
               "rate": 14994.15,
               "rate_display": "14994.15"
             }
           ],
-          "order_index": 75,
+          "order_index": 74,
           "source_page": 3
         },
         {
@@ -896,7 +882,15 @@
           "code": "7.34",
           "children_count": 0,
           "children": [],
-          "order_index": 78,
+          "annotations": [
+            {
+              "type": "note",
+              "text": "NOTE :- The quantity will be calculated by multiplying the depth measured from sub-soil water level up to the centre of gravity of stone work under sub - water with the quantity of stone work in cum executed under the sub-soil water. The depth of centre of gravity shall be reckoned correct to 0.1 m, (0.05 m or more shall be taken as 0.1 m and less than 0.05 m ignored).",
+              "source_page": 4,
+              "order_index": 0
+            }
+          ],
+          "order_index": 77,
           "source_page": 4,
           "unit": "metre depth",
           "rate": 1098.8,
@@ -908,7 +902,7 @@
           "code": "7.35",
           "children_count": 0,
           "children": [],
-          "order_index": 79,
+          "order_index": 78,
           "source_page": 4,
           "unit": "cum",
           "rate": 467.55,
@@ -932,7 +926,7 @@
                   "code": "7.38.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 82,
+                  "order_index": 81,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 3094.55,
@@ -944,18 +938,18 @@
                   "code": "7.38.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 83,
+                  "order_index": 82,
                   "source_page": 4,
                   "unit": "sqm",
                   "rate": 2766.45,
                   "rate_display": "2766.45"
                 }
               ],
-              "order_index": 81,
+              "order_index": 80,
               "source_page": 4
             }
           ],
-          "order_index": 80,
+          "order_index": 79,
           "source_page": 4
         }
       ]
@@ -963,9 +957,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/7.0 STONE WORK.pdf",
-    "row_count": 84,
+    "row_count": 83,
     "note_count": 1,
-    "leaf_count": 54,
+    "leaf_count": 53,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

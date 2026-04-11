@@ -308,7 +308,7 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and mixing integral crystalline admixture for water proofing treatment to RCC structures like basement raft, retaining walls, reservior, sewage & water treatment plant, tunnels / subway and bridge deck etc. at the time of transporting of concrete into the drum of the ready-mix truck , using integral crystalline admixture @0.80% (minimum) to the weight of cement content per cubic meter of concrete) or higher as recommended by the manufacturer’s specification in reinforced cement concrete at site of work. The material shall meet the requirements as specified in ACI- 212-3R-2010 i.e. by reducing permeability of concrete by more than 90%, compared with control concrete as per DIN 1048 and resistant to 16 bar hydrostatic pressure. The crystalline admixture shall be capable of self- healing of cracks up to a width of 0.50 mm. The work shall be carried out all complete as per specification and the direction of the Engineer- in-charge. The product performance shall carry guarantee for 10 years against any leakage. kg",
+          "title": "Providing and mixing integral crystalline admixture for water proofing treatment to RCC structures like basement raft, retaining walls, reservior, sewage & water treatment plant, tunnels / subway and bridge deck etc. at the time of transporting of concrete into the drum of the ready-mix truck , using integral crystalline admixture @0.80% (minimum) to the weight of cement content per cubic meter of concrete) or higher as recommended by the manufacturer’s specification in reinforced cement concrete at site of work. The material shall meet the requirements as specified in ACI- 212-3R-2010 i.e. by reducing permeability of concrete by more than 90%, compared with control concrete as per DIN 1048 and resistant to 16 bar hydrostatic pressure. The crystalline admixture shall be capable of self- healing of cracks up to a width of 0.50 mm. The work shall be carried out all complete as per specification and the direction of the Engineer- in-charge. The product performance shall carry guarantee for 10 years against any leakage. kg 388.00",
           "code": "22.22",
           "children_count": 0,
           "children": [],
@@ -317,8 +317,8 @@
         },
         {
           "node_type": "item",
-          "title": "22.22A Providing and applying fibre reinforced elastomeric liquid water proofing membrane with resilient acrylic polymers having Sun Reflectivity Index (SRI) of 105 on top of concrete roof in three coats @10.76 litre/ 10 sqm. One coat of self-priming of elastomeric waterproofing liquid (dilution with water in the ratio of 3:1) and two coats of undiluted elastomeric waterproofing liquid (dry film thickness of complete application/system not less than 500 microns). The operation shall be carried out after scrapping and properly cleaning the surface to remove loose particles with wire brushes, complete in all respect as per the direction of Engineer- in-Charge.",
-          "code": "388.00",
+          "title": "Providing and applying fibre reinforced elastomeric liquid water proofing membrane with resilient acrylic polymers having Sun Reflectivity Index (SRI) of 105 on top of concrete roof in three coats @10.76 litre/ 10 sqm. One coat of self-priming of elastomeric waterproofing liquid (dilution with water in the ratio of 3:1) and two coats of undiluted elastomeric waterproofing liquid (dry film thickness of complete application/system not less than 500 microns). The operation shall be carried out after scrapping and properly cleaning the surface to remove loose particles with wire brushes, complete in all respect as per the direction of Engineer- in-Charge.",
+          "code": "22.22A",
           "children_count": 0,
           "children": [],
           "order_index": 27,
@@ -363,12 +363,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "447.35",
+          "title": "Providing & Applying polymer modified, flexible cementatious negative side waterproofing coating with elastic waterproofing polymers on interior wall plaster surface in three coats @14.35 kg /10 sqm. one coat of self priming of cementatious waterproofing polymer(dilution with water in the ratio of 1:1) and two coats of cementatious waterproofing polymer (dilution with water in the ratio of 3:1 ) after scrapping and properly cleaning the surface to remove pre-existing paint film & loose particles till plaster is visible, complete in all respect as per the direction of Engineer-in-Charge.",
+          "code": "22.23A",
           "children_count": 0,
           "children": [],
           "order_index": 31,
-          "source_page": 4
+          "source_page": 4,
+          "unit": "sqm",
+          "rate": 447.35,
+          "rate_display": "447.35"
         },
         {
           "node_type": "item",
@@ -384,12 +387,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "597.00",
+          "title": "Providing & Applying high quality acrylic modified resin based texture of Dholpur/Red sand stone Pattern with anti algae and UV resistance properties to be applied as intermediate finish in desired pattern @ 43.04 kg/10 sqm to form film of 1- 1.5 mm thickness after scrapping and properly cleaning the surface to remove loose particles from the plaster surface, followed by top coating with Premium Acrylic Smooth exterior paint with Silicone additives of required shade by two or more coats @ 1.43 litre/10 sqm, complete as the direction of Engineer -in-Charge.",
+          "code": "22.24A",
           "children_count": 0,
           "children": [],
           "order_index": 33,
-          "source_page": 5
+          "source_page": 5,
+          "unit": "sqm",
+          "rate": 597.0,
+          "rate_display": "597.00"
         },
         {
           "node_type": "item",

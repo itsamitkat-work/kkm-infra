@@ -6,11 +6,11 @@
       "node_type": "subhead",
       "title": "STEEL WORK",
       "code": "10.0",
-      "children_count": 52,
+      "children_count": 30,
       "children": [
         {
           "node_type": "item",
-          "title": "Structural steel work in single section, fixed with or without connecting plate, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg",
+          "title": "Structural steel work in single section, fixed with or without connecting plate, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg 117.35",
           "code": "10.1",
           "children_count": 0,
           "children": [],
@@ -19,29 +19,11 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "117.35",
-          "children_count": 0,
-          "children": [],
-          "order_index": 1,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "Structural steel work riveted, bolted or welded in built up sections, trusses and framed work, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg",
+          "title": "Structural steel work riveted, bolted or welded in built up sections, trusses and framed work, including cutting, hoisting, fixing in position and applying a priming coat of approved steel primer all complete. kg 133.70",
           "code": "10.2",
           "children_count": 0,
           "children": [],
-          "order_index": 2,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "133.70",
-          "children_count": 0,
-          "children": [],
-          "order_index": 3,
+          "order_index": 1,
           "source_page": 1
         },
         {
@@ -50,7 +32,7 @@
           "code": "10.3",
           "children_count": 0,
           "children": [],
-          "order_index": 4,
+          "order_index": 2,
           "source_page": 1,
           "unit": "sqm",
           "rate": 11439.6,
@@ -62,7 +44,7 @@
           "code": "10.4",
           "children_count": 0,
           "children": [],
-          "order_index": 5,
+          "order_index": 3,
           "source_page": 1,
           "unit": "sqm",
           "rate": 6566.2,
@@ -80,7 +62,7 @@
               "code": "10.5.1",
               "children_count": 0,
               "children": [],
-              "order_index": 7,
+              "order_index": 5,
               "source_page": 1,
               "unit": "sqm",
               "rate": 5804.35,
@@ -92,14 +74,14 @@
               "code": "10.5.2",
               "children_count": 0,
               "children": [],
-              "order_index": 8,
+              "order_index": 6,
               "source_page": 1,
               "unit": "sqm",
               "rate": 5563.75,
               "rate_display": "5563.75"
             }
           ],
-          "order_index": 6,
+          "order_index": 4,
           "source_page": 1
         },
         {
@@ -114,7 +96,7 @@
               "code": "10.6.1",
               "children_count": 0,
               "children": [],
-              "order_index": 10,
+              "order_index": 8,
               "source_page": 1,
               "unit": "sqm",
               "rate": 3653.2,
@@ -126,7 +108,7 @@
               "code": "10.6.2",
               "children_count": 0,
               "children": [],
-              "order_index": 11,
+              "order_index": 9,
               "source_page": 1,
               "unit": "sqm",
               "rate": 3307.05,
@@ -138,14 +120,14 @@
               "code": "10.6.3",
               "children_count": 0,
               "children": [],
-              "order_index": 12,
+              "order_index": 10,
               "source_page": 1,
               "unit": "sqm",
               "rate": 3191.35,
               "rate_display": "3191.35"
             }
           ],
-          "order_index": 9,
+          "order_index": 7,
           "source_page": 1
         },
         {
@@ -154,7 +136,7 @@
           "code": "10.7",
           "children_count": 0,
           "children": [],
-          "order_index": 13,
+          "order_index": 11,
           "source_page": 1,
           "unit": "each",
           "rate": 492.35,
@@ -172,7 +154,7 @@
               "code": "10.8.1",
               "children_count": 0,
               "children": [],
-              "order_index": 15,
+              "order_index": 13,
               "source_page": 1,
               "unit": "sqm",
               "rate": 1281.35,
@@ -184,14 +166,14 @@
               "code": "10.8.2",
               "children_count": 0,
               "children": [],
-              "order_index": 16,
+              "order_index": 14,
               "source_page": 1,
               "unit": "sqm",
               "rate": 1181.8,
               "rate_display": "1181.80"
             }
           ],
-          "order_index": 14,
+          "order_index": 12,
           "source_page": 1
         },
         {
@@ -200,7 +182,7 @@
           "code": "10.9",
           "children_count": 0,
           "children": [],
-          "order_index": 17,
+          "order_index": 15,
           "source_page": 1,
           "unit": "sqm",
           "rate": 768.25,
@@ -214,43 +196,25 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg 82.45",
               "code": "10.10.1",
               "children_count": 0,
               "children": [],
-              "order_index": 19,
+              "order_index": 17,
               "source_page": 2
             },
             {
               "node_type": "item",
-              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg 40.80",
               "code": "10.10.2",
               "children_count": 0,
               "children": [],
-              "order_index": 21,
+              "order_index": 18,
               "source_page": 2
             }
           ],
-          "order_index": 18,
+          "order_index": 16,
           "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "82.45",
-          "children_count": 0,
-          "children": [],
-          "order_index": 20,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "40.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 22,
-          "source_page": 2
         },
         {
           "node_type": "item",
@@ -260,42 +224,24 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg 131.05",
               "code": "10.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
+              "order_index": 20,
               "source_page": 2
             },
             {
               "node_type": "item",
-              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg 128.25",
               "code": "10.11.2",
               "children_count": 0,
               "children": [],
-              "order_index": 26,
+              "order_index": 21,
               "source_page": 2
             }
           ],
-          "order_index": 23,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "131.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 25,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "128.25",
-          "children_count": 0,
-          "children": [],
-          "order_index": 27,
+          "order_index": 19,
           "source_page": 2
         },
         {
@@ -304,7 +250,7 @@
           "code": "10.12",
           "children_count": 0,
           "children": [],
-          "order_index": 28,
+          "order_index": 22,
           "source_page": 2,
           "unit": "metre",
           "rate": 49.6,
@@ -318,42 +264,24 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size). kg",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size). kg 141.70",
               "code": "10.13.1",
               "children_count": 0,
               "children": [],
-              "order_index": 30,
+              "order_index": 24,
               "source_page": 2
             },
             {
               "node_type": "item",
-              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg 136.00",
               "code": "10.13.2",
               "children_count": 0,
               "children": [],
-              "order_index": 32,
+              "order_index": 25,
               "source_page": 2
             }
           ],
-          "order_index": 29,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "141.70",
-          "children_count": 0,
-          "children": [],
-          "order_index": 31,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "136.00",
-          "children_count": 0,
-          "children": [],
-          "order_index": 33,
+          "order_index": 23,
           "source_page": 2
         },
         {
@@ -374,7 +302,7 @@
                   "code": "10.14.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 36,
+                  "order_index": 28,
                   "source_page": 2,
                   "unit": "metre",
                   "rate": 583.3,
@@ -386,14 +314,14 @@
                   "code": "10.14.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 37,
+                  "order_index": 29,
                   "source_page": 2,
                   "unit": "metre",
                   "rate": 570.4,
                   "rate_display": "570.40"
                 }
               ],
-              "order_index": 35,
+              "order_index": 27,
               "source_page": 2
             },
             {
@@ -408,7 +336,7 @@
                   "code": "10.14.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 39,
+                  "order_index": 31,
                   "source_page": 2,
                   "unit": "metre",
                   "rate": 611.75,
@@ -420,14 +348,14 @@
                   "code": "10.14.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 40,
+                  "order_index": 32,
                   "source_page": 3,
                   "unit": "metre",
                   "rate": 598.85,
                   "rate_display": "598.85"
                 }
               ],
-              "order_index": 38,
+              "order_index": 30,
               "source_page": 2
             },
             {
@@ -442,7 +370,7 @@
                   "code": "10.14.3.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 42,
+                  "order_index": 34,
                   "source_page": 3,
                   "unit": "metre",
                   "rate": 640.2,
@@ -454,18 +382,18 @@
                   "code": "10.14.3.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 43,
+                  "order_index": 35,
                   "source_page": 3,
                   "unit": "metre",
                   "rate": 627.3,
                   "rate_display": "627.30"
                 }
               ],
-              "order_index": 41,
+              "order_index": 33,
               "source_page": 3
             }
           ],
-          "order_index": 34,
+          "order_index": 26,
           "source_page": 2
         },
         {
@@ -476,42 +404,24 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg",
+              "title": "Fixing with 15x3 mm lugs 10 cm long embedded in cement concrete block 15x10x10 cm of C.C. 1:3:6 (1 Cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) kg 195.20",
               "code": "10.15.1",
               "children_count": 0,
               "children": [],
-              "order_index": 45,
+              "order_index": 37,
               "source_page": 3
             },
             {
               "node_type": "item",
-              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg",
+              "title": "Fixing with carbon steel galvanised dash fastener of required dia and size (to be paid for separately) kg 181.25",
               "code": "10.15.2",
               "children_count": 0,
               "children": [],
-              "order_index": 47,
+              "order_index": 38,
               "source_page": 3
             }
           ],
-          "order_index": 44,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "195.20",
-          "children_count": 0,
-          "children": [],
-          "order_index": 46,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "181.25",
-          "children_count": 0,
-          "children": [],
-          "order_index": 48,
+          "order_index": 36,
           "source_page": 3
         },
         {
@@ -522,51 +432,33 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Hot finished welded type tubes kg",
+              "title": "Hot finished welded type tubes kg 194.40",
               "code": "10.16.1",
               "children_count": 0,
               "children": [],
-              "order_index": 50,
+              "order_index": 40,
               "source_page": 3
             },
             {
               "node_type": "item",
-              "title": "Hot finished seamless type tubes kg",
+              "title": "Hot finished seamless type tubes kg 206.35",
               "code": "10.16.2",
               "children_count": 0,
               "children": [],
-              "order_index": 52,
+              "order_index": 41,
               "source_page": 3
             },
             {
               "node_type": "item",
-              "title": "Electric resistance or induction butt welded tubes kg",
+              "title": "Electric resistance or induction butt welded tubes kg 194.40",
               "code": "10.16.3",
               "children_count": 0,
               "children": [],
-              "order_index": 54,
+              "order_index": 42,
               "source_page": 3
             }
           ],
-          "order_index": 49,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "194.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 51,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "206.35",
-          "children_count": 0,
-          "children": [],
-          "order_index": 53,
+          "order_index": 39,
           "source_page": 3
         },
         {
@@ -575,7 +467,7 @@
           "code": "10.17",
           "children_count": 0,
           "children": [],
-          "order_index": 56,
+          "order_index": 43,
           "source_page": 3,
           "unit": "each",
           "rate": 226.0,
@@ -587,7 +479,7 @@
           "code": "10.18",
           "children_count": 0,
           "children": [],
-          "order_index": 57,
+          "order_index": 44,
           "source_page": 3,
           "unit": "each",
           "rate": 220.65,
@@ -595,56 +487,29 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing mild steel round holding down bolts with nuts and washer plates complete. kg",
+          "title": "Providing and fixing mild steel round holding down bolts with nuts and washer plates complete. kg 97.20",
           "code": "10.19",
           "children_count": 0,
           "children": [],
-          "order_index": 58,
+          "order_index": 45,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "97.20",
-          "children_count": 0,
-          "children": [],
-          "order_index": 59,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "Providing and fixing bolts including nuts and washers complete. kg",
+          "title": "Providing and fixing bolts including nuts and washers complete. kg 159.35",
           "code": "10.20",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
+          "order_index": 46,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "159.35",
-          "children_count": 0,
-          "children": [],
-          "order_index": 61,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "Providing and fixing M.S. rivets of sizes in position. kg",
+          "title": "Providing and fixing M.S. rivets of sizes in position. kg 278.30",
           "code": "10.21",
           "children_count": 0,
           "children": [],
-          "order_index": 62,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "278.30",
-          "children_count": 0,
-          "children": [],
-          "order_index": 63,
+          "order_index": 47,
           "source_page": 3
         },
         {
@@ -653,7 +518,7 @@
           "code": "10.22",
           "children_count": 0,
           "children": [],
-          "order_index": 64,
+          "order_index": 48,
           "source_page": 3
         },
         {
@@ -662,7 +527,7 @@
           "code": "3.70",
           "children_count": 0,
           "children": [],
-          "order_index": 65,
+          "order_index": 49,
           "source_page": 3
         },
         {
@@ -673,42 +538,24 @@
           "children": [
             {
               "node_type": "item",
-              "title": "In stringers, treads, landings etc. of stair cases, including use of chequered plate wherever required, all complete kg",
+              "title": "In stringers, treads, landings etc. of stair cases, including use of chequered plate wherever required, all complete kg 123.60",
               "code": "10.25.1",
               "children_count": 0,
               "children": [],
-              "order_index": 67,
+              "order_index": 51,
               "source_page": 3
             },
             {
               "node_type": "item",
-              "title": "In gratings, frames, guard bar, ladder, railings, brackets, gates and similar works kg",
+              "title": "In gratings, frames, guard bar, ladder, railings, brackets, gates and similar works kg 172.60",
               "code": "10.25.2",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 52,
               "source_page": 3
             }
           ],
-          "order_index": 66,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "123.60",
-          "children_count": 0,
-          "children": [],
-          "order_index": 68,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "172.60",
-          "children_count": 0,
-          "children": [],
-          "order_index": 70,
+          "order_index": 50,
           "source_page": 3
         },
         {
@@ -719,60 +566,33 @@
           "children": [
             {
               "node_type": "item",
-              "title": "M.S. tube kg",
+              "title": "M.S. tube kg 196.80",
               "code": "10.26.1",
               "children_count": 0,
               "children": [],
-              "order_index": 72,
+              "order_index": 54,
               "source_page": 4
             },
             {
               "node_type": "item",
-              "title": "E.R.W. tubes kg",
+              "title": "E.R.W. tubes kg 205.75",
               "code": "10.26.2",
               "children_count": 0,
               "children": [],
-              "order_index": 74,
+              "order_index": 55,
               "source_page": 4
             },
             {
               "node_type": "item",
-              "title": "G.I. pipes kg",
+              "title": "G.I. pipes kg 203.05",
               "code": "10.26.3",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 56,
               "source_page": 4
             }
           ],
-          "order_index": 71,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "196.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 73,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "205.75",
-          "children_count": 0,
-          "children": [],
-          "order_index": 75,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "203.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 77,
+          "order_index": 53,
           "source_page": 4
         },
         {
@@ -787,7 +607,7 @@
               "code": "10.27.1",
               "children_count": 0,
               "children": [],
-              "order_index": 79,
+              "order_index": 58,
               "source_page": 4,
               "unit": "each",
               "rate": 131.1,
@@ -799,7 +619,7 @@
               "code": "10.27.2",
               "children_count": 0,
               "children": [],
-              "order_index": 80,
+              "order_index": 59,
               "source_page": 4,
               "unit": "each",
               "rate": 137.65,
@@ -811,7 +631,7 @@
               "code": "10.27.3",
               "children_count": 0,
               "children": [],
-              "order_index": 81,
+              "order_index": 60,
               "source_page": 4,
               "unit": "each",
               "rate": 170.95,
@@ -823,7 +643,7 @@
               "code": "10.27.4",
               "children_count": 0,
               "children": [],
-              "order_index": 82,
+              "order_index": 61,
               "source_page": 4,
               "unit": "each",
               "rate": 182.2,
@@ -835,32 +655,23 @@
               "code": "10.27.5",
               "children_count": 0,
               "children": [],
-              "order_index": 83,
+              "order_index": 62,
               "source_page": 4,
               "unit": "each",
               "rate": 224.5,
               "rate_display": "224.50"
             }
           ],
-          "order_index": 78,
+          "order_index": 57,
           "source_page": 4
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing stainless steel ( Grade 304) railing made of Hollow tubes, channels, plates etc., including welding, grinding, buffing, polishing and making curvature (wherever required) and fitting the same with necessary stainless steel nuts and bolts complete, i/c fixing the railing with necessary accessories & stainless steel dash fasteners , stainless steel bolts etc., of required size, on the top of the floor or the side of waist slab with suitable arrangement as per approval of Engineer-in-charge, (for payment purpose only weight of stainless steel members shall be considered excluding fixing accessories such as nuts, bolts, fasteners etc.). kg",
+          "title": "Providing and fixing stainless steel ( Grade 304) railing made of Hollow tubes, channels, plates etc., including welding, grinding, buffing, polishing and making curvature (wherever required) and fitting the same with necessary stainless steel nuts and bolts complete, i/c fixing the railing with necessary accessories & stainless steel dash fasteners , stainless steel bolts etc., of required size, on the top of the floor or the side of waist slab with suitable arrangement as per approval of Engineer-in-charge, (for payment purpose only weight of stainless steel members shall be considered excluding fixing accessories such as nuts, bolts, fasteners etc.). kg 772.40",
           "code": "10.28",
           "children_count": 0,
           "children": [],
-          "order_index": 84,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "772.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 85,
+          "order_index": 63,
           "source_page": 4
         },
         {
@@ -875,7 +686,7 @@
               "code": "10.29.1",
               "children_count": 0,
               "children": [],
-              "order_index": 87,
+              "order_index": 65,
               "source_page": 4,
               "unit": "sqm",
               "rate": 844.7,
@@ -887,14 +698,14 @@
               "code": "10.29.2",
               "children_count": 0,
               "children": [],
-              "order_index": 88,
+              "order_index": 66,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1133.55,
               "rate_display": "1133.55"
             }
           ],
-          "order_index": 86,
+          "order_index": 64,
           "source_page": 4
         },
         {
@@ -909,7 +720,7 @@
               "code": "10.30.1",
               "children_count": 0,
               "children": [],
-              "order_index": 90,
+              "order_index": 68,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1064.65,
@@ -921,32 +732,23 @@
               "code": "10.30.2",
               "children_count": 0,
               "children": [],
-              "order_index": 91,
+              "order_index": 69,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1390.15,
               "rate_display": "1390.15"
             }
           ],
-          "order_index": 89,
+          "order_index": 67,
           "source_page": 4
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing angle iron frames for doors, windows and ventilators of mild steel Angle sections of size 35x35x5 mm, joints mitred and welded by angle iron 35x35x5 mm or 35x 5 mm flat pieces to the existing T-iron frame or to the wall with dash fastener, including fixing of necessary butt hinges and screws and applying a priming coat of approved steel primer, all complete as per the direction of Engineer-In-charge. kg",
+          "title": "Providing and fixing angle iron frames for doors, windows and ventilators of mild steel Angle sections of size 35x35x5 mm, joints mitred and welded by angle iron 35x35x5 mm or 35x 5 mm flat pieces to the existing T-iron frame or to the wall with dash fastener, including fixing of necessary butt hinges and screws and applying a priming coat of approved steel primer, all complete as per the direction of Engineer-In-charge. kg 130.50",
           "code": "10.31",
           "children_count": 0,
           "children": [],
-          "order_index": 92,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "130.50",
-          "children_count": 0,
-          "children": [],
-          "order_index": 93,
+          "order_index": 70,
           "source_page": 4
         }
       ]
@@ -954,12 +756,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/10.0 STEEL WORK.pdf",
-    "row_count": 94,
+    "row_count": 71,
     "note_count": 0,
-    "leaf_count": 76,
-    "duplicate_codes": [
-      "194.40"
-    ],
+    "leaf_count": 54,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }

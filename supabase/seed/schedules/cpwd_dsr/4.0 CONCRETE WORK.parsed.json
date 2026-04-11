@@ -6,20 +6,6 @@
       "node_type": "subhead",
       "title": "CONCRETE WORK",
       "code": "4.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
-          "source_page": 6,
-          "order_index": 1
-        },
-        {
-          "type": "note",
-          "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement. 4.20A.1 All works upto plinth level 4.20A.1.1 Concrete of M10 grade with minimum cement content of 220 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 100% each). cum",
-          "source_page": 7,
-          "order_index": 2
-        }
-      ],
       "children_count": 45,
       "children": [
         {

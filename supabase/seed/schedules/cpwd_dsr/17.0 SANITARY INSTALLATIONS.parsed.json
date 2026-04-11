@@ -428,11 +428,23 @@
         },
         {
           "node_type": "item",
-          "title": "17.7B Providing and fixing wash basin with C.I. brackets, 15 mm PTMT pillar cock, 32 mm PTMT waste coupling of standard pattern, including painting of fittings and brackets, cutting and making good the walls wherever required. White Vitreous China Flat back wash basin size 550x400 mm with single 15 mm PTMT pillar cock.",
-          "code": "3960.55",
+          "title": "Providing and fixing wash basin with C.I. brackets, 15 mm dia CP Brass single hole basin mixer of approved quality and make, including painting of fittings and brackets, cutting and making good the walls wherever required:- (a) White Vitreous China Wash basin size 550x400 mm with a 15 mm CP Brass single hole basin mixer",
+          "code": "17.7A",
           "children_count": 0,
           "children": [],
           "order_index": 36,
+          "source_page": 2,
+          "unit": "each",
+          "rate": 3960.55,
+          "rate_display": "3960.55"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing wash basin with C.I. brackets, 15 mm PTMT pillar cock, 32 mm PTMT waste coupling of standard pattern, including painting of fittings and brackets, cutting and making good the walls wherever required. White Vitreous China Flat back wash basin size 550x400 mm with single 15 mm PTMT pillar cock.",
+          "code": "17.7B",
+          "children_count": 0,
+          "children": [],
+          "order_index": 37,
           "source_page": 3,
           "unit": "each",
           "rate": 1550.6,
@@ -444,7 +456,7 @@
           "code": "17.8",
           "children_count": 0,
           "children": [],
-          "order_index": 37,
+          "order_index": 38,
           "source_page": 3,
           "unit": "each",
           "rate": 1683.35,
@@ -462,14 +474,14 @@
               "code": "17.9.1",
               "children_count": 0,
               "children": [],
-              "order_index": 39,
+              "order_index": 40,
               "source_page": 3,
               "unit": "each",
               "rate": 3892.75,
               "rate_display": "3892.75"
             }
           ],
-          "order_index": 38,
+          "order_index": 39,
           "source_page": 3
         },
         {
@@ -490,7 +502,7 @@
                   "code": "17.10.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 42,
+                  "order_index": 43,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 6945.6,
@@ -502,7 +514,7 @@
                   "code": "17.10.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 43,
+                  "order_index": 44,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 7514.65,
@@ -514,7 +526,7 @@
                   "code": "17.10.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 44,
+                  "order_index": 45,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 7159.0,
@@ -526,14 +538,14 @@
                   "code": "17.10.1.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 45,
+                  "order_index": 46,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 6917.2,
                   "rate_display": "6917.20"
                 }
               ],
-              "order_index": 41,
+              "order_index": 42,
               "source_page": 3
             },
             {
@@ -548,7 +560,7 @@
                   "code": "17.10.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 47,
+                  "order_index": 48,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 4940.8,
@@ -560,7 +572,7 @@
                   "code": "17.10.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 48,
+                  "order_index": 49,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 3873.8,
@@ -572,18 +584,18 @@
                   "code": "17.10.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 49,
+                  "order_index": 50,
                   "source_page": 3,
                   "unit": "each",
                   "rate": 3407.2,
                   "rate_display": "3407.20"
                 }
               ],
-              "order_index": 46,
+              "order_index": 47,
               "source_page": 3
             }
           ],
-          "order_index": 40,
+          "order_index": 41,
           "source_page": 3
         },
         {
@@ -598,7 +610,7 @@
               "code": "17.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 52,
               "source_page": 3,
               "unit": "each",
               "rate": 5020.85,
@@ -610,14 +622,14 @@
               "code": "17.11.2",
               "children_count": 0,
               "children": [],
-              "order_index": 52,
+              "order_index": 53,
               "source_page": 3,
               "unit": "each",
               "rate": 6585.8,
               "rate_display": "6585.80"
             }
           ],
-          "order_index": 50,
+          "order_index": 51,
           "source_page": 3
         },
         {
@@ -632,14 +644,14 @@
               "code": "17.12.1",
               "children_count": 0,
               "children": [],
-              "order_index": 54,
+              "order_index": 55,
               "source_page": 3,
               "unit": "each",
               "rate": 1579.65,
               "rate_display": "1579.65"
             }
           ],
-          "order_index": 53,
+          "order_index": 54,
           "source_page": 3
         },
         {
@@ -654,7 +666,7 @@
               "code": "17.13.1",
               "children_count": 0,
               "children": [],
-              "order_index": 56,
+              "order_index": 57,
               "source_page": 3,
               "unit": "each",
               "rate": 1959.8,
@@ -666,14 +678,14 @@
               "code": "17.13.2",
               "children_count": 0,
               "children": [],
-              "order_index": 57,
+              "order_index": 58,
               "source_page": 3,
               "unit": "each",
               "rate": 3169.05,
               "rate_display": "3169.05"
             }
           ],
-          "order_index": 55,
+          "order_index": 56,
           "source_page": 3
         },
         {
@@ -688,14 +700,14 @@
               "code": "17.14.1",
               "children_count": 0,
               "children": [],
-              "order_index": 59,
+              "order_index": 60,
               "source_page": 3,
               "unit": "each",
               "rate": 426.8,
               "rate_display": "426.80"
             }
           ],
-          "order_index": 58,
+          "order_index": 59,
           "source_page": 3
         },
         {
@@ -704,7 +716,7 @@
           "code": "17.15",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
+          "order_index": 61,
           "source_page": 3,
           "unit": "each",
           "rate": 2784.95,
@@ -716,7 +728,7 @@
           "code": "17.16",
           "children_count": 0,
           "children": [],
-          "order_index": 61,
+          "order_index": 62,
           "source_page": 3,
           "unit": "each",
           "rate": 170.7,
@@ -724,12 +736,15 @@
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "349.15",
+          "title": "Providing and fixing 8 mm dia C.P. / S.S. Jet with flexible tube upto 1 metre long with S.S. triangular plate to Eureopean type W.C. of quality and make as approved by Engineer - in - charge.",
+          "code": "17.16A",
           "children_count": 0,
           "children": [],
-          "order_index": 62,
-          "source_page": 4
+          "order_index": 63,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 349.15,
+          "rate_display": "349.15"
         },
         {
           "node_type": "item",
@@ -739,16 +754,16 @@
           "children": [
             {
               "node_type": "item",
-              "title": "250x130x30 mm pair",
+              "title": "250x130x30 mm pair 244.85",
               "code": "17.17.1",
               "children_count": 0,
               "children": [],
-              "order_index": 64,
+              "order_index": 65,
               "source_page": 4
             },
             {
               "node_type": "item",
-              "title": "250x125x25 mm pair",
+              "title": "250x125x25 mm pair 256.25",
               "code": "17.17.2",
               "children_count": 0,
               "children": [],
@@ -756,25 +771,7 @@
               "source_page": 4
             }
           ],
-          "order_index": 63,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "244.85",
-          "children_count": 0,
-          "children": [],
-          "order_index": 65,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "256.25",
-          "children_count": 0,
-          "children": [],
-          "order_index": 67,
+          "order_index": 64,
           "source_page": 4
         },
         {
@@ -789,7 +786,7 @@
               "code": "17.18.1",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 68,
               "source_page": 4,
               "unit": "each",
               "rate": 1190.65,
@@ -801,14 +798,14 @@
               "code": "17.18.2",
               "children_count": 0,
               "children": [],
-              "order_index": 70,
+              "order_index": 69,
               "source_page": 4,
               "unit": "each",
               "rate": 1136.6,
               "rate_display": "1136.60"
             }
           ],
-          "order_index": 68,
+          "order_index": 67,
           "source_page": 4
         },
         {
@@ -823,7 +820,7 @@
               "code": "17.19.1",
               "children_count": 0,
               "children": [],
-              "order_index": 72,
+              "order_index": 71,
               "source_page": 4,
               "unit": "each",
               "rate": 2243.75,
@@ -835,14 +832,14 @@
               "code": "17.19.2",
               "children_count": 0,
               "children": [],
-              "order_index": 73,
+              "order_index": 72,
               "source_page": 4,
               "unit": "each",
               "rate": 2912.4,
               "rate_display": "2912.40"
             }
           ],
-          "order_index": 71,
+          "order_index": 70,
           "source_page": 4
         },
         {
@@ -857,7 +854,7 @@
               "code": "17.20.1",
               "children_count": 0,
               "children": [],
-              "order_index": 75,
+              "order_index": 74,
               "source_page": 4,
               "unit": "each",
               "rate": 684.85,
@@ -869,7 +866,7 @@
               "code": "17.20.2",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 75,
               "source_page": 4,
               "unit": "each",
               "rate": 552.55,
@@ -881,14 +878,14 @@
               "code": "17.20.3",
               "children_count": 0,
               "children": [],
-              "order_index": 77,
+              "order_index": 76,
               "source_page": 4,
               "unit": "each",
               "rate": 590.95,
               "rate_display": "590.95"
             }
           ],
-          "order_index": 74,
+          "order_index": 73,
           "source_page": 4
         },
         {
@@ -897,7 +894,7 @@
           "code": "17.22",
           "children_count": 0,
           "children": [],
-          "order_index": 78,
+          "order_index": 77,
           "source_page": 4,
           "unit": "each",
           "rate": 142.85,
@@ -905,8 +902,20 @@
         },
         {
           "node_type": "item",
-          "title": "17.22B Providing and fixing CP Brass Single lever telephonic wall mixer of quality & make as approved by Engineer in charge. (a) 15 mm nominal dia",
-          "code": "1034.80",
+          "title": "Providing and fixing CP Brass 32 mm size Bottle Trap of approved quality & make and as per the direction of Engineer-in-charge.",
+          "code": "17.22A",
+          "children_count": 0,
+          "children": [],
+          "order_index": 78,
+          "source_page": 4,
+          "unit": "each",
+          "rate": 1034.8,
+          "rate_display": "1034.80"
+        },
+        {
+          "node_type": "item",
+          "title": "Providing and fixing CP Brass Single lever telephonic wall mixer of quality & make as approved by Engineer in charge. (a) 15 mm nominal dia",
+          "code": "17.22B",
           "children_count": 0,
           "children": [],
           "order_index": 79,
@@ -2713,15 +2722,47 @@
         },
         {
           "node_type": "item",
-          "title": "17.53A.1.2 With 75 mm dia pipe",
-          "code": "547.00",
-          "children_count": 0,
-          "children": [],
+          "title": "Providing and fixing Hubless centrifugally cast iron offsets epoxy coated inside & outside as per IS:15905",
+          "code": "17.53A",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "65 mm offsets",
+              "code": "17.53A.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia pipe",
+                  "code": "17.53A.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 241,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 547.0,
+                  "rate_display": "547.00"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia pipe",
+                  "code": "17.53A.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 242,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 454.5,
+                  "rate_display": "454.50"
+                }
+              ],
+              "order_index": 240,
+              "source_page": 9
+            }
+          ],
           "order_index": 239,
-          "source_page": 9,
-          "unit": "each",
-          "rate": 454.5,
-          "rate_display": "454.50"
+          "source_page": 9
         },
         {
           "node_type": "item",
@@ -2741,14 +2782,14 @@
                   "code": "17.54.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 242,
+                  "order_index": 245,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 418.95,
                   "rate_display": "418.95"
                 }
               ],
-              "order_index": 241,
+              "order_index": 244,
               "source_page": 9
             },
             {
@@ -2763,7 +2804,7 @@
                   "code": "17.54.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 244,
+                  "order_index": 247,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 585.55,
@@ -2775,31 +2816,63 @@
                   "code": "17.54.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 245,
+                  "order_index": 248,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 734.95,
                   "rate_display": "734.95"
                 }
               ],
-              "order_index": 243,
+              "order_index": 246,
               "source_page": 9
             }
           ],
-          "order_index": 240,
+          "order_index": 243,
           "source_page": 9
         },
         {
           "node_type": "item",
-          "title": "17.54A.1.2 With 75 mm dia",
-          "code": "632.65",
-          "children_count": 0,
-          "children": [],
-          "order_index": 246,
-          "source_page": 9,
-          "unit": "each",
-          "rate": 465.9,
-          "rate_display": "465.90"
+          "title": "Providing and fixing Hubless centrifugally cast iron offsets epoxy coated inside & outside as per IS:15905",
+          "code": "17.54A",
+          "children_count": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "130 mm offsets",
+              "code": "17.54A.1",
+              "children_count": 2,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "With 100 mm dia",
+                  "code": "17.54A.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 251,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 632.65,
+                  "rate_display": "632.65"
+                },
+                {
+                  "node_type": "item",
+                  "title": "With 75 mm dia",
+                  "code": "17.54A.1.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 252,
+                  "source_page": 9,
+                  "unit": "each",
+                  "rate": 465.9,
+                  "rate_display": "465.90"
+                }
+              ],
+              "order_index": 250,
+              "source_page": 9
+            }
+          ],
+          "order_index": 249,
+          "source_page": 9
         },
         {
           "node_type": "item",
@@ -2819,7 +2892,7 @@
                   "code": "17.55.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 249,
+                  "order_index": 255,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 783.45,
@@ -2831,14 +2904,14 @@
                   "code": "17.55.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 250,
+                  "order_index": 256,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 683.85,
                   "rate_display": "683.85"
                 }
               ],
-              "order_index": 248,
+              "order_index": 254,
               "source_page": 9
             },
             {
@@ -2853,7 +2926,7 @@
                   "code": "17.55.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 252,
+                  "order_index": 258,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 501.45,
@@ -2865,18 +2938,18 @@
                   "code": "17.55.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 253,
+                  "order_index": 259,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 537.0,
                   "rate_display": "537.00"
                 }
               ],
-              "order_index": 251,
+              "order_index": 257,
               "source_page": 9
             }
           ],
-          "order_index": 247,
+          "order_index": 253,
           "source_page": 9
         },
         {
@@ -2897,7 +2970,7 @@
                   "code": "17.56.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 256,
+                  "order_index": 262,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 442.0,
@@ -2909,7 +2982,7 @@
                   "code": "17.56.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 257,
+                  "order_index": 263,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 506.0,
@@ -2921,14 +2994,14 @@
                   "code": "17.56.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 258,
+                  "order_index": 264,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 427.8,
                   "rate_display": "427.80"
                 }
               ],
-              "order_index": 255,
+              "order_index": 261,
               "source_page": 9
             },
             {
@@ -2943,7 +3016,7 @@
                   "code": "17.56.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 260,
+                  "order_index": 266,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 340.7,
@@ -2955,18 +3028,18 @@
                   "code": "17.56.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 261,
+                  "order_index": 267,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 404.75,
                   "rate_display": "404.75"
                 }
               ],
-              "order_index": 259,
+              "order_index": 265,
               "source_page": 9
             }
           ],
-          "order_index": 254,
+          "order_index": 260,
           "source_page": 9
         },
         {
@@ -2987,7 +3060,7 @@
                   "code": "17.57.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 264,
+                  "order_index": 270,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 463.35,
@@ -2999,14 +3072,14 @@
                   "code": "17.57.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 265,
+                  "order_index": 271,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 513.15,
                   "rate_display": "513.15"
                 }
               ],
-              "order_index": 263,
+              "order_index": 269,
               "source_page": 9
             },
             {
@@ -3021,7 +3094,7 @@
                   "code": "17.57.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 267,
+                  "order_index": 273,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 305.15,
@@ -3033,31 +3106,73 @@
                   "code": "17.57.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 268,
+                  "order_index": 274,
                   "source_page": 9,
                   "unit": "each",
                   "rate": 362.05,
                   "rate_display": "362.05"
                 }
               ],
-              "order_index": 266,
+              "order_index": 272,
               "source_page": 9
             }
           ],
-          "order_index": 262,
+          "order_index": 268,
           "source_page": 9
         },
         {
           "node_type": "item",
-          "title": "17.57A.2 75 mm dia 17.57A.2.1 SS 304 grade coupling with EPDM rubber gasket",
-          "code": "432.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 269,
-          "source_page": 10,
-          "unit": "each",
-          "rate": 389.05,
-          "rate_display": "389.05"
+          "title": "Providing and fixing shielded coupling for Hubless centrifugally cast iron pipe",
+          "code": "17.57A",
+          "children_count": 2,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "100 mm dia",
+              "code": "17.57A.1",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "SS 304 grade coupling with EPDM rubber gasket",
+                  "code": "17.57A.1.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 277,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 432.05,
+                  "rate_display": "432.05"
+                }
+              ],
+              "order_index": 276,
+              "source_page": 10
+            },
+            {
+              "node_type": "item",
+              "title": "75 mm dia",
+              "code": "17.57A.2",
+              "children_count": 1,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "SS 304 grade coupling with EPDM rubber gasket",
+                  "code": "17.57A.2.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 279,
+                  "source_page": 10,
+                  "unit": "each",
+                  "rate": 389.05,
+                  "rate_display": "389.05"
+                }
+              ],
+              "order_index": 278,
+              "source_page": 10
+            }
+          ],
+          "order_index": 275,
+          "source_page": 10
         },
         {
           "node_type": "item",
@@ -3071,7 +3186,7 @@
               "code": "17.58.1",
               "children_count": 0,
               "children": [],
-              "order_index": 271,
+              "order_index": 281,
               "source_page": 10,
               "unit": "each",
               "rate": 622.5,
@@ -3083,7 +3198,7 @@
               "code": "17.58.2",
               "children_count": 0,
               "children": [],
-              "order_index": 272,
+              "order_index": 282,
               "source_page": 10,
               "unit": "each",
               "rate": 526.25,
@@ -3095,14 +3210,14 @@
               "code": "17.58.3",
               "children_count": 0,
               "children": [],
-              "order_index": 273,
+              "order_index": 283,
               "source_page": 10,
               "unit": "each",
               "rate": 423.15,
               "rate_display": "423.15"
             }
           ],
-          "order_index": 270,
+          "order_index": 280,
           "source_page": 10
         },
         {
@@ -3117,7 +3232,7 @@
               "code": "17.59.1",
               "children_count": 0,
               "children": [],
-              "order_index": 275,
+              "order_index": 285,
               "source_page": 10,
               "unit": "each",
               "rate": 139.7,
@@ -3129,7 +3244,7 @@
               "code": "17.59.2",
               "children_count": 0,
               "children": [],
-              "order_index": 276,
+              "order_index": 286,
               "source_page": 10,
               "unit": "each",
               "rate": 90.3,
@@ -3141,14 +3256,14 @@
               "code": "17.59.3",
               "children_count": 0,
               "children": [],
-              "order_index": 277,
+              "order_index": 287,
               "source_page": 10,
               "unit": "each",
               "rate": 81.85,
               "rate_display": "81.85"
             }
           ],
-          "order_index": 274,
+          "order_index": 284,
           "source_page": 10
         },
         {
@@ -3169,7 +3284,7 @@
                   "code": "17.60.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 280,
+                  "order_index": 290,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 1996.5,
@@ -3181,7 +3296,7 @@
                   "code": "17.60.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 281,
+                  "order_index": 291,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 1683.55,
@@ -3193,14 +3308,14 @@
                   "code": "17.60.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 282,
+                  "order_index": 292,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 854.55,
                   "rate_display": "854.55"
                 }
               ],
-              "order_index": 279,
+              "order_index": 289,
               "source_page": 10
             },
             {
@@ -3215,7 +3330,7 @@
                   "code": "17.60.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 284,
+                  "order_index": 294,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 1975.15,
@@ -3227,7 +3342,7 @@
                   "code": "17.60.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 285,
+                  "order_index": 295,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 1558.35,
@@ -3239,18 +3354,18 @@
                   "code": "17.60.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 286,
+                  "order_index": 296,
                   "source_page": 10,
                   "unit": "each",
                   "rate": 591.4,
                   "rate_display": "591.40"
                 }
               ],
-              "order_index": 283,
+              "order_index": 293,
               "source_page": 10
             }
           ],
-          "order_index": 278,
+          "order_index": 288,
           "source_page": 10
         },
         {
@@ -3265,7 +3380,7 @@
               "code": "17.61.1",
               "children_count": 0,
               "children": [],
-              "order_index": 288,
+              "order_index": 298,
               "source_page": 10,
               "unit": "metre",
               "rate": 713.2,
@@ -3277,7 +3392,7 @@
               "code": "17.61.2",
               "children_count": 0,
               "children": [],
-              "order_index": 289,
+              "order_index": 299,
               "source_page": 10,
               "unit": "metre",
               "rate": 513.25,
@@ -3289,14 +3404,14 @@
               "code": "17.61.3",
               "children_count": 0,
               "children": [],
-              "order_index": 290,
+              "order_index": 300,
               "source_page": 10,
               "unit": "metre",
               "rate": 336.0,
               "rate_display": "336.00"
             }
           ],
-          "order_index": 287,
+          "order_index": 297,
           "source_page": 10
         },
         {
@@ -3305,7 +3420,7 @@
           "code": "17.62",
           "children_count": 0,
           "children": [],
-          "order_index": 291,
+          "order_index": 301,
           "source_page": 10,
           "unit": "each",
           "rate": 1020.6,
@@ -3317,7 +3432,7 @@
           "code": "17.63",
           "children_count": 0,
           "children": [],
-          "order_index": 292,
+          "order_index": 302,
           "source_page": 10,
           "unit": "each",
           "rate": 673.7,
@@ -3329,7 +3444,7 @@
           "code": "17.64",
           "children_count": 0,
           "children": [],
-          "order_index": 293,
+          "order_index": 303,
           "source_page": 11,
           "unit": "each",
           "rate": 292.55,
@@ -3347,7 +3462,7 @@
               "code": "17.65.1",
               "children_count": 0,
               "children": [],
-              "order_index": 295,
+              "order_index": 305,
               "source_page": 11,
               "unit": "metre",
               "rate": 82.8,
@@ -3359,14 +3474,14 @@
               "code": "17.65.2",
               "children_count": 0,
               "children": [],
-              "order_index": 296,
+              "order_index": 306,
               "source_page": 11,
               "unit": "metre",
               "rate": 62.95,
               "rate_display": "62.95"
             }
           ],
-          "order_index": 294,
+          "order_index": 304,
           "source_page": 11
         },
         {
@@ -3381,7 +3496,7 @@
               "code": "17.66.1",
               "children_count": 0,
               "children": [],
-              "order_index": 298,
+              "order_index": 308,
               "source_page": 11,
               "unit": "metre",
               "rate": 39.5,
@@ -3393,14 +3508,14 @@
               "code": "17.66.2",
               "children_count": 0,
               "children": [],
-              "order_index": 299,
+              "order_index": 309,
               "source_page": 11,
               "unit": "metre",
               "rate": 29.55,
               "rate_display": "29.55"
             }
           ],
-          "order_index": 297,
+          "order_index": 307,
           "source_page": 11
         },
         {
@@ -3409,7 +3524,7 @@
           "code": "17.67",
           "children_count": 0,
           "children": [],
-          "order_index": 300,
+          "order_index": 310,
           "source_page": 11,
           "unit": "each",
           "rate": 804.3,
@@ -3427,14 +3542,14 @@
               "code": "17.68.1",
               "children_count": 0,
               "children": [],
-              "order_index": 302,
+              "order_index": 312,
               "source_page": 11,
               "unit": "each",
               "rate": 11847.65,
               "rate_display": "11847.65"
             }
           ],
-          "order_index": 301,
+          "order_index": 311,
           "source_page": 11
         },
         {
@@ -3449,7 +3564,7 @@
               "code": "17.69.1",
               "children_count": 0,
               "children": [],
-              "order_index": 304,
+              "order_index": 314,
               "source_page": 11,
               "unit": "each",
               "rate": 115.3,
@@ -3461,14 +3576,14 @@
               "code": "17.69.2",
               "children_count": 0,
               "children": [],
-              "order_index": 305,
+              "order_index": 315,
               "source_page": 11,
               "unit": "each",
               "rate": 122.4,
               "rate_display": "122.40"
             }
           ],
-          "order_index": 303,
+          "order_index": 313,
           "source_page": 11
         },
         {
@@ -3483,7 +3598,7 @@
               "code": "17.70.1",
               "children_count": 0,
               "children": [],
-              "order_index": 307,
+              "order_index": 317,
               "source_page": 11,
               "unit": "each",
               "rate": 367.1,
@@ -3495,14 +3610,14 @@
               "code": "17.70.2",
               "children_count": 0,
               "children": [],
-              "order_index": 308,
+              "order_index": 318,
               "source_page": 11,
               "unit": "each",
               "rate": 375.65,
               "rate_display": "375.65"
             }
           ],
-          "order_index": 306,
+          "order_index": 316,
           "source_page": 11
         },
         {
@@ -3511,7 +3626,7 @@
           "code": "17.71",
           "children_count": 0,
           "children": [],
-          "order_index": 309,
+          "order_index": 319,
           "source_page": 11,
           "unit": "each",
           "rate": 168.35,
@@ -3523,7 +3638,7 @@
           "code": "17.72",
           "children_count": 0,
           "children": [],
-          "order_index": 310,
+          "order_index": 320,
           "source_page": 11,
           "unit": "each",
           "rate": 231.95,
@@ -3541,7 +3656,7 @@
               "code": "17.73.1",
               "children_count": 0,
               "children": [],
-              "order_index": 312,
+              "order_index": 322,
               "source_page": 12,
               "unit": "each",
               "rate": 673.4,
@@ -3553,14 +3668,14 @@
               "code": "17.73.2",
               "children_count": 0,
               "children": [],
-              "order_index": 313,
+              "order_index": 323,
               "source_page": 12,
               "unit": "each",
               "rate": 708.95,
               "rate_display": "708.95"
             }
           ],
-          "order_index": 311,
+          "order_index": 321,
           "source_page": 11
         },
         {
@@ -3569,7 +3684,7 @@
           "code": "17.74",
           "children_count": 0,
           "children": [],
-          "order_index": 314,
+          "order_index": 324,
           "source_page": 12,
           "unit": "each",
           "rate": 713.2,
@@ -3581,7 +3696,7 @@
           "code": "17.75",
           "children_count": 0,
           "children": [],
-          "order_index": 315,
+          "order_index": 325,
           "source_page": 12,
           "unit": "each",
           "rate": 107.2,
@@ -3599,14 +3714,14 @@
               "code": "17.76.1",
               "children_count": 0,
               "children": [],
-              "order_index": 317,
+              "order_index": 327,
               "source_page": 12,
               "unit": "each",
               "rate": 175.4,
               "rate_display": "175.40"
             }
           ],
-          "order_index": 316,
+          "order_index": 326,
           "source_page": 12
         },
         {
@@ -3621,7 +3736,7 @@
               "code": "17.77.1",
               "children_count": 0,
               "children": [],
-              "order_index": 319,
+              "order_index": 329,
               "source_page": 12,
               "unit": "each",
               "rate": 304.05,
@@ -3633,7 +3748,7 @@
               "code": "17.77.2",
               "children_count": 0,
               "children": [],
-              "order_index": 320,
+              "order_index": 330,
               "source_page": 12,
               "unit": "each",
               "rate": 378.1,
@@ -3645,14 +3760,14 @@
               "code": "17.77.3",
               "children_count": 0,
               "children": [],
-              "order_index": 321,
+              "order_index": 331,
               "source_page": 12,
               "unit": "each",
               "rate": 451.9,
               "rate_display": "451.90"
             }
           ],
-          "order_index": 318,
+          "order_index": 328,
           "source_page": 12
         },
         {
@@ -3661,7 +3776,7 @@
           "code": "17.78",
           "children_count": 0,
           "children": [],
-          "order_index": 322,
+          "order_index": 332,
           "source_page": 12,
           "unit": "each",
           "rate": 14999.15,
@@ -3673,7 +3788,7 @@
           "code": "17.79",
           "children_count": 0,
           "children": [],
-          "order_index": 323,
+          "order_index": 333,
           "source_page": 12,
           "unit": "each",
           "rate": 18088.45,
@@ -3685,7 +3800,7 @@
           "code": "17.80",
           "children_count": 0,
           "children": [],
-          "order_index": 324,
+          "order_index": 334,
           "source_page": 12,
           "unit": "each",
           "rate": 7979.2,
@@ -3697,7 +3812,7 @@
           "code": "17.81",
           "children_count": 0,
           "children": [],
-          "order_index": 325,
+          "order_index": 335,
           "source_page": 12,
           "unit": "each",
           "rate": 18212.9,
@@ -3708,9 +3823,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/17.0 SANITARY INSTALLATIONS.pdf",
-    "row_count": 326,
+    "row_count": 336,
     "note_count": 0,
-    "leaf_count": 225,
+    "leaf_count": 228,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

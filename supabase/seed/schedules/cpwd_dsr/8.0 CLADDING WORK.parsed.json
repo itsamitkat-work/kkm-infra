@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "CLADDING WORK",
       "code": "8.0",
-      "children_count": 33,
+      "children_count": 30,
       "children": [
         {
           "node_type": "item",
@@ -242,7 +242,7 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Gunmetal cramps kg",
+              "title": "Gunmetal cramps kg 723.45",
               "code": "8.7.1",
               "children_count": 0,
               "children": [],
@@ -251,34 +251,16 @@
             },
             {
               "node_type": "item",
-              "title": "Stainless steel cramps kg",
+              "title": "Stainless steel cramps kg 714.40",
               "code": "8.7.2",
               "children_count": 0,
               "children": [],
-              "order_index": 23,
+              "order_index": 22,
               "source_page": 2
             }
           ],
           "order_index": 20,
           "source_page": 1
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "723.45",
-          "children_count": 0,
-          "children": [],
-          "order_index": 22,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "714.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 24,
-          "source_page": 2
         },
         {
           "node_type": "item",
@@ -298,7 +280,7 @@
                   "code": "8.8.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 27,
+                  "order_index": 25,
                   "source_page": 2,
                   "unit": "each",
                   "rate": 36.75,
@@ -310,7 +292,7 @@
                   "code": "8.8.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 28,
+                  "order_index": 26,
                   "source_page": 2,
                   "unit": "each",
                   "rate": 40.0,
@@ -322,18 +304,18 @@
                   "code": "8.8.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 29,
+                  "order_index": 27,
                   "source_page": 2,
                   "unit": "each",
                   "rate": 61.7,
                   "rate_display": "61.70"
                 }
               ],
-              "order_index": 26,
+              "order_index": 24,
               "source_page": 2
             }
           ],
-          "order_index": 25,
+          "order_index": 23,
           "source_page": 2
         },
         {
@@ -354,7 +336,7 @@
                   "code": "8.9.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 32,
+                  "order_index": 30,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 3190.3,
@@ -366,18 +348,18 @@
                   "code": "8.9.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 33,
+                  "order_index": 31,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 3617.55,
                   "rate_display": "3617.55"
                 }
               ],
-              "order_index": 31,
+              "order_index": 29,
               "source_page": 2
             }
           ],
-          "order_index": 30,
+          "order_index": 28,
           "source_page": 2
         },
         {
@@ -392,7 +374,7 @@
               "code": "8.10.1",
               "children_count": 0,
               "children": [],
-              "order_index": 35,
+              "order_index": 33,
               "source_page": 2,
               "unit": "sqm",
               "rate": 3500.45,
@@ -404,14 +386,14 @@
               "code": "8.10.2",
               "children_count": 0,
               "children": [],
-              "order_index": 36,
+              "order_index": 34,
               "source_page": 2,
               "unit": "sqm",
               "rate": 4051.85,
               "rate_display": "4051.85"
             }
           ],
-          "order_index": 34,
+          "order_index": 32,
           "source_page": 2
         },
         {
@@ -426,14 +408,14 @@
               "code": "8.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 38,
+              "order_index": 36,
               "source_page": 2,
               "unit": "sqm",
               "rate": 10414.8,
               "rate_display": "10414.80"
             }
           ],
-          "order_index": 37,
+          "order_index": 35,
           "source_page": 2
         },
         {
@@ -454,7 +436,7 @@
                   "code": "8.14.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 41,
+                  "order_index": 39,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 6282.4,
@@ -466,7 +448,7 @@
                   "code": "8.14.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 42,
+                  "order_index": 40,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 6035.85,
@@ -478,7 +460,7 @@
                   "code": "8.14.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 43,
+                  "order_index": 41,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 5789.9,
@@ -490,7 +472,7 @@
                   "code": "8.14.1.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 44,
+                  "order_index": 42,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 5542.6,
@@ -502,14 +484,14 @@
                   "code": "8.14.1.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 45,
+                  "order_index": 43,
                   "source_page": 2,
                   "unit": "sqm",
                   "rate": 5295.9,
                   "rate_display": "5295.90"
                 }
               ],
-              "order_index": 40,
+              "order_index": 38,
               "source_page": 2
             },
             {
@@ -524,7 +506,7 @@
                   "code": "8.14.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 47,
+                  "order_index": 45,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 8502.25,
@@ -536,7 +518,7 @@
                   "code": "8.14.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 48,
+                  "order_index": 46,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 8255.75,
@@ -548,7 +530,7 @@
                   "code": "8.14.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 49,
+                  "order_index": 47,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 8009.75,
@@ -560,7 +542,7 @@
                   "code": "8.14.2.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 50,
+                  "order_index": 48,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 7762.5,
@@ -572,14 +554,14 @@
                   "code": "8.14.2.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 51,
+                  "order_index": 49,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 7515.8,
                   "rate_display": "7515.80"
                 }
               ],
-              "order_index": 46,
+              "order_index": 44,
               "source_page": 2
             },
             {
@@ -594,7 +576,7 @@
                   "code": "8.14.3.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 53,
+                  "order_index": 51,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 7278.2,
@@ -606,7 +588,7 @@
                   "code": "8.14.3.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 54,
+                  "order_index": 52,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 6889.45,
@@ -618,7 +600,7 @@
                   "code": "8.14.3.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 55,
+                  "order_index": 53,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 6501.55,
@@ -630,7 +612,7 @@
                   "code": "8.14.3.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 56,
+                  "order_index": 54,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 6110.75,
@@ -642,14 +624,14 @@
                   "code": "8.14.3.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 57,
+                  "order_index": 55,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 5722.6,
                   "rate_display": "5722.60"
                 }
               ],
-              "order_index": 52,
+              "order_index": 50,
               "source_page": 3
             },
             {
@@ -664,7 +646,7 @@
                   "code": "8.14.4.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 59,
+                  "order_index": 57,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 9498.1,
@@ -676,7 +658,7 @@
                   "code": "8.14.4.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 60,
+                  "order_index": 58,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 9109.3,
@@ -688,7 +670,7 @@
                   "code": "8.14.4.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 61,
+                  "order_index": 59,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 8721.45,
@@ -700,7 +682,7 @@
                   "code": "8.14.4.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 62,
+                  "order_index": 60,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 8330.65,
@@ -712,14 +694,14 @@
                   "code": "8.14.4.5",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 63,
+                  "order_index": 61,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 7942.5,
                   "rate_display": "7942.50"
                 }
               ],
-              "order_index": 58,
+              "order_index": 56,
               "source_page": 3
             },
             {
@@ -734,7 +716,7 @@
                   "code": "8.14.5.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 65,
+                  "order_index": 63,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 3256.65,
@@ -746,27 +728,27 @@
                   "code": "8.14.5.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 66,
+                  "order_index": 64,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 3119.2,
                   "rate_display": "3119.20"
                 }
               ],
-              "order_index": 64,
+              "order_index": 62,
               "source_page": 3
             }
           ],
-          "order_index": 39,
+          "order_index": 37,
           "source_page": 2
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing stainless steel cramps of required size and shape for anchoring stone wall lining to the backing or securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases in stone and holes in walls wherever required. kg",
+          "title": "Providing and fixing stainless steel cramps of required size and shape for anchoring stone wall lining to the backing or securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases in stone and holes in walls wherever required. kg 714.40",
           "code": "8.15",
           "children_count": 0,
           "children": [],
-          "order_index": 67,
+          "order_index": 65,
           "source_page": 3
         },
         {
@@ -775,7 +757,7 @@
           "code": "8.16",
           "children_count": 0,
           "children": [],
-          "order_index": 69,
+          "order_index": 66,
           "source_page": 3,
           "unit": "each",
           "rate": 43.9,
@@ -787,7 +769,7 @@
           "code": "8.17",
           "children_count": 0,
           "children": [],
-          "order_index": 70,
+          "order_index": 67,
           "source_page": 3,
           "unit": "sqm",
           "rate": 3135.0,
@@ -811,18 +793,18 @@
                   "code": "8.18.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 73,
+                  "order_index": 70,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 2651.35,
                   "rate_display": "2651.35"
                 }
               ],
-              "order_index": 72,
+              "order_index": 69,
               "source_page": 3
             }
           ],
-          "order_index": 71,
+          "order_index": 68,
           "source_page": 3
         },
         {
@@ -831,7 +813,7 @@
           "code": "8.19",
           "children_count": 0,
           "children": [],
-          "order_index": 74,
+          "order_index": 71,
           "source_page": 3,
           "unit": "sqm",
           "rate": 165.85,
@@ -849,7 +831,7 @@
               "code": "8.20.1",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 73,
               "source_page": 4,
               "unit": "sqm",
               "rate": 2902.65,
@@ -861,33 +843,27 @@
               "code": "8.20.2",
               "children_count": 0,
               "children": [],
-              "order_index": 77,
+              "order_index": 74,
               "source_page": 4,
               "unit": "sqm",
               "rate": 3040.1,
               "rate_display": "3040.10"
             }
           ],
-          "order_index": 75,
+          "order_index": 72,
           "source_page": 4
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing structural steel frame (for dry cladding with 30 mm thick gang saw cut with machine cut edges sand stone) on walls at all heights using M.S. square/ rectangular tube in the required pattern as per architectural drawing, including cost of cutting, bending, welding etc. The frame work shall be fixed to the wall with the help of M.S. brackets/ lugs of angle iron/ flats etc. which shall be welded to the frame and embedded in brick wall with cement concrete block 1:2:4 (1 cement :2 coarse sand :4 graded stone aggregate 20 mm nominal size) of size 300x230x300 mm, including cost of necessary centring and shuttering and with approved expansion hold fasteners on CC/RCC surface, including drilling necessary holes. Approved cramps/ pins etc. shall be welded to the frame work to support stone cladding, the steel work will be given a priming coat of Zinc primer as approved by Engineer-in-charge and painted with two or more coats of epoxy paint (Shop drawings shall be submitted by the contractor to the Engineer-in-charge for approval before execution). The frame work shall be fixed in true horizontal & vertical lines/planes. (Only structural steel frame work shall be measured for the purpose of payment, stainless steel cramps shall be paid for separately and nothing extra shall be paid). kg",
+          "title": "Providing and fixing structural steel frame (for dry cladding with 30 mm thick gang saw cut with machine cut edges sand stone) on walls at all heights using M.S. square/ rectangular tube in the required pattern as per architectural drawing, including cost of cutting, bending, welding etc. The frame work shall be fixed to the wall with the help of M.S. brackets/ lugs of angle iron/ flats etc. which shall be welded to the frame and embedded in brick wall with cement concrete block 1:2:4 (1 cement :2 coarse sand :4 graded stone aggregate 20 mm nominal size) of size 300x230x300 mm, including cost of necessary centring and shuttering and with approved expansion hold fasteners on CC/RCC surface, including drilling necessary holes. Approved cramps/ pins etc. shall be welded to the frame work to support stone cladding, the steel work will be given a priming coat of Zinc primer as approved by Engineer-in-charge and painted with two or more coats of epoxy paint (Shop drawings shall be submitted by the contractor to the Engineer-in-charge for approval before execution). The frame work shall be fixed in true horizontal & vertical lines/planes. (Only structural steel frame work shall be measured for the purpose of payment, stainless steel cramps shall be paid for separately and nothing extra shall be paid).",
           "code": "8.21",
           "children_count": 0,
           "children": [],
-          "order_index": 78,
-          "source_page": 4
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "269.95",
-          "children_count": 0,
-          "children": [],
-          "order_index": 79,
-          "source_page": 4
+          "order_index": 75,
+          "source_page": 4,
+          "unit": "kg",
+          "rate": 269.95,
+          "rate_display": "269.95"
         },
         {
           "node_type": "item",
@@ -895,7 +871,7 @@
           "code": "8.22",
           "children_count": 0,
           "children": [],
-          "order_index": 80,
+          "order_index": 76,
           "source_page": 4,
           "unit": "each",
           "rate": 437.0,
@@ -907,7 +883,7 @@
           "code": "8.23",
           "children_count": 0,
           "children": [],
-          "order_index": 81,
+          "order_index": 77,
           "source_page": 4,
           "unit": "each",
           "rate": 40.85,
@@ -925,7 +901,7 @@
               "code": "8.24.1",
               "children_count": 0,
               "children": [],
-              "order_index": 83,
+              "order_index": 79,
               "source_page": 4,
               "unit": "each",
               "rate": 22.35,
@@ -937,7 +913,7 @@
               "code": "8.24.2",
               "children_count": 0,
               "children": [],
-              "order_index": 84,
+              "order_index": 80,
               "source_page": 4,
               "unit": "each",
               "rate": 24.05,
@@ -949,7 +925,7 @@
               "code": "8.24.3",
               "children_count": 0,
               "children": [],
-              "order_index": 85,
+              "order_index": 81,
               "source_page": 4,
               "unit": "each",
               "rate": 28.3,
@@ -961,14 +937,14 @@
               "code": "8.24.4",
               "children_count": 0,
               "children": [],
-              "order_index": 86,
+              "order_index": 82,
               "source_page": 4,
               "unit": "each",
               "rate": 29.75,
               "rate_display": "29.75"
             }
           ],
-          "order_index": 82,
+          "order_index": 78,
           "source_page": 4
         },
         {
@@ -983,7 +959,7 @@
               "code": "8.25.1",
               "children_count": 0,
               "children": [],
-              "order_index": 88,
+              "order_index": 84,
               "source_page": 4,
               "unit": "sqm",
               "rate": 6646.7,
@@ -995,7 +971,7 @@
               "code": "8.25.2",
               "children_count": 0,
               "children": [],
-              "order_index": 89,
+              "order_index": 85,
               "source_page": 4,
               "unit": "sqm",
               "rate": 4437.8,
@@ -1007,7 +983,7 @@
               "code": "8.25.3",
               "children_count": 0,
               "children": [],
-              "order_index": 90,
+              "order_index": 86,
               "source_page": 4,
               "unit": "sqm",
               "rate": 3601.3,
@@ -1019,14 +995,14 @@
               "code": "8.25.4",
               "children_count": 0,
               "children": [],
-              "order_index": 91,
+              "order_index": 87,
               "source_page": 4,
               "unit": "sqm",
               "rate": 2423.25,
               "rate_display": "2423.25"
             }
           ],
-          "order_index": 87,
+          "order_index": 83,
           "source_page": 4
         },
         {
@@ -1041,7 +1017,7 @@
               "code": "8.26.1",
               "children_count": 0,
               "children": [],
-              "order_index": 93,
+              "order_index": 89,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1430.2,
@@ -1053,7 +1029,7 @@
               "code": "8.26.2",
               "children_count": 0,
               "children": [],
-              "order_index": 94,
+              "order_index": 90,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1492.8,
@@ -1065,14 +1041,14 @@
               "code": "8.26.3",
               "children_count": 0,
               "children": [],
-              "order_index": 95,
+              "order_index": 91,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1979.5,
               "rate_display": "1979.50"
             }
           ],
-          "order_index": 92,
+          "order_index": 88,
           "source_page": 5
         },
         {
@@ -1087,14 +1063,14 @@
               "code": "8.27.1",
               "children_count": 0,
               "children": [],
-              "order_index": 97,
+              "order_index": 93,
               "source_page": 5,
               "unit": "cum",
               "rate": 187277.65,
               "rate_display": "187277.65"
             }
           ],
-          "order_index": 96,
+          "order_index": 92,
           "source_page": 5
         },
         {
@@ -1109,14 +1085,14 @@
               "code": "8.28.1",
               "children_count": 0,
               "children": [],
-              "order_index": 99,
+              "order_index": 95,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1946.25,
               "rate_display": "1946.25"
             }
           ],
-          "order_index": 98,
+          "order_index": 94,
           "source_page": 5
         },
         {
@@ -1125,7 +1101,7 @@
           "code": "8.29",
           "children_count": 0,
           "children": [],
-          "order_index": 100,
+          "order_index": 96,
           "source_page": 5,
           "unit": "sqm",
           "rate": 1825.05,
@@ -1143,7 +1119,7 @@
               "code": "8.30.1",
               "children_count": 0,
               "children": [],
-              "order_index": 102,
+              "order_index": 98,
               "source_page": 5,
               "unit": "sqm",
               "rate": 1976.45,
@@ -1155,14 +1131,14 @@
               "code": "8.30.2",
               "children_count": 0,
               "children": [],
-              "order_index": 103,
+              "order_index": 99,
               "source_page": 5,
               "unit": "sqm",
               "rate": 2463.1,
               "rate_display": "2463.10"
             }
           ],
-          "order_index": 101,
+          "order_index": 97,
           "source_page": 5
         },
         {
@@ -1171,7 +1147,7 @@
           "code": "8.31",
           "children_count": 0,
           "children": [],
-          "order_index": 104,
+          "order_index": 100,
           "source_page": 5,
           "unit": "sqm",
           "rate": 1267.95,
@@ -1183,7 +1159,7 @@
           "code": "8.32",
           "children_count": 0,
           "children": [],
-          "order_index": 105,
+          "order_index": 101,
           "source_page": 5,
           "unit": "sqm",
           "rate": 5015.05,
@@ -1194,12 +1170,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/8.0 CLADDING WORK.pdf",
-    "row_count": 106,
+    "row_count": 102,
     "note_count": 0,
-    "leaf_count": 76,
-    "duplicate_codes": [
-      "714.40"
-    ],
+    "leaf_count": 73,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }
