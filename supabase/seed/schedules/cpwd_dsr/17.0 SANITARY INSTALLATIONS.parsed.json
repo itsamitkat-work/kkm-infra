@@ -9,7 +9,7 @@
       "children_count": 88,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing water closet squatting pan (Indian type W.C. pan ) with 100 mm sand cast Iron P or S trap, 10 litre low level white P.V.C. flushing cistern, including flush pipe, with manually controlled device (handle lever) conforming to IS : 7231, with all fittings and fixtures complete, including cutting and making good the walls and floors wherever required:",
           "code": "17.1",
           "children_count": 2,
@@ -43,7 +43,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china pedestal type water closet (European type W.C. pan) with seat and lid, 10 litre low level white P.V.C. flushing cistern, including flush pipe, with manually controlled device (handle lever), conforming to IS : 7231, with all fittings and fixtures complete, including cutting and making good the walls and floors wherever required :",
           "code": "17.2",
           "children_count": 2,
@@ -77,7 +77,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china pedestal type water closet (European type) with seat and lid, 10 litre low level white vitreous china flushing cistern & C.P. flush bend with fittings & C.I. brackets, 40 mm flush bend, overflow arrangement with specials of standard make and mosquito proof coupling of approved municipal design complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required :",
           "code": "17.3",
           "children_count": 2,
@@ -111,7 +111,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china flat back or wall corner type lipped front urinal basin of 430x260x350 mm and 340x410x265 mm sizes respectively with automatic flushing cistern with standard flush pipe and C.P. brass spreaders with brass unions and G.I clamps complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required :",
           "code": "17.4",
           "children_count": 4,
@@ -169,7 +169,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china flat back half stall urinal of size 580x380x350 mm with white PVC automatic flushing cistern, with fittings, standard size C.P. brass flush pipe, spreaders with unions and clamps (all in C.P. brass) with waste fitting as per IS : 2556, C.I. trap with outlet grating and other couplings in C.P. brass, including painting of fittings and cutting and making good the walls and floors wherever required :",
           "code": "17.5",
           "children_count": 4,
@@ -227,7 +227,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing one piece construction white vitreous china squatting plate with an integral longitudinal flushing pipe, white P.V.C. automatic flushing cistern, with fittings, standard size G.I. / PVC flush pipe for back and front flush with standard spreader pipes with fittings, G.I clamps and C.P. brass coupling complete, including painting of fittings and cutting and making good the walls and floors etc. wherever required :",
           "code": "17.6",
           "children_count": 4,
@@ -285,7 +285,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wash basin with C.I. brackets, 15 mm C.P. brass pillar taps, 32 mm C.P. brass waste of standard pattern, including painting of fittings and brackets, cutting and making good the walls wherever require:",
           "code": "17.7",
           "children_count": 11,
@@ -463,7 +463,7 @@
           "rate_display": "1683.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing kitchen sink with C.I. brackets, C.P. brass chain with rubber plug, 40 mm C.P. brass waste complete, including painting the fittings and brackets, cutting and making good the walls wherever required:",
           "code": "17.9",
           "children_count": 1,
@@ -485,13 +485,13 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Stainless Steel A ISI 304 (18/8) kitchen sink as per IS:13983 with C.I. brackets and stainless steel plug 40 mm, including painting of fittings and brackets, cutting and making good the walls wherever required :",
           "code": "17.10",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kitchen sink with drain board",
               "code": "17.10.1",
               "children_count": 4,
@@ -549,7 +549,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kitchen sink without drain board",
               "code": "17.10.2",
               "children_count": 3,
@@ -599,7 +599,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china laboratory sink with C.I. brackets, C.P. brass chain with rubber plug, 40 mm C.P brass waste and 40 mm C.P. brass trap with necessary C.P. brass unions complete, including painting of fittings and brackets, cutting and making good the wall wherever required :",
           "code": "17.11",
           "children_count": 2,
@@ -633,7 +633,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing draining board with C.I. brackets including painting of brackets, cutting and making good the walls wherever required :",
           "code": "17.12",
           "children_count": 1,
@@ -655,7 +655,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china water closet squatting pan (Indian type) :",
           "code": "17.13",
           "children_count": 2,
@@ -689,7 +689,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for using coloured W.C. pan instead of white W.C. pan :",
           "code": "17.14",
           "children_count": 1,
@@ -747,7 +747,7 @@
           "rate_display": "349.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing a pair of white vitreous china foot rests of standard pattern for squatting pan water closet :",
           "code": "17.17",
           "children_count": 2,
@@ -775,7 +775,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing P.V.C. low level flushing cistern with manually controlled device (handle lever) conforming to IS : 7231, with all fittings and fixtures complete.",
           "code": "17.18",
           "children_count": 2,
@@ -809,7 +809,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing controlled flush, low level cistern made of vitreous china with all fittings complete.",
           "code": "17.19",
           "children_count": 2,
@@ -843,7 +843,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing solid plastic seat with lid for pedestal type W.C. pan complete :",
           "code": "17.20",
           "children_count": 3,
@@ -949,7 +949,7 @@
           "rate_display": "4048.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china wash basin including making all connections but excluding the cost of fittings :",
           "code": "17.25",
           "children_count": 6,
@@ -1031,7 +1031,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing kitchen sink including making all connections excluding cost of fittings.",
           "code": "17.26",
           "children_count": 1,
@@ -1053,7 +1053,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing white vitreous china laboratory sink including making all connections excluding cost of fittings :",
           "code": "17.27",
           "children_count": 2,
@@ -1087,13 +1087,13 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing P.V.C. waste pipe for sink or wash basin including P.V.C. waste fittings complete.",
           "code": "17.28",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Semi rigid pipe",
               "code": "17.28.1",
               "children_count": 2,
@@ -1127,7 +1127,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Flexible pipe",
               "code": "17.28.2",
               "children_count": 2,
@@ -1201,7 +1201,7 @@
           "rate_display": "1607.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing mirror of superior glass (of approved quality) and of required shape and size with plastic moulded frame of approved make and shade with 6 mm thick hard board backing :",
           "code": "17.32",
           "children_count": 4,
@@ -1271,7 +1271,7 @@
           "rate_display": "1083.50"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing toilet paper holder :",
           "code": "17.34",
           "children_count": 2,
@@ -1305,13 +1305,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing soil, waste and vent pipes :",
           "code": "17.35",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm dia",
               "code": "17.35.1",
               "children_count": 3,
@@ -1357,7 +1357,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm diameter :",
               "code": "17.35.2",
               "children_count": 3,
@@ -1407,7 +1407,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and filling the joints with spun yarn, cement slurry and cement mortar 1:2 ( 1 cement : 2 fine sand) in S.C.I./ C.I. Pipes :",
           "code": "17.36",
           "children_count": 2,
@@ -1441,7 +1441,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. holder-bat clamps of approved design to Sand Cast iron/cast iron (spun) pipe embedded in and including cement concrete blocks 10x10x10 cm of 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size), including cost of cutting holes and making good the walls etc. :",
           "code": "17.37",
           "children_count": 2,
@@ -1475,13 +1475,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bend of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete.",
           "code": "17.38",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm dia",
               "code": "17.38.1",
               "children_count": 3,
@@ -1527,7 +1527,7 @@
               "source_page": 6
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm dia",
               "code": "17.38.2",
               "children_count": 3,
@@ -1577,13 +1577,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plain bend of required degree.",
           "code": "17.39",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm dia",
               "code": "17.39.1",
               "children_count": 3,
@@ -1629,7 +1629,7 @@
               "source_page": 6
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm dia",
               "code": "17.39.2",
               "children_count": 3,
@@ -1679,13 +1679,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing heel rest sanitary bend",
           "code": "17.40",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm dia",
               "code": "17.40.1",
               "children_count": 2,
@@ -1719,7 +1719,7 @@
               "source_page": 6
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm dia",
               "code": "17.40.2",
               "children_count": 2,
@@ -1757,13 +1757,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double equal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete :",
           "code": "17.41",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100x100 mm",
               "code": "17.41.1",
               "children_count": 2,
@@ -1797,7 +1797,7 @@
               "source_page": 6
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75x75 mm",
               "code": "17.41.2",
               "children_count": 2,
@@ -1835,13 +1835,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double equal plain junction of required degree.",
           "code": "17.42",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100x100 mm",
               "code": "17.42.1",
               "children_count": 3,
@@ -1887,7 +1887,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75x75 mm",
               "code": "17.42.2",
               "children_count": 3,
@@ -1937,13 +1937,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single equal plain junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete.",
           "code": "17.43",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100 mm",
               "code": "17.43.1",
               "children_count": 2,
@@ -1977,7 +1977,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75 mm",
               "code": "17.43.2",
               "children_count": 2,
@@ -2015,13 +2015,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single equal plain junction of required degree :",
           "code": "17.44",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100 mm",
               "code": "17.44.1",
               "children_count": 3,
@@ -2067,7 +2067,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75 mm",
               "code": "17.44.2",
               "children_count": 3,
@@ -2117,13 +2117,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double unequal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete:",
           "code": "17.45",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75x75 mm",
               "code": "17.45.1",
               "children_count": 2,
@@ -2161,13 +2161,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double unequal plain junction of required degree :",
           "code": "17.46",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75x75 mm",
               "code": "17.46.1",
               "children_count": 3,
@@ -2217,13 +2217,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single unequal junction of required degree with access door, insertion rubber washer 3 mm thick, bolts and nuts complete :",
           "code": "17.47",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75 mm",
               "code": "17.47.1",
               "children_count": 2,
@@ -2261,13 +2261,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single unequal plain junction of required degree :",
           "code": "17.48",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75 mm",
               "code": "17.48.1",
               "children_count": 3,
@@ -2317,13 +2317,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double equal plain invert branch of required degree:",
           "code": "17.49",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100x100 mm",
               "code": "17.49.1",
               "children_count": 3,
@@ -2369,7 +2369,7 @@
               "source_page": 8
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75x75 mm",
               "code": "17.49.2",
               "children_count": 2,
@@ -2407,13 +2407,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single equal plain invert branch of required degree :",
           "code": "17.50",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x100 mm",
               "code": "17.50.1",
               "children_count": 3,
@@ -2459,7 +2459,7 @@
               "source_page": 8
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75x75x75 mm",
               "code": "17.50.2",
               "children_count": 3,
@@ -2509,13 +2509,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double unequal invert branch of required degree :",
           "code": "17.51",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75x75 mm",
               "code": "17.51.1",
               "children_count": 2,
@@ -2553,13 +2553,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing single unequal plain invert branch of required degree:",
           "code": "17.52",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100x75 mm",
               "code": "17.52.1",
               "children_count": 3,
@@ -2609,13 +2609,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing sand cast iron S&S off sets as per IS: 1729",
           "code": "17.53",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "76 mm off sets",
               "code": "17.53.1",
               "children_count": 2,
@@ -2649,7 +2649,7 @@
               "source_page": 8
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "114 mm off sets",
               "code": "17.53.2",
               "children_count": 2,
@@ -2683,7 +2683,7 @@
               "source_page": 8
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "152 mm off sets",
               "code": "17.53.3",
               "children_count": 2,
@@ -2721,13 +2721,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Hubless centrifugally cast iron offsets epoxy coated inside & outside as per IS:15905",
           "code": "17.53A",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "65 mm offsets",
               "code": "17.53A.1",
               "children_count": 2,
@@ -2765,13 +2765,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing sand cast iron S&S off sets as per IS: 3989 :",
           "code": "17.54",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm off sets",
               "code": "17.54.1",
               "children_count": 1,
@@ -2793,7 +2793,7 @@
               "source_page": 9
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "150 mm off sets",
               "code": "17.54.2",
               "children_count": 2,
@@ -2831,13 +2831,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Hubless centrifugally cast iron offsets epoxy coated inside & outside as per IS:15905",
           "code": "17.54A",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "130 mm offsets",
               "code": "17.54A.1",
               "children_count": 2,
@@ -2875,13 +2875,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing door piece, insertion rubber washer 3 mm thick, bolts & nuts complete :",
           "code": "17.55",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm",
               "code": "17.55.1",
               "children_count": 2,
@@ -2915,7 +2915,7 @@
               "source_page": 9
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm",
               "code": "17.55.2",
               "children_count": 2,
@@ -2953,13 +2953,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing terminal guard :",
           "code": "17.56",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm",
               "code": "17.56.1",
               "children_count": 3,
@@ -3005,7 +3005,7 @@
               "source_page": 9
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm",
               "code": "17.56.2",
               "children_count": 2,
@@ -3043,13 +3043,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing collar :",
           "code": "17.57",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm",
               "code": "17.57.1",
               "children_count": 2,
@@ -3083,7 +3083,7 @@
               "source_page": 9
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm",
               "code": "17.57.2",
               "children_count": 2,
@@ -3121,13 +3121,13 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing shielded coupling for Hubless centrifugally cast iron pipe",
           "code": "17.57A",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm dia",
               "code": "17.57A.1",
               "children_count": 1,
@@ -3149,7 +3149,7 @@
               "source_page": 10
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "75 mm dia",
               "code": "17.57A.2",
               "children_count": 1,
@@ -3175,7 +3175,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing lead caulked joints to sand cast iron/centrifugally cast (spun) iron pipes and fittings of diameter :",
           "code": "17.58",
           "children_count": 3,
@@ -3221,7 +3221,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. stays and clamps for sand cast iron/ centrifugally cast (spun) iron pipes of diameter :",
           "code": "17.59",
           "children_count": 3,
@@ -3267,13 +3267,13 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing trap of self cleansing design with screwed down or hinged grating with or without vent arm complete, including cost of cutting and making good the walls and floors :",
           "code": "17.60",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm inlet and 100 mm outlet",
               "code": "17.60.1",
               "children_count": 3,
@@ -3319,7 +3319,7 @@
               "source_page": 10
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm inlet and 75 mm outlet",
               "code": "17.60.2",
               "children_count": 3,
@@ -3369,7 +3369,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cutting chases in brick masonry walls for following diameter sand cast iron/ centrifugally cast (spun) iron pipes and making good the same with cement concrete 1:3:6 ( 1 cement : 3 coarse sand :6 graded stone aggregate 12.5 mm nominal size), including necessary plaster and pointing in cement mortar 1:4 (1 cement : 4 coarse sand) :",
           "code": "17.61",
           "children_count": 3,
@@ -3451,7 +3451,7 @@
           "rate_display": "292.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting sand cast iron/ centrifugally cast (spun) iron soil, waste vent pipes and fittings with two coats of synthetic enamel paint of any colour such as chocolate grey, or buff etc. over a coat of primer (of approved quality) for new work :",
           "code": "17.65",
           "children_count": 2,
@@ -3485,7 +3485,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Repainting sand cast iron/ centrifugally cast iron (spun) iron, soil, waste, vent pipes and fittings with one coat of synthetic enamel paint of any colour such as chocolate, grey or buff etc :",
           "code": "17.66",
           "children_count": 2,
@@ -3531,7 +3531,7 @@
           "rate_display": "804.30"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing vitreous china dual purpose closet suitable for use as squatting pan or European type water closet (Anglo Indian W.C pan) with seat & lid fixed with C.P. brass hinges and rubber buffers, 10 litre low level flushing cistern with fitting and brackets, 40 mm flush bend, 20 mm over flow pipe, with specials of standard make and mosquito proof coupling of approved municipal design complete, including painting of fittings and brackets, cutting and making good the walls and floors wherever required:",
           "code": "17.68",
           "children_count": 1,
@@ -3553,7 +3553,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT Waste Coupling for wash basin and sink, of approved quality and colour.",
           "code": "17.69",
           "children_count": 2,
@@ -3587,7 +3587,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT Bottle Trap for Wash basin and sink.",
           "code": "17.70",
           "children_count": 2,
@@ -3645,7 +3645,7 @@
           "rate_display": "231.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT towel rail complete with brackets fixed to wooden cleats with CP brass screws with concealed fittings arrangement of approved quality and colour.",
           "code": "17.73",
           "children_count": 2,
@@ -3703,7 +3703,7 @@
           "rate_display": "107.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT urinal cock of approved quality and colour.",
           "code": "17.76",
           "children_count": 1,
@@ -3725,7 +3725,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. holder bat clamp of approved design to sand cast iron/ cast iron (spun) pipes comprising of M.S. flat brackets made of 50x5 mm flat of specified shape, projecting 75 mm outside the wall surface and fixed on wall with 4nos, 6 mm dia expansion hold fasteners, including drilling necessary holes in brick wall/ CC/ RCC surface and the cost of bolts etc. The pipes shall be fixed to the already fixed brackets with the help of 30 mm x1.6 mm galvanised M.S. flats of specified shape and of total length 420 mm and shall be fixed with M.S. nuts, bolts, & washers of size 25x6 mm, one bolts on each side of the pipe.",
           "code": "17.77",
           "children_count": 3,

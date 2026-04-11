@@ -9,7 +9,7 @@
       "children_count": 131,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Polyethelene-Aluminium-Polyethelene PE-AL-PE Composite Pressure Pipes conforming to IS : 15450, U.V. stabilized with carbon black having thermal stability for hot & cold water supply, capable to withstand temperature up to 80°C, including all special fittings of composite material (engineering plastic blend and brass inserts wherever required) e.g. elbows, tees, reducers, couplers & connectors etc., with clamps at 1.00 metre spacing. This includes testing of joints complete as per direction of the Engineer-in-charge. INTERNAL WORK - EXPOSED ON WALL",
           "code": "18.1",
           "children_count": 6,
@@ -91,7 +91,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Polyethelene-Aluminium- Polyethelene PE-AL-PE Composite Pressure Pipes conforming to IS : 15450, U.V. stabilized with carbon black having thermal stability for hot & cold water supply, capable to withstand temperature up to 80°C, including all special fittings of composite material (engineering plastic blend and brass inserts wherever required) e.g. elbows, tees, reducers, couplers & connectors etc., with clamps at 1.00 metre spacing. This includes the costs of cutting chases and including testing of joints complete as per direction of the engineer in charge. Concealed work, including cutting chases and making good the wall etc.",
           "code": "18.2",
           "children_count": 4,
@@ -149,7 +149,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Polyethelene-Aluminium- Polyethelene PE-AL-PE Composite Pressure Pipes conforming to IS : 15450, U.V. stabilized with carbon black having thermal stability for hot & cold water supply, capable to withstand temperature up to 80°C, including all special fittings of composite material (engineering plastic blend and brass inserts wherever required) e.g. elbows, tees, reducers, couplers & connectors etc., with trenching, refilling and testing of joints complete as per direction of the engineer in charge. External work",
           "code": "18.3",
           "children_count": 6,
@@ -231,7 +231,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 3 layer PP-R (Poly propylene Random copolymer) pipes confirming to IS:15801, UV stabilized & anti - microbial fusion welded, having thermal stability for hot & cold water supply, including all PP - R plain & brass threaded polypropylene random fittings and fixing the pipe with clamps at 1.00 m spacing. This includes testing of joints complete as per direction of Engineer-in-Charge. Internal Exposed on walls",
           "code": "18.4",
           "children_count": 5,
@@ -301,7 +301,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 3 layer PP-R (Poly propylene Random copolymer) pipes confirming to IS:15801, UV stabilized & anti - microbial fusion welded, having thermal stability for hot & cold water supply, including all PP - R plain & brass threaded polypropylene random fittings and fixing the pipe with clamps at 1.00 m spacing. This includes the cost of cutting chases and making good the same including testing of joints complete as per direction of Engineer-in-Charge. Concealed work,including cutting chases and making good the wall etc.",
           "code": "18.5",
           "children_count": 3,
@@ -347,7 +347,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 3 layer PP-R (Poly propylene Random copolymer) pipes confirming to IS:15801 UV stabilized & anti - microbial fusion welded, having thermal stability for hot & cold water supply, including all PP - R plain & brass threaded polypropylene random fittings, including trenching, refilling & testing of joints complete as per direction of Engineer-in-Charge. External work",
           "code": "18.6",
           "children_count": 10,
@@ -477,7 +477,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PPR Unions",
           "code": "18.6A",
           "children_count": 7,
@@ -571,7 +571,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Chlorinated Polyvinyl Chloride (CPVC) pipes, having thermal stability for hot & cold water supply and all CPVC plain & brass threaded fittings, including fixing the pipe with clamps at 1.00 m spacing. This includes jointing of pipes & fittings with one step CPVC solvent cement and testing of joints complete as per direction of Engineer in Charge. Internal work - Exposed on wall",
           "code": "18.7",
           "children_count": 6,
@@ -653,7 +653,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Chlorinated Polyvinyl Chloride (CPVC) pipes, having thermal stability for hot & cold water supply, including all CPVC plain & brass threaded fittings and fixing the pipe with clamps at 1.00 m spacing. This includes jointing of pipes & fittings with one step CPVC solvent cement and the cost of cutting chases and making good the same including testing of joints complete as per direction of Engineer in Charge. Concealed work, including cutting chases and making good the walls etc.",
           "code": "18.8",
           "children_count": 4,
@@ -711,7 +711,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Chlorinated Polyvinyl Chloride (CPVC) pipes, having thermal stability for hot & cold water supply including all CPVC plain & brass threaded fittings This includes jointing of pipes & fittings with one step CPVC solvent cement, trenching, refilling & testing of joints complete as per direction of Engineer in Charge. External work",
           "code": "18.9",
           "children_count": 10,
@@ -841,7 +841,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. pipes complete with G.I. fittings and clamps, including cutting and making good the walls etc. Internal work - Exposed on wall",
           "code": "18.10",
           "children_count": 6,
@@ -923,7 +923,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. Pipes complete with G.I. fittings and clamps, including making good the walls etc. concealed pipe, including painting with anti corrosive bitumastic paint, cutting chases and making good the wall :",
           "code": "18.11",
           "children_count": 2,
@@ -957,7 +957,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. pipes complete with G.I. fittings including trenching and refilling etc. External work",
           "code": "18.12",
           "children_count": 8,
@@ -1063,7 +1063,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Making connection of G.I. distribution branch with G.I. main of following sizes by providing and fixing tee, including cutting and threading the pipe etc. complete :",
           "code": "18.13",
           "children_count": 2,
@@ -1109,7 +1109,7 @@
           "rate_display": "812.30"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing brass bib cock of approved quality :",
           "code": "18.15",
           "children_count": 2,
@@ -1143,7 +1143,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing brass stop cock of approved quality :",
           "code": "18.16",
           "children_count": 2,
@@ -1177,7 +1177,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing gun metal gate valve with C.I. wheel of approved quality (screwed end) :",
           "code": "18.17",
           "children_count": 7,
@@ -1271,7 +1271,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ball valve (brass) of approved quality, High or low pressure, with plastic floats complete :",
           "code": "18.18",
           "children_count": 3,
@@ -1317,13 +1317,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing gun metal non- return valve of approved quality (screwed end) :",
           "code": "18.19",
           "children_count": 6,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "25 mm nominal bore",
               "code": "18.19.1",
               "children_count": 2,
@@ -1357,7 +1357,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "32 mm nominal bore",
               "code": "18.19.2",
               "children_count": 2,
@@ -1391,7 +1391,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "40 mm nominal bore",
               "code": "18.19.3",
               "children_count": 2,
@@ -1425,7 +1425,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "50 mm nominal bore",
               "code": "18.19.4",
               "children_count": 2,
@@ -1459,7 +1459,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "65 mm nominal bore",
               "code": "18.19.5",
               "children_count": 2,
@@ -1493,7 +1493,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "80 mm nominal bore",
               "code": "18.19.6",
               "children_count": 2,
@@ -1531,7 +1531,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing brass ferrule with C.I. mouth cover including boring and tapping the main :",
           "code": "18.20",
           "children_count": 3,
@@ -1577,13 +1577,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing uplasticised PVC connection pipe with brass unions :",
           "code": "18.21",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "30 cm length",
               "code": "18.21.1",
               "children_count": 2,
@@ -1617,7 +1617,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "45 cm length",
               "code": "18.21.2",
               "children_count": 2,
@@ -1655,7 +1655,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass shower rose with 15 or 20 mm inlet :",
           "code": "18.22",
           "children_count": 2,
@@ -1690,80 +1690,98 @@
         },
         {
           "node_type": "item",
-          "title": "Laying in position centrifugally cast (spun) iron S&S or flanged pipes (excluding cost of pipe). quintal 361.65",
+          "title": "Laying in position centrifugally cast (spun) iron S&S or flanged pipes (excluding cost of pipe).",
           "code": "18.23",
           "children_count": 0,
           "children": [],
           "order_index": 145,
-          "source_page": 6
+          "source_page": 6,
+          "unit": "quintal",
+          "rate": 361.65,
+          "rate_display": "361.65"
         },
         {
           "node_type": "item",
-          "title": "Laying in position S&S or flanged C.I. special such as tees, bends, collars, tapers and caps etc.(excluding cost of specials). quintal 661.85",
+          "title": "Laying in position S&S or flanged C.I. special such as tees, bends, collars, tapers and caps etc.(excluding cost of specials).",
           "code": "18.24",
           "children_count": 0,
           "children": [],
           "order_index": 146,
-          "source_page": 6
+          "source_page": 6,
+          "unit": "quintal",
+          "rate": 661.85,
+          "rate_display": "661.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying S&S C.I. standard specials such as tees, bends, collars, tapers, caps etc. (Heavy class):",
           "code": "18.25",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 300 mm dia quintal 6352.40",
+              "title": "Up to 300 mm dia",
               "code": "18.25.1",
               "children_count": 0,
               "children": [],
               "order_index": 148,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "quintal",
+              "rate": 6352.4,
+              "rate_display": "6352.40"
             },
             {
               "node_type": "item",
-              "title": "Over 300 mm dia quintal 6352.40",
+              "title": "Over 300 mm dia",
               "code": "18.25.2",
               "children_count": 0,
               "children": [],
               "order_index": 149,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "quintal",
+              "rate": 6352.4,
+              "rate_display": "6352.40"
             }
           ],
           "order_index": 147,
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying flanged C.I. standard specials such as tees, bends, collars, tapers, caps etc., suitable for flanged jointing as per IS : 1538 :",
           "code": "18.26",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 300 mm dia quintal 8913.15",
+              "title": "Up to 300 mm dia",
               "code": "18.26.1",
               "children_count": 0,
               "children": [],
               "order_index": 151,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "quintal",
+              "rate": 8913.15,
+              "rate_display": "8913.15"
             },
             {
               "node_type": "item",
-              "title": "Over 300 mm dia quintal 8486.35",
+              "title": "Over 300 mm dia",
               "code": "18.26.2",
               "children_count": 0,
               "children": [],
               "order_index": 152,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "quintal",
+              "rate": 8486.35,
+              "rate_display": "8486.35"
             }
           ],
           "order_index": 150,
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying S&S centrifugally cast (spun) iron pipes (Class LA) conforming to IS :1536 :",
           "code": "18.27",
           "children_count": 11,
@@ -1905,7 +1923,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing lead caulked joints to spun iron or C.I. pipes and specials, including testing of joints but excluding the cost of pig lead :",
           "code": "18.28",
           "children_count": 11,
@@ -2048,15 +2066,18 @@
         },
         {
           "node_type": "item",
-          "title": "Supplying pig lead at site of work. quintal 29875.40",
+          "title": "Supplying pig lead at site of work.",
           "code": "18.29",
           "children_count": 0,
           "children": [],
           "order_index": 177,
-          "source_page": 6
+          "source_page": 6,
+          "unit": "quintal",
+          "rate": 29875.4,
+          "rate_display": "29875.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing flanged joints to double flanged C.I./ D.I. pipes and specials, including testing of joints :",
           "code": "18.30",
           "children_count": 12,
@@ -2210,13 +2231,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.I. sluice valves (with cap) complete with bolts, nuts, rubber insertions etc. (the tail pieces if required will be paid separately) :",
           "code": "18.31",
           "children_count": 6,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100 mm diameter",
               "code": "18.31.1",
               "children_count": 2,
@@ -2250,7 +2271,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "125 mm diameter",
               "code": "18.31.2",
               "children_count": 2,
@@ -2284,7 +2305,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "150 mm diameter",
               "code": "18.31.3",
               "children_count": 2,
@@ -2318,7 +2339,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "200 mm diameter",
               "code": "18.31.4",
               "children_count": 2,
@@ -2352,7 +2373,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "250 mm diameter",
               "code": "18.31.5",
               "children_count": 2,
@@ -2386,7 +2407,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "300 mm diameter",
               "code": "18.31.6",
               "children_count": 2,
@@ -2424,7 +2445,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 30x30x50 cm inside, in brick work in cement mortar 1:4 (1 cement :4 coarse sand) for stop cock, with C. I. surface box 100x100 x75 mm (inside) with hinged cover fixed in reinforced cement concrete slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 ( 1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size ) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.32",
           "children_count": 1,
@@ -2446,7 +2467,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 60x60x75 cm inside, in brick work in cement mortar 1:4 (1 cement : 4 coarse sand) for sluice valve, with C.I. surface box 100 mm top diameter, 160 mm bottom diameter and 180 mm deep ( inside) with chained lid and RCC top slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.33",
           "children_count": 1,
@@ -2468,7 +2489,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 90x90x100 cm inside, in brick work in cement mortar 1:4 (1 cement : 4 coarse sand) for sluice valve, with C.I. surface box 100 mm top diameter, 160 mm bottom diameter and 180 mm deep (inside) with chained lid and RCC top slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size ) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.34",
           "children_count": 1,
@@ -2490,7 +2511,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 120x120x100 cm inside, in brick work in cement mortar 1:4 (1 cement : 4 coarse sand) for sluice valve, with C.I. surface box 100 mm top diameter, 160 mm bottom diameter and 180 mm deep ( inside) with chained lid and RCC top slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.35",
           "children_count": 1,
@@ -2512,7 +2533,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 60x60x75 cm, inside in brick work in cement mortar 1:4 (1 cement : 4 coarse sand) for fire hydrants, with C.I. surface box 350x350 mm top and 165 mm deep ( inside) with chained lid and RCC top slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 (1 cement : 5 fine sand:10 graded stone aggregate 40 mm nominal size) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.36",
           "children_count": 1,
@@ -2534,7 +2555,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing masonry Chamber 60x45x50 cm inside, in brick work in cement mortar 1:4 (1 cement : 4 coarse sand) for water meter complete with C.I. double flap surface box 400x200x200 mm (inside) with locking arrangement and RCC top slab 1:1.5:3 mix (1 cement : 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size), including necessary excavation, foundation concrete 1:5:10 ( 1 cement : 5 fine sand:10 graded stone aggregate 40 mm nominal size) and inside plastering with cement mortar 1:3 (1 cement : 3 coarse sand) 12 mm thick, finished with a floating coat of neat cement complete as per standard design :",
           "code": "18.37",
           "children_count": 1,
@@ -2556,7 +2577,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting G.I. pipes and fittings with synthetic enamel white paint with two coats over a ready mixed priming coat, both of approved quality for new work :",
           "code": "18.38",
           "children_count": 6,
@@ -2638,7 +2659,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Repainting G.I. pipes and fittings with synthetic enamel white paint with one coat of approved quality :",
           "code": "18.39",
           "children_count": 6,
@@ -2720,7 +2741,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting G.I. pipes and fittings with two coats of anti-corrosive bitumastic paint of approved quality :",
           "code": "18.40",
           "children_count": 8,
@@ -2826,7 +2847,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and filling sand of grading zone V or coarser grade, allround the G.I. pipes in external work :",
           "code": "18.41",
           "children_count": 10,
@@ -2956,7 +2977,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring with 100 mm diameter casing pipe for hand pump / tubewell, in all soils except ordinary hard rocks requiring blasting, including removing the casing pipe after the hand pump / tube well is lowered and tested :",
           "code": "18.42",
           "children_count": 3,
@@ -3038,7 +3059,7 @@
           "rate_display": "1321.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. Union in G.I. pipe including cutting and threading the pipe and making long screws etc. complete (New work) :",
           "code": "18.46",
           "children_count": 8,
@@ -3144,7 +3165,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. Union in existing G.I. pipe line, cutting and threading the pipe and making long screws, including excavation, refilling the earth or cutting of wall and making good the same complete wherever required :",
           "code": "18.47",
           "children_count": 8,
@@ -3277,7 +3298,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass bib cock of approved quality conforming to IS:8931 :",
           "code": "18.49",
           "children_count": 1,
@@ -3299,7 +3320,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass long nose bib cock of approved quality conforming to IS standards and weighing not less than 810 gms.",
           "code": "18.50",
           "children_count": 1,
@@ -3321,7 +3342,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass long body bib cock of approved quality conforming to IS standards and weighing not less than 690 gms.",
           "code": "18.51",
           "children_count": 1,
@@ -3343,7 +3364,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass stop cock (concealed) of standard design and of approved make conforming to IS:8931.",
           "code": "18.52",
           "children_count": 1,
@@ -3365,7 +3386,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass angle valve for basin mixer and geyser points of approved quality conforming to IS:8931",
           "code": "18.53",
           "children_count": 1,
@@ -3399,7 +3420,7 @@
           "rate_display": "74.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT bib cock of approved quality and colour.",
           "code": "18.54",
           "children_count": 4,
@@ -3457,7 +3478,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT stop cock of approved quality and colour.",
           "code": "18.55",
           "children_count": 3,
@@ -3503,7 +3524,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT pillar cock of approved quality and colour.",
           "code": "18.56",
           "children_count": 2,
@@ -3537,7 +3558,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT, push cock of approved quality and colour.",
           "code": "18.57",
           "children_count": 2,
@@ -3571,13 +3592,13 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT grating of approved quality and colour.",
           "code": "18.58",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Circular type",
               "code": "18.58.1",
               "children_count": 2,
@@ -3611,7 +3632,7 @@
               "source_page": 11
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Rectangular type with openable circular lid",
               "code": "18.58.2",
               "children_count": 1,
@@ -3637,7 +3658,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.I. double acting air valve of approved quality with bolts, nuts, rubber insertions etc. complete (The tail pieces, tapers etc if required will be paid separately) :",
           "code": "18.59",
           "children_count": 3,
@@ -3683,7 +3704,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing enclosed type water meter (bulk type) conforming to IS : 2373 and tested by Municipal Board complete with bolts, nuts, rubber insertions etc. (The tail pieces if required will be paid separately) :",
           "code": "18.60",
           "children_count": 4,
@@ -3741,7 +3762,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.I. dirt box strainer for bulk type water meter with nuts, bolts, rubber insertions etc. complete conforming to IS : 2373 :",
           "code": "18.61",
           "children_count": 4,
@@ -3799,7 +3820,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT Ball cock of approved quality, colour and make complete with Epoxy coated aluminium rod with L.P./ H.P.H.D. plastic ball.",
           "code": "18.62",
           "children_count": 5,
@@ -3905,147 +3926,177 @@
           "rate_display": "111.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying S&S C.I. Standard specials such as tees, bends, collars tapers and caps etc, suitable for flanged jointing as per IS : 1538 :",
           "code": "18.66",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 300 mm dia quintal 8628.60",
+              "title": "Up to 300 mm dia",
               "code": "18.66.1",
               "children_count": 0,
               "children": [],
               "order_index": 341,
-              "source_page": 12
+              "source_page": 12,
+              "unit": "quintal",
+              "rate": 8628.6,
+              "rate_display": "8628.60"
             },
             {
               "node_type": "item",
-              "title": "Above 300 mm dia quintal 10157.95",
+              "title": "Above 300 mm dia",
               "code": "18.66.2",
               "children_count": 0,
               "children": [],
               "order_index": 342,
-              "source_page": 12
+              "source_page": 12,
+              "unit": "quintal",
+              "rate": 10157.95,
+              "rate_display": "10157.95"
             }
           ],
           "order_index": 340,
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying S&S C.I. Standard specials suitable for mechanical jointing as per IS : 13382 :",
           "code": "18.67",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 300 mm dia quintal 13764.35",
+              "title": "Up to 300 mm dia",
               "code": "18.67.1",
               "children_count": 0,
               "children": [],
               "order_index": 344,
-              "source_page": 12
+              "source_page": 12,
+              "unit": "quintal",
+              "rate": 13764.35,
+              "rate_display": "13764.35"
             },
             {
               "node_type": "item",
-              "title": "Above 300 mm dia quintal 14532.55",
+              "title": "Above 300 mm dia",
               "code": "18.67.2",
               "children_count": 0,
               "children": [],
               "order_index": 345,
-              "source_page": 12
+              "source_page": 12,
+              "unit": "quintal",
+              "rate": 14532.55,
+              "rate_display": "14532.55"
             }
           ],
           "order_index": 343,
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying D.I. specials of class K-12 suitable for push-on jointing as per IS : 9523 :",
           "code": "18.68",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 600 mm dia quintal 20009.70",
+              "title": "Up to 600 mm dia",
               "code": "18.68.1",
               "children_count": 0,
               "children": [],
               "order_index": 347,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 20009.7,
+              "rate_display": "20009.70"
             },
             {
               "node_type": "item",
-              "title": "Above 600 mm dia quintal 26696.10",
+              "title": "Above 600 mm dia",
               "code": "18.68.2",
               "children_count": 0,
               "children": [],
               "order_index": 348,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 26696.1,
+              "rate_display": "26696.10"
             }
           ],
           "order_index": 346,
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Class K-12 Ductile Iron double chamber restrained joint (bolt less) specials such as tees, bends, collars, tapers and caps etc. conforming to IS : 9523 including testing of joints all complete.",
           "code": "18.68A",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 600 mm nominal dia quintal 30394.95",
+              "title": "Up to 600 mm nominal dia",
               "code": "18.68A.1",
               "children_count": 0,
               "children": [],
               "order_index": 350,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 30394.95,
+              "rate_display": "30394.95"
             },
             {
               "node_type": "item",
-              "title": "Above 600 mm nominal dia quintal 39073.05",
+              "title": "Above 600 mm nominal dia",
               "code": "18.68A.2",
               "children_count": 0,
               "children": [],
               "order_index": 351,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 39073.05,
+              "rate_display": "39073.05"
             }
           ],
           "order_index": 349,
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying D.I. Specials of Class K - 12 suitable for mechanical jointing as per IS : 9523 :",
           "code": "18.69",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Up to 600 mm dia quintal 21290.10",
+              "title": "Up to 600 mm dia",
               "code": "18.69.1",
               "children_count": 0,
               "children": [],
               "order_index": 353,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 21290.1,
+              "rate_display": "21290.10"
             },
             {
               "node_type": "item",
-              "title": "Above 600 mm dia quintal 28403.25",
+              "title": "Above 600 mm dia",
               "code": "18.69.2",
               "children_count": 0,
               "children": [],
               "order_index": 354,
-              "source_page": 13
+              "source_page": 13,
+              "unit": "quintal",
+              "rate": 28403.25,
+              "rate_display": "28403.25"
             }
           ],
           "order_index": 352,
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing push-on-joints to Centrifugally (Spun) Cast Iron Pipes or Ductile Iron Pipes including testing of joints and the cost of rubber gasket :",
           "code": "18.70",
           "children_count": 15,
@@ -4190,7 +4241,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Double Flanged (screwed / welded) Centrifugally (Spun) Cast Iron, Class B (IS : 1536) :",
           "code": "18.71",
           "children_count": 10,
@@ -4320,7 +4371,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying S&S Centrifugally Cast (Spun) / Ductile Iron Pipes conforming to IS : 8329 :",
           "code": "18.72",
           "children_count": 29,
@@ -4678,7 +4729,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, laying, jointing and testing S&S Centrifugally Cast Ductile Iron double chamber Class K-9 pressure pipes conforming to IS : 8329:2000 with restrained joints (bolt less), all complete.",
           "code": "18.72A",
           "children_count": 15,
@@ -4868,7 +4919,7 @@
           "source_page": 14
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Double Flanged (Screwed/ Welded) Centrifugally (Spun) Ductile Iron Pipes of Class K - 9 conforming to IS : 8329 :",
           "code": "18.73",
           "children_count": 11,
@@ -5010,7 +5061,7 @@
           "source_page": 15
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing unplasticised P.V.C. connection pipe with PTMT Nuts, collar and bush of approved quality and colour.",
           "code": "18.74",
           "children_count": 2,
@@ -5044,7 +5095,7 @@
           "source_page": 15
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT extension nipple for water tank pipe, fittings of approved quality and colour.",
           "code": "18.75",
           "children_count": 3,
@@ -5090,7 +5141,7 @@
           "source_page": 15
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cutting holes up to 30x30 cm in walls including making good the same:",
           "code": "18.76",
           "children_count": 1,
@@ -5148,243 +5199,315 @@
           "rate_display": "209.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Disinfecting C.I. water mains by flushing with water containing bleaching powder @ 0.5 gms per litre of water and cleaning the same with fresh water, operation to be repeated three times including getting the sample of water from the disinfected main tested in the municipal laboratory.",
           "code": "18.80",
           "children_count": 12,
           "children": [
             {
               "node_type": "item",
-              "title": "80 mm diameter C.I. pipe 100 metre 1844.00",
+              "title": "80 mm diameter C.I. pipe 100",
               "code": "18.80.1",
               "children_count": 0,
               "children": [],
               "order_index": 453,
-              "source_page": 15
+              "source_page": 15,
+              "unit": "metre",
+              "rate": 1844.0,
+              "rate_display": "1844.00"
             },
             {
               "node_type": "item",
-              "title": "100 mm diameter C.I. pipe 100 metre 2415.15",
+              "title": "100 mm diameter C.I. pipe 100",
               "code": "18.80.2",
               "children_count": 0,
               "children": [],
               "order_index": 454,
-              "source_page": 15
+              "source_page": 15,
+              "unit": "metre",
+              "rate": 2415.15,
+              "rate_display": "2415.15"
             },
             {
               "node_type": "item",
-              "title": "125 mm diameter C.I. pipe 100 metre 3006.40",
+              "title": "125 mm diameter C.I. pipe 100",
               "code": "18.80.3",
               "children_count": 0,
               "children": [],
               "order_index": 455,
-              "source_page": 15
+              "source_page": 15,
+              "unit": "metre",
+              "rate": 3006.4,
+              "rate_display": "3006.40"
             },
             {
               "node_type": "item",
-              "title": "150 mm diameter C.I. pipe 100 metre 3593.85",
+              "title": "150 mm diameter C.I. pipe 100",
               "code": "18.80.4",
               "children_count": 0,
               "children": [],
               "order_index": 456,
-              "source_page": 15
+              "source_page": 15,
+              "unit": "metre",
+              "rate": 3593.85,
+              "rate_display": "3593.85"
             },
             {
               "node_type": "item",
-              "title": "200 mm diameter C.I. pipe 100 metre 4771.60",
+              "title": "200 mm diameter C.I. pipe 100",
               "code": "18.80.5",
               "children_count": 0,
               "children": [],
               "order_index": 457,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 4771.6,
+              "rate_display": "4771.60"
             },
             {
               "node_type": "item",
-              "title": "250 mm diameter C.I. pipe 100 metre 5977.65",
+              "title": "250 mm diameter C.I. pipe 100",
               "code": "18.80.6",
               "children_count": 0,
               "children": [],
               "order_index": 458,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 5977.65,
+              "rate_display": "5977.65"
             },
             {
               "node_type": "item",
-              "title": "300 mm diameter C.I. pipe 100 metre 6618.15",
+              "title": "300 mm diameter C.I. pipe 100",
               "code": "18.80.7",
               "children_count": 0,
               "children": [],
               "order_index": 459,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 6618.15,
+              "rate_display": "6618.15"
             },
             {
               "node_type": "item",
-              "title": "350 mm diameter C.I. pipe 100 metre 7272.35",
+              "title": "350 mm diameter C.I. pipe 100",
               "code": "18.80.8",
               "children_count": 0,
               "children": [],
               "order_index": 460,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 7272.35,
+              "rate_display": "7272.35"
             },
             {
               "node_type": "item",
-              "title": "400 mm diameter C.I. pipe 100 metre 7950.85",
+              "title": "400 mm diameter C.I. pipe 100",
               "code": "18.80.9",
               "children_count": 0,
               "children": [],
               "order_index": 461,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 7950.85,
+              "rate_display": "7950.85"
             },
             {
               "node_type": "item",
-              "title": "450 mm diameter C.I. pipe 100 metre 8635.75",
+              "title": "450 mm diameter C.I. pipe 100",
               "code": "18.80.10",
               "children_count": 0,
               "children": [],
               "order_index": 462,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 8635.75,
+              "rate_display": "8635.75"
             },
             {
               "node_type": "item",
-              "title": "500 mm diameter C.I. pipe 100 metre 9351.25",
+              "title": "500 mm diameter C.I. pipe 100",
               "code": "18.80.11",
               "children_count": 0,
               "children": [],
               "order_index": 463,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 9351.25,
+              "rate_display": "9351.25"
             },
             {
               "node_type": "item",
-              "title": "600 mm diameter C.I. pipe 100 metre 10787.45",
+              "title": "600 mm diameter C.I. pipe 100",
               "code": "18.80.12",
               "children_count": 0,
               "children": [],
               "order_index": 464,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 10787.45,
+              "rate_display": "10787.45"
             }
           ],
           "order_index": 452,
           "source_page": 15
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for every operation of disinfecting the C.I. main by flushing with water containing bleaching powder @ 0.5 gms per litre of water and cleaning the same with fresh water, including getting the samples of water tested in the municipal laboratory :",
           "code": "18.81",
           "children_count": 12,
           "children": [
             {
               "node_type": "item",
-              "title": "80 mm diameter C.I. pipe 100 metre 674.95",
+              "title": "80 mm diameter C.I. pipe 100",
               "code": "18.81.1",
               "children_count": 0,
               "children": [],
               "order_index": 466,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 674.95,
+              "rate_display": "674.95"
             },
             {
               "node_type": "item",
-              "title": "100 mm diameter C.I. pipe 100 metre 824.95",
+              "title": "100 mm diameter C.I. pipe 100",
               "code": "18.81.2",
               "children_count": 0,
               "children": [],
               "order_index": 467,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 824.95,
+              "rate_display": "824.95"
             },
             {
               "node_type": "item",
-              "title": "125 mm diameter C.I. pipe 100 metre 1003.95",
+              "title": "125 mm diameter C.I. pipe 100",
               "code": "18.81.3",
               "children_count": 0,
               "children": [],
               "order_index": 468,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 1003.95,
+              "rate_display": "1003.95"
             },
             {
               "node_type": "item",
-              "title": "150 mm diameter C.I. pipe 100 metre 1164.25",
+              "title": "150 mm diameter C.I. pipe 100",
               "code": "18.81.4",
               "children_count": 0,
               "children": [],
               "order_index": 469,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 1164.25,
+              "rate_display": "1164.25"
             },
             {
               "node_type": "item",
-              "title": "200 mm diameter C.I. pipe 100 metre 1753.10",
+              "title": "200 mm diameter C.I. pipe 100",
               "code": "18.81.5",
               "children_count": 0,
               "children": [],
               "order_index": 470,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 1753.1,
+              "rate_display": "1753.10"
             },
             {
               "node_type": "item",
-              "title": "250 mm diameter C.I. pipe 100 metre 2012.75",
+              "title": "250 mm diameter C.I. pipe 100",
               "code": "18.81.6",
               "children_count": 0,
               "children": [],
               "order_index": 471,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 2012.75,
+              "rate_display": "2012.75"
             },
             {
               "node_type": "item",
-              "title": "300 mm diameter C.I. pipe 100 metre 2255.15",
+              "title": "300 mm diameter C.I. pipe 100",
               "code": "18.81.7",
               "children_count": 0,
               "children": [],
               "order_index": 472,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 2255.15,
+              "rate_display": "2255.15"
             },
             {
               "node_type": "item",
-              "title": "350 mm diameter C.I. pipe 100 metre 2632.00",
+              "title": "350 mm diameter C.I. pipe 100",
               "code": "18.81.8",
               "children_count": 0,
               "children": [],
               "order_index": 473,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 2632.0,
+              "rate_display": "2632.00"
             },
             {
               "node_type": "item",
-              "title": "400 mm diameter C.I. pipe 100 metre 3011.20",
+              "title": "400 mm diameter C.I. pipe 100",
               "code": "18.81.9",
               "children_count": 0,
               "children": [],
               "order_index": 474,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 3011.2,
+              "rate_display": "3011.20"
             },
             {
               "node_type": "item",
-              "title": "450 mm diameter C.I. pipe 100 metre 3398.15",
+              "title": "450 mm diameter C.I. pipe 100",
               "code": "18.81.10",
               "children_count": 0,
               "children": [],
               "order_index": 475,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 3398.15,
+              "rate_display": "3398.15"
             },
             {
               "node_type": "item",
-              "title": "500 mm diameter C.I. pipe 100 metre 3787.10",
+              "title": "500 mm diameter C.I. pipe 100",
               "code": "18.81.11",
               "children_count": 0,
               "children": [],
               "order_index": 476,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 3787.1,
+              "rate_display": "3787.10"
             },
             {
               "node_type": "item",
-              "title": "600 mm diameter C.I. pipe 100 metre 4573.95",
+              "title": "600 mm diameter C.I. pipe 100",
               "code": "18.81.12",
               "children_count": 0,
               "children": [],
               "order_index": 477,
-              "source_page": 16
+              "source_page": 16,
+              "unit": "metre",
+              "rate": 4573.95,
+              "rate_display": "4573.95"
             }
           ],
           "order_index": 465,
           "source_page": 16
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling old C.I. pipes including excavation and refilling trenches after taking out the pipes, breaking lead caulked joints, melting of lead and making into blocks, including stacking of pipes at site lead up to 50 metre:",
           "code": "18.82",
           "children_count": 12,
@@ -5538,7 +5661,7 @@
           "source_page": 16
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Labour for cutting C.I. pipe with steel saw.",
           "code": "18.83",
           "children_count": 12,
@@ -5656,7 +5779,7 @@
           "source_page": 16
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing chrome plated brass battery based infrared sensor operated pillar cock, having foam flow technology.",
           "code": "18.84",
           "children_count": 1,
@@ -5678,7 +5801,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Stainless Steel pipe and fitting of grade AISI 304 as per JIS standard 3448 complete with press type fitting (fitting shall be paid for separately) including fixing of the pipe with clamps at 1.00 m spacing including cutting and making good the walls including testing of joints complete as per direction of Engineer-in-charge. (The pipe length inserted in the fitting shall not be measured for payment) Internal work - Exposed on wall",
           "code": "18.85",
           "children_count": 6,
@@ -5760,7 +5883,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Stainless Steel pipe and fitting of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards complete with press type fitting (fitting shall be paid for separately) including fixing of the pipe with clamps at 1.00 m spacing including cutting and making good the walls including testing of joints complete as per direction of Engineer-in-charge. (The pipe length inserted in the fitting shall not be measured for payment) Internal work - Exposed on wall",
           "code": "18.85A",
           "children_count": 6,
@@ -5842,7 +5965,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Stainless Steel pipe and fitting of grade AISI 304 as per JIS standard 3448 complete with press type fitting (fitting shall be paid for separately) including fixing of the pipe with clamps at 1.00m spacing and also including cutting of chases and making good the walls including testing of joints complete as per direction of Engineer -in-charge. (The pipe length inserted in the fitting shall not be measured for payment) Internal work - Concealed Pipe",
           "code": "18.86",
           "children_count": 2,
@@ -5876,7 +5999,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Stainless Steel pipe and fitting of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards complete with press type fitting (fitting shall be paid for separately) including fixing of the pipe with clamps at 1.00m spacing and also including cutting of chases and making good the walls including testing of joints complete as per direction of Engineer -in-charge. (The pipe length inserted in the fitting shall not be measured for payment) Internal work - Concealed Pipe",
           "code": "18.86A",
           "children_count": 2,
@@ -5910,7 +6033,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Coupling/Socket",
           "code": "18.87",
           "children_count": 6,
@@ -5992,7 +6115,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Coupling/Socket",
           "code": "18.87A",
           "children_count": 6,
@@ -6074,7 +6197,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per dirction of Engineer-in-charge. Reducer",
           "code": "18.88",
           "children_count": 15,
@@ -6264,7 +6387,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per dirction of Engineer-in-charge. Reducer",
           "code": "18.88A",
           "children_count": 11,
@@ -6406,7 +6529,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Slip Coupling/ Socket",
           "code": "18.89",
           "children_count": 6,
@@ -6488,7 +6611,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Sleeve/Slip Coupling/ Socket",
           "code": "18.89A",
           "children_count": 6,
@@ -6570,7 +6693,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Elbow 90°",
           "code": "18.90",
           "children_count": 6,
@@ -6652,7 +6775,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Elbow 90°",
           "code": "18.90A",
           "children_count": 6,
@@ -6734,7 +6857,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Reducing Elbow 90°",
           "code": "18.91",
           "children_count": 6,
@@ -6816,7 +6939,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Equal Tee",
           "code": "18.92",
           "children_count": 6,
@@ -6898,7 +7021,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Equal Tee",
           "code": "18.92A",
           "children_count": 6,
@@ -6980,7 +7103,7 @@
           "source_page": 21
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Reducing Tee",
           "code": "18.93",
           "children_count": 15,
@@ -7170,7 +7293,7 @@
           "source_page": 21
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Reducing Tee",
           "code": "18.93A",
           "children_count": 13,
@@ -7336,7 +7459,7 @@
           "source_page": 21
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Male Thread Tee",
           "code": "18.94",
           "children_count": 21,
@@ -7598,7 +7721,7 @@
           "source_page": 22
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Thread Tee",
           "code": "18.95",
           "children_count": 21,
@@ -7860,7 +7983,7 @@
           "source_page": 22
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Thread Tee",
           "code": "18.95A",
           "children_count": 11,
@@ -8002,7 +8125,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Thread Connector/ Adapter",
           "code": "18.96",
           "children_count": 12,
@@ -8156,7 +8279,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standards with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Thread Connector/ Adapter",
           "code": "18.96A",
           "children_count": 7,
@@ -8250,7 +8373,7 @@
           "source_page": 24
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Male Thread Connector/ Adapter",
           "code": "18.97",
           "children_count": 11,
@@ -8392,7 +8515,7 @@
           "source_page": 24
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Male Thread Connector/ Adapter",
           "code": "18.97A",
           "children_count": 7,
@@ -8486,7 +8609,7 @@
           "source_page": 24
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Valve Connector",
           "code": "18.98",
           "children_count": 7,
@@ -8580,7 +8703,7 @@
           "source_page": 24
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Threaded Elbow 90°",
           "code": "18.99",
           "children_count": 9,
@@ -8698,7 +8821,7 @@
           "source_page": 25
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Threaded Elbow 90°",
           "code": "18.99A",
           "children_count": 6,
@@ -8780,7 +8903,7 @@
           "source_page": 25
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Male Threaded Elbow 90°",
           "code": "18.100",
           "children_count": 10,
@@ -8982,7 +9105,7 @@
           "rate_display": "4772.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Cap",
           "code": "18.101",
           "children_count": 6,
@@ -9064,7 +9187,7 @@
           "source_page": 26
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Cap",
           "code": "18.101A",
           "children_count": 6,
@@ -9146,7 +9269,7 @@
           "source_page": 26
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade AISI 304 conforming to JWWA G116 standard with V-profile or M-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Pipe Bridge",
           "code": "18.102",
           "children_count": 3,
@@ -9192,7 +9315,7 @@
           "source_page": 26
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Pipe Bridge",
           "code": "18.102A",
           "children_count": 3,
@@ -9238,7 +9361,7 @@
           "source_page": 27
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Male Union",
           "code": "18.103",
           "children_count": 7,
@@ -9332,7 +9455,7 @@
           "source_page": 27
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Union",
           "code": "18.104",
           "children_count": 2,
@@ -9366,7 +9489,7 @@
           "source_page": 27
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing required Stainless Steel Fitting of press fit design of grade 316L as per IS : 6911:2017 and conforming to EN-10312 standard with V-profile and with O-ring sealing gasket of EPDM material of required dia as per direction of Engineer-in-charge. Female Transition Elbow / FTE",
           "code": "18.105",
           "children_count": 3,

@@ -17,7 +17,7 @@
       "children_count": 109,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster of mix :",
           "code": "13.1",
           "children_count": 2,
@@ -51,7 +51,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster on the rough side of single or half brick wall of mix :",
           "code": "13.2",
           "children_count": 2,
@@ -85,7 +85,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "20 mm cement plaster of mix :",
           "code": "13.3",
           "children_count": 2,
@@ -119,7 +119,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster of mix :",
           "code": "13.4",
           "children_count": 2,
@@ -153,7 +153,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster on rough side of single or half brick wall of mix:",
           "code": "13.5",
           "children_count": 2,
@@ -187,7 +187,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "20 mm cement plaster of mix :",
           "code": "13.6",
           "children_count": 2,
@@ -221,7 +221,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster finished with a floating coat of neat cement of mix :",
           "code": "13.7",
           "children_count": 2,
@@ -255,7 +255,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster on rough side of single or half brick wall finished with a floating coat of neat cement of mix :",
           "code": "13.8",
           "children_count": 2,
@@ -289,7 +289,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cement plaster 1:3 (1 cement: 3 coarse sand) finished with a floating coat of neat cement.",
           "code": "13.9",
           "children_count": 2,
@@ -395,7 +395,7 @@
           "rate_display": "520.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "6 mm cement plaster of mix :",
           "code": "13.16",
           "children_count": 1,
@@ -441,7 +441,7 @@
           "rate_display": "79.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Rough cast plaster upto 10 m height above ground level with a mixture of sand and gravel or crushed stone from 6 mm to 10 mm nominal size, dashed over and including the fresh plaster in two layers, under layer 12 mm cement plaster 1:4 (1 cement : 4 coarse sand) and top layer 10 mm cement plaster 1:3 (1 cement : 3 fine sand) mixed with 10% finely grounded hydrated lime by volume of cement.",
           "code": "13.19",
           "children_count": 1,
@@ -505,7 +505,7 @@
           "rate_display": "87.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for plastering on circular work not exceeding 6 m in radius:",
           "code": "13.23",
           "children_count": 2,
@@ -539,7 +539,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for plastering done on moulding, cornices or architraves including neat finish to line and level:",
           "code": "13.24",
           "children_count": 2,
@@ -573,7 +573,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for plastering:",
           "code": "13.25",
           "children_count": 3,
@@ -643,7 +643,7 @@
           "rate_display": "113.90"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm thick plain cement mortar bands in cement mortar 1:4 (1 cement : 4 fine sand):",
           "code": "13.28",
           "children_count": 4,
@@ -701,7 +701,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "18 mm thick plain cement mortar band in cement mortar 1:4 (1 cement : 4 fine sand):",
           "code": "13.29",
           "children_count": 4,
@@ -771,7 +771,7 @@
           "rate_display": "21.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on brick work or brick flooring with cement mortar 1:3 (1 cement : 3 fine sand):",
           "code": "13.31",
           "children_count": 2,
@@ -805,7 +805,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on tile brick work with cement mortar 1:3 (1 cement : 3 fine sand):",
           "code": "13.32",
           "children_count": 1,
@@ -827,7 +827,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on stone work with cement mortar 1:3 (1 cement : 3 fine sand) :",
           "code": "13.33",
           "children_count": 2,
@@ -873,7 +873,7 @@
           "rate_display": "716.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on stone slab ceiling with cement mortar 1:2 (1 cement : 2 fine sand):",
           "code": "13.35",
           "children_count": 1,
@@ -907,7 +907,7 @@
           "rate_display": "8.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "White washing with lime to give an even shade :",
           "code": "13.37",
           "children_count": 1,
@@ -941,7 +941,7 @@
           "rate_display": "15.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Colour washing such as green, blue or buff to give an even shade :",
           "code": "13.39",
           "children_count": 2,
@@ -975,7 +975,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Distempering with 1st quality acrylic distemper (ready mixed) having VOC content less than 50 gram/litre, of approved manufacturer and of required shade and colour all complete to achieve even shade and colour :",
           "code": "13.41",
           "children_count": 1,
@@ -997,7 +997,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with water proofing cement paint of required shade :",
           "code": "13.44",
           "children_count": 1,
@@ -1019,7 +1019,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with textured exterior paint of required shade :",
           "code": "13.45",
           "children_count": 1,
@@ -1041,7 +1041,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with Acrylic Smooth exterior paint of required shade :",
           "code": "13.46",
           "children_count": 1,
@@ -1063,7 +1063,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with Premium Acrylic Smooth exterior paint with Silicone additives of required shade:",
           "code": "13.47",
           "children_count": 1,
@@ -1085,7 +1085,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing with Deluxe Multi surface paint system for interiors and exteriors using Primer as per manufacturers specifications :",
           "code": "13.48",
           "children_count": 3,
@@ -1131,7 +1131,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with ready mixed Premium acrylic emulsion paint (Company Depot Tinted) having VOC less than 50 gm/litre and UV resistance as per IS 15489:2004, Alkali & fungal resistance, dirt resistance exterior paint of required shade with silicon additives.",
           "code": "13.48A",
           "children_count": 1,
@@ -1153,7 +1153,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Applying priming coat:",
           "code": "13.50",
           "children_count": 3,
@@ -1199,7 +1199,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with silicon & acrylic emulsion based water thinnable sealer of approved brand and manufacture on wet or patchy portion of plastered surfaces :",
           "code": "13.51",
           "children_count": 2,
@@ -1233,7 +1233,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing with Epoxy paint (two or more coats) at all locations prepared and applied as per manufacturer’s specifications including appropriate priming coat, preparation of surface, etc. complete.",
           "code": "13.52",
           "children_count": 2,
@@ -1267,7 +1267,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting on G.S. sheet with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.53",
           "children_count": 1,
@@ -1289,7 +1289,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Applying a coat of mordant solution on G.S. sheet:",
           "code": "13.54",
           "children_count": 2,
@@ -1323,7 +1323,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture, over and including a priming of ready mixed zinc chromate yellow primer on new work:",
           "code": "13.55",
           "children_count": 2,
@@ -1357,7 +1357,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with synthetic enamel paint of approved brand and manufacture and required colour over a priming coat of approved steel primer on new work.",
           "code": "13.56",
           "children_count": 2,
@@ -1391,7 +1391,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Paintting with oil type wood preservative of approved brand and manufacture:",
           "code": "13.57",
           "children_count": 1,
@@ -1437,7 +1437,7 @@
           "rate_display": "66.90"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with synthetic enamel paint of approved brand and manufacture to give an even shade :",
           "code": "13.61",
           "children_count": 1,
@@ -1459,7 +1459,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.62",
           "children_count": 1,
@@ -1481,7 +1481,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with aluminium paint of approved brand and manufacture to give an even shade .",
           "code": "13.63",
           "children_count": 1,
@@ -1503,7 +1503,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with acid proof paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.64",
           "children_count": 1,
@@ -1525,7 +1525,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with black anti-corrosive bitumastic paint of approved brand and manufacture to give an even shade :",
           "code": "13.65",
           "children_count": 1,
@@ -1547,7 +1547,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Varnishing with varnish of approved brand and manufacture :",
           "code": "13.67",
           "children_count": 2,
@@ -1581,7 +1581,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "French spirit polishing :",
           "code": "13.68",
           "children_count": 1,
@@ -1603,7 +1603,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Polishing on wood work with ready mixed wax polish of approved brand and manufacture :",
           "code": "13.69",
           "children_count": 1,
@@ -1667,7 +1667,7 @@
           "rate_display": "1162.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Forming groove of uniform size in the top layer of washed stone grit plaster as per approved pattern using wooden battens, nailed to the under layer, including removal of wooden battens, repair to the edges of panels and finishing the groove complete as per specifications and direction of the Engineer-in-charge :",
           "code": "13.73",
           "children_count": 2,
@@ -1782,7 +1782,7 @@
           "rate_display": "156.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Distempering with 1st quality acrylic distemper (ready mixed) having VOC (Volatile Organic Compound ) content less than 50 gram/ litre, of approved brand and manufacturer including applying additional coats wherever required to achieve even shade and colour",
           "code": "13.81",
           "children_count": 1,
@@ -1804,7 +1804,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Wall painting with acrylic emulsion paint, having VOC (Volatile Organic Compound ) content less than 50 grams/ litre, of approved brand and manufacture, including applying additional coats wherever required, to achieve even shade and colour.",
           "code": "13.82",
           "children_count": 2,
@@ -1838,7 +1838,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Wall painting with premium acrylic emulsion paint of interior grade, having VOC (Volatile Organic Compound ) content less than 50 grams/ litre of approved brand and manufacture, including applying additional coats wherever required to achieve even shade and colour.",
           "code": "13.83",
           "children_count": 2,
@@ -1872,7 +1872,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Applying priming coats with primer of approved brand and manufacture, having low VOC (Volatile Organic Compound ) content.",
           "code": "13.85",
           "children_count": 2,
@@ -1918,7 +1918,7 @@
           "rate_display": "269.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "White washing with lime to give an even shade :",
           "code": "13.87",
           "children_count": 2,
@@ -1976,7 +1976,7 @@
           "rate_display": "25.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting on G.S. sheet with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.92",
           "children_count": 1,
@@ -1999,7 +1999,7 @@
           "unit": "sqm"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (two or more coats) on rain water, soil, waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture over and including a priming coat of ready mixed zinc chromate yellow primer on new work :",
           "code": "13.93",
           "children_count": 1,
@@ -2021,7 +2021,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (one or more coats) on rain water, soil waste and vent pipes and fittings with black anticorrosive bitumastic paint of approved brand and manufacture on old work :",
           "code": "13.94",
           "children_count": 3,
@@ -2067,7 +2067,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (two or more coats) on rain water, soil waste and vent pipes and fittings with aluminium paint of approved brand and manufacture over a priming coat of ready mixed zinc chromate yellow primer on new work :",
           "code": "13.95",
           "children_count": 3,
@@ -2113,7 +2113,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting (one or more coats) on rain water, soil waste and vent pipes and fittings with synthetic enamel paint of approved brand and manufacture and required colour on old work :",
           "code": "13.96",
           "children_count": 3,
@@ -2159,7 +2159,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with oil type wood preservative of approved brand and manufacture:",
           "code": "13.97",
           "children_count": 1,
@@ -2181,7 +2181,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with synthetic enamel paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.99",
           "children_count": 1,
@@ -2203,7 +2203,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with aluminium paint of approved brand and manufacture to give an even shade:",
           "code": "13.100",
           "children_count": 1,
@@ -2225,7 +2225,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with acid proof paint of approved brand and manufacture of required colour to give an even shade :",
           "code": "13.101",
           "children_count": 1,
@@ -2247,7 +2247,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting with black anti-corrosive bitumastic paint of approved brand and manufacture to give an even shade :",
           "code": "13.102",
           "children_count": 1,
@@ -2269,7 +2269,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "French spirit polishing :",
           "code": "13.103",
           "children_count": 1,
@@ -2291,7 +2291,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Polishing on wood work with ready made wax polish of approved brand and manufacture :",
           "code": "13.104",
           "children_count": 1,
@@ -2343,7 +2343,7 @@
           "rate_display": "95.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing C.P. brass chain and rubber plug complete for sink or wash basin:",
           "code": "13.107",
           "children_count": 2,
@@ -2377,7 +2377,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with water proofing cement paint of required shade :",
           "code": "13.109",
           "children_count": 2,
@@ -2411,7 +2411,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with textured exterior paint of required shade :",
           "code": "13.110",
           "children_count": 2,
@@ -2445,7 +2445,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with Acrylic Smooth exterior paint of required shade :",
           "code": "13.111",
           "children_count": 2,
@@ -2479,7 +2479,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Finishing walls with Premium Acrylic Smooth exterior paint with Silicone additives of required shade",
           "code": "13.112",
           "children_count": 2,
@@ -2513,7 +2513,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Varnishing with varnish of approved brand and manufacture:",
           "code": "13.113",
           "children_count": 2,

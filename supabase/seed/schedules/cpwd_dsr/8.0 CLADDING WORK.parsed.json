@@ -9,13 +9,13 @@
       "children_count": 30,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Marble work gang saw cut (polished and machine cut) of thickness 18 mm for wall lining (veneer work), backing filled with a grout of average 12 mm thick in cement mortar 1:3 (1 cement : 3 coarse sand), including pointing with white cement mortar 1:2 (1 white cement : 2 marble dust) with an admixture of pigment to match the marble shade (To be secured to the backing by means of cramps, which shall be paid for separately).",
           "code": "8.1",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Raj Nagar Plain white marble/ Udaipur green marble/ Zebra black marble.",
               "code": "8.1.1",
               "children_count": 2,
@@ -53,13 +53,13 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 18 mm thick gang saw cut, mirror polished, premoulded and prepolished, machine cut for kitchen platforms, vanity counters, window sills, facias and similar locations of required size, approved shade, colour and texture laid over 20 mm thick base cement mortar 1:4 (1 cement : 4 coarse sand), joints treated with white cement, mixed with matching pigment, epoxy touch ups, including rubbing, curing, moulding and polishing of edges to give high gloss finish etc. complete at all levels.",
           "code": "8.2",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Raj Nagar Plain white marble/ Udaipur green marble/ Zebra black marble",
               "code": "8.2.1",
               "children_count": 2,
@@ -93,7 +93,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Granite stone slab of colour black, Cherry/Ruby red",
               "code": "8.2.2",
               "children_count": 2,
@@ -127,7 +127,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Granite stone slab of all colour and texture except black, Cherry/Ruby red",
               "code": "8.2.3",
               "children_count": 2,
@@ -165,7 +165,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing edge moulding to 18 mm thick marble stone counters, Vanities etc., including machine polishing to edge to give high gloss finish etc. complete as per design approved by Engineer-in-Charge.",
           "code": "8.3",
           "children_count": 2,
@@ -235,41 +235,47 @@
           "rate_display": "506.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing cramps of required size & shape in RCC/ CC / Brick masonry backing with cement mortar 1:2 ( 1 cement :2 coarse sand), including drilling necessary hole in stones and embedding the cramp in the hole (fastener to be paid separately).",
           "code": "8.7",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Gunmetal cramps kg 723.45",
+              "title": "Gunmetal cramps",
               "code": "8.7.1",
               "children_count": 0,
               "children": [],
               "order_index": 21,
-              "source_page": 2
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 723.45,
+              "rate_display": "723.45"
             },
             {
               "node_type": "item",
-              "title": "Stainless steel cramps kg 714.40",
+              "title": "Stainless steel cramps",
               "code": "8.7.2",
               "children_count": 0,
               "children": [],
               "order_index": 22,
-              "source_page": 2
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 714.4,
+              "rate_display": "714.40"
             }
           ],
           "order_index": 20,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing expansion hold fasteners on C.C. /R.C.C./Brick masonry surface backing including drilling necessary holes and the cost of bolt etc complete.",
           "code": "8.8",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Wedge expansion type",
               "code": "8.8.1",
               "children_count": 3,
@@ -319,13 +325,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone tile (polished) work for wall lining over 12 mm thick bed of cement mortar 1:3 (1 cement : 3 coarse sand) and cement slurry @ 3.3 kg/sqm including pointing in white cement complete.",
           "code": "8.9",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "8 mm thick",
               "code": "8.9.1",
               "children_count": 2,
@@ -363,7 +369,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing stone slab with table rubbed, edges rounded and polished, of size 75x50 cm deep and 1.8 cm thick, fixed in urinal partitions by cutting a chase of appropriate width with chase cutter and embedding the stone in the chase with epoxy grout or with cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 6 mm nominal size) as per direction of Engineer-in-charge and finished smooth.",
           "code": "8.10",
           "children_count": 2,
@@ -397,7 +403,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing machine cut, mirror/ eggshell polished , Marble stone work for wall lining (veneer work) including dado, skirting, risers of steps etc., in required design and pattern wherever required, stones of different finished surface texture, on 12 mm (average) thick cement mortar 1:3 (1 cement : 3 coarse sand) laid and jointed with white cement slurry @ 3.3 kg/sqm including pointing with white cement slurry admixed with pigment of matching shade, including rubbing, curing, polishing etc. all complete as per Architectural drawings, and as directed by the Engineer-in-Charge.",
           "code": "8.11",
           "children_count": 1,
@@ -419,13 +425,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work (machine cut edges) for wall lining etc. (veneer work) upto 10 metre height, backing filled with a grout of average 12 mm thick cement mortar 1:3 (1 cement : 3 coarse sand) including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade : (To be secured to the backing and the sides by means of cramps and pins which shall be paid for separately) :",
           "code": "8.14",
           "children_count": 5,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Red sand stone - exposed face fine dressed with rough backing.",
               "code": "8.14.1",
               "children_count": 5,
@@ -495,7 +501,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Red sand stone - Exposed face machine cut and table rubbed with rough backing.",
               "code": "8.14.2",
               "children_count": 5,
@@ -565,7 +571,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White sand stone - exposed face fine dressed with rough backing .",
               "code": "8.14.3",
               "children_count": 5,
@@ -635,7 +641,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White sand stone - Exposed face machine cut and table rubbed with rough backing.",
               "code": "8.14.4",
               "children_count": 5,
@@ -705,7 +711,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Gang saw cut stone",
               "code": "8.14.5",
               "children_count": 2,
@@ -744,12 +750,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing stainless steel cramps of required size and shape for anchoring stone wall lining to the backing or securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases in stone and holes in walls wherever required. kg 714.40",
+          "title": "Providing and fixing stainless steel cramps of required size and shape for anchoring stone wall lining to the backing or securing adjacent stones in stone wall lining in cement mortar 1:2 (1 cement : 2 coarse sand), including making the necessary chases in stone and holes in walls wherever required.",
           "code": "8.15",
           "children_count": 0,
           "children": [],
           "order_index": 65,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 714.4,
+          "rate_display": "714.40"
         },
         {
           "node_type": "item",
@@ -776,13 +785,13 @@
           "rate_display": "3135.00"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work (machine cut edges in veneer work) for wall lining upto 10 m height, backing filled with a grout of 12 mm thick cement mortar 1:3 (1 Cement : 3 coarse sand) and jointed with Cement mortar 1:2 (1 cement : 2 stone dust), including grinding with hand grinder on joints, rubbing and polishing complete. (To be secured to the backing and the sides by means of cramps and pins which shall be paid for separately).",
           "code": "8.18",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Prepolished kota stone slabs on exposed face.",
               "code": "8.18.1",
               "children_count": 1,
@@ -820,7 +829,7 @@
           "rate_display": "165.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing dry cladding upto 10 metre height with 30 mm thick gang saw cut stone with machine cut edges of uniform colour and size upto 1mx1m, fixed to structural steel frame work and/ or with the help of cramps, pins etc. and sealing the joints with approved weather sealant as per Architectural drawing and direction of Engineer-in-charge. (The steel frame work, stainless steel cramps and pins etc. shall be paid for separately).",
           "code": "8.20",
           "children_count": 2,
@@ -890,7 +899,7 @@
           "rate_display": "40.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing expandable fasteners of specified size with necessary plastic sleeves and galvanised M.S. screws including drilling holes in masonry work /CC/ R.C.C. and making good etc. complete.",
           "code": "8.24",
           "children_count": 4,
@@ -948,7 +957,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 2nd class teak wood plain lining tongued and grooved, including wooden plugs complete with necessary screws and priming coat on unexposed surface.",
           "code": "8.25",
           "children_count": 4,
@@ -1006,7 +1015,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in wall lining flat pressed three layer (medium density) particle board or graded wood Pre-laminated one side decorative lamination and other side balancing lamination Grade I, Type II, IS : 12823 marked, including priming coat on unexposed arrangement and screws etc. complete :",
           "code": "8.26",
           "children_count": 3,
@@ -1052,7 +1061,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing specified wood frame work consisting of battens 50x25 mm fixed with rawl plug and drilling necessary holes for rawl plug etc. including priming coat complete.",
           "code": "8.27",
           "children_count": 1,
@@ -1074,7 +1083,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plywood 4 mm thick, one side decorative veneer conforming to IS: 1328 (type-1), for plain lining / cladding with necessary screws, including priming coat on unexposed surface with :",
           "code": "8.28",
           "children_count": 1,
@@ -1108,7 +1117,7 @@
           "rate_display": "1825.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing skirting with Pre-laminated (one side decorative and other side balancing lamination) flat pressed 3 layer or graded particle board (medium density) Grade I, Type II, IS :12823 marked, with necessary fixing arrangements and screws, including drilling necessary holes for rawl plugs etc. and priming coat on unexposed surface complete :",
           "code": "8.30",
           "children_count": 2,

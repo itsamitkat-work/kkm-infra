@@ -17,7 +17,7 @@
       "children_count": 36,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, laying and jointing glazed stoneware pipes class SP-1 with stiff mixture of cement mortar in the proportion of 1:1 (1 cement : 1 fine sand) including testing of joints etc. complete :",
           "code": "19.1",
           "children_count": 5,
@@ -87,7 +87,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying cement concrete 1:5:10 (1 cement : 5 coarse sand : 10 graded stone aggregate 40 mm nominal size) all-round S.W. pipes including bed concrete as per standard design :",
           "code": "19.2",
           "children_count": 4,
@@ -145,7 +145,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying cement concrete 1:5:10 (1 cement : 5 coarse sand : 10 graded stone aggregate 40 mm nominal size) up to haunches of S.W. pipes including bed concrete as per standard design :",
           "code": "19.3",
           "children_count": 5,
@@ -215,13 +215,13 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing square-mouth S.W. gully trap class SP-1 complete with C.I. grating brick masonry chamber with water tight C.I. cover with frame of 300 x 300 mm size (inside) the weight of cover to be not less than 4.50 kg and frame to be not less than 2.70 kg as per standard design:",
           "code": "19.4",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "100x100 mm size P type",
               "code": "19.4.1",
               "children_count": 2,
@@ -255,7 +255,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "150 x 100 mm size P type",
               "code": "19.4.2",
               "children_count": 2,
@@ -289,7 +289,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "180x150 mm size P type",
               "code": "19.4.3",
               "children_count": 2,
@@ -327,7 +327,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling of old S.W. pipes including breaking of joints and bed concrete stacking of useful materials near the site within 50 m lead and disposal of unserviceable materials into municipal dumps :",
           "code": "19.5",
           "children_count": 8,
@@ -433,7 +433,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying non-pressure NP2 class (light duty) R.C.C. pipes with collars jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete :",
           "code": "19.6",
           "children_count": 13,
@@ -599,13 +599,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry manhole in cement mortar 1:4 ( 1 cement : 4 coarse sand ) with R.C.C. top slab with 1:1.5:3 mix (1 cement : 1.5 coarse sand (zone-III) : 3 graded stone aggregate 20 mm nominal size), foundation concrete 1:4:8 mix (1 cement : 4 coarse sand (zone-III) : 8 graded stone aggregate 40 mm nominal size), inside plastering 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with floating coat of neat cement and making channels in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement complete as per standard design :",
           "code": "19.7",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside size 90x80 cm and 45 cm deep including C.I. cover with frame (light duty) 455x610 mm internal dimensions, total weight of cover and frame to be not less than 38 kg (weight of cover 23 kg and weight of frame 15 kg) :",
               "code": "19.7.1",
               "children_count": 2,
@@ -639,7 +639,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside size 120x90 cm and 90 cm deep including C.I. cover with frame (medium duty) 500 mm internal diameter, total weight of cover and frame to be not less than 116 kg (weight of cover 58 kg and weight of frame 58 kg) :",
               "code": "19.7.2",
               "children_count": 2,
@@ -673,7 +673,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside size 120x90 cm and 90 cm deep including C.I. cover with frame (heavy duty) 560 mm internal diameter, total weight of cover and frame to be not less than 208 kg (weight of cover 108 kg and weight of frame 100 kg) :",
               "code": "19.7.3",
               "children_count": 2,
@@ -711,13 +711,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depth for manholes :",
           "code": "19.8",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Size 90x80 cm",
               "code": "19.8.1",
               "children_count": 2,
@@ -751,7 +751,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Size 120x90 cm",
               "code": "19.8.2",
               "children_count": 2,
@@ -789,13 +789,13 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular type manhole 0.91 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement : 4 coarse sand), inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement, foundation concrete 1:3:6 mix (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size), and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
           "code": "19.9",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "0.91 m deep with S.F.R.C. cover and frame (heavy duty, HD-20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg., fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
               "code": "19.9.1",
               "children_count": 2,
@@ -833,7 +833,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra depth for circular type manhole 0.91m internal dia (at bottom) beyond 0.91 m to 1.67 m",
           "code": "19.10",
           "children_count": 2,
@@ -867,13 +867,13 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular manhole 1.22 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement :4 coarse sand) inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement foundation concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size) and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
           "code": "19.11",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "1.68 m deep with SFRC Cover and frame (heavy duty HD-20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg. fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
               "code": "19.11.1",
               "children_count": 2,
@@ -911,7 +911,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra depth for circular type manhole 1.22 m internal dia (at bottom) beyond 1.68 m to 2.29 m :",
           "code": "19.12",
           "children_count": 2,
@@ -945,13 +945,13 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular manhole 1.52 m internal dia at bottom and 0.56 m dia at top in cement mortar 1:4 (1 cement : 4 coarse sand) inside cement plaster 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand) finished with a floating coat of neat cement, foundation concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 40 mm nominal size) and making necessary channel in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) finished with a floating coat of neat cement, all complete as per standard design :",
           "code": "19.13",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "2.30 m deep with SFRC Cover and frame (heavy duty HD- 20 grade designation) 560 mm internal diameter conforming to I.S. 12592, total weight of cover and frame to be not less than 182 kg. fixed in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) including centering, shuttering all complete. (Excavation, foot rests and 12 mm thick cement plaster at the external surface shall be paid for separately) :",
               "code": "19.13.1",
               "children_count": 2,
@@ -989,7 +989,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra depth for circular type manhole 1.52 m internal dia (at bottom) beyond 2.30 m :",
           "code": "19.14",
           "children_count": 2,
@@ -1023,7 +1023,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing M.S. foot rests including fixing in manholes with 20x20x10 cm cement concrete blocks 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size) as per standard design :",
           "code": "19.15",
           "children_count": 2,
@@ -1069,7 +1069,7 @@
           "rate_display": "553.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Replacement of M.S. foot rests in manholes including dismantling concrete blocks and fixing with 20x20x10 cm cement concrete blocks 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size):",
           "code": "19.17",
           "children_count": 2,
@@ -1103,7 +1103,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and fixing C.I. cover without frame for manholes :",
           "code": "19.18",
           "children_count": 3,
@@ -1149,13 +1149,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position pre-cast R.C.C. manhole cover and frame of required shape and approved quality",
           "code": "19.19",
           "children_count": 4,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "L D- 2.5",
               "code": "19.19.1",
               "children_count": 3,
@@ -1201,7 +1201,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "M D - 10",
               "code": "19.19.2",
               "children_count": 2,
@@ -1235,7 +1235,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "H D - 20",
               "code": "19.19.3",
               "children_count": 1,
@@ -1257,7 +1257,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "EHD - 35",
               "code": "19.19.4",
               "children_count": 1,
@@ -1295,7 +1295,7 @@
           "rate_display": "787.00"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Making connection of drain or sewer line with existing manhole including breaking into and making good the walls, floors with cement concrete 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) cement plastered on both sides with cement mortar 1:3 (1 cement : 3 coarse sand), finished with a floating coat of neat cement and making necessary channels for the drain etc. complete :",
           "code": "19.21",
           "children_count": 3,
@@ -1341,7 +1341,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing sand cast iron drop connection externally for 60 cm drop from branch sewer line to main sewer manhole including inspection and cleaning eye with chain and lid, sand cast iron drop pipe and bend encased all-round with cement concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size) with all centering and shuttering required, cutting holes in walls and making good with brick work in cement mortar 1:4 (1 cement : 4 coarse sand) plastered with cement mortar 1:3 (1 cement : 3 coarse sand) on inside of the manhole wall, lead caulked joints between sand cast iron pipes and fittings, stiff cement mortar 1:1 (1 cement : 1 fine sand) joints between sand cast iron tee and S.W. pipe, making required channels complete as per standard design and specifications :",
           "code": "19.22",
           "children_count": 2,
@@ -1375,7 +1375,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depths beyond 60 cm of sand cast iron drop connection complete:",
           "code": "19.23",
           "children_count": 2,
@@ -1409,7 +1409,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling of manhole including R.C.C. top slab, C.I. cover with frame, including stacking of useful materials near the site and disposal of unserviceable materials within 50 m lead as per direction of Engineer-in- charge:",
           "code": "19.24",
           "children_count": 4,
@@ -1467,7 +1467,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depth of manholes dismantled :",
           "code": "19.25",
           "children_count": 4,
@@ -1525,7 +1525,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Raising manhole cover and frame slab to required level including dismantling existing slab and making good the damage as required (Raising depth of manhole to be paid separately) :",
           "code": "19.26",
           "children_count": 4,
@@ -1583,7 +1583,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry road gully chamber 50x45x60 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) including 500x450 mm pre-cast R.C.C. horizontal grating with frame complete as per standard design :",
           "code": "19.27",
           "children_count": 1,
@@ -1605,7 +1605,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry road gully chamber 45x45x77.5 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand ) with precast R.C.C. vertical grating complete as per standard design :",
           "code": "19.28",
           "children_count": 1,
@@ -1627,7 +1627,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry road gully chamber 110x50x77.5 cm with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) including 500x450 mm precast R.C.C. horizontal grating with frame and vertical grating complete as per standard design :",
           "code": "19.29",
           "children_count": 1,
@@ -1649,13 +1649,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry chamber for underground C.I. inspection chamber and bends with bricks in cement mortar 1:4 (1 cement : 4 coarse sand) C.I. cover with frame (light duty) 455x610 mm internal dimensions, total weight of cover with frame to be not less than 38 kg (weight of cover 23 kg and weight of frame 15 kg), R.C.C. top slab with 1:1.5:3 mix (1 cement : 1.5 fine sand : 3 graded stone aggregate 20 mm nominal size), foundation concrete 1:5:10 (1 cement : 5 fine sand : 10 graded stone aggregate 40 mm nominal size), inside plastering 12 mm thick with cement mortar 1:3 (1 cement : 3 coarse sand), finished smooth with a floating coat of neat cement on walls and bed concrete etc. complete as per standard design:",
           "code": "19.30",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside dimensions 455x610 mm and 45 cm deep for single pipe line :",
               "code": "19.30.1",
               "children_count": 1,
@@ -1677,7 +1677,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside dimensions 500x700 mm and 45 cm deep for pipe line with one or two inlets :",
               "code": "19.30.2",
               "children_count": 1,
@@ -1699,7 +1699,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Inside dimensions 600x 850 mm and 45 cm deep for pipe line with three or more inlets :",
               "code": "19.30.3",
               "children_count": 1,
@@ -1725,13 +1725,13 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depth beyond 45 cm of brick masonry chamber :",
           "code": "19.31",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "For 455x610 mm size",
               "code": "19.31.1",
               "children_count": 1,
@@ -1753,7 +1753,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "For 500x700 mm size",
               "code": "19.31.2",
               "children_count": 1,
@@ -1775,7 +1775,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "For 600x850 mm size",
               "code": "19.31.3",
               "children_count": 1,
@@ -1801,7 +1801,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Making soak pit 2.5 m diameter 3.0 metre deep with 45 x 45 cm dry brick honey comb shaft with bricks and S.W. drain pipe 100 mm diameter, 1.8 m long complete as per standard design.",
           "code": "19.32",
           "children_count": 1,
@@ -1835,7 +1835,7 @@
           "rate_display": "2890.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing S.W. intercepting trap in manholes with stiff mixture of cement mortar 1:1 (1 cement : 1 fine sand) including testing of joints etc. complete :",
           "code": "19.34",
           "children_count": 2,
@@ -1869,7 +1869,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Non Pressure NP-3 class (Medium duty) R.C.C. pipes including collars/spigot jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete",
           "code": "19.35",
           "children_count": 6,
@@ -1951,7 +1951,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Non Pressure NP-4 class (Heavy duty) R.C.C. pipes including collars/spigot jointed with stiff mixture of cement mortar in the proportion of 1:2 (1 cement : 2 fine sand) including testing of joints etc. complete",
           "code": "19.36",
           "children_count": 6,

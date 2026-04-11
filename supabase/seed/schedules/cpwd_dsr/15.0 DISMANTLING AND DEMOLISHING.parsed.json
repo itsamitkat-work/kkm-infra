@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "DISMANTLING AND DEMOLISHING",
       "code": "15.0",
-      "children_count": 66,
+      "children_count": 61,
       "children": [
         {
           "node_type": "item",
@@ -21,7 +21,7 @@
           "rate_display": "851.50"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Demolishing cement concrete manually/ by mechanical means including disposal of material within 50 metres lead as per direction of Engineer - in - charge.",
           "code": "15.2",
           "children_count": 2,
@@ -92,24 +92,18 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for scrapping, cleaning and straightening reinforcement from R.C.C. or R.B. work. kg",
+          "title": "Extra for scrapping, cleaning and straightening reinforcement from R.C.C. or R.B. work.",
           "code": "15.6",
           "children_count": 0,
           "children": [],
           "order_index": 7,
-          "source_page": 1
+          "source_page": 1,
+          "unit": "kg",
+          "rate": 9.05,
+          "rate_display": "9.05"
         },
         {
-          "node_type": "item",
-          "title": "",
-          "code": "9.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 8,
-          "source_page": 1
-        },
-        {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Demolishing brick work manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge.",
           "code": "15.7",
           "children_count": 4,
@@ -120,7 +114,7 @@
               "code": "15.7.1",
               "children_count": 0,
               "children": [],
-              "order_index": 10,
+              "order_index": 9,
               "source_page": 1,
               "unit": "cum",
               "rate": 704.9,
@@ -132,7 +126,7 @@
               "code": "15.7.2",
               "children_count": 0,
               "children": [],
-              "order_index": 11,
+              "order_index": 10,
               "source_page": 1,
               "unit": "cum",
               "rate": 1783.35,
@@ -144,7 +138,7 @@
               "code": "15.7.3",
               "children_count": 0,
               "children": [],
-              "order_index": 12,
+              "order_index": 11,
               "source_page": 1,
               "unit": "cum",
               "rate": 851.5,
@@ -156,18 +150,18 @@
               "code": "15.7.4",
               "children_count": 0,
               "children": [],
-              "order_index": 13,
+              "order_index": 12,
               "source_page": 1,
               "unit": "cum",
               "rate": 2060.2,
               "rate_display": "2060.20"
             }
           ],
-          "order_index": 9,
+          "order_index": 8,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Removing mortar from bricks and cleaning bricks including stacking within a lead of 50 m (stacks of cleaned bricks shall be measured):",
           "code": "15.8",
           "children_count": 3,
@@ -178,7 +172,7 @@
               "code": "15.8.1",
               "children_count": 0,
               "children": [],
-              "order_index": 15,
+              "order_index": 14,
               "source_page": 1
             },
             {
@@ -187,7 +181,7 @@
               "code": "15.8.2",
               "children_count": 0,
               "children": [],
-              "order_index": 16,
+              "order_index": 15,
               "source_page": 1
             },
             {
@@ -196,15 +190,15 @@
               "code": "15.8.3",
               "children_count": 0,
               "children": [],
-              "order_index": 17,
+              "order_index": 16,
               "source_page": 1
             }
           ],
-          "order_index": 14,
+          "order_index": 13,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Demolishing stone rubble masonry manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.9",
           "children_count": 2,
@@ -215,7 +209,7 @@
               "code": "15.9.1",
               "children_count": 0,
               "children": [],
-              "order_index": 19,
+              "order_index": 18,
               "source_page": 1,
               "unit": "cum",
               "rate": 1158.1,
@@ -227,18 +221,18 @@
               "code": "15.9.2",
               "children_count": 0,
               "children": [],
-              "order_index": 20,
+              "order_index": 19,
               "source_page": 1,
               "unit": "cum",
               "rate": 2458.95,
               "rate_display": "2458.95"
             }
           ],
-          "order_index": 18,
+          "order_index": 17,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling dressed stone work ashlar face stone work, marble work or precast concrete work manually/ by mechanical means including stacking of serviceable and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.10",
           "children_count": 2,
@@ -249,7 +243,7 @@
               "code": "15.10.1",
               "children_count": 0,
               "children": [],
-              "order_index": 22,
+              "order_index": 21,
               "source_page": 1,
               "unit": "cum",
               "rate": 1464.25,
@@ -261,18 +255,18 @@
               "code": "15.10.2",
               "children_count": 0,
               "children": [],
-              "order_index": 23,
+              "order_index": 22,
               "source_page": 1,
               "unit": "cum",
               "rate": 2877.75,
               "rate_display": "2877.75"
             }
           ],
-          "order_index": 21,
+          "order_index": 20,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Removing mortar from and cleaning stones and concrete articles (net quantity of stacks of cleaned materials will be measured):",
           "code": "15.11",
           "children_count": 2,
@@ -283,7 +277,7 @@
               "code": "15.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 25,
+              "order_index": 24,
               "source_page": 1,
               "unit": "cum",
               "rate": 478.55,
@@ -295,18 +289,18 @@
               "code": "15.11.2",
               "children_count": 0,
               "children": [],
-              "order_index": 26,
+              "order_index": 25,
               "source_page": 2,
               "unit": "cum",
               "rate": 689.2,
               "rate_display": "689.20"
             }
           ],
-          "order_index": 24,
+          "order_index": 23,
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling doors, windows and clerestory windows (steel or wood) shutter including chowkhats, architrave, holdfasts etc. complete and stacking within 50 metres lead :",
           "code": "15.12",
           "children_count": 2,
@@ -317,7 +311,7 @@
               "code": "15.12.1",
               "children_count": 0,
               "children": [],
-              "order_index": 28,
+              "order_index": 27,
               "source_page": 2,
               "unit": "each",
               "rate": 367.2,
@@ -329,18 +323,18 @@
               "code": "15.12.2",
               "children_count": 0,
               "children": [],
-              "order_index": 29,
+              "order_index": 28,
               "source_page": 2,
               "unit": "each",
               "rate": 502.75,
               "rate_display": "502.75"
             }
           ],
-          "order_index": 27,
+          "order_index": 26,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Taking out doors, windows and clerestory window shutters (steel or wood) including stacking within 50 metres lead :",
           "code": "15.13",
           "children_count": 2,
@@ -351,7 +345,7 @@
               "code": "15.13.1",
               "children_count": 0,
               "children": [],
-              "order_index": 31,
+              "order_index": 30,
               "source_page": 2,
               "unit": "each",
               "rate": 143.5,
@@ -363,18 +357,18 @@
               "code": "15.13.2",
               "children_count": 0,
               "children": [],
-              "order_index": 32,
+              "order_index": 31,
               "source_page": 2,
               "unit": "each",
               "rate": 188.9,
               "rate_display": "188.90"
             }
           ],
-          "order_index": 30,
+          "order_index": 29,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling wood work in frames, trusses, purlins and rafters up to 10 metres span and 5 metres height including stacking the material within 50 metres lead :",
           "code": "15.14",
           "children_count": 2,
@@ -385,7 +379,7 @@
               "code": "15.14.1",
               "children_count": 0,
               "children": [],
-              "order_index": 34,
+              "order_index": 33,
               "source_page": 2,
               "unit": "cum",
               "rate": 4459.1,
@@ -397,18 +391,18 @@
               "code": "15.14.2",
               "children_count": 0,
               "children": [],
-              "order_index": 35,
+              "order_index": 34,
               "source_page": 2,
               "unit": "metre",
               "rate": 17.85,
               "rate_display": "17.85"
             }
           ],
-          "order_index": 33,
+          "order_index": 32,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for dismantling trusses, rafters, purlins etc. of wood work for every additional span of one metre or part thereof beyond 10 metres :",
           "code": "15.15",
           "children_count": 2,
@@ -419,7 +413,7 @@
               "code": "15.15.1",
               "children_count": 0,
               "children": [],
-              "order_index": 37,
+              "order_index": 36,
               "source_page": 2,
               "unit": "metre"
             },
@@ -429,16 +423,16 @@
               "code": "15.15.2",
               "children_count": 0,
               "children": [],
-              "order_index": 38,
+              "order_index": 37,
               "source_page": 2,
               "unit": "metre"
             }
           ],
-          "order_index": 36,
+          "order_index": 35,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for dismantling trusses, rafters, purlins etc. of wood work for every additional height of one metre or part thereof beyond 5 metres :",
           "code": "15.16",
           "children_count": 2,
@@ -449,7 +443,7 @@
               "code": "15.16.1",
               "children_count": 0,
               "children": [],
-              "order_index": 40,
+              "order_index": 39,
               "source_page": 2,
               "unit": "metre"
             },
@@ -459,12 +453,12 @@
               "code": "15.16.2",
               "children_count": 0,
               "children": [],
-              "order_index": 41,
+              "order_index": 40,
               "source_page": 2,
               "unit": "metre"
             }
           ],
-          "order_index": 39,
+          "order_index": 38,
           "source_page": 2
         },
         {
@@ -473,81 +467,66 @@
           "code": "3.40",
           "children_count": 0,
           "children": [],
-          "order_index": 42,
+          "order_index": 41,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling steel work in single sections including dismembering and stacking within 50 metres lead in:",
           "code": "15.17",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "R.S. Joists kg",
+              "title": "R.S. Joists",
               "code": "15.17.1",
               "children_count": 0,
               "children": [],
-              "order_index": 44,
-              "source_page": 2
+              "order_index": 43,
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 3.4,
+              "rate_display": "3.40"
             },
             {
               "node_type": "item",
-              "title": "Channels, angles, tees and flats kg",
+              "title": "Channels, angles, tees and flats",
               "code": "15.17.2",
               "children_count": 0,
               "children": [],
-              "order_index": 46,
-              "source_page": 2
+              "order_index": 44,
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 2.3,
+              "rate_display": "2.30"
             }
           ],
-          "order_index": 43,
+          "order_index": 42,
           "source_page": 2
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "2.30",
-          "children_count": 0,
-          "children": [],
-          "order_index": 47,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "Dismantling steel work in built up sections in angles, tees, flats and channels including all gusset plates, bolts, nuts, cutting rivets, welding etc. including dismembering and stacking within 50 metres lead. kg",
+          "title": "Dismantling steel work in built up sections in angles, tees, flats and channels including all gusset plates, bolts, nuts, cutting rivets, welding etc. including dismembering and stacking within 50 metres lead.",
           "code": "15.18",
           "children_count": 0,
           "children": [],
-          "order_index": 48,
-          "source_page": 2
+          "order_index": 45,
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 5.65,
+          "rate_display": "5.65"
         },
         {
           "node_type": "item",
-          "title": "",
-          "code": "5.65",
-          "children_count": 0,
-          "children": [],
-          "order_index": 49,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "Dismantling steel work manually/ by mechanical means in built up sections without dismembering and stacking within 50 metres lead as per direction of Engineer-in-charge. kg",
+          "title": "Dismantling steel work manually/ by mechanical means in built up sections without dismembering and stacking within 50 metres lead as per direction of Engineer-in-charge.",
           "code": "15.19",
           "children_count": 0,
           "children": [],
-          "order_index": 50,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "3.85",
-          "children_count": 0,
-          "children": [],
-          "order_index": 51,
-          "source_page": 2
+          "order_index": 46,
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 3.85,
+          "rate_display": "3.85"
         },
         {
           "node_type": "item",
@@ -555,7 +534,7 @@
           "code": "15.20",
           "children_count": 0,
           "children": [],
-          "order_index": 52,
+          "order_index": 47,
           "source_page": 2,
           "unit": "metre"
         },
@@ -565,30 +544,24 @@
           "code": "15.21",
           "children_count": 0,
           "children": [],
-          "order_index": 53,
+          "order_index": 48,
           "source_page": 2,
           "unit": "metre"
         },
         {
           "node_type": "item",
-          "title": "Extra for marking of structural steel work required to be re-erected. kg",
+          "title": "Extra for marking of structural steel work required to be re-erected.",
           "code": "15.22",
           "children_count": 0,
           "children": [],
-          "order_index": 54,
-          "source_page": 2
+          "order_index": 49,
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 4.65,
+          "rate_display": "4.65"
         },
         {
-          "node_type": "item",
-          "title": "",
-          "code": "4.65",
-          "children_count": 0,
-          "children": [],
-          "order_index": 55,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling tile work in floors and roofs laid in cement mortar including stacking material within 50 metres lead.",
           "code": "15.23",
           "children_count": 2,
@@ -599,7 +572,7 @@
               "code": "15.23.1",
               "children_count": 0,
               "children": [],
-              "order_index": 57,
+              "order_index": 51,
               "source_page": 3,
               "unit": "sqm",
               "rate": 73.4,
@@ -611,14 +584,14 @@
               "code": "15.23.2",
               "children_count": 0,
               "children": [],
-              "order_index": 58,
+              "order_index": 52,
               "source_page": 3,
               "unit": "sqm",
               "rate": 113.35,
               "rate_display": "113.35"
             }
           ],
-          "order_index": 56,
+          "order_index": 50,
           "source_page": 3
         },
         {
@@ -627,7 +600,7 @@
           "code": "15.24",
           "children_count": 0,
           "children": [],
-          "order_index": 59,
+          "order_index": 53,
           "source_page": 3,
           "unit": "cum",
           "rate": 1317.65,
@@ -639,7 +612,7 @@
           "code": "15.25",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
+          "order_index": 54,
           "source_page": 3,
           "unit": "sqm",
           "rate": 266.45,
@@ -651,7 +624,7 @@
           "code": "15.26",
           "children_count": 0,
           "children": [],
-          "order_index": 61,
+          "order_index": 55,
           "source_page": 3,
           "unit": "sqm",
           "rate": 105.35,
@@ -663,14 +636,14 @@
           "code": "15.27",
           "children_count": 0,
           "children": [],
-          "order_index": 62,
+          "order_index": 56,
           "source_page": 3,
           "unit": "cum",
           "rate": 914.3,
           "rate_display": "914.30"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling roofing including ridges, hips, valleys and gutters etc., and stacking the material within 50 metres lead of:",
           "code": "15.28",
           "children_count": 2,
@@ -681,7 +654,7 @@
               "code": "15.28.1",
               "children_count": 0,
               "children": [],
-              "order_index": 64,
+              "order_index": 58,
               "source_page": 3,
               "unit": "sqm",
               "rate": 164.95,
@@ -693,14 +666,14 @@
               "code": "15.28.2",
               "children_count": 0,
               "children": [],
-              "order_index": 65,
+              "order_index": 59,
               "source_page": 3,
               "unit": "sqm",
               "rate": 77.3,
               "rate_display": "77.30"
             }
           ],
-          "order_index": 63,
+          "order_index": 57,
           "source_page": 3
         },
         {
@@ -709,7 +682,7 @@
           "code": "15.29",
           "children_count": 0,
           "children": [],
-          "order_index": 66,
+          "order_index": 60,
           "source_page": 3,
           "unit": "cum",
           "rate": 2664.65,
@@ -721,7 +694,7 @@
           "code": "15.30",
           "children_count": 0,
           "children": [],
-          "order_index": 67,
+          "order_index": 61,
           "source_page": 3,
           "unit": "sqm",
           "rate": 253.9,
@@ -733,7 +706,7 @@
           "code": "15.31",
           "children_count": 0,
           "children": [],
-          "order_index": 68,
+          "order_index": 62,
           "source_page": 3,
           "unit": "sqm",
           "rate": 209.9,
@@ -745,7 +718,7 @@
           "code": "15.32",
           "children_count": 0,
           "children": [],
-          "order_index": 69,
+          "order_index": 63,
           "source_page": 3,
           "unit": "sqm",
           "rate": 57.7,
@@ -757,14 +730,14 @@
           "code": "15.33",
           "children_count": 0,
           "children": [],
-          "order_index": 70,
+          "order_index": 64,
           "source_page": 3,
           "unit": "metre",
           "rate": 20.95,
           "rate_display": "20.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling and stacking within 50 metres lead, fencing posts or struts including all earth work and dismantling of concrete etc. in base of:",
           "code": "15.34",
           "children_count": 2,
@@ -775,7 +748,7 @@
               "code": "15.34.1",
               "children_count": 0,
               "children": [],
-              "order_index": 72,
+              "order_index": 66,
               "source_page": 3,
               "unit": "each",
               "rate": 230.9,
@@ -787,14 +760,14 @@
               "code": "15.34.2",
               "children_count": 0,
               "children": [],
-              "order_index": 73,
+              "order_index": 67,
               "source_page": 3,
               "unit": "each",
               "rate": 243.3,
               "rate_display": "243.30"
             }
           ],
-          "order_index": 71,
+          "order_index": 65,
           "source_page": 3
         },
         {
@@ -803,7 +776,7 @@
           "code": "15.35",
           "children_count": 0,
           "children": [],
-          "order_index": 74,
+          "order_index": 68,
           "source_page": 3,
           "unit": "each",
           "rate": 13.45,
@@ -811,12 +784,15 @@
         },
         {
           "node_type": "item",
-          "title": "Dismantling barbed wire or flexible wire rope in fencing including making rolls and stacking within 50 metres lead. kg 36.80",
+          "title": "Dismantling barbed wire or flexible wire rope in fencing including making rolls and stacking within 50 metres lead.",
           "code": "15.36",
           "children_count": 0,
           "children": [],
-          "order_index": 75,
-          "source_page": 3
+          "order_index": 69,
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 36.8,
+          "rate_display": "36.80"
         },
         {
           "node_type": "item",
@@ -824,7 +800,7 @@
           "code": "15.37",
           "children_count": 0,
           "children": [],
-          "order_index": 76,
+          "order_index": 70,
           "source_page": 3,
           "unit": "sqm",
           "rate": 64.85,
@@ -836,14 +812,14 @@
           "code": "15.38",
           "children_count": 0,
           "children": [],
-          "order_index": 77,
+          "order_index": 71,
           "source_page": 3,
           "unit": "sqm",
           "rate": 75.8,
           "rate_display": "75.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling wooden boardings in lining of walls and partitions, excluding supporting members but including stacking within 50 metres lead :",
           "code": "15.39",
           "children_count": 3,
@@ -854,7 +830,7 @@
               "code": "15.39.1",
               "children_count": 0,
               "children": [],
-              "order_index": 79,
+              "order_index": 73,
               "source_page": 3,
               "unit": "sqm",
               "rate": 61.0,
@@ -866,7 +842,7 @@
               "code": "15.39.2",
               "children_count": 0,
               "children": [],
-              "order_index": 80,
+              "order_index": 74,
               "source_page": 3,
               "unit": "sqm",
               "rate": 77.75,
@@ -878,18 +854,18 @@
               "code": "15.39.3",
               "children_count": 0,
               "children": [],
-              "order_index": 81,
+              "order_index": 75,
               "source_page": 4,
               "unit": "sqm",
               "rate": 90.35,
               "rate_display": "90.35"
             }
           ],
-          "order_index": 78,
+          "order_index": 72,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling precast concrete or stone slabs in walls, partition walls etc. including stacking within 50 metres lead :",
           "code": "15.40",
           "children_count": 2,
@@ -900,7 +876,7 @@
               "code": "15.40.1",
               "children_count": 0,
               "children": [],
-              "order_index": 83,
+              "order_index": 77,
               "source_page": 4,
               "unit": "sqm",
               "rate": 289.3,
@@ -912,14 +888,14 @@
               "code": "15.40.2",
               "children_count": 0,
               "children": [],
-              "order_index": 84,
+              "order_index": 78,
               "source_page": 4,
               "unit": "sqm",
               "rate": 433.55,
               "rate_display": "433.55"
             }
           ],
-          "order_index": 82,
+          "order_index": 76,
           "source_page": 4
         },
         {
@@ -928,14 +904,14 @@
           "code": "15.41",
           "children_count": 0,
           "children": [],
-          "order_index": 85,
+          "order_index": 79,
           "source_page": 4,
           "unit": "sqm",
           "rate": 56.35,
           "rate_display": "56.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling C.I. or asbestos rain water pipe with fittings and clamps including stacking the material within 50 metres lead :",
           "code": "15.42",
           "children_count": 3,
@@ -946,7 +922,7 @@
               "code": "15.42.1",
               "children_count": 0,
               "children": [],
-              "order_index": 87,
+              "order_index": 81,
               "source_page": 4,
               "unit": "metre",
               "rate": 75.7,
@@ -958,7 +934,7 @@
               "code": "15.42.2",
               "children_count": 0,
               "children": [],
-              "order_index": 88,
+              "order_index": 82,
               "source_page": 4,
               "unit": "metre",
               "rate": 78.0,
@@ -970,18 +946,18 @@
               "code": "15.42.3",
               "children_count": 0,
               "children": [],
-              "order_index": 89,
+              "order_index": 83,
               "source_page": 4,
               "unit": "metre",
               "rate": 80.25,
               "rate_display": "80.25"
             }
           ],
-          "order_index": 86,
+          "order_index": 80,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling manually/ by mechanical means including stacking of serviceable material and disposal of unserviceable material within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.43",
           "children_count": 2,
@@ -992,7 +968,7 @@
               "code": "15.43.1",
               "children_count": 0,
               "children": [],
-              "order_index": 91,
+              "order_index": 85,
               "source_page": 4,
               "unit": "sqm",
               "rate": 217.45,
@@ -1004,18 +980,18 @@
               "code": "15.43.2",
               "children_count": 0,
               "children": [],
-              "order_index": 92,
+              "order_index": 86,
               "source_page": 4,
               "unit": "sqm",
               "rate": 428.5,
               "rate_display": "428.50"
             }
           ],
-          "order_index": 90,
+          "order_index": 84,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling G.I. pipes (external work) including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means including stacking of pipes within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.44",
           "children_count": 2,
@@ -1026,7 +1002,7 @@
               "code": "15.44.1",
               "children_count": 0,
               "children": [],
-              "order_index": 94,
+              "order_index": 88,
               "source_page": 4,
               "unit": "metre",
               "rate": 149.8,
@@ -1038,18 +1014,18 @@
               "code": "15.44.2",
               "children_count": 0,
               "children": [],
-              "order_index": 95,
+              "order_index": 89,
               "source_page": 4,
               "unit": "metre",
               "rate": 161.4,
               "rate_display": "161.40"
             }
           ],
-          "order_index": 93,
+          "order_index": 87,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling C.I. pipes including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means breaking lead caulked joints, melting of lead and making into blocks including stacking of pipes & lead at site within 50 metre lead as per direction of Engineer-in-charge:",
           "code": "15.45",
           "children_count": 3,
@@ -1060,7 +1036,7 @@
               "code": "15.45.1",
               "children_count": 0,
               "children": [],
-              "order_index": 97,
+              "order_index": 91,
               "source_page": 4,
               "unit": "metre",
               "rate": 332.4,
@@ -1072,7 +1048,7 @@
               "code": "15.45.2",
               "children_count": 0,
               "children": [],
-              "order_index": 98,
+              "order_index": 92,
               "source_page": 4,
               "unit": "metre",
               "rate": 456.65,
@@ -1084,18 +1060,18 @@
               "code": "15.45.3",
               "children_count": 0,
               "children": [],
-              "order_index": 99,
+              "order_index": 93,
               "source_page": 4,
               "unit": "metre",
               "rate": 614.3,
               "rate_display": "614.30"
             }
           ],
-          "order_index": 96,
+          "order_index": 90,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling steel cylinder R.C. pipes including excavation and refilling trenches after taking out the pipes, manually/ by mechanical means breaking lead caulked joints, melting of lead and making into blocks including stacking of pipes & lead at site within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.46",
           "children_count": 2,
@@ -1106,7 +1082,7 @@
               "code": "15.46.1",
               "children_count": 0,
               "children": [],
-              "order_index": 101,
+              "order_index": 95,
               "source_page": 4,
               "unit": "metre",
               "rate": 695.25,
@@ -1118,18 +1094,18 @@
               "code": "15.46.2",
               "children_count": 0,
               "children": [],
-              "order_index": 102,
+              "order_index": 96,
               "source_page": 4,
               "unit": "metre",
               "rate": 1752.45,
               "rate_display": "1752.45"
             }
           ],
-          "order_index": 100,
+          "order_index": 94,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling asbestos cement pressure pipes including excavation and refilling trenches after taking out the pipes manually/ by mechanical means and stacking the pipes within 50 metres lead as per direction of Engineer-in-charge :",
           "code": "15.47",
           "children_count": 2,
@@ -1140,7 +1116,7 @@
               "code": "15.47.1",
               "children_count": 0,
               "children": [],
-              "order_index": 104,
+              "order_index": 98,
               "source_page": 4,
               "unit": "metre",
               "rate": 332.15,
@@ -1152,14 +1128,14 @@
               "code": "15.47.2",
               "children_count": 0,
               "children": [],
-              "order_index": 105,
+              "order_index": 99,
               "source_page": 4,
               "unit": "metre",
               "rate": 403.05,
               "rate_display": "403.05"
             }
           ],
-          "order_index": 103,
+          "order_index": 97,
           "source_page": 4
         },
         {
@@ -1168,7 +1144,7 @@
           "code": "15.48",
           "children_count": 0,
           "children": [],
-          "order_index": 106,
+          "order_index": 100,
           "source_page": 4,
           "unit": "each",
           "rate": 697.4,
@@ -1180,7 +1156,7 @@
           "code": "15.49",
           "children_count": 0,
           "children": [],
-          "order_index": 107,
+          "order_index": 101,
           "source_page": 5,
           "unit": "each",
           "rate": 406.75,
@@ -1192,7 +1168,7 @@
           "code": "15.50",
           "children_count": 0,
           "children": [],
-          "order_index": 108,
+          "order_index": 102,
           "source_page": 5,
           "unit": "each",
           "rate": 4623.7,
@@ -1204,7 +1180,7 @@
           "code": "15.51",
           "children_count": 0,
           "children": [],
-          "order_index": 109,
+          "order_index": 103,
           "source_page": 5,
           "unit": "each",
           "rate": 958.75,
@@ -1216,14 +1192,14 @@
           "code": "15.52",
           "children_count": 0,
           "children": [],
-          "order_index": 110,
+          "order_index": 104,
           "source_page": 5,
           "unit": "each",
           "rate": 112.05,
           "rate_display": "112.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling of C.I. sluice valve including stacking of useful materials within a lead of 50 metres",
           "code": "15.53",
           "children_count": 2,
@@ -1234,7 +1210,7 @@
               "code": "15.53.1",
               "children_count": 0,
               "children": [],
-              "order_index": 112,
+              "order_index": 106,
               "source_page": 5,
               "unit": "each",
               "rate": 319.5,
@@ -1246,14 +1222,14 @@
               "code": "15.53.2",
               "children_count": 0,
               "children": [],
-              "order_index": 113,
+              "order_index": 107,
               "source_page": 5,
               "unit": "each",
               "rate": 1184.15,
               "rate_display": "1184.15"
             }
           ],
-          "order_index": 111,
+          "order_index": 105,
           "source_page": 5
         },
         {
@@ -1262,14 +1238,14 @@
           "code": "15.54",
           "children_count": 0,
           "children": [],
-          "order_index": 114,
+          "order_index": 108,
           "source_page": 5,
           "unit": "each",
           "rate": 726.35,
           "rate_display": "726.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dismantling of cement concrete platform along with curtain walls and base concrete etc. including stacking of useful materials near the site and disposal of unserviceable materials within 50 metres lead :",
           "code": "15.55",
           "children_count": 3,
@@ -1280,7 +1256,7 @@
               "code": "15.55.1",
               "children_count": 0,
               "children": [],
-              "order_index": 116,
+              "order_index": 110,
               "source_page": 5,
               "unit": "each",
               "rate": 1104.05,
@@ -1292,7 +1268,7 @@
               "code": "15.55.2",
               "children_count": 0,
               "children": [],
-              "order_index": 117,
+              "order_index": 111,
               "source_page": 5,
               "unit": "each",
               "rate": 1693.35,
@@ -1304,14 +1280,14 @@
               "code": "15.55.3",
               "children_count": 0,
               "children": [],
-              "order_index": 118,
+              "order_index": 112,
               "source_page": 5,
               "unit": "each",
               "rate": 2396.95,
               "rate_display": "2396.95"
             }
           ],
-          "order_index": 115,
+          "order_index": 109,
           "source_page": 5
         },
         {
@@ -1320,7 +1296,7 @@
           "code": "15.56",
           "children_count": 0,
           "children": [],
-          "order_index": 119,
+          "order_index": 113,
           "source_page": 5,
           "unit": "sqm",
           "rate": 54.65,
@@ -1332,7 +1308,7 @@
           "code": "15.57",
           "children_count": 0,
           "children": [],
-          "order_index": 120,
+          "order_index": 114,
           "source_page": 5,
           "unit": "sqm",
           "rate": 56.35,
@@ -1344,7 +1320,7 @@
           "code": "15.58",
           "children_count": 0,
           "children": [],
-          "order_index": 121,
+          "order_index": 115,
           "source_page": 5,
           "unit": "cum",
           "rate": 2818.9,
@@ -1356,7 +1332,7 @@
           "code": "15.59",
           "children_count": 0,
           "children": [],
-          "order_index": 122,
+          "order_index": 116,
           "source_page": 5,
           "unit": "cum",
           "rate": 420.8,
@@ -1368,7 +1344,7 @@
           "code": "15.60",
           "children_count": 0,
           "children": [],
-          "order_index": 123,
+          "order_index": 117,
           "source_page": 5,
           "unit": "cum",
           "rate": 263.95,
@@ -1379,12 +1355,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/15.0 DISMANTLING AND DEMOLISHING.pdf",
-    "row_count": 124,
+    "row_count": 118,
     "note_count": 0,
-    "leaf_count": 98,
-    "duplicate_codes": [
-      "3.40"
-    ],
+    "leaf_count": 93,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }

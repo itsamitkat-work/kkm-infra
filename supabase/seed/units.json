@@ -81,6 +81,14 @@
       "symbol": "quintal"
     },
     {
+      "name": "kilogram",
+      "display_name": "Kilogram",
+      "dimension": "mass",
+      "is_base": true,
+      "conversion_factor": 1,
+      "symbol": "kg"
+    },
+    {
       "name": "per metre per cm girth (60cm deep)",
       "display_name": "Per Metre Per Cm Girth (60cm Deep)",
       "dimension": "length",

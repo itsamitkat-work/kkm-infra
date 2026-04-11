@@ -9,7 +9,7 @@
       "children_count": 64,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying in position specified grade of reinforced cement concrete, excluding the cost of centering, shuttering, finishing and reinforcement - All work up to plinth level :",
           "code": "5.1",
           "children_count": 4,
@@ -67,7 +67,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Reinforced cement concrete work in walls (any thickness), including attached pilasters, buttresses, plinth and string courses, fillets, columns, pillars, piers, abutments, posts and struts etc. above plinth level up to floor five level, excluding cost of centering, shuttering, finishing and reinforcement :",
           "code": "5.2",
           "children_count": 2,
@@ -245,7 +245,7 @@
           "rate_display": "11283.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Centering and shuttering including strutting, propping etc. and removal of form for",
           "code": "5.9",
           "children_count": 21,
@@ -432,7 +432,7 @@
               "rate_display": "392.15"
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Edges of slabs and breaks in floors and walls",
               "code": "5.9.16",
               "children_count": 2,
@@ -530,7 +530,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing tie bolt, spring coil and plastic cone in wall shuttering complete as per the direction of Engineer-in-charge.",
           "code": "5.10",
           "children_count": 4,
@@ -576,7 +576,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for additional height in centering, shuttering where ever required with adequate bracing, propping etc., including cost of de-shuttering and decentering at all levels, over a height of 3.5 m, for every additional height of 1 metre or part thereof (Plan area to be measured).",
           "code": "5.11",
           "children_count": 1,
@@ -742,7 +742,7 @@
           "rate_display": "11872.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing precast cement concrete Jali 1:2:4 (1 cement : 2 coarse sand (zone-III) : 4 graded stone aggregate 6 mm nominal size ), reinforced with 1.6 mm dia mild steel wire, including centering and shuttering, roughening cleaning, fixing and finishing in cement mortar 1:3 (1 cement: 3 fine sand) etc. complete, excluding plastering of the jambs, sills and soffits.",
           "code": "5.18",
           "children_count": 3,
@@ -848,166 +848,208 @@
           "rate_display": "485.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Steel reinforcement for R.C.C. work including straightening, cutting, bending, placing in position and binding all complete upto plinth level.",
           "code": "5.22",
           "children_count": 6,
           "children": [
             {
               "node_type": "item",
-              "title": "Mild steel and Medium Tensile steel bars kg 107.10",
+              "title": "Mild steel and Medium Tensile steel bars",
               "code": "5.22.1",
               "children_count": 0,
               "children": [],
               "order_index": 73,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.1,
+              "rate_display": "107.10"
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire kg 95.80",
+              "title": "Hard drawn steel wire",
               "code": "5.22.2",
               "children_count": 0,
               "children": [],
               "order_index": 74,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 95.8,
+              "rate_display": "95.80"
             },
             {
               "node_type": "item",
-              "title": "Cold twisted bars kg 107.85",
+              "title": "Cold twisted bars",
               "code": "5.22.3",
               "children_count": 0,
               "children": [],
               "order_index": 75,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             },
             {
               "node_type": "item",
-              "title": "Hot rolled deformed bars kg 107.85",
+              "title": "Hot rolled deformed bars",
               "code": "5.22.4",
               "children_count": 0,
               "children": [],
               "order_index": 76,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire fabric kg 102.20",
+              "title": "Hard drawn steel wire fabric",
               "code": "5.22.5",
               "children_count": 0,
               "children": [],
               "order_index": 77,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 102.2,
+              "rate_display": "102.20"
             },
             {
               "node_type": "item",
-              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 107.85",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more.",
               "code": "5.22.6",
               "children_count": 0,
               "children": [],
               "order_index": 78,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             }
           ],
           "order_index": 72,
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Steel reinforcement for R.C.C. work including straightening, cutting, bending, placing in position and binding all complete above plinth level.",
           "code": "5.22A",
           "children_count": 6,
           "children": [
             {
               "node_type": "item",
-              "title": "Mild steel and Medium Tensile steel bars kg 107.10",
+              "title": "Mild steel and Medium Tensile steel bars",
               "code": "5.22A.1",
               "children_count": 0,
               "children": [],
               "order_index": 80,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.1,
+              "rate_display": "107.10"
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire kg 95.80",
+              "title": "Hard drawn steel wire",
               "code": "5.22A.2",
               "children_count": 0,
               "children": [],
               "order_index": 81,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 95.8,
+              "rate_display": "95.80"
             },
             {
               "node_type": "item",
-              "title": "Cold twisted bars kg 107.85",
+              "title": "Cold twisted bars",
               "code": "5.22A.3",
               "children_count": 0,
               "children": [],
               "order_index": 82,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             },
             {
               "node_type": "item",
-              "title": "Hot rolled deformed bars kg 107.85",
+              "title": "Hot rolled deformed bars",
               "code": "5.22A.4",
               "children_count": 0,
               "children": [],
               "order_index": 83,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             },
             {
               "node_type": "item",
-              "title": "Hard drawn steel wire fabric kg 102.20",
+              "title": "Hard drawn steel wire fabric",
               "code": "5.22A.5",
               "children_count": 0,
               "children": [],
               "order_index": 84,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 102.2,
+              "rate_display": "102.20"
             },
             {
               "node_type": "item",
-              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 107.85",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more.",
               "code": "5.22A.6",
               "children_count": 0,
               "children": [],
               "order_index": 85,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 107.85,
+              "rate_display": "107.85"
             }
           ],
           "order_index": 79,
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete upto plinth level.",
           "code": "5.22B",
           "children_count": 1,
           "children": [
             {
               "node_type": "item",
-              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 99.65",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more.",
               "code": "5.22B.1",
               "children_count": 0,
               "children": [],
               "order_index": 87,
-              "source_page": 6
+              "source_page": 6,
+              "unit": "kg",
+              "rate": 99.65,
+              "rate_display": "99.65"
             }
           ],
           "order_index": 86,
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Steel reinforcement for R.C.C. work ready to use “cut and bend” rebars of approved make from factory/workshop to construction site including placing in position and binding all complete above plinth level.",
           "code": "5.22C",
           "children_count": 1,
           "children": [
             {
               "node_type": "item",
-              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more. kg 99.65 MISCELLANEOUS",
+              "title": "Thermo-Mechanically Treated bars of grade Fe-500D or more.",
               "code": "5.22C.1",
               "children_count": 0,
               "children": [],
               "order_index": 89,
-              "source_page": 7
+              "source_page": 7,
+              "unit": "kg",
+              "rate": 99.65,
+              "rate_display": "99.65"
             }
           ],
           "order_index": 88,
@@ -1039,15 +1081,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing in position copper plate as per design for expansion joints. kg 811.85",
+          "title": "Providing and fixing in position copper plate as per design for expansion joints.",
           "code": "5.25",
           "children_count": 0,
           "children": [],
+          "order_index": 92,
+          "source_page": 7,
           "unit": "kg",
           "rate": 811.85,
-          "rate_display": "811.85",
-          "order_index": 92,
-          "source_page": 7
+          "rate_display": "811.85"
         },
         {
           "node_type": "item",
@@ -1075,7 +1117,7 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing in position 12 mm thick bitumen impregnated fiber board conforming to IS: 1838, including cost of primer, sealing compound Grade-A in expansion joints. per cm depth per 100m 655.75",
+          "title": "Providing and fixing in position 12 mm thick bitumen impregnated fiber board conforming to IS: 1838, including cost of primer, sealing compound Grade-A in expansion joints.",
           "code": "5.28",
           "children_count": 0,
           "children": [],
@@ -1086,13 +1128,13 @@
           "rate_display": "655.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing sheet covering over expansion joints with iron screws as per design.",
           "code": "5.29",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Non-asbestos 6 mm thick fibre cement board, Type-A, Category-III as per IS: 14862:2000",
               "code": "5.29.1",
               "children_count": 2,
@@ -1126,7 +1168,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Aluminium fluted strips 3.15 mm thick.",
               "code": "5.29.2",
               "children_count": 2,
@@ -1160,7 +1202,7 @@
               "source_page": 7
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Cement bonded wood particle board 6 mm thick as per IS : 14276",
               "code": "5.29.3",
               "children_count": 2,
@@ -1242,13 +1284,13 @@
           "rate_display": "467.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources, Portland Pozzolana / Ordinary Portland /Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge, for the following grades of concrete.:",
           "code": "5.33",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works upto plinth level",
               "code": "5.33.1",
               "children_count": 5,
@@ -1318,7 +1360,7 @@
               "source_page": 8
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works above plinth level upto floor V level",
               "code": "5.33.2",
               "children_count": 5,
@@ -1392,13 +1434,13 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources and using recycled concrete aggregate (RCA) as coarse aggregate and fine aggregate within permissible utilization of 20% each, Portland Pozzolana /Ordinary Portland/Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge; for the following grades of concrete.",
           "code": "5.33A",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works upto plinth level",
               "code": "5.33A.1",
               "children_count": 1,
@@ -1420,7 +1462,7 @@
               "source_page": 9
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works above plinth level up to floor V level",
               "code": "5.33A.2",
               "children_count": 1,
@@ -1447,7 +1489,7 @@
         },
         {
           "node_type": "item",
-          "title": "Add for using extra cement in the items of design mix over and above the specified cement content therein. quintal 733.50",
+          "title": "Add for using extra cement in the items of design mix over and above the specified cement content therein.",
           "code": "5.35",
           "children_count": 0,
           "children": [],
@@ -1494,7 +1536,7 @@
           "rate_display": "355.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and applying pre tested and approved water based concrete curing compound to concrete/ masonry surface, all as per manufacturer’s specification and direction of Engineer-in-charge.",
           "code": "5.41",
           "children_count": 1,
@@ -1516,7 +1558,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing parallel threaded couplers conforming to IS code on “Reinforcement Couplers for Mechanical Splices of Bars for Concrete Reinforcement - Specification”, to reinforcement bars including threading, enlargement at connection by forging, protecting the prepared reinforcement bars and related operations as required to complete the works per direction of Engineer- in-Charge.",
           "code": "5.42",
           "children_count": 5,
@@ -1586,7 +1628,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position Stainless steel Grade 304 plate-1.0 mm thick as per design for expansion joints.",
           "code": "5.43",
           "children_count": 2,
@@ -1620,7 +1662,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of expansion joint system related with floor location as per drawings and direction of Engineer-In-Charge. The joints system will be of extruded aluminum base members, self aligning / self centering arrangement and support plates etc. as per ASTM B221-02. The system shall be such that it provides floor to floor /floor to wall expansion control system for various vertical localtion in load application areas that accommodates multi directional seismic movement without stress to it’s components. System shall consist of metal profiles with an universal aluminum base member designed to accommodate various project conditions and finish floor treatments. The cover plate shall be designed of width and thickness required to satisfy projects movement and loading requirements and secured to base members by utilizing manufacturer’s pre-engineered self- centering arrangement that freely rotates / moves in all directions. The Self - centering arrangement shall exhibit circular sphere ends that lock and slide inside the corresponding aluminum extrusion cavity to allow freedom of movement and flexure in all directions including vertical displacement. Provision of Moisture Barrier Membrane in the Joint System to have watertight joint is mandatory requirement all as per the manufactures design and as approved by Engineer -in- Charge. (Material shall conform to ASTM 6063).",
           "code": "5.44",
           "children_count": 3,
@@ -1666,7 +1708,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of expansion joint system related with wall joint (internal/external) location as per drawings and direction of Engineer-In- Charge. The joints shall be of extruded aluminum base members, self aligning / centering arrangement and support plates as per ASTM B221- 02. The material shall be such that it provides an Expansion Joints System suitable for vertical wall to wall/ wall to corner application, both new and existing construction in office Buildings & complexes with no slipping down tendency amongst the components of the Joint System. The Joint System shall utilize light weight aluminum profiles exhibiting minimal exposed aluminum surfaces mechanically snap locking the multicellular to facilitate movement. (Material shall conform to ASTM 6063).",
           "code": "5.45",
           "children_count": 3,
@@ -1712,7 +1754,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of expansion joint system of approved make and manufactures for various roof locations as per approved drawings and direction of Engineer-In-Charge. The joints shall be of extruded aluminum base members with, self aligning and self centering arragement support plates as per ASTM B221-02. The system shall be such that it provides watertight roof to roof/roof to corner joint cover expansion control system that is capable of accommodating multidirectional seismic movement without stress to its components. System shall consist of metal profile that incorporates an universal aluminum base member designed to accommodate various project conditions and roof treatments. The cover plate shall be designed of width and thickness required to satisfy movement and loading requirements and secured to base members by utilizing manufacturer’s pre-engineered self-centering arrangement that freely rotates / moves in all directions. The Self centering arrangement shall exhibit circular sphere ends that lock and slide inside the corresponding aluminum extrusion cavity to allow freedom of movement and flexure in all directions including vertical displacement. The Joint System shall resists damage or deterioration from the impact of falling ice, exposure to UV, airborne contaminants and occasional foot traffic from maintenance personnel. Provision of Moisture Barrier Membrane in the Joint System to have water tight joint is mandatory requirement. (Material shall conform to ASTM 6063).",
           "code": "5.46",
           "children_count": 3,
@@ -1758,7 +1800,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position factory made precast RCC M-40 door and window frame fixing with hold fast embedded in 1:3:6 concrete block, having excellent smooth finish as per IS: 6523 with reinforcement of 3 Nos, 6 mm dia main bars tied with 3 mm M.S stirrups placed @ 200 mm C/C and 6 numbers high strength polymer blocks of required size for fixing hinges including providing 6 nos. specially designed M.S. galvanised sleeves for accomodating 6 mm dia fully threaded bolts for fixing hold fast on vertical members, providing suitable arrangement for recieving sliding door bolts and tower bolt etc. all complete, as per the direction of Engineer-in-charge. The frame shall be measured in running metre correct to two places of decimal.",
           "code": "5.47",
           "children_count": 3,
@@ -1804,7 +1846,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Reinforced cement concrete for construction of piers, abutments, portal frames, pier caps and bearing pedestals and seismic arresters over pier/ abutment caps at all locations with specified grade using Ordinary Portland Cement (conforming to strength requirement of IS:8112) including the cost of steel centering and shuttering etc. complete, including testing of materials etc. for casting pier & pier cap in one/two stage, necessary tools, plants, machinery and all related operations as required to complete the work as per drawings and Specifications with all leads, lifts and depths true to level and position but excluding the cost of providing reinforcement. Reinforcement shall be measured and paid separately.",
           "code": "5.48",
           "children_count": 3,

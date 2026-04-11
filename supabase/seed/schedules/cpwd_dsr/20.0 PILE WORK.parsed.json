@@ -29,7 +29,7 @@
       "children_count": 10,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, driving with hydraulic piling rigs with power units and installing driven cast-in-situ reinforced cement concrete piles of grade M-25 of specified diameter and length below the pile cap, to carry safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of shoe and the length of pile to be embedded in the pile cap etc. all complete. (Length of pile for payment shall be measured from top of shoe to the bottom of pile cap) :",
           "code": "20.1",
           "children_count": 8,
@@ -135,7 +135,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring, providing and installation bored cast-in-situ reinforced cement concrete piles of grade M-25 of specified diameter and length below the pile cap, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and temporary casing of appropriate length for setting out and removal of same and the length of the pile to be embedded in the pile cap etc. by percussion drilling using Direct mud circulation (DMC) or Bailer and chisel technique by tripod and mechanical Winch Machine all complete, including removal of excavated earth with all its lifts and leads (length of pile for payment shall be measured up to bottom of pile cap).",
           "code": "20.2",
           "children_count": 4,
@@ -193,7 +193,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring, providing and installation bored cast-in-situ reinforced cement concrete piles of garde M-25 of specified diameter and length below pile cap, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and temporary casing of appropriate length for setting out and removal of same and the length of the pile to be embedded in the pile cap etc. by Crawler mounted, telescopic boom hydraulic pilling Rig all complete, including removal of excavated earth with all its lifts and leads (length of pile for payment shall be measured up to bottom of pile cap).",
           "code": "20.2A",
           "children_count": 5,
@@ -264,7 +264,7 @@
           "unit": "metre"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring with hydraulic piling rigs with power units, providing and installing cast in situ single under reamed piles of specified diameter and length below pile cap in M-25 cement concrete, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and the length of the pile to be embedded in pile cap etc. all complete. (Length of pile for payment shall be measured upto to the bottom of pile cap) :",
           "code": "20.3",
           "children_count": 4,
@@ -322,7 +322,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra over single under ream for providing additional bulbs in under reamed piles, under specified diameter(only the nos. of extra bulbs are to be paid)",
           "code": "20.4",
           "children_count": 4,
@@ -380,7 +380,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, driving (with vibrating pile driving hammer complete with power units & accessories) and installing driven Pre-cast reinforced cement concrete piles of specified diameter and length below the pile cap in M-25 cement concrete to carry safe working load not less than specified with a central through preformed hole with M.S. black pipe of dia, 40 mm for grouting with cement sand grouting of mix 1:2 (1cement : 2 coarse sand) under sufficient positive pressure to ensure complete filling including centring, shuttering, driving and removing the steel casing pipe and lifting casing etc. complete but excluding the cost of steel reinforcement. (Length of pile for payment shall be measured from top of the shoe to the bottom of pile cap).",
           "code": "20.5",
           "children_count": 6,
@@ -462,13 +462,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Vertical load testing of piles in accordance with IS 2911 (Part IV) including installation of loading platform by Kentledge/Anchor piles method and preparation of pile head or construction of test cap and dismantling of test cap after test etc. complete as per specification & the direction of Engineer in-charge.",
           "code": "20.6",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single pile upto 50 tonne Safe capacity",
               "code": "20.6.1",
               "children_count": 2,
@@ -496,7 +496,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single pile above 50 tonne and upto 100 tonne Safe capacity",
               "code": "20.6.2",
               "children_count": 2,
@@ -524,7 +524,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Group of two or more piles upto 50 tonne Safe capacity",
               "code": "20.6.3",
               "children_count": 2,
@@ -556,13 +556,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cyclic vertical load testing of pile in accordance with IS Code of practice IS:2911 (part IV) by Kentledge method including preparation of pile head etc for.",
           "code": "20.7",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single pile",
               "code": "20.7.1",
               "children_count": 2,
@@ -590,7 +590,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Group of two or more piles",
               "code": "20.7.2",
               "children_count": 1,
@@ -613,7 +613,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Lateral load testing of single pile in accordance with IS : Code of practice IS: 2911 (Part IV) for determining safe allowable lateral load on pile :",
           "code": "20.8",
           "children_count": 2,

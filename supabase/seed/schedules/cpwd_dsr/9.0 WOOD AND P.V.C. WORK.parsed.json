@@ -29,7 +29,7 @@
       "children_count": 161,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing wood work in frames of doors, windows, clerestory windows and other frames, wrought framed and fixed in position with hold fast lugs or with dash fasteners of required dia & length (hold fast lugs or dash fastener shall be paid for separately).",
           "code": "9.1",
           "children_count": 3,
@@ -87,7 +87,7 @@
           "rate_display": "131981.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing wood work in frames of false ceiling, partitions etc. sawn and fixed in position with necessary stainless steel screws etc.",
           "code": "9.3",
           "children_count": 2,
@@ -121,7 +121,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for additional labour for circular works, such as in frames of fan light",
           "code": "9.4",
           "children_count": 3,
@@ -167,13 +167,13 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing panelled or panelled and glazed shutters for doors, windows and clerestory windows, fixing with butt hinges of required size with necessary screws, excluding panelling which will be paid for separately, all complete as per direction of Engineer-in-charge. (Note: Butt hinges and necessary screws shall be paid separately)",
           "code": "9.5",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Second class teak wood",
               "code": "9.5.1",
               "children_count": 2,
@@ -207,7 +207,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kiln seasoned and chemically treated hollock wood",
               "code": "9.5.2",
               "children_count": 2,
@@ -241,7 +241,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kiln seasoned selected planks of sheesham wood",
               "code": "9.5.3",
               "children_count": 2,
@@ -279,7 +279,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 35 mm thick factory made laminated veneer lumber door shutter conforming to IS : 14616 and TADS 15:2001 (Part B), fixing with butt hinges of required size with necessary screws, all complete as per directions of Engineer- in-charge and panelling with panels of : (Note:- Butt hinges and necessary screws shall be paid separately)",
           "code": "9.6",
           "children_count": 3,
@@ -325,7 +325,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing panelling or panelling and glazing in panelled or panelled and glazed shutters for doors, windows and clerestory windows (Area of opening for panel inserts excluding portion inside grooves or rebates to be measured). Panelling for panelled or panelled and glazed shutters 25 mm to 40 mm thick.",
           "code": "9.7",
           "children_count": 8,
@@ -355,7 +355,7 @@
               "rate_display": "2327.10"
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Ply wood 5 ply, 9 mm thick",
               "code": "9.7.3",
               "children_count": 2,
@@ -389,7 +389,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Ply wood 7 ply, 9 mm thick",
               "code": "9.7.4",
               "children_count": 1,
@@ -411,7 +411,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Particle Board 12 mm thick",
               "code": "9.7.5",
               "children_count": 4,
@@ -469,7 +469,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Coir Veneer Board (conforming to IS 14842)",
               "code": "9.7.6",
               "children_count": 1,
@@ -491,7 +491,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Float glass panes",
               "code": "9.7.7",
               "children_count": 2,
@@ -541,13 +541,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing glazed shutters for doors, windows and clerestory windows using 4 mm thick float glass panes (weight not less than 10 kg per sqm) fixing with ISI marked M.S. pressed butt hinges bright finished of required size with necessary screws.",
           "code": "9.9",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Second class teak wood",
               "code": "9.9.1",
               "children_count": 2,
@@ -581,7 +581,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kiln seasoned and chemically treated hollock wood",
               "code": "9.9.2",
               "children_count": 2,
@@ -615,7 +615,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kiln seasoned selected planks of sheesham wood",
               "code": "9.9.3",
               "children_count": 2,
@@ -653,7 +653,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made laminated veneer lumber glazed shutter conforming to IS: 14616 and TADS 15:2001 (Part B), using 4 mm thick float glass panes for doors, windows and clerestory windows, fixing with butt hinges of required size with necessary screws, all as per directions of Engineer-in-charge (Note:- Butt hinges and necessary screws shall be paid separately)",
           "code": "9.10",
           "children_count": 1,
@@ -675,7 +675,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for providing heavy sheet float glass panes instead of ordinary float glass in glazed doors, windows and clerestory window shutters. (Area of opening for glass panes excluding portion inside rebate shall be measured)",
           "code": "9.11",
           "children_count": 1,
@@ -733,13 +733,13 @@
           "rate_display": "193.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Deduct for not providing hinges in doors, windows or clerestory window shutters with :",
           "code": "9.15",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "ISI marked Stainless steel butt hinges with stainless steel screws :",
               "code": "9.15.1",
               "children_count": 1,
@@ -761,7 +761,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "ISI marked M.S. pressed butt hinges bright finished of required size with necessary screws.",
               "code": "9.15.2",
               "children_count": 1,
@@ -787,13 +787,13 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 25 mm thick shutters for cup board etc. :",
           "code": "9.16",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Panelled or panelled & glazed shutters :",
               "code": "9.16.1",
               "children_count": 2,
@@ -827,7 +827,7 @@
               "source_page": 4
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Glazed shutters :",
               "code": "9.16.2",
               "children_count": 2,
@@ -865,7 +865,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing flat pressed three layer particle or graded plain wood board medium density exterior grade (Grade I) FPT-I, conforming and marked to frame, backing or studding with screws etc. complete (Frames, backing or studding to be paid separately):",
           "code": "9.17",
           "children_count": 2,
@@ -899,7 +899,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Pre-laminated flat pressed 3 layer (medium density) particle board or graded wood particle board IS : 3087 marked, with one side decorative and other side balancing lamination Grade I, Type II exterior grade IS : 12823 marked, in shelves with screws and fittings wherever required, edges to be painted with polyurethane primer (fittings to be paid separately).",
           "code": "9.18",
           "children_count": 2,
@@ -933,7 +933,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked flush door shutters conforming to IS : 2202 (Part I) decorative type, core of block board construction with frame of 1st class hard wood and well matched teak 3 ply veneering with vertical grains or cross bands and face veneers on both faces of shutters.",
           "code": "9.20",
           "children_count": 3,
@@ -979,7 +979,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked flush door shutters conforming to IS : 2202 (Part I) non-decorative type, core of block board construction with frame of 1st class hard wood and well matched commercial 3 ply veneering with vertical grains or cross bands and face veneers on both faces of shutters:",
           "code": "9.21",
           "children_count": 3,
@@ -1025,7 +1025,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for Providing and fixing flush doors with decorative veneering instead of non decorative ISI marked flush door shutters conforming to IS: 2202 (Part I)",
           "code": "9.22",
           "children_count": 1,
@@ -1059,7 +1059,7 @@
           "rate_display": "462.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for providing vision panel not exceeding 0.1 sqm in all type of flush doors (cost of glass excluded) (overall area of door shutter to be measured):",
           "code": "9.24",
           "children_count": 2,
@@ -1093,7 +1093,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra if louvers (not exceeding 0.2 sqm) are provided in flush door shutters (overall area of door shutters to be measured).",
           "code": "9.25",
           "children_count": 1,
@@ -1127,19 +1127,19 @@
           "rate_display": "106.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wire gauge shutters using galvanized M.S. wire gauge of average width of aperture 1.4 mm in both directions with wire of dia 0.63 mm, for doors, windows and clerestory windows with hinges and necessary screws :",
           "code": "9.27",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "35 mm thick shutters",
               "code": "9.27.1",
               "children_count": 2,
               "children": [
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "with ISI marked M.S. pressed butt hinges bright finished of required size",
                   "code": "9.27.1.1",
                   "children_count": 3,
@@ -1185,7 +1185,7 @@
                   "source_page": 5
                 },
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "With ISI marked stainless steel butt hinges of required size",
                   "code": "9.27.1.2",
                   "children_count": 3,
@@ -1235,13 +1235,13 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "30 mm thick shutters",
               "code": "9.27.2",
               "children_count": 2,
               "children": [
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "with ISI marked M.S. pressed butt hinges bright finished of required size",
                   "code": "9.27.2.1",
                   "children_count": 3,
@@ -1287,7 +1287,7 @@
                   "source_page": 5
                 },
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "With ISI marked stainless steel butt hinges of required size",
                   "code": "9.27.2.2",
                   "children_count": 3,
@@ -1341,7 +1341,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wire gauge laminated veneer lumber shutters conforming to IS : 14616, and as per TADS 15 :2001 (Part B) using galvanised wire gauge with average width of aperture 1.4 mm in both directions with wire of dia 0.63 mm as per IS :1568, for doors, windows and clerestory windows, fixing with butt hinges of required size with necessary screws, as per directions of Engineer-in-charge: (Note:- Butt hinges and necessary screws shall be paid separately)",
           "code": "9.31",
           "children_count": 2,
@@ -1375,13 +1375,13 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wooden moulded beading to door and window frames with iron screws, plugs and priming coat on unexposed surface etc. complete :",
           "code": "9.40",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "2nd class teak wood",
               "code": "9.40.1",
               "children_count": 2,
@@ -1415,7 +1415,7 @@
               "source_page": 6
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Kiln seasoned and chemically treated hollock wood",
               "code": "9.40.2",
               "children_count": 2,
@@ -1453,7 +1453,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plain jaffri of 35x10 mm laths placed 35 mm apart (frames to be paid separately), including fixing 50x12 mm beading complete with :",
           "code": "9.41",
           "children_count": 1,
@@ -1499,7 +1499,7 @@
           "rate_display": "725.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for using veneered particle board conforming to IS 3097 Grade I, in item of pelmet 18 mm thick 150 mm wide.",
           "code": "9.44",
           "children_count": 2,
@@ -1545,7 +1545,7 @@
           "rate_display": "73.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing chromium plated brass curtain rod having wall thickness of 1.25 mm with two chromium plated brass brackets fixed with C.P. brass screws and PVC sleeves etc., wherever necessary complete :",
           "code": "9.46",
           "children_count": 3,
@@ -1591,7 +1591,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing nickel plated M.S. pipe curtain rods with nickel plated brackets :",
           "code": "9.47",
           "children_count": 2,
@@ -1625,28 +1625,34 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. grills of required pattern in frames of windows etc. with M.S. flats, square or round bars etc. including priming coat with approved steel primer all complete.",
           "code": "9.48",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Fixed to steel windows by welding kg 219.10",
+              "title": "Fixed to steel windows by welding",
               "code": "9.48.1",
               "children_count": 0,
               "children": [],
               "order_index": 142,
-              "source_page": 7
+              "source_page": 7,
+              "unit": "kg",
+              "rate": 219.1,
+              "rate_display": "219.10"
             },
             {
               "node_type": "item",
-              "title": "Fixed to openings /wooden frames with rawl plugs screws etc. kg 238.35",
+              "title": "Fixed to openings /wooden frames with rawl plugs screws etc.",
               "code": "9.48.2",
               "children_count": 0,
               "children": [],
               "order_index": 143,
-              "source_page": 7
+              "source_page": 7,
+              "unit": "kg",
+              "rate": 238.35,
+              "rate_display": "238.35"
             }
           ],
           "order_index": 141,
@@ -1677,7 +1683,7 @@
           "rate_display": "1641.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing fly proof galvanized M.S. wire gauge to windows and clerestory windows using wire gauge with average width of aperture 1.4 mm in both directions with wire of dia 0.63 mm all complete.",
           "code": "9.51",
           "children_count": 2,
@@ -1735,7 +1741,7 @@
           "rate_display": "228.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing beams including hoisting, fixing in position and applying wood preservative for the unexposed surfaces, etc. complete with :",
           "code": "9.54",
           "children_count": 2,
@@ -1769,7 +1775,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked IS:1341 M.S. pressed butt hinges bright finished with necessary screws etc. complete :",
           "code": "9.55",
           "children_count": 4,
@@ -1827,7 +1833,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked, IS : 1341, M.S. heavy weight bright finished butt hinges with necessary screws etc. complete :",
           "code": "9.56",
           "children_count": 4,
@@ -1885,7 +1891,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked IS:1341 oxidised M.S. pressed butt hinges with necessary screws etc. complete. (Copper oxidised as per IS 1378)",
           "code": "9.57",
           "children_count": 4,
@@ -1943,7 +1949,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked IS: 1341 oxidised M.S. pressed Parliamentary hinges with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.58",
           "children_count": 4,
@@ -2001,7 +2007,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked oxidised M.S. single acting spring hinges with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.59",
           "children_count": 3,
@@ -2047,7 +2053,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked IS: 453 oxidised M.S. double acting spring hinges with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.60",
           "children_count": 3,
@@ -2093,7 +2099,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing M.S. Piano hinges ISI marked IS : 3818 finished with nickel chromium plating grade 1 as per IS: 1068 and fixing with necessary screws etc., complete.",
           "code": "9.61",
           "children_count": 3,
@@ -2139,7 +2145,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked oxidised M.S. sliding door bolts with nuts and screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.62",
           "children_count": 2,
@@ -2173,7 +2179,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked oxidised M.S. tower bolt black finish, (Barrel type) with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.63",
           "children_count": 4,
@@ -2243,7 +2249,7 @@
           "rate_display": "122.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked oxidised M.S. door latches conforming to IS:5930 with screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.65",
           "children_count": 2,
@@ -2277,7 +2283,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked oxidised M.S. handles conforming to IS:4992 with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.66",
           "children_count": 3,
@@ -2323,7 +2329,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing oxidised M.S. hasp and staple (safety type) conforming to IS : 363 with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.67",
           "children_count": 3,
@@ -2369,7 +2375,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing oxidised M.S. casement stays (straight peg type) with necessary screws etc. complete (Copper oxidised as per IS 1378)",
           "code": "9.68",
           "children_count": 3,
@@ -2427,7 +2433,7 @@
           "rate_display": "100.60"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing IS : 12817 marked stainless steel butt hinges with stainless steel screws etc. complete :",
           "code": "9.70",
           "children_count": 4,
@@ -2485,7 +2491,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing IS : 12817 marked stainless steel butt hinges (heavy weight) with stainless steel screws etc. complete :",
           "code": "9.71",
           "children_count": 3,
@@ -2531,7 +2537,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass butt hinges with necessary screws etc. complete :",
           "code": "9.72",
           "children_count": 7,
@@ -2625,7 +2631,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass parliamentary hinges with necessary screws etc. complete :",
           "code": "9.73",
           "children_count": 4,
@@ -2683,7 +2689,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass tower bolts (barrel type) with necessary screws etc. complete :",
           "code": "9.74",
           "children_count": 4,
@@ -2741,7 +2747,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass door latch with necessary screws etc. complete :",
           "code": "9.75",
           "children_count": 2,
@@ -2811,7 +2817,7 @@
           "rate_display": "1183.30"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing special quality bright finished brass cupboard or ward robe locks with four levers of approved quality including necessary screws etc. complete.",
           "code": "9.79",
           "children_count": 4,
@@ -2881,7 +2887,7 @@
           "rate_display": "74.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass handles with screws etc. complete:",
           "code": "9.81",
           "children_count": 3,
@@ -2975,7 +2981,7 @@
           "rate_display": "89.00"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass casement stays (straight peg type) with necessary screws etc. complete :",
           "code": "9.86",
           "children_count": 3,
@@ -3021,7 +3027,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass hasp and staple (safety type) with necessary screws etc. complete :",
           "code": "9.87",
           "children_count": 3,
@@ -3091,7 +3097,7 @@
           "rate_display": "952.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing special quality chromium plated brass cupboard locks with six levers of approved quality including necessary screws etc. complete.",
           "code": "9.90",
           "children_count": 4,
@@ -3161,7 +3167,7 @@
           "rate_display": "151.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing chromium plated brass handles with necessary screws etc. complete:",
           "code": "9.92",
           "children_count": 3,
@@ -3219,7 +3225,7 @@
           "rate_display": "155.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing chromium plated brass casement stays (straight peg type) with necessary screws etc. complete :",
           "code": "9.94",
           "children_count": 3,
@@ -3265,7 +3271,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ISI marked aluminium butt hinges anodised (anodic coating not less than grade AC 10 as per IS: 1868) transparent or dyed to required colour or shade with necessary screws etc. complete:",
           "code": "9.95",
           "children_count": 8,
@@ -3371,7 +3377,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium sliding door bolts, ISI marked anodised (anodic coating not less than grade AC 10 as per IS : 1868), transparent or dyed to required colour or shade, with nuts and screws etc. complete :",
           "code": "9.96",
           "children_count": 2,
@@ -3405,7 +3411,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium tower bolts, ISI marked, anodised (anodic coating not less than grade AC 10 as per IS : 1868 ) transparent or dyed to required colour or shade, with necessary screws etc. complete :",
           "code": "9.97",
           "children_count": 5,
@@ -3499,7 +3505,7 @@
           "rate_display": "239.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium handles, ISI marked, anodised (anodic coating not less than grade AC 10 as per IS : 1868) transparent or dyed to required colour or shade, with necessary screws etc. complete :",
           "code": "9.100",
           "children_count": 3,
@@ -3545,7 +3551,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium hanging floor door stopper, ISI marked, anodised (anodic coating not less than grade AC 10 as per IS : 1868) transparent or dyed to required colour and shade, with necessary screws etc. complete.",
           "code": "9.101",
           "children_count": 2,
@@ -3615,7 +3621,7 @@
           "rate_display": "160.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing partition upto ceiling height consisting of G.I. frame and required board, including providing and fixing of frame work made of special section power pressed/ roll form G.I. sheet with zinc coating of 120 gms/sqm(both side inclusive), consisting of floor and ceiling channel 50 mm wide having equal flanges of 32 mm and 0.50 mm thick, fixed to the floor and ceiling at the spacing of 610 mm centre to centre with dash fastener of 12.5 mm dia meter 50 mm length or suitable anchor fastener or metal screws with nylon plugs and the studs 48 mm wide having one flange of 34 mm and other flange 36 mm and 0.50 mm thick fixed vertically within flanges of floor and ceiling channel and placed at a spacing of 610 mm centre to centre by 6 mm dia bolts and nuts, including fixing of studs along both ends of partition fixed flush to wall with suitable anchor fastener or metal screws with nylon plugs at spacing of 450 mm centre to centre, and fixing of boards to both side of frame work by 25 mm long dry wall screws on studs, floor and ceiling channels at the spacing of 300 mm centre to centre. The boards are to be fixed to the frame work with joints staggered to avoid through cracks, M.S. fixing channel of 99 mm width (0.9 mm thick having two flanges of 9.5 mm each) to be provided at the horizontal joints of two boards, fixed to the studs using metal to metal flat head screws, including jointing and finishing to a flush finish with recommended jointing compound, jointing tape, angle beads at corners (25 mm x 25 mm x 0.5 mm), joint finisher and two coats of primer suitable for board as per manufacture’s specification and direction of engineer in charge all complete.",
           "code": "9.105",
           "children_count": 5,
@@ -3685,7 +3691,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT handles with necessary screws etc. complete.",
           "code": "9.106",
           "children_count": 2,
@@ -3719,7 +3725,7 @@
           "source_page": 14
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT Butt hinges with necessary screws etc. complete.",
           "code": "9.107",
           "children_count": 2,
@@ -3753,7 +3759,7 @@
           "source_page": 14
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing PTMT Tower Bolts with 12 mm one piece rod inside and necessary screws etc., complete.",
           "code": "9.108",
           "children_count": 2,
@@ -3811,7 +3817,7 @@
           "rate_display": "689.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wooden moulded corner beading of triangular shape to the junction of panelling etc. with iron screws, plugs and priming coat on unexposed surface etc. complete 2nd class teak wood.",
           "code": "9.111",
           "children_count": 1,
@@ -3857,7 +3863,7 @@
           "rate_display": "850.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing magnetic catcher of approved quality in cupboard / ward robe shutters, including fixing with necessary screws etc. complete.",
           "code": "9.114",
           "children_count": 2,
@@ -3912,7 +3918,7 @@
           "rate_display": "20.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made uPVC door frame made of uPVC extruded sections having an overall dimension as below (tolerance ±1mm), with wall thickness 2.0 mm (± 0.2 mm), corners of the door frame to be Jointed with galvanized brackets and stainless steel screws, joints mitred and Plastic welded. The hinge side vertical of the frames reinforced by galvanized M.S. tube of size 19 X 19 mm and 1 mm (± 0.1 mm) wall thickness and 3 nos. stainless steel hinges fixed to the frame complete as per manufacturer’s specification and direction of Engineer- in-charge",
           "code": "9.117",
           "children_count": 2,
@@ -3946,7 +3952,7 @@
           "source_page": 15
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing to existing door frames.",
           "code": "9.118",
           "children_count": 3,
@@ -4004,7 +4010,7 @@
           "rate_display": "492.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made panel PVC door shutter consisting of frame made out of M.S. tubes of 19 gauge thickness and size of 19 mm x 19 mm for styles and 15x15 mm for top & bottom rails. M.S. frame shall have a coat of steel primers of approved make and manufacture. M.S. frame covered with 5 mm thick heat moulded PVC ‘C’ channel of size 30 mm thickness, 70 mm width out of which 50 mm shall be flat and 20 mm shall be tapered in 45 degree angle on both side forming styles and 5 mm thick, 95 mm wide PVC sheet out of which 75 mm shall be flat and 20 mm shall be tapered in 45 degree on the inner side to form top and bottom rail and 115 mm wide PVC sheet out of which 75 mm shall be flat and 20 mm shall be tapered on both sides to form lock rail. Top, bottom and lock rails shall be provided both side of the panel. 10 mm (5 mm x 2 ) thick, 20 mm wide cross PVC sheet be provided as gap insert for top rail & bottom rail, paneling of 5 mm thick both side PVC sheet to be fitted in the M.S. frame welded/ sealed to the styles & rails with 7 mm (5 mm+2 mm) thick x 15 mm wide PVC sheet beading on inner side, and joined together with solvent cement adhesive. An additional 5 mm thick PVC strip of 20 mm width is to be stuck on the interior side of the ‘C’ Channel using PVC solvent adhesive etc. complete as per direction of Engineer-in-charge, manufacturer’s specification & drawing.",
           "code": "9.120",
           "children_count": 2,
@@ -4050,7 +4056,7 @@
           "rate_display": "570.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing to existing door frames.",
           "code": "9.122",
           "children_count": 2,
@@ -4108,7 +4114,7 @@
           "rate_display": "135.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made PVC door shutter made of solid foam PVC profiles of thikness 5 mm and 15 mm at edges integrally extruded for vertical style and horizontal (top/ bottom/ lock) rails of minimum cross section of 70mmx 28mm, of shape and design as per manufacturer’s specifications having homogenous fine cellular structure and smooth integral outer skin, inserted with G.I. ‘C’ section/ rectangular tube profile of minimum 0.30 mm thickness with 120 gsm coating as stiffeners as per manufacturer’s specifications Mitred cut joints for styles and rails provided with telescopic polymeric ‘L’ corners are jointed together using solvent adhesive and strenghtened with fully threaded stainless steel screws (of required size) through reinforced stiffener with paneling of specified solid foam PVC board/ high pressure laminate of required thickness and of approved design and shade (matching the styles and rails), secured within styles and rails with specially designed solid foam PVC moulded beadings of required size using PVC solvent adhesive/ cement. The finished door shutter including SS hardware, 1 no. ss sliding bolt 200 x 10mm, 1 no. SS tower bolt 200 x 10 mm and 2 nos. SS handles 125mm, shall be fixed to frame with 3 nos. stainless steel hinges of minimum size 100x58x1.9 mm and stainless steel screws of required size complete as per direction of the Engineer-in-Charge. (Cost of above hardware is inclusive in rates)",
           "code": "9.124",
           "children_count": 3,
@@ -4154,7 +4160,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 12 mm thick panelling or panelling and glazing in panelled or panelled and glazed shutters for doors, windows and clerestory windows (area of opening for panel inserts excluding portion inside grooves or rebates to be measured). Panelling for panelled or panelled and glazed shutters 25 mm to 40 mm thick.",
           "code": "9.126",
           "children_count": 2,
@@ -4188,7 +4194,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & Fixing decorative high pressure laminated sheet of plain / wood grain in gloss / matt/ suede finish with high density protective surface layer and reverse side of adhesive bonding quality conforming to IS : 2046 Type S, including cost of adhesive of approved quality.",
           "code": "9.127",
           "children_count": 2,
@@ -4246,7 +4252,7 @@
           "rate_display": "2307.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing cup board shutters with 25 mm thick veneered particle board IS : 3097 marked, exterior grade (Grade I), of approved make, including IInd class teak wood lipping of 25 mm wide x 12 mm thick with necessary screws and bright finished stainless steel piano hinges, complete as per direction of Engineer-in-Charge.",
           "code": "9.130",
           "children_count": 2,
@@ -4280,7 +4286,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made shutters of Pre-laminated particle board flat pressed three layer or graded wood particle board with one side decorative finish and other side balancing lamination conforming to IS: 12823 Grade l Type ll, of approved design, and edges sealed with water resistant paint and lipped with aluminium ‘U’ type edge beading all- round the shutter, including fixing with angle cleat, grip strip, cadmium plated steel screws, including fixing of aluminium hinges 100x63x4 mm etc. complete as per architectural drawing and direction of Engineer-in- Charge (Cost of ‘U’ beading and hinges will be paid for separately).",
           "code": "9.131",
           "children_count": 1,
@@ -4303,21 +4309,24 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing aluminum U beading of required size to Pre- laminated/flush door shutter, including fixing etc. complete as per direction of Engineer-in-charge. kg 596.15",
+          "title": "Providing and fixing aluminum U beading of required size to Pre- laminated/flush door shutter, including fixing etc. complete as per direction of Engineer-in-charge.",
           "code": "9.132",
           "children_count": 0,
           "children": [],
           "order_index": 373,
-          "source_page": 19
+          "source_page": 19,
+          "unit": "kg",
+          "rate": 596.15,
+          "rate_display": "596.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing, in position concealed G.I. section for wall paneling using board of required thickness fixed on the ‘W’ profile (0.55 mm thick) having a knurled web of 51.55 mm and two flanges of 26 mm each with lips of 10.55 mm, placed @ 610 mm C/C in perimeter channel having one flange of 20 mm and another flange of 30 mm with thickness of 0.55 mm and web of length 27 mm. Perimeter channel is fixed on the floor and the ceiling with the nylon sleeves @ 610 mm C/C with fully threaded self-tapping dry wall screws. Board is fixed to the ‘W’ profile with 25 mm countersunk ribbed head screws @ 200 mm C/C., all complete as per the drawing & directions of engineer-in-charge, the joints of the boards are finished with specially formulated jointing compound and 48 mm wide jointing tape to provide seamless finish.",
           "code": "9.133",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Tapered edge calcium silicate board made with calcareous & siliceous materials reinforced with cellulose fiber manufactured through autoclaving process to give stable crystalline structure with compressive strength 225 kg/ sq.cm, Bending strength 100 kg/sq.cm.",
               "code": "9.133.1",
               "children_count": 1,
@@ -4339,7 +4348,7 @@
               "source_page": 19
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Multipurpose cement board reinforced with suitable fibre cement screw.",
               "code": "9.133.2",
               "children_count": 2,
@@ -4373,7 +4382,7 @@
               "source_page": 19
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Plain Gypsum plaster board conforming to IS: 2095 Part -1:2011 (Board with BIS certification marks)",
               "code": "9.133.3",
               "children_count": 1,
@@ -4399,19 +4408,19 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing wire gauge shutters using stainless steel grade 304 wire gauge with wire of dia 0.5 mm and average width of aperture 1.4 mm in both directions for doors, windows and clerestory windows with necessary screws :",
           "code": "9.134",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "35 mm thick shutters",
               "code": "9.134.1",
               "children_count": 2,
               "children": [
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "with ISI marked M.S. pressed butt hinges bright finished of required size",
                   "code": "9.134.1.1",
                   "children_count": 3,
@@ -4457,7 +4466,7 @@
                   "source_page": 20
                 },
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "With ISI marked stainless steel butt hinges of required size",
                   "code": "9.134.1.2",
                   "children_count": 3,
@@ -4507,13 +4516,13 @@
               "source_page": 20
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "30 mm thick shutters",
               "code": "9.134.2",
               "children_count": 2,
               "children": [
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "with ISI marked M.S. pressed butt hinges bright finished of required size",
                   "code": "9.134.2.1",
                   "children_count": 3,
@@ -4559,7 +4568,7 @@
                   "source_page": 20
                 },
                 {
-                  "node_type": "item",
+                  "node_type": "group",
                   "title": "With ISI marked stainless steel butt hinges of required size",
                   "code": "9.134.2.2",
                   "children_count": 3,
@@ -4613,7 +4622,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing fly proof stainless steel grade 304 wire gauge, to windows and clerestory windows using wire gauge with average width of aperture 1.4 mm in both directions with wire of dia. 0.50 mm all complete.",
           "code": "9.135",
           "children_count": 2,
@@ -4695,7 +4704,7 @@
           "rate_display": "8366.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plain lining with necessary screws/nuts & bolts/ nails, including a coat of approved primer on one face, and fixed on wooden /steel frame work, complete as per direction of Engineer-in- charge (Frame work shall be paid for separately).",
           "code": "9.140",
           "children_count": 1,
@@ -4729,7 +4738,7 @@
           "rate_display": "573.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "35 mm thick factory made Solid panel PVC Door shutter, made out of single piece extruded soild PVC profiles, 5 mm (± 0.2 mm) thick, having styles & rails (except lock rail) of size 95 mmx 35 mm x 5 mm, out of which 75 mm shall be flat and 20 mm shall be tapered (on both side), having one side thickness of 15 mm integrally extruded on the hinge side of the profile for better screw holding power, including reinforcing with MS tube of size 40 mm X 20 mm x 1 mm, joints of styles & rails to be mitered cut & joint with the help of PVC solvent cement, self driven self tapping screws & M.S. rectangular pipes bracket of size 190 mm X 100 mm of cross section size 35 mm x 17 mm x 1 mm at each corner. Single piece extruded 5 mm thick solid PVC Lock rail of size 115 mm x 35 mm, out of which 75 mm to be flat and 20 mm to be tapered at both ends, having 15 mm solid core in middle of rail section integrally extruded, fixing the styles & rails with the help of solvent and self driven self tapping screws of 125 mm x 11 mm, including providing 5 mm Single piece solid PVC extruded sheet inserted in the door as panel, all complete as per manufacturer’s specification and direction of Engineer-in-charge.",
           "code": "9.142",
           "children_count": 2,
@@ -4820,7 +4829,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing stainless steel (SS-304 grade) friction hinges to the side/top hung uPVC windows, of approved quality, with necessary stainless steel screws etc. as per direction of Engineer-in-charge.",
           "code": "9.148",
           "children_count": 5,
@@ -4951,12 +4960,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing frame work for partitions/ wall lining etc. made of 50x50x1.6 mm hollow MS tube, placed along the walls, ceiling and floor in a grid pattern with spacing @ 60 cm centre to centre both ways (vertically & horizontally) or at required spacing near opening, with necessary welding at junctions and fixing the frame to wall/ ceiling/ floors with steel dash fasteners of 8 mm dia, 75 mm long bolt, including making provision for opening for doors, windows, electrical conduits, switch boards etc., including providing with two coats of approved steel primer etc. complete, all as per direction of Engineer-in-charge. kg 166.80",
+          "title": "Providing and fixing frame work for partitions/ wall lining etc. made of 50x50x1.6 mm hollow MS tube, placed along the walls, ceiling and floor in a grid pattern with spacing @ 60 cm centre to centre both ways (vertically & horizontally) or at required spacing near opening, with necessary welding at junctions and fixing the frame to wall/ ceiling/ floors with steel dash fasteners of 8 mm dia, 75 mm long bolt, including making provision for opening for doors, windows, electrical conduits, switch boards etc., including providing with two coats of approved steel primer etc. complete, all as per direction of Engineer-in-charge.",
           "code": "9.154",
           "children_count": 0,
           "children": [],
           "order_index": 430,
-          "source_page": 30
+          "source_page": 30,
+          "unit": "kg",
+          "rate": 166.8,
+          "rate_display": "166.80"
         },
         {
           "node_type": "item",
@@ -4971,7 +4983,7 @@
           "rate_display": "1956.90"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Pre -laminated medium density fibre board exterior grade (Grade-I) IS:14587:1998 marked, to frame, backing or studding with screws etc. complete (Frames, backing or studding to be paid separately).",
           "code": "9.156",
           "children_count": 2,
@@ -5005,7 +5017,7 @@
           "source_page": 31
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Pre-laminated medium density fibre board IS: 14587:1998 marked, with one side decorative lamination other side balancing lamination Grade-I (exterior grade) in shelves with screws and fittings wherever required, edges to be sealed with PVC edge bending tape 2.00 mm thick of approved brand (fittings to be paid separately).",
           "code": "9.157",
           "children_count": 2,
@@ -5039,7 +5051,7 @@
           "source_page": 31
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in wall lining medium density fibre board IS: 14587:1998 marked, Pre-laminated one side decorative lamination and other side balancing lamination, with necessary fixing arrangement and screws etc. complete.",
           "code": "9.158",
           "children_count": 3,
@@ -5097,7 +5109,7 @@
           "rate_display": "2135.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing skirting with Pre-laminated medium density fibre board exterior grade (Grade-I) conforming to IS: 14587:1998 marked, with (one side decorative and other side balancing lamination and edges to be sealed with PVC edge bending tape 2.00 mm thick of approved brand with necessary fixing arrangements and screws, including drilling necessary holes for rawl plugs etc. all complete.",
           "code": "9.160",
           "children_count": 2,
@@ -5179,7 +5191,7 @@
           "rate_display": "43677.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright /matt finished Stainless Steel handles of approved quality & make with necessary screws etc all complete.",
           "code": "9.165",
           "children_count": 3,
@@ -5225,7 +5237,7 @@
           "source_page": 32
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 18 mm thick both sides Pre-laminated cement bonded wood particle board as per IS : 15786:2008 of approved brand and shade with suitable full threaded steel screws etc. in partitions, boxes, shelves, racks and cupboard, kitchen cabinet under kitchen counter etc. all complete as per direction of Engineer-in-charge (Note: Fittings to be paid separately).",
           "code": "9.166",
           "children_count": 1,
@@ -5283,7 +5295,7 @@
           "rate_display": "2593.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing stainless steel fancy handle of approved make fixed with SS screws etc. complete as per direction of Engineer-in-charge.",
           "code": "9.170",
           "children_count": 1,
@@ -5327,12 +5339,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing ready made 304 grade stainless steel Modular kitchen basket and accessories such as right angle basket (Plain Cup & Saucer, plant, Partition, Bottle rack, Thali, Cutlery) kitchen utensil basket, Dinner set basket, kitchen grain basket, Multipurpose basket as per site requirement including finishing (wherever required) and fittings. The same shall be fixed with necessary stainless steel nuts & bolts, Stainless Steel screws & telescopic channel etc. as per direction of Engineer-in- charge. (For payment purpose only weight of Stainless steel basket shall be considered excluding weight of all fixing accessories such as nuts, bolts, fasteners telescopic basket channels etc. Payment of providing and fixing telescopic channel shall be paid separately) kg 533.25",
+          "title": "Providing and fixing ready made 304 grade stainless steel Modular kitchen basket and accessories such as right angle basket (Plain Cup & Saucer, plant, Partition, Bottle rack, Thali, Cutlery) kitchen utensil basket, Dinner set basket, kitchen grain basket, Multipurpose basket as per site requirement including finishing (wherever required) and fittings. The same shall be fixed with necessary stainless steel nuts & bolts, Stainless Steel screws & telescopic channel etc. as per direction of Engineer-in- charge. (For payment purpose only weight of Stainless steel basket shall be considered excluding weight of all fixing accessories such as nuts, bolts, fasteners telescopic basket channels etc. Payment of providing and fixing telescopic channel shall be paid separately)",
           "code": "9.173",
           "children_count": 0,
           "children": [],
           "order_index": 463,
-          "source_page": 33
+          "source_page": 33,
+          "unit": "kg",
+          "rate": 533.25,
+          "rate_display": "533.25"
         },
         {
           "node_type": "item",

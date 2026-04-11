@@ -18,12 +18,15 @@
       "children": [
         {
           "node_type": "item",
-          "title": "Providing and supplying aluminium extruded tubular and other aluminium sections as per the architectural drawings and approved shop drawings , the aluminium quality as per grade 6063 T5 or T6 as per BS 1474,including super durable powder coating of 60-80 microns conforming to AAMA 2604 of required colour and shade as approved by the Engineer-in-Charge. ( The item includes cost of material such as cleats, sleeves, screws etc. necessary for fabrication of extruded aluminium frame work. Nothing extra shall be paid on this account). The weight of aluminium extruded section shall be taken for purpose of payment. kg 414.30",
+          "title": "Providing and supplying aluminium extruded tubular and other aluminium sections as per the architectural drawings and approved shop drawings , the aluminium quality as per grade 6063 T5 or T6 as per BS 1474,including super durable powder coating of 60-80 microns conforming to AAMA 2604 of required colour and shade as approved by the Engineer-in-Charge. ( The item includes cost of material such as cleats, sleeves, screws etc. necessary for fabrication of extruded aluminium frame work. Nothing extra shall be paid on this account). The weight of aluminium extruded section shall be taken for purpose of payment.",
           "code": "25.1",
           "children_count": 0,
           "children": [],
           "order_index": 0,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 414.3,
+          "rate_display": "414.30"
         },
         {
           "node_type": "item",

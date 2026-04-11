@@ -47,7 +47,7 @@
           "rate_display": "24.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and stacking at site.",
           "code": "16.3",
           "children_count": 10,
@@ -189,7 +189,7 @@
           "rate_display": "1046.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Laying water bound macadam sub-base with brick aggregate and binding material, earth etc. including screening, sorting and spreading to template and consolidation with light power road-roller etc. complete.(payment for brick aggregate and moorum etc. to be made separately)",
           "code": "16.5",
           "children_count": 2,
@@ -223,7 +223,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying, stacking and Spreading 6 mm thick red bajri, watering and rolling complete including preparation of the surface and rolling.",
           "code": "16.6",
           "children_count": 1,
@@ -245,7 +245,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick edging in full brick width and half brick depth including excavation, refilling and disposal of surplus earth lead upto 50 metres.",
           "code": "16.7",
           "children_count": 1,
@@ -267,7 +267,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick edging laid lengthwise with half brick depth including excavation, refilling and disposal of surplus earth lead upto 50 metres :",
           "code": "16.8",
           "children_count": 1,
@@ -325,7 +325,7 @@
           "rate_display": "883.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Dry brick pitching half brick thick in drains including supply of bricks and preparing the surface complete :",
           "code": "16.12",
           "children_count": 1,
@@ -347,7 +347,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cutting road and making good the same including supply of extra quantities of materials i.e. aggregate, moorum screening, red bajri and labour required.",
           "code": "16.13",
           "children_count": 2,
@@ -393,7 +393,7 @@
           "rate_display": "284.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying at site :",
           "code": "16.15",
           "children_count": 2,
@@ -412,12 +412,15 @@
             },
             {
               "node_type": "item",
-              "title": "Welded steel wire fabric of required width having rectangular mesh painted with two or more coats of enamel paint of approved shade over a coat of primer (Priming & Painting to be paid for separately). kg 78.95",
+              "title": "Welded steel wire fabric of required width having rectangular mesh painted with two or more coats of enamel paint of approved shade over a coat of primer (Priming & Painting to be paid for separately).",
               "code": "16.15.2",
               "children_count": 0,
               "children": [],
               "order_index": 34,
-              "source_page": 2
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 78.95,
+              "rate_display": "78.95"
             }
           ],
           "order_index": 32,
@@ -433,7 +436,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fencing with R.C.C. post placed at required distance, embedded in cement concrete blocks, every 15th post, last but one end post and corner post shall be strutted on both sides and end post one side only, provided with horizontal lines and two diagonals of barbed wire weighing 9.38 kg per 100 metres (minimum), between the two posts fitted and fixed with G.I. staples on wooden plugs or G.I. binding wire tied to 6 mm bar nibs fixed while casting the post (cost of R.C.C. posts, struts, earth work and concrete to be paid for separately) :- Payment to be made per metre cost of total length of barbed wire used.",
           "code": "16.17",
           "children_count": 1,
@@ -455,7 +458,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fencing with angle iron post placed at required distance embedded in cement concrete blocks, every 15th post, last but one end post and corner post shall be strutted on both sides and end post on one side only and provided with horizontal lines and two diagonals interwoven with horizontal wires, of barbed wire weighing 9.38 kg per 100 m (minimum), between the two posts fitted and fixed with G.I. staples, turn buckles etc. complete. (Cost of posts, struts, earth work and concrete work to be paid for separately). Payment to be made per metre cost of total length of barbed wire used.",
           "code": "16.18",
           "children_count": 1,
@@ -478,12 +481,15 @@
         },
         {
           "node_type": "item",
-          "title": "Supplying at site Angle iron post & strut of required size including bottom to be split and bent at right angle in opposite direction for 10 cm length and drilling holes upto 10 mm dia. etc. complete. kg 125.75",
+          "title": "Supplying at site Angle iron post & strut of required size including bottom to be split and bent at right angle in opposite direction for 10 cm length and drilling holes upto 10 mm dia. etc. complete.",
           "code": "16.19",
           "children_count": 0,
           "children": [],
           "order_index": 40,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 125.75,
+          "rate_display": "125.75"
         },
         {
           "node_type": "item",
@@ -540,7 +546,7 @@
           "rate_display": "852.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing precast reinforced cement concrete 1:1.5:3 (1 cement: 1.5 coarse sand : 3 graded stone aggregate 20 mm nominal size) kilometre stone as per standard design, including finishing smooth in 1:3 cement mortar (1 cement : 3 fine sand) but excluding the cost of earth work, concrete in foundation, painting and lettering etc. which shall be paid for separately.",
           "code": "16.24",
           "children_count": 3,
@@ -622,7 +628,7 @@
           "rate_display": "175.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Surface dressing one coat on new surface with bitumen of specified grade at a rate of 1.95 kg/sqm of surface area with 1.5 cum of stone chippings 13.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity , etc. complete :",
           "code": "16.28",
           "children_count": 1,
@@ -644,7 +650,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Surface dressing one coat on old surface with bitumen of specified grade at the rate of 1.22 kg/ sqm of surface area with 1.10 cum of stone chippings 11.2 mm nominal size per 100 sqm of road surface, including consolidation with road roller of 6 to 8 tonne capacity etc. complete :",
           "code": "16.29",
           "children_count": 1,
@@ -666,7 +672,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and applying tack coat using hot straight run bitumen of grade VG - 10, including heating the bitumen, spraying the bitumen with mechanically operated spray unit fitted on bitumen boiler, cleaning and preparing the existing road surface as per specifications :",
           "code": "16.30",
           "children_count": 2,
@@ -700,13 +706,13 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and applying tack coat using bitumen emulsion conforming to IS:8887, using emulsion pressure distributer including preparing the surface & cleaning with mechanical broom.",
           "code": "16.31",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "With rapid setting bitumen emulsion",
               "code": "16.31.1",
               "children_count": 2,
@@ -740,7 +746,7 @@
               "source_page": 4
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "With medium setting bitumen emulsion",
               "code": "16.31.2",
               "children_count": 2,
@@ -778,7 +784,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "2 cm premix carpet surfacing with 1.8 cum and 0.90 cum of stone chippings of 13.2 mm size and 11.2 mm size respectively per 100 sqm and 52 kg and 56 kg of hot bitumen per cum of stone chippings of 13.2 mm and 11.2 mm size respectively, including a tack coat with hot straight run bitumen, including consolidation with road roller of 6 to 9 tonne capacity etc. complete (tack coat to be paid for separately).",
           "code": "16.32",
           "children_count": 3,
@@ -824,7 +830,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "2.5 cm premix carpet surfacing with 2.25 cum and 1.12 cum of stone chippings of 13.2 mm and 11.2 mm size respectively per 100 sqm and 52 kg and 56 kg of hot bitumen per cum of stone chippings of 13.2 mm and 11.2 mm size respectively, including a tack coat with hot straight run bitumen, including consolidation with road roller of 6 to 9 tonne capacity etc. complete (tack coat to be paid for separately).",
           "code": "16.33",
           "children_count": 3,
@@ -894,7 +900,7 @@
           "rate_display": "252.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Bitumen Penetration Macadam with hard stone aggregate of quality, size and grading as specified, with bitumen of suitable penetration grade, including required key aggregate as specified, spreading coarse aggregate with the help of self propelled/ tipper tail mounted aggregate spreader and applying bitumen by a pressure distributor and then spreading key aggregate with the help of aggregate spreader complete, including consolidation with road roller of minimum 8 to 10 tonne capacity to achieve specified values of compaction and surface accuracy :",
           "code": "16.36",
           "children_count": 2,
@@ -928,7 +934,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying bitumen mastic wearing course (as per specifications) with industrial bitumen of grade 85/25 conforming to IS : 702, prepared by using mastic cooker and laid to required level and slope, including providing antiskid surface with bitumen precoated fine grained hard stone chipping of approved size at the rate of 0.005 cum per 10 sqm and at approximate spacing of 10 cm centre to centre in both directions, pressed into surface protruding 1 mm to 4 mm over mastic surface, including cleaning the surface, removal of debris etc. all complete. (Considering bitumen using 10.2% as per MORTH specification).",
           "code": "16.37",
           "children_count": 2,
@@ -962,7 +968,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "2.5 cm thick bitumastic sheet with hot bitumen of approved quality, using stone chippings (60% with 12.5 mm nominal size and 40% with 10 mm nominal size) @ 1.65 cum per 100 sqm and coarse sand @ 1.65 cum per 100 sqm of road surface and with bitumen @ 56 kg/cum of stone chippings and @ 128 kg/cum of sand over a tack coat with hot straight run bitumen, including consolidation with road roller of 8 to 10 tonne etc. complete. (tack coat to be paid separately) :",
           "code": "16.38",
           "children_count": 3,
@@ -1008,7 +1014,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "4 cm thick bitumastic sheet with hot bitumen of approved quality, using stone chippings (60% with 12.5 mm nominal size and 40% with 10 mm nominal size) @ 2.60 cum per 100 sqm and coarse sand @ 2.60 cum per 100 sqm of road surface and with bitumen @ 56 kg/cum of stone chippings and @ 128 kg/cum of sand over a tack coat with hot straight run bitumen, including consolidation with road roller of 8 to 10 tonne etc. complete. (tack coat to be paid separately) :",
           "code": "16.39",
           "children_count": 3,
@@ -1090,7 +1096,7 @@
           "rate_display": "7993.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying design mix cement concrete of M-30 grade, in roads/ taxi tracks/ runways, using cement content as per design mix, using coarse sand and graded stone aggregate of 40 mm nominal size in appropriate proportions as per approved & specified design criteria, providing dowel bars with sleeve/ tie bars wherever required, laying at site, spreading and compacting mechanically by using needle and surface vibrators, levelling to required slope/ camber, finishing with required texture, including steel form work with sturdy M.S. channel sections, curing, making provision for contraction/ expansion, construction & longitudinal joints (10 mm wide x 50 mm deep) by groove cutting machine, providing and filling joints with approved joint filler and sealants, complete all as per direction of Engineer- in-charge (Item of joint fillers, sealants, dowel bars with sleeve/ tie bars to be paid separately).",
           "code": "16.43",
           "children_count": 2,
@@ -1154,7 +1160,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and filling in position rubberized bitumen hot sealing compound for sealing of expansion joints in roads / pavements all complete as per direction of the Engineer-in-Charge.",
           "code": "16.46",
           "children_count": 1,
@@ -1182,7 +1188,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting runway/taxi track/apron marking with adequate nos of coats to give uniform finish with road marking paint of superior make as approved by the Engineer-in-charge, including cleaning the surface of ail dirt, scales, oil, grease and other foreign material etc. and lining out complete.",
           "code": "16.47",
           "children_count": 2,
@@ -1216,7 +1222,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting road surface marking with adequate nos of coats to give uniform finish with ready mixed road marking paint conforming to IS : 164, on bituminous surface in white/yellow shade, including cleaning the surface of all dirt, scales, oil, grease and foreign material etc. complete.",
           "code": "16.48",
           "children_count": 2,
@@ -1274,7 +1280,7 @@
           "rate_display": "206.30"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Preparation of sub-base road pavement with commercial dry lime (slaked), fly ash stabilised soil with a mix of 3% lime, 12% fly ash and 85% local suitable soil by weight, so as to achieve minimum field C.B.R. of 20, including mixing, rolling with road roller curing etc. all complete.",
           "code": "16.51",
           "children_count": 1,
@@ -1320,7 +1326,7 @@
           "rate_display": "375.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Dense Graded Bituminous Macadam using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers as per specifications to achieve the desired compaction and density, complete as per specificatons and directions of Engineer-in-Charge.",
           "code": "16.54",
           "children_count": 2,
@@ -1354,7 +1360,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying bituminous macadam using crushed stone aggregates of specified grading premixed with bituminous binder, transported to site by tippers, laid over a previously prepared surface with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers as per specifications to achieve the desired compaction and density, complete as per specificatons and directions of Engineer-in-Charge.",
           "code": "16.55",
           "children_count": 2,
@@ -1388,7 +1394,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying semi- dense Bituminous concrete using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers to achieve the desired compaction and density as per specification, complete and as per directions of Engineer-in-Charge.",
           "code": "16.56",
           "children_count": 2,
@@ -1422,7 +1428,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Bituminous concrete using crushed stone aggregates of specified grading, premixed with bituminous binder and filler, transporting the hot mix to work site by tippers, laying with paver finisher equiped with electronic sensor to the required grade, level and alignment and rolling with smooth wheeled, vibratory and tandem rollers to achieve the desired compaction and density as per specification, complete and as per directions of Engineer-in-Charge.",
           "code": "16.57",
           "children_count": 8,
@@ -1528,7 +1534,7 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Manufacturing, supplying and fixing retro reflective sign boards made up of 2 mm thick aluminium sheet, face to be fully covered with high intensity encapsulated type heat activated retro reflective sheeting conforming to type - IV of ASTM-D 4956-01 in blue and silver white or other colour combination including subject matter, message (bi-lingual), symbols and borders etc. as per IRC ; 67:2001, pasted on substrate by an adhesive backing which shall be activated by applying heat and pressure conforming to class -2 of ASTM-D-4956-01 and fixing the same with suitable sized aluminium alloy rivets @ 20 cm c/c to back support frame of M.S. angle iron of size 25x25x3 mm along with theft resistant measures, mounted and fixed with 2 Nos. M.S. angles of size 35x35x5 mm to a vertical post made up to M.S. Tee section ISMT 50x50x6 mm welded with base plate of size 100x100x5 mm at the bottom end and including making holes in pipes, angles flats, providing & fixing M.S. message plate of required size, steel work to be painted with two or more coats of synthetic enamel paint of required shade and of approved brand & manufacture over priming coat of zinc chromate yellow primer (vertical MS-Tee support to be painted in black and white colours).Backside of aluminium sheet to be painted with two or more coats of epoxy paint over and including appropriate priming coat including all leads and lifts etc. complete as per drawing , specification and direction of Engineer-in-charge.",
           "code": "16.59",
           "children_count": 2,
@@ -1562,7 +1568,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Manufacturing, supplying and fixing retro reflective overhead signage boards made up of 2 mm thick aluminium sheet, face to be fully covered with high intensity and encapsulated lens type heat activated retro reflective sheeting conforming to type - III of ASTM-D-4956-01 as approved by Engineer-in-charge, letters, borders etc. as per IRC : 67-2001 in silver white with blue colour back ground and with high intensity grade, pasted on substrate by pressure sensitive adhesive backing which shall be activated by applying pressure conforming to class II of ASTM-D-4956-01 and fixing the same to the plate of structural frame work by means of suitable sized aluminium alloys, rivets or bolts & nuts @ 300 mm centre to centre all along the periphery as well as in two vertical rows along with theft resistant measures, including the cost of painting with two or more coats of epoxy paint in grey colour on the back side of aluminium sheet including appropriate priming coat. The rate includes the cost of rounding off the corners, lowering down the structural frame work from the gantry, fixing and erecting the same in position all complete as per drawings, specification and direction of the engineer-in-charge.(Structural frame work including M.S. plate to be provided separately. Rectangular area of the sheet only shall be measured for payment).",
           "code": "16.60",
           "children_count": 1,
@@ -1644,7 +1650,7 @@
           "rate_display": "904.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Excavating holes upto 0.10 cum, including getting out the excavated soil, then returning the soil as deported in layers not exceeding 20 cm in depth, including consolidating and deposited layer by ramming watering etc., disposing of surplus excavated soil as directed with in a lead of 50 mm and lift upto 1.5 m.",
           "code": "16.66",
           "children_count": 1,
@@ -1702,7 +1708,7 @@
           "rate_display": "10117.60"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing G.I. chain link fabric fencing of required width in mesh size 50x50 mm including strengthening with 2 mm dia wire or nuts, bolts and washers as required complete as per the direction of Engineer-in- charge.",
           "code": "16.70",
           "children_count": 2,
@@ -1772,7 +1778,7 @@
           "rate_display": "659.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "75 mm thick back filling for pitching including supplying of required materials and consolidation etc. complete with :",
           "code": "16.74",
           "children_count": 3,
@@ -1854,7 +1860,7 @@
           "rate_display": "7.00"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Construction of granular sub-base by providing close graded Material conforming to specifications, mixing in a mechanical mix plant at OMC, carriage of mixed material by tippers to work site, for all leads & lifts, spreading in uniform layers of specified thickness with motor grader on prepared surface and compacting with vibratory power roller to achieve the desired density, complete as per specifications and directions of Engineer- in-Charge.",
           "code": "16.78",
           "children_count": 3,
@@ -1984,7 +1990,7 @@
           "rate_display": "109.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying gang saw cut 18 mm thick, mirror polished pre moulded and pre polished machine cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring in road side plazas and similar locations, laid over 20 mm thick base of cement mortar 1:4 (1cement : 4 coarse sand) including grouting the joints with white cement mixed with matching pigment, epoxy touch ups etc. complete as per direction of Engineer-in-Charge.",
           "code": "16.86",
           "children_count": 1,
@@ -2006,7 +2012,7 @@
           "source_page": 14
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying gang saw cut 30 mm thick, mirror polished pre moulded and pre polished machine cut granite stone of required size and shape of approved shade, colour and texture in footpath, flooring in road side plazas and similar locations, laid over 20 mm thick base of cement mortar 1:4 (1 cement : 4 coarse sand) including grouting the joints with white cement mixed with matching pigment, epoxy touch ups etc. complete as per direction of Engineer-in-Charge.",
           "code": "16.87",
           "children_count": 2,
@@ -2076,7 +2082,7 @@
           "rate_display": "2017.60"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying factory made chamfered edge Cement Concrete paver blocks in footpath, parks, lawns, drive ways or light traffic parking etc, of required strength, thickness & size/ shape, made by table vibratory method using PU mould, laid in required colour & pattern over 50 mm thick compacted bed of sand, compacting and proper embedding/laying of inter locking paver blocks into the sand bedding layer through vibratory compaction by using plate vibrator, filling the joints with sand and cutting of paver blocks as per required size and pattern, finishing and sweeping extra sand. complete all as per direction of Engineer-in-Charge.",
           "code": "16.91",
           "children_count": 2,

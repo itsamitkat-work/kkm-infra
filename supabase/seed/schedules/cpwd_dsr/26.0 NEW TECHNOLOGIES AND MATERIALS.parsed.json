@@ -182,7 +182,7 @@
           "rate_display": "4039.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing at Bamboo Mat board conforming to IS:13958-1994 for partition to frame by bucking or studding with screws etc. complete (Frames, backing or studding to be paid separately)",
           "code": "26.6D",
           "children_count": 5,
@@ -252,7 +252,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing at all height wall panelling with phenol bonded Bamboo Mat board conforming to IS:13958-1994 including providing and fixing to frame work made of 50 mm x 50 mm hard wood plugs including cutting brick work and fixing in cement mortar and making good the wall etc. and also providing and fixing wooden moulded corner beading of triangular shape to the junction of panelling etc. with iron screws all complete as per direction of Engineer-in-Charge.",
           "code": "26.6E",
           "children_count": 2,
@@ -418,7 +418,7 @@
           "rate_display": "1166.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and laying high strength flexible geogrids (HSFG) as soil reinforcement / basal reinforcement as per MORTH 3100 and IRC 113, made of high tenacity polyester core with polyethylene coating with Minimum Long Term Design Strength (LTDS) of more than 50% of ultimate tensile strength at 30 degree Celcius corresponding to 12 % strain .",
           "code": "26.18",
           "children_count": 15,
@@ -608,7 +608,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing at all heights, levels and locations Aluminium profile industrial troughed sheet of Alloy 31500/31000/40800, conforming to IS 1254, IS 737, IS 2676. The sheet shall be fixed using self drilling/self tapping SS screws of size 5.5x65 mm with EPDM seal complete upto required pitch in horizontal, vertical or curved surfaces including cutting to size and shape where required as per specifications, detail drawings and direction of Engineer-in-Charge. The rate shall be inclusive of all screws, seal, ridge, labour, scaffolding, machinery for fixing and approved sealent where required etc. but excluding the cost of purlins, rafters and trusses.",
           "code": "26.19",
           "children_count": 2,
@@ -642,7 +642,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing false ceiling at all heights with integral densified calcium silicate reinforced with fibre and natural filler false ceiling tiles of Size 595x595 mm of approved texture, design and patterns as per CPWD Specification 2019, to be laid in true horizontal level suspended on inter- locking metal T-Grid of hot dipped galvanised iron section of 0.33 mm thick (galvanized @ 120 grams per sqm including both sides)comprising of main-T runners of size 24x38 mm of length 3000 mm,cross - T of size 24x32 mm of length 1200 mm and secondaryintermediate cross-T of size 24x32 mm of length 600 mm to formgrid module of size 600 x 600 mm, suspended from ceiling using galvanised mild steel items (galvanizing @ 80 grams per sqm) i.e. 12x50 mm long dash fasteners, 6 mm dia fully threaded hanger rod upto 1000 mm length and L-shape level adjuster of size 76x25x25x1.6 mm fixed with grid and Z cleat of size 25x37x25x1.6 mm thick with precut hole on both 25 mm flange to pierce into 12x50 mm or even bigger size dash fastener if require, fixed with Glavanised iron perimeter wall angle or size 24x24x0.40 mm of length 3000 mm to be fixed on periphey wall / partition with the help of plastic rawl plugs at 450 mm center to center and 40 mm long dry wall S.S screws. The work shall be carried out as per specifications, drawing and as per directionsof the Engineer-in-Charge.",
           "code": "26.22",
           "children_count": 2,
@@ -676,7 +676,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing false ceiling at all heights with integral densified calcium silicate reinforced with fibre and natural filler false ceiling tiles of Size 595x595 mm of approved texture, design and patterns having NRC (Noise Reduction coefficient) of 0.50 (minimum) as per IS 8225:1987, Light reflectance of 85% (minimum). Non combustible as per BS:476 (part-4), fire performance as per BS:476 (part 6 &7), humidity resistance of 100%, thermal conductivity < 0.043 W/m K as per ASTM 518:1991, in true horizontal level suspended on inter-locking metal powder coated T-Grid of hot dipped galvanised iron section of 0.40 mm thick on Silhouette profile,rotary stiched double webbed white with 6 mm reveal profile (white/ black),comprising of main-T runners of size 15x42 mm of length 3000 mm, cross - T of size 15x42 mm of length 1200 mm and secondary intermediate cross-T of size 15x42 mm of length 600 mm to form grid module of size 600 x 600 mm, suspended from ceiling using galvanised mild steel items (galvanizing @ 80 grams per sqm) i.e. 50 mm long, 8 mm outer diameter M-6 dash fasteners, 6 mm dia fully threaded hanger rod upto 1000 mm length and L-shape level adjuster of size 85x25x2 mm. Galvanised iron perimeter wall angle of size 22x19x0.40 mm of length 3000 mm to be fixed on periphery wall / partition with the help of plastic rawl plugs at 450 mm center to center and 40 mm long dry wall S.S screws. The work shall be carried out as per specifications, drawing and as per directions of the Engineer-in-Charge.",
           "code": "26.23",
           "children_count": 1,
@@ -698,7 +698,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position wall panelling at all heights with integral densified calcium silicate panels/tiles of size 595 x 595 mm, having NRC (Noise Reduction coefficient) of 0.50 (minimum) as per IS 8225:1987, Light reflectance of 85% (minimum). Non combustible as per BS:476 (part-4), fire performance as per BS:476 (part 6 &7), humidity resistance of 100%, thermal conductivity <0.043 W/m K as per ASTM 518:1991, comprising of a frame made from especially fabricated galvanised mild steel sheet 0.50 mm thick pressed section (galvanizing @120 grams per sqm including both sides) i.e.vertical studs of size 48 x 34 x 36 mm are placed at 600 mm centre to centre in a floor and ceiling channel section of size 50 x 32 mm fixed to the floor and soffit at 600 mm centre using 12 mm dia,50 mm long wedge type expanded zinc alloy dash fastner with 10 mm bolt. This same channel is then to be fixed in horiziontal direction at 600 mm centre to centre so as to form a grid of 600 mm x 600 mm. Glasswool of 50 mm thickness is then to be inserted in the slots and finally calcium silicate non combustible panels/tiles are to be screw fixed with self tapping pan head nickel coated mild steel screws of size 13 x 3.2 mm on to this grid leaving an even groove of 1 mm between the panels. The joints between the panels are to be duly jointed and finished using recommended jointing calcium silicate based compound and fiber joint tape roll 50 mm wide (90 metre )roll and two coats of primer suitable for panelling as per manufacturer’s specification as per direction of Engineer- in-Charge all complete.",
           "code": "26.24",
           "children_count": 1,
@@ -732,7 +732,7 @@
           "rate_display": "1781.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing false ceiling at all heights with GRG (Glass Fibre Reinforced Gypsum) false ceiling tiles of Size 595x595 mm of approved texture, design and patterns having moisture content less than 2%, humidity resistance of 99%, NRC0.50 to 0.75 as per IS 8225:1987, Non combustible as per BS 476 (part 4)-1970 and light reflectance of 85% (minimum) to be laid in true horizontal level suspended on inter-locking metal T-Grid of hot dipped galvanised iron section of 0.33 mm thick (galvanized @ 120 gram per sqm including both sides) comprising of main-T runners of size 15x32 mm of length 3000 mm, cross - T of size 15x32 mm of length 1200 mm and secondary intermediate cross-T of size 15x32 mm of length 600 mm to form grid module of size 600 x 600 mm, suspended from ceiling using galvanised mild steel items (galvanizing @ 80 grams per sqm) i.e. 50 mm long, 8 mm outer diameter M-6 dash fasteners, 6 mm dia fully threaded hanger rod upto 1000 mm length and L-shape level adjuster of size 85x25x2 mm. Galvanised iron perimeter wall angle of size 24x24x0.40 mm of length 3000 mm to be fixed on periphery wall / partition with the help of plastic rawl plugs at 450 mm center to center and 40 mm long dry wall wood screws. The work shall be carried out as per specifications, drawing and as per directions of the Engineer-in-Charge.",
           "code": "26.26",
           "children_count": 2,
@@ -766,7 +766,7 @@
           "source_page": 6
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing mineral fibre false ceiling tiles at all heights of size 595X595 mm of approved texture, design and pattern. The tiles should have Humidity Resistance (RH) of 99%, Light Reflectance ≥ 85%, Thermal Conductivity k = 0.052 - 0.057 w/m K, Fire Performance as per (BS 476 pt - 6 &7)in true horizontal level suspended on interlocking T-Grid of hot dipped all round galvanized iron section of 0.33 mm thick (galvanized @120 gsm) comprising of main T runners of 15x32 mm of length 3000 mm, cross T of size 15x32 mm of length 1200 mm and secondary intermediate cross T of size 15x32 mm of length 600 mm to form grid module of size 600x600 mm suspended from ceiling using galvanized mild steel item (galvanised@80gsm) 50 mm long 8 mm outer diameter M-6 dash fasteners, 6 mm diameter fully threaded hanger rod up to 1000 mm length and L-shape level adjuster of size 85x25x2 mm, spaced at 1200 mm centre to centre along main ‘T’. The system should rest on periphery walls /partitions with the help of GI perimeter wall angle of size24x24X3000 mm made of 0.40 mm thick sheet, to be fixed to the wall with help of plastic rawl plug at 450 mm centre to centre & 40 mm long dry wall S.S. screws. The exposed bottom portion of all T-sections used in false ceiling support system shall be pre-painted with polyester baked paint, for all heights. The work shall be carried out as per specifications, drawings and as per directions of the engineer-in-charge.",
           "code": "26.27",
           "children_count": 3,
@@ -812,7 +812,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Chipping of unsound/weak concrete material from slabs, beams, columns etc. with manual Chisel and/ or by standard power driven percussion type or of approved make including tapering of all edges, making square shoulders of cavities including cleaning the exposed concrete surface and reinforcement with wire brushes etc. and disposal of debris for all lead and lifts all complete as per direction of Engineer-In-Charge",
           "code": "26.28",
           "children_count": 3,
@@ -858,7 +858,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cleaning of reinforcement from rust from the reinforcing bars to give it a total rust free steel surface by using alkaline chemical rust remover of approved make with paint brush and removing loose particles after 24 hours of its application with wire brush and thoroughly washing with water and allowing it to dry, all complete as per direction of Engineer-In-Charge.",
           "code": "26.29",
           "children_count": 2,
@@ -892,7 +892,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Drilling suitable holes in reinforced or plain cement concrete with power driven drill machine to a minimum depth of 100 mm upto 200 mm in RCC beams, lintels, columns and slabs to introduce steel bars for sunshades/ balconies including fixing the steel bars in position using epoxy resin anchor grout of approved make but excluding the cost of reinforcement, all complete as per direction of Engineer-In-Charge.",
           "code": "26.30",
           "children_count": 1,
@@ -914,7 +914,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, mixing and applying bonding coat of approved adhesive on chipped portion of RCC as per specifications and direction of Engineer- In-charge complete in all respect.",
           "code": "26.31",
           "children_count": 2,
@@ -948,7 +948,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, mixing and applying SBR polymer (of approved make) modified Cement mortar in proportion of 1:4 (1 cement: 4 graded coarse sand with polymer minimum 2% by wt. of cement used) as per specifications and directions of Engineer-in-charge.",
           "code": "26.32",
           "children_count": 3,
@@ -994,7 +994,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, mixing and applying SBR polymer (of approved make @ minimum 2% by wt. of cement used) modified plain/reinforced cement concrete for structural members having minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] with specified average thickness.",
           "code": "26.33",
           "children_count": 2,
@@ -1028,7 +1028,7 @@
           "source_page": 8
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying SBR Polymer modified (of approved make @ minimum 2% by wt. of cement used) plain/reinforced concrete jacket for the structural members e.g. columns, pillars, piers, beams etc with concrete having the specified minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] with specified average thickness all-round existing core of RCC member.",
           "code": "26.34",
           "children_count": 3,
@@ -1074,44 +1074,53 @@
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and injecting approved grout in proportion recommended by the manufacturer into cracks/honey-comb area of concrete/masonry by suitable gun/pump at required pressure including cutting of nipples after curing etc. complete as per directions of Engineer-in-Charge. (The payment shall be made on the basis of actual weight of approved grout injected.)",
           "code": "26.35",
           "children_count": 3,
           "children": [
             {
               "node_type": "item",
-              "title": "Stirrer mixed Acrylic Polymer of approved make @ 2% of weight of cement used) modified Cement slurry made with non shrink compound in concrete/RCC work kg 119.30",
+              "title": "Stirrer mixed Acrylic Polymer of approved make @ 2% of weight of cement used) modified Cement slurry made with non shrink compound in concrete/RCC work",
               "code": "26.35.1",
               "children_count": 0,
               "children": [],
               "order_index": 87,
-              "source_page": 9
+              "source_page": 9,
+              "unit": "kg",
+              "rate": 119.3,
+              "rate_display": "119.30"
             },
             {
               "node_type": "item",
-              "title": "Stirrer mixed SBR Polymer (of approved make) modified Cement slurry made with Shrinkage Compensating Cement in concrete/RCC work. kg 124.00",
+              "title": "Stirrer mixed SBR Polymer (of approved make) modified Cement slurry made with Shrinkage Compensating Cement in concrete/RCC work.",
               "code": "26.35.2",
               "children_count": 0,
               "children": [],
               "order_index": 88,
-              "source_page": 9
+              "source_page": 9,
+              "unit": "kg",
+              "rate": 124.0,
+              "rate_display": "124.00"
             },
             {
               "node_type": "item",
-              "title": "Epoxy injection grout in concrete/RCC work of approved make kg 553.40",
+              "title": "Epoxy injection grout in concrete/RCC work of approved make",
               "code": "26.35.3",
               "children_count": 0,
               "children": [],
               "order_index": 89,
-              "source_page": 9
+              "source_page": 9,
+              "unit": "kg",
+              "rate": 553.4,
+              "rate_display": "553.40"
             }
           ],
           "order_index": 86,
           "source_page": 9
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, erecting, maintaining and removing temporary protective screens made out of specified fabric with all necessary fixing arrangement to ensure that it remains in position for the work duration as required by the Engineer-in-charge.",
           "code": "26.36",
           "children_count": 1,
@@ -1145,7 +1154,7 @@
           "rate_display": "382.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Shotcreting R.C.C. columns, beams and slabs etc. in layers with approved design mix concrete having the specified minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] including the cost of centering and shuttering at edges and corners etc. as directed by Engineer- in-Charge",
           "code": "26.38",
           "children_count": 3,
@@ -1216,15 +1225,18 @@
         },
         {
           "node_type": "item",
-          "title": "Designing, providing, installing and fixing factory finished custom designed cold form Light Gauge Steel Framed super structure comprising of steel wall panel, trusses, purlins etc manufactured out of minimum 0.75 mm thick steel sheet as per design requirements. The steel sheet shall be galvanized (AZ-150gms Aluminium Zinc Alloy coated steel having minimum yield strength 300-550 Mpa) conforming to AISI specifications and IBC 2009 for cold formed steel framing and construction and also as per IS: 875-1987, ISO 800-1984 and IS:801- 1975. The wind load shall be as per provisions of IS 875 (part -III). LGSFS frame shall be designed as per IS: 801 using commercially available software such as Frame CAD Pro-11.7/ STAAD PRO-V8i/ArchitekV2.5.16/ Revit architecture-2011 or equivalent. Proper usage of Connection Accessories like Heavy Duty Tension Ties, Light Duty Hold-ons, Twist Straps (to connect truss with wall frames), Strong Tie, Tie Rod, H-Brackets, Boxing Sections, L-Shaped Angles for better structural stability. The framing section shall be cold form C-type having minimum web depth 89 mm x 39 mm flange x 11 mm lip in required length as per structural design requirement duly punched with dimple/slot at required locations as per approved drawings. The slots will be along centre line of webs and shall be spaced minimum 250 mm away from both ends of the member. The frame can be supplied in panelized or knock down condition in specific dimensions and fastened with screws extending through the steel beyond by minimum of three exposed threads. All self drilling tapping screws for joining the members shall have a Type II coating in accordance with ASTM B633(13) or equivalent corrosion protection of gauge 10 & 12, TPI 16 & 8 of length 20 mm. The frames shall be fixed to RCC slab or Tie beam over Neoprene rubber using self expanding carbon steel anchor bolt of dia as per approved drawings. design subject to minimum 12 mm diameter and 121 mm length conforming to AISI 304 and 316 at 500 mm c/c with minimum embedment of 100 mm in RCC (RCC to be paid separately) and located not more than 300 mm from corners or termination of bottom tracks complete in all respects. The item also includes the submission of stability reports duly examined and issued by any NIT/IIT. The rate includes the concept design, detailed design, fabrication of sections, transportation, installation and all required fixing arrangement at site as described above. kg 285.90",
+          "title": "Designing, providing, installing and fixing factory finished custom designed cold form Light Gauge Steel Framed super structure comprising of steel wall panel, trusses, purlins etc manufactured out of minimum 0.75 mm thick steel sheet as per design requirements. The steel sheet shall be galvanized (AZ-150gms Aluminium Zinc Alloy coated steel having minimum yield strength 300-550 Mpa) conforming to AISI specifications and IBC 2009 for cold formed steel framing and construction and also as per IS: 875-1987, ISO 800-1984 and IS:801- 1975. The wind load shall be as per provisions of IS 875 (part -III). LGSFS frame shall be designed as per IS: 801 using commercially available software such as Frame CAD Pro-11.7/ STAAD PRO-V8i/ArchitekV2.5.16/ Revit architecture-2011 or equivalent. Proper usage of Connection Accessories like Heavy Duty Tension Ties, Light Duty Hold-ons, Twist Straps (to connect truss with wall frames), Strong Tie, Tie Rod, H-Brackets, Boxing Sections, L-Shaped Angles for better structural stability. The framing section shall be cold form C-type having minimum web depth 89 mm x 39 mm flange x 11 mm lip in required length as per structural design requirement duly punched with dimple/slot at required locations as per approved drawings. The slots will be along centre line of webs and shall be spaced minimum 250 mm away from both ends of the member. The frame can be supplied in panelized or knock down condition in specific dimensions and fastened with screws extending through the steel beyond by minimum of three exposed threads. All self drilling tapping screws for joining the members shall have a Type II coating in accordance with ASTM B633(13) or equivalent corrosion protection of gauge 10 & 12, TPI 16 & 8 of length 20 mm. The frames shall be fixed to RCC slab or Tie beam over Neoprene rubber using self expanding carbon steel anchor bolt of dia as per approved drawings. design subject to minimum 12 mm diameter and 121 mm length conforming to AISI 304 and 316 at 500 mm c/c with minimum embedment of 100 mm in RCC (RCC to be paid separately) and located not more than 300 mm from corners or termination of bottom tracks complete in all respects. The item also includes the submission of stability reports duly examined and issued by any NIT/IIT. The rate includes the concept design, detailed design, fabrication of sections, transportation, installation and all required fixing arrangement at site as described above.",
           "code": "26.41",
           "children_count": 0,
           "children": [],
           "order_index": 99,
-          "source_page": 10
+          "source_page": 10,
+          "unit": "kg",
+          "rate": 285.9,
+          "rate_display": "285.90"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of external wall system on Light gauge steel frame work with outer face cement boards as per standard sizes fixed with self- drilling / taping screws / fasteners @ 60 cm c/c of approved make. A groove of 2 mm to 3 mm shall be maintained and grooves shall be sealed with silicon based sealant. The board shall be fixed in a staggered pattern. Screws shall be of counter sunk rib head of 1.60 mm to 4 mm thick or 8 to 10 gauge of length varying from 25 to 45 mm and. Internal face 12.5 mm thick gypsum plaster board fixed on cement board as per standard sizes fixed with self- drilling / taping screws / fasteners @ 60cm c/c of approved make, proper taping and jointing to be done using fiber mesh tape and epoxy and acrylic based jointing compound for seamless finish.(cost of frame work to be paid for separately)",
           "code": "26.42",
           "children_count": 2,
@@ -1258,7 +1270,7 @@
           "source_page": 11
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing internal wall panels on Light gauge steel frame work with 12.5 mm thick gypsum plaster board conforming IS 2095:2011 fixed on cement board as per standard sizes fixed with self-drilling / taping screws / fasteners @ 60 cm c/c of approved make, Screws shall be of counter sunk rib head of 1.60 mm to 4 mm thick or 8 to 10 gauge of length varying from 25 to 45 mm. Proper taping and jointing to be done using fiber mesh tape and epoxy and acrylic based jointing compound for seamless finish.(cost of frame work to be paid for separately",
           "code": "26.43",
           "children_count": 2,
@@ -1304,7 +1316,7 @@
           "rate_display": "298.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and installation of moisture resistant/fire resistant cement board as per standard sizes fixed with self-drilling / taping screws. Screws shall be of counter sunk rib head of 1.60 mm to 4 mm thick or 8 to 10 gauge of length varying from 25 to 45 mm.",
           "code": "26.45",
           "children_count": 2,
@@ -1374,7 +1386,7 @@
           "rate_display": "451.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position factory made EPS cement sandwich wall/ roof/floor light weight solid core panels made of core material of EPS granule balls/beads (conforming to IS 4671:1984 and shall have density not less than 15kg per cum) adhesive, cement, sand, flyash and other bonding material in mortar state processed to form in a preset mould. The outer face on both sides of the panels will be non asbestos fiber cement board confirming to IS 14862:2000 or Calcium silicate board confirming to EN 14306:2009 of 5 mm thick each. Panel shall be laid on 6 mm thick cement mortar (1 cement: 2 fine sand) mixed with chemical adhesive of 0.5 kg per 50 kg of cement or shall be preferably fixed into ‘C’ channel made of 1.2 mm thick MS plate screwed/fastenened to the slab/column/ beam etc. The panel shall fixed vertically with tongue and groove joint and horizontally locked with steel bar between each other and floors and filled with cement mortar and adhesive. Panels should be used as floor & roofing with additional structural support, steel or RCC depending upon the design. All the operation shall be completed in all respect as per drawings, Manufacturers specifications and under the overall direction of Engineer-in-Charge (Cost of all the material is included except “C channel” which will be paid seperately).",
           "code": "26.49",
           "children_count": 5,
@@ -1444,7 +1456,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position factory made non asbestos fibre reinforced aerated cement sandwich wall/roof/floor light weight solid core panels made of light weight cement concrete core composed of OPC cement, pulverized flyash, quick lime, cotton pulp & Gypsum in mortar state mixed with aeration agent in a preset mould. The outer face on both sides of the panels will be non asbestos fibre cement board confirming to IS :14862:2000. These solid wall panels are installed using Galvanized iron steel tracks/C channel of 1 mm thick of required sizes as recommended by manufacturer’s and fixed to floor and RCC soffit in plumb to each other with steel screw/fasteners. The panel shall be fixed vertically with tongue & groove joint with cement based polymer modified jointing compound. The exposed surface finished with fibre mesh/glass fibre tape with polymer based jointing compound having superior flexibility. Panels should be used as floor & roofing with additional structural support, steel or RCC depending upon the design. All the operation shall be completed in all respect as per drawings, Manufacturers specifications and under the overall direction of Engineer-in-Charge (Cost of all the material is included except “tracks/C channel” which will be paid separately).",
           "code": "26.50",
           "children_count": 2,
@@ -1608,24 +1620,30 @@
         },
         {
           "node_type": "item",
-          "title": "Designing, Providing, installing and fixing factory finished customed design pregalvanized high tensile steel joists manufactured from G350 Z275 confirming to IS:277-1992, minimum coating of galvanizing 275 gm/ sqm, minimum yield stress 35 MPa & minimum tensile strength of 380 MPa placed 1.23 metre apart to support the load of slab etc as per the design & directions of Engineer-in-Charge. kg 182.05",
+          "title": "Designing, Providing, installing and fixing factory finished customed design pregalvanized high tensile steel joists manufactured from G350 Z275 confirming to IS:277-1992, minimum coating of galvanizing 275 gm/ sqm, minimum yield stress 35 MPa & minimum tensile strength of 380 MPa placed 1.23 metre apart to support the load of slab etc as per the design & directions of Engineer-in-Charge.",
           "code": "26.62",
           "children_count": 0,
           "children": [],
           "order_index": 133,
-          "source_page": 16
+          "source_page": 16,
+          "unit": "kg",
+          "rate": 182.05,
+          "rate_display": "182.05"
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing special adjustable lockbars of mild steel E-250 to support the temporary plywood for work between joists during construction as per design & directions of the Engineer-in-charge. kg 27.10",
+          "title": "Providing and fixing special adjustable lockbars of mild steel E-250 to support the temporary plywood for work between joists during construction as per design & directions of the Engineer-in-charge.",
           "code": "26.63",
           "children_count": 0,
           "children": [],
           "order_index": 134,
-          "source_page": 17
+          "source_page": 17,
+          "unit": "kg",
+          "rate": 27.1,
+          "rate_display": "27.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Centering and shuttering with 12 mm thick shuttering plywood confirming to IS 4990:2011 and removal of form at all heights. Plywood will be supported on lock bars.",
           "code": "26.64",
           "children_count": 1,
@@ -1683,7 +1701,7 @@
           "rate_display": "3935.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying factory made Precast concrete solid blocks of 200 mm thickness of grade M10 made of C&D waste from approved manufacturer in foundation and plinth in:",
           "code": "26.68",
           "children_count": 1,
@@ -1705,7 +1723,7 @@
           "source_page": 17
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying factory made Precast concrete solid blocks of 200 mm thickness of grade M10 made of C&D waste from approved manufacturer in superstructure above plinth level up to floor V level",
           "code": "26.69",
           "children_count": 1,
@@ -1727,7 +1745,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying half block masonry with factory made Precast concrete solid blocks of 100 mm thickness of grade M10 made of C&D waste from approved manufacturer in foundation and plinth in:",
           "code": "26.70",
           "children_count": 1,
@@ -1749,7 +1767,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying half block masonry with factory made Precast concrete solid blocks of 100 mm thickness of grade M10 made of C&D waste from approved manufacturer in superstructure above plinth level up to floor V level:",
           "code": "26.71",
           "children_count": 1,
@@ -1783,13 +1801,13 @@
           "rate_display": "829.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fabrication & Manufacturing of Prestressed Hollow Core slab (Hollow area 25 to 30%) of different thickness & modular width 1200 mm in Controlled Factory Environment with approved methodology conforming to IS : 10297:1982 by using long line casting method having arrangement of proper steel bed. Concreting should be done by batch mixing plant capable of producing zero slump concrete, transported through automatic shuttels of standard make & layed on bed with the help of extruder/ Slipformer, finishing, curing and also provision of steam curing. Cutting, making necessary cutout/holes of required sizes for services in slab element after achieving required strength, yard handling & stacking all complete as per approved shop drawings & design mix as per the direction of the Engineer-in-charge. (Cost of strands should be paid separately).",
           "code": "26.73",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Concrete Grade-M-40 (cement content 400 kg )",
               "code": "26.73.1",
               "children_count": 8,
@@ -1895,7 +1913,7 @@
               "source_page": 18
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Extra for using M-50 (Cement content 425 kg) instead of M-40",
               "code": "26.73.2",
               "children_count": 8,
@@ -2001,7 +2019,7 @@
               "source_page": 18
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Extra for using M-60 (Cement content 440 kg) instead of M-40",
               "code": "26.73.3",
               "children_count": 8,
@@ -2111,7 +2129,7 @@
           "source_page": 18
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fabrication and manufacturing of solid precast concrete element with provisions of shear keys, connecting loops, dowel tubes and proper lifting accessories for walls, beams, slabs, stairs, column etc, of various thickness, shape and size of different concrete grades manufactured in controlled factory environment with approved methodology including moulds (Pallet system, Tilts form, table moulds, battery moulds, vertical moulds, beam moulds, column moulds, staircase moulds, Facade mould, etc.), mixing, transporting and placing of concrete, vibrating, curing, finishing, making necessary cutout/holes of required sizes for services, yard handling & stacking all complete as per IS : 11447:1985 and as per approved shop drawings and design mix as per the direction of Engineer- in-Charge (Cost of reinforcement, Mechanical, Electrical and Plumbing inserts will be paid separately).",
           "code": "26.74",
           "children_count": 4,
@@ -2170,15 +2188,18 @@
         },
         {
           "node_type": "item",
-          "title": "Providing & laying in position Prestressing steel strands (low relaxation) on hollow core bed by using mechanical pulling arrangement like Rabbit/ Bed master including all accessories for Stressing & destressing operations as per approved make conforming to IS : 1343 & grade FY- 1860 etc, complete as per drawings and direction of Engineer -in-charge. kg 192.35",
+          "title": "Providing & laying in position Prestressing steel strands (low relaxation) on hollow core bed by using mechanical pulling arrangement like Rabbit/ Bed master including all accessories for Stressing & destressing operations as per approved make conforming to IS : 1343 & grade FY- 1860 etc, complete as per drawings and direction of Engineer -in-charge.",
           "code": "26.75",
           "children_count": 0,
           "children": [],
           "order_index": 182,
-          "source_page": 19
+          "source_page": 19,
+          "unit": "kg",
+          "rate": 192.35,
+          "rate_display": "192.35"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Transportation of Precast Elements by flat bed Trailor (Double / Triple axle 40ft Length with proper accessories like A frame etc) from factory, including the cost of loading , unloading & stacking at site with the help of required capacity cranes.",
           "code": "26.76",
           "children_count": 2,
@@ -2206,7 +2227,7 @@
           "source_page": 19
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Erection & Installation of Precast/Prestressed Concrete elements in correct & final position with proper line level and plumb at site making all arrangements (i.e cranes, push-pull jacks & all another T & P for lifting Placing & Alignment of elements, within erection tolerance as per IS : 15916 as per approved shop drawings and all complete as per the direction of Engineer-in-Charge but excluding the cost of sim pads, non shrink grout and steel works i.e hangers. All work up to fifth floor.",
           "code": "26.77",
           "children_count": 3,
@@ -2252,7 +2273,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & Applying weather proof sealant on outer joints of approved make confirming to IS & directed by Engineer-in-charge.",
           "code": "26.78",
           "children_count": 1,
@@ -2274,7 +2295,7 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & Laying of levelling sim pads required sizes (5x5 cm to 10x10 cm) of PVC / Rubber to adjust level of bearing surface of supporting members as per the direction of Engineer in charge.",
           "code": "26.79",
           "children_count": 3,
@@ -2320,19 +2341,22 @@
           "source_page": 20
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & Grouting of dowel tubes / Shear keys / Joints of precast members with M-60 grade cementitious grout (Non Shrink) of approved make by suitable means (Free flowing /pump),curing etc. Complete as per directions of Engineer-in-charge. (The payment shall be made on the basis of actual weight of approved grout injected.)",
           "code": "26.80",
           "children_count": 1,
           "children": [
             {
               "node_type": "item",
-              "title": "Stirrer mixed cementitious grout (non shrink) of approved make in dowel tubes / Shear keys / Joints of precast members. kg 85.05",
+              "title": "Stirrer mixed cementitious grout (non shrink) of approved make in dowel tubes / Shear keys / Joints of precast members.",
               "code": "26.80.1",
               "children_count": 0,
               "children": [],
               "order_index": 197,
-              "source_page": 20
+              "source_page": 20,
+              "unit": "kg",
+              "rate": 85.05,
+              "rate_display": "85.05"
             }
           ],
           "order_index": 196,
@@ -2375,7 +2399,7 @@
           "rate_display": "762.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and laying of Uni-Axial Woven Polyster Geogrid conforming to MORTH 3100 and IRC113, as soil reinforcement/basal reinforcement including accessories like tie-strips, nuts & bolts and loops/lugs for joining reinforcing elements with the facia pannels, overlaps and other protective elements for synthetic geo-grids and all other activities required for reinforced soil walls, slopes etc complete as per design requirements, manufacturer specifications and as per direction of engineer-in- charge.",
           "code": "26.84",
           "children_count": 9,
@@ -2493,7 +2517,7 @@
           "source_page": 21
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and laying of Bi-Axial Woven Polyster Geogrid conforming to MORTH 3100 and IRC113, as soil reinforcement/basal reinforcement of granular road base and sub base, area stalilization, track bed stabilization, load transfer platforms Including accessories like tie-strips, nuts & bolts and loops/lugs for joining reinforcing elements with the facia pannels, overlaps and other protective elements for synthetic geo-grids and all other activities required etc. complete as per design requirements, manufacturer specifications and as per direction of engineer-in- charge.",
           "code": "26.85",
           "children_count": 3,
@@ -2539,7 +2563,7 @@
           "source_page": 22
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid door/window/Clerestory windows & other Frames/ Chowkhat comprising of virgin PVC polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/ wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) fabricated with miter joints after applying PVC solvent cement and screwed with full body threaded star headed SS screws having minimum frame density of 750 kg/cum, screw withdrawal strength of 2200 N (Face) & 1100 N (Edge), minimum compressive strength of 58 N/mm2, modulus of elasticity 900 N/mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant and fixed in position with M.S hold fast/lugs/SS dash fasteners of required dia and length complete as per direction of Engineer-In- Charge. (M.S hold fast/lugs or SS dash fasteners shall be paid for separately).",
           "code": "26.86",
           "children_count": 7,
@@ -2633,7 +2657,7 @@
           "source_page": 22
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid plain flush door shutter of required size comprising of virgin polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) having minimum density of 650 kg/cum and screw withdrawal strength of 1800 N (Face) & 900 N (Edge), minimum compressive strength 50 N/mm2, modulus of elasticity 850 N/mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant and fixing with stainless steel butt hinges of required size with necessary full body threaded star headed counter sunk S.S screws, all as per direction of Engineer-In- Charge. (Note: stainless steel butt hinges and necessary S.S screws shall be paid separately)",
           "code": "26.87",
           "children_count": 2,
@@ -2667,7 +2691,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid decorative type flush door shutter of required size comprising of virgin polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) having minimum density of 650 kg/cum and screw withdrawal strength of 1800 N (Face) & 900 N (Edge), minimum compressive strength 50 N/mm2, modulus of elasticity 850 N/mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant. WPC to be laminated with PVC foil of minimum 14 microns thick of approved design pasted with hot melt adhesive on both faces of shutter and fixing with stainless steel butt hinges of required size with necessary full body threaded star headed counter sunk S.S screws, all as per direction of Engineer-In- Charge. (Note: stainless steel butt hinges and necessary S.S screws shall be paid separately)",
           "code": "26.88",
           "children_count": 2,
@@ -2701,7 +2725,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid board one side white color and other side of board laminted with PVC foil of minimum 14 micron thickness of approved design pasted with hot melt adhesive for cup boards, work stations and bathroom/ kitchen cabinet etc. of required sizes comprising of virgin polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) having minimum density of 650 kg/cum and screw withdrawal strength of 1800 N (Face) & 900 N (Edge), minimum compressive strength 50 N/mm2, modulus of elasticity 850 N/mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant and fixing with stainless steel piano hinges/soft close clip on concealed hinges of required size with necessary full body threaded star headed counter sunk S.S screws, all as per direction of Engineer-In- Charge. (Note: stainless steel piano hinges/soft close clip on concealed hinges and necessary S.S screws shall be paid separately)",
           "code": "26.89",
           "children_count": 2,
@@ -2735,7 +2759,7 @@
           "source_page": 23
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid plain white color board for backing of cup boards and bathroom/kitchen cabinets etc. of required size comprising of virgin polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) having minimum density of 650 kg/cum and screw withdrawal strength of 1800 N (Face) & 900 N (Edge), minimum compressive strength 50 N/mm2, modulus of elasticity 850 N/ mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant and fixing with stainless steel screws etc. all as per direction of Engineer-In- Charge. (Note: stainless steel screws shall be paid separately)",
           "code": "26.90",
           "children_count": 2,
@@ -2781,7 +2805,7 @@
           "rate_display": "3437.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of façade at all heights with extruded hollow Clay / Terracotta ventilated rainscreen tiles of height 250/ 300/ 400 mm and length of 595 mm of approved texture,design and pattern having Flexural Strength/ Modulus of Rupture of ≥ 14 N/m² and maximum water absorption of 10% tested as per ISO 10545-4:2004(E) and ISO 10545-3:1995 respectively in true level fixed to a supporting aluminium framework(Alloy 6063 T5/T6) consisting of vertical ‘T’ (for intermediates)/ ‘L’(for ends/ termination)/ Tubular sections (at corners)of size 80x60x2 mm/ 40x60x2 mm / 40x40x2 mm respectively, spaced at maximum spacing of 600 mm c/c matching to the tile vertical grid, and horizontal aluminium ‘C’-clamps of size 56x25x2 mm thickness of length 150 mm at junction of tiles and of length 75 mm at wall ends/ corners fixed on top of the vertical sections at spacing of 250/ 300/ 400 mm c/c matching to the tile horizontal grid with two numbers of self-drilling / self-tapping SS screws of size 5.5x25 mm with EPDM washers. The vertical ‘T’/’L/ Tubular’ sections shall be fixed to the wall using HDG (hot-dip-galvanized) steel L-brackets (galvanizing thickness of minimum 80 microns)of size 110x80x6 mm at intermediate vertical aluminium profiles and of size 220x110x12 mm at outer corners and stainless steel grade 304,M10 full threaded anchor fasteners with nylon sleeve 100 mm long (for brick work) and M8 expansion anchor fasteners 75 mm long for concrete surface, spacing of brackets to be based on a structural/ static calculation. The brackets shall be of length 175 mm at junction of two vertical aluminium profiles and of length 100 mm at intermediate points of vertical profiles and shall be fixed to the vertical aluminium T / L / Tubular profiles using two numbers self-drilling/ self-tapping SS screws of size 5.5x25 mm with EPDM washers. EPDM gaskets to be fixed in between brackets and vertical profiles. The tiles shall be mounted on the ‘C’ clamps such that the tiles are supported at top and bottom at both ends. The tiles shall be additionally secured to the horizontal ‘C’ clamps using special SS clips of required size which shall be inserted and pressed into position on the ‘C’ clamps holding the tiles and the cut-tiles shall be glued at points to the horizontal ‘C’ clamps by using MS Polymer sealant adhesive. The vertical joint open groove between two adjacent tiles shall be 5 mm. The tiles and system shall be designed to resist wind load as per IS 875 (Part 3) according to different zones. The tiles shall be installed using the ventilated rain screen principle with provision for natural ventilation of the space between the façade tiles and the structural wall. The work shall be carried out as per specification, drawing and as per direction of the Engineer-in-Charge.",
           "code": "26.92",
           "children_count": 2,
@@ -2815,7 +2839,7 @@
           "source_page": 24
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of façade at all heights with extruded hollow Clay / Terracotta ventilated rainscreen tiles of height 259/ 309/ 409 mm and lengthof 1190 mm of approved texture,design and pattern having Flexural Strength/ Modulus of Rupture of ≥ 14 N/m² and maximum water absorption of 10% tested as per ISO 10545-4:2004(E) and ISO 10545-3:1995 respectively in true level fixed to a supporting aluminium framework (Alloy 6063 T5/T6) consisting of vertical ‘T’ (for intermediates)/ ‘L’ (for ends/ termination)/ Tubular sections (at corners)of size 80x60x2 mm/ 40x60x2 mm/ 40x40x2 mm respectively, spaced at maximum spacing of 1200 mm c/c matching to the tile vertical grid, and horizontal aluminium ‘C’-clamps of size 56x34x2 mm thickness of length 150 mm at junction of tiles and of length 75 mm at wall ends/ corners fixed on top of the vertical sections at spacing of 250/ 300/ 400 mm c/c matching to the tile horizontal grid with two numbers of self-drilling / self-tapping SS screws of size 5.5x25 mm with EPDM washers. The vertical ‘T’/’L/ Tubular’ sections shall be fixed to the wall using HDG (hot-dip-galvanized) steel L-brackets (galvanizing thickness of minimum 80 microns) of size 110x80x6 mm at intermediate vertical aluminium profiles and of size 220x110x12 mm at outer corners and stainless steel grade 304,M10 full threaded anchor fasteners with nylon sleeve 100 mm long (for brick work) and M8 expansion anchor fasteners 75 mm long for concrete surface, spacing of brackets to be based on a structural/ static calculation. The brackets shall be of length 175 mm at junction of two vertical aluminium profiles and of length 100 mm at intermediate points of vertical profiles and shall be fixed to the vertical aluminium T / L / Tubular profiles using two numbers self-drilling/ self-tapping SS screws of size 5.5x25 mm with EPDM washers. EPDM gaskets to be fixed in between brackets and vertical profiles. The tiles shall be mounted on the ‘C’ clamps such that the tiles are supported at top and bottom at both ends. The tiles shall be mounted on the C-clamps with EPDM profiles in between such that the tiles are supported at top and bottom at both ends. The vertical joint open groove between two adjacent tiles shall be 10 mm. The tiles and system shall be designed to resist wind load as per IS 875 (Part 3) according to different zones. The tiles shall be installed using the ventilated rain screen principle with provision for natural ventilation of the space between the façade tiles and the structural wall. The work shall be carried out as per specification, drawing and as per direction of the Engineer-in-Charge.",
           "code": "26.93",
           "children_count": 2,
@@ -2861,7 +2885,7 @@
           "rate_display": "269.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and installation of factory made Structural Stay in place form work system with double faced panels for walls, single faced panels for roof/ floor slabs, L-shaped single faced panels for corners, with necessary scaffolding, struts, bracing etc. Complete as per CPWD specification and directions of the Engineer in Charge. Design of walls and other members to be provided by the supplier & shall be duly vetted by any engineering institute of National repute such as IITs, NITs etc. and nothing extra shall be payable on this account (Additional steel reinforcement/dowels, design mix concrete of specified grade, electrical and plumbing conduits insert for services and plastering on either side of walls shall be paid for separately).",
           "code": "26.95",
           "children_count": 2,
@@ -2895,7 +2919,7 @@
           "source_page": 26
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and placing “Stay in Place PVC Wall formwork” made up of extruded Unplasticised Poly Vinyl Chloride (uPVC) consisting of Main panel, 3 way Connector, Starter Channel, Joint Panel, Connection Panels, Door/Window frame/trim panels etc. all complete as per manufacturer design and for all heights as per direction of Engineer-in-charge. (Note: Suitable for in fill walls with appropriate Structural system).",
           "code": "26.96",
           "children_count": 2,
@@ -3127,7 +3151,7 @@
           "unit": "cum"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L cement concrete - all works upto plinth level :",
           "code": "4.1",
           "children_count": 19,
@@ -3365,7 +3389,7 @@
           "source_page": 28
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L cement concrete - all works upto plinth level :",
           "code": "4.2",
           "children_count": 9,
@@ -3483,7 +3507,7 @@
           "source_page": 29
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L cement concrete in kerbs, steps etc.:",
           "code": "4.4",
           "children_count": 2,
@@ -3517,7 +3541,7 @@
           "source_page": 30
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L precast cement concrete string or lacing courses, copings etc.:",
           "code": "4.5",
           "children_count": 2,
@@ -3551,7 +3575,7 @@
           "source_page": 30
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L precast cement concrete in kerbs, edgings etc.:",
           "code": "4.6",
           "children_count": 2,
@@ -3585,7 +3609,7 @@
           "source_page": 30
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L precast cement concrete solid blocks:",
           "code": "4.7",
           "children_count": 2,
@@ -3619,7 +3643,7 @@
           "source_page": 31
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L precast cement concrete hollow blocks:",
           "code": "4.8",
           "children_count": 2,
@@ -3773,13 +3797,13 @@
           "rate_display": "0.11"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L ready mix plain cement concrete derived from natural sources",
           "code": "4.20",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works upto plinth level",
               "code": "4.20.1",
               "children_count": 4,
@@ -3837,7 +3861,7 @@
               "source_page": 32
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works above plinth and upto floor V level",
               "code": "4.20.2",
               "children_count": 4,
@@ -3899,13 +3923,13 @@
           "source_page": 32
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L ready mix plain cement concrete derived from natural sources & Recycled Concrete Aggregate (RCA)",
           "code": "4.20A",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works upto plinth level",
               "code": "4.20A.1",
               "children_count": 4,
@@ -3963,7 +3987,7 @@
               "source_page": 32
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All works above plinth and upto floor V level",
               "code": "4.20A.2",
               "children_count": 4,
@@ -4025,7 +4049,7 @@
           "source_page": 32
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L R.C.C. upto plinth level :",
           "code": "5.1",
           "children_count": 4,
@@ -4083,7 +4107,7 @@
           "source_page": 34
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "R.C.C work in walls etc.:",
           "code": "5.2",
           "children_count": 2,
@@ -4402,7 +4426,7 @@
           "rate_display": "4.00"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing precast cement concrete Jali (1:2:4).",
           "code": "5.18",
           "children_count": 3,
@@ -4526,13 +4550,13 @@
           "rate_display": "0.032"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Design mix concrete derived from natural sources. 3.30***",
           "code": "5.33",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Upto Plinth level",
               "code": "5.33.1",
               "children_count": 5,
@@ -4602,7 +4626,7 @@
               "source_page": 37
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Above plinth level Plinth level",
               "code": "5.33.2",
               "children_count": 5,
@@ -4677,13 +4701,13 @@
           "unit": "cum"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Design mix concrete derived from natural sources with permissible utilization of Recycled Concrete Aggregate (RCA).",
           "code": "5.33A",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Upto Plinth level",
               "code": "5.33A.1",
               "children_count": 1,
@@ -4705,7 +4729,7 @@
               "source_page": 37
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Above plinth level Plinth level",
               "code": "5.33A.2",
               "children_count": 1,
@@ -4802,7 +4826,7 @@
           "rate_display": "4.41"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work in foundation & plinth with non modular bricks.",
           "code": "6.1",
           "children_count": 2,
@@ -4836,7 +4860,7 @@
           "source_page": 39
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work in foundation & plinth with modular bricks.",
           "code": "6.2",
           "children_count": 2,
@@ -4870,7 +4894,7 @@
           "source_page": 39
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work with machine moulded perforated bricks.",
           "code": "6.3",
           "children_count": 2,
@@ -4904,7 +4928,7 @@
           "source_page": 39
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work in superstructure",
           "code": "6.4",
           "children_count": 2,
@@ -5013,7 +5037,7 @@
           "source_page": 39
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Tile brick masonry in foundation and plinth. :",
           "code": "6.16",
           "children_count": 2,
@@ -5155,7 +5179,7 @@
           "rate_display": "0.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work with clay flyash F.P.S. brick",
           "code": "6.32",
           "children_count": 2,
@@ -5189,7 +5213,7 @@
           "source_page": 40
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work with non modular fly ash bricks in",
           "code": "6.34",
           "children_count": 2,
@@ -5223,7 +5247,7 @@
           "source_page": 40
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work with modular calcium silicate bricks machine moulded in",
           "code": "6.35",
           "children_count": 2,
@@ -5257,7 +5281,7 @@
           "source_page": 40
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick work with modular extruded burnt fly ash clay sewer bricks in :",
           "code": "6.36",
           "children_count": 1,
@@ -5304,15 +5328,18 @@
         },
         {
           "node_type": "item",
-          "title": "Brick edging 7 cm wide in cement mortar (1:4). 100 metre 0.137",
+          "title": "Brick edging 7 cm wide in cement mortar (1:4). 100",
           "code": "6.44",
           "children_count": 0,
           "children": [],
           "order_index": 459,
-          "source_page": 40
+          "source_page": 40,
+          "unit": "metre",
+          "rate": 0.137,
+          "rate_display": "0.137"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Half brick masonry with non modular fly ash bricks.",
           "code": "6.45",
           "children_count": 2,
@@ -5340,7 +5367,7 @@
           "source_page": 40
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Coursed rubble masonry (first sort) with :",
           "code": "7.6",
           "children_count": 1,
@@ -5362,7 +5389,7 @@
           "source_page": 41
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Coursed rubble masonry (second sort) with :",
           "code": "7.7",
           "children_count": 1,
@@ -5557,36 +5584,45 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for fixing marble /granite stone over and above corresponding basic item, in facia and drops of width upto 150 mm with epoxy resin based adhesive including cleaning etc. complete. 100 metre 1.27",
+          "title": "Extra for fixing marble /granite stone over and above corresponding basic item, in facia and drops of width upto 150 mm with epoxy resin based adhesive including cleaning etc. complete. 100",
           "code": "8.4",
           "children_count": 0,
           "children": [],
           "order_index": 486,
-          "source_page": 42
+          "source_page": 42,
+          "unit": "metre",
+          "rate": 1.27,
+          "rate_display": "1.27"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/F cramps in RCC/ CC backing with cement mortar 1:2.",
           "code": "8.7",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Gunmetal cramps kg 0.0635",
+              "title": "Gunmetal cramps",
               "code": "8.7.1",
               "children_count": 0,
               "children": [],
               "order_index": 488,
-              "source_page": 42
+              "source_page": 42,
+              "unit": "kg",
+              "rate": 0.0635,
+              "rate_display": "0.0635"
             },
             {
               "node_type": "item",
-              "title": "Stainless steel cramps kg 0.0701",
+              "title": "Stainless steel cramps",
               "code": "8.7.2",
               "children_count": 0,
               "children": [],
               "order_index": 489,
-              "source_page": 42
+              "source_page": 42,
+              "unit": "kg",
+              "rate": 0.0701,
+              "rate_display": "0.0701"
             }
           ],
           "order_index": 487,
@@ -5621,12 +5657,15 @@
         },
         {
           "node_type": "item",
-          "title": "P/F stainless steel cramps in stone wall lining in cement mortar (1:2). kg 0.07",
+          "title": "P/F stainless steel cramps in stone wall lining in cement mortar (1:2).",
           "code": "8.15",
           "children_count": 0,
           "children": [],
           "order_index": 493,
-          "source_page": 42
+          "source_page": 42,
+          "unit": "kg",
+          "rate": 0.07,
+          "rate_display": "0.07"
         },
         {
           "node_type": "item",
@@ -5687,12 +5726,15 @@
         },
         {
           "node_type": "item",
-          "title": "P/F 2nd class teak wood plain lining with wooden plugs. 100 sqm 0.055",
+          "title": "P/F 2nd class teak wood plain lining with wooden plugs. 100",
           "code": "8.25",
           "children_count": 0,
           "children": [],
           "order_index": 500,
-          "source_page": 42
+          "source_page": 42,
+          "unit": "sqm",
+          "rate": 0.055,
+          "rate_display": "0.055"
         },
         {
           "node_type": "item",
@@ -5717,21 +5759,27 @@
         },
         {
           "node_type": "item",
-          "title": "P/F 1 mm thick M.S. sheet sliding-shutters with frame. 100 sqm 0.35",
+          "title": "P/F 1 mm thick M.S. sheet sliding-shutters with frame. 100",
           "code": "10.4",
           "children_count": 0,
           "children": [],
           "order_index": 503,
-          "source_page": 44
+          "source_page": 44,
+          "unit": "sqm",
+          "rate": 0.35,
+          "rate_display": "0.35"
         },
         {
           "node_type": "item",
-          "title": "P/F 1 mm thick M.S. sheet door with frame. 100 sqm 0.35",
+          "title": "P/F 1 mm thick M.S. sheet door with frame. 100",
           "code": "10.5",
           "children_count": 0,
           "children": [],
           "order_index": 504,
-          "source_page": 44
+          "source_page": 44,
+          "unit": "sqm",
+          "rate": 0.35,
+          "rate_display": "0.35"
         },
         {
           "node_type": "item",
@@ -5744,21 +5792,27 @@
         },
         {
           "node_type": "item",
-          "title": "Fixing standard steel glaze door windows etc. 100 kg 0.13",
+          "title": "Fixing standard steel glaze door windows etc. 100",
           "code": "10.11.1",
           "children_count": 0,
           "children": [],
           "order_index": 506,
-          "source_page": 44
+          "source_page": 44,
+          "unit": "kg",
+          "rate": 0.13,
+          "rate_display": "0.13"
         },
         {
           "node_type": "item",
-          "title": "P/F ‘T’ iron froms for doors windows & ventilators 100 kg 0.11",
+          "title": "P/F ‘T’ iron froms for doors windows & ventilators 100",
           "code": "10.13.1",
           "children_count": 0,
           "children": [],
           "order_index": 507,
-          "source_page": 44
+          "source_page": 44,
+          "unit": "kg",
+          "rate": 0.11,
+          "rate_display": "0.11"
         },
         {
           "node_type": "item",
@@ -5770,7 +5824,7 @@
           "source_page": 44
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Brick on edge flooring.",
           "code": "11.1",
           "children_count": 2,
@@ -5804,7 +5858,7 @@
           "source_page": 45
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cement concrete flooring 1:2:4.",
           "code": "11.3",
           "children_count": 1,
@@ -5874,7 +5928,7 @@
           "rate_display": "3.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "40 mm thick marble chips flooring with under layer 34 mm thick cement concrete (1:2:4).",
           "code": "11.9",
           "children_count": 6,
@@ -5950,7 +6004,7 @@
           "source_page": 45
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "40 mm thick marble chips flooring with under layer 31mm thick cement concrete 1:2:4.",
           "code": "11.10",
           "children_count": 6,
@@ -6026,7 +6080,7 @@
           "source_page": 45
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "40 mm thick marble chips flooring with under layer 28 mm thick cement concrete 1:2:4.",
           "code": "11.11",
           "children_count": 6,
@@ -6102,13 +6156,13 @@
           "source_page": 45
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Marble chips skirting :",
           "code": "11.12",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "18 mm thick with under layer 12 mm thick in cement plaster 1:3 (1 cement : 3 coarse sand)",
               "code": "11.12.1",
               "children_count": 6,
@@ -6188,7 +6242,7 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Crazy marble stone flooring",
           "code": "11.15",
           "children_count": 1,
@@ -6208,7 +6262,7 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Precast terrazo tiles 22mm thick in floors, and landings on 20mm thick bed of cement mortar (1:4).",
           "code": "11.16",
           "children_count": 4,
@@ -6262,7 +6316,7 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Precast terrazo tiles 22 mm thick in skirting and risers of steps.",
           "code": "11.18",
           "children_count": 4,
@@ -6316,7 +6370,7 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Chequered terrazo tiles 22 mm thick in floors on 20 mm thick bed of cement mortar (1:4).",
           "code": "11.19",
           "children_count": 4,
@@ -6370,7 +6424,7 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Chequerred precast cement concrete tiles 22 mm thick in foot path on 20 mm thick bed of cement mortar (1:4).",
           "code": "11.20",
           "children_count": 4,
@@ -6424,13 +6478,13 @@
           "source_page": 46
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 10mm thick acid and or alkali resistant tiles.",
           "code": "11.21",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "In flooring on a bed of 10 mm thick mortar 1:4 (1 acid proof cement : 4 coarse sand)",
               "code": "11.21.1",
               "children_count": 1,
@@ -6450,7 +6504,7 @@
               "source_page": 47
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "In dado/skirting on 12 mm thick mortar 1:4 (1 acid proof cement : 4 coarse sand)",
               "code": "11.21.2",
               "children_count": 1,
@@ -6756,12 +6810,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing sand stone slab for roofing and laying cement mortar (1 : 4). 100 sqm 0.74",
+          "title": "Providing sand stone slab for roofing and laying cement mortar (1 : 4). 100",
           "code": "12.23",
           "children_count": 0,
           "children": [],
           "order_index": 603,
-          "source_page": 48
+          "source_page": 48,
+          "unit": "sqm",
+          "rate": 0.74,
+          "rate_display": "0.74"
         },
         {
           "node_type": "item",
@@ -6786,7 +6843,7 @@
           "unit": "sqm"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster:",
           "code": "13.1",
           "children_count": 2,
@@ -6832,7 +6889,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster:",
           "code": "13.2",
           "children_count": 2,
@@ -6878,7 +6935,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "20 mm cement plaster :",
           "code": "13.3",
           "children_count": 2,
@@ -6924,7 +6981,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster :",
           "code": "13.4",
           "children_count": 2,
@@ -6952,7 +7009,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster :",
           "code": "13.5",
           "children_count": 2,
@@ -6980,7 +7037,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "20 mm cement plaster :",
           "code": "13.6",
           "children_count": 2,
@@ -7008,7 +7065,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "12 mm cement plaster finished with a floating coat of neat cement :",
           "code": "13.7",
           "children_count": 2,
@@ -7054,7 +7111,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "15 mm cement plaster finished with a floating coat of neat cement :",
           "code": "13.8",
           "children_count": 2,
@@ -7100,7 +7157,7 @@
           "source_page": 49
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cement plaster (1:3) finished with a floating coat of neat cement.",
           "code": "13.9",
           "children_count": 2,
@@ -7227,7 +7284,7 @@
           "source_page": 50
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "6 mm cement plaster of mix :",
           "code": "13.16",
           "children_count": 1,
@@ -7336,19 +7393,22 @@
           "source_page": 50
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on brick work with cement mortar (1:3) :",
           "code": "13.31",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Flush / Ruled/ Struck or weathered pointing 100 sqm 1.53",
+              "title": "Flush / Ruled/ Struck or weathered pointing 100",
               "code": "13.31.1",
               "children_count": 0,
               "children": [],
               "order_index": 678,
-              "source_page": 50
+              "source_page": 50,
+              "unit": "sqm",
+              "rate": 1.53,
+              "rate_display": "1.53"
             },
             {
               "node_type": "item",
@@ -7373,7 +7433,7 @@
           "source_page": 50
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on tile brick work with cement mortar (1:3).",
           "code": "13.32",
           "children_count": 1,
@@ -7401,19 +7461,22 @@
           "source_page": 50
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Pointing on stone work with cement mortar (1:3).",
           "code": "13.33",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Flush/ Ruled pointing 100 sqm 1.17",
+              "title": "Flush/ Ruled pointing 100",
               "code": "13.33.1",
               "children_count": 0,
               "children": [],
               "order_index": 685,
-              "source_page": 50
+              "source_page": 50,
+              "unit": "sqm",
+              "rate": 1.17,
+              "rate_display": "1.17"
             },
             {
               "node_type": "item",
@@ -7439,12 +7502,15 @@
         },
         {
           "node_type": "item",
-          "title": "Pointing on stone slab ceiling with cement mortar (1:2). 100 sqm 1.02",
+          "title": "Pointing on stone slab ceiling with cement mortar (1:2). 100",
           "code": "13.35",
           "children_count": 0,
           "children": [],
           "order_index": 689,
-          "source_page": 51
+          "source_page": 51,
+          "unit": "sqm",
+          "rate": 1.02,
+          "rate_display": "1.02"
         },
         {
           "node_type": "item",
@@ -7483,7 +7549,7 @@
           "source_page": 52
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing chowkhats in existing opening with hold fasts in cement concrete blocks with cement concrete 1:3:6.",
           "code": "14.2",
           "children_count": 3,
@@ -7551,12 +7617,15 @@
         },
         {
           "node_type": "item",
-          "title": "Replacing sand stone slabs in roofing in cement mortar 1:4. 100 sqm 0.78",
+          "title": "Replacing sand stone slabs in roofing in cement mortar 1:4. 100",
           "code": "14.14",
           "children_count": 0,
           "children": [],
           "order_index": 701,
-          "source_page": 52
+          "source_page": 52,
+          "unit": "sqm",
+          "rate": 0.78,
+          "rate_display": "0.78"
         },
         {
           "node_type": "item",
@@ -7604,7 +7673,7 @@
           "rate_display": "0.082"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/F precast R.C.C. kilometre stone including finishing smooth in cement mortar (1:3).",
           "code": "16.24",
           "children_count": 3,
@@ -7780,12 +7849,15 @@
         },
         {
           "node_type": "item",
-          "title": "Laying old kerb stones, jointed with cement mortar (1:3). 100 metre 0.3723",
+          "title": "Laying old kerb stones, jointed with cement mortar (1:3). 100",
           "code": "16.85",
           "children_count": 0,
           "children": [],
           "order_index": 722,
-          "source_page": 53
+          "source_page": 53,
+          "unit": "metre",
+          "rate": 0.3723,
+          "rate_display": "0.3723"
         },
         {
           "node_type": "item",
@@ -7872,7 +7944,7 @@
           "rate_display": "0.352"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing white vitreous china urinal basin :",
           "code": "17.4",
           "children_count": 4,
@@ -7930,7 +8002,7 @@
           "source_page": 54
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing white vitreous china flat back half stall urinal :",
           "code": "17.5",
           "children_count": 4,
@@ -7988,7 +8060,7 @@
           "source_page": 54
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing one piece construction white vitreous china squatting plate :",
           "code": "17.6",
           "children_count": 4,
@@ -8236,7 +8308,7 @@
           "rate_display": "0.025"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Cutting chases in brick masonry walls for sand cast iron/ centrifugally cast (spun) iron pipes and making good the same with C.C.(1:3:6).",
           "code": "17.61",
           "children_count": 3,
@@ -8301,48 +8373,63 @@
         },
         {
           "node_type": "item",
-          "title": "15 mm dia nominal bore 100 metre 0.05",
+          "title": "15 mm dia nominal bore 100",
           "code": "18.10.1",
           "children_count": 0,
           "children": [],
           "order_index": 768,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.05,
+          "rate_display": "0.05"
         },
         {
           "node_type": "item",
-          "title": "20 mm dia nominal bore 100 metre 0.06",
+          "title": "20 mm dia nominal bore 100",
           "code": "18.10.2",
           "children_count": 0,
           "children": [],
           "order_index": 769,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.06,
+          "rate_display": "0.06"
         },
         {
           "node_type": "item",
-          "title": "25 mm dia nominal bore 100 metre 0.07",
+          "title": "25 mm dia nominal bore 100",
           "code": "18.10.3",
           "children_count": 0,
           "children": [],
           "order_index": 770,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.07,
+          "rate_display": "0.07"
         },
         {
           "node_type": "item",
-          "title": "32 mm dia nominal bore 100 metre 0.075",
+          "title": "32 mm dia nominal bore 100",
           "code": "18.10.4",
           "children_count": 0,
           "children": [],
           "order_index": 771,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.075,
+          "rate_display": "0.075"
         },
         {
           "node_type": "item",
-          "title": "40 mm dia nominal bore 100 metre 0.08",
+          "title": "40 mm dia nominal bore 100",
           "code": "18.10.5",
           "children_count": 0,
           "children": [],
           "order_index": 772,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.08,
+          "rate_display": "0.08"
         },
         {
           "node_type": "item",
@@ -8355,12 +8442,15 @@
         },
         {
           "node_type": "item",
-          "title": "P/F concealed pipes. 100 metre 0.88",
+          "title": "P/F concealed pipes. 100",
           "code": "8.86A",
           "children_count": 0,
           "children": [],
           "order_index": 774,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.88,
+          "rate_display": "0.88"
         },
         {
           "node_type": "item",
@@ -8463,12 +8553,15 @@
         },
         {
           "node_type": "item",
-          "title": "Making chases up to 7.5x7.5 cm in walls including finishing. 100 metre 0.88",
+          "title": "Making chases up to 7.5x7.5 cm in walls including finishing. 100",
           "code": "18.78",
           "children_count": 0,
           "children": [],
           "order_index": 784,
-          "source_page": 56
+          "source_page": 56,
+          "unit": "metre",
+          "rate": 0.88,
+          "rate_display": "0.88"
         },
         {
           "node_type": "item",
@@ -8489,7 +8582,7 @@
           "source_page": 56
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Jointing glazed stoneware pipes with stiff mixture of cement mortar in the proportion of (1:1).",
           "code": "19.1",
           "children_count": 5,
@@ -8580,7 +8673,7 @@
           "source_page": 57
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Laying cement concrete (1:5:10) alround S.W. pipes:",
           "code": "19.2",
           "children_count": 4,
@@ -8605,21 +8698,27 @@
             },
             {
               "node_type": "item",
-              "title": "200 mm diameter S.W. pipe 100 metre 27.43",
+              "title": "200 mm diameter S.W. pipe 100",
               "code": "19.2.3",
               "children_count": 0,
               "children": [],
               "order_index": 803,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 27.43,
+              "rate_display": "27.43"
             },
             {
               "node_type": "item",
-              "title": "250 mm diameter S.W. pipe 100 metre 31.72",
+              "title": "250 mm diameter S.W. pipe 100",
               "code": "19.2.5",
               "children_count": 0,
               "children": [],
               "order_index": 804,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 31.72,
+              "rate_display": "31.72"
             }
           ],
           "order_index": 798,
@@ -8644,7 +8743,7 @@
           "source_page": 57
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Laying cement concrete (1:5:10) upto haunches of S.W. pipes:",
           "code": "19.3",
           "children_count": 5,
@@ -8744,7 +8843,7 @@
           "source_page": 57
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing square-mouth S.W. gully trap :",
           "code": "19.4",
           "children_count": 3,
@@ -8790,46 +8889,58 @@
           "source_page": 57
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L NP2 class R.C.C. pipes with collars jointed with stiff mixture of cement mortar in the proportion of (1:2):",
           "code": "19.6",
           "children_count": 13,
           "children": [
             {
               "node_type": "item",
-              "title": "100 mm dia. R.C.C. pipe 100 metre 0.50",
+              "title": "100 mm dia. R.C.C. pipe 100",
               "code": "19.6.1",
               "children_count": 0,
               "children": [],
               "order_index": 821,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 0.5,
+              "rate_display": "0.50"
             },
             {
               "node_type": "item",
-              "title": "150 mm dia. R.C.C. pipe 100 metre 0.60",
+              "title": "150 mm dia. R.C.C. pipe 100",
               "code": "19.6.2",
               "children_count": 0,
               "children": [],
               "order_index": 822,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 0.6,
+              "rate_display": "0.60"
             },
             {
               "node_type": "item",
-              "title": "250 mm dia. R.C.C. pipe 100 metre 0.90",
+              "title": "250 mm dia. R.C.C. pipe 100",
               "code": "19.6.3",
               "children_count": 0,
               "children": [],
               "order_index": 823,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 0.9,
+              "rate_display": "0.90"
             },
             {
               "node_type": "item",
-              "title": "300 mm dia. R.C.C. pipe 100 metre 1.10",
+              "title": "300 mm dia. R.C.C. pipe 100",
               "code": "19.6.4",
               "children_count": 0,
               "children": [],
               "order_index": 824,
-              "source_page": 57
+              "source_page": 57,
+              "unit": "metre",
+              "rate": 1.1,
+              "rate_display": "1.10"
             },
             {
               "node_type": "item",
@@ -8971,7 +9082,7 @@
           "source_page": 58
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry manhole in cement mortar (1:4).",
           "code": "19.7",
           "children_count": 2,
@@ -9005,7 +9116,7 @@
           "source_page": 58
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depth for manholes",
           "code": "19.8",
           "children_count": 2,
@@ -9039,7 +9150,7 @@
           "source_page": 58
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular type manhole 0.91 m internal dia at bottom and 0.56m dia at top in cement mortar (1:4).",
           "code": "19.9",
           "children_count": 1,
@@ -9073,7 +9184,7 @@
           "rate_display": "1.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular manhole 1.22 m internal dia at bottom and 0.56m dia at top in cement mortar (1:4).",
           "code": "19.11",
           "children_count": 1,
@@ -9107,7 +9218,7 @@
           "rate_display": "1.43"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry circular manhole 1.52 m internal dia at bottom and 0.56 m dia at top in cement mortar (1:4).",
           "code": "19.13",
           "children_count": 1,
@@ -9168,13 +9279,13 @@
           "source_page": 58
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing in position precast R.C.C. manhole cover and frame.",
           "code": "19.19",
           "children_count": 4,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "LD- 2.5",
               "code": "19.19.1",
               "children_count": 3,
@@ -9220,7 +9331,7 @@
               "source_page": 58
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "M D - 10",
               "code": "19.19.2",
               "children_count": 2,
@@ -9254,7 +9365,7 @@
               "source_page": 58
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "H D - 20",
               "code": "19.19.3",
               "children_count": 1,
@@ -9276,7 +9387,7 @@
               "source_page": 58
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "EHD - 35",
               "code": "19.19.4",
               "children_count": 1,
@@ -9302,7 +9413,7 @@
           "source_page": 58
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Making connection of drain or sewer line with existing manhole and making good the walls, floors with C.C.(1:2:4) mix.",
           "code": "19.21",
           "children_count": 3,
@@ -9348,7 +9459,7 @@
           "source_page": 59
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing sand cast iron drop connection externally for 60 cm drop from branch sewer line to main sewer manhole. :",
           "code": "19.22",
           "children_count": 2,
@@ -9382,7 +9493,7 @@
           "source_page": 59
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depths beyond 60 cm of sand cast iron drop connection. :",
           "code": "19.23",
           "children_count": 2,
@@ -9452,7 +9563,7 @@
           "rate_display": "1.66"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Constructing brick masonry chamber for underground C.I. inspection chamber and bends in cement mortar (1:4).",
           "code": "19.30",
           "children_count": 3,
@@ -9498,7 +9609,7 @@
           "source_page": 59
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for depth beyond 45 cm of brick masonry chamber :",
           "code": "19.31",
           "children_count": 3,
@@ -9556,7 +9667,7 @@
           "rate_display": "0.072"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing S.W. intercepting trap in manholes with stiff mixture of cement mortar (1:1).",
           "code": "19.34",
           "children_count": 2,
@@ -9590,19 +9701,22 @@
           "source_page": 59
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Non pressure Np-3 class",
           "code": "19.35",
           "children_count": 6,
           "children": [
             {
               "node_type": "item",
-              "title": "450 mm dia RCC pipe 100 metre 1.20",
+              "title": "450 mm dia RCC pipe 100",
               "code": "19.35.1",
               "children_count": 0,
               "children": [],
               "order_index": 899,
-              "source_page": 59
+              "source_page": 59,
+              "unit": "metre",
+              "rate": 1.2,
+              "rate_display": "1.20"
             },
             {
               "node_type": "item",
@@ -9681,28 +9795,34 @@
           "source_page": 60
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Non pressure Np-4 class 100 metre",
           "code": "19.36",
           "children_count": 6,
           "children": [
             {
               "node_type": "item",
-              "title": "450 mm dia RCC pipe 100 metre 1.20",
+              "title": "450 mm dia RCC pipe 100",
               "code": "19.36.1",
               "children_count": 0,
               "children": [],
               "order_index": 910,
-              "source_page": 60
+              "source_page": 60,
+              "unit": "metre",
+              "rate": 1.2,
+              "rate_display": "1.20"
             },
             {
               "node_type": "item",
-              "title": "600 mm dia RCC pipe 100 metre 1.60",
+              "title": "600 mm dia RCC pipe 100",
               "code": "19.36.2",
               "children_count": 0,
               "children": [],
               "order_index": 911,
-              "source_page": 60
+              "source_page": 60,
+              "unit": "metre",
+              "rate": 1.6,
+              "rate_display": "1.60"
             },
             {
               "node_type": "item",
@@ -9745,7 +9865,7 @@
           "source_page": 60
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, driving and installing driven cast-in-situ reinforced cement concrete piles of grade M -25.",
           "code": "20.1",
           "children_count": 8,
@@ -9851,7 +9971,7 @@
           "source_page": 61
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring, providing and installing bored cast-in-situ reinforced cement concrete piles of grade M -25 by tripod and mechanical winch machine.",
           "code": "20.2",
           "children_count": 4,
@@ -9909,7 +10029,7 @@
           "source_page": 61
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring, providing and installing bored cast-in-situ reinforced cement concrete piles of grade M -25 by crawler mounted, telescopic boom hydraulic pilling Rig.",
           "code": "20.2A",
           "children_count": 5,
@@ -9979,7 +10099,7 @@
           "source_page": 61
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring, Providing and installing cast in situ single under reamed piles of grade M -25.",
           "code": "20.3",
           "children_count": 4,
@@ -10037,7 +10157,7 @@
           "source_page": 61
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for providing additional bulb in under reamed piles.",
           "code": "20.4",
           "children_count": 4,
@@ -10095,7 +10215,7 @@
           "source_page": 61
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, driving and installing driven Pre-cast reinforced cement concrete piles of grade M -25.",
           "code": "20.5",
           "children_count": 6,
@@ -10165,7 +10285,7 @@
           "source_page": 62
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L integral cement based treatment for water proofing on horizontal surface. :",
           "code": "22.1",
           "children_count": 1,
@@ -10187,7 +10307,7 @@
           "source_page": 63
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L integral cement based treatment for water proofing on the vertical surface. :",
           "code": "22.2",
           "children_count": 1,
@@ -10245,7 +10365,7 @@
           "rate_display": "0.0195"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L integral cement based water proofing treatment on roofs, balconies, terraces etc. :",
           "code": "22.7",
           "children_count": 1,
@@ -10267,7 +10387,7 @@
           "source_page": 63
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Grading roof for water proofing treatment with",
           "code": "22.14",
           "children_count": 3,
@@ -10412,7 +10532,7 @@
           "rate_display": "0.0195"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Surface dressing one coat on new surface :",
           "code": "16.28",
           "children_count": 1,
@@ -10434,7 +10554,7 @@
           "source_page": 67
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Surface dressing one coat on old surface :",
           "code": "16.29",
           "children_count": 1,
@@ -10456,7 +10576,7 @@
           "source_page": 67
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and applying tack coat with bitumen of grade VG- 10 :",
           "code": "16.30",
           "children_count": 2,
@@ -10567,7 +10687,7 @@
           "unit": "sqm"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Bitumen Penetration Macadam :",
           "code": "16.36",
           "children_count": 2,
@@ -10601,7 +10721,7 @@
           "source_page": 67
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying bitumen mastic wearing course:",
           "code": "16.37",
           "children_count": 2,
@@ -10683,7 +10803,7 @@
           "rate_display": "0.0098"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Dense Bituminous macadam :",
           "code": "16.54",
           "children_count": 2,
@@ -10717,7 +10837,7 @@
           "source_page": 68
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Bituminous Macadam.",
           "code": "16.55",
           "children_count": 2,
@@ -10751,7 +10871,7 @@
           "source_page": 68
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying Semi Dense Bituminous concrete",
           "code": "16.56",
           "children_count": 2,
@@ -10788,7 +10908,7 @@
           "source_page": 68
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L Bituminous Concrete :",
           "code": "16.57",
           "children_count": 8,
@@ -10894,7 +11014,7 @@
           "source_page": 68
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L four courses water proofing treatment with bitumen felt over roofs:",
           "code": "22.8",
           "children_count": 1,
@@ -10976,7 +11096,7 @@
           "rate_display": "0.0360"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/F APP.",
           "code": "22.18",
           "children_count": 1,
@@ -10998,7 +11118,7 @@
           "source_page": 70
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L APP modified prefabricated five layer, 3 mm thick water proofing membrane. Tear strength in longitudinal and transverse direction as 60/80N.",
           "code": "22.19",
           "children_count": 1,
@@ -11020,7 +11140,7 @@
           "source_page": 70
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "P/L APP modified prefabricated five layer 3 mm thick water proofing membrane. Tear strength in longitudinal and transverse direction as 300/250N.",
           "code": "22.20",
           "children_count": 1,

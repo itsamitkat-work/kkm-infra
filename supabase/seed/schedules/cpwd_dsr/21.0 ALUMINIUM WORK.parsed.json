@@ -6,83 +6,101 @@
       "node_type": "subhead",
       "title": "ALUMINIUM WORK",
       "code": "21.0",
-      "children_count": 20,
+      "children_count": 19,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium work for doors, windows, ventilators and partitions with extruded built up standard tubular sections/ appropriate Z sections and other sections of approved make conforming to IS: 733 and IS: 1285, fixing with dash fasteners of required dia and size, including necessary filling up the gaps at junctions, i.e. at top, bottom and sides with required EPDM rubber/ neoprene gasket etc. Aluminium sections shall be smooth, rust free, straight, mitred and jointed mechanically wherever required including cleat angle, Aluminium snap beading for glazing / panelling, C.P. brass / stainless steel screws, all complete as per architectural drawings and the directions of Engineer-in-charge. (Glazing, paneling and dash fasteners to be paid for separately) :",
           "code": "21.1",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "For fixed portion",
               "code": "21.1.1",
               "children_count": 3,
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 495.05",
+                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15)",
                   "code": "21.1.1.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 2,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 495.05,
+                  "rate_display": "495.05"
                 },
                 {
                   "node_type": "item",
-                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg 530.90",
+                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron)",
                   "code": "21.1.1.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 3,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 530.9,
+                  "rate_display": "530.90"
                 },
                 {
                   "node_type": "item",
-                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg 539.85",
+                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron)",
                   "code": "21.1.1.3",
                   "children_count": 0,
                   "children": [],
                   "order_index": 4,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 539.85,
+                  "rate_display": "539.85"
                 }
               ],
               "order_index": 1,
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "For shutters of doors, windows & ventilators including providing and fixing hinges/ pivots and making provision for fixing of fittings wherever required including the cost of EPDM rubber / neoprene gasket required (Fittings shall be paid for separately)",
               "code": "21.1.2",
               "children_count": 3,
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 598.60",
+                  "title": "Anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15)",
                   "code": "21.1.2.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 6,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 598.6,
+                  "rate_display": "598.60"
                 },
                 {
                   "node_type": "item",
-                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron) kg 634.45",
+                  "title": "Powder coated aluminium (minimum thickness of powder coating 50 micron)",
                   "code": "21.1.2.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 7,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 634.45,
+                  "rate_display": "634.45"
                 },
                 {
                   "node_type": "item",
-                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron) kg 643.45",
+                  "title": "Polyester powder coated aluminium (minimum thickness of polyester powder coating 50 micron)",
                   "code": "21.1.2.3",
                   "children_count": 0,
                   "children": [],
                   "order_index": 8,
-                  "source_page": 1
+                  "source_page": 1,
+                  "unit": "kg",
+                  "rate": 643.45,
+                  "rate_display": "643.45"
                 }
               ],
               "order_index": 5,
@@ -93,7 +111,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 12 mm thick prelaminated particle board flat pressed three layer or graded wood particle board conforming to IS: 12823 Grade l Type ll, in panelling fixed in aluminum doors, windows shutters and partition frames with C.P. brass / stainless steel screws etc. complete as per architectural drawings and directions of engineer-in-charge.",
           "code": "21.2",
           "children_count": 2,
@@ -127,7 +145,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing glazing in aluminium door, window, ventilator shutters and partitions etc. with EPDM rubber / neoprene gasket etc. complete as per the architectural drawings and the directions of engineer-in-charge . (Cost of aluminium snap beading shall be paid in basic item):",
           "code": "21.3",
           "children_count": 3,
@@ -173,7 +191,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing double action hydraulic floor spring of approved brand and manufacture conforming to IS : 6315, having brand logo embossed on the body / plate with double spring mechanism and door weight upto 125 kg, for doors, including cost of cutting floors, embedding in floors as required and making good the same matching to the existing floor finishing and cover plates with brass pivot and single piece M.S. sheet outer box with slide plate etc. complete as per the direction of Engineer- in-charge.",
           "code": "21.4",
           "children_count": 2,
@@ -208,12 +226,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing powder coated aluminium work (minimum thickness of powder coating 50 micron) consisting of tee/ angle sections, of approved make conforming to IS : 733 in frames of false ceiling including aluminium angle cleats with necessary C.P. brass/ stainless steel sunk screws, aluminium perimeter angles fixed to wall with stainless steel rawl plugs @ 450 mm centre to centre and fixing the frame work to G.I. level adjusting hangers 6 mm dia. with necessary cadmium plated machine screws all complete as per approved architectural drawings and direction of the Engineer-in-charge (level adjusting hangers, ceiling cleats and expansion hold fasteners to be paid for separately). kg 817.15",
+          "title": "Providing and fixing powder coated aluminium work (minimum thickness of powder coating 50 micron) consisting of tee/ angle sections, of approved make conforming to IS : 733 in frames of false ceiling including aluminium angle cleats with necessary C.P. brass/ stainless steel sunk screws, aluminium perimeter angles fixed to wall with stainless steel rawl plugs @ 450 mm centre to centre and fixing the frame work to G.I. level adjusting hangers 6 mm dia. with necessary cadmium plated machine screws all complete as per approved architectural drawings and direction of the Engineer-in-charge (level adjusting hangers, ceiling cleats and expansion hold fasteners to be paid for separately).",
           "code": "21.5",
           "children_count": 0,
           "children": [],
           "order_index": 19,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 817.15,
+          "rate_display": "817.15"
         },
         {
           "node_type": "item",
@@ -228,35 +249,41 @@
           "rate_display": "82.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing machine moulded aluminium covering of approved pattern & design, made out of machine cut aluminium sheet and machine holed for receiving dash fastener, over expansion joints on vertical surfaces/ceiling floors, the fixing on plate in one row on one side of joint only shall be done with stainless steel dash fasteners of 8 mm dia and 75 mm long bolt including providing aluminium washers 2 mm thick & 15 mm dia , at a staggered pitch of 200 mm centre to centre including drilling holes in the receiving surface and providing expandable plastic sleeves in holes etc. complete as per direction of Engineer-in-charge.",
           "code": "21.7",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "Anodised aluminium sheet 2.5 mm thick (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15) kg 680.55",
+              "title": "Anodised aluminium sheet 2.5 mm thick (anodised transparent or dyed to required shade according to IS: 1868, Minimum anodic coating of grade AC 15)",
               "code": "21.7.1",
               "children_count": 0,
               "children": [],
               "order_index": 22,
-              "source_page": 2
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 680.55,
+              "rate_display": "680.55"
             },
             {
               "node_type": "item",
-              "title": "Powder coated aluminium sheet 2.5 mm thick (minimum thickness of powder coating 50 micron) kg 716.40",
+              "title": "Powder coated aluminium sheet 2.5 mm thick (minimum thickness of powder coating 50 micron)",
               "code": "21.7.2",
               "children_count": 0,
               "children": [],
               "order_index": 23,
-              "source_page": 2
+              "source_page": 2,
+              "unit": "kg",
+              "rate": 716.4,
+              "rate_display": "716.40"
             }
           ],
           "order_index": 21,
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Filling the gap in between aluminium frame & adjacent RCC/ Brick/ Stone work by providing weather silicon sealant over backer rod of approved quality as per architectural drawings and direction of Engineer-in-charge complete.",
           "code": "21.8",
           "children_count": 1,
@@ -278,40 +305,37 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for applying additional anodic coating AC 25 instead of AC 15 to aluminium extruded sections.",
           "code": "21.9",
           "children_count": 2,
           "children": [
             {
               "node_type": "item",
-              "title": "For fixed portion kg",
+              "title": "For fixed portion",
               "code": "21.9.1",
               "children_count": 0,
               "children": [],
               "order_index": 27,
-              "source_page": 3
+              "source_page": 3,
+              "unit": "kg",
+              "rate": 12.8,
+              "rate_display": "12.80"
             },
             {
               "node_type": "item",
-              "title": "For shutters of doors, windows & ventilators kg",
+              "title": "For shutters of doors, windows & ventilators",
               "code": "21.9.2",
               "children_count": 0,
               "children": [],
-              "order_index": 29,
-              "source_page": 3
+              "order_index": 28,
+              "source_page": 3,
+              "unit": "kg",
+              "rate": 12.8,
+              "rate_display": "12.80"
             }
           ],
           "order_index": 26,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "12.80",
-          "children_count": 0,
-          "children": [],
-          "order_index": 28,
           "source_page": 3
         },
         {
@@ -320,14 +344,14 @@
           "code": "21.10",
           "children_count": 0,
           "children": [],
-          "order_index": 31,
+          "order_index": 29,
           "source_page": 3,
           "unit": "sqm",
           "rate": 4997.7,
           "rate_display": "4997.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing stainless steel (SS 304 grade) adjustable friction windows stays of approved quality with necessary stainless steel screws etc. to the side hung windows as per direction of Engineer-in-charge complete.",
           "code": "21.11",
           "children_count": 5,
@@ -338,7 +362,7 @@
               "code": "21.11.1",
               "children_count": 0,
               "children": [],
-              "order_index": 33,
+              "order_index": 31,
               "source_page": 3,
               "unit": "each",
               "rate": 344.3,
@@ -350,7 +374,7 @@
               "code": "21.11.2",
               "children_count": 0,
               "children": [],
-              "order_index": 34,
+              "order_index": 32,
               "source_page": 3,
               "unit": "each",
               "rate": 387.0,
@@ -362,7 +386,7 @@
               "code": "21.11.3",
               "children_count": 0,
               "children": [],
-              "order_index": 35,
+              "order_index": 33,
               "source_page": 3,
               "unit": "each",
               "rate": 325.8,
@@ -374,7 +398,7 @@
               "code": "21.11.4",
               "children_count": 0,
               "children": [],
-              "order_index": 36,
+              "order_index": 34,
               "source_page": 3,
               "unit": "each",
               "rate": 802.4,
@@ -386,18 +410,18 @@
               "code": "21.11.5",
               "children_count": 0,
               "children": [],
-              "order_index": 37,
+              "order_index": 35,
               "source_page": 3,
               "unit": "each",
               "rate": 1478.15,
               "rate_display": "1478.15"
             }
           ],
-          "order_index": 32,
+          "order_index": 30,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium tubular handle bar 32 mm outer dia, 3.0 mm thick & 2100 mm long with SS screws etc .complete as per direction of Engineer-in-Charge.",
           "code": "21.12",
           "children_count": 3,
@@ -408,7 +432,7 @@
               "code": "21.12.1",
               "children_count": 0,
               "children": [],
-              "order_index": 39,
+              "order_index": 37,
               "source_page": 3,
               "unit": "each",
               "rate": 575.75,
@@ -420,7 +444,7 @@
               "code": "21.12.2",
               "children_count": 0,
               "children": [],
-              "order_index": 40,
+              "order_index": 38,
               "source_page": 3,
               "unit": "each",
               "rate": 631.55,
@@ -432,14 +456,14 @@
               "code": "21.12.3",
               "children_count": 0,
               "children": [],
-              "order_index": 41,
+              "order_index": 39,
               "source_page": 3,
               "unit": "each",
               "rate": 645.5,
               "rate_display": "645.50"
             }
           ],
-          "order_index": 38,
+          "order_index": 36,
           "source_page": 3
         },
         {
@@ -448,7 +472,7 @@
           "code": "21.13",
           "children_count": 0,
           "children": [],
-          "order_index": 42,
+          "order_index": 40,
           "source_page": 3,
           "unit": "each",
           "rate": 528.85,
@@ -456,15 +480,18 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868. Minimum anodic coating of grade AC 15) sub frame work for windows and ventilators with extruded built up standard tubular sections of approved make conforming to IS: 733 and IS: 1285, fixed with dash fastener of required dia and size (Dash fastener to be paid for separately). kg 402.80",
+          "title": "Providing and fixing anodised aluminium (anodised transparent or dyed to required shade according to IS: 1868. Minimum anodic coating of grade AC 15) sub frame work for windows and ventilators with extruded built up standard tubular sections of approved make conforming to IS: 733 and IS: 1285, fixed with dash fastener of required dia and size (Dash fastener to be paid for separately).",
           "code": "21.14",
           "children_count": 0,
           "children": [],
-          "order_index": 43,
-          "source_page": 3
+          "order_index": 41,
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 402.8,
+          "rate_display": "402.80"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium casement windows fastener of required length for aluminium windows with necessary screws etc. complete.",
           "code": "21.15",
           "children_count": 3,
@@ -475,7 +502,7 @@
               "code": "21.15.1",
               "children_count": 0,
               "children": [],
-              "order_index": 45,
+              "order_index": 43,
               "source_page": 3,
               "unit": "each",
               "rate": 89.4,
@@ -487,7 +514,7 @@
               "code": "21.15.2",
               "children_count": 0,
               "children": [],
-              "order_index": 46,
+              "order_index": 44,
               "source_page": 3,
               "unit": "each",
               "rate": 97.95,
@@ -499,18 +526,18 @@
               "code": "21.15.3",
               "children_count": 0,
               "children": [],
-              "order_index": 47,
+              "order_index": 45,
               "source_page": 3,
               "unit": "each",
               "rate": 95.1,
               "rate_display": "95.10"
             }
           ],
-          "order_index": 44,
+          "order_index": 42,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing aluminium round shape handle of outer dia 100 mm with SS screws etc. complete as per direction of Engineer-in-charge",
           "code": "21.16",
           "children_count": 3,
@@ -521,7 +548,7 @@
               "code": "21.16.1",
               "children_count": 0,
               "children": [],
-              "order_index": 49,
+              "order_index": 47,
               "source_page": 3,
               "unit": "each",
               "rate": 107.9,
@@ -533,7 +560,7 @@
               "code": "21.16.2",
               "children_count": 0,
               "children": [],
-              "order_index": 50,
+              "order_index": 48,
               "source_page": 3,
               "unit": "each",
               "rate": 109.3,
@@ -545,24 +572,27 @@
               "code": "21.16.3",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 49,
               "source_page": 3,
               "unit": "each",
               "rate": 112.15,
               "rate_display": "112.15"
             }
           ],
-          "order_index": 48,
+          "order_index": 46,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing anodised aluminium grill (anodised transparent or dyed to required shade according to IS: 1868 with minimum anodic coating of grade AC 15) of approved design/pattern, with approved standard section and fixed to the existing window frame with C.P. brass/ stainless steel screws @ 200 mm centre to centre, including cutting the grill to proper opening size for fixing and operation of handles and fixing approved anodised aluminium standard section around the opening, all complete as per requirement and direction of Engineer-in-charge. (Only weight of grill to be measured for payment). kg 638.35",
+          "title": "Providing and fixing anodised aluminium grill (anodised transparent or dyed to required shade according to IS: 1868 with minimum anodic coating of grade AC 15) of approved design/pattern, with approved standard section and fixed to the existing window frame with C.P. brass/ stainless steel screws @ 200 mm centre to centre, including cutting the grill to proper opening size for fixing and operation of handles and fixing approved anodised aluminium standard section around the opening, all complete as per requirement and direction of Engineer-in-charge. (Only weight of grill to be measured for payment).",
           "code": "21.17",
           "children_count": 0,
           "children": [],
-          "order_index": 52,
-          "source_page": 4
+          "order_index": 50,
+          "source_page": 4,
+          "unit": "kg",
+          "rate": 638.35,
+          "rate_display": "638.35"
         },
         {
           "node_type": "item",
@@ -570,14 +600,14 @@
           "code": "21.18",
           "children_count": 0,
           "children": [],
-          "order_index": 53,
+          "order_index": 51,
           "source_page": 4,
           "unit": "sqm",
           "rate": 5325.9,
           "rate_display": "5325.90"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Filling the gap in between aluminium/ stone/ wood frame and adjacent RCC/Brick/ Stone/ wood/ Ceramic/ Gypsum work by providing weather/ structural non sag elastomeric PU sealant over backer rod of approved quality as per architectural drawings and direction of Engineer-in-charge complete, complying to ASTM C920, DIN 18540-F & ISO 11600",
           "code": "21.19",
           "children_count": 3,
@@ -588,7 +618,7 @@
               "code": "21.19.1",
               "children_count": 0,
               "children": [],
-              "order_index": 55,
+              "order_index": 53,
               "source_page": 4,
               "unit": "metre",
               "rate": 148.1,
@@ -600,7 +630,7 @@
               "code": "21.19.2",
               "children_count": 0,
               "children": [],
-              "order_index": 56,
+              "order_index": 54,
               "source_page": 4,
               "unit": "metre",
               "rate": 200.95,
@@ -612,14 +642,14 @@
               "code": "21.19.3",
               "children_count": 0,
               "children": [],
-              "order_index": 57,
+              "order_index": 55,
               "source_page": 4,
               "unit": "metre",
               "rate": 363.2,
               "rate_display": "363.20"
             }
           ],
-          "order_index": 54,
+          "order_index": 52,
           "source_page": 4
         }
       ]
@@ -627,12 +657,10 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/21.0 ALUMINIUM WORK.pdf",
-    "row_count": 58,
+    "row_count": 56,
     "note_count": 0,
-    "leaf_count": 43,
-    "duplicate_codes": [
-      "12.80"
-    ],
+    "leaf_count": 42,
+    "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []
   }

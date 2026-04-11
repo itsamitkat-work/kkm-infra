@@ -14,10 +14,10 @@
           "order_index": 0
         }
       ],
-      "children_count": 65,
+      "children_count": 64,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Repairs to plaster of thickness 12 mm to 20 mm in patches of area 2.5 sq.meters and under, including cutting the patch in proper shape, raking out joints and preparing and plastering the surface of the walls complete, including disposal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.1",
           "children_count": 2,
@@ -51,7 +51,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Fixing chowkhats in existing opening including embedding chowkhats in floors or walls cutting masonry for holdfasts, embedding hold fasts in cement concrete blocks of size 15 x 10 x 10 cm with cement concrete 1:3:6 (1 cement : 3 coarse sand : 6 graded stone aggregate 20 mm nominal size), painting two coats of approved wood preservative to sides of chowkhats and making good the damages to walls and floors as required complete, including disposal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.2",
           "children_count": 3,
@@ -109,7 +109,7 @@
           "rate_display": "217.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Making the opening in brick masonry including dismantling in floor or walls by cutting masonry and making good the damages to walls, flooring and jambs complete, to match existing surface including disposal of mulba/ rubbish to the nearest municipal dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.4",
           "children_count": 1,
@@ -131,7 +131,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing glass panes, with putty and nails wherever necessary including racking out the old putty:",
           "code": "14.5",
           "children_count": 2,
@@ -165,7 +165,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing glass panes, with wooden fillets wherever necessary:",
           "code": "14.6",
           "children_count": 2,
@@ -199,7 +199,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing glass panes and refixing existing wooden fillets:",
           "code": "14.7",
           "children_count": 2,
@@ -233,7 +233,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying and fixing new wooden fillets wherever necessary:",
           "code": "14.8",
           "children_count": 2,
@@ -327,7 +327,7 @@
           "rate_display": "696.05"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Replacing sand stone slabs in roofing, laid in cement mortar 1:4 (1 cement : 4 coarse sand), including necessary repairs and cement pointing with same mortar complete, including disposal of rubbish to dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.14",
           "children_count": 1,
@@ -349,7 +349,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing wooden battens in roofs, including making good the holes in wall and painting with oil type wood preservative of approved brand and manufacture complete, including removal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.15",
           "children_count": 1,
@@ -371,13 +371,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing wooden beams in roofs including making good the holes in walls and painting with oil type wood preservative of approved brand and manufacture complete, including removal of rubbish to the dumping ground, all complete as per direction of Engineer-in-Charge.",
           "code": "14.16",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Not exceeding 4.00 metres in length.",
               "code": "14.16.1",
               "children_count": 2,
@@ -411,7 +411,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Above 4.00 metres and upto 5.00 metres length.",
               "code": "14.16.2",
               "children_count": 2,
@@ -461,7 +461,7 @@
           "rate_display": "72.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Flush pointing with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement for flat tile bricks on top of mud phaska :",
           "code": "14.18",
           "children_count": 2,
@@ -496,21 +496,15 @@
         },
         {
           "node_type": "item",
-          "title": "Taking out wind ties from roof including cutting out rusted bolts, nuts etc. and removing materials to any distance within compound and stacking. kg",
+          "title": "Taking out wind ties from roof including cutting out rusted bolts, nuts etc. and removing materials to any distance within compound and stacking.",
           "code": "14.19",
           "children_count": 0,
           "children": [],
           "order_index": 42,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "5.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 43,
-          "source_page": 2
+          "source_page": 2,
+          "unit": "kg",
+          "rate": 5.4,
+          "rate_display": "5.40"
         },
         {
           "node_type": "item",
@@ -518,7 +512,7 @@
           "code": "14.20",
           "children_count": 0,
           "children": [],
-          "order_index": 44,
+          "order_index": 43,
           "source_page": 2,
           "unit": "metre",
           "rate": 126.0,
@@ -526,15 +520,18 @@
         },
         {
           "node_type": "item",
-          "title": "Renewing bottom rail and/or top runner of collapsible gate including making good all damages and applying priming coat of zinc chromate yellow primer of approved brand and manufacturer. kg 298.85",
+          "title": "Renewing bottom rail and/or top runner of collapsible gate including making good all damages and applying priming coat of zinc chromate yellow primer of approved brand and manufacturer.",
           "code": "14.21",
           "children_count": 0,
           "children": [],
-          "order_index": 45,
-          "source_page": 3
+          "order_index": 44,
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 298.85,
+          "rate_display": "298.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Renewing Wrought iron or M.S. Wheel or roller of steel door or gate and fitting and fixing the same with necessary clamps, nuts and bolts/welding and erection etc. complete.",
           "code": "14.22",
           "children_count": 2,
@@ -545,7 +542,7 @@
               "code": "14.22.1",
               "children_count": 0,
               "children": [],
-              "order_index": 47,
+              "order_index": 46,
               "source_page": 3
             },
             {
@@ -554,11 +551,11 @@
               "code": "14.22.2",
               "children_count": 0,
               "children": [],
-              "order_index": 48,
+              "order_index": 47,
               "source_page": 3
             }
           ],
-          "order_index": 46,
+          "order_index": 45,
           "source_page": 3
         },
         {
@@ -567,7 +564,7 @@
           "code": "14.23",
           "children_count": 0,
           "children": [],
-          "order_index": 49,
+          "order_index": 48,
           "source_page": 3
         },
         {
@@ -576,20 +573,20 @@
           "code": "14.25",
           "children_count": 0,
           "children": [],
-          "order_index": 50,
+          "order_index": 49,
           "source_page": 3,
           "unit": "cum",
           "rate": 6207.25,
           "rate_display": "6207.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 25 mm thick shutters for cup board etc. :",
           "code": "14.26",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Panelled or panelled & glazed shutters :",
               "code": "14.26.1",
               "children_count": 2,
@@ -600,7 +597,7 @@
                   "code": "14.26.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 53,
+                  "order_index": 52,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 5127.0,
@@ -612,18 +609,18 @@
                   "code": "14.26.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 54,
+                  "order_index": 53,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 4484.85,
                   "rate_display": "4484.85"
                 }
               ],
-              "order_index": 52,
+              "order_index": 51,
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Glazed shutters :",
               "code": "14.26.2",
               "children_count": 2,
@@ -634,7 +631,7 @@
                   "code": "14.26.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 56,
+                  "order_index": 55,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 5054.05,
@@ -646,22 +643,22 @@
                   "code": "14.26.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 57,
+                  "order_index": 56,
                   "source_page": 3,
                   "unit": "sqm",
                   "rate": 4362.45,
                   "rate_display": "4362.45"
                 }
               ],
-              "order_index": 55,
+              "order_index": 54,
               "source_page": 3
             }
           ],
-          "order_index": 51,
+          "order_index": 50,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plain jaffri door and window shutters including bright or/and black enamelled M.S. butt hinges with necessary screws 35x10 mm laths placed 35 mm apart (frames to be paid separately), including fixing 50x12 mm beading complete with :",
           "code": "14.27",
           "children_count": 1,
@@ -672,18 +669,18 @@
               "code": "14.27.1",
               "children_count": 0,
               "children": [],
-              "order_index": 59,
+              "order_index": 58,
               "source_page": 3,
               "unit": "sqm",
               "rate": 4602.65,
               "rate_display": "4602.65"
             }
           ],
-          "order_index": 58,
+          "order_index": 57,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing brass curtain rods of wall thickness 1.25 mm with two brass brackets fixed with brass screws and wooden plugs etc. wherever necessary complete.",
           "code": "14.28",
           "children_count": 2,
@@ -694,7 +691,7 @@
               "code": "14.28.1",
               "children_count": 0,
               "children": [],
-              "order_index": 61,
+              "order_index": 60,
               "source_page": 3,
               "unit": "metre",
               "rate": 343.5,
@@ -706,27 +703,30 @@
               "code": "14.28.2",
               "children_count": 0,
               "children": [],
-              "order_index": 62,
+              "order_index": 61,
               "source_page": 3,
               "unit": "metre",
               "rate": 421.75,
               "rate_display": "421.75"
             }
           ],
-          "order_index": 60,
+          "order_index": 59,
           "source_page": 3
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing M.S. round or square bars with M.S. flats at required spacing in wooden frames of windows and clerestory windows. kg 120.75",
+          "title": "Providing and fixing M.S. round or square bars with M.S. flats at required spacing in wooden frames of windows and clerestory windows.",
           "code": "14.29",
           "children_count": 0,
           "children": [],
-          "order_index": 63,
-          "source_page": 3
+          "order_index": 62,
+          "source_page": 3,
+          "unit": "kg",
+          "rate": 120.75,
+          "rate_display": "120.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing joists (karries) including hoisting, fixing in position and applying wood preservative on unexposed surface etc. complete with :",
           "code": "14.30",
           "children_count": 2,
@@ -737,7 +737,7 @@
               "code": "14.30.1",
               "children_count": 0,
               "children": [],
-              "order_index": 65,
+              "order_index": 64,
               "source_page": 3,
               "unit": "cum",
               "rate": 97978.3,
@@ -749,18 +749,18 @@
               "code": "14.30.2",
               "children_count": 0,
               "children": [],
-              "order_index": 66,
+              "order_index": 65,
               "source_page": 3,
               "unit": "cum",
               "rate": 64022.85,
               "rate_display": "64022.85"
             }
           ],
-          "order_index": 64,
+          "order_index": 63,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass single acting spring hinges with necessary brass screws etc. complete :",
           "code": "14.31",
           "children_count": 3,
@@ -771,7 +771,7 @@
               "code": "14.31.1",
               "children_count": 0,
               "children": [],
-              "order_index": 68,
+              "order_index": 67,
               "source_page": 4,
               "unit": "each",
               "rate": 765.05,
@@ -783,7 +783,7 @@
               "code": "14.31.2",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 68,
               "source_page": 4,
               "unit": "each",
               "rate": 546.0,
@@ -795,18 +795,18 @@
               "code": "14.31.3",
               "children_count": 0,
               "children": [],
-              "order_index": 70,
+              "order_index": 69,
               "source_page": 4,
               "unit": "each",
               "rate": 485.65,
               "rate_display": "485.65"
             }
           ],
-          "order_index": 67,
+          "order_index": 66,
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass double acting spring hinges with necessary brass screws etc. complete :",
           "code": "14.32",
           "children_count": 3,
@@ -817,7 +817,7 @@
               "code": "14.32.1",
               "children_count": 0,
               "children": [],
-              "order_index": 72,
+              "order_index": 71,
               "source_page": 4,
               "unit": "each",
               "rate": 851.85,
@@ -829,7 +829,7 @@
               "code": "14.32.2",
               "children_count": 0,
               "children": [],
-              "order_index": 73,
+              "order_index": 72,
               "source_page": 4,
               "unit": "each",
               "rate": 726.65,
@@ -841,18 +841,18 @@
               "code": "14.32.3",
               "children_count": 0,
               "children": [],
-              "order_index": 74,
+              "order_index": 73,
               "source_page": 4,
               "unit": "each",
               "rate": 704.75,
               "rate_display": "704.75"
             }
           ],
-          "order_index": 71,
+          "order_index": 70,
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass flush bolts with necessary brass screws etc. complete :",
           "code": "14.33",
           "children_count": 3,
@@ -863,7 +863,7 @@
               "code": "14.33.1",
               "children_count": 0,
               "children": [],
-              "order_index": 76,
+              "order_index": 75,
               "source_page": 4,
               "unit": "each",
               "rate": 285.05,
@@ -875,7 +875,7 @@
               "code": "14.33.2",
               "children_count": 0,
               "children": [],
-              "order_index": 77,
+              "order_index": 76,
               "source_page": 4,
               "unit": "each",
               "rate": 245.35,
@@ -887,14 +887,14 @@
               "code": "14.33.3",
               "children_count": 0,
               "children": [],
-              "order_index": 78,
+              "order_index": 77,
               "source_page": 4,
               "unit": "each",
               "rate": 188.45,
               "rate_display": "188.45"
             }
           ],
-          "order_index": 75,
+          "order_index": 74,
           "source_page": 4
         },
         {
@@ -903,14 +903,14 @@
           "code": "14.34",
           "children_count": 0,
           "children": [],
-          "order_index": 79,
+          "order_index": 78,
           "source_page": 4,
           "unit": "each",
           "rate": 271.45,
           "rate_display": "271.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing bright finished brass hard drawn hooks and eyes :",
           "code": "14.35",
           "children_count": 5,
@@ -921,7 +921,7 @@
               "code": "14.35.1",
               "children_count": 0,
               "children": [],
-              "order_index": 81,
+              "order_index": 80,
               "source_page": 4,
               "unit": "each",
               "rate": 101.85,
@@ -933,7 +933,7 @@
               "code": "14.35.2",
               "children_count": 0,
               "children": [],
-              "order_index": 82,
+              "order_index": 81,
               "source_page": 4,
               "unit": "each",
               "rate": 97.7,
@@ -945,7 +945,7 @@
               "code": "14.35.3",
               "children_count": 0,
               "children": [],
-              "order_index": 83,
+              "order_index": 82,
               "source_page": 4,
               "unit": "each",
               "rate": 87.75,
@@ -957,7 +957,7 @@
               "code": "14.35.4",
               "children_count": 0,
               "children": [],
-              "order_index": 84,
+              "order_index": 83,
               "source_page": 4,
               "unit": "each",
               "rate": 70.55,
@@ -969,14 +969,14 @@
               "code": "14.35.5",
               "children_count": 0,
               "children": [],
-              "order_index": 85,
+              "order_index": 84,
               "source_page": 4,
               "unit": "each",
               "rate": 61.85,
               "rate_display": "61.85"
             }
           ],
-          "order_index": 80,
+          "order_index": 79,
           "source_page": 4
         },
         {
@@ -985,7 +985,7 @@
           "code": "14.36",
           "children_count": 0,
           "children": [],
-          "order_index": 86,
+          "order_index": 85,
           "source_page": 4,
           "unit": "each",
           "rate": 47.3,
@@ -997,7 +997,7 @@
           "code": "14.37",
           "children_count": 0,
           "children": [],
-          "order_index": 87,
+          "order_index": 86,
           "source_page": 4,
           "unit": "each",
           "rate": 74.8,
@@ -1009,7 +1009,7 @@
           "code": "14.38",
           "children_count": 0,
           "children": [],
-          "order_index": 88,
+          "order_index": 87,
           "source_page": 4,
           "unit": "each",
           "rate": 191.45,
@@ -1021,14 +1021,14 @@
           "code": "14.39",
           "children_count": 0,
           "children": [],
-          "order_index": 89,
+          "order_index": 88,
           "source_page": 4,
           "unit": "each",
           "rate": 543.95,
           "rate_display": "543.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing chromium plated brass butt hinges with necessary chromium plated brass screws etc. complete.",
           "code": "14.40",
           "children_count": 5,
@@ -1039,7 +1039,7 @@
               "code": "14.40.1",
               "children_count": 0,
               "children": [],
-              "order_index": 91,
+              "order_index": 90,
               "source_page": 4,
               "unit": "each",
               "rate": 171.05,
@@ -1051,7 +1051,7 @@
               "code": "14.40.2",
               "children_count": 0,
               "children": [],
-              "order_index": 92,
+              "order_index": 91,
               "source_page": 4,
               "unit": "each",
               "rate": 148.75,
@@ -1063,7 +1063,7 @@
               "code": "14.40.3",
               "children_count": 0,
               "children": [],
-              "order_index": 93,
+              "order_index": 92,
               "source_page": 4,
               "unit": "each",
               "rate": 181.0,
@@ -1075,7 +1075,7 @@
               "code": "14.40.4",
               "children_count": 0,
               "children": [],
-              "order_index": 94,
+              "order_index": 93,
               "source_page": 4,
               "unit": "each",
               "rate": 102.6,
@@ -1087,14 +1087,14 @@
               "code": "14.40.5",
               "children_count": 0,
               "children": [],
-              "order_index": 95,
+              "order_index": 94,
               "source_page": 4,
               "unit": "each",
               "rate": 47.6,
               "rate_display": "47.60"
             }
           ],
-          "order_index": 90,
+          "order_index": 89,
           "source_page": 4
         },
         {
@@ -1103,7 +1103,7 @@
           "code": "14.41",
           "children_count": 0,
           "children": [],
-          "order_index": 96,
+          "order_index": 95,
           "source_page": 4,
           "unit": "each",
           "rate": 278.6,
@@ -1115,7 +1115,7 @@
           "code": "14.72",
           "children_count": 0,
           "children": [],
-          "order_index": 97,
+          "order_index": 96,
           "source_page": 5,
           "unit": "sqm",
           "rate": 338.25,
@@ -1123,12 +1123,15 @@
         },
         {
           "node_type": "item",
-          "title": "Providing and fixing bright finished brass casement window fasteners or peg stays to windows/ ventilators with necessary welding and machine screws etc. complete. kg 557.20",
+          "title": "Providing and fixing bright finished brass casement window fasteners or peg stays to windows/ ventilators with necessary welding and machine screws etc. complete.",
           "code": "14.73",
           "children_count": 0,
           "children": [],
-          "order_index": 98,
-          "source_page": 5
+          "order_index": 97,
+          "source_page": 5,
+          "unit": "kg",
+          "rate": 557.2,
+          "rate_display": "557.20"
         },
         {
           "node_type": "item",
@@ -1136,7 +1139,7 @@
           "code": "14.74",
           "children_count": 0,
           "children": [],
-          "order_index": 99,
+          "order_index": 98,
           "source_page": 5,
           "unit": "each",
           "rate": 68.35,
@@ -1148,7 +1151,7 @@
           "code": "14.75",
           "children_count": 0,
           "children": [],
-          "order_index": 100,
+          "order_index": 99,
           "source_page": 5,
           "unit": "sqm",
           "rate": 670.95,
@@ -1160,7 +1163,7 @@
           "code": "14.75A",
           "children_count": 0,
           "children": [],
-          "order_index": 101,
+          "order_index": 100,
           "source_page": 5,
           "unit": "litre",
           "rate": 0.5,
@@ -1172,7 +1175,7 @@
           "code": "14.76",
           "children_count": 0,
           "children": [],
-          "order_index": 102,
+          "order_index": 101,
           "source_page": 5,
           "unit": "each",
           "rate": 108.3,
@@ -1184,7 +1187,7 @@
           "code": "14.77",
           "children_count": 0,
           "children": [],
-          "order_index": 103,
+          "order_index": 102,
           "source_page": 5,
           "unit": "metre",
           "rate": 340.75,
@@ -1196,7 +1199,7 @@
           "code": "14.78",
           "children_count": 0,
           "children": [],
-          "order_index": 104,
+          "order_index": 103,
           "source_page": 6,
           "unit": "sqm",
           "rate": 84.85,
@@ -1208,14 +1211,14 @@
           "code": "14.79",
           "children_count": 0,
           "children": [],
-          "order_index": 105,
+          "order_index": 104,
           "source_page": 6,
           "unit": "each",
           "rate": 433.75,
           "rate_display": "433.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing White vitreous china water closet squatting pan (Indian type) along with “S” or “P” trap including dismantling of old WC seat and “S” or “P” trap at site complete with all operations including all necessary materials, labour and disposal of dismantled material including malba, all complete as per the direction of Engineer-in charge.",
           "code": "14.80",
           "children_count": 2,
@@ -1226,7 +1229,7 @@
               "code": "14.80.1",
               "children_count": 0,
               "children": [],
-              "order_index": 107,
+              "order_index": 106,
               "source_page": 6,
               "unit": "each",
               "rate": 3501.7,
@@ -1238,14 +1241,14 @@
               "code": "14.80.2",
               "children_count": 0,
               "children": [],
-              "order_index": 108,
+              "order_index": 107,
               "source_page": 6,
               "unit": "each",
               "rate": 4478.75,
               "rate_display": "4478.75"
             }
           ],
-          "order_index": 106,
+          "order_index": 105,
           "source_page": 6
         },
         {
@@ -1254,7 +1257,7 @@
           "code": "14.81",
           "children_count": 0,
           "children": [],
-          "order_index": 109,
+          "order_index": 108,
           "source_page": 6,
           "unit": "each",
           "rate": 288.1,
@@ -1266,7 +1269,7 @@
           "code": "14.82",
           "children_count": 0,
           "children": [],
-          "order_index": 110,
+          "order_index": 109,
           "source_page": 6,
           "unit": "each",
           "rate": 134.1,
@@ -1278,7 +1281,7 @@
           "code": "14.83",
           "children_count": 0,
           "children": [],
-          "order_index": 111,
+          "order_index": 110,
           "source_page": 6,
           "unit": "sqm",
           "rate": 3.45,
@@ -1290,7 +1293,7 @@
           "code": "14.84",
           "children_count": 0,
           "children": [],
-          "order_index": 112,
+          "order_index": 111,
           "source_page": 6,
           "unit": "metre",
           "rate": 3.25,
@@ -1302,7 +1305,7 @@
           "code": "14.85",
           "children_count": 0,
           "children": [],
-          "order_index": 113,
+          "order_index": 112,
           "source_page": 6,
           "unit": "each",
           "rate": 429.1,
@@ -1314,7 +1317,7 @@
           "code": "14.86",
           "children_count": 0,
           "children": [],
-          "order_index": 114,
+          "order_index": 113,
           "source_page": 6,
           "unit": "sqm",
           "rate": 730.55,
@@ -1326,7 +1329,7 @@
           "code": "14.87",
           "children_count": 0,
           "children": [],
-          "order_index": 115,
+          "order_index": 114,
           "source_page": 7,
           "unit": "sqm",
           "rate": 532.05,
@@ -1338,14 +1341,14 @@
           "code": "14.88",
           "children_count": 0,
           "children": [],
-          "order_index": 116,
+          "order_index": 115,
           "source_page": 7,
           "unit": "sqm",
           "rate": 855.7,
           "rate_display": "855.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing APP (Atactic Polypropylene Polymer) modified prefabricated five layer 2 mm thick water proofing membrane, black finished reinforced with glass fibre matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrance manufacture of density at 25°C, 0.87 - 0.89 kg/ litre and viscocity 70 - 160 cps. Over the primer coat the layer of membrane shall be laid using Butane torch and sealing all joints etc., and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 350/300 N/ 5 cm. Tear strength in longitudinal and transverse direction as 60/80N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacture of membrane.",
           "code": "14.89",
           "children_count": 1,
@@ -1356,18 +1359,18 @@
               "code": "14.89.1",
               "children_count": 0,
               "children": [],
-              "order_index": 118,
+              "order_index": 117,
               "source_page": 7,
               "unit": "sqm",
               "rate": 498.35,
               "rate_display": "498.35"
             }
           ],
-          "order_index": 117,
+          "order_index": 116,
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying APP (Atactic Polypropylene Polymer) modified prefabricated five layer, 3 mm thick water proofing membrane, black finished reinforced with glass fibre matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrane manufactured of density at 25°C, 0.87 - 0.89 kg/litre and viscocity 70 - 160 cps. Over the primer coat the layer of membrane shall be laid using butane torch and sealing all joints etc., and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 350/300 N/5 cm. Tear strength in longitudinal and transverse direction as 60/80N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacturer of membrane :",
           "code": "14.90",
           "children_count": 1,
@@ -1378,18 +1381,18 @@
               "code": "14.90.1",
               "children_count": 0,
               "children": [],
-              "order_index": 120,
+              "order_index": 119,
               "source_page": 8,
               "unit": "sqm",
               "rate": 537.45,
               "rate_display": "537.45"
             }
           ],
-          "order_index": 119,
+          "order_index": 118,
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying APP (Atactic Polypropylene Polymer) modified prefabricated five layer 3 mm thick water proofing membrane, black finished reinforced with non-woven polyester matt consisting of a coat of bitumen primer for bitumen membrane @ 0.40 litre/sqm by the same membrane manufacture of density at 25°C, 0.87-0.89 kg/ litre and viscocity 70-160 cps. Over the primer coat the layer of membrane shall be laid using Butane Torch and sealing all joints etc, and preparing the surface complete. The vital physical and chemical parameters of the membrane shall be as under : Joint strength in longitudinal and transverse direction at 23°C as 650/ 450N/ 5cm. Tear strength in longitudinal and transverse direction as 300/250N. Softening point of membrane not less than 150°C. Cold flexibility shall be upto -2°C when tested in accordance with ASTM, D - 5147. The laying of membrane shall be got done through the authorised applicator of the manufacturer of membrane :",
           "code": "14.91",
           "children_count": 1,
@@ -1400,14 +1403,14 @@
               "code": "14.91.1",
               "children_count": 0,
               "children": [],
-              "order_index": 122,
+              "order_index": 121,
               "source_page": 8,
               "unit": "sqm",
               "rate": 560.95,
               "rate_display": "560.95"
             }
           ],
-          "order_index": 121,
+          "order_index": 120,
           "source_page": 8
         },
         {
@@ -1416,7 +1419,7 @@
           "code": "14.92",
           "children_count": 0,
           "children": [],
-          "order_index": 123,
+          "order_index": 122,
           "source_page": 8,
           "unit": "sqm",
           "rate": 88.9,
@@ -1428,7 +1431,7 @@
           "code": "14.93",
           "children_count": 0,
           "children": [],
-          "order_index": 124,
+          "order_index": 123,
           "source_page": 8
         },
         {
@@ -1437,7 +1440,7 @@
           "code": "14.94",
           "children_count": 0,
           "children": [],
-          "order_index": 125,
+          "order_index": 124,
           "source_page": 8
         }
       ]
@@ -1445,9 +1448,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/14.0 REPAIRS TO BUILDING.pdf",
-    "row_count": 126,
+    "row_count": 125,
     "note_count": 1,
-    "leaf_count": 97,
+    "leaf_count": 96,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

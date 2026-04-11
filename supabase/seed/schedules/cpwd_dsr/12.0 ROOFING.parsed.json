@@ -23,7 +23,7 @@
       "children_count": 66,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing corrugated G.S. sheet roofing including vertical / curved surface fixed with polymer coated J or L hooks, bolts and nuts 8 mm diameter with bitumen and G.I. limpet washers or with G.I. limpet washers filled with white lead, including a coat of approved steel primer and two coats of approved paint on overlapping of sheets complete (up to any pitch in horizontal/ vertical or curved surfaces), excluding the cost of purlins, rafters and trusses and including cutting to size and shape wherever required.",
           "code": "12.1",
           "children_count": 3,
@@ -69,7 +69,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for straight cutting in C.G.S. sheet roofing for making opening of area exceeding 40 sq. decimeter for chimney stacks, sky light etc.:",
           "code": "12.2",
           "children_count": 3,
@@ -115,7 +115,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for circular cutting in C.G.S. sheet roofing for making opening of area exceeding 40 sq. decimeter:",
           "code": "12.3",
           "children_count": 3,
@@ -161,7 +161,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing ridges or hips of width 60 cm overall width plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts 8 mm dia G.I. limpet and bitumen washers complete.",
           "code": "12.4",
           "children_count": 2,
@@ -195,7 +195,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing valleys of 90 cm wide overall in plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts 8 mm dia G.I. limpet and bitumen washers complete :",
           "code": "12.5",
           "children_count": 1,
@@ -217,7 +217,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of 40 cm overall width plain G.S. sheet fixed with polymer coated J or L hooks, bolts and nuts, G.l. limpet and bitumen washer complete, bent to shape and fixed in wall with cement mortar 1:3 (1 cement : 3 coarse sand).",
           "code": "12.6",
           "children_count": 1,
@@ -239,7 +239,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 15 cm wide, 45 cm overall semi-circular plain G.S. sheet gutter with iron brackets 40x3 mm size, bolts, nuts and washers etc., including making necessary connections with rain water pipes complete.",
           "code": "12.7",
           "children_count": 2,
@@ -321,7 +321,7 @@
           "rate_display": "195.60"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing ridges and hips in fibre cement reinforced by organic fibres and/or inorganic synthetic fibres roofing with suitable fixing accessories or self drilling fastener and EPDM washer etc. complete.",
           "code": "12.12",
           "children_count": 4,
@@ -379,7 +379,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing fibre cement reinforced by organic fibres and/or inorganic synthetic fibres roofing accessories in all colours with polymer coated J or L hooks, bolts and nuts and or G.I. seam bolts and nuts, G.I. plain and bitumen washers or with self drilling fastener and EPDM washer etc. complete:",
           "code": "12.13",
           "children_count": 8,
@@ -494,7 +494,7 @@
           "rate_display": "92.40"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Painting top of roofs with bitumen of approved quality @ 17kg per 10 sqm impregnated with a coat of coarse sand at 60 cudm per 10 sqm, including cleaning the slab surface with brushes and finally with a piece of cloth lightly soaked in kerosene oil complete :",
           "code": "12.15",
           "children_count": 1,
@@ -516,7 +516,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "10 cm thick (average) mud phaska of damped brick earth on roofs laid to slope consolidated and plastered with 25 mm thick mud mortar mixed with bhusa @ 35 kg per cum of earth and gobri leaping with mix 1:1 (1 clay : 1 cow dung) and covered with flat tile bricks, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement and finished neat:",
           "code": "12.16",
           "children_count": 1,
@@ -538,7 +538,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "10 cm thick (average) mud phaska of damped brick earth on roofs laid to slope consolidated and plastered with 25 mm thick mud mortar with bhusha @ 35 kg per cum of earth and gobri leaping with mix 1:1 (1 clay : 1 cow-dung) and covered with machine moulded tile bricks, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement and finished neat.",
           "code": "12.17",
           "children_count": 1,
@@ -572,7 +572,7 @@
           "rate_display": "24.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and laying brick tiles over mumty roofs, grouted with cement mortar 1:3 (1 cement : 3 fine sand) mixed with 2% of integral water proofing compound by weight of cement, over 12 mm layer of cement mortar 1:3 (1 cement : 3 fine sand) and finished neat:",
           "code": "12.19",
           "children_count": 1,
@@ -606,7 +606,7 @@
           "rate_display": "709.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing gola 75x75 mm in cement concrete 1:2:4 (1 cement : 2 coarse sand : 4 stone aggregate 10 mm and down gauge), including finishing with cement mortar 1:3 (1 cement : 3 fine sand) as per standard design :",
           "code": "12.21",
           "children_count": 1,
@@ -640,13 +640,13 @@
           "rate_display": "298.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing sand stone slab for roofing and laying them in cement mortar 1 : 4 (1 cement : 4 coarse sand) over wooden karries or R.C.C. battens or structural steel sections (Karries or battens or structural steel sections to be paid separately), including pointing the ceiling joints with cement mortar 1:3 (1 cement : 3 fine sand ) complete :",
           "code": "12.23",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Red sand stone slab",
               "code": "12.23.1",
               "children_count": 1,
@@ -668,7 +668,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White sand stone slab",
               "code": "12.23.2",
               "children_count": 1,
@@ -694,13 +694,13 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing insulating board ceiling of approved quality with necessary nails etc. complete (frame work to be paid separately) :",
           "code": "12.24",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Natural colour insulating board",
               "code": "12.24.1",
               "children_count": 1,
@@ -722,7 +722,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White face insulating board",
               "code": "12.24.2",
               "children_count": 1,
@@ -744,7 +744,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Flame retardant face insulating board",
               "code": "12.24.3",
               "children_count": 1,
@@ -770,7 +770,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing flat pressed 3 layer medium density particle board or graded particle board (Grade I) IS: 3087 marked, in ceiling with necessary nails etc. complete (frame work to be paid separately):",
           "code": "12.25",
           "children_count": 1,
@@ -792,7 +792,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing plain multipurpose cement board(Hight pressure steam cured) with suitable screws for cement particle board in ceiling etc. complete (frame work to be paid seperatately).",
           "code": "12.26",
           "children_count": 2,
@@ -826,7 +826,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for Circular cutting including wastages in ceiling with:",
           "code": "12.27",
           "children_count": 5,
@@ -844,7 +844,7 @@
               "rate_display": "726.30"
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Natural colour insulating board",
               "code": "12.27.2",
               "children_count": 1,
@@ -866,7 +866,7 @@
               "source_page": 4
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White face insulating board:",
               "code": "12.27.3",
               "children_count": 1,
@@ -888,7 +888,7 @@
               "source_page": 4
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Flame retardant face insulating board:",
               "code": "12.27.4",
               "children_count": 1,
@@ -910,7 +910,7 @@
               "source_page": 4
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Standard quality hard board sheet:",
               "code": "12.27.5",
               "children_count": 2,
@@ -960,7 +960,7 @@
           "rate_display": "453.10"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing 10 mm thick plaster of Paris (gypsum anhydrous) ceiling up to a height of 5 m above floor level, over first class kail wood strips 25x6 mm with 10 mm gap in between and reinforced with rabbit wire mesh fixed to wooden frame (frame work to be paid separately):",
           "code": "12.31",
           "children_count": 2,
@@ -1040,7 +1040,7 @@
           "rate_display": "297.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Thermal Insulation of roofing with Expanded polystyrene fixed with suitable adhesive to the false ceiling as per the directions of the Engineer- in-charge:",
           "code": "12.36",
           "children_count": 2,
@@ -1074,7 +1074,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing 100 mm diameter and 60 cm long rain water spout in cement mortar 1:4 (1 cement : 4 fine sand).",
           "code": "12.37",
           "children_count": 1,
@@ -1096,7 +1096,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. holder bat clamps of approved design to C.I. or S.C.I. rain water pipes embedded in and including cement concrete blocks 10x10x10 cm of 1:2:4 mix (1 cement : 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) and cost of cutting holes and making good the walls etc. :",
           "code": "12.38",
           "children_count": 2,
@@ -1130,7 +1130,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing lead caulked joints to sand cast iron rain water pipes and fittings:",
           "code": "12.39",
           "children_count": 2,
@@ -1164,13 +1164,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing, fixing and embedding sand cast iron accessories for rain water pipes in the masonry surrounded with 12 mm thick cement mortar of the same mix, as that of masonry (lead caulking will be paid for separately):",
           "code": "12.40",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Sand cast iron plain shoes :",
               "code": "12.40.1",
               "children_count": 1,
@@ -1196,7 +1196,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing on wall face unplasticised Rigid PVC rain water pipes conforming to IS : 13592 Type A, including jointing with seal ring conforming to IS : 5382, leaving 10 mm gap for thermal expansion, (i) Single socketed pipes.",
           "code": "12.41",
           "children_count": 2,
@@ -1230,13 +1230,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing on wall face unplasticised - PVC moulded fittings/ accessories for unplasticised Rigid PVC rain water pipes conforming to IS : 13592 Type A, including jointing with seal ring conforming to IS : 5382, leaving 10 mm gap for thermal expansion.",
           "code": "12.42",
           "children_count": 6,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Coupler",
               "code": "12.42.1",
               "children_count": 2,
@@ -1270,7 +1270,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single pushfit Coupler",
               "code": "12.42.2",
               "children_count": 2,
@@ -1304,7 +1304,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single tee with door",
               "code": "12.42.3",
               "children_count": 2,
@@ -1338,7 +1338,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Single tee without door",
               "code": "12.42.4",
               "children_count": 2,
@@ -1372,7 +1372,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Bend 87.5°",
               "code": "12.42.5",
               "children_count": 2,
@@ -1406,7 +1406,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Shoe (Plain)",
               "code": "12.42.6",
               "children_count": 2,
@@ -1444,7 +1444,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing unplasticised -PVC pipe clips of approved design to unplasticised - PVC rain water pipes by means of 50x50x50 mm hard wood plugs, screwed with M.S. screws of required length, including cutting brick work and fixing in cement mortar 1:4 (1 cement : 4 coarse sand) and making good the wall etc. complete.",
           "code": "12.43",
           "children_count": 2,
@@ -1490,7 +1490,7 @@
           "rate_display": "54.70"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing false ceiling at all heights including providing and fixing of frame work made of special sections, power pressed from M.S. sheets and galvanized with zinc coating of 120 gms/sqm (both side inclusive) as per IS : 277 and consisting of angle cleats of size 25 mm wide x 1.6 mm thick with flanges of 27 mm and 37mm, at 1200 mm centre to centre, one flange fixed to the ceiling with dash fastener 12.5 mm dia x 50 mm long with 6 mm dia bolts, other flange of cleat fixed to the angle hangers of 25x10x0.50 mm of required length with nuts & bolts of required size and other end of angle hanger fixed with intermediate G.I. channels 45x15x0.9 mm running at the spacing of 1200 mm centre to centre, to which the ceiling section 0.5 mm thick bottom wedge of 80 mm with tapered flanges of 26 mm each having lips of 10.5 mm, at 450 mm centre to centre, shall be fixed in a direction perpendicular to G.I. intermediate channel with connecting clips made out of 2.64 mm dia x 230 mm long G.I. wire at every junction, including fixing perimeter channels 0.5 mm thick 27 mm high having flanges of 20 mm and 30 mm long, the perimeter of ceiling fixed to wall/partition with the help of rawl plugs at 450 mm centre, with 25 mm long dry wall screws @ 230 mm interval, including fixing of gypsum board to ceiling section and perimeter channel with the help of dry wall screws of size 3.5 x 25 mm at 230 mm c/c, including jointing and finishing to a flush finish of tapered and square edges of the board with recommended jointing compound , jointing tapes , finishing with jointing compound in 3 layers covering upto 150 mm on both sides of joint and two coats of primer suitable for board, all as per manufacturer’s specification and also including the cost of making openings for light fittings, grills, diffusers, cutouts made with frame of perimeter channels suitably fixed, all complete as per drawings, specification and direction of the Engineer in Charge but excluding the cost of painting with :",
           "code": "12.45",
           "children_count": 4,
@@ -1560,7 +1560,7 @@
           "rate_display": "84.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing UV stabilised fiberglass reinforced plastic sheet roofing up to any pitch, including fixing with polymer coated ‘J’ or ‘L’ hooks, bolts & nuts 8 mm dia. G.I plain/bitumen washers complete but excluding the cost of purlins, rafters, trusses etc. The sheets shall be manufactured out of 2400 TEX panel rovigs incorporating minimum 0.3% ultra-violet stabiliser in resin system under approximately 2400 psi and hot cured. They shall be of uniform pigmentation and thickness without air pockets and shall conform to IS 10192 and IS 12866.The sheets shall be opaque or translucent, clear or pigmented, textured or smooth as specified.",
           "code": "12.47",
           "children_count": 2,
@@ -1630,7 +1630,7 @@
           "rate_display": "738.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing precoated galvanised steel sheet roofing accessories of total coated thickness 0.50 mm (base metal of minimum 0.45 mm thickness with total coating thickness of 0.05 mm) with Zinc coating 120 gram per sqm as per IS: 277, in 240 mpa steel grade, 5-7 microns epoxy primer on both side of the sheet and polyester top coat 15-18 microns using self drilling/ self tapping screws complete :",
           "code": "12.51",
           "children_count": 6,
@@ -1712,7 +1712,7 @@
           "source_page": 7
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing tiled false ceiling of specified materials of size 595x595 mm in true horizontal level, suspended on inter locking metal grid of hot dipped galvanized steel sections ( galvanized @ 120 grams/ sqm, both side inclusive) consisting of main “T” runner with suitably spaced joints to get required length and of size 24x38 mm made from 0.30 mm thick (minimum) sheet, spaced at 1200 mm center to center and cross “T” of size 24x25 mm made of 0.30 mm thick (minimum) sheet, 1200 mm long spaced between main “T” at 600 mm center to center to form a grid of 1200x600 mm and secondary cross “T” of length 600 mm and size 24x25 mm made of 0.30 mm thick (minimum) sheet to be interlocked at middle of the 1200x600 mm panel to form grids of 600x600 mm and wall angle of size 24x24x0.3 mm and laying false ceiling tiles of approved texture in the grid including, required cutting/making, opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc. Main “T” runners to be suspended from ceiling using GI slotted cleats of size 27 x 37 x 25 x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm GI adjustable rods with galvanised butterfly level clips of size 85 x 30 x 0.8 mm spaced at 1200 mm center to center along main T, bottom exposed width of 24 mm of all T-sections shall be pre-painted with polyester paint, all complete for all heights as per specifications, drawings and as directed by Engineer-in-charge.",
           "code": "12.52",
           "children_count": 4,
@@ -1782,7 +1782,7 @@
           "rate_display": "2158.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Gl Clip in Metal Ceiling System of 600x600 mm module which includes providing and fixing ‘C’ wall angle of size 20x30x20 mm made of 0.5 mm thick pre painted steel along the perimeter of the room with help of nylon sleeves and wooden screws at 300 mm center to centre, suspending the main C carrier of size 10x38x10 mm made of G.I steel 0.7 mm thick from the soffit with the help of soffit cleat 37x27x25x1.6 mm, rawl plugs of size 38x12 mm and C carrier suspension clip and main carrier bracket at 1000 mm c/c. Inverted triangle shaped Spring Tee having height of 24 mm and width of 34 mm made of Gl steel 0.45 mm thick is then fixed to the main C carrier and in direction perpendicular to it at 600 mm centers with the help of suspension brackets. Wherever the main C carrier and spring T have to join, C carrier and spring T connectors have to be used. All sections to be galvanized @ 120 gms/sqm (both side inclusive), fixing with clip in tiles into spring T with :",
           "code": "12.54",
           "children_count": 2,
@@ -1852,7 +1852,7 @@
           "rate_display": "358.50"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing tiled false ceiling of specified materials of size 595x595 mm in true horizontal level, suspended on interlocking metal grid of hot dipped galvanized steel sections ( galvanized @ 120 grams/ sqm, both side inclusive) consisting of main “T” runner with suitably spaced joints to get required length and of size 24x38 mm made from 0.30 mm thick (minimum) sheet, spaced at 1200 mm center to center and cross “T” of size 24x25 mm made of 0.30 mm thick (minimum) sheet, 1200 mm long spaced between main “T” at 600 mm center to center to form a grid of 1200x600 mm and secondary cross “T” of length 600 mm and size 24x25 mm made of 0.30 mm thick (minimum) sheet to be interlocked at middle of the 1200x600 mm panel to form grids of 600x600 mm and wall angle of size 24x24x0.3 mm and laying false ceiling tiles of approved texture in the grid including, required cutting/making, opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc. Main “T” runners to be suspended from ceiling using GI slotted cleats of size 27 x 37 x 25 x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm GI adjustable rods with galvanized butterfly level clips of size 85 x 30 x 0.8 mm spaced at 1200 mm center to center along main T, bottom exposed width of 24 mm of all T-sections shall be pre-painted with polyester paint, all complete for all heights as per specifications, drawings and as directed by Engineer-in-charge.",
           "code": "12.58",
           "children_count": 1,
@@ -1874,7 +1874,7 @@
           "source_page": 10
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing false ceiling at all height including providing & fixing of framework made of special section, power pressed from M.S. sheets and galvanised with zinc coating of 120 gms/ sqm (both side inclusive) as per IS : 277 and consisting of angle cleat of size 25 mm wide x 1.6 mm thick with flanges of 27 mm and 37mm, at 1200 mm c/c, one flange fixed to the ceiling with dash fastener 12.5 mm dia x 50 mm long with 6 mm dia bolts, other flange of cleat fixed to the angle hangers of 25 x10 x0.50 mm of required length with nuts & bolts of required size and other end of angle hanger fixed with intermediate G.I chanels 45 x15 x 0.90 mm running at the spacing of 1200 mm c/c, to which the ceiling section 0.5 mm thick bottom wedge of 80 mm with tapered flanges of 26 mm each having lips of 10.5mm, at 450 mm c/c, shall be fixed in a direction perpendicular to G.I intermediate channel with connecting clip made out of 2.64 mm dia x 230 mm long G.I wire at every junction, including fixing perimeter channels 0.50 mm thick 27 mm high having flanges of 20 mm and 30 mm long, the perimeter of ceiling fixed to wall/ partitions with the help of Rawl plugs at 450 mm centre, with 25 mm long dry wall screws @ 230 mm interval, including fixing of Calcium Silicate Board to ceiling section and perimeter channels with the help of dry wall screws of size 3.5 x25 mm at 230 mm c/c, including jointing & finishing to a flush finish of tapered and square edges of the board with recommended jointing compounds, jointing tapes,finishing with jointing compounds in three layers covering up to 150 mm on both sides of joints and two coats of primer suitable for boards, all as per manufacture’s specification and also including the cost of making opening for light fittings, grills, diffusers, cut outs made with frame of perimeter channels suitably fixed, all complete as per drawings, specificaton and direction of the Engineer in charge but excluding the cost of painting with:",
           "code": "12.59",
           "children_count": 1,
@@ -1944,7 +1944,7 @@
           "rate_display": "357.60"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing at all heights, levels and locations Mill finish Aluminium alloy roofing sheets of alloy IS designation 31500, temper Hx8 conforming to IS 737 and dimensions as per IS code 2676 with characteristics of good formability and corrosion resistance. The profile sheets shall be fixed to truss members in slope or required pitch or curvature with Hex cap headed self drilling/tapping Stainless steel screws M6, 50 mm long with 3 mm EPDM seal washer etc. all inclusive of labour, scaffolding, T&P and sundries etc. complete as per directions of the Engineer-In-Charge. (Cost of truss/frame work shall be paid separately).",
           "code": "12.64",
           "children_count": 9,
@@ -2062,7 +2062,7 @@
           "source_page": 12
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing & fixing at all heights, levels and locations colour finish Aluminium alloy roofing sheets of alloy IS designation 31500, temper Hx8 conforming to IS 737 and dimensions as per IS code 2676 with characteristics of good formability and corrosion resistance. The profile sheets shall be fixed to truss members in slope or required pitch or curvature with Hex cap headed self drilling/tapping Stainless steel screws M6, 50 mm long with 3 mm EPDM seal washer etc. all inclusive of labour, scaffolding, T&P and sundries etc. complete as per directions of the Engineer-In-Charge. (Cost of truss/frame work shall be paid separately).",
           "code": "12.65",
           "children_count": 8,
@@ -2168,7 +2168,7 @@
           "source_page": 13
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing of Pre-coated colour or mill finish Aluminium Roofing Accessories in 0.71 mm thickness ,Alloy 31500 (IS designation) [Aluminium Alloy (AA) 3004 (ISO designation)]. For colour, coating shall be 5-7 microns epoxy primer on both sides of the sheet and polyester top coat 15-18 microns, using self drilling/tapping SS screws of size 6 x 50 mm with 3 mm thick EPDM seal and SS plain washer complete :",
           "code": "12.66",
           "children_count": 6,

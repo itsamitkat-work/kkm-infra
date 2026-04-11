@@ -9,13 +9,13 @@
       "children_count": 15,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring/drilling bore well of required dia for casing/ strainer pipe, by suitable method prescribed in IS: 2800 (part I), including collecting samples from different strata, preparing and submitting strata chart/ bore log, including hire & running charges of all equipments, tools, plants & machineries required for the job, all complete as per direction of Engineer-in-charge, upto 90 metre depth below ground level.",
           "code": "23.1",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All types of soil",
               "code": "23.1.1",
               "children_count": 3,
@@ -61,7 +61,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Rocky strata including Boulders",
               "code": "23.1.2",
               "children_count": 3,
@@ -111,13 +111,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Boring/drilling bore well of required dia for casing/ strainer pipe, by suitable method prescribed in IS: 2800 (part I), including collecting samples from different strata, preparing and submitting strata chart/ bore log, including hire & running charges of all equipments, tools, plants & machineries required for the job, all complete as per direction of Engineer -in-charge, beyond 90 metre & upto 150 metre depth below ground level.",
           "code": "23.2",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All types of soil",
               "code": "23.2.1",
               "children_count": 3,
@@ -163,7 +163,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Rocky strata including Boulders",
               "code": "23.2.2",
               "children_count": 3,
@@ -213,7 +213,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying, assembling, lowering and fixing in vertical position in bore well, unplasticized PVC medium well casing (CM) pipe of required dia, conforming to IS: 12818, including required hire and labour charges, fittings & accessories etc. all complete, for all depths, as per direction of Engineer -in-charge.",
           "code": "23.3",
           "children_count": 3,
@@ -259,7 +259,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying, assembling, lowering and fixing in vertical position in bore well unplasticized PVC medium well screen (RMS) pipes with ribs, conforming to IS: 12818, including hire & labour charges, fittings & accessories etc. all complete, for all depths, as per direction of Engineer-in-charge.",
           "code": "23.4",
           "children_count": 3,
@@ -365,7 +365,7 @@
           "rate_display": "1399.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying, assembling, lowering and fixing in vertical position in bore well, ERW (Electric Resistance Welded) FE 410 mild steel screwed and socketed/plain ended casing pipes of required dia, conforming to IS: 4270, of reputed & approved make, including painted with outside surface with two coats of anticorrosive paint of approved brand and manufacture, including required hire & labour charges, fittings & accessories, all complete, for all depths, as per direction of Engineer-in-charge.",
           "code": "23.10",
           "children_count": 3,
@@ -411,7 +411,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying, assembling, lowering and fixing in vertical position in bore well, ERW (Electric Resistance Welded) FE 410 plain slotted (having slot of size 1.6/3.2 mm) mild steel threaded and socketed/ plain bevel ended pipe (type A) of required dia, conforming to IS: 8110, of reputed and approved make, having wall thickness not less than 5.40 mm, including painted with outside surface with two coats of anticorrosive bitumestic paint of approved brand and manufacture, including hire & labour charges, fittings & accessories, all complete, for all depths, as per direction of Engineer -in-charge.",
           "code": "23.11",
           "children_count": 3,
@@ -466,7 +466,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing suitable size threaded mild steel cap or spot welded plate to the top of bore well housing/ casing pipe, removable as per requirement, all complete for borewell of:",
           "code": "23.13",
           "children_count": 3,
@@ -512,7 +512,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing M.S. clamp of required dia to the top of casing/ housing pipe of tubewell as per IS: 2800 (part I), including necessary bolts & nuts of required size complete.",
           "code": "23.14",
           "children_count": 3,
@@ -558,7 +558,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing Bail plug/ Bottom plug of required dia to the bottom of pipe assembly of tubewell as per IS:2800 (part I).",
           "code": "23.15",
           "children_count": 3,
