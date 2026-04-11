@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# App seed: authz → units → schedule sources + ingest.
+# App seed: dev auth user + authz → units → schedule sources + ingest.
 # JSON lives under supabase/seed/. Requires supabase start, jq, curl.
 #
 #   SEED_AUTHZ_JSON=... SEED_MANIFEST=... SEED_UNITS_JSON=...
@@ -10,6 +10,8 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 AUTHZ_JSON="${SEED_AUTHZ_JSON:-$REPO_ROOT/supabase/seed/authz.json}"
 MANIFEST="${SEED_MANIFEST:-$REPO_ROOT/supabase/seed/manifest.json}"
+DEV_USER_EMAIL="${SEED_DEV_USER_EMAIL:-its.amit.kat@gmail.com}"
+DEV_USER_PASSWORD="${SEED_DEV_USER_PASSWORD:-22113355}"
 
 if ! command -v jq &>/dev/null; then
   echo "seed-app: install jq (e.g. brew install jq)" >&2
@@ -43,6 +45,34 @@ AUTHZ_EP="${API_URL}/functions/v1/ensure-authz-seed"
 UNITS_EP="${API_URL}/functions/v1/ensure-units"
 ENSURE_EP="${API_URL}/functions/v1/ensure-schedule-sources"
 INGEST_EP="${API_URL}/functions/v1/ingest-schedule"
+AUTH_ADMIN_USERS_EP="${API_URL}/auth/v1/admin/users"
+
+echo "seed-app: ensure dev auth user (${DEV_USER_EMAIL})"
+existing_user_id="$(
+  curl -sfS "${AUTH_ADMIN_USERS_EP}?page=1&per_page=1000" \
+    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+    -H "apikey: ${SERVICE_ROLE_KEY}" \
+    | jq -r --arg email "$DEV_USER_EMAIL" '.users[] | select(.email == $email) | .id' \
+    | head -n 1
+)"
+
+if [[ -n "${existing_user_id:-}" ]]; then
+  curl -sfS -X PUT "${AUTH_ADMIN_USERS_EP}/${existing_user_id}" \
+    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+    -H "apikey: ${SERVICE_ROLE_KEY}" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg password "$DEV_USER_PASSWORD" --arg email "$DEV_USER_EMAIL" \
+      '{email: $email, password: $password, email_confirm: true}')" \
+    | jq '{id, email, updated_at}'
+else
+  curl -sfS -X POST "${AUTH_ADMIN_USERS_EP}" \
+    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+    -H "apikey: ${SERVICE_ROLE_KEY}" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg email "$DEV_USER_EMAIL" --arg password "$DEV_USER_PASSWORD" \
+      '{email: $email, password: $password, email_confirm: true}')" \
+    | jq '{id, email, created_at}'
+fi
 
 if [[ ! -f "$AUTHZ_JSON" ]]; then
   echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
@@ -100,6 +130,7 @@ if ! jq -e '
   and (.sources | all(
     (.schedule_source | type == "object")
     and (.versions | type == "array")
+    and ((has("order") | not) or (.order | type == "number"))
     and (.versions | all(
       (.schedule_source_version | type == "object")
       and (.files | type == "array")
@@ -157,7 +188,7 @@ done < <(
     | $src.versions[]
     | {
         schedule_source: $src.schedule_source,
-        schedule_source_version: .schedule_source_version,
+        schedule_source_version: (.schedule_source_version + {sort_order: $src.order}),
         files: .files
       }
   ' "$MANIFEST"

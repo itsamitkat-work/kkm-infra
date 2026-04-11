@@ -20,10 +20,15 @@ type ToggleIconType = "chevron" | "plus-minus"
 const TREE_TOGGLE_CELL_CLASS =
   "inline-flex w-7 shrink-0 items-center justify-center"
 
-interface TreeContextValue<T = any> {
+type HeadlessTreeLike = {
+  getContainerProps?: () => Record<string, unknown>
+  getDragLineStyle?: () => CSSProperties
+}
+
+interface TreeContextValue {
   indent: number
-  currentItem?: ItemInstance<T>
-  tree?: any
+  currentItem?: ItemInstance<unknown>
+  tree?: HeadlessTreeLike
   toggleIconType?: ToggleIconType
 }
 
@@ -34,13 +39,15 @@ const TreeContext = createContext<TreeContextValue>({
   toggleIconType: "plus-minus",
 })
 
-function useTreeContext<T = any>() {
-  return useContext(TreeContext) as TreeContextValue<T>
+function useTreeContext<T = unknown>() {
+  return useContext(TreeContext) as TreeContextValue & {
+    currentItem?: ItemInstance<T>
+  }
 }
 
 interface TreeProps extends HTMLAttributes<HTMLDivElement> {
   indent?: number
-  tree?: any
+  tree?: HeadlessTreeLike
   toggleIconType?: ToggleIconType
   asChild?: boolean
 }
@@ -82,7 +89,7 @@ function Tree({
   )
 }
 
-interface TreeItemProps<T = any> extends Omit<
+interface TreeItemProps<T = unknown> extends Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   "indent"
 > {
@@ -91,7 +98,7 @@ interface TreeItemProps<T = any> extends Omit<
   asChild?: boolean
 }
 
-function TreeItem<T = any>({
+function TreeItem<T = unknown>({
   item,
   className,
   asChild = false,
@@ -146,7 +153,12 @@ function TreeItem<T = any>({
   const Comp = asChild ? Slot.Root : "button"
 
   return (
-    <TreeContext.Provider value={{ ...parentContext, currentItem: item }}>
+    <TreeContext.Provider
+      value={{
+        ...(parentContext as TreeContextValue),
+        currentItem: item as ItemInstance<unknown>,
+      }}
+    >
       <Comp {...defaultProps} {...otherProps}>
         {children}
       </Comp>
@@ -154,12 +166,12 @@ function TreeItem<T = any>({
   )
 }
 
-interface TreeItemLabelProps<T = any> extends HTMLAttributes<HTMLSpanElement> {
+interface TreeItemLabelProps<T = unknown> extends HTMLAttributes<HTMLSpanElement> {
   item?: ItemInstance<T>
   asChild?: boolean
 }
 
-function TreeItemLabel<T = any>({
+function TreeItemLabel<T = unknown>({
   item: propItem,
   children,
   className,

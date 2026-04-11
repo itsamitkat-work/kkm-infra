@@ -425,6 +425,7 @@ export type Database = {
           name: string
           region: string | null
           schedule_source_id: string
+          sort_order: number | null
           status: Database["public"]["Enums"]["record_status"] | null
           updated_at: string | null
           year: number | null
@@ -437,6 +438,7 @@ export type Database = {
           name: string
           region?: string | null
           schedule_source_id: string
+          sort_order?: number | null
           status?: Database["public"]["Enums"]["record_status"] | null
           updated_at?: string | null
           year?: number | null
@@ -449,6 +451,7 @@ export type Database = {
           name?: string
           region?: string | null
           schedule_source_id?: string
+          sort_order?: number | null
           status?: Database["public"]["Enums"]["record_status"] | null
           updated_at?: string | null
           year?: number | null

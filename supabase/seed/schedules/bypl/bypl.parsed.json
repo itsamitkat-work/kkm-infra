@@ -1,0 +1,25 @@
+{
+  "node_type": "root",
+  "source_pdf": "",
+  "children_count": 2,
+  "children": [
+    {
+      "node_type": "item",
+      "title": "Making plinth protection 50 mm thick of cement concrete 1:2:4 (1 cement: 2 coarse sand : 4 graded stone aggregate 20 mm nominal size) over 75mm thick bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including finishing the top smooth. (AR29)",
+      "code": "3013498",
+      "unit": "sqm",
+      "rate": 1.0,
+      "annotations": [],
+      "children_count": 0
+    },
+    {
+      "node_type": "item",
+      "title": "Providing and laying cement concrete in foundation and bases of columns excluding the cost of centring, shuttering C.C. 1:6:12 (1 cement : 6 C/sand : 12 graded brick aggregate 40 mm nominal size ) (AR-30)",
+      "code": "3014009",
+      "unit": "cum",
+      "rate": 1.0,
+      "annotations": [],
+      "children_count": 0
+    }
+  ]
+}

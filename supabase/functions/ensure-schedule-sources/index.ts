@@ -9,7 +9,7 @@
  * POST body:
  *   {
  *     schedule_source: { name, display_name, type, id? },
- *     schedule_source_version: { name, display_name, year?, region?, metadata?, id? }
+ *     schedule_source_version: { name, display_name, year?, region?, metadata?, id?, sort_order? } — sort_order is float64 (fractional values OK for reorder gaps)
  *   }
  *
  * Returns: { schedule_source_id, schedule_source_version_id }
@@ -44,6 +44,7 @@ interface ScheduleSourceVersionInput {
   region?: string | null;
   metadata?: Record<string, unknown> | null;
   id?: string;
+  sort_order?: number | null;
 }
 
 interface EnsureBody {
@@ -116,6 +117,7 @@ async function upsertScheduleSourceVersion(
         year: input.year ?? null,
         region: input.region ?? null,
         metadata: input.metadata ?? null,
+        sort_order: input.sort_order ?? null,
       })
       .eq("id", existing.id);
 
@@ -130,6 +132,7 @@ async function upsertScheduleSourceVersion(
     year: input.year ?? null,
     region: input.region ?? null,
     metadata: input.metadata ?? null,
+    sort_order: input.sort_order ?? null,
     status: "active",
   };
   if (input.id) insertRow.id = input.id;

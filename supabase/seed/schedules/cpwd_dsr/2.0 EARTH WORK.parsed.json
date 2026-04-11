@@ -9,7 +9,7 @@
       "children_count": 36,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Earth work in surface excavation not exceeding 30 cm in depth but exceeding 1.5 m in width as well as 10 sqm on plan including getting out and disposal of excavated earth upto 50 m and lift upto 1.5 m, as directed by Engineer-in- Charge:",
           "code": "2.1",
           "children_count": 1,
@@ -31,7 +31,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Earth work by mechinical / manual means in rough excavation, banking excavated earth in layers not exceeding 20cm in depth, breaking clods, watering, rolling each layer with ½ tonne roller or wooden or steel rammers, and rolling every 3rd and top-most layer with power roller of minimum 8 tonnes and dressing up in embankments for roads, flood banks, marginal banks and guide banks or filling up ground depressions, lead upto 50 m and for all lift :",
           "code": "2.2",
           "children_count": 1,
@@ -53,7 +53,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Banking excavated earth by mechanical / manual means in layers not exceeding 20 cm in depth, breaking clods, watering, rolling each layer with ½ tonne roller, or wooden or steel rammers, and rolling every 3rd and top-most layer with power roller of minimum 8 tonnes and dressing up, in embankments for roads, flood banks, marginal banks, and guide banks etc., lead upto 50 m and for all lift :",
           "code": "2.3",
           "children_count": 1,
@@ -121,7 +121,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Earth work in excavation by mechanical means (Hydraulic excavator)/ manual means over areas (exceeding 30 cm in depth, 1.5 m in width as well as 10 sqm on plan) including getting out and disposal of excavated earth lead upto 50 m and lift upto 1.5 m, as directed by Engineer-in-charge.",
           "code": "2.7",
           "children_count": 3,
@@ -167,7 +167,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Earth work in excavation by mechanical means (Hydraulic excavator) / manual means in foundation trenches or drains (not exceeding 1.5 m in width or 10 sqm on plan), including dressing of sides and ramming of bottoms, for all lift, including getting out the excavated soil and disposal of surplus excavated soil as directed, within a lead of 50 m.",
           "code": "2.8",
           "children_count": 1,
@@ -189,7 +189,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Excavation work by mechanical means (Hydraulic excavator)/ manual means in foundation trenches or drains (not exceeding 1.5m in width or 10 sqm on plan), including dressing of sides and ramming of bottoms, lift upto 1.5 m, including getting out the excavated soil and disposal of surplus excavated soils as directed, within a lead of 50 m.",
           "code": "2.9",
           "children_count": 3,
@@ -235,13 +235,13 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Excavating trenches by mechinical / manual means of required width for pipes, cables, etc including excavation for sockets, and dressing of sides, ramming of bottoms, for all depth, including getting out the excavated soil, and then returning the soil as required, in layers not exceeding 20 cm in depth, including consolidating each deposited layer by ramming, watering, etc. and disposing of surplus excavated soil as directed, within a lead of 50 m :",
           "code": "2.10",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "All kinds of soil",
               "code": "2.10.1",
               "children_count": 3,
@@ -291,13 +291,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Excavating trenches of required width for pipes, cables, etc, including excavation for sockets, depth upto 1.5 m, including getting out the excavated materials, returning the soil as required in layers not exceeding 20 cm in depth, including consolidating each deposited layers by ramming, watering etc., stacking serviceable material for measurements and disposal of unserviceable material as directed, within a lead of 50 m :",
           "code": "2.13",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Ordinary rock :",
               "code": "2.13.1",
               "children_count": 3,
@@ -343,7 +343,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Hard rock (requiring blasting)",
               "code": "2.13.2",
               "children_count": 3,
@@ -389,7 +389,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Hard rock (blasting prohibited)",
               "code": "2.13.3",
               "children_count": 3,
@@ -439,13 +439,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for excavating trenches for pipes, cables, etc. in ordinary/hard rock exceeding 1.5 m in depth but not exceeding 3 m. (Rate is over corresponding basic item for depth upto 1.5 metre)",
           "code": "2.14",
           "children_count": 3,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Ordinary rock :",
               "code": "2.14.1",
               "children_count": 2,
@@ -479,7 +479,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Hard rock (requiring blasting)",
               "code": "2.14.2",
               "children_count": 2,
@@ -513,7 +513,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Hard rock (blasting prohibited)",
               "code": "2.14.3",
               "children_count": 2,
@@ -551,13 +551,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for excavating trenches for pipes, cables, etc. in ordinary/hard rock exceeding 3m in depth but not exceeding 4.5 m. (Rate is over corresponding basic item for depth upto 1.5 metre)",
           "code": "2.15",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Ordinary rock :",
               "code": "2.15.1",
               "children_count": 1,
@@ -583,7 +583,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Close timbering in trenches including strutting, shoring and packing cavities (wherever required) complete. (Measurements to be taken of the face area timbered).",
           "code": "2.16",
           "children_count": 3,
@@ -629,7 +629,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Close timbering in case of shafts, wells, cesspits, manholes and the like including strutting, shoring and packing cavities (wherever required) etc. complete. (Measurements to be taken of the face area timbered).",
           "code": "2.17",
           "children_count": 3,
@@ -675,7 +675,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Close timbering over areas including strutting, shoring and packing cavities (wherever required) etc. complete. (Measurements to be taken of the face area timbered):",
           "code": "2.18",
           "children_count": 3,
@@ -733,7 +733,7 @@
           "rate_display": "1692.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Open timbering in trenches including strutting and shoring complete (measurements to be taken of the face area timbered):",
           "code": "2.20",
           "children_count": 3,
@@ -779,7 +779,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Open timbering in case of shafts, wells, cesspits, manholes and the like including strutting and shoring complete (Measurements to be taken of the face area timbered):",
           "code": "2.21",
           "children_count": 3,
@@ -825,7 +825,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Open timbering over areas including strutting, shoring etc. complete. (Measurements to be taken of the face area timbered):",
           "code": "2.22",
           "children_count": 3,
@@ -883,7 +883,7 @@
           "rate_display": "872.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra rates for quantities of works, executed:",
           "code": "2.24",
           "annotations": [
@@ -931,20 +931,7 @@
           "title": "Filling available excavated earth (excluding rock) in trenches, plinth, sides of foundations etc. in layers not exceeding 20cm in depth, consolidating each deposited layer by ramming and watering, lead up to 50 and for all lift.",
           "code": "2.25",
           "children_count": 1,
-          "children": [
-            {
-              "node_type": "item",
-              "title": "Excavating, supplying, stacking and filling of local earth (including royalty) by mechanical transport upto a lead of 5km also including ramming and watering of the earth in layers not exceeding 20 cm in foundation trenches, plinth, sides of foundation etc. complete for all lift.",
-              "code": "2.25(a)",
-              "children_count": 0,
-              "children": [],
-              "order_index": 81,
-              "source_page": 4,
-              "unit": "cum",
-              "rate": 700.5,
-              "rate_display": "700.50"
-            }
-          ],
+          "children": [],
           "order_index": 80,
           "source_page": 4,
           "unit": "cum",
@@ -953,6 +940,18 @@
         },
         {
           "node_type": "item",
+          "title": "Excavating, supplying, stacking and filling of local earth (including royalty) by mechanical transport upto a lead of 5km also including ramming and watering of the earth in layers not exceeding 20 cm in foundation trenches, plinth, sides of foundation etc. complete for all lift.",
+          "code": "2.25(a)",
+          "children_count": 0,
+          "children": [],
+          "order_index": 81,
+          "source_page": 4,
+          "unit": "cum",
+          "rate": 700.5,
+          "rate_display": "700.50"
+        },
+        {
+          "node_type": "group",
           "title": "Extra for every additional lift of 1.5 m or part thereof in excavation / banking excavated or stacked materials.",
           "code": "2.26",
           "children_count": 2,
@@ -998,7 +997,7 @@
           "rate_display": "2123.75"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Surface dressing of the ground including removing vegetation and in- equalities not exceeding 15 cm deep and disposal of rubbish, lead up to 50 m and lift up to 1.5 m.",
           "code": "2.28",
           "children_count": 1,
@@ -1020,7 +1019,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Ploughing the existing ground to a depth of 15 cm to 25 cm and watering the same.",
           "code": "2.29",
           "children_count": 1,
@@ -1042,7 +1041,7 @@
           "source_page": 4
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Excavating holes more than 0.10 cum & upto 0.5 cum including getting out the excavated soil, then returning the soil as required in layers not exceeding 20cm in depth, including consolidating each deposited layer by ramming, watering etc, disposing of surplus excavated soil, as directed within a lead of 50 m and lift upto 1.5 m.",
           "code": "2.30",
           "children_count": 4,
@@ -1124,7 +1123,7 @@
           "rate_display": "8.95"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Felling trees of the girth (measured at a height of 1 m above ground level), including cutting of trunks and branches, removing the roots and stacking of serviceable material and disposal of unserviceable material.",
           "code": "2.33",
           "children_count": 4,
@@ -1182,7 +1181,7 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Supplying chemical emulsion in sealed containers including delivery as specified.",
           "code": "2.34",
           "children_count": 1,
@@ -1204,13 +1203,13 @@
           "source_page": 5
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Diluting and injecting chemical emulsion for POST-CONSTRUCTIONAL anti-termite treatment (excluding the cost of chemical emulsion) :",
           "code": "2.35",
           "children_count": 5,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Along external wall where the apron is not provided using chemical emulsion @ 7.5 litres / sqm of the vertical surface of the substructure to a depth of 300 mm including excavation channel along the wall & rodding etc. complete:",
               "code": "2.35.1",
               "children_count": 1,
@@ -1232,7 +1231,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Along the external wall below concrete or masonry apron using chemical emulsion @ 2.25 litres per linear metre including drilling and plugging holes etc.:",
               "code": "2.35.2",
               "children_count": 1,
@@ -1254,7 +1253,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Treatment of soil under existing floors using chemical emulsion @ one litre per hole, 300 mm apart including drilling 12 mm diameter holes and plugging with cement mortar 1 :2 (1 cement : 2 Coarse sand) to match the existing floor:",
               "code": "2.35.3",
               "children_count": 1,
@@ -1276,7 +1275,7 @@
               "source_page": 5
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Treatment of existing masonry using chemical emulsion @ one litre per hole at 300 mm interval including drilling holes at 45 degree and plugging them with cement mortar 1:2 (1 cement : 2 coarse sand) to the full depth of the hole :",
               "code": "2.35.4",
               "children_count": 1,

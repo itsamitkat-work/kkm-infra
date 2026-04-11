@@ -2,6 +2,7 @@
   "units_file": "supabase/seed/units.json",
   "sources": [
     {
+      "order": 1,
       "schedule_source": {
         "id": "a1111111-1111-4111-8111-111111111101",
         "name": "cpwd_dsr",
@@ -49,6 +50,32 @@
             "supabase/seed/schedules/cpwd_dsr/25.0 STRUCTURAL GLAZING ALUMINIUM COMPOSITE PANEL.parsed.json",
             "supabase/seed/schedules/cpwd_dsr/26.0 NEW TECHNOLOGIES AND MATERIALS.parsed.json"
           ]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "schedule_source": {
+        "id": "a1111111-1111-4111-8111-111111111102",
+        "name": "bypl",
+        "display_name": "BYPL",
+        "type": "private"
+      },
+      "versions": [
+        {
+          "schedule_source_version": {
+            "id": "a2222222-2222-4222-8222-222222222202",
+            "name": "bypl",
+            "display_name": "BYPL",
+            "year": 2026,
+            "region": "India",
+            "metadata": {
+              "publisher": "BYPL",
+              "edition": "BYPL",
+              "year": 2026
+            }
+          },
+          "files": ["supabase/seed/schedules/bypl/bypl.parsed.json"]
         }
       ]
     }

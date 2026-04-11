@@ -2,9 +2,65 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
-import type { ScheduleSourceVersionOption, ScheduleTreeRow } from './types';
+import type {
+  ScheduleAnnotationType,
+  ScheduleItemAnnotation,
+  ScheduleSourceVersionOption,
+  ScheduleTreeRow,
+  ScheduleTreeSearchRow,
+} from './types';
+
+const ANNOTATION_TYPES = new Set<ScheduleAnnotationType>([
+  'note',
+  'remark',
+  'condition',
+  'reference',
+]);
+
+function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
+  if (value == null) return [];
+  if (!Array.isArray(value)) return [];
+  const out: ScheduleItemAnnotation[] = [];
+  for (const item of value) {
+    if (!item || typeof item !== 'object') continue;
+    const o = item as Record<string, unknown>;
+    const rawType =
+      typeof o.type === 'string' ? o.type.trim().toLowerCase() : '';
+    const type: ScheduleAnnotationType = ANNOTATION_TYPES.has(
+      rawType as ScheduleAnnotationType
+    )
+      ? (rawType as ScheduleAnnotationType)
+      : 'note';
+    const orderRaw = o.order_index;
+    let order_index: number | null = null;
+    if (typeof orderRaw === 'number' && Number.isFinite(orderRaw)) {
+      order_index = orderRaw;
+    } else if (orderRaw != null && String(orderRaw).trim() !== '') {
+      const n = Number(orderRaw);
+      order_index = Number.isFinite(n) ? n : null;
+    }
+    out.push({
+      id: typeof o.id === 'string' ? o.id : String(o.id ?? ''),
+      type,
+      raw_text: typeof o.raw_text === 'string' ? o.raw_text : '',
+      order_index,
+    });
+  }
+  return out;
+}
+
+function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
+  return {
+    ...row,
+    has_children: Boolean(row.has_children),
+    annotations: parseScheduleAnnotations(
+      (row as { annotations?: unknown }).annotations
+    ),
+  };
+}
 
 export const SCHEDULE_VERSIONS_QUERY_KEY = ['schedule_source_versions'] as const;
+export const SCHEDULE_TREE_ROOTS_QUERY_KEY = ['schedule_tree_roots'] as const;
 
 export function useScheduleSourceVersions() {
   return useQuery({
@@ -13,7 +69,8 @@ export function useScheduleSourceVersions() {
       const supabase = createSupabaseBrowserClient();
       const { data, error } = await supabase
         .from('schedule_source_versions')
-        .select('id, display_name, year')
+        .select('id, display_name, year, sort_order')
+        .order('sort_order', { ascending: true, nullsFirst: false })
         .order('year', { ascending: false, nullsFirst: false });
       if (error) throw error;
       return (data ?? []) as ScheduleSourceVersionOption[];
@@ -21,39 +78,83 @@ export function useScheduleSourceVersions() {
   });
 }
 
-export function scheduleTreeRowsQueryKey(versionId: string | null) {
-  return ['schedule_items_tree', versionId] as const;
+export function scheduleTreeRootsQueryKey(versionId: string | null) {
+  return [...SCHEDULE_TREE_ROOTS_QUERY_KEY, versionId] as const;
 }
 
-export function useScheduleTreeRows(versionId: string | null) {
+export function scheduleTreeChildrenQueryKey(
+  versionId: string | null,
+  parentId: string,
+) {
+  return ['schedule_tree_children', versionId, parentId] as const;
+}
+
+export function scheduleTreeSearchQueryKey(versionId: string | null, q: string) {
+  return ['schedule_tree_search', versionId, q] as const;
+}
+
+export async function fetchScheduleTreeRoots(
+  versionId: string,
+): Promise<ScheduleTreeRow[]> {
+  const supabase = createSupabaseBrowserClient();
+  const { data, error } = await supabase.rpc('get_schedule_tree_roots', {
+    p_schedule_source_version_id: versionId,
+  });
+  if (error) throw error;
+  return ((data ?? []) as ScheduleTreeRow[]).map(normalizeScheduleTreeRow);
+}
+
+export async function fetchScheduleTreeChildren(
+  versionId: string,
+  parentId: string,
+): Promise<ScheduleTreeRow[]> {
+  const supabase = createSupabaseBrowserClient();
+  const { data, error } = await supabase.rpc('get_schedule_tree_children', {
+    p_schedule_source_version_id: versionId,
+    p_parent_item_id: parentId,
+  });
+  if (error) throw error;
+  return ((data ?? []) as ScheduleTreeRow[]).map(normalizeScheduleTreeRow);
+}
+
+export function useScheduleTreeRoots(versionId: string | null) {
   return useQuery({
-    queryKey: scheduleTreeRowsQueryKey(versionId),
-    queryFn: async (): Promise<ScheduleTreeRow[]> => {
-      if (!versionId) return [];
-      const supabase = createSupabaseBrowserClient();
-      const { data, error } = await supabase
-        .from('schedule_items_tree')
-        .select(
-          [
-            'id',
-            'parent_item_id',
-            'code',
-            'description',
-            'node_type',
-            'depth',
-            'order_index',
-            'path_text',
-            'schedule_source_version_id',
-            'source_version_display_name',
-            'rate',
-            'unit_symbol',
-          ].join(', '),
-        )
-        .eq('schedule_source_version_id', versionId)
-        .order('path_text', { ascending: true });
-      if (error) throw error;
-      return (data ?? []) as ScheduleTreeRow[];
-    },
+    queryKey: scheduleTreeRootsQueryKey(versionId),
+    queryFn: () => fetchScheduleTreeRoots(versionId as string),
     enabled: Boolean(versionId),
+    staleTime: 1000 * 60 * 5,
+  });
+}
+
+export function useScheduleTreeSearch(
+  versionId: string | null,
+  q: string,
+  limit = 50,
+) {
+  const normalized = q.trim();
+  return useQuery({
+    queryKey: scheduleTreeSearchQueryKey(versionId, normalized),
+    queryFn: async (): Promise<ScheduleTreeSearchRow[]> => {
+      if (!versionId || normalized.length < 2) return [];
+      const supabase = createSupabaseBrowserClient();
+      const { data, error } = await supabase.rpc('search_schedule_tree', {
+        p_schedule_source_version_id: versionId,
+        p_query: normalized,
+        p_limit: limit,
+        p_offset: 0,
+      });
+      if (error) throw error;
+      return ((data ?? []) as ScheduleTreeSearchRow[]).map((row) => {
+        const base = normalizeScheduleTreeRow(row);
+        return {
+          ...base,
+          ancestor_ids: Array.isArray(row.ancestor_ids)
+            ? row.ancestor_ids.map(String)
+            : [],
+        };
+      });
+    },
+    enabled: Boolean(versionId && normalized.length >= 2),
+    staleTime: 1000 * 30,
   });
 }
