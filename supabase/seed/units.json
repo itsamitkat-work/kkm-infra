@@ -47,6 +47,22 @@
       "is_base": true,
       "conversion_factor": 1,
       "symbol": "sqm"
+    },
+    {
+      "name": "per bag of 50kg cement used",
+      "display_name": "Per Bag of 50kg Cement Used",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per bag of 50kg cement used"
+    },
+    {
+      "name": "cum per metre depth",
+      "display_name": "Cum Per Metre Depth",
+      "dimension": "volume",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "cum per metre depth"
     }
   ]
 }

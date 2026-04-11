@@ -99,7 +99,7 @@
           "rate_display": "14.25"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Earth work in excavation by mechanical means (Hydraulic excavator)/ manual means over areas (exceeding 30 cm in depth, 1.5 m in width as well as 10 sqm on plan) including getting out and disposal of excavated earth lead upto 50 m and for all lift, as directed by Engineer-in-charge.",
           "code": "2.6",
           "children_count": 1,
