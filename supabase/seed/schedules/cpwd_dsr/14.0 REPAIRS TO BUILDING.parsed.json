@@ -6,14 +6,6 @@
       "node_type": "subhead",
       "title": "REPAIRS TO BUILDING",
       "code": "14.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: - This item to be used for maintenance work judicially, necessary deduction for scaffolding in the existing item to be done.",
-          "source_page": 5,
-          "order_index": 0
-        }
-      ],
       "children_count": 64,
       "children": [
         {
@@ -1113,6 +1105,14 @@
           "node_type": "item",
           "title": "Providing and fixing double scaffolding system (cup lock type) on the exterior side, up to seven story height made with 40 mm dia M.S. tube 1.5 m centre to centre, horizontal & vertical tubes joining with cup & lock system with M.S. tubes, M.S. tube challies, M.S. clamps and M.S. staircase system in the scaffolding for working platform etc. and maintaining it in a serviceable condition for the required duration as approved and removing it there after. The scaffolding system shall be stiffened with bracings, runners, connection with the building etc wherever required for inspection of work at required locations with essential safety features for the workmen etc. complete as per directions and approval of Engineer-in-charge. The elevational area of the scaffolding shall be measured for payment purpose. The payment will be made once irrespective of duration of scaffolding.",
           "code": "14.72",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: - This item to be used for maintenance work judicially, necessary deduction for scaffolding in the existing item to be done.",
+              "source_page": 5,
+              "order_index": 0
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 96,

@@ -6,74 +6,6 @@
       "node_type": "subhead",
       "title": "NEW TECHNOLOGIES AND MATERIALS",
       "code": "26.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: Measurement and payment: The pre-measurement of thickness shall be done just after the surface preparation is completed and Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding / tapping with a blunt metal instrument and/or the 75 mm size cube crushing strength at the end of 28 days to be not less than 30 N/Sqmm2).",
-          "source_page": 8,
-          "order_index": 0
-        },
-        {
-          "type": "note",
-          "text": "Note: Rates shall be for finished surface area of concrete and shall include the cost of labour, concrete and appropriate approved Super-Plasticiser for rendering concrete as flowable and SBR polymer but shall exclude cost of reinforcement, bond coat, Shear Keys, centering and shuttering, strutting, propping etc (Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument)",
-          "source_page": 8,
-          "order_index": 1
-        },
-        {
-          "type": "note",
-          "text": "Note: Rates shall be for finished surface area of concrete and shall include the cost of making holes in existing RCC slab, if required, for pouring concrete in shuttering mould of jacket and appropriate approved Super-Plasticiser for rendering concrete as flowable self compacting and SBR polymer but shall exclude cost of reinforcement, bond coat, Shear Keys, centering and shuttering, strutting, propping etc (Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument)",
-          "source_page": 9,
-          "order_index": 2
-        },
-        {
-          "type": "note",
-          "text": "Note: Rates shall include the providing necessary ground wires etc. The levelling gauges, if used, shall be paid for separately. Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument.",
-          "source_page": 10,
-          "order_index": 3
-        },
-        {
-          "type": "note",
-          "text": "Note: i) When cutting panel, “A” side is to be for outside or external surface of respective external wall and B side is to be for internal surface of wall ii) Erection of panel is to be with reference to both building plan & cutting drawing by following notational mark indicated in the cutting drawing as well as notional mark written on each panel cut as per cutting drawing sqm 283.25",
-          "source_page": 15,
-          "order_index": 4
-        },
-        {
-          "type": "note",
-          "text": "Note: Excess/less cement over the specified cement content used as per design mix is payable/recoverable separately)",
-          "source_page": 18,
-          "order_index": 5
-        },
-        {
-          "type": "note",
-          "text": "Note: For WPC solid door/window frames, minus 5 mm tolerance in dimensions i.e depth and width of profile shall be acceptable. Variation in profile dimensions on plus side shall be acceptable but no extra payment on this account shall be made.",
-          "source_page": 22,
-          "order_index": 6
-        },
-        {
-          "type": "note",
-          "text": "Note : Scaffolding wherever required to be paid separately",
-          "source_page": 25,
-          "order_index": 7
-        },
-        {
-          "type": "note",
-          "text": "Note : Scaffolding wherever required to be paid separately.",
-          "source_page": 26,
-          "order_index": 8
-        },
-        {
-          "type": "note",
-          "text": "Note:- This item shall be adopted for building upto G+3 Storeys only excluding seismic zone V.",
-          "source_page": 26,
-          "order_index": 9
-        },
-        {
-          "type": "note",
-          "text": "Note: - cement consumption for pointing is same for modular & non modular bricks. * White cement COEFFICIENTS FOR CEMENT CONSUMPTION S.H. : 14.0 REPAIRS TO BUILDING 1.0 COEFFICIENTS FOR CEMENT CONSUMPTION 14.0 REPAIRS TO BUILDING Code No. Quantity of cement per unit quantity of work (Quintals)",
-          "source_page": 51,
-          "order_index": 10
-        }
-      ],
       "children_count": 520,
       "children": [
         {
@@ -951,6 +883,14 @@
           "node_type": "group",
           "title": "Providing, mixing and applying SBR polymer (of approved make) modified Cement mortar in proportion of 1:4 (1 cement: 4 graded coarse sand with polymer minimum 2% by wt. of cement used) as per specifications and directions of Engineer-in-charge.",
           "code": "26.32",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Measurement and payment: The pre-measurement of thickness shall be done just after the surface preparation is completed and Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding / tapping with a blunt metal instrument and/or the 75 mm size cube crushing strength at the end of 28 days to be not less than 30 N/Sqmm2).",
+              "source_page": 8,
+              "order_index": 0
+            }
+          ],
           "children_count": 3,
           "children": [
             {
@@ -997,6 +937,14 @@
           "node_type": "group",
           "title": "Providing, mixing and applying SBR polymer (of approved make @ minimum 2% by wt. of cement used) modified plain/reinforced cement concrete for structural members having minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] with specified average thickness.",
           "code": "26.33",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Rates shall be for finished surface area of concrete and shall include the cost of labour, concrete and appropriate approved Super-Plasticiser for rendering concrete as flowable and SBR polymer but shall exclude cost of reinforcement, bond coat, Shear Keys, centering and shuttering, strutting, propping etc (Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument)",
+              "source_page": 8,
+              "order_index": 1
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -1031,6 +979,14 @@
           "node_type": "group",
           "title": "Providing and laying SBR Polymer modified (of approved make @ minimum 2% by wt. of cement used) plain/reinforced concrete jacket for the structural members e.g. columns, pillars, piers, beams etc with concrete having the specified minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] with specified average thickness all-round existing core of RCC member.",
           "code": "26.34",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Rates shall be for finished surface area of concrete and shall include the cost of making holes in existing RCC slab, if required, for pouring concrete in shuttering mould of jacket and appropriate approved Super-Plasticiser for rendering concrete as flowable self compacting and SBR polymer but shall exclude cost of reinforcement, bond coat, Shear Keys, centering and shuttering, strutting, propping etc (Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument)",
+              "source_page": 9,
+              "order_index": 2
+            }
+          ],
           "children_count": 3,
           "children": [
             {
@@ -1157,6 +1113,14 @@
           "node_type": "group",
           "title": "Shotcreting R.C.C. columns, beams and slabs etc. in layers with approved design mix concrete having the specified minimum characteristic compressive strength [with ordinary portland cement, coarse sand and graded stone aggregate of 10 mm maximum size in proportion as per design criteria] including the cost of centering and shuttering at edges and corners etc. as directed by Engineer- in-Charge",
           "code": "26.38",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Rates shall include the providing necessary ground wires etc. The levelling gauges, if used, shall be paid for separately. Payment under this item shall be made only after proper wet curing has been done and surface has been satisfactorily evaluated by sounding/tapping with a blunt metal instrument.",
+              "source_page": 10,
+              "order_index": 3
+            }
+          ],
           "children_count": 3,
           "children": [
             {
@@ -1505,6 +1469,14 @@
           "node_type": "item",
           "title": "Erection of GFRG Panels in walls in all floors using suitable crane as per instructions of Engineer-in-Charge, as per cutting drawings and structural drawings, in perfect line and plumb, above RCC plinth beam/ GFRG panel below and provide necessary lateral/ slanting support to keep the wall panel in safe position, providing & tieing of Reinforcement as per structural drawings and applying a coat of water repellant coating Zycosil/equivalent or equivalent product (1 Zycosil/equivalent compound :10 water) to saturation level over RCC plinth beam to provide water proofing treatment to joint between wall panel & plinth beam as per the guide lines / instruction by the engineer in charge. (Cost of reinforcement, water proofing of walls and plinth beam/GFRG panel below joints and installation of door/ window frames before filling of concrete shall be paid separately). The rate quoted shall include making provision for laying of lintels, beams, sunshades, staircase beams, lofts, plumbing work, electrical conduits and any structural insertion etc., as per the drawing and direction of the engineer in charge. The payment shall be made based on the actual exposed area (one side only) of the panel. The work shall be carried out as per the Special Conditions for Glass Fibre Reinforced Gypsum (GFRG) Structures mentioned in NIT.",
           "code": "26.52",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: i) When cutting panel, “A” side is to be for outside or external surface of respective external wall and B side is to be for internal surface of wall ii) Erection of panel is to be with reference to both building plan & cutting drawing by following notational mark indicated in the cutting drawing as well as notional mark written on each panel cut as per cutting drawing sqm 283.25",
+              "source_page": 15,
+              "order_index": 4
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 123,
@@ -1804,6 +1776,14 @@
           "node_type": "group",
           "title": "Fabrication & Manufacturing of Prestressed Hollow Core slab (Hollow area 25 to 30%) of different thickness & modular width 1200 mm in Controlled Factory Environment with approved methodology conforming to IS : 10297:1982 by using long line casting method having arrangement of proper steel bed. Concreting should be done by batch mixing plant capable of producing zero slump concrete, transported through automatic shuttels of standard make & layed on bed with the help of extruder/ Slipformer, finishing, curing and also provision of steam curing. Cutting, making necessary cutout/holes of required sizes for services in slab element after achieving required strength, yard handling & stacking all complete as per approved shop drawings & design mix as per the direction of the Engineer-in-charge. (Cost of strands should be paid separately).",
           "code": "26.73",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Excess/less cement over the specified cement content used as per design mix is payable/recoverable separately)",
+              "source_page": 18,
+              "order_index": 5
+            }
+          ],
           "children_count": 3,
           "children": [
             {
@@ -2566,6 +2546,14 @@
           "node_type": "group",
           "title": "Providing and fixing factory made single extruded WPC (Wood Polymer Composite) solid door/window/Clerestory windows & other Frames/ Chowkhat comprising of virgin PVC polymer of K value 58-60 (Suspension Grade), calcium carbonate and natural fibers (wood powder/ rice husk/ wheat husk) and non toxic additives (maximum toxicity index of 12 for 100 gms) fabricated with miter joints after applying PVC solvent cement and screwed with full body threaded star headed SS screws having minimum frame density of 750 kg/cum, screw withdrawal strength of 2200 N (Face) & 1100 N (Edge), minimum compressive strength of 58 N/mm2, modulus of elasticity 900 N/mm2 and resistance to spread of flame of Class A category with property of being termite/borer proof, water/moisture proof and fire retardant and fixed in position with M.S hold fast/lugs/SS dash fasteners of required dia and length complete as per direction of Engineer-In- Charge. (M.S hold fast/lugs or SS dash fasteners shall be paid for separately).",
           "code": "26.86",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: For WPC solid door/window frames, minus 5 mm tolerance in dimensions i.e depth and width of profile shall be acceptable. Variation in profile dimensions on plus side shall be acceptable but no extra payment on this account shall be made.",
+              "source_page": 22,
+              "order_index": 6
+            }
+          ],
           "children_count": 7,
           "children": [
             {
@@ -2808,6 +2796,14 @@
           "node_type": "group",
           "title": "Providing and fixing of façade at all heights with extruded hollow Clay / Terracotta ventilated rainscreen tiles of height 250/ 300/ 400 mm and length of 595 mm of approved texture,design and pattern having Flexural Strength/ Modulus of Rupture of ≥ 14 N/m² and maximum water absorption of 10% tested as per ISO 10545-4:2004(E) and ISO 10545-3:1995 respectively in true level fixed to a supporting aluminium framework(Alloy 6063 T5/T6) consisting of vertical ‘T’ (for intermediates)/ ‘L’(for ends/ termination)/ Tubular sections (at corners)of size 80x60x2 mm/ 40x60x2 mm / 40x40x2 mm respectively, spaced at maximum spacing of 600 mm c/c matching to the tile vertical grid, and horizontal aluminium ‘C’-clamps of size 56x25x2 mm thickness of length 150 mm at junction of tiles and of length 75 mm at wall ends/ corners fixed on top of the vertical sections at spacing of 250/ 300/ 400 mm c/c matching to the tile horizontal grid with two numbers of self-drilling / self-tapping SS screws of size 5.5x25 mm with EPDM washers. The vertical ‘T’/’L/ Tubular’ sections shall be fixed to the wall using HDG (hot-dip-galvanized) steel L-brackets (galvanizing thickness of minimum 80 microns)of size 110x80x6 mm at intermediate vertical aluminium profiles and of size 220x110x12 mm at outer corners and stainless steel grade 304,M10 full threaded anchor fasteners with nylon sleeve 100 mm long (for brick work) and M8 expansion anchor fasteners 75 mm long for concrete surface, spacing of brackets to be based on a structural/ static calculation. The brackets shall be of length 175 mm at junction of two vertical aluminium profiles and of length 100 mm at intermediate points of vertical profiles and shall be fixed to the vertical aluminium T / L / Tubular profiles using two numbers self-drilling/ self-tapping SS screws of size 5.5x25 mm with EPDM washers. EPDM gaskets to be fixed in between brackets and vertical profiles. The tiles shall be mounted on the ‘C’ clamps such that the tiles are supported at top and bottom at both ends. The tiles shall be additionally secured to the horizontal ‘C’ clamps using special SS clips of required size which shall be inserted and pressed into position on the ‘C’ clamps holding the tiles and the cut-tiles shall be glued at points to the horizontal ‘C’ clamps by using MS Polymer sealant adhesive. The vertical joint open groove between two adjacent tiles shall be 5 mm. The tiles and system shall be designed to resist wind load as per IS 875 (Part 3) according to different zones. The tiles shall be installed using the ventilated rain screen principle with provision for natural ventilation of the space between the façade tiles and the structural wall. The work shall be carried out as per specification, drawing and as per direction of the Engineer-in-Charge.",
           "code": "26.92",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note : Scaffolding wherever required to be paid separately",
+              "source_page": 25,
+              "order_index": 7
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -2842,6 +2838,14 @@
           "node_type": "group",
           "title": "Providing and fixing of façade at all heights with extruded hollow Clay / Terracotta ventilated rainscreen tiles of height 259/ 309/ 409 mm and lengthof 1190 mm of approved texture,design and pattern having Flexural Strength/ Modulus of Rupture of ≥ 14 N/m² and maximum water absorption of 10% tested as per ISO 10545-4:2004(E) and ISO 10545-3:1995 respectively in true level fixed to a supporting aluminium framework (Alloy 6063 T5/T6) consisting of vertical ‘T’ (for intermediates)/ ‘L’ (for ends/ termination)/ Tubular sections (at corners)of size 80x60x2 mm/ 40x60x2 mm/ 40x40x2 mm respectively, spaced at maximum spacing of 1200 mm c/c matching to the tile vertical grid, and horizontal aluminium ‘C’-clamps of size 56x34x2 mm thickness of length 150 mm at junction of tiles and of length 75 mm at wall ends/ corners fixed on top of the vertical sections at spacing of 250/ 300/ 400 mm c/c matching to the tile horizontal grid with two numbers of self-drilling / self-tapping SS screws of size 5.5x25 mm with EPDM washers. The vertical ‘T’/’L/ Tubular’ sections shall be fixed to the wall using HDG (hot-dip-galvanized) steel L-brackets (galvanizing thickness of minimum 80 microns) of size 110x80x6 mm at intermediate vertical aluminium profiles and of size 220x110x12 mm at outer corners and stainless steel grade 304,M10 full threaded anchor fasteners with nylon sleeve 100 mm long (for brick work) and M8 expansion anchor fasteners 75 mm long for concrete surface, spacing of brackets to be based on a structural/ static calculation. The brackets shall be of length 175 mm at junction of two vertical aluminium profiles and of length 100 mm at intermediate points of vertical profiles and shall be fixed to the vertical aluminium T / L / Tubular profiles using two numbers self-drilling/ self-tapping SS screws of size 5.5x25 mm with EPDM washers. EPDM gaskets to be fixed in between brackets and vertical profiles. The tiles shall be mounted on the ‘C’ clamps such that the tiles are supported at top and bottom at both ends. The tiles shall be mounted on the C-clamps with EPDM profiles in between such that the tiles are supported at top and bottom at both ends. The vertical joint open groove between two adjacent tiles shall be 10 mm. The tiles and system shall be designed to resist wind load as per IS 875 (Part 3) according to different zones. The tiles shall be installed using the ventilated rain screen principle with provision for natural ventilation of the space between the façade tiles and the structural wall. The work shall be carried out as per specification, drawing and as per direction of the Engineer-in-Charge.",
           "code": "26.93",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note : Scaffolding wherever required to be paid separately.",
+              "source_page": 26,
+              "order_index": 8
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -2888,6 +2892,14 @@
           "node_type": "group",
           "title": "Providing and installation of factory made Structural Stay in place form work system with double faced panels for walls, single faced panels for roof/ floor slabs, L-shaped single faced panels for corners, with necessary scaffolding, struts, bracing etc. Complete as per CPWD specification and directions of the Engineer in Charge. Design of walls and other members to be provided by the supplier & shall be duly vetted by any engineering institute of National repute such as IITs, NITs etc. and nothing extra shall be payable on this account (Additional steel reinforcement/dowels, design mix concrete of specified grade, electrical and plumbing conduits insert for services and plastering on either side of walls shall be paid for separately).",
           "code": "26.95",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note:- This item shall be adopted for building upto G+3 Storeys only excluding seismic zone V.",
+              "source_page": 26,
+              "order_index": 9
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -7525,6 +7537,14 @@
           "node_type": "item",
           "title": "",
           "code": "17.472",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: - cement consumption for pointing is same for modular & non modular bricks. * White cement COEFFICIENTS FOR CEMENT CONSUMPTION S.H. : 14.0 REPAIRS TO BUILDING 1.0 COEFFICIENTS FOR CEMENT CONSUMPTION 14.0 REPAIRS TO BUILDING Code No. Quantity of cement per unit quantity of work (Quintals)",
+              "source_page": 51,
+              "order_index": 10
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 691,

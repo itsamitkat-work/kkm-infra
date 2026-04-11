@@ -1287,6 +1287,14 @@
           "node_type": "group",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources, Portland Pozzolana / Ordinary Portland /Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge, for the following grades of concrete.:",
           "code": "5.33",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+              "source_page": 8,
+              "order_index": 1
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -1437,6 +1445,14 @@
           "node_type": "group",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for reinforced cement concrete work; using coarse aggregate and fine aggregate derived from natural sources and using recycled concrete aggregate (RCA) as coarse aggregate and fine aggregate within permissible utilization of 20% each, Portland Pozzolana /Ordinary Portland/Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering, finishing and reinforcement as per direction of the engineer-in-charge; for the following grades of concrete.",
           "code": "5.33A",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the specified minimum cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+              "source_page": 8,
+              "order_index": 2
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -1849,6 +1865,14 @@
           "node_type": "group",
           "title": "Providing and laying Reinforced cement concrete for construction of piers, abutments, portal frames, pier caps and bearing pedestals and seismic arresters over pier/ abutment caps at all locations with specified grade using Ordinary Portland Cement (conforming to strength requirement of IS:8112) including the cost of steel centering and shuttering etc. complete, including testing of materials etc. for casting pier & pier cap in one/two stage, necessary tools, plants, machinery and all related operations as required to complete the work as per drawings and Specifications with all leads, lifts and depths true to level and position but excluding the cost of providing reinforcement. Reinforcement shall be measured and paid separately.",
           "code": "5.48",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note:- Cement content considered in this item is 480 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
+              "source_page": 11,
+              "order_index": 3
+            }
+          ],
           "children_count": 3,
           "children": [
             {

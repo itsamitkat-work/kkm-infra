@@ -6,20 +6,6 @@
       "node_type": "subhead",
       "title": "ROAD WORK",
       "code": "16.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: Seal coat items to be operated only with the prior approval of chief Engineer concerned. CONCRETE PAVEMENTS",
-          "source_page": 6,
-          "order_index": 1
-        },
-        {
-          "type": "note",
-          "text": "Note:- Cement content considered in M-30 is @ 340 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
-          "source_page": 6,
-          "order_index": 2
-        }
-      ],
       "children_count": 98,
       "children": [
         {
@@ -767,6 +753,14 @@
                   "node_type": "item",
                   "title": "On bituminous surface @ 0.25kg/sqm",
                   "code": "16.31.2.2",
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "Note - Use of Item No. 16.81.1 shall be restricted only per site at sub zero temperature or for emergency application",
+                      "source_page": 4,
+                      "order_index": 0
+                    }
+                  ],
                   "children_count": 0,
                   "children": [],
                   "order_index": 66,
@@ -1075,6 +1069,14 @@
           "node_type": "item",
           "title": "Providing and laying seal coat over prepared surface of road with bitumen heated in bitumen boiler fitted with the spray set spraying using 98 kg of bitumen of grade VG - 10 and blinding surface with 0.90 cum of stone aggregate of 6.7 mm size (Passing 11.2 mm sieve and retained on 2.36 mm sieve) per 100 sqm of road surface, including rolling and finishing with power road roller all complete.",
           "code": "16.41",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Seal coat items to be operated only with the prior approval of chief Engineer concerned. CONCRETE PAVEMENTS",
+              "source_page": 6,
+              "order_index": 1
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 92,
@@ -1099,6 +1101,14 @@
           "node_type": "group",
           "title": "Providing and laying design mix cement concrete of M-30 grade, in roads/ taxi tracks/ runways, using cement content as per design mix, using coarse sand and graded stone aggregate of 40 mm nominal size in appropriate proportions as per approved & specified design criteria, providing dowel bars with sleeve/ tie bars wherever required, laying at site, spreading and compacting mechanically by using needle and surface vibrators, levelling to required slope/ camber, finishing with required texture, including steel form work with sturdy M.S. channel sections, curing, making provision for contraction/ expansion, construction & longitudinal joints (10 mm wide x 50 mm deep) by groove cutting machine, providing and filling joints with approved joint filler and sealants, complete all as per direction of Engineer- in-charge (Item of joint fillers, sealants, dowel bars with sleeve/ tie bars to be paid separately).",
           "code": "16.43",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note:- Cement content considered in M-30 is @ 340 kg/cum. Excess/ less cement used as per design mix is payable/ recoverable separately.",
+              "source_page": 6,
+              "order_index": 2
+            }
+          ],
           "children_count": 2,
           "children": [
             {

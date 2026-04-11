@@ -6,26 +6,6 @@
       "node_type": "subhead",
       "title": "PILE WORK",
       "code": "20.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note: Truck Mounted rotary/TMR/Tube well boring machine shall not be used.",
-          "source_page": 1,
-          "order_index": 0
-        },
-        {
-          "type": "note",
-          "text": "Note: 1. Initial and Routine Load Test shall not be carried out by Dynamic method of testing. Note: 2. Testing agency shall submit the design of loading platform for the approval of Engineer-in-charge.",
-          "source_page": 2,
-          "order_index": 1
-        },
-        {
-          "type": "note",
-          "text": "Note :- The inclusion of the above item in the schedule of work shall be judiciously decided by the technical sanctioning authority, keeping in view the quality control, type of soil strata & importance of the project.",
-          "source_page": 3,
-          "order_index": 2
-        }
-      ],
       "children_count": 10,
       "children": [
         {
@@ -196,6 +176,14 @@
           "node_type": "group",
           "title": "Boring, providing and installation bored cast-in-situ reinforced cement concrete piles of garde M-25 of specified diameter and length below pile cap, to carry a safe working load not less than specified, excluding the cost of steel reinforcement but including the cost of boring with bentonite solution and temporary casing of appropriate length for setting out and removal of same and the length of the pile to be embedded in the pile cap etc. by Crawler mounted, telescopic boom hydraulic pilling Rig all complete, including removal of excavated earth with all its lifts and leads (length of pile for payment shall be measured up to bottom of pile cap).",
           "code": "20.2A",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Truck Mounted rotary/TMR/Tube well boring machine shall not be used.",
+              "source_page": 1,
+              "order_index": 0
+            }
+          ],
           "children_count": 5,
           "children": [
             {
@@ -465,6 +453,14 @@
           "node_type": "group",
           "title": "Vertical load testing of piles in accordance with IS 2911 (Part IV) including installation of loading platform by Kentledge/Anchor piles method and preparation of pile head or construction of test cap and dismantling of test cap after test etc. complete as per specification & the direction of Engineer in-charge.",
           "code": "20.6",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: 1. Initial and Routine Load Test shall not be carried out by Dynamic method of testing. Note: 2. Testing agency shall submit the design of loading platform for the approval of Engineer-in-charge.",
+              "source_page": 2,
+              "order_index": 1
+            }
+          ],
           "children_count": 3,
           "children": [
             {
@@ -644,6 +640,14 @@
           "node_type": "item",
           "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge. per test 1153.20",
           "code": "20.9",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note :- The inclusion of the above item in the schedule of work shall be judiciously decided by the technical sanctioning authority, keeping in view the quality control, type of soil strata & importance of the project.",
+              "source_page": 3,
+              "order_index": 2
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 56,

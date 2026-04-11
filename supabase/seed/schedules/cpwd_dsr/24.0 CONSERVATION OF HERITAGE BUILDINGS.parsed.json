@@ -6,14 +6,6 @@
       "node_type": "subhead",
       "title": "CONSERVATION OF HERITAGE BUILDINGS",
       "code": "24.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note:- (1) The elevational area of the scaffolding shall be measured for payment purpose. (2) The payment will be made once only for execution of all items for such works. sqm 338.25",
-          "source_page": 2,
-          "order_index": 0
-        }
-      ],
       "children_count": 8,
       "children": [
         {
@@ -32,6 +24,14 @@
           "node_type": "item",
           "title": "Providing and fixing double scaffolding system (cup lock type) on the exterior side of building/structure, upto 25 metre height, above ground level, including additional rows of scaffolding in stepped manner as per requirement of site, made with 40 mm dia M.S. tube, placed 1.5 metre centre to centre, horizontal & vertical tubes joint with cup & lock system with M.S. Tubes, M.S. tube challis, M.S. clamps and staircase system in the scaffolding for working platform etc. and maintaining it in a serviceable condition for execution of work of cleaning and/ or pointing and/ or applying chemical and removing it thereafter. The scaffolding system shall be stiffened with bracings, runners, connecting with the building etc, wherever required, if feasible, for inspection of work at required locations with essential safety features for the workmen etc., complete as per directions and approval of Engineer-in-charge.",
           "code": "24.2",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note:- (1) The elevational area of the scaffolding shall be measured for payment purpose. (2) The payment will be made once only for execution of all items for such works. sqm 338.25",
+              "source_page": 2,
+              "order_index": 0
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 1,

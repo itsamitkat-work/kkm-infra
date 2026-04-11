@@ -6,20 +6,6 @@
       "node_type": "subhead",
       "title": "ROOFING",
       "code": "12.0",
-      "annotations": [
-        {
-          "type": "note",
-          "text": "Note :- Only calcium silicate false ceiling area will be measured from wall to wall. No deduction shall be made for exposed frames/opening (cut outs) having area less than 0.30 sqm.The calcium silicate ceiling tile shall have NRC value of 0.50 (Minimum), light reflection > 85%, non- combustible as per B.S. 476 part IV, 100% humidity resistance and also having thermal conductivity <0.043 w/mK.",
-          "source_page": 9,
-          "order_index": 0
-        },
-        {
-          "type": "note",
-          "text": "Note : For remaining Sub Heads refer Vol. 1",
-          "source_page": 20,
-          "order_index": 1
-        }
-      ],
       "children_count": 66,
       "children": [
         {
@@ -1773,6 +1759,14 @@
           "node_type": "item",
           "title": "Providing and Fixing 15 mm thick densified tegular edged eco friendly light weight calcium silicate false ceiling tiles of approved texture of size 595 x 595 mm in true horizontal level, suspended on inter locking metal grid of hot dipped galvanised steel sections (galvanising @ 120 grams per sqm including both side) consisting of main ‘T’ runner suitably spaced at joints to get required length and of size 24x38 mm made from 0.33 mm thick (minimum) sheet, spaced 1200 mm centre to centre, and cross “T” of size 24x28 mm made out of 0.33 mm (Minimum) sheet, 1200 mm long spaced between main’T’ at 600 mm centre to centre to form a grid of 1200x600 mm and secondary cross ‘T’ of length 600 mm and size 24 x28 mm made of 0.33 mm thick (Minimum) sheet to be inter locked at middle of the 1200x 600 mm panel to from grid of size 600x600 mm, resting on periphery walls /partitions on a Perimeter wall angle pre-coated steel of size(24x24X3000 mm made of 0.40 mm thick (minimum) sheet with the help of rawl plugs at 450 mm centre to centre with 25 mm long dry wall screws @ 230 mm interval and laying 15 mm thick densified edges calicum silicate ceiling tiles of approved texture in the grid, including, cutting/ making opening for services like diffusers, grills, light fittings, fixtures, smoke detectors etc., wherever required. Main ‘T’ runners to be suspended from ceiling using G.I. slotted cleats of size 25x35x1.6 mm fixed to ceiling with 12.5 mm dia and 50 mm long dash fasteners, 4 mm G.I. adjustable rods with galvanised steel level clips of size 85 x 30 x 0.8 mm, spaced at 1200 mm centre to centre along main ‘T’. Bottom exposed with 24 mm of all T-sections shall be pre-painted with polyster baked paint, for all heights, as per specifications, drawings and as directed by Engineer-in-Charge.",
           "code": "12.53",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note :- Only calcium silicate false ceiling area will be measured from wall to wall. No deduction shall be made for exposed frames/opening (cut outs) having area less than 0.30 sqm.The calcium silicate ceiling tile shall have NRC value of 0.50 (Minimum), light reflection > 85%, non- combustible as per B.S. 476 part IV, 100% humidity resistance and also having thermal conductivity <0.043 w/mK.",
+              "source_page": 9,
+              "order_index": 0
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 154,
@@ -2262,6 +2256,14 @@
           "node_type": "item",
           "title": "\u0007The effect of GST @18% on works contract has been incorporated in all items. 7. Major modifications in the form of correction in nomenclature of items, deletion of misleading content etc. have been undertaken. 8. Wholehearted commitment and considerable efforts have been put for preparation of this edition of Delhi Schedule of Rates. I convey my deep appreciation and sincere thanks to: Shri Prem Mohan, CE, CSQ (Civil), Shri Vinayak Rai, Shri Dinesh Kumar Ujjainia, SE (TAS), Shri M. Seetarama Rao, Shri S.N. Jaiswal EE (TAS), Shri Akhileshwar Sah Chief Estimator (TAS), Shri Durga Ram Chowdhary, AE (TAS), Shri Gian Chand Singla, AE (TAS), Shri Hemant Panrui, AE (TAS), Shri Raghvendra, Dharmesh Chandra Goel Addl. Director General (Tech) Central Public Works Department Nirman Bhawan, New Delhi- 110011 Tel : 23063389, Fax : 23061833 E-Mail : adgtd@nic.in Government of India .. .. . . . . .. . ....... .. . . . . .. . .... . . . .. . . . . . . . . . . . ... . . . . .. . . . . . . . . . . . ... . . .... . . . . . . . . . . . . . .. . . ..... . . .. . . .. . .. . .. . . .. . . . . . . .. . . . .. . . .. . .. . .. . . . . . .. . . . . .. .. . . .. . .. . .. . .. . . . . . .... . . .. ...... . .. . .. . .. . . . . . .... . . .. ..... . .. . .. . . . . . . . .... . . .. ........ . . . . . . . . . ... . . . . . . .. . . . . . . . . . . . . . . . . . . .... vi AE (TAS) and Shri A.K. Jha AD (OL) and his team for the translation of DSR- 2023 in Hindi and Shri Kamal Passi, Assistant Architect for design of cover page and other officers and staff of CSQ unit whose names are not mentioned here for the sake brevity for their sincere efforts put in the preparation of this document in such a short time. CSQ unit is indebted for the support & immense contribution for their substantial inputs by various individuals and field units for providing suggestions. 9. I convey my gratitude to committees members under the chairmanship of CE (NDZ-I), CE (NDZ-II), CE (NDZ-III) & CE Flyover Zone at Delhi who provided the market rates of material to CSQ which enabled CSQ to come out with this edition of DSR 2023 10. Although, due care has been taken in bringing out DSR-2023, still there is possibility that some errors are left inadvertently. Errors & omission may be brought to the notice of Superintending Engineer (TAS), CPWD, Room No. 418, A-wing, Nirman Bhawan, New Delhi -110011 delsetascsq.cpwd@nic.in / cecsq.cpwd@nic.in Suggestions from everyone who are using this document are welcome as these have scope for further improvement. (Dharmesh Chandra Goel) ADG (Tech) CPWD vii SH. No. NAME OF SUB-HEAD PAGE No. A. BASIC RATES 0.1 HIRE CHARGES OF PLANTS & MACHINERY 0.2 LABOUR 0.3 MATERIALS B. SUB -HEADS 1. Carriage of Materials 2. Earth Work 3. Mortars 4. Concrete Work 5. Reinforced Cement Concrete 6. Masonry Work 7. Stone Work 8. Cladding Work 9. Wood and PVC Work 10. Steel Work 11. Flooring 12. Roofing C O N T E N T S Vol. 1 viii C O N T E N T S Vol. 2 SH. No. NAME OF SUB-HEAD PAGE No. 13. Finishing 14. Repairs to Building 15. Dismantling and Demolishing 16. Road Work 17. Sanitary Installations 18. Water Supply 19. Drainage 20. Pile work 21. Aluminium Work 22. Water Proofing 23. Rain Water Harvesting & Tubewells 24. Conservation of Heritage Buildings 25. Structural Glazing Aluminium Composite Panel 26. New Technologies and Materials C. COEFFICIENTS FOR CEMENT CONSUMPTION D. COEFFICIENTS FOR BITUMEN CONSUMPTION",
           "code": "6.2",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note : For remaining Sub Heads refer Vol. 1",
+              "source_page": 20,
+              "order_index": 1
+            }
+          ],
           "children_count": 0,
           "children": [],
           "order_index": 196,

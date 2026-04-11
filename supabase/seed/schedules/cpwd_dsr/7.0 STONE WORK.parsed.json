@@ -9,7 +9,7 @@
       "children_count": 31,
       "children": [
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Random rubble masonry with hard stone in foundation and plinth including levelling up with cement concrete 1:6:12 (1 cement : 6 coarse sand : 12 graded stone aggregate 20 mm nominal size) upto plinth level with :",
           "code": "7.1",
           "children_count": 1,
@@ -31,7 +31,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Random rubble masonry with hard stone in superstructure above plinth level and upto floor five level, including leveling up with cement concrete 1:6:12 (1 cement : 6 coarse sand : 12 graded stone aggregate 20 mm nominal size) at window sills, ceiling level and the like.",
           "code": "7.2",
           "children_count": 1,
@@ -53,7 +53,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for random rubble masonry with hard stone in :",
           "code": "7.4",
           "children_count": 2,
@@ -99,7 +99,7 @@
           "rate_display": "1046.20"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Coursed rubble masonry (first sort) with hard stone in foundation and plinth with :",
           "code": "7.6",
           "children_count": 1,
@@ -121,7 +121,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Coursed rubble masonry (second sort) with hard stone in foundation & plinth with :",
           "code": "7.7",
           "children_count": 1,
@@ -143,7 +143,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Coursed rubble masonry with hard stone (first or second sort) in superstructure above plinth level and upto floor five level.",
           "code": "7.8",
           "children_count": 2,
@@ -177,7 +177,7 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for coursed rubble masonry with hard stone (first or second sort) in:",
           "code": "7.10",
           "children_count": 2,
@@ -223,13 +223,13 @@
           "rate_display": "1133.65"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work in plain ashlar in super structure upto floor five level in cement mortar 1:6 (1 cement : 6 coarse sand) including pointing with cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
           "code": "7.12",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "One face dressed",
               "code": "7.12.1",
               "children_count": 2,
@@ -263,7 +263,7 @@
               "source_page": 1
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Both face dressed",
               "code": "7.12.2",
               "children_count": 2,
@@ -301,13 +301,13 @@
           "source_page": 1
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work plain ashlar in arches in super structure upto floor V level in cement mortar 1:3 (1 cement : 3 coarse sand) including centering, shuttering and pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
           "code": "7.13",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "One face dressed",
               "code": "7.13.1",
               "children_count": 2,
@@ -341,7 +341,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Both face dressed",
               "code": "7.13.2",
               "children_count": 2,
@@ -379,13 +379,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work plain ashlar in domes , in super structure upto floor V level in cement mortar 1:3 (1 cement : 3 coarse sand) including centering, shuttering and pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
           "code": "7.14",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "One face dressed",
               "code": "7.14.1",
               "children_count": 2,
@@ -419,7 +419,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Both face dressed",
               "code": "7.14.2",
               "children_count": 2,
@@ -457,13 +457,13 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work ashlar punched (ordinary) in superstructure upto floor five level in cement mortar 1:6 (1 white cement : 6 coarse sand) including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
           "code": "7.15",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "One face dressed",
               "code": "7.15.1",
               "children_count": 2,
@@ -497,7 +497,7 @@
               "source_page": 2
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Both faced punched",
               "code": "7.15.2",
               "children_count": 2,
@@ -547,7 +547,7 @@
           "rate_display": "169.45"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for plain ashlar or ashlar punched in :",
           "code": "7.17",
           "children_count": 1,
@@ -593,7 +593,7 @@
           "rate_display": "608.15"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work ashlar sunk or moulded or sunk and moulded upto floor five level in cement mortar 1:6 (1 cement : 6 coarse sand) including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
           "code": "7.20",
           "children_count": 2,
@@ -627,7 +627,7 @@
           "source_page": 2
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Extra for stone work ashlar sunk or moulded or sunk and moulded or carved in :",
           "code": "7.21",
           "children_count": 2,
@@ -697,13 +697,13 @@
           "rate_display": "54.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing sloping chajja of stone 40 mm thick and upto 80 cm wide beyond the wall as measured along the slope in cement mortar 1:4 (1 cement : 4 coarse sand) with 12 mm diameter anchoring steel bar, 45 cm long, fixed in each stone and supported on and including with bricks cove in cement mortar 1:4 (1 cement : 4 coarse sand), including pointing in cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
           "code": "7.28",
           "children_count": 2,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "Red sand stone :",
               "code": "7.28.1",
               "children_count": 1,
@@ -725,7 +725,7 @@
               "source_page": 3
             },
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "White sand stone :",
               "code": "7.28.2",
               "children_count": 1,
@@ -751,7 +751,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing horizontal chajja of stone 40 mm thick and upto 80 cm projection in cement mortar 1:4 (1 cement : 4 coarse sand), including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade :",
           "code": "7.29",
           "children_count": 2,
@@ -809,7 +809,7 @@
           "rate_display": "6788.85"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone work, plain in copings, cornices, string courses and plinth courses, upto 75 mm thick in Cement mortar 1:6 (1 cement : 6 coarse sand), including pointing with white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment matching the stone shade.",
           "code": "7.32",
           "children_count": 2,
@@ -843,7 +843,7 @@
           "source_page": 3
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Providing and fixing stone jali 40 mm thick throughout in cement mortar 1:3 (1 cement : 3 coarse sand), including pointing in white cement mortar 1:2 (1 white cement : 2 stone dust) with an admixture of pigment, matching the stone shade, jali slab without any chamfers etc.",
           "code": "7.33",
           "children_count": 2,
@@ -880,8 +880,6 @@
           "node_type": "item",
           "title": "Extra for laying stone work in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
           "code": "7.34",
-          "children_count": 0,
-          "children": [],
           "annotations": [
             {
               "type": "note",
@@ -890,6 +888,8 @@
               "order_index": 0
             }
           ],
+          "children_count": 0,
+          "children": [],
           "order_index": 77,
           "source_page": 4,
           "unit": "metre depth",
@@ -909,13 +909,13 @@
           "rate_display": "467.55"
         },
         {
-          "node_type": "item",
+          "node_type": "group",
           "title": "Stone tile work for wall lining upto 10 m height with special adhesive over 12 mm thick bed of cement mortar 1:3 (1 cement : 3 coarse sand), including pointing in white cement with an admixture of pigment to match the stone shade.",
           "code": "7.38",
           "children_count": 1,
           "children": [
             {
-              "node_type": "item",
+              "node_type": "group",
               "title": "8 mm thick (mirror polished and machine cut edge)",
               "code": "7.38.1",
               "children_count": 2,
