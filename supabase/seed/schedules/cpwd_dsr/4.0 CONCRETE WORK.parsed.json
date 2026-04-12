@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "CONCRETE WORK",
       "code": "4.0",
-      "children_count": 45,
+      "children_count": 25,
       "children": [
         {
           "node_type": "group",
@@ -32,7 +32,7 @@
               "code": "4.1.2A",
               "children_count": 0,
               "children": [],
-              "order_index": 1,
+              "order_index": 2,
               "source_page": 1,
               "unit": "cum",
               "rate": 8127.8,
@@ -56,7 +56,7 @@
               "code": "4.1.3A",
               "children_count": 0,
               "children": [],
-              "order_index": 3,
+              "order_index": 4,
               "source_page": 1,
               "unit": "cum",
               "rate": 7654.85,
@@ -92,7 +92,7 @@
               "code": "4.1.5A",
               "children_count": 0,
               "children": [],
-              "order_index": 6,
+              "order_index": 7,
               "source_page": 1,
               "unit": "cum",
               "rate": 6347.75,
@@ -104,7 +104,7 @@
               "code": "4.1.5B",
               "children_count": 0,
               "children": [],
-              "order_index": 6,
+              "order_index": 8,
               "source_page": 1,
               "unit": "cum",
               "rate": 5639.85,
@@ -116,7 +116,7 @@
               "code": "4.1.6",
               "children_count": 0,
               "children": [],
-              "order_index": 8,
+              "order_index": 9,
               "source_page": 1,
               "unit": "cum",
               "rate": 7178.75,
@@ -128,7 +128,7 @@
               "code": "4.1.6A",
               "children_count": 0,
               "children": [],
-              "order_index": 8,
+              "order_index": 10,
               "source_page": 1,
               "unit": "cum",
               "rate": 5572.0,
@@ -140,7 +140,7 @@
               "code": "4.1.8",
               "children_count": 0,
               "children": [],
-              "order_index": 10,
+              "order_index": 11,
               "source_page": 1,
               "unit": "cum",
               "rate": 6812.0,
@@ -152,7 +152,7 @@
               "code": "4.1.8A",
               "children_count": 0,
               "children": [],
-              "order_index": 10,
+              "order_index": 12,
               "source_page": 1,
               "unit": "cum",
               "rate": 5205.25,
@@ -164,7 +164,7 @@
               "code": "4.1.10",
               "children_count": 0,
               "children": [],
-              "order_index": 12,
+              "order_index": 13,
               "source_page": 1,
               "unit": "cum",
               "rate": 6518.6,
@@ -176,8 +176,8 @@
               "code": "4.1.10A",
               "children_count": 0,
               "children": [],
-              "order_index": 12,
-              "source_page": 1,
+              "order_index": 14,
+              "source_page": 2,
               "unit": "cum",
               "rate": 4911.85,
               "rate_display": "4911.85"
@@ -188,7 +188,7 @@
               "code": "4.1.11",
               "children_count": 0,
               "children": [],
-              "order_index": 14,
+              "order_index": 15,
               "source_page": 2,
               "unit": "cum",
               "rate": 6189.65,
@@ -200,7 +200,7 @@
               "code": "4.1.12",
               "children_count": 0,
               "children": [],
-              "order_index": 15,
+              "order_index": 16,
               "source_page": 2,
               "unit": "cum",
               "rate": 6667.25,
@@ -212,7 +212,7 @@
               "code": "4.1.12A",
               "children_count": 0,
               "children": [],
-              "order_index": 15,
+              "order_index": 17,
               "source_page": 2,
               "unit": "cum",
               "rate": 5130.65,
@@ -224,7 +224,7 @@
               "code": "4.1.13",
               "children_count": 0,
               "children": [],
-              "order_index": 17,
+              "order_index": 18,
               "source_page": 2,
               "unit": "cum",
               "rate": 6311.95,
@@ -232,11 +232,11 @@
             },
             {
               "node_type": "item",
-              "title": "1:2½:4:11 (1 ordinary portland cement : 2½ fly ash : 4 manufactured sand derived from Recycled Concrete Aggregate (RCA) :11 graded stone aggregate 40 mm nominal size Recycled Aggregate (RA)) ",
+              "title": "1:2½:4:11 (1 ordinary portland cement : 2½ fly ash : 4 manufactured sand derived from Recycled Concrete Aggregate (RCA) :11 graded stone aggregate 40 mm nominal size Recycled Aggregate (RA))",
               "code": "4.1.13A",
               "children_count": 0,
               "children": [],
-              "order_index": 17,
+              "order_index": 19,
               "source_page": 2,
               "unit": "cum",
               "rate": 4796.4,
@@ -258,7 +258,7 @@
               "code": "4.2.2",
               "children_count": 0,
               "children": [],
-              "order_index": 20,
+              "order_index": 21,
               "source_page": 2,
               "unit": "cum",
               "rate": 10357.55,
@@ -270,7 +270,7 @@
               "code": "4.2.2A",
               "children_count": 0,
               "children": [],
-              "order_index": 20,
+              "order_index": 22,
               "source_page": 2,
               "unit": "cum",
               "rate": 10144.5,
@@ -282,7 +282,7 @@
               "code": "4.2.3",
               "children_count": 0,
               "children": [],
-              "order_index": 22,
+              "order_index": 23,
               "source_page": 2,
               "unit": "cum",
               "rate": 9895.2,
@@ -294,7 +294,7 @@
               "code": "4.2.3A",
               "children_count": 0,
               "children": [],
-              "order_index": 22,
+              "order_index": 24,
               "source_page": 2,
               "unit": "cum",
               "rate": 9671.5,
@@ -306,7 +306,7 @@
               "code": "4.2.5",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
+              "order_index": 25,
               "source_page": 2,
               "unit": "cum",
               "rate": 9311.4,
@@ -318,7 +318,7 @@
               "code": "4.2.5A",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
+              "order_index": 26,
               "source_page": 2,
               "unit": "cum",
               "rate": 8364.45,
@@ -330,8 +330,8 @@
               "code": "4.2.5B",
               "children_count": 0,
               "children": [],
-              "order_index": 24,
-              "source_page": 2,
+              "order_index": 27,
+              "source_page": 3,
               "unit": "cum",
               "rate": 7656.55,
               "rate_display": "7656.55"
@@ -342,7 +342,7 @@
               "code": "4.2.8",
               "children_count": 0,
               "children": [],
-              "order_index": 26,
+              "order_index": 28,
               "source_page": 3,
               "unit": "cum",
               "rate": 8519.2,
@@ -354,14 +354,14 @@
               "code": "4.2.8A",
               "children_count": 0,
               "children": [],
-              "order_index": 26,
+              "order_index": 29,
               "source_page": 3,
               "unit": "cum",
               "rate": 6912.45,
               "rate_display": "6912.45"
             }
           ],
-          "order_index": 19,
+          "order_index": 20,
           "source_page": 2
         },
         {
@@ -376,7 +376,7 @@
               "code": "4.3.1",
               "children_count": 0,
               "children": [],
-              "order_index": 29,
+              "order_index": 31,
               "source_page": 3,
               "unit": "sqm",
               "rate": 392.15,
@@ -388,7 +388,7 @@
               "code": "4.3.2",
               "children_count": 0,
               "children": [],
-              "order_index": 30,
+              "order_index": 32,
               "source_page": 3,
               "unit": "sqm",
               "rate": 842.5,
@@ -400,14 +400,14 @@
               "code": "4.3.3",
               "children_count": 0,
               "children": [],
-              "order_index": 31,
+              "order_index": 33,
               "source_page": 3,
               "unit": "sqm",
               "rate": 961.3,
               "rate_display": "961.30"
             }
           ],
-          "order_index": 28,
+          "order_index": 30,
           "source_page": 3
         },
         {
@@ -422,7 +422,7 @@
               "code": "4.4.1",
               "children_count": 0,
               "children": [],
-              "order_index": 33,
+              "order_index": 35,
               "source_page": 3,
               "unit": "cum",
               "rate": 8340.85,
@@ -434,14 +434,14 @@
               "code": "4.4.1A",
               "children_count": 0,
               "children": [],
-              "order_index": 33,
+              "order_index": 36,
               "source_page": 3,
               "unit": "cum",
               "rate": 8127.8,
               "rate_display": "8127.80"
             }
           ],
-          "order_index": 32,
+          "order_index": 34,
           "source_page": 3
         },
         {
@@ -456,7 +456,7 @@
               "code": "4.5.1",
               "children_count": 0,
               "children": [],
-              "order_index": 36,
+              "order_index": 38,
               "source_page": 3,
               "unit": "cum",
               "rate": 10105.1,
@@ -468,14 +468,14 @@
               "code": "4.5.1A",
               "children_count": 0,
               "children": [],
-              "order_index": 36,
+              "order_index": 39,
               "source_page": 3,
               "unit": "cum",
               "rate": 9893.45,
               "rate_display": "9893.45"
             }
           ],
-          "order_index": 35,
+          "order_index": 37,
           "source_page": 3
         },
         {
@@ -490,7 +490,7 @@
               "code": "4.6.1",
               "children_count": 0,
               "children": [],
-              "order_index": 39,
+              "order_index": 41,
               "source_page": 3,
               "unit": "cum",
               "rate": 8726.85,
@@ -502,14 +502,14 @@
               "code": "4.6.1A",
               "children_count": 0,
               "children": [],
-              "order_index": 39,
-              "source_page": 3,
+              "order_index": 42,
+              "source_page": 4,
               "unit": "cum",
               "rate": 8514.85,
               "rate_display": "8514.85"
             }
           ],
-          "order_index": 38,
+          "order_index": 40,
           "source_page": 3
         },
         {
@@ -524,7 +524,7 @@
               "code": "4.7.1",
               "children_count": 0,
               "children": [],
-              "order_index": 42,
+              "order_index": 44,
               "source_page": 4,
               "unit": "cum",
               "rate": 17889.25,
@@ -536,14 +536,14 @@
               "code": "4.7.1A",
               "children_count": 0,
               "children": [],
-              "order_index": 42,
+              "order_index": 45,
               "source_page": 4,
               "unit": "cum",
               "rate": 17677.25,
               "rate_display": "17677.25"
             }
           ],
-          "order_index": 41,
+          "order_index": 43,
           "source_page": 4
         },
         {
@@ -558,7 +558,7 @@
               "code": "4.8.1",
               "children_count": 0,
               "children": [],
-              "order_index": 45,
+              "order_index": 47,
               "source_page": 4,
               "unit": "cum",
               "rate": 14624.2,
@@ -566,18 +566,18 @@
             },
             {
               "node_type": "item",
-              "title": "1:1.5:3 (1 Cement: 1.5 coarse sand (zone-III) including manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 25% : 3 graded stone aggregate 20 mm nominal size including (Recycled Concrete Aggregate (RCA) upto 25%)",
+              "title": "1:1.5:3 (1 Cement: 1.5 coarse sand (zone-III) including manufactured sand derived from Recycled Concrete Aggregate (RCA) upto 25% : 3 graded stone aggregate 20 mm nominal size including (Recycled Concrete Aggregate (RCA) upto 25%).",
               "code": "4.8.1A",
               "children_count": 0,
               "children": [],
-              "order_index": 45,
+              "order_index": 48,
               "source_page": 4,
               "unit": "cum",
               "rate": 14526.2,
               "rate_display": "14526.20"
             }
           ],
-          "order_index": 44,
+          "order_index": 46,
           "source_page": 4
         },
         {
@@ -586,7 +586,7 @@
           "code": "4.9",
           "children_count": 0,
           "children": [],
-          "order_index": 47,
+          "order_index": 49,
           "source_page": 4,
           "unit": "each",
           "rate": 929.8,
@@ -622,7 +622,7 @@
           "code": "4.10",
           "children_count": 0,
           "children": [],
-          "order_index": 49,
+          "order_index": 50,
           "source_page": 5,
           "unit": "sqm",
           "rate": 410.85,
@@ -634,7 +634,7 @@
           "code": "4.10A",
           "children_count": 0,
           "children": [],
-          "order_index": 49,
+          "order_index": 51,
           "source_page": 5,
           "unit": "sqm",
           "rate": 402.5,
@@ -646,7 +646,7 @@
           "code": "4.11",
           "children_count": 0,
           "children": [],
-          "order_index": 51,
+          "order_index": 52,
           "source_page": 5,
           "unit": "sqm",
           "rate": 495.75,
@@ -658,7 +658,7 @@
           "code": "4.11A",
           "children_count": 0,
           "children": [],
-          "order_index": 51,
+          "order_index": 53,
           "source_page": 5,
           "unit": "sqm",
           "rate": 484.6,
@@ -682,7 +682,7 @@
           "code": "4.13",
           "children_count": 0,
           "children": [],
-          "order_index": 55,
+          "order_index": 56,
           "source_page": 5,
           "unit": "sqm",
           "rate": 146.15,
@@ -694,7 +694,7 @@
           "code": "4.14",
           "children_count": 0,
           "children": [],
-          "order_index": 56,
+          "order_index": 57,
           "source_page": 5,
           "unit": "cum",
           "rate": 169.45,
@@ -702,7 +702,7 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for laying concrete in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete. cum per",
+          "title": "Extra for laying concrete in or under water and/or liquid mud including cost of pumping or bailing out water and removing slush etc. complete.",
           "code": "4.15",
           "annotations": [
             {
@@ -714,7 +714,7 @@
           ],
           "children_count": 0,
           "children": [],
-          "order_index": 57,
+          "order_index": 58,
           "source_page": 5,
           "unit": "cum per metre depth",
           "rate": 1098.8,
@@ -726,7 +726,7 @@
           "code": "4.16",
           "children_count": 0,
           "children": [],
-          "order_index": 58,
+          "order_index": 59,
           "source_page": 5,
           "unit": "cum",
           "rate": 467.55,
@@ -738,7 +738,7 @@
           "code": "4.17",
           "children_count": 0,
           "children": [],
-          "order_index": 59,
+          "order_index": 60,
           "source_page": 6,
           "unit": "sqm",
           "rate": 749.3,
@@ -750,7 +750,7 @@
           "code": "4.17A",
           "children_count": 0,
           "children": [],
-          "order_index": 59,
+          "order_index": 61,
           "source_page": 6,
           "unit": "sqm",
           "rate": 702.3,
@@ -758,11 +758,11 @@
         },
         {
           "node_type": "item",
-          "title": "4.17B Making plinth protection 50 mm thick of cement concrete 1:3:6 (1 cement : 3 manufactured sand derived from Recycled Concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size Recycled Aggregate (RA) over 75 mm thick bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including necessary excavation, levelling & dressing & finishing the top smooth.",
-          "code": "702.30",
+          "title": "Making plinth protection 50 mm thick of cement concrete 1:3:6 (1 cement : 3 manufactured sand derived from Recycled Concrete Aggregate (RCA) : 6 graded stone aggregate 20 mm nominal size Recycled Aggregate (RA) over 75 mm thick bed of dry brick ballast 40 mm nominal size, well rammed and consolidated and grouted with fine sand, including necessary excavation, levelling & dressing & finishing the top smooth.",
+          "code": "4.17B",
           "children_count": 0,
           "children": [],
-          "order_index": 60,
+          "order_index": 62,
           "source_page": 6,
           "unit": "sqm",
           "rate": 666.9,
@@ -770,7 +770,7 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for addition of synthetic Polyester triangular fibre of length 12mm, effective diameter 10-40 microns and specific gravity of 1.34 to 1.40 in cement concrete/RCC/Flooring/water retaining structures by using 125 gram of synthetic Polyester triangular fibre for 50 kg cement used as per direction of Engineer-in-Charge. per bag of 50 kg of cement",
+          "title": "Extra for addition of synthetic Polyester triangular fibre of length 12mm, effective diameter 10-40 microns and specific gravity of 1.34 to 1.40 in cement concrete/RCC/Flooring/water retaining structures by using 125 gram of synthetic Polyester triangular fibre for 50 kg cement used as per direction of Engineer-in-Charge.",
           "code": "4.18",
           "children_count": 0,
           "children": [],
@@ -783,6 +783,14 @@
           "node_type": "group",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for plain cement concrete work; using coarse aggregate and fine aggregate derived from natural sources, Portland Pozzolana/ Ordinary Portland /Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete, to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering and finishing as per direction of the engineer-in-charge; for the following grades of concrete.",
           "code": "4.20",
+          "annotations": [
+            {
+              "type": "note",
+              "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+              "source_page": 6,
+              "order_index": 1
+            }
+          ],
           "children_count": 2,
           "children": [
             {
@@ -797,7 +805,7 @@
                   "code": "4.20.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 65,
+                  "order_index": 66,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 8835.15,
@@ -809,7 +817,7 @@
                   "code": "4.20.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 66,
+                  "order_index": 67,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 8986.15,
@@ -821,7 +829,7 @@
                   "code": "4.20.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 67,
+                  "order_index": 68,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 9212.6,
@@ -833,14 +841,14 @@
                   "code": "4.20.1.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 68,
+                  "order_index": 69,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 9439.05,
                   "rate_display": "9439.05"
                 }
               ],
-              "order_index": 64,
+              "order_index": 65,
               "source_page": 6
             },
             {
@@ -855,7 +863,7 @@
                   "code": "4.20.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 70,
+                  "order_index": 71,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 9190.8,
@@ -867,7 +875,7 @@
                   "code": "4.20.2.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 71,
+                  "order_index": 72,
                   "source_page": 6,
                   "unit": "cum",
                   "rate": 9341.8,
@@ -879,7 +887,7 @@
                   "code": "4.20.2.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 72,
+                  "order_index": 73,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 9568.25,
@@ -891,30 +899,33 @@
                   "code": "4.20.2.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 73,
+                  "order_index": 74,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 9794.7,
                   "rate_display": "9794.70"
                 }
               ],
-              "order_index": 69,
+              "order_index": 70,
               "source_page": 6
             }
           ],
-          "order_index": 63,
+          "order_index": 64,
           "source_page": 6
         },
         {
           "node_type": "group",
-          "code": "4.20A",
           "title": "Providing and laying in position ready mixed or site batched design mix cement concrete for plain cement concrete work; using coarse aggregate and fine aggregate derived from natural sources and using recycled concrete aggregate (RCA) as coarse aggregate and fine aggregate within the permissible utilization, Portland Pozzolana / Ordinary Portland/Portland Slag cement, admixtures in recommended proportions as per IS: 9103 to accelerate / retard setting of concrete to improve durability and workability without impairing strength; including pumping of concrete to site of laying, curing, carriage for all leads; but excluding the cost of centering, shuttering and finishing as per direction of the engineer-in-charge; for the following grades of concrete.",
+          "code": "4.20A",
           "annotations": [
             {
               "type": "note",
-              "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement."
+              "text": "Note: Extra cement up to 10% of the minimum specified cement content in design mix shall be payable separately. In case the cement content in design mix is more than 110% of the minimum specified cement content, the contractor shall have discretion to either re-design the mix or bear the cost of extra cement.",
+              "source_page": 7,
+              "order_index": 2
             }
           ],
+          "children_count": 2,
           "children": [
             {
               "node_type": "group",
@@ -934,7 +945,7 @@
                   "code": "4.20A.1.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 74,
+                  "order_index": 77,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 7936.1,
@@ -952,7 +963,7 @@
                   "code": "4.20A.1.2",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 74,
+                  "order_index": 78,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 8779.4,
@@ -970,7 +981,7 @@
                   "code": "4.20A.1.3",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 74,
+                  "order_index": 79,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 9005.85,
@@ -988,14 +999,14 @@
                   "code": "4.20A.1.4",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 75,
+                  "order_index": 80,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 9232.3,
                   "rate_display": "9232.30"
                 }
               ],
-              "order_index": 74,
+              "order_index": 76,
               "source_page": 7
             },
             {
@@ -1016,7 +1027,7 @@
                   "code": "4.20A.2.1",
                   "children_count": 0,
                   "children": [],
-                  "order_index": 75,
+                  "order_index": 82,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 8291.75,
@@ -1024,7 +1035,7 @@
                 },
                 {
                   "node_type": "item",
-                  "title": "Concrete of M15 grade with minimum cement content of 240 kg /cum.",
+                  "title": "Concrete of M15 grade with minimum cement content of 240 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
                   "code": "4.20A.2.2",
                   "annotations": [
                     {
@@ -1034,7 +1045,7 @@
                   ],
                   "children_count": 0,
                   "children": [],
-                  "order_index": 76,
+                  "order_index": 83,
                   "source_page": 7,
                   "unit": "cum",
                   "rate": 9135.05,
@@ -1042,7 +1053,7 @@
                 },
                 {
                   "node_type": "item",
-                  "title": "Concrete of M20 grade with minimum cement content of 270 kg /cum.",
+                  "title": "Concrete of M20 grade with minimum cement content of 270 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
                   "code": "4.20A.2.3",
                   "annotations": [
                     {
@@ -1052,15 +1063,15 @@
                   ],
                   "children_count": 0,
                   "children": [],
-                  "order_index": 76,
-                  "source_page": 7,
+                  "order_index": 84,
+                  "source_page": 8,
                   "unit": "cum",
-                  "rate": 9135.05,
-                  "rate_display": "9135.05"
+                  "rate": 9361.5,
+                  "rate_display": "9361.50"
                 },
                 {
                   "node_type": "item",
-                  "title": "Concrete of M25 grade with minimum cement content of 300 kg /cum.",
+                  "title": "Concrete of M25 grade with minimum cement content of 300 kg /cum. (Note: The permissible utilization of Recycled Concrete Aggregate (RCA) as coarse aggregate and fine aggregate is 25% each).",
                   "code": "4.20A.2.4",
                   "children_count": 0,
                   "children": [],
@@ -1076,11 +1087,24 @@
                   "rate": 9587.95,
                   "rate_display": "9587.95"
                 }
-              ]
+              ],
+              "order_index": 81,
+              "source_page": 7
             }
-          ]
+          ],
+          "order_index": 75,
+          "source_page": 7
         }
       ]
     }
-  ]
+  ],
+  "verification": {
+    "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/4.0 CONCRETE WORK.pdf",
+    "row_count": 86,
+    "note_count": 3,
+    "leaf_count": 72,
+    "duplicate_codes": [],
+    "orphan_codes": [],
+    "unassigned_notes": []
+  }
 }
