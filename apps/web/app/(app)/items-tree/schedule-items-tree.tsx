@@ -6,6 +6,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type MouseEvent,
   type ReactNode,
 } from 'react';
 import {
@@ -43,6 +44,26 @@ import type { ScheduleItemAnnotation, ScheduleTreeRow } from './types';
 const ROOT_PARENT_KEY = '__root__';
 const INDENT_PX = 20;
 const ROW_PAD_LEFT_BASE_PX = 6;
+
+async function collectIdsToExpandUnderParent(
+  rootId: string,
+  loadRows: (parentId: string) => Promise<ScheduleTreeRow[]>
+): Promise<Set<string>> {
+  const ids = new Set<string>();
+  ids.add(rootId);
+  const frontier: string[] = [rootId];
+  while (frontier.length > 0) {
+    const pid = frontier.shift()!;
+    const rows = await loadRows(pid);
+    for (const r of rows) {
+      if (r.has_children) {
+        ids.add(r.id);
+        frontier.push(r.id);
+      }
+    }
+  }
+  return ids;
+}
 
 const ROW_GRID_CLASS =
   'grid w-full min-w-0 flex-1 grid-cols-[minmax(5.5rem,7.5rem)_minmax(0,1fr)_minmax(5rem,7.5rem)_minmax(4rem,5rem)] items-start gap-x-2 gap-y-0.5';
@@ -97,16 +118,22 @@ function parentKey(parentId: string | null): string {
   return parentId ?? ROOT_PARENT_KEY;
 }
 
+function isExpandSubtreeModifier(event: MouseEvent): boolean {
+  return event.metaKey || event.ctrlKey;
+}
+
 function ScheduleRowTreeControl({
   row,
   isExpanded,
   rowLabel,
   onToggle,
+  showExpandShortcutTooltip,
 }: {
   row: ScheduleTreeRow;
   isExpanded: boolean;
   rowLabel: string;
-  onToggle: () => void;
+  onToggle: (event: MouseEvent<HTMLButtonElement>) => void;
+  showExpandShortcutTooltip: boolean;
 }) {
   const shell = cn(
     TREE_CONTROL_CELL_CLASS,
@@ -115,7 +142,9 @@ function ScheduleRowTreeControl({
   if (!row.has_children) {
     return <span className={shell} aria-hidden />;
   }
-  return (
+  const expandHint =
+    'Hold ⌘ (Mac) or Ctrl (Windows) and click to expand this branch fully.';
+  const button = (
     <Button
       type='button'
       variant='ghost'
@@ -125,7 +154,13 @@ function ScheduleRowTreeControl({
         'text-muted-foreground h-5 min-h-5 px-0 py-0 font-normal'
       )}
       aria-expanded={isExpanded}
-      aria-label={isExpanded ? `Collapse ${rowLabel}` : `Expand ${rowLabel}`}
+      aria-label={
+        isExpanded
+          ? `Collapse ${rowLabel}`
+          : showExpandShortcutTooltip
+            ? `Expand ${rowLabel}. Command- or Control-click to expand this branch fully.`
+            : `Expand ${rowLabel}`
+      }
       onClick={onToggle}
     >
       {isExpanded ? (
@@ -140,6 +175,27 @@ function ScheduleRowTreeControl({
         />
       )}
     </Button>
+  );
+  if (!showExpandShortcutTooltip) {
+    return button;
+  }
+  const tooltipText = isExpanded
+    ? 'Collapse this row.'
+    : `Expand one level. ${expandHint}`;
+  return (
+    <Tooltip delayDuration={300}>
+      <TooltipTrigger asChild>
+        <span className='inline-flex'>{button}</span>
+      </TooltipTrigger>
+      <TooltipContent
+        side='right'
+        align='start'
+        sideOffset={6}
+        className='max-w-[16rem] text-xs leading-snug'
+      >
+        {tooltipText}
+      </TooltipContent>
+    </Tooltip>
   );
 }
 
@@ -267,6 +323,10 @@ export function ScheduleItemsTree() {
   );
   const [matchedIds, setMatchedIds] = useState<Set<string>>(new Set());
   const loadedParentKeysRef = useRef<Set<string>>(new Set());
+  const parentChildrenCacheRef = useRef<Record<string, ScheduleTreeRow[]>>({});
+  const loadChildrenPromisesRef = useRef<
+    Record<string, Promise<ScheduleTreeRow[]>>
+  >({});
 
   useEffect(() => {
     if (versionId !== null || !versions?.length) return;
@@ -282,6 +342,8 @@ export function ScheduleItemsTree() {
 
   useEffect(() => {
     loadedParentKeysRef.current = new Set();
+    parentChildrenCacheRef.current = {};
+    loadChildrenPromisesRef.current = {};
     setNodesById({});
     setChildrenByParent({});
     setExpandedIds(new Set());
@@ -308,6 +370,7 @@ export function ScheduleItemsTree() {
     const roots = rootsQuery.data ?? [];
     if (!versionId || roots.length === 0) return;
     upsertRows(roots);
+    parentChildrenCacheRef.current[ROOT_PARENT_KEY] = roots;
     setChildrenByParent((prev) => ({
       ...prev,
       [ROOT_PARENT_KEY]: roots.map((r) => r.id),
@@ -315,44 +378,56 @@ export function ScheduleItemsTree() {
     loadedParentKeysRef.current.add(ROOT_PARENT_KEY);
   }, [rootsQuery.data, upsertRows, versionId]);
 
-  const ensureParentLoaded = useCallback(
-    async (parentId: string | null) => {
-      if (!versionId || parentId === null) return;
+  const loadChildrenRowsForParent = useCallback(
+    async (parentId: string | null): Promise<ScheduleTreeRow[]> => {
+      if (!versionId || parentId === null) return [];
       const key = parentKey(parentId);
-      if (loadedParentKeysRef.current.has(key)) return;
-      let alreadyLoading = false;
-      setLoadingParentKeys((prev) => {
-        if (prev.has(key)) {
-          alreadyLoading = true;
-          return prev;
-        }
-        const next = new Set(prev);
-        next.add(key);
-        return next;
-      });
-      if (alreadyLoading) return;
-
-      try {
-        const rows = await fetchScheduleTreeChildren(versionId, parentId);
-        upsertRows(rows);
-        setChildrenByParent((prev) => ({
-          ...prev,
-          [key]: rows.map((row) => row.id),
-        }));
-        loadedParentKeysRef.current.add(key);
-      } finally {
-        setLoadingParentKeys((prev) => {
-          const next = new Set(prev);
-          next.delete(key);
-          return next;
-        });
+      if (loadedParentKeysRef.current.has(key)) {
+        return parentChildrenCacheRef.current[key] ?? [];
       }
+      let pending = loadChildrenPromisesRef.current[key];
+      if (!pending) {
+        pending = (async (): Promise<ScheduleTreeRow[]> => {
+          setLoadingParentKeys((prev) => {
+            const next = new Set(prev);
+            next.add(key);
+            return next;
+          });
+          try {
+            const rows = await fetchScheduleTreeChildren(versionId, parentId);
+            upsertRows(rows);
+            setChildrenByParent((prev) => ({
+              ...prev,
+              [key]: rows.map((row) => row.id),
+            }));
+            loadedParentKeysRef.current.add(key);
+            parentChildrenCacheRef.current[key] = rows;
+            return rows;
+          } finally {
+            setLoadingParentKeys((prev) => {
+              const next = new Set(prev);
+              next.delete(key);
+              return next;
+            });
+            delete loadChildrenPromisesRef.current[key];
+          }
+        })();
+        loadChildrenPromisesRef.current[key] = pending;
+      }
+      return pending;
     },
     [upsertRows, versionId]
   );
 
+  const ensureParentLoaded = useCallback(
+    async (parentId: string | null) => {
+      await loadChildrenRowsForParent(parentId);
+    },
+    [loadChildrenRowsForParent]
+  );
+
   const handleToggle = useCallback(
-    async (row: ScheduleTreeRow) => {
+    async (row: ScheduleTreeRow, event: MouseEvent<HTMLButtonElement>) => {
       if (!row.has_children) return;
       const id = row.id;
       const isExpanded = expandedIds.has(id);
@@ -364,16 +439,27 @@ export function ScheduleItemsTree() {
         });
         return;
       }
+      const expandSubtree = isExpandSubtreeModifier(event);
+      if (expandSubtree) {
+        const toExpand = await collectIdsToExpandUnderParent(
+          id,
+          loadChildrenRowsForParent
+        );
+        setExpandedIds((prev) => {
+          const next = new Set(prev);
+          toExpand.forEach((x) => next.add(x));
+          return next;
+        });
+        return;
+      }
       setExpandedIds((prev) => {
         const next = new Set(prev);
         next.add(id);
         return next;
       });
-      if (row.has_children) {
-        await ensureParentLoaded(id);
-      }
+      await loadChildrenRowsForParent(id);
     },
-    [ensureParentLoaded, expandedIds]
+    [expandedIds, loadChildrenRowsForParent]
   );
 
   useEffect(() => {
@@ -634,7 +720,8 @@ export function ScheduleItemsTree() {
                             row={row}
                             isExpanded={isExpanded}
                             rowLabel={rowLabel}
-                            onToggle={() => void handleToggle(row)}
+                            onToggle={(e) => void handleToggle(row, e)}
+                            showExpandShortcutTooltip={entry.level === 0}
                           />
                           <div className={ROW_GRID_CLASS}>
                             <span className={typeStyles.code} title={row.code}>
