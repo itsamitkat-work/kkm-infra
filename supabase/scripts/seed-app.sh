@@ -28,6 +28,31 @@ eval "$(supabase status -o env)" || {
   exit 1
 }
 
+# If the Edge Runtime container exited (e.g. OOM 137), Kong still serves /rest but /functions/v1 returns 503.
+# `supabase start` may report "already running" without restarting that container — start it explicitly.
+ensure_local_edge_runtime_container() {
+  if ! command -v docker &>/dev/null; then
+    return 0
+  fi
+  local name
+  name="$(
+    docker ps -a --filter "name=supabase_edge_runtime" --format "{{.Names}}" 2>/dev/null | head -n 1
+  )"
+  if [[ -z "$name" ]]; then
+    return 0
+  fi
+  local state
+  state="$(docker inspect -f '{{.State.Status}}' "$name" 2>/dev/null || true)"
+  if [[ "$state" == "exited" ]]; then
+    echo "seed-app: Edge Runtime container was stopped (${name}); starting it" >&2
+    if ! docker start "$name" >/dev/null 2>&1; then
+      echo "seed-app: could not docker start ${name}; try: supabase stop && supabase start" >&2
+    fi
+  fi
+}
+
+ensure_local_edge_runtime_container
+
 for i in $(seq 1 60); do
   if curl -sf -o /dev/null "${API_URL}/rest/v1/" \
     -H "apikey: ${ANON_KEY}" \
@@ -40,6 +65,35 @@ for i in $(seq 1 60); do
   fi
   sleep 1
 done
+
+# After `supabase db reset`, Edge Runtime may restart slowly; REST is up before Functions.
+wait_for_edge_function() {
+  local ep="$1"
+  local label="$2"
+  for i in $(seq 1 120); do
+    local code
+    code="$(
+      curl -sS -o /dev/null -w "%{http_code}" -X POST "$ep" \
+        -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+        -H "Content-Type: application/json" \
+        -d '{}' 2>/dev/null || echo "000"
+    )"
+    case "$code" in
+      503|502|504|000) ;;
+      *)
+        echo "seed-app: Edge Functions ready (${label}, HTTP ${code})"
+        return 0
+        ;;
+    esac
+    if [[ $i -eq 1 ]] || [[ $((i % 15)) -eq 0 ]]; then
+      echo "seed-app: waiting for Edge Functions (${label})… HTTP ${code} (${i}/120s)" >&2
+    fi
+    sleep 1
+  done
+  echo "seed-app: Edge Functions still unavailable at ${label} (${ep})" >&2
+  echo "seed-app: Try: supabase stop && supabase start" >&2
+  return 1
+}
 
 AUTHZ_EP="${API_URL}/functions/v1/ensure-authz-seed"
 UNITS_EP="${API_URL}/functions/v1/ensure-units"
@@ -78,6 +132,8 @@ if [[ ! -f "$AUTHZ_JSON" ]]; then
   echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
   exit 1
 fi
+
+wait_for_edge_function "$AUTHZ_EP" "ensure-authz-seed" || exit 1
 
 echo "seed-app: ensure-authz-seed ($AUTHZ_JSON)"
 curl -sfS -X POST "$AUTHZ_EP" \
