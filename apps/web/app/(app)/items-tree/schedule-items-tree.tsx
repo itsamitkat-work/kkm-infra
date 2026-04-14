@@ -12,6 +12,7 @@ import {
 import {
   FolderOpen,
   InfoIcon,
+  Layers,
   SquareMinus,
   SquarePlus,
   SearchX,
@@ -21,7 +22,6 @@ import { ScrollableTabs } from '@/components/ui/scrollable-tabs';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SearchInput } from '@/components/ui/search-input';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Badge } from '@/components/ui/badge';
 import {
   Tooltip,
   TooltipContent,
@@ -39,7 +39,11 @@ import {
   normalizeScheduleNodeType,
   scheduleNodeTypeRowClasses,
 } from './schedule-node-type-styles';
-import type { ScheduleItemAnnotation, ScheduleTreeRow } from './types';
+import type {
+  ScheduleItemAnnotation,
+  ScheduleNodeType,
+  ScheduleTreeRow,
+} from './types';
 
 const ROOT_PARENT_KEY = '__root__';
 const INDENT_PX = 20;
@@ -66,20 +70,22 @@ async function collectIdsToExpandUnderParent(
 }
 
 const ROW_GRID_CLASS =
-  'grid w-full min-w-0 flex-1 grid-cols-[minmax(5.5rem,7.5rem)_minmax(0,1fr)_minmax(5rem,7.5rem)_minmax(4rem,5rem)] items-start gap-x-2 gap-y-0.5';
+  'grid w-full min-w-0 flex-1 grid-cols-[minmax(5.5rem,7.5rem)_minmax(0,1fr)_minmax(8rem,11rem)] items-start gap-x-3 gap-y-0.5';
 
 const TREE_CONTROL_CELL_CLASS =
   'inline-flex h-5 w-8 shrink-0 items-center justify-center';
 
-function formatRate(rate: number | null, unit: string | null): string {
-  if (rate == null) return '—';
+const TREE_TYPE_ICON_CELL_CLASS =
+  'inline-flex h-5 w-8 shrink-0 items-center justify-center';
+
+function formatRateNumber(rate: number | null): string {
+  if (rate == null) return '';
   const n = Number(rate);
-  const formatted = Number.isFinite(n)
+  return Number.isFinite(n)
     ? n % 1 === 0
       ? String(n)
       : n.toLocaleString(undefined, { maximumFractionDigits: 4 })
     : String(rate);
-  return unit ? `${formatted} ${unit}` : formatted;
 }
 
 function escapeRegExp(value: string): string {
@@ -199,6 +205,38 @@ function ScheduleRowTreeControl({
   );
 }
 
+function ScheduleRowNodeTypeIcon({ kind }: { kind: ScheduleNodeType }) {
+  if (kind === 'section') {
+    return (
+      <span
+        className={TREE_TYPE_ICON_CELL_CLASS}
+        title='Section'
+        aria-label='Section'
+      >
+        <Layers
+          className='text-muted-foreground pointer-events-none size-3.5 shrink-0'
+          aria-hidden
+        />
+      </span>
+    );
+  }
+  if (kind === 'group') {
+    return (
+      <span
+        className={TREE_TYPE_ICON_CELL_CLASS}
+        title='Group'
+        aria-label='Group'
+      >
+        <FolderOpen
+          className='text-muted-foreground pointer-events-none size-3.5 shrink-0'
+          aria-hidden
+        />
+      </span>
+    );
+  }
+  return <span className={TREE_TYPE_ICON_CELL_CLASS} aria-hidden />;
+}
+
 function ScheduleRowAnnotationsTooltip({
   annotations,
 }: {
@@ -283,6 +321,7 @@ function ScheduleTreeColumnHeader({
           Collapse all
         </TooltipContent>
       </Tooltip>
+      <span className={TREE_TYPE_ICON_CELL_CLASS} aria-hidden />
       <div
         className={`${ROW_GRID_CLASS} text-muted-foreground text-[10px] font-medium uppercase tracking-wide`}
         aria-hidden
@@ -290,7 +329,6 @@ function ScheduleTreeColumnHeader({
         <span>Code</span>
         <span>Name</span>
         <span className='text-end'>Rate</span>
-        <span>Type</span>
       </div>
     </div>
   );
@@ -681,6 +719,7 @@ export function ScheduleItemsTree() {
                             >
                               <Skeleton className='h-4 w-8 rounded' />
                             </span>
+                            <span className={TREE_TYPE_ICON_CELL_CLASS} aria-hidden />
                             <div className={ROW_GRID_CLASS}>
                               <Skeleton className='h-3 w-12' />
                               <div className='flex min-w-0 flex-col gap-0.5'>
@@ -688,7 +727,6 @@ export function ScheduleItemsTree() {
                                 <Skeleton className='h-3 w-4/5 max-w-md' />
                               </div>
                               <Skeleton className='h-3 w-14 justify-self-end' />
-                              <Skeleton className='h-4 w-10 justify-self-start rounded-full' />
                             </div>
                           </div>
                         );
@@ -723,6 +761,7 @@ export function ScheduleItemsTree() {
                             onToggle={(e) => void handleToggle(row, e)}
                             showExpandShortcutTooltip={entry.level === 0}
                           />
+                          <ScheduleRowNodeTypeIcon kind={nodeKind} />
                           <div className={ROW_GRID_CLASS}>
                             <span className={typeStyles.code} title={row.code}>
                               {row.code
@@ -750,18 +789,17 @@ export function ScheduleItemsTree() {
                               </span>
                             </span>
                             <span className={typeStyles.rate}>
-                              {formatRate(row.rate, row.unit_symbol)}
-                            </span>
-                            <span className='flex items-start justify-start truncate'>
-                              <Badge
-                                variant={typeStyles.badgeVariant}
-                                className={cn(
-                                  'w-fit shrink-0 whitespace-nowrap',
-                                  typeStyles.badgeClassName
-                                )}
-                              >
-                                {row.node_type}
-                              </Badge>
+                              {row.rate == null ? null : (
+                                <>
+                                  {formatRateNumber(row.rate)}
+                                  {row.unit_symbol?.trim() ? (
+                                    <span className='text-muted-foreground'>
+                                      {' '}
+                                      {row.unit_symbol.trim()}
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
                             </span>
                           </div>
                         </div>
