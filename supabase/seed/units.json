@@ -183,6 +183,134 @@
       "is_base": false,
       "conversion_factor": 1,
       "symbol": "10 nos"
+    },
+    {
+      "name": "sqm_per_height_metre",
+      "display_name": "Sqm Per Height Metre",
+      "dimension": "area",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "sqm per height metre"
+    },
+    {
+      "name": "joint",
+      "display_name": "Joint",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "joint"
+    },
+    {
+      "name": "each_cut",
+      "display_name": "Each Cut",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "each cut"
+    },
+    {
+      "name": "pair",
+      "display_name": "Pair",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "pair"
+    },
+    {
+      "name": "per_cm_height_per_letter",
+      "display_name": "Per Cm Height Per Letter",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per cm height per letter"
+    },
+    {
+      "name": "per_cm_depth_per_cm_width_per_metre_length",
+      "display_name": "Per Cm Depth Per Cm Width Per Metre Length",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per cm depth per cm width per metre length"
+    },
+    {
+      "name": "1000_nos",
+      "display_name": "1000 Nos",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "1000 nos"
+    },
+    {
+      "name": "cum_per_metre_span",
+      "display_name": "Cum Per Metre Span",
+      "dimension": "volume",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "cum per metre span"
+    },
+    {
+      "name": "cum_per_metre_height",
+      "display_name": "Cum Per Metre Height",
+      "dimension": "volume",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "cum per metre height"
+    },
+    {
+      "name": "kg_per_metre_span",
+      "display_name": "Kg Per Metre Span",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "kg per metre span"
+    },
+    {
+      "name": "kg_per_metre_height",
+      "display_name": "Kg Per Metre Height",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "kg per metre height"
+    },
+    {
+      "name": "per_wheel",
+      "display_name": "Per Wheel",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per wheel"
+    },
+    {
+      "name": "kilo_litre",
+      "display_name": "Kilo Litre",
+      "dimension": "volume",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "kilo litre"
+    },
+    {
+      "name": "each_job",
+      "display_name": "Each Job",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "each job"
+    },
+    {
+      "name": "per_letter_per_cm_height",
+      "display_name": "Per Letter Per Cm Height",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per letter per cm height"
+    },
+    {
+      "name": "per_bag_of_50kg_of_cement",
+      "display_name": "Per Bag of 50kg of Cement",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per bag of 50kg of cement"
     }
   ]
 }
