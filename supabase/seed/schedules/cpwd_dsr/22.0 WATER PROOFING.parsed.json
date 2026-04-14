@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "WATER PROOFING",
       "code": "22.0",
-      "children_count": 23,
+      "children_count": 22,
       "children": [
         {
           "node_type": "group",
@@ -420,24 +420,18 @@
             },
             {
               "node_type": "item",
-              "title": "For patching of tie rod holes, prepared tie rod hole surface and then primed the area with integral crystalline slurry @0.070 kg/sqm and while the surface is tacky repair and then filled the tie rod holes with crystalline mortar@0.040kg per hole. The crystalline mortar should be tightly rodded into tie rod holes or packed tightly (For 25x25x25 mm tie rod hole, use 0.040 kg to fill the hole) each hole",
+              "title": "For patching of tie rod holes, prepared tie rod hole surface and then primed the area with integral crystalline slurry @0.070 kg/sqm and while the surface is tacky repair and then filled the tie rod holes with crystalline mortar@0.040kg per hole. The crystalline mortar should be tightly rodded into tie rod holes or packed tightly (For 25x25x25 mm tie rod hole, use 0.040 kg to fill the hole)",
               "code": "22.25.2",
               "children_count": 0,
               "children": [],
               "order_index": 36,
-              "source_page": 5
+              "source_page": 5,
+              "unit": "each hole",
+              "rate": 23.05,
+              "rate_display": "23.05"
             }
           ],
           "order_index": 34,
-          "source_page": 5
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "23.05",
-          "children_count": 0,
-          "children": [],
-          "order_index": 37,
           "source_page": 5
         },
         {
@@ -446,7 +440,7 @@
           "code": "22.26",
           "children_count": 0,
           "children": [],
-          "order_index": 38,
+          "order_index": 37,
           "source_page": 5,
           "unit": "metre",
           "rate": 573.45,
@@ -457,9 +451,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/22.0 WATER PROOFING.pdf",
-    "row_count": 39,
+    "row_count": 38,
     "note_count": 0,
-    "leaf_count": 30,
+    "leaf_count": 29,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

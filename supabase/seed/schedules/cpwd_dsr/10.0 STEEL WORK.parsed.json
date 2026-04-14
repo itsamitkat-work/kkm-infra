@@ -6,7 +6,7 @@
       "node_type": "subhead",
       "title": "STEEL WORK",
       "code": "10.0",
-      "children_count": 30,
+      "children_count": 29,
       "children": [
         {
           "node_type": "item",
@@ -562,21 +562,15 @@
         },
         {
           "node_type": "item",
-          "title": "Welding by gas or electric plant including transportation of plant at site etc. complete. cm",
+          "title": "Welding by gas or electric plant including transportation of plant at site etc. complete.",
           "code": "10.22",
           "children_count": 0,
           "children": [],
           "order_index": 48,
-          "source_page": 3
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "3.70",
-          "children_count": 0,
-          "children": [],
-          "order_index": 49,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "cm",
+          "rate": 3.7,
+          "rate_display": "3.70"
         },
         {
           "node_type": "group",
@@ -590,7 +584,7 @@
               "code": "10.25.1",
               "children_count": 0,
               "children": [],
-              "order_index": 51,
+              "order_index": 50,
               "source_page": 3,
               "unit": "kg",
               "rate": 123.6,
@@ -602,14 +596,14 @@
               "code": "10.25.2",
               "children_count": 0,
               "children": [],
-              "order_index": 52,
+              "order_index": 51,
               "source_page": 3,
               "unit": "kg",
               "rate": 172.6,
               "rate_display": "172.60"
             }
           ],
-          "order_index": 50,
+          "order_index": 49,
           "source_page": 3
         },
         {
@@ -624,7 +618,7 @@
               "code": "10.26.1",
               "children_count": 0,
               "children": [],
-              "order_index": 54,
+              "order_index": 53,
               "source_page": 4,
               "unit": "kg",
               "rate": 196.8,
@@ -636,7 +630,7 @@
               "code": "10.26.2",
               "children_count": 0,
               "children": [],
-              "order_index": 55,
+              "order_index": 54,
               "source_page": 4,
               "unit": "kg",
               "rate": 205.75,
@@ -648,14 +642,14 @@
               "code": "10.26.3",
               "children_count": 0,
               "children": [],
-              "order_index": 56,
+              "order_index": 55,
               "source_page": 4,
               "unit": "kg",
               "rate": 203.05,
               "rate_display": "203.05"
             }
           ],
-          "order_index": 53,
+          "order_index": 52,
           "source_page": 4
         },
         {
@@ -670,7 +664,7 @@
               "code": "10.27.1",
               "children_count": 0,
               "children": [],
-              "order_index": 58,
+              "order_index": 57,
               "source_page": 4,
               "unit": "each",
               "rate": 131.1,
@@ -682,7 +676,7 @@
               "code": "10.27.2",
               "children_count": 0,
               "children": [],
-              "order_index": 59,
+              "order_index": 58,
               "source_page": 4,
               "unit": "each",
               "rate": 137.65,
@@ -694,7 +688,7 @@
               "code": "10.27.3",
               "children_count": 0,
               "children": [],
-              "order_index": 60,
+              "order_index": 59,
               "source_page": 4,
               "unit": "each",
               "rate": 170.95,
@@ -706,7 +700,7 @@
               "code": "10.27.4",
               "children_count": 0,
               "children": [],
-              "order_index": 61,
+              "order_index": 60,
               "source_page": 4,
               "unit": "each",
               "rate": 182.2,
@@ -718,14 +712,14 @@
               "code": "10.27.5",
               "children_count": 0,
               "children": [],
-              "order_index": 62,
+              "order_index": 61,
               "source_page": 4,
               "unit": "each",
               "rate": 224.5,
               "rate_display": "224.50"
             }
           ],
-          "order_index": 57,
+          "order_index": 56,
           "source_page": 4
         },
         {
@@ -734,7 +728,7 @@
           "code": "10.28",
           "children_count": 0,
           "children": [],
-          "order_index": 63,
+          "order_index": 62,
           "source_page": 4,
           "unit": "kg",
           "rate": 772.4,
@@ -752,7 +746,7 @@
               "code": "10.29.1",
               "children_count": 0,
               "children": [],
-              "order_index": 65,
+              "order_index": 64,
               "source_page": 4,
               "unit": "sqm",
               "rate": 844.7,
@@ -764,14 +758,14 @@
               "code": "10.29.2",
               "children_count": 0,
               "children": [],
-              "order_index": 66,
+              "order_index": 65,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1133.55,
               "rate_display": "1133.55"
             }
           ],
-          "order_index": 64,
+          "order_index": 63,
           "source_page": 4
         },
         {
@@ -786,7 +780,7 @@
               "code": "10.30.1",
               "children_count": 0,
               "children": [],
-              "order_index": 68,
+              "order_index": 67,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1064.65,
@@ -798,14 +792,14 @@
               "code": "10.30.2",
               "children_count": 0,
               "children": [],
-              "order_index": 69,
+              "order_index": 68,
               "source_page": 4,
               "unit": "sqm",
               "rate": 1390.15,
               "rate_display": "1390.15"
             }
           ],
-          "order_index": 67,
+          "order_index": 66,
           "source_page": 4
         },
         {
@@ -814,7 +808,7 @@
           "code": "10.31",
           "children_count": 0,
           "children": [],
-          "order_index": 70,
+          "order_index": 69,
           "source_page": 4,
           "unit": "kg",
           "rate": 130.5,
@@ -825,9 +819,9 @@
   ],
   "verification": {
     "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/10.0 STEEL WORK.pdf",
-    "row_count": 71,
+    "row_count": 70,
     "note_count": 0,
-    "leaf_count": 54,
+    "leaf_count": 53,
     "duplicate_codes": [],
     "orphan_codes": [],
     "unassigned_notes": []

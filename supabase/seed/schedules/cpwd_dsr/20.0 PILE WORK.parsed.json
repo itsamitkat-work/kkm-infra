@@ -471,21 +471,27 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 54771.50",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity)",
                   "code": "20.6.1.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 39,
-                  "source_page": 2
+                  "source_page": 2,
+                  "unit": "per test",
+                  "rate": 54771.5,
+                  "rate_display": "54771.50"
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 19632.40",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity)",
                   "code": "20.6.1.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 40,
-                  "source_page": 2
+                  "source_page": 2,
+                  "unit": "per test",
+                  "rate": 19632.4,
+                  "rate_display": "19632.40"
                 }
               ],
               "order_index": 38,
@@ -499,21 +505,27 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 61173.35",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity)",
                   "code": "20.6.2.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 42,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 61173.35,
+                  "rate_display": "61173.35"
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 32436.10",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity)",
                   "code": "20.6.2.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 43,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 32436.1,
+                  "rate_display": "32436.10"
                 }
               ],
               "order_index": 41,
@@ -527,21 +539,27 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Initial test (Test Load 2.5 times the Safe capacity) per test 70420.50",
+                  "title": "Initial test (Test Load 2.5 times the Safe capacity)",
                   "code": "20.6.3.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 45,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 70420.5,
+                  "rate_display": "70420.50"
                 },
                 {
                   "node_type": "item",
-                  "title": "Routine test (Test Load 1.5 times the Safe capacity) per test 40545.15",
+                  "title": "Routine test (Test Load 1.5 times the Safe capacity)",
                   "code": "20.6.3.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 46,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 40545.15,
+                  "rate_display": "40545.15"
                 }
               ],
               "order_index": 44,
@@ -565,21 +583,27 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Upto 50 tonne Safe capacity pile per test 19632.40",
+                  "title": "Upto 50 tonne Safe capacity pile",
                   "code": "20.7.1.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 49,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 19632.4,
+                  "rate_display": "19632.40"
                 },
                 {
                   "node_type": "item",
-                  "title": "Above 50 tonne and upto 100 tonne Safe capacity pile per test 32436.10",
+                  "title": "Above 50 tonne and upto 100 tonne Safe capacity pile",
                   "code": "20.7.1.2",
                   "children_count": 0,
                   "children": [],
                   "order_index": 50,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 32436.1,
+                  "rate_display": "32436.10"
                 }
               ],
               "order_index": 48,
@@ -593,12 +617,15 @@
               "children": [
                 {
                   "node_type": "item",
-                  "title": "Upto 400 tonne Safe capacity of group per test 40545.15",
+                  "title": "Upto 400 tonne Safe capacity of group",
                   "code": "20.7.2.1",
                   "children_count": 0,
                   "children": [],
                   "order_index": 52,
-                  "source_page": 3
+                  "source_page": 3,
+                  "unit": "per test",
+                  "rate": 40545.15,
+                  "rate_display": "40545.15"
                 }
               ],
               "order_index": 51,
@@ -616,21 +643,27 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Upto 50 tonne capacity pile per test 19632.40",
+              "title": "Upto 50 tonne capacity pile",
               "code": "20.8.1",
               "children_count": 0,
               "children": [],
               "order_index": 54,
-              "source_page": 3
+              "source_page": 3,
+              "unit": "per test",
+              "rate": 19632.4,
+              "rate_display": "19632.40"
             },
             {
               "node_type": "item",
-              "title": "Above 50 tonne and upto 100 tonne capacity pile per test 32862.90",
+              "title": "Above 50 tonne and upto 100 tonne capacity pile",
               "code": "20.8.2",
               "children_count": 0,
               "children": [],
               "order_index": 55,
-              "source_page": 3
+              "source_page": 3,
+              "unit": "per test",
+              "rate": 32862.9,
+              "rate_display": "32862.90"
             }
           ],
           "order_index": 53,
@@ -638,7 +671,7 @@
         },
         {
           "node_type": "item",
-          "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge. per test 1153.20",
+          "title": "Integrity testing of Pile using Low Strain/ Sonic Integrity Test/ Sonic Echo Test method in accordance with IS :14893 including surface preparation of pile top by removing soil, mud, dust & chipping lean concrete lumps etc. and use of computerised equipment and high skill trained personal for conducting the test & submission of results, all complete as per direction of Engineer-in-charge.",
           "code": "20.9",
           "annotations": [
             {
@@ -651,7 +684,10 @@
           "children_count": 0,
           "children": [],
           "order_index": 56,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "per test",
+          "rate": 1153.2,
+          "rate_display": "1153.20"
         }
       ]
     }

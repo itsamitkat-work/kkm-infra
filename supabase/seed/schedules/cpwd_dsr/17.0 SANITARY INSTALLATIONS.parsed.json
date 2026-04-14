@@ -754,21 +754,27 @@
           "children": [
             {
               "node_type": "item",
-              "title": "250x130x30 mm pair 244.85",
+              "title": "250x130x30 mm",
               "code": "17.17.1",
               "children_count": 0,
               "children": [],
               "order_index": 65,
-              "source_page": 4
+              "source_page": 4,
+              "unit": "pair",
+              "rate": 244.85,
+              "rate_display": "244.85"
             },
             {
               "node_type": "item",
-              "title": "250x125x25 mm pair 256.25",
+              "title": "250x125x25 mm",
               "code": "17.17.2",
               "children_count": 0,
               "children": [],
               "order_index": 66,
-              "source_page": 4
+              "source_page": 4,
+              "unit": "pair",
+              "rate": 256.25,
+              "rate_display": "256.25"
             }
           ],
           "order_index": 64,

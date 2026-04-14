@@ -530,21 +530,27 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Wheel 50 mm dia and below per wheel 123.70",
+              "title": "Wheel 50 mm dia and below",
               "code": "14.22.1",
               "children_count": 0,
               "children": [],
               "order_index": 46,
-              "source_page": 3
+              "source_page": 3,
+              "unit": "per wheel",
+              "rate": 123.7,
+              "rate_display": "123.70"
             },
             {
               "node_type": "item",
-              "title": "Wheel above 50 mm dia per wheel 304.55 EARTH WORK",
+              "title": "Wheel above 50 mm dia",
               "code": "14.22.2",
               "children_count": 0,
               "children": [],
               "order_index": 47,
-              "source_page": 3
+              "source_page": 3,
+              "unit": "per wheel",
+              "rate": 304.55,
+              "rate_display": "304.55"
             }
           ],
           "order_index": 45,
@@ -552,12 +558,15 @@
         },
         {
           "node_type": "item",
-          "title": "Pumping out water caused by springs, tidal or river seepage, broken water mains or drains and the like. kilo litre 231.05 BRICK WORK",
+          "title": "Pumping out water caused by springs, tidal or river seepage, broken water mains or drains and the like.",
           "code": "14.23",
           "children_count": 0,
           "children": [],
           "order_index": 48,
-          "source_page": 3
+          "source_page": 3,
+          "unit": "kilo litre",
+          "rate": 231.05,
+          "rate_display": "231.05"
         },
         {
           "node_type": "item",
@@ -1427,21 +1436,27 @@
         },
         {
           "node_type": "item",
-          "title": "Providing round the clock security guard without gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete,as per the direction of Engineer-in-charge. (One job means 8 hour’s duty). each job 1308.40",
+          "title": "Providing round the clock security guard without gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete,as per the direction of Engineer-in-charge. (One job means 8 hour’s duty).",
           "code": "14.93",
           "children_count": 0,
           "children": [],
           "order_index": 123,
-          "source_page": 8
+          "source_page": 8,
+          "unit": "each job",
+          "rate": 1308.4,
+          "rate_display": "1308.40"
         },
         {
           "node_type": "item",
-          "title": "Providing round the clock security guard with gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete, as per the direction of Engineer-in-charge.(One job means 8 hour’s duty). each job 1416.50",
+          "title": "Providing round the clock security guard with gun for watch & ward of Government premises and its all belongings by deploying neatly dressed security guards in 8 hour’s shift including necessary T&P like torch, lathi and uniform etc.complete, as per the direction of Engineer-in-charge.(One job means 8 hour’s duty).",
           "code": "14.94",
           "children_count": 0,
           "children": [],
           "order_index": 124,
-          "source_page": 8
+          "source_page": 8,
+          "unit": "each job",
+          "rate": 1416.5,
+          "rate_display": "1416.50"
         }
       ]
     }

@@ -33,6 +33,14 @@
       "symbol": "metre"
     },
     {
+      "name": "centimetre",
+      "display_name": "Centimetre",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 0.01,
+      "symbol": "cm"
+    },
+    {
       "name": "metre_depth",
       "display_name": "Metre depth",
       "dimension": "length",
@@ -95,6 +103,86 @@
       "is_base": false,
       "conversion_factor": 1,
       "symbol": "per metre per cm girth (60cm deep)"
+    },
+    {
+      "name": "per bag of 50kg cement used in the mix",
+      "display_name": "Per Bag of 50kg Cement Used in the Mix",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per bag of 50kg cement used in the mix"
+    },
+    {
+      "name": "cm per metre",
+      "display_name": "Cm Per Metre",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "cm per metre"
+    },
+    {
+      "name": "per_test",
+      "display_name": "Per Test",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "per test"
+    },
+    {
+      "name": "each_hole",
+      "display_name": "Each Hole",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "each hole"
+    },
+    {
+      "name": "metric_tonne",
+      "display_name": "Metric Tonne (MT)",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1000,
+      "symbol": "MT"
+    },
+    {
+      "name": "100_metre",
+      "display_name": "100 Metre",
+      "dimension": "length",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "100 metre"
+    },
+    {
+      "name": "100_sqm",
+      "display_name": "100 Square Metre",
+      "dimension": "area",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "100 sqm"
+    },
+    {
+      "name": "100_nos",
+      "display_name": "100 Nos",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "100 nos"
+    },
+    {
+      "name": "100_kg",
+      "display_name": "100 Kilogram",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "100 kg"
+    },
+    {
+      "name": "10_nos",
+      "display_name": "10 Nos",
+      "dimension": "count",
+      "is_base": false,
+      "conversion_factor": 1,
+      "symbol": "10 nos"
     }
   ]
 }

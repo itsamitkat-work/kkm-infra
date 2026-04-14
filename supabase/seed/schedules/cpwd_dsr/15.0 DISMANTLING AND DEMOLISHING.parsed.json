@@ -168,30 +168,39 @@
           "children": [
             {
               "node_type": "item",
-              "title": "From brick work in mud mortar 1000 Nos 4658.45",
+              "title": "From brick work in mud mortar",
               "code": "15.8.1",
               "children_count": 0,
               "children": [],
               "order_index": 14,
-              "source_page": 1
+              "source_page": 1,
+              "unit": "1000 Nos",
+              "rate": 4658.45,
+              "rate_display": "4658.45"
             },
             {
               "node_type": "item",
-              "title": "From brick work in lime mortar 1000 Nos 5355.30",
+              "title": "From brick work in lime mortar",
               "code": "15.8.2",
               "children_count": 0,
               "children": [],
               "order_index": 15,
-              "source_page": 1
+              "source_page": 1,
+              "unit": "1000 Nos",
+              "rate": 5355.3,
+              "rate_display": "5355.30"
             },
             {
               "node_type": "item",
-              "title": "From brick work in cement mortar 1000 Nos 6700.80",
+              "title": "From brick work in cement mortar",
               "code": "15.8.3",
               "children_count": 0,
               "children": [],
               "order_index": 16,
-              "source_page": 1
+              "source_page": 1,
+              "unit": "1000 Nos",
+              "rate": 6700.8,
+              "rate_display": "6700.80"
             }
           ],
           "order_index": 13,
@@ -409,23 +418,27 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Of sectional area 40 square centimetres and above cum per span 589.55",
+              "title": "Of sectional area 40 square centimetres and above",
               "code": "15.15.1",
               "children_count": 0,
               "children": [],
               "order_index": 36,
               "source_page": 2,
-              "unit": "metre"
+              "unit": "cum per meter span",
+              "rate": 589.55,
+              "rate_display": "589.55"
             },
             {
               "node_type": "item",
-              "title": "Of sectional area below 40 square centimetres metre per span 1.65",
+              "title": "Of sectional area below 40 square centimetres",
               "code": "15.15.2",
               "children_count": 0,
               "children": [],
               "order_index": 37,
               "source_page": 2,
-              "unit": "metre"
+              "unit": "cum per meter span",
+              "rate": 1.65,
+              "rate_display": "1.65"
             }
           ],
           "order_index": 35,
@@ -439,35 +452,30 @@
           "children": [
             {
               "node_type": "item",
-              "title": "Of sectional area 40 square centimetres and above cum per height 857.00",
+              "title": "Of sectional area 40 square centimetres and above",
               "code": "15.16.1",
               "children_count": 0,
               "children": [],
               "order_index": 39,
               "source_page": 2,
-              "unit": "metre"
+              "unit": "cum per meter height",
+              "rate": 857.0,
+              "rate_display": "857.00"
             },
             {
               "node_type": "item",
-              "title": "Of sectional area below 40 square centimetres metre per height",
+              "title": "Of sectional area below 40 square centimetres",
               "code": "15.16.2",
               "children_count": 0,
               "children": [],
               "order_index": 40,
               "source_page": 2,
-              "unit": "metre"
+              "unit": "cum per meter height",
+              "rate": 3.4,
+              "rate_display": "3.40"
             }
           ],
           "order_index": 38,
-          "source_page": 2
-        },
-        {
-          "node_type": "item",
-          "title": "",
-          "code": "3.40",
-          "children_count": 0,
-          "children": [],
-          "order_index": 41,
           "source_page": 2
         },
         {
@@ -530,23 +538,27 @@
         },
         {
           "node_type": "item",
-          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional span of one metre or part thereof beyond 10 metres kg per span 0.85",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional span of one metre or part thereof beyond 10 metres",
           "code": "15.20",
           "children_count": 0,
           "children": [],
           "order_index": 47,
           "source_page": 2,
-          "unit": "metre"
+          "unit": "kg per meter span",
+          "rate": 0.85,
+          "rate_display": "0.85"
         },
         {
           "node_type": "item",
-          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional height of one metre or part thereof beyond 5 metres. kg per height 0.85",
+          "title": "Extra for dismantling trusses, rafters, purlins etc. of steel work for every additional height of one metre or part thereof beyond 5 metres",
           "code": "15.21",
           "children_count": 0,
           "children": [],
           "order_index": 48,
           "source_page": 2,
-          "unit": "metre"
+          "unit": "kg per meter height",
+          "rate": 0.85,
+          "rate_display": "0.85"
         },
         {
           "node_type": "item",

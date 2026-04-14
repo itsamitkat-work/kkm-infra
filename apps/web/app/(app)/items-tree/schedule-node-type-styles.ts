@@ -38,7 +38,7 @@ export function scheduleNodeTypeRowClasses(
     default:
       return {
         code: 'text-primary/80 font-mono text-[12px] font-semibold tabular-nums tracking-tight',
-        name: 'text-primary/80 text-sm leading-tight',
+        name: 'italic text-primary/80 text-sm leading-tight',
         rate: 'text-muted-foreground/70 text-end font-mono text-[12px] tabular-nums',
         badgeVariant: 'secondary',
         badgeClassName: 'h-4 px-1 py-0 text-[9px] tracking-wider',
