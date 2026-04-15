@@ -123,8 +123,8 @@ export function PoolUserList({
   const { searchTerm, setSearchTerm } = useDebouncedSearch(300);
   const { query, users } = usePoolUsersQuery();
   const { assignUsers, isAssigning } = usePoolMutations();
-  const { permissions } = useAuth();
-  const canUpdate = permissions.includes('kkm.resourcepool.update');
+  const { ability } = useAuth();
+  const canUpdate = ability.can('update', 'ResourcePool');
 
   const table = useReactTable({
     data: users,

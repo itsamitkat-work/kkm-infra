@@ -22,8 +22,6 @@ import { getBasicRatesFilterFields } from './basic-rates-filters';
 import { createFilter } from '@/components/ui/filters';
 import { BasicRatesDrawer } from './basic-rates-drawer';
 import { useAuth } from '@/hooks/auth';
-import { BASIC_RATES_MANAGE } from '@/lib/authz-permission-keys';
-
 interface BasicRatesTableProps {
   onSelectMaterial?: (material: BasicRate) => void;
   inDialog?: boolean;
@@ -33,10 +31,8 @@ export function BasicRatesTable({
   onSelectMaterial,
   inDialog,
 }: BasicRatesTableProps = {}) {
-  const { permissions, claims } = useAuth();
-  const isSystemAdmin = Boolean(claims?.is_system_admin);
-  const canManage =
-    isSystemAdmin || permissions.includes(BASIC_RATES_MANAGE);
+  const { ability } = useAuth();
+  const canManage = ability.can('manage', 'BasicRate');
 
   const drawer = useOpenClose<BasicRate | null>();
   const deleteConfirmation = useDeleteConfirmation();

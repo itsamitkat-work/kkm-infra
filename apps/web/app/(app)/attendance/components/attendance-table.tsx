@@ -461,7 +461,7 @@ export function AttendanceTable({
 
   const { headOptions: allHeads } = useHeadsSubheads();
 
-  const { permissions } = useAuth();
+  const { ability } = useAuth();
 
   const { releaseUsers, isReleasing } = usePoolMutations();
 
@@ -484,9 +484,9 @@ export function AttendanceTable({
         config,
         allHeads,
         existingAttendanceByEmpId,
-        permissions
+        ability
       ),
-    [actions, config, allHeads, existingAttendanceByEmpId, permissions]
+    [actions, config, allHeads, existingAttendanceByEmpId, ability]
   );
 
   const table = useReactTable({
@@ -875,7 +875,8 @@ export function AttendanceTable({
         <div className='flex items-center gap-2'>
           <AttendanceBulkActions
             selectedCount={selectedCount}
-            permissions={permissions}
+            canUpdateResourcePool={ability.can('update', 'ResourcePool')}
+            canLockAttendance={ability.can('lock', 'Attendance')}
             isReleasing={isReleasing}
             isLocking={isLocking}
             isUnlocking={isUnlocking}

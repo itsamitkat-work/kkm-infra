@@ -17,18 +17,13 @@ import { getSchedulesColumns } from './schedules-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
 import { ScheduleSourceDrawer } from './schedule-source-drawer';
 import { useAuth } from '@/hooks/auth';
-import {
-  SCHEDULES_MANAGE,
-} from '@/lib/authz-permission-keys';
 import { useDeleteScheduleSource } from '@/hooks/schedules/use-schedule-source-mutations';
 import { Row } from '@tanstack/react-table';
 import { ScheduleSourceVersionsPanel } from './schedule-source-versions-panel';
 
 export function SchedulesTable() {
-  const { permissions, claims } = useAuth();
-  const isSystemAdmin = Boolean(claims?.is_system_admin);
-  const canManage =
-    isSystemAdmin || permissions.includes(SCHEDULES_MANAGE);
+  const { ability } = useAuth();
+  const canManage = ability.can('manage', 'Schedule');
 
   const drawer = useOpenClose<ScheduleSourceRow | null>();
   const deleteConfirmation = useDeleteConfirmation();
@@ -55,10 +50,9 @@ export function SchedulesTable() {
       getSchedulesColumns(
         onClickEditOrRead,
         (id) => onClickDeleteRef.current(id),
-        canManage,
-        isSystemAdmin
+        canManage
       ),
-    [onClickEditOrRead, canManage, isSystemAdmin]
+    [onClickEditOrRead, canManage]
   );
 
   const defaultFilters = React.useMemo(() => [], []);
@@ -97,10 +91,9 @@ export function SchedulesTable() {
         source={row.original}
         isExpanded={row.getIsExpanded()}
         canManage={canManage}
-        isSystemAdmin={isSystemAdmin}
       />
     ),
-    [canManage, isSystemAdmin]
+    [canManage]
   );
 
   return (

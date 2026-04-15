@@ -536,19 +536,17 @@ export function useItemMeasurementLogic({
     setUpdatedQuantity,
   ]);
 
-  const { permissions } = useAuth();
+  const { ability } = useAuth();
 
-  const measurementPermissions = React.useMemo(() => {
-    const hasPermission = (permission: string) =>
-      permissions.includes(permission);
-
-    return {
-      canCheckMSR: hasPermission('kkm.projectmeasurment.check'),
-      canCheckBLG: hasPermission('kkm.projectbilling.check'),
-      canVerifyMSR: hasPermission('kkm.projectmeasurment.verify'),
-      canVerifyBLG: hasPermission('kkm.projectbilling.verify'),
-    };
-  }, [permissions]);
+  const measurementPermissions = React.useMemo(
+    () => ({
+      canCheckMSR: ability.can('check', 'ProjectMeasurement'),
+      canCheckBLG: ability.can('check', 'ProjectBilling'),
+      canVerifyMSR: ability.can('verify', 'ProjectMeasurement'),
+      canVerifyBLG: ability.can('verify', 'ProjectBilling'),
+    }),
+    [ability]
+  );
 
   const getDisabledColumns = React.useCallback(
     (rowData: ItemMeasurmentRowData): string[] => {

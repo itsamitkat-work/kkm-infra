@@ -36,13 +36,6 @@ import {
 import { FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/hooks/auth';
-import {
-  BASIC_RATES_MANAGE,
-  BASIC_RATES_READ,
-  SCHEDULES_MANAGE,
-  SCHEDULES_READ,
-} from '@/lib/authz-permission-keys';
-
 type NavItem = {
   title: string;
   url: string;
@@ -111,14 +104,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const { state } = useSidebar();
   const isMobile = useIsMobile();
-  const { permissions, roles, claims } = useAuth();
+  const { roles, ability } = useAuth();
 
   const constructionToolsItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
     const canSeeSchedules =
-      Boolean(claims?.is_system_admin) ||
-      permissions.includes(SCHEDULES_READ) ||
-      permissions.includes(SCHEDULES_MANAGE);
+      ability.can('read', 'Schedule') || ability.can('manage', 'Schedule');
     if (canSeeSchedules) {
       items.push({
         title: 'Schedules',
@@ -132,9 +123,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       icon: IconFileText,
     });
     const canSeeBasicRates =
-      Boolean(claims?.is_system_admin) ||
-      permissions.includes(BASIC_RATES_READ) ||
-      permissions.includes(BASIC_RATES_MANAGE);
+      ability.can('read', 'BasicRate') || ability.can('manage', 'BasicRate');
     if (canSeeBasicRates) {
       items.push({
         title: 'Basic Rates',
@@ -143,7 +132,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       });
     }
     return items;
-  }, [permissions, claims?.is_system_admin]);
+  }, [ability]);
 
   const attendanceItems = React.useMemo(() => {
     // Only filter when in browser (client-side)
@@ -152,7 +141,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     }
 
     const attendanceItems: NavItem[] = [
-      ...(permissions.includes('kkm.attendance.read') &&
+      ...(ability.can('read', 'Attendance') &&
       !(roles.includes('Verifier') || roles.includes('Checker'))
         ? [
             {
@@ -162,8 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(permissions.includes('kkm.attendance.read') &&
-      roles.includes('Checker')
+      ...(ability.can('read', 'Attendance') && roles.includes('Checker')
         ? [
             {
               title: 'Attendance',
@@ -172,8 +160,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(permissions.includes('kkm.attendance.read') &&
-      roles.includes('Verifier')
+      ...(ability.can('read', 'Attendance') && roles.includes('Verifier')
         ? [
             {
               title: 'Attendance',
@@ -182,7 +169,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(permissions.includes('kkm.resourcepool.read')
+      ...(ability.can('read', 'ResourcePool')
         ? [
             {
               title: 'Resource Pool',
@@ -191,7 +178,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(permissions.includes('kkm.attendance.read')
+      ...(ability.can('read', 'Attendance')
         ? [
             {
               title: 'Attendance Report',
@@ -203,11 +190,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     ];
 
     return attendanceItems;
-  }, [permissions, roles]);
+  }, [ability, roles]);
 
   const constructionItems: NavItem[] = React.useMemo(
     () => [
-      ...(permissions.includes('kkm.assignedproject.read')
+      ...(ability.can('read', 'AssignedProject')
         ? [
             {
               title: 'Assigned Projects',
@@ -217,7 +204,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           ]
         : []),
 
-      ...(permissions.includes('kkm.project.read')
+      ...(ability.can('read', 'Project')
         ? [
             {
               title: 'Projects',
@@ -233,7 +220,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
     ],
 
-    [permissions]
+    [ability]
   );
 
   function handleNavClick(e: React.MouseEvent, url: string) {

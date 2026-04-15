@@ -33,17 +33,20 @@ interface ScheduleSourceVersionsPanelProps {
   source: ScheduleSourceRow;
   isExpanded: boolean;
   canManage: boolean;
-  isSystemAdmin: boolean;
 }
 
 export function ScheduleSourceVersionsPanel({
   source,
   isExpanded,
   canManage,
-  isSystemAdmin,
 }: ScheduleSourceVersionsPanelProps) {
-  const { data: versions = [], isLoading, isError, error, refetch } =
-    useScheduleSourceVersionsBySourceId(source.id, isExpanded);
+  const {
+    data: versions = [],
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useScheduleSourceVersionsBySourceId(source.id, isExpanded);
 
   const [dialogOpen, setDialogOpen] = React.useState(false);
   const [dialogMode, setDialogMode] = React.useState<'create' | 'edit'>(
@@ -80,10 +83,14 @@ export function ScheduleSourceVersionsPanel({
     <div className='bg-muted/20 border-border/80 border-t px-4 py-3'>
       <div className='mb-3 flex flex-wrap items-center justify-between gap-2'>
         <div>
-          <p className='text-sm font-medium'>Editions</p>
+          <p className='text-sm font-medium'>
+            Editions{' '}
+            <span className='text-muted-foreground text-xs'>
+              ({versions.length})
+            </span>
+          </p>
           <p className='text-muted-foreground text-xs'>
-            {source.display_name || source.name} — used in schedule items and
-            basic rates filters.
+            {source.display_name || source.name}
           </p>
         </div>
         {canManage ? (
@@ -157,7 +164,7 @@ export function ScheduleSourceVersionsPanel({
                           Edit
                         </Button>
                       ) : null}
-                      {canManage && isSystemAdmin ? (
+                      {canManage ? (
                         <Button
                           type='button'
                           variant='ghost'

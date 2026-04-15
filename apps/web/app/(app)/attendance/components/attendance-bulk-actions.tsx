@@ -21,7 +21,8 @@ import { AttendanceStatus } from '../types';
 
 interface AttendanceBulkActionsProps {
   selectedCount: number;
-  permissions: string[];
+  canUpdateResourcePool: boolean;
+  canLockAttendance: boolean;
   isReleasing: boolean;
   isLocking: boolean;
   isUnlocking: boolean;
@@ -39,7 +40,8 @@ interface AttendanceBulkActionsProps {
 
 export function AttendanceBulkActions({
   selectedCount,
-  permissions,
+  canUpdateResourcePool,
+  canLockAttendance,
   isReleasing,
   isLocking,
   isUnlocking,
@@ -95,7 +97,7 @@ export function AttendanceBulkActions({
         >
           <IconPlus className='h-4 w-4' />
         </Button>
-        {permissions.includes('kkm.resourcepool.update') && (
+        {canUpdateResourcePool && (
           <Button
             variant='outline'
             size='sm'
@@ -111,7 +113,7 @@ export function AttendanceBulkActions({
             )}
           </Button>
         )}
-        {permissions.includes('kkm.attendance.lock') && (
+        {canLockAttendance && (
           <div className='flex items-center rounded-md border border-input overflow-hidden'>
             <Button
               variant='outline'
@@ -203,7 +205,7 @@ export function AttendanceBulkActions({
             <IconPlus className='size-3.5' />
           </span>
         </Button>
-        {permissions.includes('kkm.resourcepool.update') && (
+        {canUpdateResourcePool && (
           <Button
             variant='outline'
             size='sm'
@@ -220,7 +222,7 @@ export function AttendanceBulkActions({
             <span className='md:hidden'>Release</span>
           </Button>
         )}
-        {permissions.includes('kkm.attendance.lock') && (
+        {canLockAttendance && (
           <>
             <div className='h-4 w-px bg-border' />
             <div className='flex items-center rounded-md border border-input overflow-hidden'>

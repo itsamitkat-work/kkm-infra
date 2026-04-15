@@ -19,8 +19,7 @@ import { cn } from '@/lib/utils';
 export function getSchedulesColumns(
   onScheduleAction: (row: ScheduleSourceRow, mode: 'edit' | 'read') => void,
   onDeleteSchedule: (id: string) => void,
-  canManage: boolean,
-  canDeleteSchedule: boolean
+  canManage: boolean
 ): ColumnDef<ScheduleSourceRow>[] {
   return [
     {
@@ -140,7 +139,7 @@ export function getSchedulesColumns(
             >
               View details
             </DropdownMenuItem>
-            {canManage && canDeleteSchedule ? (
+            {canManage ? (
               <>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

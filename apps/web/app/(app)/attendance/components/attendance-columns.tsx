@@ -54,6 +54,7 @@ import {
 } from '../../../../hooks/projects/use-assigned-projects-query';
 import { type HeadOption } from '@/hooks/use-heads-subheads';
 import { useProjectHeadsQuery } from '../hooks/use-project-heads-query';
+import type { AppAbility } from '@/lib/authz/define-ability';
 import { useAuth } from '@/hooks/auth';
 import {
   STATUS_CONFIG,
@@ -1139,7 +1140,7 @@ export function getAttendanceColumns(
   config: AttendanceConfig | undefined,
   allHeads: HeadOption[],
   existingAttendanceByEmpId: Map<string, Set<string>>,
-  permissions: string[]
+  ability: AppAbility
 ): ColumnDef<AttendanceRow>[] {
   return [
     // Selection checkbox + Employee name (merged, sticky column)
@@ -1448,7 +1449,7 @@ export function getAttendanceColumns(
         <DropdownMenu>
           <DropdownMenuTrigger
             asChild
-            disabled={!permissions.includes('kkm.attendance.check')}
+            disabled={!ability.can('check', 'Attendance')}
           >
             <button
               type='button'
@@ -1459,7 +1460,7 @@ export function getAttendanceColumns(
               )}
             >
               <span>Checked</span>
-              {permissions.includes('kkm.attendance.check') && (
+              {ability.can('check', 'Attendance') && (
                 <IconChevronDown className='size-3' />
               )}
             </button>
@@ -1491,7 +1492,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !permissions.includes('kkm.attendance.check') ||
+            !ability.can('check', 'Attendance') ||
             row.original.isLocked
           }
         />
@@ -1506,7 +1507,7 @@ export function getAttendanceColumns(
         <DropdownMenu>
           <DropdownMenuTrigger
             asChild
-            disabled={!permissions.includes('kkm.attendance.verify')}
+            disabled={!ability.can('verify', 'Attendance')}
           >
             <button
               type='button'
@@ -1517,7 +1518,7 @@ export function getAttendanceColumns(
               )}
             >
               <span>Verified</span>
-              {permissions.includes('kkm.attendance.verify') && (
+              {ability.can('verify', 'Attendance') && (
                 <IconChevronDown className='size-3' />
               )}
             </button>
@@ -1549,7 +1550,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !permissions.includes('kkm.attendance.verify') ||
+            !ability.can('verify', 'Attendance') ||
             row.original.isLocked
           }
         />

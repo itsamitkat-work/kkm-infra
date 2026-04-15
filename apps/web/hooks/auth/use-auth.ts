@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import type {
@@ -14,6 +14,7 @@ import {
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import type { LoginCredentials, User } from '@/types/auth';
 import type { AccessTokenClaims } from '@/types/jwt-claims';
+import { defineAbilityFor, type AppAbility } from '@/lib/authz/define-ability';
 
 export function useAuth() {
   const router = useRouter();
@@ -89,11 +90,17 @@ export function useAuth() {
 
   const isLoading = isSessionLoading || signInPending;
 
+  const ability = useMemo<AppAbility>(
+    () => defineAbilityFor({ permissions, claims }),
+    [permissions, claims]
+  );
+
   return {
     user,
     permissions,
     roles,
     claims,
+    ability,
     signIn,
     signOut,
     isLoading,

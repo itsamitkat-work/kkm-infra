@@ -37,6 +37,30 @@
     {
       "key": "basic_rates.manage",
       "description": "Create, update, and delete basic rates and types"
+    },
+    { "key": "attendance.read", "description": "View attendance navigation and data" },
+    { "key": "attendance.check", "description": "Check attendance records" },
+    { "key": "attendance.verify", "description": "Verify attendance records" },
+    { "key": "attendance.lock", "description": "Lock attendance periods" },
+    { "key": "resource_pool.read", "description": "View resource pool" },
+    { "key": "resource_pool.update", "description": "Update resource pool assignments" },
+    { "key": "projects.read", "description": "View projects" },
+    { "key": "projects.update", "description": "Update projects" },
+    { "key": "projects.delete", "description": "Delete projects" },
+    { "key": "projects.create", "description": "Create projects" },
+    { "key": "assigned_projects.read", "description": "View assigned projects" },
+    {
+      "key": "project_measurement.check",
+      "description": "Check project measurement records"
+    },
+    {
+      "key": "project_measurement.verify",
+      "description": "Verify project measurement records"
+    },
+    { "key": "project_billing.check", "description": "Check project billing records" },
+    {
+      "key": "project_billing.verify",
+      "description": "Verify project billing records"
     }
   ],
   "system_roles": [
@@ -94,7 +118,17 @@
         "tenants.read",
         "roles.read",
         "basic_rates.read",
-        "schedules.read"
+        "schedules.read",
+        "attendance.read",
+        "attendance.check",
+        "resource_pool.read",
+        "resource_pool.update",
+        "projects.read",
+        "projects.update",
+        "projects.create",
+        "assigned_projects.read",
+        "project_measurement.check",
+        "project_billing.check"
       ]
     },
     {
@@ -110,7 +144,38 @@
         "basic_rates.read",
         "basic_rates.manage",
         "schedules.read",
-        "schedules.manage"
+        "schedules.manage",
+        "attendance.read",
+        "attendance.check",
+        "attendance.verify",
+        "attendance.lock",
+        "resource_pool.read",
+        "resource_pool.update",
+        "projects.read",
+        "projects.update",
+        "projects.delete",
+        "projects.create",
+        "assigned_projects.read",
+        "project_measurement.check",
+        "project_measurement.verify",
+        "project_billing.check",
+        "project_billing.verify"
+      ]
+    },
+    {
+      "role_slugs": ["project_verifier"],
+      "permission_keys": [
+        "items.read",
+        "tenants.read",
+        "roles.read",
+        "basic_rates.read",
+        "schedules.read",
+        "attendance.read",
+        "attendance.verify",
+        "projects.read",
+        "assigned_projects.read",
+        "project_measurement.verify",
+        "project_billing.verify"
       ]
     }
   ]

@@ -26,16 +26,16 @@ export function ProjectsTable() {
   const drawer = useOpenClose<Project | null>();
   const deleteConfirmation = useDeleteConfirmation();
   const deleteProjectMutation = useDeleteProject();
-  const { permissions } = useAuth();
+  const { ability } = useAuth();
 
   const permissionFlags = React.useMemo(
     () => ({
-      canRead: permissions.includes('kkm.project.read'),
-      canUpdate: permissions.includes('kkm.project.update'),
-      canDelete: permissions.includes('kkm.project.delete'),
-      canCreate: permissions.includes('kkm.project.create'),
+      canRead: ability.can('read', 'Project'),
+      canUpdate: ability.can('update', 'Project'),
+      canDelete: ability.can('delete', 'Project'),
+      canCreate: ability.can('create', 'Project'),
     }),
-    [permissions]
+    [ability]
   );
 
   const handleCreateProject = React.useCallback(() => {

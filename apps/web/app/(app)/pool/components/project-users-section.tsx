@@ -69,8 +69,8 @@ export function ProjectUsersSection({
   onProjectChange,
 }: ProjectUsersSectionProps) {
   const [changeProjectOpen, setChangeProjectOpen] = React.useState(false);
-  const { user: currentUser, permissions } = useAuth();
-  const canUpdate = permissions.includes('kkm.resourcepool.update');
+  const { user: currentUser, ability } = useAuth();
+  const canUpdate = ability.can('update', 'ResourcePool');
 
   const { releaseUsers, changeProject, isReleasing } = usePoolMutations();
 
