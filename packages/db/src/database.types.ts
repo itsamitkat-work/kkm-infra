@@ -623,21 +623,30 @@ export type Database = {
           context: string
           created_at: string | null
           id: string
+          label: string | null
+          order_index: number | null
           rate: number
+          rate_display: string | null
           schedule_item_id: string
         }
         Insert: {
           context: string
           created_at?: string | null
           id?: string
+          label?: string | null
+          order_index?: number | null
           rate: number
+          rate_display?: string | null
           schedule_item_id: string
         }
         Update: {
           context?: string
           created_at?: string | null
           id?: string
+          label?: string | null
+          order_index?: number | null
           rate?: number
+          rate_display?: string | null
           schedule_item_id?: string
         }
         Relationships: [
@@ -1107,6 +1116,7 @@ export type Database = {
           parent_item_id: string
           path_slug: string
           rate: number
+          rates: Json
           unit_symbol: string
         }[]
       }
@@ -1124,6 +1134,7 @@ export type Database = {
           parent_item_id: string
           path_slug: string
           rate: number
+          rates: Json
           unit_symbol: string
         }[]
       }
@@ -1179,6 +1190,7 @@ export type Database = {
           parent_item_id: string
           path_slug: string
           rate: number
+          rates: Json
           unit_symbol: string
         }[]
       }

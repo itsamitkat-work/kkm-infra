@@ -24,6 +24,7 @@
             }
           },
           "files": [
+            "supabase/seed/schedules/cpwd_dsr/1.0 CARRIAGE OF MATERIAL.parsed.json",
             "supabase/seed/schedules/cpwd_dsr/2.0 EARTH WORK.parsed.json",
             "supabase/seed/schedules/cpwd_dsr/3.0 MORTAR.parsed.json",
             "supabase/seed/schedules/cpwd_dsr/4.0 CONCRETE WORK.parsed.json",

@@ -13,11 +13,17 @@ import {
   FolderOpen,
   InfoIcon,
   Layers,
+  List,
   SquareMinus,
   SquarePlus,
   SearchX,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { ScrollableTabs } from '@/components/ui/scrollable-tabs';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SearchInput } from '@/components/ui/search-input';
@@ -41,6 +47,7 @@ import {
 } from './schedule-node-type-styles';
 import type {
   ScheduleItemAnnotation,
+  ScheduleItemContextRate,
   ScheduleNodeType,
   ScheduleTreeRow,
 } from './types';
@@ -86,6 +93,12 @@ function formatRateNumber(rate: number | null): string {
       ? String(n)
       : n.toLocaleString(undefined, { maximumFractionDigits: 4 })
     : String(rate);
+}
+
+function formatContextRateDisplay(entry: ScheduleItemContextRate): string {
+  const d = entry.rate_display?.trim();
+  if (d) return d;
+  return formatRateNumber(entry.rate);
 }
 
 function escapeRegExp(value: string): string {
@@ -235,6 +248,99 @@ function ScheduleRowNodeTypeIcon({ kind }: { kind: ScheduleNodeType }) {
     );
   }
   return <span className={TREE_TYPE_ICON_CELL_CLASS} aria-hidden />;
+}
+
+function ScheduleTreeRateCell({
+  row,
+  rateClassName,
+}: {
+  row: ScheduleTreeRow;
+  rateClassName: string;
+}) {
+  const contextualRates = row.rates ?? [];
+  const hasContextualRates = contextualRates.length > 0;
+  const unit = row.unit_symbol?.trim();
+
+  if (row.rate == null && !hasContextualRates) {
+    return null;
+  }
+
+  if (!hasContextualRates) {
+    return (
+      <span className={rateClassName}>
+        {row.rate == null ? null : (
+          <>
+            {formatRateNumber(row.rate)}
+            {unit ? (
+              <span className='text-muted-foreground'> {unit}</span>
+            ) : null}
+          </>
+        )}
+      </span>
+    );
+  }
+
+  const rowLabel = row.code?.trim() || row.description?.trim() || 'item';
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <button
+          type='button'
+          className={cn(
+            rateClassName,
+            'inline-flex max-w-full min-w-0 items-baseline justify-end gap-1 rounded-sm text-right underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+          )}
+          aria-label={`View ${contextualRates.length} contextual rates for ${rowLabel}`}
+        >
+          <List
+            className='text-muted-foreground size-3 shrink-0 self-center'
+            aria-hidden
+          />
+          {row.rate != null ? (
+            <>
+              {formatRateNumber(row.rate)}
+              {unit ? (
+                <span className='text-muted-foreground'> {unit}</span>
+              ) : null}
+            </>
+          ) : (
+            <span className='text-muted-foreground'>Rates</span>
+          )}
+        </button>
+      </PopoverTrigger>
+      <PopoverContent
+        align='end'
+        className='w-auto max-w-[min(24rem,calc(100vw-2rem))] p-0'
+      >
+        <div className='border-border text-muted-foreground border-b px-3 py-2 text-xs font-medium'>
+          Various Rates by Context
+        </div>
+        <table className='w-full text-sm'>
+          <thead>
+            <tr className='border-border text-muted-foreground border-b text-left text-xs'>
+              <th className='px-3 py-1.5 font-normal'>Context</th>
+              <th className='px-3 py-1.5 text-right font-normal'>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contextualRates.map((r, index) => (
+              <tr
+                key={r.id ? `${r.id}-${index}` : `${r.context}-${index}`}
+                className='border-border/60 border-b last:border-0'
+              >
+                <td className='max-w-[14rem] px-3 py-1.5 text-xs leading-snug'>
+                  {r.label?.trim() || r.context}
+                </td>
+                <td className='px-3 py-1.5 text-right tabular-nums whitespace-nowrap'>
+                  {formatContextRateDisplay(r)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
 function ScheduleRowAnnotationsTooltip({
@@ -719,7 +825,10 @@ export function ScheduleItemsTree() {
                             >
                               <Skeleton className='h-4 w-8 rounded' />
                             </span>
-                            <span className={TREE_TYPE_ICON_CELL_CLASS} aria-hidden />
+                            <span
+                              className={TREE_TYPE_ICON_CELL_CLASS}
+                              aria-hidden
+                            />
                             <div className={ROW_GRID_CLASS}>
                               <Skeleton className='h-3 w-12' />
                               <div className='flex min-w-0 flex-col gap-0.5'>
@@ -788,19 +897,10 @@ export function ScheduleItemsTree() {
                                 ) : null}
                               </span>
                             </span>
-                            <span className={typeStyles.rate}>
-                              {row.rate == null ? null : (
-                                <>
-                                  {formatRateNumber(row.rate)}
-                                  {row.unit_symbol?.trim() ? (
-                                    <span className='text-muted-foreground'>
-                                      {' '}
-                                      {row.unit_symbol.trim()}
-                                    </span>
-                                  ) : null}
-                                </>
-                              )}
-                            </span>
+                            <ScheduleTreeRateCell
+                              row={row}
+                              rateClassName={typeStyles.rate}
+                            />
                           </div>
                         </div>
                       );

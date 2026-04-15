@@ -5,6 +5,7 @@ import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import type {
   ScheduleAnnotationType,
   ScheduleItemAnnotation,
+  ScheduleItemContextRate,
   ScheduleTreeRow,
   ScheduleTreeSearchRow,
 } from './types';
@@ -48,6 +49,50 @@ function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
   return out;
 }
 
+function parseScheduleRates(value: unknown): ScheduleItemContextRate[] {
+  if (value == null) return [];
+  if (!Array.isArray(value)) return [];
+  const out: ScheduleItemContextRate[] = [];
+  for (const item of value) {
+    if (!item || typeof item !== 'object') continue;
+    const o = item as Record<string, unknown>;
+    const rateRaw = o.rate;
+    let rate = 0;
+    if (typeof rateRaw === 'number' && Number.isFinite(rateRaw)) {
+      rate = rateRaw;
+    } else if (rateRaw != null && String(rateRaw).trim() !== '') {
+      const n = Number(rateRaw);
+      rate = Number.isFinite(n) ? n : 0;
+    }
+    const orderRaw = o.order_index;
+    let order_index: number | null = null;
+    if (typeof orderRaw === 'number' && Number.isFinite(orderRaw)) {
+      order_index = orderRaw;
+    } else if (orderRaw != null && String(orderRaw).trim() !== '') {
+      const n = Number(orderRaw);
+      order_index = Number.isFinite(n) ? n : null;
+    }
+    out.push({
+      id: typeof o.id === 'string' ? o.id : String(o.id ?? ''),
+      context:
+        typeof o.context === 'string' && o.context.trim() !== ''
+          ? o.context
+          : 'unknown',
+      label:
+        typeof o.label === 'string' && o.label.trim() !== ''
+          ? o.label
+          : null,
+      rate,
+      rate_display:
+        typeof o.rate_display === 'string' && o.rate_display.trim() !== ''
+          ? o.rate_display
+          : null,
+      order_index,
+    });
+  }
+  return out;
+}
+
 function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
   return {
     ...row,
@@ -55,6 +100,7 @@ function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
     annotations: parseScheduleAnnotations(
       (row as { annotations?: unknown }).annotations
     ),
+    rates: parseScheduleRates((row as { rates?: unknown }).rates),
   };
 }
 

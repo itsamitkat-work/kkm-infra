@@ -112,6 +112,9 @@ create table public.schedule_item_rates (
     references public.schedule_items(id) on delete cascade,
   context text not null,
   rate numeric not null,
+  label text,
+  order_index int,
+  rate_display text,
   created_at timestamptz default now(),
   unique(schedule_item_id, context)
 );

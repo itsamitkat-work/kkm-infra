@@ -4,7 +4,8 @@
  * Ingests a parsed schedule-of-rates JSON file into the schedule_items
  * hierarchy. Walks the tree depth-first, inserting parents before children
  * so the ltree trigger can compute paths. Resolves unit symbols to unit IDs
- * and inserts annotations into schedule_item_annotations.
+ * and inserts annotations into schedule_item_annotations. When a node
+ * carries a `rates` array, inserts matching rows into schedule_item_rates.
  *
  * Auth: system admin only.
  *
@@ -12,7 +13,7 @@
  *   { schedule_source_version_id: uuid, data: ParsedRoot }
  *
  * Returns:
- *   { batch_id, items_inserted, annotations_inserted, unresolved_units }
+ *   { batch_id, items_inserted, annotations_inserted, rates_inserted, unresolved_units }
  */
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
@@ -41,6 +42,14 @@ interface ParsedAnnotation {
   order_index?: number;
 }
 
+interface ParsedContextRate {
+  context: string;
+  rate: number;
+  label?: string;
+  order_index?: number;
+  rate_display?: string;
+}
+
 interface ParsedNode {
   node_type: string;
   title?: string;
@@ -52,6 +61,7 @@ interface ParsedNode {
   unit?: string;
   rate?: number;
   rate_kind?: string;
+  rates?: ParsedContextRate[];
   annotations?: ParsedAnnotation[];
 }
 
@@ -72,7 +82,10 @@ function resolveNodeType(node: ParsedNode): ScheduleNodeType {
   if (node.node_type === "item") {
     const hasChildren = Boolean(node.children && node.children.length > 0);
     if (!hasChildren) return "item";
-    return node.rate != null ? "item" : "group";
+    const hasPrimaryRate =
+      node.rate != null ||
+      (Array.isArray(node.rates) && node.rates.length > 0);
+    return hasPrimaryRate ? "item" : "group";
   }
   const hasChildren = Boolean(node.children && node.children.length > 0);
   return hasChildren ? "group" : "item";
@@ -129,6 +142,7 @@ Deno.serve(async (req) => {
 
     let itemsInserted = 0;
     let annotationsInserted = 0;
+    let ratesInserted = 0;
     const unresolvedUnits = new Set<string>();
     const pendingAnnotations: Array<{
       schedule_item_id: string;
@@ -136,6 +150,20 @@ Deno.serve(async (req) => {
       raw_text: string;
       order_index: number | null;
     }> = [];
+    const pendingItemRates: Array<{
+      schedule_item_id: string;
+      context: string;
+      rate: number;
+      label: string | null;
+      order_index: number | null;
+      rate_display: string | null;
+    }> = [];
+
+    function resolvePrimaryRate(node: ParsedNode): number | null {
+      if (node.rate != null) return node.rate;
+      const first = node.rates?.[0]?.rate;
+      return first ?? null;
+    }
 
     async function insertNode(
       node: ParsedNode,
@@ -152,6 +180,7 @@ Deno.serve(async (req) => {
       }
 
       const itemType = node.rate_kind === "percentage" ? "percentage" : "base";
+      const primaryRate = resolvePrimaryRate(node);
 
       const { data: inserted, error: insertError } = await svc
         .from("schedule_items")
@@ -162,7 +191,7 @@ Deno.serve(async (req) => {
           description: node.title ?? node.code,
           node_type: nodeType,
           unit_id: unitId,
-          rate: node.rate ?? null,
+          rate: primaryRate,
           item_type: itemType,
           order_index: node.order_index ?? null,
           source_page_number: node.source_page ?? null,
@@ -187,6 +216,20 @@ Deno.serve(async (req) => {
             type: ann.type,
             raw_text: ann.text,
             order_index: ann.order_index ?? null,
+          });
+        }
+      }
+
+      if (node.rates && node.rates.length > 0) {
+        for (const row of node.rates) {
+          if (!row.context || row.rate == null) continue;
+          pendingItemRates.push({
+            schedule_item_id: inserted.id,
+            context: row.context,
+            rate: row.rate,
+            label: row.label ?? null,
+            order_index: row.order_index ?? null,
+            rate_display: row.rate_display ?? null,
           });
         }
       }
@@ -218,11 +261,26 @@ Deno.serve(async (req) => {
       annotationsInserted = pendingAnnotations.length;
     }
 
+    if (pendingItemRates.length > 0) {
+      const { error: ratesError } = await svc
+        .from("schedule_item_rates")
+        .insert(pendingItemRates);
+
+      if (ratesError) {
+        throw new HttpError(
+          500,
+          `Failed to insert schedule item rates: ${ratesError.message}`,
+        );
+      }
+      ratesInserted = pendingItemRates.length;
+    }
+
     return jsonResponse(
       {
         batch_id: batchId,
         items_inserted: itemsInserted,
         annotations_inserted: annotationsInserted,
+        rates_inserted: ratesInserted,
         unresolved_units: [...unresolvedUnits],
       },
       200,

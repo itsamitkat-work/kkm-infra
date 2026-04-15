@@ -13,6 +13,15 @@ export type ScheduleItemAnnotation = {
   order_index: number | null;
 };
 
+export type ScheduleItemContextRate = {
+  id: string;
+  context: string;
+  label: string | null;
+  rate: number;
+  rate_display: string | null;
+  order_index: number | null;
+};
+
 export type ScheduleTreeRow = {
   id: string;
   parent_item_id: string | null;
@@ -26,6 +35,7 @@ export type ScheduleTreeRow = {
   unit_symbol: string | null;
   has_children: boolean;
   annotations: ScheduleItemAnnotation[];
+  rates: ScheduleItemContextRate[];
 };
 
 export type ScheduleSourceVersionOption = {

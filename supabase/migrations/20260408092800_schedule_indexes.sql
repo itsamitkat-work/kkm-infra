@@ -38,6 +38,8 @@ create index idx_schedule_items_batch on public.schedule_items(ingestion_batch_i
 
 -- Rate lookup
 create index idx_schedule_item_rates_item on public.schedule_item_rates(schedule_item_id);
+create index idx_schedule_item_rates_item_order
+  on public.schedule_item_rates(schedule_item_id, order_index);
 
 -- Code prefix search (for tree search: "1.1" → finds "1.1", "1.1.1", "1.1.2")
 create index idx_schedule_items_code on public.schedule_items(schedule_source_version_id, code text_pattern_ops);

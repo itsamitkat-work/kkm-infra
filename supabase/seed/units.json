@@ -145,6 +145,14 @@
       "symbol": "MT"
     },
     {
+      "name": "tonne",
+      "display_name": "Tonne",
+      "dimension": "mass",
+      "is_base": false,
+      "conversion_factor": 1000,
+      "symbol": "tonne"
+    },
+    {
       "name": "100_metre",
       "display_name": "100 Metre",
       "dimension": "length",

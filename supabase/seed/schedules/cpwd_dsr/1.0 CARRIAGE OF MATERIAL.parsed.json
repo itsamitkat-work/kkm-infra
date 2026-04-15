@@ -1,0 +1,4156 @@
+{
+  "node_type": "root",
+  "source_pdf": "/Users/amit.katiyar/Documents/projects/kkm-infra-mono/apps/parser_pipeline/pdfs/1.0 CARRIAGE OF MATERIAL.pdf",
+  "children": [
+    {
+      "node_type": "subhead",
+      "title": "CARRIAGE OF MATERIALS",
+      "code": "1.0",
+      "annotations": [
+        {
+          "type": "note",
+          "text": "These rates are inclusive of GST on work contract, Contractor's profit and overheads, Cess etc.",
+          "source_page": 1,
+          "order_index": 0
+        },
+        {
+          "type": "note",
+          "text": "Rates are inclusive of GST on Work Contract @ 18%, 15% CP & OH and 1% Cess.",
+          "source_page": 1,
+          "order_index": 1
+        }
+      ],
+      "children_count": 4,
+      "children": [
+        {
+          "node_type": "group",
+          "title": "By Mechanical Transport including loading, unloading and stacking.",
+          "code": "1.1",
+          "children_count": 18,
+          "order_index": 0,
+          "source_page": 1,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Lime, moorum, building rubbish",
+              "code": "1.1.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 0,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 174.04,
+              "rate_display": "174.04",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 174.04,
+                  "rate_display": "174.04"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 196.66,
+                  "rate_display": "196.66"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 219.03,
+                  "rate_display": "219.03"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 240.51,
+                  "rate_display": "240.51"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 261.35,
+                  "rate_display": "261.35"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 18.53,
+                  "rate_display": "18.53"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 15.08,
+                  "rate_display": "15.08"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 12.14,
+                  "rate_display": "12.14"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Earth",
+              "code": "1.1.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 217.55,
+              "rate_display": "217.55",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 217.55,
+                  "rate_display": "217.55"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 245.82,
+                  "rate_display": "245.82"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 273.79,
+                  "rate_display": "273.79"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 300.64,
+                  "rate_display": "300.64"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 326.68,
+                  "rate_display": "326.68"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 23.16,
+                  "rate_display": "23.16"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 18.85,
+                  "rate_display": "18.85"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 15.17,
+                  "rate_display": "15.17"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Manure or sludge",
+              "code": "1.1.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 189.17,
+              "rate_display": "189.17",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 189.17,
+                  "rate_display": "189.17"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 213.76,
+                  "rate_display": "213.76"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 238.08,
+                  "rate_display": "238.08"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 261.42,
+                  "rate_display": "261.42"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 284.07,
+                  "rate_display": "284.07"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 20.14,
+                  "rate_display": "20.14"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 16.4,
+                  "rate_display": "16.40"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 13.19,
+                  "rate_display": "13.19"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Excavated rock",
+              "code": "1.1.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 348.08,
+              "rate_display": "348.08",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 348.08,
+                  "rate_display": "348.08"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 393.32,
+                  "rate_display": "393.32"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 438.07,
+                  "rate_display": "438.07"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 481.02,
+                  "rate_display": "481.02"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 522.7,
+                  "rate_display": "522.70"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 37.06,
+                  "rate_display": "37.06"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 30.17,
+                  "rate_display": "30.17"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 24.27,
+                  "rate_display": "24.27"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Sand, stone aggregate below 40 mm nominal size",
+              "code": "1.1.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 174.04,
+              "rate_display": "174.04",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 174.04,
+                  "rate_display": "174.04"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 196.66,
+                  "rate_display": "196.66"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 219.03,
+                  "rate_display": "219.03"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 240.51,
+                  "rate_display": "240.51"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 261.35,
+                  "rate_display": "261.35"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 18.53,
+                  "rate_display": "18.53"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 15.08,
+                  "rate_display": "15.08"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 12.14,
+                  "rate_display": "12.14"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Stone aggregate 40 mm nominal size and above",
+              "code": "1.1.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 189.17,
+              "rate_display": "189.17",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 189.17,
+                  "rate_display": "189.17"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 213.76,
+                  "rate_display": "213.76"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 238.08,
+                  "rate_display": "238.08"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 261.42,
+                  "rate_display": "261.42"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 284.07,
+                  "rate_display": "284.07"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 20.14,
+                  "rate_display": "20.14"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 16.4,
+                  "rate_display": "16.40"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 13.19,
+                  "rate_display": "13.19"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Soling stone",
+              "code": "1.1.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 1,
+              "unit": "cum",
+              "rate": 204.75,
+              "rate_display": "204.75",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 204.75,
+                  "rate_display": "204.75"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 231.36,
+                  "rate_display": "231.36"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 257.69,
+                  "rate_display": "257.69"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 282.95,
+                  "rate_display": "282.95"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 307.47,
+                  "rate_display": "307.47"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 21.8,
+                  "rate_display": "21.80"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 17.75,
+                  "rate_display": "17.75"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 14.28,
+                  "rate_display": "14.28"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Bricks",
+              "code": "1.1.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 1,
+              "unit": "1000 nos",
+              "rate": 464.11,
+              "rate_display": "464.11",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 464.11,
+                  "rate_display": "464.11"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 524.42,
+                  "rate_display": "524.42"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 584.09,
+                  "rate_display": "584.09"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 641.36,
+                  "rate_display": "641.36"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 696.93,
+                  "rate_display": "696.93"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 49.41,
+                  "rate_display": "49.41"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 40.22,
+                  "rate_display": "40.22"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 32.36,
+                  "rate_display": "32.36"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Brick Tiles",
+              "code": "1.1.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 1,
+              "unit": "1000 nos",
+              "rate": 278.46,
+              "rate_display": "278.46",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 278.46,
+                  "rate_display": "278.46"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 314.65,
+                  "rate_display": "314.65"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 350.45,
+                  "rate_display": "350.45"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 384.81,
+                  "rate_display": "384.81"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 418.16,
+                  "rate_display": "418.16"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 29.65,
+                  "rate_display": "29.65"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 24.13,
+                  "rate_display": "24.13"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 19.42,
+                  "rate_display": "19.42"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Cement, stone blocks, G.I., C.I., A.C., & C.C. pipes below 100 mm dia and other heavy materials",
+              "code": "1.1.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 1,
+              "unit": "tonne",
+              "rate": 154.7,
+              "rate_display": "154.70",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 154.7,
+                  "rate_display": "154.70"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 174.81,
+                  "rate_display": "174.81"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 194.7,
+                  "rate_display": "194.70"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 213.79,
+                  "rate_display": "213.79"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 232.31,
+                  "rate_display": "232.31"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 16.47,
+                  "rate_display": "16.47"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 13.41,
+                  "rate_display": "13.41"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 10.79,
+                  "rate_display": "10.79"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 1,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Steel",
+              "code": "1.1.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 81,
+              "unit": "tonne",
+              "rate": 154.7,
+              "rate_display": "154.70",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 154.7,
+                  "rate_display": "154.70"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 174.81,
+                  "rate_display": "174.81"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 194.7,
+                  "rate_display": "194.70"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 213.79,
+                  "rate_display": "213.79"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 232.31,
+                  "rate_display": "232.31"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 16.47,
+                  "rate_display": "16.47"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 13.41,
+                  "rate_display": "13.41"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 10.79,
+                  "rate_display": "10.79"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 81,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Timber",
+              "code": "1.1.12",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 81,
+              "unit": "cum",
+              "rate": 198.9,
+              "rate_display": "198.90",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 198.9,
+                  "rate_display": "198.90"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 224.75,
+                  "rate_display": "224.75"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 250.32,
+                  "rate_display": "250.32"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 274.87,
+                  "rate_display": "274.87"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 298.68,
+                  "rate_display": "298.68"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 21.18,
+                  "rate_display": "21.18"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 17.24,
+                  "rate_display": "17.24"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 13.87,
+                  "rate_display": "13.87"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 81,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Tar Bitumen",
+              "code": "1.1.13",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 81,
+              "unit": "tonne",
+              "rate": 174.04,
+              "rate_display": "174.04",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 174.04,
+                  "rate_display": "174.04"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 196.66,
+                  "rate_display": "196.66"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 219.03,
+                  "rate_display": "219.03"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 240.51,
+                  "rate_display": "240.51"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 261.35,
+                  "rate_display": "261.35"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 18.53,
+                  "rate_display": "18.53"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 15.08,
+                  "rate_display": "15.08"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 12.14,
+                  "rate_display": "12.14"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 81,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Solvent, diesel",
+              "code": "1.1.14",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 81,
+              "unit": "quintal",
+              "rate": 17.4,
+              "rate_display": "17.40",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 17.4,
+                  "rate_display": "17.40"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 19.67,
+                  "rate_display": "19.67"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 21.9,
+                  "rate_display": "21.90"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 24.05,
+                  "rate_display": "24.05"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 26.13,
+                  "rate_display": "26.13"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 1.85,
+                  "rate_display": "1.85"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 1.51,
+                  "rate_display": "1.51"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 1.21,
+                  "rate_display": "1.21"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 81,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Steam coal",
+              "code": "1.1.15",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 81,
+              "unit": "tonne",
+              "rate": 198.9,
+              "rate_display": "198.90",
+              "rates": [
+                {
+                  "context": "1_km",
+                  "label": "1 km",
+                  "order_index": 0,
+                  "rate": 198.9,
+                  "rate_display": "198.90"
+                },
+                {
+                  "context": "2_km",
+                  "label": "2 km",
+                  "order_index": 1,
+                  "rate": 224.75,
+                  "rate_display": "224.75"
+                },
+                {
+                  "context": "3_km",
+                  "label": "3 km",
+                  "order_index": 2,
+                  "rate": 250.32,
+                  "rate_display": "250.32"
+                },
+                {
+                  "context": "4_km",
+                  "label": "4 km",
+                  "order_index": 3,
+                  "rate": 274.87,
+                  "rate_display": "274.87"
+                },
+                {
+                  "context": "5_km",
+                  "label": "5 km",
+                  "order_index": 4,
+                  "rate": 298.68,
+                  "rate_display": "298.68"
+                },
+                {
+                  "context": "beyond_5_to_10_km_per_km",
+                  "label": "Beyond 5 km upto 10 km per km",
+                  "order_index": 5,
+                  "rate": 21.18,
+                  "rate_display": "21.18"
+                },
+                {
+                  "context": "beyond_10_to_20_km_per_km",
+                  "label": "Beyond 10 km upto 20 km per km",
+                  "order_index": 6,
+                  "rate": 17.24,
+                  "rate_display": "17.24"
+                },
+                {
+                  "context": "beyond_20_km_per_addl_km",
+                  "label": "Beyond 20 km per addl. km",
+                  "order_index": 7,
+                  "rate": 13.87,
+                  "rate_display": "13.87"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 81,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "group",
+              "title": "S.W. pipe",
+              "code": "1.1.16",
+              "children_count": 10,
+              "order_index": 15,
+              "source_page": 81,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "100 mm dia",
+                  "code": "1.1.16.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 0,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 232.05,
+                  "rate_display": "232.05",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 232.05,
+                      "rate_display": "232.05"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 262.21,
+                      "rate_display": "262.21"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 292.04,
+                      "rate_display": "292.04"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 320.68,
+                      "rate_display": "320.68"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 348.46,
+                      "rate_display": "348.46"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 24.71,
+                      "rate_display": "24.71"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 20.11,
+                      "rate_display": "20.11"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 16.18,
+                      "rate_display": "16.18"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "150 mm dia",
+                  "code": "1.1.16.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 1,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 464.11,
+                  "rate_display": "464.11",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 464.11,
+                      "rate_display": "464.11"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 524.42,
+                      "rate_display": "524.42"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 584.09,
+                      "rate_display": "584.09"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 641.36,
+                      "rate_display": "641.36"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 696.93,
+                      "rate_display": "696.93"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 49.41,
+                      "rate_display": "49.41"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 40.22,
+                      "rate_display": "40.22"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 32.36,
+                      "rate_display": "32.36"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm dia",
+                  "code": "1.1.16.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 2,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 773.51,
+                  "rate_display": "773.51",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 773.51,
+                      "rate_display": "773.51"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 874.04,
+                      "rate_display": "874.04"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 973.48,
+                      "rate_display": "973.48"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 1068.93,
+                      "rate_display": "1068.93"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 1161.55,
+                      "rate_display": "1161.55"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 82.35,
+                      "rate_display": "82.35"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 67.04,
+                      "rate_display": "67.04"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 53.94,
+                      "rate_display": "53.94"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "250 mm dia",
+                  "code": "1.1.16.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 3,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 1326.02,
+                  "rate_display": "1326.02",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 1326.02,
+                      "rate_display": "1326.02"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 1498.35,
+                      "rate_display": "1498.35"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 1668.82,
+                      "rate_display": "1668.82"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 1832.44,
+                      "rate_display": "1832.44"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 1991.22,
+                      "rate_display": "1991.22"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 141.18,
+                      "rate_display": "141.18"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 114.92,
+                      "rate_display": "114.92"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 92.47,
+                      "rate_display": "92.47"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "300 mm dia",
+                  "code": "1.1.16.6",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 4,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 1657.53,
+                  "rate_display": "1657.53",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 1657.53,
+                      "rate_display": "1657.53"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 1872.94,
+                      "rate_display": "1872.94"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 2086.03,
+                      "rate_display": "2086.03"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 2290.56,
+                      "rate_display": "2290.56"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 2489.03,
+                      "rate_display": "2489.03"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 176.47,
+                      "rate_display": "176.47"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 143.66,
+                      "rate_display": "143.66"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 115.59,
+                      "rate_display": "115.59"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "350 mm dia",
+                  "code": "1.1.16.7",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 5,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 2320.54,
+                  "rate_display": "2320.54",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 2320.54,
+                      "rate_display": "2320.54"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 2622.11,
+                      "rate_display": "2622.11"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 2920.44,
+                      "rate_display": "2920.44"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 3206.78,
+                      "rate_display": "3206.78"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 3484.64,
+                      "rate_display": "3484.64"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 247.06,
+                      "rate_display": "247.06"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 201.12,
+                      "rate_display": "201.12"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 161.82,
+                      "rate_display": "161.82"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "400 mm dia",
+                  "code": "1.1.16.8",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 6,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 3315.06,
+                  "rate_display": "3315.06",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 3315.06,
+                      "rate_display": "3315.06"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 3745.87,
+                      "rate_display": "3745.87"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 4172.06,
+                      "rate_display": "4172.06"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 4581.11,
+                      "rate_display": "4581.11"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 4978.05,
+                      "rate_display": "4978.05"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 352.94,
+                      "rate_display": "352.94"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 287.31,
+                      "rate_display": "287.31"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 231.17,
+                      "rate_display": "231.17"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "450 mm dia",
+                  "code": "1.1.16.9",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 7,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 4219.17,
+                  "rate_display": "4219.17",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 4219.17,
+                      "rate_display": "4219.17"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 4767.48,
+                      "rate_display": "4767.48"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 5309.9,
+                      "rate_display": "5309.90"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 5830.5,
+                      "rate_display": "5830.50"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 6335.71,
+                      "rate_display": "6335.71"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 449.2,
+                      "rate_display": "449.20"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 365.67,
+                      "rate_display": "365.67"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 294.22,
+                      "rate_display": "294.22"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "500 mm dia",
+                  "code": "1.1.16.10",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 8,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 4641.08,
+                  "rate_display": "4641.08",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 4641.08,
+                      "rate_display": "4641.08"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 5244.22,
+                      "rate_display": "5244.22"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 5840.89,
+                      "rate_display": "5840.89"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 6413.56,
+                      "rate_display": "6413.56"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 6969.28,
+                      "rate_display": "6969.28"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 494.12,
+                      "rate_display": "494.12"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 402.24,
+                      "rate_display": "402.24"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 323.64,
+                      "rate_display": "323.64"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "600 mm dia",
+                  "code": "1.1.16.11",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 9,
+                  "source_page": 81,
+                  "unit": "100 metre",
+                  "rate": 5801.35,
+                  "rate_display": "5801.35",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 5801.35,
+                      "rate_display": "5801.35"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 6555.28,
+                      "rate_display": "6555.28"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 7301.11,
+                      "rate_display": "7301.11"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 8016.94,
+                      "rate_display": "8016.94"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 8711.59,
+                      "rate_display": "8711.59"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 617.65,
+                      "rate_display": "617.65"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 502.79,
+                      "rate_display": "502.79"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 404.55,
+                      "rate_display": "404.55"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 81,
+                      "order_index": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_type": "group",
+              "title": "R.C.C. pipe, A.C. pipes, steel cylinder, R.C. pipes, S.C.I. pipes, C.I. pipes and unreinforced cement pipes",
+              "code": "1.1.17",
+              "children_count": 12,
+              "order_index": 16,
+              "source_page": 81,
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "100 mm dia",
+                  "code": "1.1.17.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 0,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 380.42,
+                  "rate_display": "380.42",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 380.42,
+                      "rate_display": "380.42"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 429.85,
+                      "rate_display": "429.85"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 478.76,
+                      "rate_display": "478.76"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 525.7,
+                      "rate_display": "525.70"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 571.25,
+                      "rate_display": "571.25"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 40.5,
+                      "rate_display": "40.50"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 32.97,
+                      "rate_display": "32.97"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 26.53,
+                      "rate_display": "26.53"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "125 mm dia",
+                  "code": "1.1.17.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 1,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 508.15,
+                  "rate_display": "508.15",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 508.15,
+                      "rate_display": "508.15"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 574.19,
+                      "rate_display": "574.19"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 639.51,
+                      "rate_display": "639.51"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 702.21,
+                      "rate_display": "702.21"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 763.06,
+                      "rate_display": "763.06"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 54.1,
+                      "rate_display": "54.10"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 44.04,
+                      "rate_display": "44.04"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 35.43,
+                      "rate_display": "35.43"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "150 mm dia",
+                  "code": "1.1.17.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 2,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 634.03,
+                  "rate_display": "634.03",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 634.03,
+                      "rate_display": "634.03"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 716.42,
+                      "rate_display": "716.42"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 797.94,
+                      "rate_display": "797.94"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 876.17,
+                      "rate_display": "876.17"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 952.09,
+                      "rate_display": "952.09"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 67.5,
+                      "rate_display": "67.50"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 54.95,
+                      "rate_display": "54.95"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 44.21,
+                      "rate_display": "44.21"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm dia",
+                  "code": "1.1.17.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 3,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 1031.35,
+                  "rate_display": "1031.35",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 1031.35,
+                      "rate_display": "1031.35"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 1165.38,
+                      "rate_display": "1165.38"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 1297.97,
+                      "rate_display": "1297.97"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 1425.23,
+                      "rate_display": "1425.23"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 1548.73,
+                      "rate_display": "1548.73"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 109.8,
+                      "rate_display": "109.80"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 89.39,
+                      "rate_display": "89.39"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 71.92,
+                      "rate_display": "71.92"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "250 mm dia",
+                  "code": "1.1.17.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 4,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 1465.6,
+                  "rate_display": "1465.60",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 1465.6,
+                      "rate_display": "1465.60"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 1656.07,
+                      "rate_display": "1656.07"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 1844.49,
+                      "rate_display": "1844.49"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 2025.33,
+                      "rate_display": "2025.33"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 2200.82,
+                      "rate_display": "2200.82"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 156.04,
+                      "rate_display": "156.04"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 127.02,
+                      "rate_display": "127.02"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 102.2,
+                      "rate_display": "102.20"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "300 mm dia",
+                  "code": "1.1.17.6",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 5,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 1811.51,
+                  "rate_display": "1811.51",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 1811.51,
+                      "rate_display": "1811.51"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 2046.93,
+                      "rate_display": "2046.93"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 2279.81,
+                      "rate_display": "2279.81"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 2503.34,
+                      "rate_display": "2503.34"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 2720.25,
+                      "rate_display": "2720.25"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 192.86,
+                      "rate_display": "192.86"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 157,
+                      "rate_display": "157.00"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 126.32,
+                      "rate_display": "126.32"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "350 mm dia",
+                  "code": "1.1.17.7",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 6,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 2536.11,
+                  "rate_display": "2536.11",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 2536.11,
+                      "rate_display": "2536.11"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 2865.7,
+                      "rate_display": "2865.70"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 3191.74,
+                      "rate_display": "3191.74"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 3504.68,
+                      "rate_display": "3504.68"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 3808.35,
+                      "rate_display": "3808.35"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 270.01,
+                      "rate_display": "270.01"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 219.8,
+                      "rate_display": "219.80"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 176.85,
+                      "rate_display": "176.85"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "400 mm dia",
+                  "code": "1.1.17.8",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 7,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 3458.33,
+                  "rate_display": "3458.33",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 3458.33,
+                      "rate_display": "3458.33"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 3907.77,
+                      "rate_display": "3907.77"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 4352.37,
+                      "rate_display": "4352.37"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 4779.1,
+                      "rate_display": "4779.10"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 5193.2,
+                      "rate_display": "5193.20"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 368.2,
+                      "rate_display": "368.20"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 299.73,
+                      "rate_display": "299.73"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 241.16,
+                      "rate_display": "241.16"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "450 mm & 500 mm dia",
+                  "code": "1.1.17.9",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 8,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 4226.85,
+                  "rate_display": "4226.85",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 4226.85,
+                      "rate_display": "4226.85"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 4776.16,
+                      "rate_display": "4776.16"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 5319.57,
+                      "rate_display": "5319.57"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 5841.13,
+                      "rate_display": "5841.13"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 6347.25,
+                      "rate_display": "6347.25"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 450.02,
+                      "rate_display": "450.02"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 366.33,
+                      "rate_display": "366.33"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 294.75,
+                      "rate_display": "294.75"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "600, 700, 750 & 800 mm dia",
+                  "code": "1.1.17.10",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 9,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 6340.28,
+                  "rate_display": "6340.28",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 6340.28,
+                      "rate_display": "6340.28"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 7164.24,
+                      "rate_display": "7164.24"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 7979.35,
+                      "rate_display": "7979.35"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 8761.69,
+                      "rate_display": "8761.69"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 9520.87,
+                      "rate_display": "9520.87"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 675.03,
+                      "rate_display": "675.03"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 549.5,
+                      "rate_display": "549.50"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 442.13,
+                      "rate_display": "442.13"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "900 mm dia",
+                  "code": "1.1.17.11",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 10,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 9510.41,
+                  "rate_display": "9510.41",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 9510.41,
+                      "rate_display": "9510.41"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 10746.36,
+                      "rate_display": "10746.36"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 11969.03,
+                      "rate_display": "11969.03"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 13142.53,
+                      "rate_display": "13142.53"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 14281.3,
+                      "rate_display": "14281.30"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 1012.54,
+                      "rate_display": "1012.54"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 824.25,
+                      "rate_display": "824.25"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 663.19,
+                      "rate_display": "663.19"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                },
+                {
+                  "node_type": "item",
+                  "title": "1000, 1100 & 1200 mm dia",
+                  "code": "1.1.17.12",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 11,
+                  "source_page": 82,
+                  "unit": "100 metre",
+                  "rate": 12680.55,
+                  "rate_display": "12680.55",
+                  "rates": [
+                    {
+                      "context": "1_km",
+                      "label": "1 km",
+                      "order_index": 0,
+                      "rate": 12680.55,
+                      "rate_display": "12680.55"
+                    },
+                    {
+                      "context": "2_km",
+                      "label": "2 km",
+                      "order_index": 1,
+                      "rate": 14328.48,
+                      "rate_display": "14328.48"
+                    },
+                    {
+                      "context": "3_km",
+                      "label": "3 km",
+                      "order_index": 2,
+                      "rate": 15958.7,
+                      "rate_display": "15958.70"
+                    },
+                    {
+                      "context": "4_km",
+                      "label": "4 km",
+                      "order_index": 3,
+                      "rate": 17523.38,
+                      "rate_display": "17523.38"
+                    },
+                    {
+                      "context": "5_km",
+                      "label": "5 km",
+                      "order_index": 4,
+                      "rate": 19041.74,
+                      "rate_display": "19041.74"
+                    },
+                    {
+                      "context": "beyond_5_to_10_km_per_km",
+                      "label": "Beyond 5 km upto 10 km per km",
+                      "order_index": 5,
+                      "rate": 1350.05,
+                      "rate_display": "1350.05"
+                    },
+                    {
+                      "context": "beyond_10_to_20_km_per_km",
+                      "label": "Beyond 10 km upto 20 km per km",
+                      "order_index": 6,
+                      "rate": 1099,
+                      "rate_display": "1099.00"
+                    },
+                    {
+                      "context": "beyond_20_km_per_addl_km",
+                      "label": "Beyond 20 km per addl. km",
+                      "order_index": 7,
+                      "rate": 884.26,
+                      "rate_display": "884.26"
+                    }
+                  ],
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                      "source_page": 82,
+                      "order_index": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Disposal of moorum/building rubbish/ malba/ similar unserviceable, dismantled or waste material by mechanical transport including loading, transporting, unloading to approved municipal dumping ground for lead upto 10 km for all lifts, complete as per directions of Engineer-in-charge.",
+              "code": "1.1.18",
+              "children_count": 0,
+              "children": [],
+              "order_index": 17,
+              "source_page": 82,
+              "unit": "cum",
+              "rate": 494.1,
+              "rate_display": "494.10",
+              "rates": [],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "Item to be applicable in urban areas having directions for restricted hours for movement/ plying of load carrying motor vehicle of 3.5 cum or more.",
+                  "source_page": 82,
+                  "order_index": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_type": "group",
+          "title": "By Manual Labour including loading, unloading and stacking for lead less than 0.50 KM",
+          "code": "1.2",
+          "children_count": 17,
+          "order_index": 1,
+          "source_page": 83,
+          "annotations": [
+            {
+              "type": "note",
+              "text": "These rates are inclusive of GST on work contract, Contractor's profit and overheads, Cess etc.",
+              "source_page": 83,
+              "order_index": 0
+            }
+          ],
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Lime, moorum, building rubbish",
+              "code": "1.2.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 0,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 227.18,
+              "rate_display": "227.18",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 227.18,
+                  "rate_display": "227.18"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 49.47,
+                  "rate_display": "49.47"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Earth",
+              "code": "1.2.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 283.98,
+              "rate_display": "283.98",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 283.98,
+                  "rate_display": "283.98"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 61.83,
+                  "rate_display": "61.83"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Manure or sludge",
+              "code": "1.2.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 246.94,
+              "rate_display": "246.94",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 246.94,
+                  "rate_display": "246.94"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 53.77,
+                  "rate_display": "53.77"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Excavated rock",
+              "code": "1.2.4",
+              "children_count": 0,
+              "children": [],
+              "order_index": 3,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 454.37,
+              "rate_display": "454.37",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 454.37,
+                  "rate_display": "454.37"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 98.93,
+                  "rate_display": "98.93"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Sand, stone aggregate below 40 mm nominal size",
+              "code": "1.2.5",
+              "children_count": 0,
+              "children": [],
+              "order_index": 4,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 283.98,
+              "rate_display": "283.98",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 283.98,
+                  "rate_display": "283.98"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 61.83,
+                  "rate_display": "61.83"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Stone aggregate 40 mm nominal size and above",
+              "code": "1.2.6",
+              "children_count": 0,
+              "children": [],
+              "order_index": 5,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 307.01,
+              "rate_display": "307.01",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 307.01,
+                  "rate_display": "307.01"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 66.84,
+                  "rate_display": "66.84"
+                }
+              ],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable to net quantities after deduction of prescribed percentage for voids mentioned in the specification under subhead \"Carriage of Materials\".",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "Soling stone",
+              "code": "1.2.7",
+              "children_count": 0,
+              "children": [],
+              "order_index": 6,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 334.09,
+              "rate_display": "334.09",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 334.09,
+                  "rate_display": "334.09"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 72.74,
+                  "rate_display": "72.74"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Bricks",
+              "code": "1.2.8",
+              "children_count": 0,
+              "children": [],
+              "order_index": 7,
+              "source_page": 83,
+              "unit": "1000 nos",
+              "rate": 530.1,
+              "rate_display": "530.10",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 530.1,
+                  "rate_display": "530.10"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 115.42,
+                  "rate_display": "115.42"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Brick Tiles",
+              "code": "1.2.9",
+              "children_count": 0,
+              "children": [],
+              "order_index": 8,
+              "source_page": 83,
+              "unit": "1000 nos",
+              "rate": 331.31,
+              "rate_display": "331.31",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 331.31,
+                  "rate_display": "331.31"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 72.14,
+                  "rate_display": "72.14"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Steam Coal",
+              "code": "1.2.10",
+              "children_count": 0,
+              "children": [],
+              "order_index": 9,
+              "source_page": 83,
+              "unit": "tonne",
+              "rate": 265.05,
+              "rate_display": "265.05",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 265.05,
+                  "rate_display": "265.05"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 57.71,
+                  "rate_display": "57.71"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Stone blocks, G.I., C.I. Stainless Steel pipes below 100 mm dia and other heavy material",
+              "code": "1.2.11",
+              "children_count": 0,
+              "children": [],
+              "order_index": 10,
+              "source_page": 83,
+              "unit": "tonne",
+              "rate": 207.34,
+              "rate_display": "207.34",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 207.34,
+                  "rate_display": "207.34"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 30.42,
+                  "rate_display": "30.42"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Cement",
+              "code": "1.2.12",
+              "children_count": 0,
+              "children": [],
+              "order_index": 11,
+              "source_page": 83,
+              "unit": "tonne",
+              "rate": 164.47,
+              "rate_display": "164.47",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 164.47,
+                  "rate_display": "164.47"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 24.13,
+                  "rate_display": "24.13"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Steel",
+              "code": "1.2.13",
+              "children_count": 0,
+              "children": [],
+              "order_index": 12,
+              "source_page": 83,
+              "unit": "tonne",
+              "rate": 353.24,
+              "rate_display": "353.24",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 353.24,
+                  "rate_display": "353.24"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 51.83,
+                  "rate_display": "51.83"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Timber",
+              "code": "1.2.14",
+              "children_count": 0,
+              "children": [],
+              "order_index": 13,
+              "source_page": 83,
+              "unit": "cum",
+              "rate": 227.09,
+              "rate_display": "227.09",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 227.09,
+                  "rate_display": "227.09"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 33.32,
+                  "rate_display": "33.32"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Tar, bitumen etc.",
+              "code": "1.2.15",
+              "children_count": 0,
+              "children": [],
+              "order_index": 14,
+              "source_page": 83,
+              "unit": "tonne",
+              "rate": 207.34,
+              "rate_display": "207.34",
+              "rates": [
+                {
+                  "context": "first_50_metres",
+                  "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                  "order_index": 0,
+                  "rate": 207.34,
+                  "rate_display": "207.34"
+                },
+                {
+                  "context": "each_additional_50m_lead",
+                  "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                  "order_index": 1,
+                  "rate": 30.42,
+                  "rate_display": "30.42"
+                }
+              ],
+              "annotations": []
+            },
+            {
+              "node_type": "group",
+              "title": "S.W. pipe",
+              "code": "1.2.16",
+              "children_count": 10,
+              "order_index": 15,
+              "source_page": 83,
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The length of S.W. pipes will be measured exclusive of the internal depth of sockets.",
+                  "source_page": 83,
+                  "order_index": 0
+                }
+              ],
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "100 mm dia",
+                  "code": "1.2.16.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 0,
+                  "source_page": 83,
+                  "unit": "100 metre",
+                  "rate": 415.04,
+                  "rate_display": "415.04",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 415.04,
+                      "rate_display": "415.04"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 60.9,
+                      "rate_display": "60.90"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "150 mm dia",
+                  "code": "1.2.16.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 1,
+                  "source_page": 83,
+                  "unit": "100 metre",
+                  "rate": 682.23,
+                  "rate_display": "682.23",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 682.23,
+                      "rate_display": "682.23"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 100.11,
+                      "rate_display": "100.11"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm dia",
+                  "code": "1.2.16.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 2,
+                  "source_page": 83,
+                  "unit": "100 metre",
+                  "rate": 954.71,
+                  "rate_display": "954.71",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 954.71,
+                      "rate_display": "954.71"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 140.09,
+                      "rate_display": "140.09"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "250 mm dia",
+                  "code": "1.2.16.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 3,
+                  "source_page": 83,
+                  "unit": "100 metre",
+                  "rate": 1589.6,
+                  "rate_display": "1589.60",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 1589.6,
+                      "rate_display": "1589.60"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 233.26,
+                      "rate_display": "233.26"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "300 mm dia",
+                  "code": "1.2.16.6",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 4,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 2270.85,
+                  "rate_display": "2270.85",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 2270.85,
+                      "rate_display": "2270.85"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 333.22,
+                      "rate_display": "333.22"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "350 mm dia",
+                  "code": "1.2.16.7",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 5,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 3179.19,
+                  "rate_display": "3179.19",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 3179.19,
+                      "rate_display": "3179.19"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 466.51,
+                      "rate_display": "466.51"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "400 mm dia",
+                  "code": "1.2.16.8",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 6,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 3973.99,
+                  "rate_display": "3973.99",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 3973.99,
+                      "rate_display": "3973.99"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 583.14,
+                      "rate_display": "583.14"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "450 mm dia",
+                  "code": "1.2.16.9",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 7,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 4816.96,
+                  "rate_display": "4816.96",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 4816.96,
+                      "rate_display": "4816.96"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 706.84,
+                      "rate_display": "706.84"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "500 mm dia",
+                  "code": "1.2.16.10",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 8,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 5887.4,
+                  "rate_display": "5887.40",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 5887.4,
+                      "rate_display": "5887.40"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 863.91,
+                      "rate_display": "863.91"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "600 mm dia",
+                  "code": "1.2.16.11",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 9,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 7225.44,
+                  "rate_display": "7225.44",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 7225.44,
+                      "rate_display": "7225.44"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 1060.25,
+                      "rate_display": "1060.25"
+                    }
+                  ],
+                  "annotations": []
+                }
+              ]
+            },
+            {
+              "node_type": "group",
+              "title": "R.C.C. pipes, Steel cylinder, R.C. pipes, C.I. pipes and unreinforced cement pipes",
+              "code": "1.2.17",
+              "children_count": 10,
+              "order_index": 16,
+              "source_page": 84,
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The length of the flanged or plain ended concrete, R.C.C. pipes, Steel cylinders, R.C. pipes and C.I. pipes shall be measured overall. The length of socketed pipes shall be measured exclusive of internal depth of sockets.",
+                  "source_page": 84,
+                  "order_index": 0
+                }
+              ],
+              "children": [
+                {
+                  "node_type": "item",
+                  "title": "100 mm dia",
+                  "code": "1.2.17.1",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 0,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 560.37,
+                  "rate_display": "560.37",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 560.37,
+                      "rate_display": "560.37"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 82.23,
+                      "rate_display": "82.23"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "125 mm dia",
+                  "code": "1.2.17.2",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 1,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 685.66,
+                  "rate_display": "685.66",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 685.66,
+                      "rate_display": "685.66"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 100.61,
+                      "rate_display": "100.61"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "150 mm dia",
+                  "code": "1.2.17.3",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 2,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 789.53,
+                  "rate_display": "789.53",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 789.53,
+                      "rate_display": "789.53"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 115.86,
+                      "rate_display": "115.86"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "200 mm dia",
+                  "code": "1.2.17.4",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 3,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 1184.79,
+                  "rate_display": "1184.79",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 1184.79,
+                      "rate_display": "1184.79"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 173.86,
+                      "rate_display": "173.86"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "250 mm dia",
+                  "code": "1.2.17.5",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 4,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 2082.44,
+                  "rate_display": "2082.44",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 2082.44,
+                      "rate_display": "2082.44"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 305.58,
+                      "rate_display": "305.58"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "300 mm dia",
+                  "code": "1.2.17.6",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 5,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 2605.9,
+                  "rate_display": "2605.90",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 2605.9,
+                      "rate_display": "2605.90"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 382.39,
+                      "rate_display": "382.39"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "350 mm dia",
+                  "code": "1.2.17.7",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 6,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 3725.62,
+                  "rate_display": "3725.62",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 3725.62,
+                      "rate_display": "3725.62"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 546.69,
+                      "rate_display": "546.69"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "400 mm dia",
+                  "code": "1.2.17.8",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 7,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 4335.26,
+                  "rate_display": "4335.26",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 4335.26,
+                      "rate_display": "4335.26"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 636.15,
+                      "rate_display": "636.15"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "450 mm & 500 mm dia",
+                  "code": "1.2.17.9",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 8,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 5780.35,
+                  "rate_display": "5780.35",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 5780.35,
+                      "rate_display": "5780.35"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 848.2,
+                      "rate_display": "848.20"
+                    }
+                  ],
+                  "annotations": []
+                },
+                {
+                  "node_type": "item",
+                  "title": "600, 700, 750 & 800 mm dia",
+                  "code": "1.2.17.10",
+                  "children_count": 0,
+                  "children": [],
+                  "order_index": 9,
+                  "source_page": 84,
+                  "unit": "100 metre",
+                  "rate": 6358.39,
+                  "rate_display": "6358.39",
+                  "rates": [
+                    {
+                      "context": "first_50_metres",
+                      "label": "Cost for first 50 metres (loading, unloading & stacking)",
+                      "order_index": 0,
+                      "rate": 6358.39,
+                      "rate_display": "6358.39"
+                    },
+                    {
+                      "context": "each_additional_50m_lead",
+                      "label": "Every additional lead of 50 m or part thereof beyond 1st 50 m (upto 9 such additional leads)",
+                      "order_index": 1,
+                      "rate": 933.02,
+                      "rate_display": "933.02"
+                    }
+                  ],
+                  "annotations": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "node_type": "item",
+          "title": "Loading in or unloading cement from the railway wagons at siding and carrying the same from or into godowns adjacent to the siding, including stacking the same properly in rows upto any height as per direction of Engineer-in-charge, sweeping the wagons and screening the swept cement and filling in bags complete.",
+          "code": "1.3",
+          "children_count": 0,
+          "children": [],
+          "order_index": 2,
+          "source_page": 85,
+          "unit": "tonne",
+          "rate": 169.4,
+          "rate_display": "169.40",
+          "rates": [],
+          "annotations": []
+        },
+        {
+          "node_type": "group",
+          "title": "Loading in or unloading from the railway wagons as per direction of Engineer-in-charge :",
+          "code": "1.4",
+          "children_count": 3,
+          "order_index": 3,
+          "source_page": 85,
+          "children": [
+            {
+              "node_type": "item",
+              "title": "Steel",
+              "code": "1.4.1",
+              "children_count": 0,
+              "children": [],
+              "order_index": 0,
+              "source_page": 85,
+              "unit": "tonne",
+              "rate": 251.15,
+              "rate_display": "251.15",
+              "rates": [],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "The rates will be applicable in all cases whether materials are unloaded or loaded from Railway siding or directly unloaded on or loaded from transport.",
+                  "source_page": 85,
+                  "order_index": 0
+                }
+              ]
+            },
+            {
+              "node_type": "item",
+              "title": "G.I., C.I., R.C.C. or C.C. pipes upto 500 mm dia and similar heavy materials",
+              "code": "1.4.2",
+              "children_count": 0,
+              "children": [],
+              "order_index": 1,
+              "source_page": 85,
+              "unit": "tonne",
+              "rate": 148.8,
+              "rate_display": "148.80",
+              "rates": [],
+              "annotations": []
+            },
+            {
+              "node_type": "item",
+              "title": "Heavy materials where each piece or bundle, crate or case weighs more than one tonne and R.C.C., C.I. and concrete pipes above 500 mm dia.",
+              "code": "1.4.3",
+              "children_count": 0,
+              "children": [],
+              "order_index": 2,
+              "source_page": 85,
+              "unit": "tonne",
+              "rate": 263.15,
+              "rate_display": "263.15",
+              "rates": [],
+              "annotations": [
+                {
+                  "type": "note",
+                  "text": "No deduction shall be made from carriage rates for direct unloading or loading.",
+                  "source_page": 85,
+                  "order_index": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

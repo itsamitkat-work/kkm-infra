@@ -267,14 +267,14 @@ if [[ ! -f "$BASIC_RATES_JSON" ]]; then
 fi
 
 DSR_VERSION_ID="$(
-  curl -sfS "${API_URL}/rest/v1/schedule_source_versions?select=id,name,schedule_sources!inner(name)&schedule_sources.name=eq.cpwd_dsr&name=eq.dsr_2023&limit=1" \
+  curl -sfS "${API_URL}/rest/v1/schedule_source_versions?select=id,name,schedule_sources!inner(name)&schedule_sources.name=eq.DSR&name=eq.dsr_2023&limit=1" \
     -H "apikey: ${SERVICE_ROLE_KEY}" \
     -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
     | jq -r '.[0].id // empty'
 )"
 
 if [[ -z "${DSR_VERSION_ID:-}" ]]; then
-  echo "seed-app: could not resolve DSR schedule_source_version (cpwd_dsr / dsr_2023)" >&2
+  echo "seed-app: could not resolve DSR schedule_source_version (DSR / dsr_2023); check supabase/seed/manifest.json schedule_source.name" >&2
   exit 1
 fi
 
