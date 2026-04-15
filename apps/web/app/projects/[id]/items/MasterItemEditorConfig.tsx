@@ -8,7 +8,7 @@ import {
 } from '../components/master-item-options';
 import { useMasterProjectItemsQuery } from '@/app/(app)/projects/hooks/use-master-project-items-query';
 import React from 'react';
-import { useClients } from '@/hooks/clients/use-clients';
+import { useScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
 import { useDebouncedSearch } from '@/hooks/use-debounced-search';
 import { useMasterItemSelection } from './use-master-item-selection';
 
@@ -114,17 +114,18 @@ export const MasterItemEditorConfig = ({
     []
   );
 
-  const { data: clients } = useClients({
-    search: debouncedSearchTerm,
-    searchField: config.searchField,
-  });
+  const { data: scheduleSources = [] } = useScheduleSourcesList(
+    debouncedSearchTerm
+  );
 
   const scheduleFilterOptions = React.useMemo(
     () =>
-      Array.from(new Set(clients.map((client) => client.scheduleName))).map(
-        (label) => ({ id: label, label })
-      ),
-    [clients]
+      Array.from(
+        new Set(
+          scheduleSources.map((s) => s.display_name || s.name).filter(Boolean)
+        )
+      ).map((label) => ({ id: label, label })),
+    [scheduleSources]
   );
 
   // Handle selection change

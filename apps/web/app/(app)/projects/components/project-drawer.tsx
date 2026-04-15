@@ -24,7 +24,7 @@ import {
   useCreateProject,
   useUpdateProject,
 } from '@/hooks/projects/use-project-mutations';
-import { fetchClientOptions } from '@/hooks/clients/use-clients';
+import { fetchScheduleSourceOptions } from '@/hooks/schedules/use-schedule-sources';
 import { useProjectStatus } from '../hooks/use-project-status';
 import { getStatusConfig } from '@/hooks/projects/use-project-status';
 import { StatusLabel } from '@/components/ui/status-label';
@@ -444,7 +444,7 @@ export function ProjectDrawer({
               statusOptions={statusOptions}
             />
             <LocationDetailsSection control={form.control} readOnly={isRead} />
-            <ClientInformationSection
+            <ScheduleSourceInformationSection
               control={form.control}
               readOnly={isRead}
               form={form}
@@ -635,7 +635,7 @@ const LocationDetailsSection = React.memo(
   )
 );
 
-const ClientInformationSection = React.memo(
+const ScheduleSourceInformationSection = React.memo(
   ({
     control,
     readOnly,
@@ -646,17 +646,17 @@ const ClientInformationSection = React.memo(
     form: ReturnType<typeof useForm<ProjectFormValues>>;
   }) => {
     return (
-      <FormSection title='Client Information'>
+      <FormSection title='Schedule source'>
         <FormSearchableComboboxField
           control={control}
           name='client'
-          label='Client'
-          placeholder='Select client'
-          fetchOptions={fetchClientOptions}
+          label='Schedule'
+          placeholder='Select schedule source'
+          fetchOptions={fetchScheduleSourceOptions}
           required
           readOnly={readOnly}
-          searchPlaceholder='Search clients...'
-          emptyMessage='No clients found'
+          searchPlaceholder='Search schedules…'
+          emptyMessage='No schedules found'
           onSelect={(option) => {
             if (!readOnly) {
               const optionWithExtras = option as SearchableOption & {
@@ -841,5 +841,6 @@ const ProjectTeamsSection = React.memo(
 SanctionAmountField.displayName = 'SanctionAmountField';
 BasicInformationSection.displayName = 'BasicInformationSection';
 LocationDetailsSection.displayName = 'LocationDetailsSection';
-ClientInformationSection.displayName = 'ClientInformationSection';
+ScheduleSourceInformationSection.displayName =
+  'ScheduleSourceInformationSection';
 ProjectTeamsSection.displayName = 'ProjectTeamsSection';

@@ -17,6 +17,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 
+const FORM_SELECT_CLEAR_SENTINEL = '__form_select_clear__';
+
 interface SelectOption {
   value: string;
   label: string;
@@ -64,7 +66,11 @@ export function FormSelectField<
             {required && ' *'}
           </FormLabel>
           <Select
-            onValueChange={field.onChange}
+            onValueChange={(v) =>
+              field.onChange(
+                v === FORM_SELECT_CLEAR_SENTINEL ? '' : v
+              )
+            }
             value={
               field.value === undefined || field.value === null
                 ? ''
@@ -87,7 +93,9 @@ export function FormSelectField<
             </FormControl>
             <SelectContent>
               {!required && field.value && (
-                <SelectItem value=''>Clear selection</SelectItem>
+                <SelectItem value={FORM_SELECT_CLEAR_SENTINEL}>
+                  Clear selection
+                </SelectItem>
               )}
               {options.map((option) => (
                 <SelectItem key={option.value} value={option.value}>

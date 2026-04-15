@@ -93,7 +93,8 @@
         "items.read",
         "tenants.read",
         "roles.read",
-        "basic_rates.read"
+        "basic_rates.read",
+        "schedules.read"
       ]
     },
     {
@@ -107,7 +108,9 @@
         "audit.read",
         "alerts.read",
         "basic_rates.read",
-        "basic_rates.manage"
+        "basic_rates.manage",
+        "schedules.read",
+        "schedules.manage"
       ]
     }
   ]

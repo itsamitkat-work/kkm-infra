@@ -80,25 +80,22 @@ interface FormSearchableComboboxFieldProps<
  * />
  *
  * @example
- * // For dynamic fetching (like clients):
+ * // For dynamic fetching (e.g. schedule sources):
  * <FormSearchableComboboxField
  *   control={control}
  *   name="client"
  *   label="Client"
- *   fetchOptions={fetchClientOptions}
+ *   fetchOptions={fetchScheduleSourceOptions}
  *   getValue={(option) => ({ id: option.value, name: option.label })}
  *   getDisplayValue={(fieldValue) => fieldValue?.name || ""}
  *   getOptionValue={(fieldValue) => fieldValue?.id || ""}
  * />
  * @example
  * // Creating a fetchOptions function:
- * const fetchClientOptions = async (search: string, page: number) => {
- *   const data = await apiClient.get(`/clients?search=${search}&page=${page}`);
- *   return {
- *     options: data.items.map(c => ({ value: c.id, label: c.name })),
- *     hasNextPage: data.hasNextPage,
- *   };
- * };
+ * const fetchScheduleSourceOptions = async (search: string, page: number) => ({
+ *   options: [],
+ *   hasNextPage: false,
+ * });
  */
 export function FormSearchableComboboxField<
   TFieldValues extends FieldValues = FieldValues,

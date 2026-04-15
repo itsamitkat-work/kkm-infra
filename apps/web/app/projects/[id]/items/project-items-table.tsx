@@ -40,7 +40,7 @@ import { ProjectItemRowType } from '@/types/project-item';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { getColumns } from './project-items-columns';
 import { getProjectItemsFilters } from './project-items-filters';
-import { useClients } from '@/hooks/clients/use-clients';
+import { useScheduleSourcesForFilters } from '@/hooks/schedules/use-schedule-sources';
 import { toast } from 'sonner';
 
 interface ApiError {
@@ -249,20 +249,20 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
 
   const baseColumns = React.useMemo(() => getColumns(), []);
 
-  const { data: clients } = useClients();
+  const { data: scheduleSources = [] } = useScheduleSourcesForFilters();
 
-  const clientOptions = React.useMemo(
+  const scheduleFilterOptions = React.useMemo(
     () =>
-      clients.map((client) => ({
-        value: client.scheduleName,
-        label: client.scheduleName,
+      scheduleSources.map((s) => ({
+        value: s.display_name || s.name,
+        label: s.display_name || s.name,
       })),
-    [clients]
+    [scheduleSources]
   );
 
   const filters = React.useMemo(
-    () => getProjectItemsFilters(clientOptions),
-    [clientOptions]
+    () => getProjectItemsFilters(scheduleFilterOptions),
+    [scheduleFilterOptions]
   );
 
   const searchConfig = React.useMemo(

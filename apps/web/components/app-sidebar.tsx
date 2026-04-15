@@ -32,7 +32,6 @@ import {
   IconHome,
   IconShieldLock,
   IconUser,
-  IconUsers,
 } from '@tabler/icons-react';
 import { FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -40,6 +39,8 @@ import { useAuth } from '@/hooks/auth';
 import {
   BASIC_RATES_MANAGE,
   BASIC_RATES_READ,
+  SCHEDULES_MANAGE,
+  SCHEDULES_READ,
 } from '@/lib/authz-permission-keys';
 
 type NavItem = {
@@ -113,23 +114,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { permissions, roles, claims } = useAuth();
 
   const constructionToolsItems = React.useMemo((): NavItem[] => {
-    const items: NavItem[] = [
-      {
-        title: 'Clients',
-        url: '/clients',
-        icon: IconUsers,
-      },
-      {
-        title: 'Items Tree',
-        url: '/items-tree',
+    const items: NavItem[] = [];
+    const canSeeSchedules =
+      Boolean(claims?.is_system_admin) ||
+      permissions.includes(SCHEDULES_READ) ||
+      permissions.includes(SCHEDULES_MANAGE);
+    if (canSeeSchedules) {
+      items.push({
+        title: 'Schedules',
+        url: '/schedules',
         icon: IconFileText,
-      },
-      {
-        title: 'Items',
-        url: '/items',
-        icon: IconFileText,
-      },
-    ];
+      });
+    }
+    items.push({
+      title: 'Schedule Items',
+      url: '/schedule-items',
+      icon: IconFileText,
+    });
     const canSeeBasicRates =
       Boolean(claims?.is_system_admin) ||
       permissions.includes(BASIC_RATES_READ) ||
@@ -141,11 +142,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         icon: IconFileText,
       });
     }
-    items.push({
-      title: 'Factors',
-      url: '/factors',
-      icon: IconFileText,
-    });
     return items;
   }, [permissions, claims?.is_system_admin]);
 
