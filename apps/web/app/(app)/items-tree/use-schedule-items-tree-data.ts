@@ -5,7 +5,6 @@ import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import type {
   ScheduleAnnotationType,
   ScheduleItemAnnotation,
-  ScheduleSourceVersionOption,
   ScheduleTreeRow,
   ScheduleTreeSearchRow,
 } from './types';
@@ -59,24 +58,12 @@ function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
   };
 }
 
-export const SCHEDULE_VERSIONS_QUERY_KEY = ['schedule_source_versions'] as const;
-export const SCHEDULE_TREE_ROOTS_QUERY_KEY = ['schedule_tree_roots'] as const;
+export {
+  useScheduleSourceVersions,
+  SCHEDULE_SOURCE_VERSIONS_QUERY_KEY as SCHEDULE_VERSIONS_QUERY_KEY,
+} from '@/hooks/use-schedule-source-versions';
 
-export function useScheduleSourceVersions() {
-  return useQuery({
-    queryKey: SCHEDULE_VERSIONS_QUERY_KEY,
-    queryFn: async (): Promise<ScheduleSourceVersionOption[]> => {
-      const supabase = createSupabaseBrowserClient();
-      const { data, error } = await supabase
-        .from('schedule_source_versions')
-        .select('id, display_name, year, sort_order')
-        .order('sort_order', { ascending: true, nullsFirst: false })
-        .order('year', { ascending: false, nullsFirst: false });
-      if (error) throw error;
-      return (data ?? []) as ScheduleSourceVersionOption[];
-    },
-  });
-}
+export const SCHEDULE_TREE_ROOTS_QUERY_KEY = ['schedule_tree_roots'] as const;
 
 export function scheduleTreeRootsQueryKey(versionId: string | null) {
   return [...SCHEDULE_TREE_ROOTS_QUERY_KEY, versionId] as const;

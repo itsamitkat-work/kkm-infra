@@ -7,6 +7,211 @@ export type Json =
   | Json[]
 
 export type Database = {
+  authz: {
+    Tables: {
+      permissions: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          key: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key?: string
+        }
+        Relationships: []
+      }
+      role_permissions: {
+        Row: {
+          created_at: string
+          permission_id: string
+          role_id: string
+        }
+        Insert: {
+          created_at?: string
+          permission_id: string
+          role_id: string
+        }
+        Update: {
+          created_at?: string
+          permission_id?: string
+          role_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "role_permissions_permission_id_fkey"
+            columns: ["permission_id"]
+            isOneToOne: false
+            referencedRelation: "permissions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "role_permissions_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      roles: {
+        Row: {
+          created_at: string
+          id: string
+          is_system: boolean
+          name: string
+          slug: string
+          system_role_key: string | null
+          tenant_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_system?: boolean
+          name: string
+          slug: string
+          system_role_key?: string | null
+          tenant_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_system?: boolean
+          name?: string
+          slug?: string
+          system_role_key?: string | null
+          tenant_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "roles_system_role_key_fkey"
+            columns: ["system_role_key"]
+            isOneToOne: false
+            referencedRelation: "system_roles"
+            referencedColumns: ["key"]
+          },
+        ]
+      }
+      system_role_permissions: {
+        Row: {
+          created_at: string
+          permission_id: string
+          system_role_id: string
+        }
+        Insert: {
+          created_at?: string
+          permission_id: string
+          system_role_id: string
+        }
+        Update: {
+          created_at?: string
+          permission_id?: string
+          system_role_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "system_role_permissions_permission_id_fkey"
+            columns: ["permission_id"]
+            isOneToOne: false
+            referencedRelation: "permissions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "system_role_permissions_system_role_id_fkey"
+            columns: ["system_role_id"]
+            isOneToOne: false
+            referencedRelation: "system_roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      system_roles: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          key: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      tenant_member_roles: {
+        Row: {
+          created_at: string
+          role_id: string
+          tenant_member_id: string
+        }
+        Insert: {
+          created_at?: string
+          role_id: string
+          tenant_member_id: string
+        }
+        Update: {
+          created_at?: string
+          role_id?: string
+          tenant_member_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tenant_member_roles_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      bump_permission_version: {
+        Args: { p_tenant_member_id: string }
+        Returns: undefined
+      }
+      check_permission_version: { Args: never; Returns: boolean }
+      current_active_role: { Args: never; Returns: string }
+      current_session_id: { Args: never; Returns: string }
+      current_tenant_id: { Args: never; Returns: string }
+      has_permission: { Args: { p: string }; Returns: boolean }
+      is_account_locked: { Args: never; Returns: boolean }
+      is_session_valid: { Args: never; Returns: boolean }
+      is_system_admin: { Args: never; Returns: boolean }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   graphql_public: {
     Tables: {
       [_ in never]: never
@@ -118,6 +323,116 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: []
+      }
+      basic_rate_annotations: {
+        Row: {
+          basic_rate_id: string
+          created_at: string | null
+          id: string
+          order_index: number | null
+          raw_text: string
+          type: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Insert: {
+          basic_rate_id: string
+          created_at?: string | null
+          id?: string
+          order_index?: number | null
+          raw_text: string
+          type?: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Update: {
+          basic_rate_id?: string
+          created_at?: string | null
+          id?: string
+          order_index?: number | null
+          raw_text?: string
+          type?: Database["public"]["Enums"]["schedule_annotation_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "basic_rate_annotations_basic_rate_id_fkey"
+            columns: ["basic_rate_id"]
+            isOneToOne: false
+            referencedRelation: "basic_rates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      basic_rate_types: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      basic_rates: {
+        Row: {
+          basic_rate_type_id: string
+          code: string
+          created_at: string | null
+          description: string
+          id: string
+          rate: number
+          schedule_source_version_id: string
+          status: Database["public"]["Enums"]["record_status"] | null
+          unit: string
+          updated_at: string | null
+        }
+        Insert: {
+          basic_rate_type_id: string
+          code: string
+          created_at?: string | null
+          description: string
+          id?: string
+          rate: number
+          schedule_source_version_id: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          unit: string
+          updated_at?: string | null
+        }
+        Update: {
+          basic_rate_type_id?: string
+          code?: string
+          created_at?: string | null
+          description?: string
+          id?: string
+          rate?: number
+          schedule_source_version_id?: string
+          status?: Database["public"]["Enums"]["record_status"] | null
+          unit?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "basic_rates_basic_rate_type_id_fkey"
+            columns: ["basic_rate_type_id"]
+            isOneToOne: false
+            referencedRelation: "basic_rate_types"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "basic_rates_schedule_source_version_id_fkey"
+            columns: ["schedule_source_version_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_source_versions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       derived_units: {
         Row: {
@@ -236,6 +551,13 @@ export type Database = {
             referencedRelation: "schedule_items"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "schedule_item_annotations_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
         ]
       }
       schedule_item_attributes: {
@@ -287,6 +609,13 @@ export type Database = {
             referencedRelation: "schedule_items"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "schedule_item_attributes_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
         ]
       }
       schedule_item_rates: {
@@ -317,6 +646,13 @@ export type Database = {
             columns: ["schedule_item_id"]
             isOneToOne: false
             referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_item_rates_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
             referencedColumns: ["id"]
           },
         ]
@@ -401,6 +737,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "schedule_items_parent_item_id_fkey"
+            columns: ["parent_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "schedule_items_schedule_source_version_id_fkey"
             columns: ["schedule_source_version_id"]
             isOneToOne: false
@@ -457,6 +800,13 @@ export type Database = {
           year?: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "schedule_source_versions_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["schedule_source_id"]
+          },
           {
             foreignKeyName: "schedule_source_versions_schedule_source_id_fkey"
             columns: ["schedule_source_id"]
@@ -617,7 +967,80 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      schedule_items_tree: {
+        Row: {
+          code: string | null
+          created_at: string | null
+          depth: number | null
+          derived_unit_display_name: string | null
+          derived_unit_id: string | null
+          derived_unit_name: string | null
+          description: string | null
+          id: string | null
+          ingestion_batch_id: string | null
+          item_type: string | null
+          node_type: Database["public"]["Enums"]["schedule_node_type"] | null
+          order_index: number | null
+          parent_code: string | null
+          parent_description: string | null
+          parent_item_id: string | null
+          path: unknown
+          path_text: string | null
+          rate: number | null
+          root_item_id: string | null
+          schedule_source_display_name: string | null
+          schedule_source_id: string | null
+          schedule_source_name: string | null
+          schedule_source_version_id: string | null
+          slug: string | null
+          source_page_number: number | null
+          source_version_display_name: string | null
+          source_version_name: string | null
+          source_version_year: number | null
+          status: Database["public"]["Enums"]["record_status"] | null
+          unit_display_name: string | null
+          unit_id: string | null
+          unit_symbol: string | null
+          updated_at: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_items_derived_unit_id_fkey"
+            columns: ["derived_unit_id"]
+            isOneToOne: false
+            referencedRelation: "derived_units"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_parent_item_id_fkey"
+            columns: ["parent_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_parent_item_id_fkey"
+            columns: ["parent_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_schedule_source_version_id_fkey"
+            columns: ["schedule_source_version_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_source_versions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_items_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       apply_risk_event_service: {
@@ -670,6 +1093,40 @@ export type Database = {
           user_id: string
         }[]
       }
+      get_schedule_tree_children: {
+        Args: { p_parent_item_id: string; p_schedule_source_version_id: string }
+        Returns: {
+          annotations: Json
+          code: string
+          depth: number
+          description: string
+          has_children: boolean
+          id: string
+          node_type: Database["public"]["Enums"]["schedule_node_type"]
+          order_index: number
+          parent_item_id: string
+          path_slug: string
+          rate: number
+          unit_symbol: string
+        }[]
+      }
+      get_schedule_tree_roots: {
+        Args: { p_schedule_source_version_id: string }
+        Returns: {
+          annotations: Json
+          code: string
+          depth: number
+          description: string
+          has_children: boolean
+          id: string
+          node_type: Database["public"]["Enums"]["schedule_node_type"]
+          order_index: number
+          parent_item_id: string
+          path_slug: string
+          rate: number
+          unit_symbol: string
+        }[]
+      }
       handle_token_refresh_service: {
         Args: {
           p_incoming_token_hash: string
@@ -696,6 +1153,34 @@ export type Database = {
       revoke_user_sessions_service: {
         Args: { p_reason?: string; p_user_id: string }
         Returns: number
+      }
+      schedule_item_path_slug: { Args: { p_item_id: string }; Returns: string }
+      schedule_item_path_slug_sort_key: {
+        Args: { p_path_slug: string }
+        Returns: number[]
+      }
+      search_schedule_tree: {
+        Args: {
+          p_limit?: number
+          p_offset?: number
+          p_query: string
+          p_schedule_source_version_id: string
+        }
+        Returns: {
+          ancestor_ids: string[]
+          annotations: Json
+          code: string
+          depth: number
+          description: string
+          has_children: boolean
+          id: string
+          node_type: Database["public"]["Enums"]["schedule_node_type"]
+          order_index: number
+          parent_item_id: string
+          path_slug: string
+          rate: number
+          unit_symbol: string
+        }[]
       }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
@@ -885,6 +1370,9 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
+  authz: {
+    Enums: {},
+  },
   graphql_public: {
     Enums: {},
   },

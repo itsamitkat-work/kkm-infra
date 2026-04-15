@@ -54,7 +54,7 @@ import {
 } from '@tabler/icons-react';
 import { MasterItem } from '@/hooks/items/types';
 import { ItemJustification } from '@/types/item-justification';
-import { BasicRate } from '@/hooks/use-basic-rates';
+import type { BasicRate } from '@/hooks/useBasicRates';
 import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import {
@@ -529,12 +529,12 @@ export default function ItemJustificationTable({
       next[rowIndex] = {
         ...row,
         code: material.code,
-        description: material.name,
+        description: material.description,
         unit: material.unit,
         rate: material.rate,
         amount: material.rate * qty,
-        basicRateId: (material.hashID || material.hashId) ?? null,
-        itemId: (material.hashID || material.hashId) ?? '',
+        basicRateId: material.id ?? null,
+        itemId: material.id ?? '',
       };
       return next;
     });

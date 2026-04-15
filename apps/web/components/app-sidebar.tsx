@@ -37,6 +37,10 @@ import {
 import { FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/hooks/auth';
+import {
+  BASIC_RATES_MANAGE,
+  BASIC_RATES_READ,
+} from '@/lib/authz-permission-keys';
 
 type NavItem = {
   title: string;
@@ -57,34 +61,6 @@ const hrItems: NavItem[] = [
     title: 'Employees',
     url: '/hr/employees',
     icon: UserCog,
-  },
-];
-
-const constructionToolsItems: NavItem[] = [
-  {
-    title: 'Clients',
-    url: '/clients',
-    icon: IconUsers,
-  },
-  {
-    title: 'Items Tree',
-    url: '/items-tree',
-    icon: IconFileText,
-  },
-  {
-    title: 'Items',
-    url: '/items',
-    icon: IconFileText,
-  },
-  {
-    title: 'Basic Rates',
-    url: '/basic-rates',
-    icon: IconFileText,
-  },
-  {
-    title: 'Factors',
-    url: '/factors',
-    icon: IconFileText,
   },
 ];
 
@@ -134,7 +110,44 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const { state } = useSidebar();
   const isMobile = useIsMobile();
-  const { permissions, roles } = useAuth();
+  const { permissions, roles, claims } = useAuth();
+
+  const constructionToolsItems = React.useMemo((): NavItem[] => {
+    const items: NavItem[] = [
+      {
+        title: 'Clients',
+        url: '/clients',
+        icon: IconUsers,
+      },
+      {
+        title: 'Items Tree',
+        url: '/items-tree',
+        icon: IconFileText,
+      },
+      {
+        title: 'Items',
+        url: '/items',
+        icon: IconFileText,
+      },
+    ];
+    const canSeeBasicRates =
+      Boolean(claims?.is_system_admin) ||
+      permissions.includes(BASIC_RATES_READ) ||
+      permissions.includes(BASIC_RATES_MANAGE);
+    if (canSeeBasicRates) {
+      items.push({
+        title: 'Basic Rates',
+        url: '/basic-rates',
+        icon: IconFileText,
+      });
+    }
+    items.push({
+      title: 'Factors',
+      url: '/factors',
+      icon: IconFileText,
+    });
+    return items;
+  }, [permissions, claims?.is_system_admin]);
 
   const attendanceItems = React.useMemo(() => {
     // Only filter when in browser (client-side)

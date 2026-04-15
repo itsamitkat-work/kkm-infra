@@ -3,6 +3,8 @@
 # JSON lives under supabase/seed/. Requires supabase start, jq, curl.
 #
 #   SEED_AUTHZ_JSON=... SEED_MANIFEST=... SEED_UNITS_JSON=...
+#   Optional overrides: SEED_DEV_USER_EMAIL, SEED_DEV_USER_PASSWORD
+#   Dev user defaults live in authz JSON under dev_user.email / dev_user.password.
 #   ./supabase/scripts/seed-app.sh
 
 set -euo pipefail
@@ -10,11 +12,23 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 AUTHZ_JSON="${SEED_AUTHZ_JSON:-$REPO_ROOT/supabase/seed/authz.json}"
 MANIFEST="${SEED_MANIFEST:-$REPO_ROOT/supabase/seed/manifest.json}"
-DEV_USER_EMAIL="${SEED_DEV_USER_EMAIL:-its.amit.kat@gmail.com}"
-DEV_USER_PASSWORD="${SEED_DEV_USER_PASSWORD:-22113355}"
 
 if ! command -v jq &>/dev/null; then
   echo "seed-app: install jq (e.g. brew install jq)" >&2
+  exit 1
+fi
+
+if [[ ! -f "$AUTHZ_JSON" ]]; then
+  echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
+  exit 1
+fi
+
+_json_email="$(jq -r '.dev_user.email // empty' "$AUTHZ_JSON")"
+_json_password="$(jq -r '.dev_user.password // empty' "$AUTHZ_JSON")"
+DEV_USER_EMAIL="${SEED_DEV_USER_EMAIL:-$_json_email}"
+DEV_USER_PASSWORD="${SEED_DEV_USER_PASSWORD:-$_json_password}"
+if [[ -z "$DEV_USER_EMAIL" || -z "$DEV_USER_PASSWORD" ]]; then
+  echo "seed-app: set dev_user.email and dev_user.password in ${AUTHZ_JSON}, or SEED_DEV_USER_EMAIL / SEED_DEV_USER_PASSWORD" >&2
   exit 1
 fi
 
@@ -99,7 +113,9 @@ AUTHZ_EP="${API_URL}/functions/v1/ensure-authz-seed"
 UNITS_EP="${API_URL}/functions/v1/ensure-units"
 ENSURE_EP="${API_URL}/functions/v1/ensure-schedule-sources"
 INGEST_EP="${API_URL}/functions/v1/ingest-schedule"
+BASIC_RATES_EP="${API_URL}/functions/v1/ingest-basic-rates"
 AUTH_ADMIN_USERS_EP="${API_URL}/auth/v1/admin/users"
+BASIC_RATES_JSON="${SEED_BASIC_RATES_JSON:-$REPO_ROOT/supabase/seed/schedules/basic_rates.json}"
 
 echo "seed-app: ensure dev auth user (${DEV_USER_EMAIL})"
 existing_user_id="$(
@@ -128,18 +144,13 @@ else
     | jq '{id, email, created_at}'
 fi
 
-if [[ ! -f "$AUTHZ_JSON" ]]; then
-  echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
-  exit 1
-fi
-
 wait_for_edge_function "$AUTHZ_EP" "ensure-authz-seed" || exit 1
 
 echo "seed-app: ensure-authz-seed ($AUTHZ_JSON)"
 curl -sfS -X POST "$AUTHZ_EP" \
   -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
   -H "Content-Type: application/json" \
-  -d @"$AUTHZ_JSON" \
+  -d "$(jq -c 'del(.dev_user)' "$AUTHZ_JSON")" \
   | jq .
 
 resolve_units_file() {
@@ -248,6 +259,56 @@ done < <(
         files: .files
       }
   ' "$MANIFEST"
+)
+
+if [[ ! -f "$BASIC_RATES_JSON" ]]; then
+  echo "seed-app: basic rates JSON not found: $BASIC_RATES_JSON" >&2
+  exit 1
+fi
+
+DSR_VERSION_ID="$(
+  curl -sfS "${API_URL}/rest/v1/schedule_source_versions?select=id,name,schedule_sources!inner(name)&schedule_sources.name=eq.cpwd_dsr&name=eq.dsr_2023&limit=1" \
+    -H "apikey: ${SERVICE_ROLE_KEY}" \
+    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+    | jq -r '.[0].id // empty'
+)"
+
+if [[ -z "${DSR_VERSION_ID:-}" ]]; then
+  echo "seed-app: could not resolve DSR schedule_source_version (cpwd_dsr / dsr_2023)" >&2
+  exit 1
+fi
+
+if ! jq -e 'type == "array"' "$BASIC_RATES_JSON" >/dev/null; then
+  echo "seed-app: $BASIC_RATES_JSON must be an array of basic rates" >&2
+  exit 1
+fi
+
+basic_rates_total="$(jq 'length' "$BASIC_RATES_JSON")"
+echo "seed-app: ingest-basic-rates ($basic_rates_total rows) using DSR version=$DSR_VERSION_ID"
+
+batch_size="${SEED_BASIC_RATES_BATCH_SIZE:-500}"
+batch_index=0
+while IFS= read -r chunk; do
+  [[ -z "$chunk" ]] && continue
+  batch_index=$((batch_index + 1))
+  chunk_count="$(echo "$chunk" | jq 'length')"
+  echo "seed-app: ingest-basic-rates batch=${batch_index} rows=${chunk_count}"
+
+  jq -n \
+    --arg vid "$DSR_VERSION_ID" \
+    --argjson rows "$chunk" \
+    '{schedule_source_version_id: $vid, data: $rows}' \
+    | curl -sfS -X POST "$BASIC_RATES_EP" \
+      -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
+      -H "Content-Type: application/json" \
+      -d @- \
+    | jq .
+done < <(
+  jq -c --argjson size "$batch_size" '
+    . as $all
+    | range(0; ($all | length); $size) as $i
+    | $all[$i:($i + $size)]
+  ' "$BASIC_RATES_JSON"
 )
 
 echo "seed-app: done"

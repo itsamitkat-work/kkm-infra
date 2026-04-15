@@ -34,6 +34,8 @@ interface FormSelectFieldProps<
   required?: boolean;
   className?: string;
   readOnly?: boolean;
+  renderOption?: (option: SelectOption) => React.ReactNode;
+  renderValue?: (value: string) => React.ReactNode;
 }
 
 export function FormSelectField<
@@ -48,6 +50,8 @@ export function FormSelectField<
   required = false,
   className,
   readOnly = false,
+  renderOption,
+  renderValue,
 }: FormSelectFieldProps<TFieldValues, TName>) {
   return (
     <FormField
@@ -61,22 +65,33 @@ export function FormSelectField<
           </FormLabel>
           <Select
             onValueChange={field.onChange}
-            defaultValue={field.value}
+            value={
+              field.value === undefined || field.value === null
+                ? ''
+                : String(field.value)
+            }
             disabled={readOnly}
           >
             <FormControl>
               <SelectTrigger>
-                <SelectValue placeholder={placeholder} />
+                {renderValue ? (
+                  <SelectValue placeholder={placeholder}>
+                    {field.value != null && field.value !== ''
+                      ? renderValue(String(field.value))
+                      : null}
+                  </SelectValue>
+                ) : (
+                  <SelectValue placeholder={placeholder} />
+                )}
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              {/* Clear option for optional fields */}
               {!required && field.value && (
                 <SelectItem value=''>Clear selection</SelectItem>
               )}
               {options.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
-                  {option.label}
+                  {renderOption ? renderOption(option) : option.label}
                 </SelectItem>
               ))}
             </SelectContent>

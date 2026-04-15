@@ -5,21 +5,24 @@ import * as React from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
-import { BasicRate } from '@/hooks/use-basic-rates';
+import type { BasicRate } from '@/hooks/useBasicRates';
+import {
+  BASIC_RATES_TABLE_ID,
+  useBasicRatesQuery,
+  useDeleteBasicRate,
+  useBasicRateTypeOptions,
+} from '@/hooks/useBasicRates';
+import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
 import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
 import { getColumns } from './basic-rates-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
-import {
-  BASIC_RATES_TABLE_ID,
-  useBasicRatesQuery,
-} from '../hooks/use-basic-rates-query';
-import { useDeleteBasicRate } from '@/hooks/use-basic-rates-mutations';
-import { filterFields, getBasicRatesFilterFields } from './basic-rates-filters';
+import { getBasicRatesFilterFields } from './basic-rates-filters';
 import { createFilter } from '@/components/ui/filters';
 import { BasicRatesDrawer } from './basic-rates-drawer';
-import { useMasterTypesList } from '@/hooks/use-master-types';
+import { useAuth } from '@/hooks/auth';
+import { BASIC_RATES_MANAGE } from '@/lib/authz-permission-keys';
 
 interface BasicRatesTableProps {
   onSelectMaterial?: (material: BasicRate) => void;
@@ -30,6 +33,11 @@ export function BasicRatesTable({
   onSelectMaterial,
   inDialog,
 }: BasicRatesTableProps = {}) {
+  const { permissions, claims } = useAuth();
+  const isSystemAdmin = Boolean(claims?.is_system_admin);
+  const canManage =
+    isSystemAdmin || permissions.includes(BASIC_RATES_MANAGE);
+
   const drawer = useOpenClose<BasicRate | null>();
   const deleteConfirmation = useDeleteConfirmation();
 
@@ -39,52 +47,64 @@ export function BasicRatesTable({
 
   const onClickEditOrRead = React.useCallback(
     (basicRate: BasicRate, mode: 'edit' | 'read') => {
+      if (mode === 'edit' && !canManage) {
+        drawer.open(basicRate, 'read');
+        return;
+      }
       drawer.open(basicRate, mode);
     },
-    [drawer]
+    [drawer, canManage]
   );
 
-  const onClickDeleteRef = React.useRef<(hashID: string) => void>(() => {});
+  const onClickDeleteRef = React.useRef<(id: string) => void>(() => {});
 
   const columns = React.useMemo(
     () =>
       getColumns(
         onClickEditOrRead,
-        (hashID) => onClickDeleteRef.current(hashID),
-        onSelectMaterial
+        (id) => onClickDeleteRef.current(id),
+        onSelectMaterial,
+        canManage
       ),
-    [onClickEditOrRead, onSelectMaterial]
+    [onClickEditOrRead, onSelectMaterial, canManage]
   );
 
-  // Default filters to apply on initial load
   const defaultFilters = React.useMemo(
-    () => [createFilter('types', 'is', []), createFilter('code', 'is', [])], // Default to 'Material' type
+    () => [
+      createFilter('schedule_source_version_id', 'is', []),
+      createFilter('types', 'is', []),
+      createFilter('status', 'is_any_of', []),
+    ],
     []
   );
 
   const controls = useDataTableControls(BASIC_RATES_TABLE_ID, defaultFilters);
 
-  const { items: materialTypes } = useMasterTypesList('MaterialType');
-  const { items: materialGroups } = useMasterTypesList('MaterialGroup');
-  const { items: materialCategories } = useMasterTypesList('MaterialCategory');
+  const { data: typeRows = [] } = useBasicRateTypeOptions();
+  const { data: scheduleRows = [] } = useScheduleVersionOptions();
+
+  const typeFilterOptions = React.useMemo(
+    () =>
+      typeRows.map((t) => ({
+        value: t.name,
+        label: t.name,
+      })),
+    [typeRows]
+  );
+
+  const scheduleFilterOptions = React.useMemo(
+    () =>
+      scheduleRows.map((s) => ({
+        value: s.id,
+        label:
+          s.year != null ? `${s.display_name} (${s.year})` : s.display_name,
+      })),
+    [scheduleRows]
+  );
 
   const filterFieldsWithOptions = React.useMemo(
-    () =>
-      getBasicRatesFilterFields(
-        materialTypes.map((item) => ({
-          value: item.hashid,
-          label: item.name,
-        })),
-        materialGroups.map((item) => ({
-          value: item.hashid,
-          label: item.name,
-        })),
-        materialCategories.map((item) => ({
-          value: item.hashid,
-          label: item.name,
-        }))
-      ),
-    [materialTypes, materialGroups, materialCategories]
+    () => getBasicRatesFilterFields(typeFilterOptions, scheduleFilterOptions),
+    [typeFilterOptions, scheduleFilterOptions]
   );
 
   const { query: basicRatesQuery, invalidate: invalidateBasicRatesQuery } =
@@ -97,10 +117,10 @@ export function BasicRatesTable({
   const deleteBasicRateMutation = useDeleteBasicRate();
 
   const onClickDelete = React.useCallback(
-    (hashID: string) => {
+    (id: string) => {
       deleteConfirmation.openDeleteConfirmation({
         onConfirm: async () => {
-          await deleteBasicRateMutation.mutateAsync({ hashID });
+          await deleteBasicRateMutation.mutateAsync(id);
           invalidateBasicRatesQuery();
         },
         itemName: 'basic rate',
@@ -120,10 +140,10 @@ export function BasicRatesTable({
         controls={controls}
         filterFields={filterFieldsWithOptions}
         columns={columns}
-        searchPlaceholder='Search by Name...'
+        searchPlaceholder='Search code or description...'
         emptyState={{
           itemType: 'basic rate',
-          onCreateNew: handleCreateBasicRate,
+          onCreateNew: canManage ? handleCreateBasicRate : undefined,
         }}
         loadingMessage='Loading basic rates...'
         errorState={
@@ -135,7 +155,7 @@ export function BasicRatesTable({
         }
         stickyContext={inDialog ? 'dialog' : 'page'}
         actions={
-          inDialog
+          inDialog || !canManage
             ? undefined
             : {
                 end: (

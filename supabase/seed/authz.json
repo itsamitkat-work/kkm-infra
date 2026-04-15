@@ -1,29 +1,80 @@
 {
   "permissions": [
     { "key": "items.read", "description": "Read tenant items" },
-    { "key": "items.manage", "description": "Create, update, and delete tenant items" },
-    { "key": "members.manage", "description": "Add, update, suspend, and remove tenant members" },
+    {
+      "key": "items.manage",
+      "description": "Create, update, and delete tenant items"
+    },
+    {
+      "key": "members.manage",
+      "description": "Add, update, suspend, and remove tenant members"
+    },
     { "key": "roles.read", "description": "Read tenant roles and permissions" },
-    { "key": "roles.manage", "description": "Manage tenant role definitions and permission mappings" },
+    {
+      "key": "roles.manage",
+      "description": "Manage tenant role definitions and permission mappings"
+    },
     { "key": "roles.assign", "description": "Assign roles to tenant members" },
     { "key": "tenants.read", "description": "Read tenant metadata" },
     { "key": "tenants.manage", "description": "Update tenant metadata" },
     { "key": "alerts.read", "description": "Read security alerts" },
-    { "key": "alerts.acknowledge", "description": "Acknowledge security alerts" },
+    {
+      "key": "alerts.acknowledge",
+      "description": "Acknowledge security alerts"
+    },
     { "key": "sessions.revoke", "description": "Revoke active sessions" },
     { "key": "audit.read", "description": "Read audit logs" },
     { "key": "profiles.manage", "description": "Manage user profiles" },
     { "key": "schedules.read", "description": "View schedule of rates data" },
-    { "key": "schedules.manage", "description": "Create, update, and manage schedule data" }
+    {
+      "key": "schedules.manage",
+      "description": "Create, update, and manage schedule data"
+    },
+    {
+      "key": "basic_rates.read",
+      "description": "View basic rates and related reference data"
+    },
+    {
+      "key": "basic_rates.manage",
+      "description": "Create, update, and delete basic rates and types"
+    }
   ],
   "system_roles": [
-    { "key": "tenant_admin", "name": "Tenant Admin", "description": "Administrative role for a single tenant" },
-    { "key": "project_engineer", "name": "Project Engineer", "description": "Day-to-day project execution role" },
-    { "key": "project_head", "name": "Project Head", "description": "High-level project oversight role" },
-    { "key": "project_maker", "name": "Project Maker", "description": "Creates and authors project deliverables" },
-    { "key": "project_checker", "name": "Project Checker", "description": "Checks project deliverables for quality" },
-    { "key": "project_verifier", "name": "Project Verifier", "description": "Verifies completed project work" },
-    { "key": "project_supervisor", "name": "Project Supervisor", "description": "Broad project supervision role" }
+    {
+      "key": "tenant_admin",
+      "name": "Tenant Admin",
+      "description": "Administrative role for a single tenant"
+    },
+    {
+      "key": "project_engineer",
+      "name": "Project Engineer",
+      "description": "Day-to-day project execution role"
+    },
+    {
+      "key": "project_head",
+      "name": "Project Head",
+      "description": "High-level project oversight role"
+    },
+    {
+      "key": "project_maker",
+      "name": "Project Maker",
+      "description": "Creates and authors project deliverables"
+    },
+    {
+      "key": "project_checker",
+      "name": "Project Checker",
+      "description": "Checks project deliverables for quality"
+    },
+    {
+      "key": "project_verifier",
+      "name": "Project Verifier",
+      "description": "Verifies completed project work"
+    },
+    {
+      "key": "project_supervisor",
+      "name": "Project Supervisor",
+      "description": "Broad project supervision role"
+    }
   ],
   "tenant": {
     "id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
@@ -31,10 +82,19 @@
     "display_name": "KKM Infra",
     "slug": "kkm-infra"
   },
+  "dev_user": {
+    "email": "its.amit.kat@gmail.com",
+    "password": "22113355"
+  },
   "tenant_role_permission_grants": [
     {
       "role_slugs": ["project_engineer", "project_checker"],
-      "permission_keys": ["items.read", "tenants.read", "roles.read"]
+      "permission_keys": [
+        "items.read",
+        "tenants.read",
+        "roles.read",
+        "basic_rates.read"
+      ]
     },
     {
       "role_slugs": ["project_supervisor"],
@@ -45,7 +105,9 @@
         "roles.read",
         "members.manage",
         "audit.read",
-        "alerts.read"
+        "alerts.read",
+        "basic_rates.read",
+        "basic_rates.manage"
       ]
     }
   ]

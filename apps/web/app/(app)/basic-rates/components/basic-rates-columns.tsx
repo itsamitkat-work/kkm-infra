@@ -1,7 +1,10 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { BasicRate } from '@/hooks/use-basic-rates';
+import {
+  type BasicRate,
+  BASIC_RATES_SORT_KEY_SCHEDULE_DISPLAY_NAME,
+} from '@/hooks/useBasicRates';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,11 +21,13 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
+import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 
 export const getColumns = (
   onBasicRateAction: (basicRate: BasicRate, mode: 'edit' | 'read') => void,
-  onDeleteBasicRate: (hashID: string) => void,
-  onSelectMaterial?: (basicRate: BasicRate) => void
+  onDeleteBasicRate: (id: string) => void,
+  onSelectMaterial: ((basicRate: BasicRate) => void) | undefined,
+  canManage: boolean
 ): ColumnDef<BasicRate>[] => [
   {
     accessorKey: 'code',
@@ -42,7 +47,7 @@ export const getColumns = (
     size: 100,
   },
   {
-    accessorKey: 'name',
+    accessorKey: 'description',
     header: ({ column }) => (
       <TableColumnHeader column={column} title='Name' />
     ),
@@ -50,7 +55,7 @@ export const getColumns = (
       cellClassName: '!whitespace-normal',
     },
     cell: ({ row }) => {
-      const name = row.original.name;
+      const description = row.original.description;
       if (onSelectMaterial) {
         return (
           <button
@@ -67,7 +72,7 @@ export const getColumns = (
               WebkitBoxOrient: 'vertical',
             }}
           >
-            {name || '—'}
+            {description || '—'}
           </button>
         );
       }
@@ -84,11 +89,11 @@ export const getColumns = (
                 wordBreak: 'break-word',
               }}
             >
-              {name || '—'}
+              {description || '—'}
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p className='max-w-xs'>{name || '—'}</p>
+            <p className='max-w-xs'>{description || '—'}</p>
           </TooltipContent>
         </Tooltip>
       );
@@ -96,14 +101,14 @@ export const getColumns = (
     size: 250,
   },
   {
-    accessorKey: 'types',
+    accessorKey: 'basic_rate_type_id',
     header: ({ column }) => (
       <TableColumnHeader column={column} title='Type' />
     ),
     cell: ({ row }) => {
       return (
         <span className='block overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground'>
-          {row.original.types || '—'}
+          {row.original.basic_rate_types?.name ?? '—'}
         </span>
       );
     },
@@ -139,14 +144,22 @@ export const getColumns = (
     size: 120,
   },
   {
-    accessorKey: 'stateSchedule',
+    id: BASIC_RATES_SORT_KEY_SCHEDULE_DISPLAY_NAME,
+    accessorFn: (row) =>
+      row.schedule_source_versions?.display_name ??
+      row.schedule_source_versions?.name ??
+      '',
     header: ({ column }) => (
       <TableColumnHeader column={column} title='State Schedule' />
     ),
     cell: ({ row }) => {
+      const label =
+        row.original.schedule_source_versions?.display_name ??
+        row.original.schedule_source_versions?.name ??
+        '—';
       return (
         <span className='block overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground'>
-          {row.original.stateSchedule || '—'}
+          {label}
         </span>
       );
     },
@@ -157,20 +170,9 @@ export const getColumns = (
     header: ({ column }) => (
       <TableColumnHeader column={column} title='Status' />
     ),
-    cell: ({ row }) => {
-      const status = row.original.status;
-      return (
-        <span
-          className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-            status === 'Active'
-              ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-              : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
-          }`}
-        >
-          {status || '—'}
-        </span>
-      );
-    },
+    cell: ({ row }) => (
+      <RecordStatusBadge status={row.original.status} />
+    ),
     size: 100,
   },
   {
@@ -188,23 +190,29 @@ export const getColumns = (
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end' className='w-40'>
-          <DropdownMenuItem
-            onClick={() => onBasicRateAction(row.original, 'edit')}
-          >
-            Edit
-          </DropdownMenuItem>
+          {canManage ? (
+            <DropdownMenuItem
+              onClick={() => onBasicRateAction(row.original, 'edit')}
+            >
+              Edit
+            </DropdownMenuItem>
+          ) : null}
           <DropdownMenuItem
             onClick={() => onBasicRateAction(row.original, 'read')}
           >
             View Details
           </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem
-            variant='destructive'
-            onClick={() => onDeleteBasicRate(row.original.hashID)}
-          >
-            Delete
-          </DropdownMenuItem>
+          {canManage ? (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                variant='destructive'
+                onClick={() => onDeleteBasicRate(row.original.id)}
+              >
+                Delete
+              </DropdownMenuItem>
+            </>
+          ) : null}
         </DropdownMenuContent>
       </DropdownMenu>
     ),

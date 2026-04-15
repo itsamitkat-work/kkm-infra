@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { BasicRate } from '@/hooks/use-basic-rates';
+import type { BasicRate } from '@/hooks/useBasicRates';
 import { BasicRatesTable } from '@/app/(app)/basic-rates/components/basic-rates-table';
 
 interface MaterialSelectDialogProps {
