@@ -540,10 +540,10 @@ export function useItemMeasurementLogic({
 
   const measurementPermissions = React.useMemo(
     () => ({
-      canCheckMSR: ability.can('check', 'ProjectMeasurement'),
-      canCheckBLG: ability.can('check', 'ProjectBilling'),
-      canVerifyMSR: ability.can('verify', 'ProjectMeasurement'),
-      canVerifyBLG: ability.can('verify', 'ProjectBilling'),
+      canCheckMSR: ability.can('check', 'project_measurement'),
+      canCheckBLG: ability.can('check', 'project_billing'),
+      canVerifyMSR: ability.can('verify', 'project_measurement'),
+      canVerifyBLG: ability.can('verify', 'project_billing'),
     }),
     [ability]
   );

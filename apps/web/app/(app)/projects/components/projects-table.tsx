@@ -30,10 +30,10 @@ export function ProjectsTable() {
 
   const permissionFlags = React.useMemo(
     () => ({
-      canRead: ability.can('read', 'Project'),
-      canUpdate: ability.can('update', 'Project'),
-      canDelete: ability.can('delete', 'Project'),
-      canCreate: ability.can('create', 'Project'),
+      canRead: ability.can('read', 'projects'),
+      canUpdate: ability.can('update', 'projects'),
+      canDelete: ability.can('delete', 'projects'),
+      canCreate: ability.can('create', 'projects'),
     }),
     [ability]
   );

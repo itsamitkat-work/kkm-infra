@@ -1449,7 +1449,7 @@ export function getAttendanceColumns(
         <DropdownMenu>
           <DropdownMenuTrigger
             asChild
-            disabled={!ability.can('check', 'Attendance')}
+            disabled={!ability.can('check', 'attendance')}
           >
             <button
               type='button'
@@ -1460,7 +1460,7 @@ export function getAttendanceColumns(
               )}
             >
               <span>Checked</span>
-              {ability.can('check', 'Attendance') && (
+              {ability.can('check', 'attendance') && (
                 <IconChevronDown className='size-3' />
               )}
             </button>
@@ -1492,7 +1492,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !ability.can('check', 'Attendance') ||
+            !ability.can('check', 'attendance') ||
             row.original.isLocked
           }
         />
@@ -1507,7 +1507,7 @@ export function getAttendanceColumns(
         <DropdownMenu>
           <DropdownMenuTrigger
             asChild
-            disabled={!ability.can('verify', 'Attendance')}
+            disabled={!ability.can('verify', 'attendance')}
           >
             <button
               type='button'
@@ -1518,7 +1518,7 @@ export function getAttendanceColumns(
               )}
             >
               <span>Verified</span>
-              {ability.can('verify', 'Attendance') && (
+              {ability.can('verify', 'attendance') && (
                 <IconChevronDown className='size-3' />
               )}
             </button>
@@ -1550,7 +1550,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !ability.can('verify', 'Attendance') ||
+            !ability.can('verify', 'attendance') ||
             row.original.isLocked
           }
         />

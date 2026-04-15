@@ -70,7 +70,7 @@ export function ProjectUsersSection({
 }: ProjectUsersSectionProps) {
   const [changeProjectOpen, setChangeProjectOpen] = React.useState(false);
   const { user: currentUser, ability } = useAuth();
-  const canUpdate = ability.can('update', 'ResourcePool');
+  const canUpdate = ability.can('update', 'resource_pool');
 
   const { releaseUsers, changeProject, isReleasing } = usePoolMutations();
 

@@ -875,8 +875,8 @@ export function AttendanceTable({
         <div className='flex items-center gap-2'>
           <AttendanceBulkActions
             selectedCount={selectedCount}
-            canUpdateResourcePool={ability.can('update', 'ResourcePool')}
-            canLockAttendance={ability.can('lock', 'Attendance')}
+            canUpdateResourcePool={ability.can('update', 'resource_pool')}
+            canLockAttendance={ability.can('lock', 'attendance')}
             isReleasing={isReleasing}
             isLocking={isLocking}
             isUnlocking={isUnlocking}

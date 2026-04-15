@@ -124,7 +124,7 @@ export function PoolUserList({
   const { query, users } = usePoolUsersQuery();
   const { assignUsers, isAssigning } = usePoolMutations();
   const { ability } = useAuth();
-  const canUpdate = ability.can('update', 'ResourcePool');
+  const canUpdate = ability.can('update', 'resource_pool');
 
   const table = useReactTable({
     data: users,

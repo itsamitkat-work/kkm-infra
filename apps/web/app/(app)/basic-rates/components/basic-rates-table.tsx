@@ -32,7 +32,7 @@ export function BasicRatesTable({
   inDialog,
 }: BasicRatesTableProps = {}) {
   const { ability } = useAuth();
-  const canManage = ability.can('manage', 'BasicRate');
+  const canManage = ability.can('manage', 'basic_rates');
 
   const drawer = useOpenClose<BasicRate | null>();
   const deleteConfirmation = useDeleteConfirmation();

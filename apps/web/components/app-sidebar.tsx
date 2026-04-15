@@ -109,7 +109,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const constructionToolsItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
     const canSeeSchedules =
-      ability.can('read', 'Schedule') || ability.can('manage', 'Schedule');
+      ability.can('read', 'schedules') || ability.can('manage', 'schedules');
     if (canSeeSchedules) {
       items.push({
         title: 'Schedules',
@@ -123,7 +123,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       icon: IconFileText,
     });
     const canSeeBasicRates =
-      ability.can('read', 'BasicRate') || ability.can('manage', 'BasicRate');
+      ability.can('read', 'basic_rates') || ability.can('manage', 'basic_rates');
     if (canSeeBasicRates) {
       items.push({
         title: 'Basic Rates',
@@ -141,7 +141,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     }
 
     const attendanceItems: NavItem[] = [
-      ...(ability.can('read', 'Attendance') &&
+      ...(ability.can('read', 'attendance') &&
       !(roles.includes('Verifier') || roles.includes('Checker'))
         ? [
             {
@@ -151,7 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(ability.can('read', 'Attendance') && roles.includes('Checker')
+      ...(ability.can('read', 'attendance') && roles.includes('Checker')
         ? [
             {
               title: 'Attendance',
@@ -160,7 +160,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(ability.can('read', 'Attendance') && roles.includes('Verifier')
+      ...(ability.can('read', 'attendance') && roles.includes('Verifier')
         ? [
             {
               title: 'Attendance',
@@ -169,7 +169,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(ability.can('read', 'ResourcePool')
+      ...(ability.can('read', 'resource_pool')
         ? [
             {
               title: 'Resource Pool',
@@ -178,7 +178,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      ...(ability.can('read', 'Attendance')
+      ...(ability.can('read', 'attendance')
         ? [
             {
               title: 'Attendance Report',
@@ -194,7 +194,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   const constructionItems: NavItem[] = React.useMemo(
     () => [
-      ...(ability.can('read', 'AssignedProject')
+      ...(ability.can('read', 'assigned_projects')
         ? [
             {
               title: 'Assigned Projects',
@@ -204,7 +204,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           ]
         : []),
 
-      ...(ability.can('read', 'Project')
+      ...(ability.can('read', 'projects')
         ? [
             {
               title: 'Projects',

@@ -23,7 +23,7 @@ import { ScheduleSourceVersionsPanel } from './schedule-source-versions-panel';
 
 export function SchedulesTable() {
   const { ability } = useAuth();
-  const canManage = ability.can('manage', 'Schedule');
+  const canManage = ability.can('manage', 'schedules');
 
   const drawer = useOpenClose<ScheduleSourceRow | null>();
   const deleteConfirmation = useDeleteConfirmation();
