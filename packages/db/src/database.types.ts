@@ -1084,6 +1084,7 @@ export type Database = {
         Returns: boolean
       }
       custom_access_token_hook: { Args: { event: Json }; Returns: Json }
+      get_basic_rate_distinct_units: { Args: never; Returns: string[] }
       get_pending_security_alerts: {
         Args: { p_limit?: number }
         Returns: {

@@ -1,13 +1,30 @@
 'use client';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { toast } from 'sonner';
+import {
+  basicRateDistinctUnitsLoadErrorMessage,
+  isBasicRateDistinctUnitsQueryKey,
+} from '@/hooks/use-basic-rate-distinct-units';
 
 export function ReactQueryProvider({ children }: PropsWithChildren) {
-  const [client] = useState(
-    new QueryClient({
+  const [client] = useState(() => {
+    const queryCache = new QueryCache({
+      onError: (_error, query) => {
+        if (isBasicRateDistinctUnitsQueryKey(query.queryKey)) {
+          toast.error(basicRateDistinctUnitsLoadErrorMessage);
+        }
+      },
+    });
+    return new QueryClient({
+      queryCache,
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: true,
@@ -15,8 +32,8 @@ export function ReactQueryProvider({ children }: PropsWithChildren) {
           staleTime: 1000 * 60 * 5, // 5 minutes
         },
       },
-    })
-  );
+    });
+  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

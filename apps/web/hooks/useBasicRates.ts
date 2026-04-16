@@ -15,6 +15,7 @@ import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { useDebounce } from '@/hooks/use-debounce';
 import type { Database } from '@kkm/db';
 import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versions';
+import { invalidateBasicRateDistinctUnitsQueries } from '@/hooks/use-basic-rate-distinct-units';
 
 export type BasicRateTypeRow =
   Database['public']['Tables']['basic_rate_types']['Row'];
@@ -144,6 +145,7 @@ function invalidateBasicRatesQueries(
 ) {
   queryClient.invalidateQueries({ queryKey: [BASIC_RATES_QUERY_KEY] });
   queryClient.invalidateQueries({ queryKey: ['basic-rate-types'] });
+  invalidateBasicRateDistinctUnitsQueries(queryClient);
 }
 
 export function useBasicRatesQuery(params: {

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Control, FieldPath, FieldValues } from 'react-hook-form';
+import { Control, FieldPath, FieldValues, useController } from 'react-hook-form';
 import {
   Select,
   SelectContent,
@@ -9,13 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+import { Field, FieldLabel, FieldError } from '@/components/ui/field';
 
 const FORM_SELECT_CLEAR_SENTINEL = '__form_select_clear__';
 
@@ -55,56 +49,53 @@ export function FormSelectField<
   renderOption,
   renderValue,
 }: FormSelectFieldProps<TFieldValues, TName>) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ control, name });
+
   return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className={className}>
-          <FormLabel>
-            {label}
-            {required && ' *'}
-          </FormLabel>
-          <Select
-            onValueChange={(v) =>
-              field.onChange(v === FORM_SELECT_CLEAR_SENTINEL ? '' : v)
-            }
-            value={
-              field.value === undefined || field.value === null
-                ? ''
-                : String(field.value)
-            }
-            disabled={readOnly}
-          >
-            <FormControl>
-              <SelectTrigger>
-                {renderValue ? (
-                  <SelectValue placeholder={placeholder}>
-                    {field.value != null && field.value !== ''
-                      ? renderValue(String(field.value))
-                      : null}
-                  </SelectValue>
-                ) : (
-                  <SelectValue placeholder={placeholder} />
-                )}
-              </SelectTrigger>
-            </FormControl>
-            <SelectContent>
-              {!required && field.value && (
-                <SelectItem value={FORM_SELECT_CLEAR_SENTINEL}>
-                  Clear selection
-                </SelectItem>
-              )}
-              {options.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
-                  {renderOption ? renderOption(option) : option.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
+    <Field data-invalid={!!error || undefined} className={className}>
+      <FieldLabel htmlFor={name}>
+        {label}
+        {required && ' *'}
+      </FieldLabel>
+      <Select
+        onValueChange={(v) =>
+          field.onChange(v === FORM_SELECT_CLEAR_SENTINEL ? '' : v)
+        }
+        value={
+          field.value === undefined || field.value === null
+            ? ''
+            : String(field.value)
+        }
+        disabled={readOnly}
+      >
+        <SelectTrigger id={name} aria-invalid={!!error}>
+          {renderValue ? (
+            <SelectValue placeholder={placeholder}>
+              {field.value != null && field.value !== ''
+                ? renderValue(String(field.value))
+                : null}
+            </SelectValue>
+          ) : (
+            <SelectValue placeholder={placeholder} />
+          )}
+        </SelectTrigger>
+        <SelectContent>
+          {!required && field.value && (
+            <SelectItem value={FORM_SELECT_CLEAR_SENTINEL}>
+              Clear selection
+            </SelectItem>
+          )}
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {renderOption ? renderOption(option) : option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+      {error?.message && <FieldError>{error.message}</FieldError>}
+    </Field>
   );
 }

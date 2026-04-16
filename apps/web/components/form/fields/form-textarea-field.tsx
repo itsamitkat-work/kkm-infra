@@ -1,15 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { Control, FieldPath, FieldValues } from 'react-hook-form';
+import { Control, FieldPath, FieldValues, useController } from 'react-hook-form';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+import { Field, FieldLabel, FieldError } from '@/components/ui/field';
 
 interface FormTextareaFieldProps<
   TFieldValues extends FieldValues = FieldValues,
@@ -38,27 +32,26 @@ export function FormTextareaField<
   readOnly = false,
   rows = 4,
 }: FormTextareaFieldProps<TFieldValues, TName>) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ control, name });
+
   return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className={className}>
-          <FormLabel>
-            {label}
-            {required && ' *'}
-          </FormLabel>
-          <FormControl>
-            <Textarea
-              placeholder={placeholder}
-              disabled={readOnly}
-              rows={rows}
-              {...field}
-            />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
+    <Field data-invalid={!!error || undefined} className={className}>
+      <FieldLabel htmlFor={name}>
+        {label}
+        {required && ' *'}
+      </FieldLabel>
+      <Textarea
+        id={name}
+        placeholder={placeholder}
+        disabled={readOnly}
+        rows={rows}
+        aria-invalid={!!error}
+        {...field}
+      />
+      {error?.message && <FieldError>{error.message}</FieldError>}
+    </Field>
   );
 }

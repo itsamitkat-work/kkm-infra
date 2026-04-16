@@ -1,15 +1,13 @@
 'use client';
 
 import * as React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useController } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Form } from '@/components/ui/form';
 import {
   FormInputField,
   FormSelectField,
   FormDrawerHeader,
-  FormSection,
 } from '@/components/form';
 import type { BasicRate } from '@/hooks/useBasicRates';
 import {
@@ -18,6 +16,7 @@ import {
   useBasicRateTypeOptions,
   formStatusLabelToDb,
 } from '@/hooks/useBasicRates';
+import { useBasicRateDistinctUnits } from '@/hooks/use-basic-rate-distinct-units';
 import { toast } from 'sonner';
 import { getDirtyValues } from '@/lib/get-dirty-values';
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
@@ -30,7 +29,30 @@ import {
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { OpenCloseMode } from '@/hooks/use-open-close';
-import { Control } from 'react-hook-form';
+import type { Control } from 'react-hook-form';
+import {
+  Field,
+  FieldLabel,
+  FieldError,
+  FieldGroup,
+  FieldSet,
+} from '@/components/ui/field';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from '@/components/ui/input-group';
+import { ChevronDownIcon, Loader2 } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Spinner } from '@/components/ui/spinner';
 
 const FORM_SCHEMA = z.object({
   schedule_source_version_id: z.string().uuid('Schedule is required'),
@@ -203,12 +225,8 @@ export function BasicRatesDrawer({
       />
 
       <DrawerContentContainer>
-        <Form {...form}>
-          <form
-            id='basic-rate-form'
-            onSubmit={form.handleSubmit(handleSubmit)}
-            className='flex flex-col gap-6'
-          >
+        <form id='basic-rate-form' onSubmit={form.handleSubmit(handleSubmit)}>
+          <FieldGroup density='dense'>
             <BasicInformationSection
               control={form.control}
               readOnly={isRead}
@@ -218,8 +236,8 @@ export function BasicRatesDrawer({
               scheduleLabel={scheduleNote}
             />
             <RateInformationSection control={form.control} readOnly={isRead} />
-          </form>
-        </Form>
+          </FieldGroup>
+        </form>
       </DrawerContentContainer>
     </DrawerWrapper>
   );
@@ -241,7 +259,7 @@ const BasicInformationSection = React.memo(
     scheduleOptions: Array<{ value: string; label: string }>;
     scheduleLabel: string;
   }) => (
-    <FormSection title='Basic Information' showSeparator={false}>
+    <FieldSet>
       {isCreate ? (
         <FormSelectField
           control={control}
@@ -297,7 +315,7 @@ const BasicInformationSection = React.memo(
         renderOption={recordStatusSelectOption}
         renderValue={recordStatusSelectValue}
       />
-    </FormSection>
+    </FieldSet>
   )
 );
 
@@ -309,7 +327,7 @@ function RateInformationSection({
   readOnly: boolean;
 }) {
   return (
-    <FormSection title='Rate Information'>
+    <FieldSet>
       <FormInputField
         control={control}
         name='rate'
@@ -320,17 +338,102 @@ function RateInformationSection({
         readOnly={readOnly}
       />
 
-      <FormInputField
-        control={control}
-        name='unit'
-        label='Unit'
-        placeholder='e.g. day, cum, sqm'
-        required
-        readOnly={readOnly}
-      />
-    </FormSection>
+      <UnitField control={control} readOnly={readOnly} />
+    </FieldSet>
+  );
+}
+
+function UnitField({
+  control,
+  readOnly,
+}: {
+  control: Control<BasicRateFormValues>;
+  readOnly: boolean;
+}) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ control, name: 'unit' });
+
+  const unitsQuery = useBasicRateDistinctUnits();
+  const units = unitsQuery.isError ? [] : (unitsQuery.data ?? []);
+
+  function handleUnitSelect(unit: string) {
+    field.onChange(unit);
+  }
+
+  return (
+    <Field data-invalid={!!error || undefined}>
+      <FieldLabel htmlFor='unit'>Unit *</FieldLabel>
+      <InputGroup data-disabled={readOnly ? true : undefined}>
+        <InputGroupInput
+          id='unit'
+          placeholder='e.g. day, cum, sqm'
+          {...field}
+          readOnly={readOnly}
+          aria-invalid={!!error}
+        />
+        {!readOnly && (
+          <InputGroupAddon align='inline-end' className='gap-1'>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <InputGroupButton
+                  type='button'
+                  variant='ghost'
+                  size='xs'
+                  className='gap-1.5'
+                  disabled={unitsQuery.isPending}
+                  aria-label='Select unit'
+                >
+                  {unitsQuery.isPending ? (
+                    <Loader2
+                      className='size-3.5 animate-spin'
+                      aria-hidden='true'
+                    />
+                  ) : (
+                    <ChevronDownIcon
+                      className='size-3.5 opacity-60'
+                      aria-hidden='true'
+                    />
+                  )}
+                  Units
+                </InputGroupButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align='end'
+                className='w-48 max-h-72 overflow-y-auto'
+              >
+                {units.length > 0 ? (
+                  <>
+                    <DropdownMenuLabel>Units</DropdownMenuLabel>
+                    <DropdownMenuGroup>
+                      {units.map((unit) => (
+                        <DropdownMenuItem
+                          key={unit}
+                          onSelect={() => handleUnitSelect(unit)}
+                        >
+                          {unit}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuGroup>
+                  </>
+                ) : (
+                  <DropdownMenuLabel className='max-w-[12rem] font-normal text-muted-foreground'>
+                    {unitsQuery.isPending ? (
+                      <Spinner />
+                    ) : (
+                      'No units yet. Type a unit or save a basic rate first.'
+                    )}
+                  </DropdownMenuLabel>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </InputGroupAddon>
+        )}
+      </InputGroup>
+      <FieldError>{error?.message}</FieldError>
+    </Field>
   );
 }
 
 BasicInformationSection.displayName = 'BasicInformationSection';
-RateInformationSection.displayName = 'RateInformationSection';

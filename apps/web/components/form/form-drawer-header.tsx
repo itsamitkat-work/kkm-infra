@@ -53,12 +53,9 @@ function FormDrawerHeaderComponent<
   allowSubmitWhenNotDirty = false,
   isLoading = false,
 }: FormDrawerHeaderProps<T>) {
-  const { isDirty, isValid, errors } = useFormState({
+  const { isDirty, isValid } = useFormState({
     control,
   });
-  console.log('isDirty', isDirty);
-  console.log('isValid', isValid);
-  console.log('errors', errors);
 
   return (
     <DrawerHeader

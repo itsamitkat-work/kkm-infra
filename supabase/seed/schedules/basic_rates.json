@@ -565,7 +565,7 @@
   {
     "code": "0085",
     "description": "Using cost of Ultra Violet Radiation tube",
-    "unit": "Hour",
+    "unit": "hour",
     "rate": 200.0,
     "type": "Hire Charges Of Plants & Machinery"
   },
@@ -2921,7 +2921,7 @@
   {
     "code": "0802",
     "description": "Acrylic distemper 1st quality , having VOC content less than 50 grams/ litre",
-    "unit": "Kg",
+    "unit": "kg",
     "rate": 45.0,
     "type": "Materials"
   },
@@ -3810,7 +3810,7 @@
   {
     "code": "1213",
     "description": "Water proofing materials",
-    "unit": "kilogram",
+    "unit": "kg",
     "rate": 45.0,
     "type": "Materials"
   },
@@ -3852,7 +3852,7 @@
   {
     "code": "1219",
     "description": "M.S. Wire nails",
-    "unit": "kilogram",
+    "unit": "kg",
     "rate": 58.0,
     "type": "Materials"
   },
@@ -13771,7 +13771,7 @@
   {
     "code": "8500",
     "description": "Water for jetting / blowback",
-    "unit": "1000litre",
+    "unit": "1000 litre",
     "rate": 1450.0,
     "type": "Materials"
   },
@@ -14821,7 +14821,7 @@
   {
     "code": "8693",
     "description": "Turn buckle and strengthening bolt",
-    "unit": "eachset",
+    "unit": "each set",
     "rate": 46.0,
     "type": "Materials"
   },

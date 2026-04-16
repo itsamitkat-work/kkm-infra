@@ -1,15 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { Control, FieldPath, FieldValues } from 'react-hook-form';
+import { Control, FieldPath, FieldValues, useController } from 'react-hook-form';
 import { Input, InputGroup } from '@/components/ui/input';
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+import { Field, FieldLabel, FieldError } from '@/components/ui/field';
 
 interface FormInputFieldProps<
   TFieldValues extends FieldValues = FieldValues,
@@ -24,6 +18,7 @@ interface FormInputFieldProps<
   className?: string;
   readOnly?: boolean;
   inputAddon?: React.ReactNode;
+  description?: string;
 }
 
 export function FormInputField<
@@ -40,30 +35,29 @@ export function FormInputField<
   readOnly = false,
   inputAddon,
 }: FormInputFieldProps<TFieldValues, TName>) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ control, name });
+
   return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className={className}>
-          <FormLabel>
-            {label}
-            {required && ' *'}
-          </FormLabel>
-          <FormControl>
-            <InputGroup>
-              {inputAddon}
-              <Input
-                placeholder={placeholder}
-                {...field}
-                readOnly={readOnly}
-                type={type}
-              />
-            </InputGroup>
-          </FormControl>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
+    <Field data-invalid={!!error || undefined} className={className}>
+      <FieldLabel htmlFor={name}>
+        {label}
+        {required && ' *'}
+      </FieldLabel>
+      <InputGroup>
+        {inputAddon}
+        <Input
+          id={name}
+          placeholder={placeholder}
+          {...field}
+          readOnly={readOnly}
+          type={type}
+          aria-invalid={!!error}
+        />
+      </InputGroup>
+      {error?.message && <FieldError>{error.message}</FieldError>}
+    </Field>
   );
 }

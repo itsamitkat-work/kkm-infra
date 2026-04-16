@@ -12,7 +12,7 @@ function FieldSet({ className, ...props }: React.ComponentProps<'fieldset'>) {
     <fieldset
       data-slot='field-set'
       className={cn(
-        'flex flex-col gap-6',
+        'flex flex-col gap-6 group-data-[density=dense]/field-group:gap-3.5',
         'has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3',
         className
       )}
@@ -31,7 +31,7 @@ function FieldLegend({
       data-slot='field-legend'
       data-variant={variant}
       className={cn(
-        'mb-3 font-medium',
+        'mb-3 font-medium group-data-[density=dense]/field-group:mb-2',
         'data-[variant=legend]:text-base',
         'data-[variant=label]:text-sm',
         className
@@ -41,12 +41,20 @@ function FieldLegend({
   );
 }
 
-function FieldGroup({ className, ...props }: React.ComponentProps<'div'>) {
+function FieldGroup({
+  className,
+  density,
+  ...props
+}: React.ComponentProps<'div'> & { density?: 'default' | 'dense' }) {
   return (
     <div
       data-slot='field-group'
+      data-density={density}
       className={cn(
-        'group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 [&>[data-slot=field-group]]:gap-4',
+        'group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3',
+        density === 'dense'
+          ? 'gap-3 [&>[data-slot=field-group]]:gap-2 [&>[data-slot=field-set]>[data-slot=field-group]]:gap-2'
+          : 'gap-7 [&>[data-slot=field-group]]:gap-4',
         className
       )}
       {...props}
@@ -55,7 +63,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<'div'>) {
 }
 
 const fieldVariants = cva(
-  'group/field flex w-full gap-3 data-[invalid=true]:text-destructive',
+  'group/field flex w-full gap-3 group-data-[density=dense]/field-group:gap-1 data-[invalid=true]:text-destructive',
   {
     variants: {
       orientation: {
@@ -165,7 +173,7 @@ function FieldSeparator({
       data-slot='field-separator'
       data-content={!!children}
       className={cn(
-        'relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2',
+        'relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2 group-data-[density=dense]/field-group:-my-1 group-data-[density=dense]/field-group:h-4',
         className
       )}
       {...props}
