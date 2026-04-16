@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { fetchUserOptions } from '@/app/(app)/projects/hooks/use-user';
 import { UserRoleType } from '@/app/(app)/user/types';
-import { fetchProjects } from '@/app/(app)/projects/hooks/use-projects-query';
+import { fetchProjects } from '@/hooks/useProjects';
 import { useWorkers } from './use-workers';
 
 // Fetch all users by role (for project heads, engineers, supervisors)
@@ -13,7 +13,13 @@ function useUsersByRole(role: UserRoleType) {
     queryKey: ['users-by-role', role],
     queryFn: async ({ pageParam = 1 }) => {
       // Fetch with empty query to get all users
-      const result = await fetchUserOptions('', role, pageParam as number, 50);
+      const result = await fetchUserOptions(
+        '',
+        role,
+        pageParam as number,
+        50,
+        undefined
+      );
       // Return in a format that can be used with infinite query
       return {
         options: result.options,
@@ -55,7 +61,12 @@ function useAllProjects() {
   const query = useInfiniteQuery({
     queryKey: ['all-projects-for-filter'],
     queryFn: async ({ pageParam = 1, signal }) => {
-      return await fetchProjects('', pageParam as number, {}, [], signal);
+      return await fetchProjects({
+        search: '',
+        page: pageParam as number,
+        pageSize: 20,
+        signal,
+      });
     },
     getNextPageParam: (lastPage, allPages) => {
       if (!lastPage) return undefined;
@@ -83,7 +94,7 @@ function useAllProjects() {
 
   const projectOptions = React.useMemo(() => {
     return allProjects.map((project) => ({
-      value: project.hashId,
+      value: project.id,
       label: project.name,
     }));
   }, [allProjects]);

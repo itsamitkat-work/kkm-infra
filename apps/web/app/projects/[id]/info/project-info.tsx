@@ -4,7 +4,6 @@ import { TableLoadingState } from '@/components/tables/table-loading';
 import { Button } from '@/components/ui/button';
 import { StatusLabel } from '@/components/ui/status-label';
 import { formatCurrency, formatDate } from '@/lib/utils';
-import { Project } from '@/types/projects';
 import {
   Calendar,
   MapPin,
@@ -27,19 +26,39 @@ import { useOpenClose } from '@/hooks/use-open-close';
 import { ProjectDrawer } from '@/app/(app)/projects/components/project-drawer';
 import { useQueryClient } from '@tanstack/react-query';
 import { ProjectSegmentSection } from './components/project-segment-section';
+import type {
+  ProjectDetail,
+  ProjectDetailMember,
+  ProjectsListRow,
+} from '@/hooks/useProjects';
+import {
+  parseProjectMeta,
+  projectDetailToListRow,
+} from '@/hooks/useProjects';
+import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
+import { UserRoleType } from '@/app/(app)/user/types';
 
 interface ProjectInfoTabProps {
-  project: Project | null | undefined;
+  project: ProjectDetail | null | undefined;
   isLoading: boolean;
   isError: boolean;
 }
+
+const ROLE_LABEL: Record<UserRoleType, string> = {
+  [UserRoleType.Verifier]: 'Measurement Verifier',
+  [UserRoleType.Checker]: 'Measurement Checker',
+  [UserRoleType.Maker]: 'Measurement Maker',
+  [UserRoleType.ProjectHead]: 'Project Head',
+  [UserRoleType.Engineer]: 'Project Engineer',
+  [UserRoleType.Superviser]: 'Supervisor',
+};
 
 export function ProjectInfo({
   project,
   isLoading,
   isError,
 }: ProjectInfoTabProps) {
-  const projectDrawer = useOpenClose<Project>();
+  const projectDrawer = useOpenClose<ProjectsListRow | null>();
   const queryClient = useQueryClient();
 
   if (isLoading) {
@@ -67,13 +86,20 @@ export function ProjectInfo({
     );
   }
 
+  const meta = parseProjectMeta(project.meta);
+  const scheduleLabel =
+    project.default_schedule_display_name ||
+    meta.client_label ||
+    '—';
+
   return (
     <div className='space-y-6'>
-      {/* Edit Button */}
       <div className='flex justify-end'>
         <Button
           size='sm'
-          onClick={() => project && projectDrawer.open(project, 'edit')}
+          onClick={() =>
+            project && projectDrawer.open(projectDetailToListRow(project), 'edit')
+          }
           className='h-8'
         >
           <Edit className='mr-2 h-4 w-4' />
@@ -82,9 +108,7 @@ export function ProjectInfo({
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-        {/* Left Column - Project Information (50% width) */}
         <div className='border rounded-lg p-6 space-y-6'>
-          {/* Basic Information Section */}
           <section>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
@@ -97,28 +121,29 @@ export function ProjectInfo({
                   {project.name}
                 </InfoItem>
                 <InfoItem label='Project Code' icon={Code}>
-                  {project.code}
+                  {project.code ?? '—'}
                 </InfoItem>
                 <InfoItem label='Short Name' icon={Hash}>
-                  {project.shortname}
+                  {meta.short_name ?? '—'}
                 </InfoItem>
                 <InfoItem label='Sanction Amount' icon={Wallet}>
-                  {formatCurrency(project.sanctionAmount || 0)}
+                  {formatCurrency(meta.sanction_amount ?? 0)}
                 </InfoItem>
                 <InfoItem label='Sanction DOS' icon={Calendar}>
-                  {project.sanctionDos ? formatDate(project.sanctionDos) : '—'}
+                  {meta.sanction_dos ? formatDate(meta.sanction_dos) : '—'}
                 </InfoItem>
                 <InfoItem label='Sanction DOC' icon={Calendar}>
-                  {project.sanctionDoc ? formatDate(project.sanctionDoc) : '—'}
+                  {meta.sanction_doc ? formatDate(meta.sanction_doc) : '—'}
                 </InfoItem>
                 <InfoItem label='Status' icon={Activity}>
-                  <StatusLabel status={project.status} />
+                  <StatusLabel
+                    status={projectStatusDisplayLabel(project.status)}
+                  />
                 </InfoItem>
               </div>
             </div>
           </section>
 
-          {/* Location Details Section */}
           <section className='pt-6 border-t border-border/50'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
@@ -128,16 +153,15 @@ export function ProjectInfo({
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <InfoItem label='Project Location' icon={MapPin}>
-                  {project.projectLocation || '—'}
+                  {meta.location || '—'}
                 </InfoItem>
                 <InfoItem label='Project City' icon={Building}>
-                  {project.projectCity || '—'}
+                  {meta.city || '—'}
                 </InfoItem>
               </div>
             </div>
           </section>
 
-          {/* Client Information Section */}
           <section className='pt-6 border-t border-border/50'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
@@ -146,17 +170,16 @@ export function ProjectInfo({
                 </h3>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <InfoItem label='Client' icon={Building2}>
-                  {project.clientName || '—'}
+                <InfoItem label='Schedule / Client' icon={Building2}>
+                  {scheduleLabel}
                 </InfoItem>
                 <InfoItem label='Client GSTIN No' icon={Receipt}>
-                  {project.clientgstn || '—'}
+                  {meta.client_gstn || '—'}
                 </InfoItem>
               </div>
             </div>
           </section>
 
-          {/* Project Teams Section */}
           <section className='pt-6 border-t border-border/50'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
@@ -165,48 +188,14 @@ export function ProjectInfo({
                 </h3>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                {project.verifier && project.verifierHashId && (
+                {project.members_detail.map((m: ProjectDetailMember) => (
                   <TeamMember
-                    role='Measurement Verifier'
-                    name={project.verifier}
-                    hashId={project.verifierHashId}
+                    key={`${m.role}-${m.user_id}`}
+                    role={ROLE_LABEL[m.role]}
+                    name={m.display_name}
+                    userId={m.user_id}
                   />
-                )}
-                {project.checker && project.checkerHashId && (
-                  <TeamMember
-                    role='Measurement Checker'
-                    name={project.checker}
-                    hashId={project.checkerHashId}
-                  />
-                )}
-                {project.maker && project.makerHashId && (
-                  <TeamMember
-                    role='Measurement Maker'
-                    name={project.maker}
-                    hashId={project.makerHashId}
-                  />
-                )}
-                {project.projectHead && project.projectHeadHashId && (
-                  <TeamMember
-                    role='Project Head'
-                    name={project.projectHead}
-                    hashId={project.projectHeadHashId}
-                  />
-                )}
-                {project.engineer && project.projectEngineerHashId && (
-                  <TeamMember
-                    role='Project Engineer'
-                    name={project.engineer}
-                    hashId={project.projectEngineerHashId}
-                  />
-                )}
-                {project.supervisor && project.supervisorHashId && (
-                  <TeamMember
-                    role='Supervisor'
-                    name={project.supervisor}
-                    hashId={project.supervisorHashId}
-                  />
-                )}
+                ))}
               </div>
             </div>
           </section>
@@ -217,7 +206,6 @@ export function ProjectInfo({
         </div>
       </div>
 
-      {/* Project Drawer */}
       {projectDrawer.isOpen && projectDrawer.mode && (
         <ProjectDrawer
           mode={projectDrawer.mode}
@@ -225,12 +213,9 @@ export function ProjectInfo({
           open={projectDrawer.isOpen}
           onSubmit={() => {
             projectDrawer.close();
-            // Invalidate project query to refetch updated data
-            const projectHashId = projectDrawer.data?.hashId || project?.hashId;
-            if (projectHashId) {
-              queryClient.invalidateQueries({
-                queryKey: ['project', projectHashId],
-              });
+            const id = projectDrawer.data?.id || project.id;
+            if (id) {
+              queryClient.invalidateQueries({ queryKey: ['project', id] });
             }
           }}
           onCancel={projectDrawer.close}
@@ -263,7 +248,7 @@ function InfoItem({ label, children, icon: Icon }: InfoItemProps) {
 interface TeamMemberProps {
   role: string;
   name: string;
-  hashId: string;
+  userId: string;
   imageUrl?: string | null;
 }
 
@@ -293,11 +278,11 @@ const getInitials = (name: string) => {
   return `${firstInitial}${lastInitial}`.toUpperCase();
 };
 
-function TeamMember({ role, name, hashId, imageUrl }: TeamMemberProps) {
+function TeamMember({ role, name, userId, imageUrl }: TeamMemberProps) {
   const colorClass = getColorFromRole(role);
 
   return (
-    <Link href={`/user/${hashId}`} className='block'>
+    <Link href={`/user/${userId}`} className='block'>
       <div className='flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-muted/50 hover:border-primary/50 hover:shadow-sm transition-all cursor-pointer group'>
         <Avatar className='h-10 w-10'>
           <AvatarImage src={imageUrl ?? undefined} alt={name} />

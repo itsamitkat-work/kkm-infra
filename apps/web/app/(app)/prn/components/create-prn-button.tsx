@@ -19,7 +19,7 @@ import { IconChevronDown, IconPlus } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 interface ProjectOption {
-  hashId: string;
+  id: string;
   name: string;
 }
 
@@ -36,9 +36,9 @@ export function CreatePrnButton({
   const [open, setOpen] = React.useState(false);
 
   const handleSelect = React.useCallback(
-    (hashId: string) => {
+    (projectUuid: string) => {
       setOpen(false);
-      router.push(`/prn/create?projectId=${hashId}`);
+      router.push(`/prn/create?projectId=${projectUuid}`);
     },
     [router]
   );
@@ -52,7 +52,7 @@ export function CreatePrnButton({
   }, [projectId, router]);
 
   const selectedProjectName = projectId
-    ? projects.find((p) => p.hashId === projectId)?.name
+    ? projects.find((p) => p.id === projectId)?.name
     : null;
 
   return (
@@ -100,12 +100,12 @@ export function CreatePrnButton({
                 heading={selectedProjectName ? 'Other projects' : undefined}
               >
                 {projects
-                  .filter((p) => p.hashId !== projectId)
+                  .filter((p) => p.id !== projectId)
                   .map((project) => (
                     <CommandItem
-                      key={project.hashId}
+                      key={project.id}
                       value={project.name}
-                      onSelect={() => handleSelect(project.hashId)}
+                      onSelect={() => handleSelect(project.id)}
                     >
                       {project.name}
                     </CommandItem>

@@ -19,6 +19,8 @@ interface FormInputFieldProps<
   readOnly?: boolean;
   inputAddon?: React.ReactNode;
   description?: string;
+  /** HTML `list` attribute (e.g. id of a `<datalist>` for preset suggestions). */
+  list?: string;
 }
 
 export function FormInputField<
@@ -34,6 +36,7 @@ export function FormInputField<
   className,
   readOnly = false,
   inputAddon,
+  list,
 }: FormInputFieldProps<TFieldValues, TName>) {
   const {
     field,
@@ -55,6 +58,7 @@ export function FormInputField<
           readOnly={readOnly}
           type={type}
           aria-invalid={!!error}
+          list={list}
         />
       </InputGroup>
       {error?.message && <FieldError>{error.message}</FieldError>}

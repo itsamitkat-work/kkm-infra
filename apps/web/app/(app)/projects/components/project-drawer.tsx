@@ -15,18 +15,12 @@ import {
   FormDrawerHeader,
   FormSection,
 } from '@/components/form';
-import { ProjectFormData, CreateProjectData, Project } from '@/types/projects';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
-import {
-  useCreateProject,
-  useUpdateProject,
-} from '@/hooks/projects/use-project-mutations';
 import { fetchScheduleSourceOptions } from '@/hooks/schedules/use-schedule-sources';
-import { useProjectStatus } from '../hooks/use-project-status';
-import { getStatusConfig } from '@/hooks/projects/use-project-status';
+import { projectStatusDisplayLabel, getStatusConfig } from '@/hooks/projects/use-project-status';
 import { StatusLabel } from '@/components/ui/status-label';
 import { OpenCloseMode } from '@/hooks/use-open-close';
 import { UserRoleType } from '../../user/types';
@@ -34,6 +28,21 @@ import { InputAddon } from '@/components/ui/input';
 import { Loader } from 'lucide-react';
 import { useProject } from '@/hooks/projects/use-project';
 import { fetchUserOptions } from '../hooks/use-user';
+import {
+  parseProjectMeta,
+  type ProjectsListRow,
+  type ProjectDetail,
+  type ProjectDetailMember,
+  type ProjectScheduleDetail,
+  projectMembersToSelection,
+  useCreateProject,
+  useUpdateProject,
+} from '@/hooks/useProjects';
+import type { ProjectMemberSelection } from '@/lib/projects/persist-project';
+import { useAuth } from '@/hooks/auth';
+import { getDirtyValues } from '@/lib/get-dirty-values';
+import { toast } from 'sonner';
+import { PROJECT_DB_STATUS } from '@/types/projects';
 
 interface SearchableOption {
   value: string;
@@ -41,43 +50,48 @@ interface SearchableOption {
   id?: string | number;
 }
 
+const userPickSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+});
+
+const schedulePickSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+});
+
 const FORM_SCHEMA = z.object({
   name: z.string().min(1, 'Project name is required'),
-  projectCode: z.string().min(1, 'Project code is required'),
-  shortName: z.string().min(1, 'Short name is required'),
-  sanctionAmount: z
+  code: z.string().min(1, 'Project code is required'),
+  status: z.enum(
+    [PROJECT_DB_STATUS.ACTIVE, PROJECT_DB_STATUS.ON_HOLD, PROJECT_DB_STATUS.CLOSED],
+    { message: 'Status is required' }
+  ),
+  short_name: z.string().min(1, 'Short name is required'),
+  sanction_amount: z
     .string()
     .min(1, 'Sanction amount is required')
     .refine(
       (val) => !isNaN(Number(val)) && Number(val) >= 0,
       'Sanction amount must be a valid number'
     ),
-  status: z
-    .object({
-      id: z.string().min(1, 'Status is required'),
-      name: z.string().min(1, 'Status name is required'),
-    })
-    .nullable(),
-  sanctionDos: z
+  sanction_dos: z
     .string()
     .min(1, 'Sanction DOS is required')
     .refine(validDateFormat, {
       message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
     }),
-  sanctionDoc: z
+  sanction_doc: z
     .string()
     .min(1, 'Sanction DOC is required')
     .refine(validDateFormat, {
       message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
     }),
-  projectLocation: z.string().min(1, 'Project location is required'),
-  projectCity: z.string().min(1, 'Project city is required'),
-  client: z.object({
-    id: z.string().min(1, 'Client is required'),
-    name: z.string().min(1, 'Client name is required'),
-  }),
-  clientAddress: z.string().min(1, 'Client address is required'),
-  clientGstn: z
+  location: z.string().min(1, 'Project location is required'),
+  city: z.string().min(1, 'Project city is required'),
+  schedule_source: schedulePickSchema,
+  client_address: z.string().min(1, 'Client address is required'),
+  client_gstn: z
     .string()
     .optional()
     .refine(
@@ -87,40 +101,170 @@ const FORM_SCHEMA = z.object({
         /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(val),
       'Invalid GSTIN format. E.g., 22AAAAA0000A1Z5'
     ),
-  verifier: z.object({
-    id: z.string().min(1, 'Measurement verifier is required'),
-    name: z.string().min(1, 'Measurement verifier name is required'),
-  }),
-  checker: z.object({
-    id: z.string().min(1, 'Measurement checker is required'),
-    name: z.string().min(1, 'Measurement checker name is required'),
-  }),
-  maker: z.object({
-    id: z.string().min(1, 'Measurement maker is required'),
-    name: z.string().min(1, 'Measurement maker name is required'),
-  }),
-  projectHead: z.object({
-    id: z.string().min(1, 'Project head is required'),
-    name: z.string().min(1, 'Project head name is required'),
-  }),
-  projectEngineer: z.object({
-    id: z.string().min(1, 'Project engineer is required'),
-    name: z.string().min(1, 'Project engineer name is required'),
-  }),
-  supervisor: z.object({
-    id: z.string().min(1, 'Supervisor is required'),
-    name: z.string().min(1, 'Supervisor name is required'),
-  }),
+  verifier: userPickSchema,
+  checker: userPickSchema,
+  maker: userPickSchema,
+  project_head: userPickSchema,
+  project_engineer: userPickSchema,
+  supervisor: userPickSchema,
 });
 
 type ProjectFormValues = z.infer<typeof FORM_SCHEMA>;
 
+const EMPTY_USER = { id: '', name: '' };
+
+const STATUS_OPTIONS = [
+  { value: PROJECT_DB_STATUS.ACTIVE, label: 'Active' },
+  { value: PROJECT_DB_STATUS.ON_HOLD, label: 'On Hold' },
+  { value: PROJECT_DB_STATUS.CLOSED, label: 'Closed' },
+];
+
 interface Props {
   mode: OpenCloseMode;
-  project?: Project | null;
+  project?: ProjectsListRow | null;
   open?: boolean;
   onSubmit: () => void;
   onCancel: () => void;
+}
+
+function formatDateToForm(dateString?: string | null): string {
+  if (!dateString) return '';
+  try {
+    const datePart = dateString.split('T')[0];
+    if (!datePart) return '';
+    const date = parseISO(datePart);
+    return isValid(date) ? format(date, 'yyyy-MM-dd') : '';
+  } catch {
+    return '';
+  }
+}
+
+function detailToFormValues(d: ProjectDetail): ProjectFormValues {
+  const meta = parseProjectMeta(d.meta);
+  const members = projectMembersToSelection(d.project_members);
+  const pick = (r: UserRoleType) => {
+    const id = members[r] ?? '';
+    const name =
+      d.members_detail.find((m: ProjectDetailMember) => m.role === r)
+        ?.display_name ?? '';
+    return { id, name };
+  };
+
+  const def = d.project_schedules.find(
+    (s: ProjectScheduleDetail) => s.is_default && s.is_active
+  );
+  const sid = def?.schedule_source_id ?? d.default_schedule_source_id ?? '';
+  const sname =
+    def?.schedule_sources?.display_name ??
+    def?.schedule_sources?.name ??
+    d.default_schedule_display_name ??
+    '';
+
+  return {
+    name: d.name,
+    code: d.code ?? '',
+    status: d.status as ProjectFormValues['status'],
+    short_name: meta.short_name ?? '',
+    sanction_amount:
+      meta.sanction_amount !== null && meta.sanction_amount !== undefined
+        ? String(meta.sanction_amount)
+        : '',
+    sanction_dos: formatDateToForm(meta.sanction_dos),
+    sanction_doc: formatDateToForm(meta.sanction_doc),
+    location: meta.location ?? '',
+    city: meta.city ?? '',
+    schedule_source: { id: sid, name: sname },
+    client_address: meta.client_address ?? '',
+    client_gstn: meta.client_gstn ?? '',
+    verifier: pick(UserRoleType.Verifier),
+    checker: pick(UserRoleType.Checker),
+    maker: pick(UserRoleType.Maker),
+    project_head: pick(UserRoleType.ProjectHead),
+    project_engineer: pick(UserRoleType.Engineer),
+    supervisor: pick(UserRoleType.Superviser),
+  };
+}
+
+function listRowToFormValues(row: ProjectsListRow): ProjectFormValues {
+  const meta = parseProjectMeta(row.meta);
+  return {
+    name: row.name,
+    code: row.code ?? '',
+    status: row.status as ProjectFormValues['status'],
+    short_name: meta.short_name ?? '',
+    sanction_amount:
+      meta.sanction_amount !== null && meta.sanction_amount !== undefined
+        ? String(meta.sanction_amount)
+        : '',
+    sanction_dos: formatDateToForm(meta.sanction_dos),
+    sanction_doc: formatDateToForm(meta.sanction_doc),
+    location: meta.location ?? '',
+    city: meta.city ?? '',
+    schedule_source: {
+      id: row.default_schedule_source_id ?? '',
+      name: row.default_schedule_display_name ?? '',
+    },
+    client_address: meta.client_address ?? '',
+    client_gstn: meta.client_gstn ?? '',
+    verifier: EMPTY_USER,
+    checker: EMPTY_USER,
+    maker: EMPTY_USER,
+    project_head: EMPTY_USER,
+    project_engineer: EMPTY_USER,
+    supervisor: EMPTY_USER,
+  };
+}
+
+function emptyFormValues(): ProjectFormValues {
+  return {
+    name: '',
+    code: '',
+    status: PROJECT_DB_STATUS.ACTIVE,
+    short_name: '',
+    sanction_amount: '',
+    sanction_dos: '',
+    sanction_doc: '',
+    location: '',
+    city: '',
+    schedule_source: { id: '', name: '' },
+    client_address: '',
+    client_gstn: '',
+    verifier: EMPTY_USER,
+    checker: EMPTY_USER,
+    maker: EMPTY_USER,
+    project_head: EMPTY_USER,
+    project_engineer: EMPTY_USER,
+    supervisor: EMPTY_USER,
+  };
+}
+
+function valuesToMeta(
+  v: ProjectFormValues,
+  forDirty: boolean
+): import('@/types/projects').ProjectMeta {
+  const base = {
+    short_name: v.short_name,
+    location: v.location,
+    city: v.city,
+    sanction_amount: Number(v.sanction_amount),
+    sanction_dos: v.sanction_dos || null,
+    sanction_doc: v.sanction_doc || null,
+    client_address: v.client_address,
+    client_gstn: v.client_gstn || null,
+  };
+  if (forDirty) return base;
+  return { ...base, client_label: v.schedule_source.name || null };
+}
+
+function toMemberSelection(v: ProjectFormValues): ProjectMemberSelection {
+  return {
+    [UserRoleType.Verifier]: v.verifier.id,
+    [UserRoleType.Checker]: v.checker.id,
+    [UserRoleType.Maker]: v.maker.id,
+    [UserRoleType.ProjectHead]: v.project_head.id,
+    [UserRoleType.Engineer]: v.project_engineer.id,
+    [UserRoleType.Superviser]: v.supervisor.id,
+  };
 }
 
 export function ProjectDrawer({
@@ -132,241 +276,162 @@ export function ProjectDrawer({
 }: Props) {
   const isEdit = mode === 'edit';
   const isRead = mode === 'read';
-  const isCopy = mode === 'create' && project?.name.includes('(Copy)');
+  const isCopy =
+    mode === 'create' && Boolean(project?.name?.includes('(Copy)'));
 
   const createProjectMutation = useCreateProject();
   const updateProjectMutation = useUpdateProject();
-  const projectStatusQuery = useProjectStatus();
+  const { claims } = useAuth();
+  const tenantId = claims?.tid ?? '';
+  const isSystemAdmin = claims?.is_system_admin === true;
 
-  const statusOptions = React.useMemo(() => {
-    return (
-      projectStatusQuery.data?.data.map((status) => {
-        const config = getStatusConfig(status.name || '');
+  const needsDetail =
+    mode === 'edit' ||
+    mode === 'read' ||
+    (mode === 'create' && Boolean(isCopy));
 
-        return {
-          value: status.hashid,
-          label: status.name,
-          icon: (
-            <span
-              className={`size-1 rounded-full border border-transparent ${config.dotClass}`}
-              aria-hidden
-            />
-          ),
-        };
-      }) || []
-    );
-  }, [projectStatusQuery.data]);
+  const detailId = needsDetail ? project?.id : undefined;
 
   const {
     project: projectDetail,
     isLoading,
     isError,
-  } = useProject(project?.hashId || undefined);
+  } = useProject(detailId);
 
-  // Helper function to format date string from API to form format
-  // FormDateField expects YYYY-MM-DD format
-  const formatDateString = React.useCallback(
-    (dateString?: string | null): string => {
-      if (!dateString) return '';
-      try {
-        // Extract date part from ISO string (e.g., "2025-07-31T00:00:00" -> "2025-07-31")
-        const datePart = dateString.split('T')[0];
-        if (!datePart) return '';
+  const effectiveMemberTenantId =
+    projectDetail?.tenant_id ?? (tenantId || null);
 
-        const date = parseISO(datePart);
-        return isValid(date) ? format(date, 'yyyy-MM-dd') : '';
-      } catch {
-        return '';
-      }
-    },
-    []
-  );
-
-  // Single function to get initial form values based on mode
-  const getInitialFormValues = React.useCallback(
-    (
-      mode: OpenCloseMode,
-      fetchedProjectData: Project | undefined
-    ): ProjectFormValues => {
-      // For create mode, return empty form values
-      if (mode === 'create') {
-        return {
-          name: '',
-          projectCode: '',
-          shortName: '',
-          verifier: { id: '', name: '' },
-          checker: { id: '', name: '' },
-          maker: { id: '', name: '' },
-          projectHead: { id: '', name: '' },
-          projectEngineer: { id: '', name: '' },
-          supervisor: { id: '', name: '' },
-          clientAddress: '',
-          clientGstn: '',
-          projectCity: '',
-          client: { id: '', name: '' },
-          sanctionAmount: '',
-          sanctionDos: '',
-          sanctionDoc: '',
-          projectLocation: '',
-          status: null,
-        };
-      }
-
-      // For edit/read mode, transform fetched project data to form values
-      if (fetchedProjectData) {
-        return {
-          name: fetchedProjectData.name || '',
-          projectCode: fetchedProjectData.code || '',
-          shortName: fetchedProjectData.shortname || '',
-          verifier: {
-            id: fetchedProjectData.verifierHashId || '',
-            name: fetchedProjectData.verifier || '',
-          },
-          checker: {
-            id: fetchedProjectData.checkerHashId || '',
-            name: fetchedProjectData.checker || '',
-          },
-          maker: {
-            id: fetchedProjectData.makerHashId || '',
-            name: fetchedProjectData.maker || '',
-          },
-          projectHead: {
-            id: fetchedProjectData.projectHeadHashId || '',
-            name: fetchedProjectData.projectHead || '',
-          },
-          projectEngineer: {
-            id: fetchedProjectData.projectEngineerHashId || '',
-            name: fetchedProjectData.engineer || '',
-          },
-          supervisor: {
-            id: fetchedProjectData.supervisorHashId || '',
-            name: fetchedProjectData.supervisor || '',
-          },
-          clientAddress: fetchedProjectData.clientName || '',
-          clientGstn: fetchedProjectData.clientgstn || '',
-          projectCity: fetchedProjectData.projectCity || '',
-          client: {
-            id: fetchedProjectData.clientHashId || '',
-            name: fetchedProjectData.clientName || '',
-          },
-          sanctionAmount: fetchedProjectData.sanctionAmount?.toString() || '',
-          sanctionDos: formatDateString(fetchedProjectData.sanctionDos),
-          sanctionDoc: formatDateString(fetchedProjectData.sanctionDoc),
-          projectLocation: fetchedProjectData.projectLocation || '',
-          status: {
-            id: fetchedProjectData.statusHashId || '',
-            name: fetchedProjectData.status || '',
-          },
-        };
-      }
-
-      // Fallback: return empty form values if no data available
-      return {
-        name: '',
-        projectCode: '',
-        shortName: '',
-        verifier: { id: '', name: '' },
-        checker: { id: '', name: '' },
-        maker: { id: '', name: '' },
-        projectHead: { id: '', name: '' },
-        projectEngineer: { id: '', name: '' },
-        supervisor: { id: '', name: '' },
-        clientAddress: '',
-        clientGstn: '',
-        projectCity: '',
-        client: { id: '', name: '' },
-        sanctionAmount: '',
-        sanctionDos: '',
-        sanctionDoc: '',
-        projectLocation: '',
-        status: null,
-      };
-    },
-    [formatDateString]
-  );
-
-  const defaultValues: ProjectFormValues = React.useMemo(() => {
-    return getInitialFormValues(mode, projectDetail);
-  }, [mode, projectDetail, getInitialFormValues]);
+  const getDefaultValues = React.useCallback((): ProjectFormValues => {
+    if (mode === 'create' && !isCopy) {
+      return emptyFormValues();
+    }
+    if (projectDetail) {
+      return detailToFormValues(projectDetail);
+    }
+    if (project) {
+      return listRowToFormValues(project);
+    }
+    return emptyFormValues();
+  }, [mode, isCopy, projectDetail, project]);
 
   const form = useForm<ProjectFormValues>({
     resolver: zodResolver(FORM_SCHEMA),
-    defaultValues,
+    defaultValues: getDefaultValues(),
     mode: 'all',
   });
 
-  // Track the last project hashId we've reset for to prevent infinite loops
-  const lastResetHashIdRef = React.useRef<string | undefined>(undefined);
-
-  // Reset form when fetched data becomes available (for edit/view mode)
   React.useEffect(() => {
-    const currentHashId = project?.hashId;
+    form.reset(getDefaultValues());
+  }, [projectDetail?.id, mode, getDefaultValues, form]);
 
-    // Reset ref when switching to create mode (no project)
-    if (!project) {
-      lastResetHashIdRef.current = undefined;
+  const memberFetcher = React.useCallback(
+    (role: UserRoleType) => (query: string, page: number = 1) =>
+      fetchUserOptions(query, role, page, 50, effectiveMemberTenantId),
+    [effectiveMemberTenantId]
+  );
+
+  const statusOptions = React.useMemo(() => {
+    return STATUS_OPTIONS.map((o) => {
+      const config = getStatusConfig(
+        o.value === PROJECT_DB_STATUS.ACTIVE
+          ? 'Active'
+          : o.value === PROJECT_DB_STATUS.CLOSED
+            ? 'Closed'
+            : 'On Hold'
+      );
+      return {
+        value: o.value,
+        label: o.label,
+        icon: (
+          <span
+            className={`size-1 rounded-full border border-transparent ${config.dotClass}`}
+            aria-hidden
+          />
+        ),
+      };
+    });
+  }, []);
+
+  const handleSubmit = async (values: ProjectFormValues) => {
+    if (!isEdit && !isSystemAdmin && !tenantId) {
+      toast.error('Missing tenant context.');
       return;
     }
 
-    if (
-      projectDetail &&
-      !isLoading &&
-      currentHashId &&
-      currentHashId !== lastResetHashIdRef.current
-    ) {
-      const formValues = getInitialFormValues(mode, projectDetail);
-      form.reset(formValues);
-      lastResetHashIdRef.current = currentHashId;
+    const members = toMemberSelection(values);
+    const memberRoles = [
+      UserRoleType.Verifier,
+      UserRoleType.Checker,
+      UserRoleType.Maker,
+      UserRoleType.ProjectHead,
+      UserRoleType.Engineer,
+      UserRoleType.Superviser,
+    ];
+    for (const r of memberRoles) {
+      if (!members[r]) {
+        toast.error('Please select all project team members.');
+        return;
+      }
     }
-    // Note: projectFormData is checked inside the effect but not in dependencies since it's
-    // derived from the query which is tied to the hashId. We track hashId changes to prevent
-    // resetting multiple times for the same project.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [project?.hashId, isLoading, mode, getInitialFormValues]);
 
-  const handleSubmit = async (values: ProjectFormValues) => {
     try {
-      // Transform form values to API format
-      const transformedData = {
-        id: projectDetail?.hashId || undefined,
-        hashId: projectDetail?.hashId || undefined,
-        name: values.name,
-        code: values.projectCode,
-        shortName: values.shortName || '',
-        sanctionAmount: Number(values.sanctionAmount),
-        sanctionDos: values.sanctionDos || null,
-        sanctionDoc: values.sanctionDoc || null,
-        projectLocation: values.projectLocation || '',
-        projectCity: values.projectCity,
-        clientHashId: values.client.id,
-        gst: values.clientGstn || undefined,
-        makerHashId: values.maker.id,
-        checkerHashId: values.checker.id,
-        verifierHashId: values.verifier.id,
-        projectHeadHashId: values.projectHead.id,
-        projectEngineerHashId: values.projectEngineer.id,
-        superviserHashId: values.supervisor.id,
-        statusHashId: values.status?.id || '',
-      };
+      if (isEdit && projectDetail) {
+        const dirty = getDirtyValues(values, form.formState.dirtyFields);
+        if (Object.keys(dirty).length === 0) {
+          toast.message('No changes to save');
+          return;
+        }
 
-      if (isEdit) {
-        await updateProjectMutation.mutateAsync(
-          transformedData as ProjectFormData
-        );
+        const metaDirty =
+          Boolean(dirty.short_name) ||
+          Boolean(dirty.location) ||
+          Boolean(dirty.city) ||
+          Boolean(dirty.sanction_amount) ||
+          Boolean(dirty.sanction_dos) ||
+          Boolean(dirty.sanction_doc) ||
+          Boolean(dirty.client_address) ||
+          Boolean(dirty.client_gstn);
+
+        const teamDirty =
+          Boolean(dirty.verifier) ||
+          Boolean(dirty.checker) ||
+          Boolean(dirty.maker) ||
+          Boolean(dirty.project_head) ||
+          Boolean(dirty.project_engineer) ||
+          Boolean(dirty.supervisor);
+
+        await updateProjectMutation.mutateAsync({
+          tenantId: projectDetail.tenant_id,
+          projectId: projectDetail.id,
+          ...('name' in dirty ? { name: values.name } : {}),
+          ...('code' in dirty ? { code: values.code || null } : {}),
+          ...('status' in dirty ? { status: values.status } : {}),
+          baseMeta: projectDetail.meta,
+          metaPatch: metaDirty ? valuesToMeta(values, false) : undefined,
+          ...('schedule_source' in dirty
+            ? { schedule_source_id: values.schedule_source.id }
+            : {}),
+          members: teamDirty ? members : undefined,
+        });
       } else {
-        await createProjectMutation.mutateAsync(
-          transformedData as CreateProjectData
-        );
+        await createProjectMutation.mutateAsync({
+          name: values.name,
+          code: values.code || null,
+          status: values.status,
+          meta: {
+            ...valuesToMeta(values, false),
+          },
+          schedule_source_id: values.schedule_source.id,
+          members,
+        });
       }
       onSubmit();
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Error handling is done in the mutation hooks, so we don't need to show another toast here
     }
   };
 
-  // Show loading state in drawer content
-  if (project && isLoading) {
+  if (project && needsDetail && isLoading) {
     return (
       <DrawerWrapper open={open} onClose={onCancel}>
         <DrawerHeader>
@@ -387,8 +452,7 @@ export function ProjectDrawer({
     );
   }
 
-  // Show error state in drawer content
-  if (project && isError) {
+  if (project && needsDetail && isError) {
     return (
       <DrawerWrapper open={open} onClose={onCancel}>
         <DrawerHeader>
@@ -424,7 +488,7 @@ export function ProjectDrawer({
         formId='project-form'
         control={form.control}
         readOnly={isRead}
-        allowSubmitWhenNotDirty={isCopy || false}
+        allowSubmitWhenNotDirty={isCopy}
         isLoading={
           createProjectMutation.isPending || updateProjectMutation.isPending
         }
@@ -434,13 +498,19 @@ export function ProjectDrawer({
         <Form {...form}>
           <form
             id='project-form'
-            onSubmit={form.handleSubmit(handleSubmit!)}
+            onSubmit={form.handleSubmit(handleSubmit)}
             className='flex flex-col gap-6'
           >
             <BasicInformationSection
               control={form.control}
               readOnly={isRead}
-              project={projectDetail}
+              projectStatusLabel={
+                projectDetail
+                  ? projectStatusDisplayLabel(projectDetail.status)
+                  : project
+                    ? projectStatusDisplayLabel(project.status)
+                    : undefined
+              }
               statusOptions={statusOptions}
             />
             <LocationDetailsSection control={form.control} readOnly={isRead} />
@@ -449,7 +519,11 @@ export function ProjectDrawer({
               readOnly={isRead}
               form={form}
             />
-            <ProjectTeamsSection control={form.control} readOnly={isRead} />
+            <ProjectTeamsSection
+              control={form.control}
+              readOnly={isRead}
+              fetchUser={memberFetcher}
+            />
           </form>
         </Form>
       </DrawerContentContainer>
@@ -457,68 +531,65 @@ export function ProjectDrawer({
   );
 }
 
-const SanctionAmountField = React.memo(
-  ({
+const SanctionAmountField = React.memo(function SanctionAmountField({
+  control,
+  name,
+  readOnly,
+}: {
+  control: Control<ProjectFormValues>;
+  name: string;
+  label: string;
+  placeholder?: string;
+  required?: boolean;
+  readOnly?: boolean;
+}) {
+  const fieldValue = useWatch({
     control,
-    name,
-    readOnly,
-  }: {
-    control: Control<ProjectFormValues>;
-    name: string;
-    label: string;
-    placeholder?: string;
-    required?: boolean;
-    readOnly?: boolean;
-  }) => {
-    const fieldValue = useWatch({
-      control,
-      name: name as keyof ProjectFormValues,
-    });
+    name: name as keyof ProjectFormValues,
+  });
 
-    // Use useMemo to compute the text representation
-    const amountText = React.useMemo(() => {
-      const numValue = Number(fieldValue);
-      if (!fieldValue || isNaN(numValue) || numValue <= 0) {
-        return '';
-      }
-      return numberToText(numValue);
-    }, [fieldValue]);
+  const amountText = React.useMemo(() => {
+    const numValue = Number(fieldValue);
+    if (!fieldValue || isNaN(numValue) || numValue <= 0) {
+      return '';
+    }
+    return numberToText(numValue);
+  }, [fieldValue]);
 
-    return (
-      <div>
-        <FormInputField
-          control={control}
-          name='sanctionAmount'
-          label='Sanction Amount (Rupees)'
-          placeholder='Enter amount'
-          required
-          type='number'
-          readOnly={readOnly}
-          inputAddon={<InputAddon>₹</InputAddon>}
-        />
-        {amountText && !readOnly && (
-          <div className='text-sm text-muted-foreground mt-1 italic'>
-            {amountText}
-          </div>
-        )}
-        <FormMessage />
-      </div>
-    );
-  }
-);
+  return (
+    <div>
+      <FormInputField
+        control={control}
+        name='sanction_amount'
+        label='Sanction Amount (Rupees)'
+        placeholder='Enter amount'
+        required
+        type='number'
+        readOnly={readOnly}
+        inputAddon={<InputAddon>₹</InputAddon>}
+      />
+      {amountText && !readOnly && (
+        <div className='text-sm text-muted-foreground mt-1 italic'>
+          {amountText}
+        </div>
+      )}
+      <FormMessage />
+    </div>
+  );
+});
 
-const BasicInformationSection = React.memo(
-  ({
-    control,
-    readOnly,
-    project,
-    statusOptions,
-  }: {
-    control: Control<ProjectFormValues>;
-    readOnly: boolean;
-    project?: Project | undefined;
-    statusOptions: { value: string; label: string }[];
-  }) => (
+const BasicInformationSection = React.memo(function BasicInformationSection({
+  control,
+  readOnly,
+  projectStatusLabel,
+  statusOptions,
+}: {
+  control: Control<ProjectFormValues>;
+  readOnly: boolean;
+  projectStatusLabel?: string;
+  statusOptions: { value: string; label: string }[];
+}) {
+  return (
     <FormSection title='Basic Information' showSeparator={false}>
       <FormInputField
         control={control}
@@ -531,7 +602,7 @@ const BasicInformationSection = React.memo(
 
       <FormInputField
         control={control}
-        name='projectCode'
+        name='code'
         label='Project Code'
         placeholder='Enter project code'
         required
@@ -540,7 +611,7 @@ const BasicInformationSection = React.memo(
 
       <FormInputField
         control={control}
-        name='shortName'
+        name='short_name'
         label='Short Name'
         placeholder='Enter project short name'
         required
@@ -549,7 +620,7 @@ const BasicInformationSection = React.memo(
 
       <SanctionAmountField
         control={control}
-        name='sanctionAmount'
+        name='sanction_amount'
         label='Sanction Amount (Rupees)'
         placeholder='Enter amount'
         required
@@ -559,7 +630,7 @@ const BasicInformationSection = React.memo(
       <div className='grid grid-cols-2 gap-4'>
         <FormDateField
           control={control}
-          name='sanctionDos'
+          name='sanction_dos'
           label='Sanction DOS'
           required
           readOnly={readOnly}
@@ -567,7 +638,7 @@ const BasicInformationSection = React.memo(
 
         <FormDateField
           control={control}
-          name='sanctionDoc'
+          name='sanction_doc'
           label='Sanction DOC'
           required
           readOnly={readOnly}
@@ -579,7 +650,7 @@ const BasicInformationSection = React.memo(
           <label className='text-sm font-medium text-muted-foreground'>
             Project Status
           </label>
-          <StatusLabel status={project?.status} fallback='Not specified' />
+          <StatusLabel status={projectStatusLabel} fallback='Not specified' />
         </div>
       ) : (
         <FormSearchableComboboxField
@@ -592,31 +663,29 @@ const BasicInformationSection = React.memo(
           readOnly={readOnly}
           searchPlaceholder='Search statuses...'
           emptyMessage='No statuses found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
+          getValue={(option) => option.value}
           getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
+            projectStatusDisplayLabel(String(fieldValue ?? ''))
           }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
+          getOptionValue={(fieldValue) => String(fieldValue ?? '')}
         />
       )}
     </FormSection>
-  )
-);
+  );
+});
 
-const LocationDetailsSection = React.memo(
-  ({
-    control,
-    readOnly,
-  }: {
-    control: Control<ProjectFormValues>;
-    readOnly: boolean;
-  }) => (
+const LocationDetailsSection = React.memo(function LocationDetailsSection({
+  control,
+  readOnly,
+}: {
+  control: Control<ProjectFormValues>;
+  readOnly: boolean;
+}) {
+  return (
     <FormSection title='Location Details'>
       <FormInputField
         control={control}
-        name='projectLocation'
+        name='location'
         label='Project Location'
         placeholder='Enter project location'
         required
@@ -625,18 +694,18 @@ const LocationDetailsSection = React.memo(
 
       <FormInputField
         control={control}
-        name='projectCity'
+        name='city'
         label='Project City'
         placeholder='Enter project city'
         required
         readOnly={readOnly}
       />
     </FormSection>
-  )
-);
+  );
+});
 
 const ScheduleSourceInformationSection = React.memo(
-  ({
+  function ScheduleSourceInformationSection({
     control,
     readOnly,
     form,
@@ -644,12 +713,12 @@ const ScheduleSourceInformationSection = React.memo(
     control: Control<ProjectFormValues>;
     readOnly: boolean;
     form: ReturnType<typeof useForm<ProjectFormValues>>;
-  }) => {
+  }) {
     return (
       <FormSection title='Schedule source'>
         <FormSearchableComboboxField
           control={control}
-          name='client'
+          name='schedule_source'
           label='Schedule'
           placeholder='Select schedule source'
           fetchOptions={fetchScheduleSourceOptions}
@@ -663,10 +732,10 @@ const ScheduleSourceInformationSection = React.memo(
                 address?: string;
                 gstn?: string;
               };
-              form.setValue('clientAddress', optionWithExtras.address || '', {
+              form.setValue('client_address', optionWithExtras.address || '', {
                 shouldValidate: true,
               });
-              form.setValue('clientGstn', optionWithExtras.gstn || '', {
+              form.setValue('client_gstn', optionWithExtras.gstn || '', {
                 shouldValidate: true,
               });
             }
@@ -685,7 +754,7 @@ const ScheduleSourceInformationSection = React.memo(
 
         <FormInputField
           control={control}
-          name='clientAddress'
+          name='client_address'
           label='Client Address'
           placeholder='Enter client address'
           required
@@ -694,7 +763,7 @@ const ScheduleSourceInformationSection = React.memo(
 
         <FormInputField
           control={control}
-          name='clientGstn'
+          name='client_gstn'
           label='Client GSTIN No'
           placeholder='Enter client GSTIN No'
           readOnly={readOnly}
@@ -706,137 +775,135 @@ const ScheduleSourceInformationSection = React.memo(
   }
 );
 
-const ProjectTeamsSection = React.memo(
-  ({
-    control,
-    readOnly,
-  }: {
-    control: Control<ProjectFormValues>;
-    readOnly: boolean;
-  }) => {
-    const fetcher =
-      (role: UserRoleType) =>
-      (query: string, page: number = 1) =>
-        fetchUserOptions(query, role, page);
-    return (
-      <FormSection title='Project Teams' showSeparator>
-        <FormSearchableComboboxField
-          control={control}
-          name='verifier'
-          label='Measurement Verifier'
-          placeholder='Select measurement verifier'
-          fetchOptions={fetcher(UserRoleType.Verifier)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
+const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
+  control,
+  readOnly,
+  fetchUser,
+}: {
+  control: Control<ProjectFormValues>;
+  readOnly: boolean;
+  fetchUser: (
+    role: UserRoleType
+  ) => (query: string, page?: number) => ReturnType<typeof fetchUserOptions>;
+}) {
+  return (
+    <FormSection title='Project Teams' showSeparator>
+      <FormSearchableComboboxField
+        control={control}
+        name='verifier'
+        label='Measurement Verifier'
+        placeholder='Select measurement verifier'
+        fetchOptions={fetchUser(UserRoleType.Verifier)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
 
-        <FormSearchableComboboxField
-          control={control}
-          name='checker'
-          label='Measurement Checker'
-          placeholder='Select measurement checker'
-          fetchOptions={fetcher(UserRoleType.Checker)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
+      <FormSearchableComboboxField
+        control={control}
+        name='checker'
+        label='Measurement Checker'
+        placeholder='Select measurement checker'
+        fetchOptions={fetchUser(UserRoleType.Checker)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
 
-        <FormSearchableComboboxField
-          control={control}
-          name='maker'
-          label='Measurement Maker'
-          placeholder='Select measurement maker'
-          fetchOptions={fetcher(UserRoleType.Maker)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
+      <FormSearchableComboboxField
+        control={control}
+        name='maker'
+        label='Measurement Maker'
+        placeholder='Select measurement maker'
+        fetchOptions={fetchUser(UserRoleType.Maker)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
 
-        <FormSearchableComboboxField
-          control={control}
-          name='projectHead'
-          label='Project Head'
-          placeholder='Select project head'
-          fetchOptions={fetcher(UserRoleType.ProjectHead)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
+      <FormSearchableComboboxField
+        control={control}
+        name='project_head'
+        label='Project Head'
+        placeholder='Select project head'
+        fetchOptions={fetchUser(UserRoleType.ProjectHead)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
 
-        <FormSearchableComboboxField
-          control={control}
-          name='projectEngineer'
-          label='Project Engineer'
-          placeholder='Select project engineer'
-          fetchOptions={fetcher(UserRoleType.Engineer)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
+      <FormSearchableComboboxField
+        control={control}
+        name='project_engineer'
+        label='Project Engineer'
+        placeholder='Select project engineer'
+        fetchOptions={fetchUser(UserRoleType.Engineer)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
 
-        <FormSearchableComboboxField
-          control={control}
-          name='supervisor'
-          label='Supervisor'
-          placeholder='Select supervisor'
-          fetchOptions={fetcher(UserRoleType.Superviser)}
-          required
-          readOnly={readOnly}
-          searchPlaceholder='Search users...'
-          emptyMessage='No users found'
-          getValue={(option) => ({ id: option.value, name: option.label })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
-      </FormSection>
-    );
-  }
-);
+      <FormSearchableComboboxField
+        control={control}
+        name='supervisor'
+        label='Supervisor'
+        placeholder='Select supervisor'
+        fetchOptions={fetchUser(UserRoleType.Superviser)}
+        required
+        readOnly={readOnly}
+        searchPlaceholder='Search users...'
+        emptyMessage='No users found'
+        getValue={(option) => ({ id: option.value, name: option.label })}
+        getDisplayValue={(fieldValue) =>
+          (fieldValue as { name?: string })?.name || ''
+        }
+        getOptionValue={(fieldValue) =>
+          (fieldValue as { id?: string })?.id || ''
+        }
+      />
+    </FormSection>
+  );
+});
 
 SanctionAmountField.displayName = 'SanctionAmountField';
 BasicInformationSection.displayName = 'BasicInformationSection';

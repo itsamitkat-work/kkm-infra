@@ -1,78 +1,42 @@
-// API Response types for projects (V2 API)
-export interface Project {
-  hashId: string;
-  name: string;
-  code: string | null;
-  shortname: string | null; // typo by BE
-  projectLocation: string | null;
-  projectCity: string | null;
-  sanctionDoc: string | null;
-  sanctionDos: string | null;
-  sanctionAmount: number | null;
-  remark: string | null;
-  status: ProjectStatus;
-  statusHashId: string | null;
-  clientName: string | null;
-  clientHashId: string | null;
-  gst: string | null;
-  clientgstn: string | null;
-  maker: string | null;
-  makerHashId: string | null;
-  checker: string | null;
-  checkerHashId: string | null;
-  verifier: string | null;
-  verifierHashId: string | null;
-  supervisor: string | null;
-  supervisorHashId: string | null;
-  engineer: string | null;
-  projectEngineerHashId: string | null;
-  projectHead: string | null;
-  projectHeadHashId: string | null;
+/** JSONB `projects.meta` — keys mirror persisted JSON. */
+export interface ProjectMeta {
+  short_name?: string | null;
+  location?: string | null;
+  city?: string | null;
+  sanction_amount?: number | null;
+  sanction_dos?: string | null;
+  sanction_doc?: string | null;
+  client_address?: string | null;
+  client_gstn?: string | null;
+  client_label?: string | null;
 }
 
-export interface ProjectFormData {
-  hashId?: string;
-  id?: string;
-  code: string;
-  name: string;
-  shortName?: string;
-  sanctionAmount: number;
-  sanctionDos?: string | null;
-  sanctionDoc?: string | null;
-  clientHashId: string;
-  projectLocation?: string;
-  projectCity: string;
-  statusHashId: string;
-  makerHashId: string;
-  checkerHashId: string;
-  types?: string;
-  gst?: string;
-  verifierHashId: string;
-  superviserHashId: string;
-  projectEngineerHashId: string;
-  projectHeadHashId: string;
-}
-
-// New project creation data (without id)
-export type CreateProjectData = Omit<ProjectFormData, 'id'>;
-
-// Status constants
-export const PROJECT_STATUS = {
-  ACTIVE: 'Active',
-  CLOSED: 'Closed',
-  ONHOLD: 'On Hold',
+export const PROJECT_DB_STATUS = {
+  ACTIVE: 'active',
+  ON_HOLD: 'on_hold',
+  CLOSED: 'closed',
 } as const;
 
-export type ProjectStatus =
-  (typeof PROJECT_STATUS)[keyof typeof PROJECT_STATUS];
+export type ProjectDbStatus =
+  (typeof PROJECT_DB_STATUS)[keyof typeof PROJECT_DB_STATUS];
 
-// Segment types
-export type ProjectSegmentType =
-  | 'Phase'
-  | 'Tower'
-  | 'Floor'
-  | 'Area'
-  | 'Activity';
+export function projectDbStatusLabel(status: string): string {
+  if (status === PROJECT_DB_STATUS.ON_HOLD) return 'On Hold';
+  if (status === PROJECT_DB_STATUS.CLOSED) return 'Closed';
+  if (status === PROJECT_DB_STATUS.ACTIVE) return 'Active';
+  return status;
+}
+
+/** @deprecated Segments API — kept for REST-backed segment flows. */
+export const PROJECT_SEGMENT_TYPE_PRESETS = [
+  'Phase',
+  'Tower',
+  'Floor',
+  'Area',
+  'Activity',
+] as const;
+
+export type ProjectSegmentType = string;
 
 export type ProjectSegmentStatus =
   | 'Draft'
@@ -106,7 +70,6 @@ export interface ProjectSegmentFormData {
 
 export type ProjectCreateSegmentData = Omit<ProjectSegmentFormData, 'id'>;
 
-// API request types for segment operations
 export interface SegmentApiRequest {
   id?: string;
   segmentId?: string;

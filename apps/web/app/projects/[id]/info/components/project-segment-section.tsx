@@ -1,7 +1,8 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Project, ProjectSegment } from '@/types/projects';
+import { ProjectSegment } from '@/types/projects';
+import type { ProjectDetail } from '@/hooks/useProjects';
 import { Plus } from 'lucide-react';
 import React from 'react';
 import { useOpenClose } from '@/hooks/use-open-close';
@@ -18,10 +19,10 @@ import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { TableErrorState } from '@/components/tables/table-error';
 
-export const ProjectSegmentSection = ({ project }: { project: Project }) => {
+export const ProjectSegmentSection = ({ project }: { project: ProjectDetail }) => {
   const segmentDrawer = useOpenClose<ProjectSegment>();
   const deleteConfirmation = useDeleteConfirmation();
-  const deleteSegmentMutation = useDeleteSegment(project?.hashId || '');
+  const deleteSegmentMutation = useDeleteSegment(project?.id || '');
 
   const controls = useDataTableControls(PROJECT_SEGMENTS_TABLE_ID);
 
@@ -36,7 +37,7 @@ export const ProjectSegmentSection = ({ project }: { project: Project }) => {
 
   const { query: segmentsQuery, invalidate: invalidateSegmentsQuery } =
     useProjectSegmentsQuery({
-      projectId: project?.hashId || '',
+      projectId: project?.id || '',
       search: controls.search,
       filters: controls.filters,
       sorting: controls.state.sorting,
@@ -119,13 +120,13 @@ export const ProjectSegmentSection = ({ project }: { project: Project }) => {
           tableName='Segments'
         />
       </div>
-      {project?.hashId && (
+      {project?.id && (
         <>
           {segmentDrawer.isOpen && segmentDrawer.mode && (
             <ProjectSegmentDrawer
               mode={segmentDrawer.mode}
               segment={segmentDrawer.data || null}
-              projectId={project.hashId}
+              projectId={project.id}
               project={project}
               open={segmentDrawer.isOpen}
               onSubmit={() => {

@@ -31,7 +31,7 @@ export function ProjectFilterSelect({
         options={projects}
         value={value ?? null}
         onChange={onChange}
-        getOptionId={(p) => p.hashId}
+        getOptionId={(p) => p.id}
         getOptionLabel={(p) => p.name}
         placeholder={placeholder}
         className={className}

@@ -5,7 +5,7 @@ import * as React from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
-import { Project } from '@/types/projects';
+import type { ProjectsListRow } from '@/hooks/useProjects';
 import { ProjectDrawer } from './project-drawer';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useRouter } from 'next/navigation';
@@ -23,7 +23,7 @@ import { useAuth } from '@/hooks/auth';
 
 export function ProjectsTable() {
   const router = useRouter();
-  const drawer = useOpenClose<Project | null>();
+  const drawer = useOpenClose<ProjectsListRow | null>();
   const deleteConfirmation = useDeleteConfirmation();
   const deleteProjectMutation = useDeleteProject();
   const { ability } = useAuth();
@@ -43,21 +43,21 @@ export function ProjectsTable() {
   }, [drawer]);
 
   const onClickEditOrRead = React.useCallback(
-    (project: Project, mode: 'edit' | 'read') => {
+    (project: ProjectsListRow, mode: 'edit' | 'read') => {
       drawer.open(project, mode);
     },
     [drawer]
   );
 
   const onClickNavigateToProjectDetail = React.useCallback(
-    (project: Project) => {
-      router.push(`/projects/${project.hashId}`);
+    (project: ProjectsListRow) => {
+      router.push(`/projects/${project.id}`);
     },
     [router]
   );
 
   const onClickCopy = React.useCallback(
-    (project: Project) => {
+    (project: ProjectsListRow) => {
       const copy = {
         ...project,
         name: `${project.name} (Copy)`,
@@ -114,7 +114,7 @@ export function ProjectsTable() {
 
   return (
     <>
-      <DataTable<Project>
+      <DataTable<ProjectsListRow>
         query={projectsQuery}
         controls={controls}
         filterFields={filterFields}

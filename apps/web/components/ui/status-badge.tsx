@@ -37,6 +37,14 @@ const STATUS_CONFIG_MAP: Record<string, StatusConfig> = {
     dotClass: 'bg-amber-500',
     label: 'On Hold',
   },
+  on_hold: {
+    dotClass: 'bg-amber-500',
+    label: 'On Hold',
+  },
+  closed: {
+    dotClass: 'bg-slate-500',
+    label: 'Closed',
+  },
   // Project segment statuses
   'Draft': {
     dotClass: 'bg-slate-500',

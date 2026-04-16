@@ -518,6 +518,131 @@ export type Database = {
         }
         Relationships: []
       }
+      project_members: {
+        Row: {
+          created_at: string
+          id: string
+          project_id: string
+          role_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          project_id: string
+          role_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          project_id?: string
+          role_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_members_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_schedules: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          is_default: boolean
+          project_id: string
+          schedule_source_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          is_default?: boolean
+          project_id: string
+          schedule_source_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          is_default?: boolean
+          project_id?: string
+          schedule_source_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_schedules_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_schedules_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["schedule_source_id"]
+          },
+          {
+            foreignKeyName: "project_schedules_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_sources"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          code: string | null
+          created_at: string
+          id: string
+          meta: Json
+          name: string
+          status: string
+          tenant_id: string
+          updated_at: string
+        }
+        Insert: {
+          code?: string | null
+          created_at?: string
+          id?: string
+          meta?: Json
+          name: string
+          status?: string
+          tenant_id: string
+          updated_at?: string
+        }
+        Update: {
+          code?: string | null
+          created_at?: string
+          id?: string
+          meta?: Json
+          name?: string
+          status?: string
+          tenant_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "projects_tenant_id_fkey"
+            columns: ["tenant_id"]
+            isOneToOne: false
+            referencedRelation: "tenants"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       schedule_item_annotations: {
         Row: {
           created_at: string | null
@@ -1147,6 +1272,35 @@ export type Database = {
         }
         Returns: boolean
       }
+      list_projects: {
+        Args: {
+          p_amount_max?: number
+          p_amount_min?: number
+          p_doc_from?: string
+          p_doc_to?: string
+          p_dos_from?: string
+          p_dos_to?: string
+          p_limit?: number
+          p_offset?: number
+          p_search?: string
+          p_sort_by?: string
+          p_sort_dir?: string
+          p_status?: string[]
+        }
+        Returns: {
+          code: string
+          created_at: string
+          default_schedule_display_name: string
+          default_schedule_source_id: string
+          id: string
+          meta: Json
+          name: string
+          status: string
+          tenant_id: string
+          total_count: number
+          updated_at: string
+        }[]
+      }
       log_security_event_service: {
         Args: {
           p_event_type: string
@@ -1161,6 +1315,10 @@ export type Database = {
       mark_security_alert_status: {
         Args: { p_alert_id: string; p_recipient?: string; p_status: string }
         Returns: Json
+      }
+      project_policy_ok: {
+        Args: { p_action: string; p_project_id: string }
+        Returns: boolean
       }
       revoke_user_sessions_service: {
         Args: { p_reason?: string; p_user_id: string }
@@ -1194,6 +1352,10 @@ export type Database = {
           rates: Json
           unit_symbol: string
         }[]
+      }
+      set_default_project_schedule: {
+        Args: { p_project_id: string; p_schedule_source_id: string }
+        Returns: undefined
       }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }

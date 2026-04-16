@@ -18,7 +18,7 @@ import {
   ProjectSegment,
   ProjectSegmentFormData,
   ProjectCreateSegmentData,
-  ProjectSegmentType,
+  PROJECT_SEGMENT_TYPE_PRESETS,
   ProjectSegmentStatus,
 } from '@/types/projects';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
@@ -32,15 +32,10 @@ import { OpenCloseMode } from '@/hooks/use-open-close';
 import { Loader, ArrowRight } from 'lucide-react';
 import { useProjectSegments } from '../../hooks/use-project-segments';
 import { Button } from '@/components/ui/button';
-import { Project } from '@/types/projects';
+import type { ProjectDetail } from '@/hooks/useProjects';
+import { parseProjectMeta } from '@/hooks/useProjects';
 
-const SEGMENT_TYPE_OPTIONS: { value: ProjectSegmentType; label: string }[] = [
-  { value: 'Phase', label: 'Phase' },
-  { value: 'Tower', label: 'Tower' },
-  { value: 'Floor', label: 'Floor' },
-  { value: 'Area', label: 'Area' },
-  { value: 'Activity', label: 'Activity' },
-];
+const SEGMENT_TYPE_DATALIST_ID = 'project-segment-type-presets';
 
 const SEGMENT_STATUS_OPTIONS: { value: ProjectSegmentStatus; label: string }[] =
   [
@@ -52,9 +47,11 @@ const SEGMENT_STATUS_OPTIONS: { value: ProjectSegmentStatus; label: string }[] =
 
 const FORM_SCHEMA = z.object({
   segmentName: z.string().min(1, 'Segment name is required'),
-  segmentType: z.enum(['Phase', 'Tower', 'Floor', 'Area', 'Activity'], {
-    message: 'Segment type is required',
-  }),
+  segmentType: z
+    .string()
+    .trim()
+    .min(1, 'Segment type is required')
+    .max(128, 'Segment type is too long'),
   description: z.string().optional(),
   startDate: z.string().optional(),
   endDate: z.string().optional(),
@@ -76,7 +73,7 @@ interface Props {
   mode: OpenCloseMode;
   segment?: ProjectSegment | null;
   projectId: string;
-  project?: Project | null;
+  project?: ProjectDetail | null;
   open?: boolean;
   onSubmit: () => void;
   onCancel: () => void;
@@ -91,6 +88,11 @@ export function ProjectSegmentDrawer({
   onCancel,
   open,
 }: Props) {
+  const projectDatesMeta = React.useMemo(
+    () => (project ? parseProjectMeta(project.meta) : null),
+    [project]
+  );
+
   const isEdit = mode === 'edit';
   const isRead = mode === 'read';
 
@@ -177,11 +179,12 @@ export function ProjectSegmentDrawer({
   function handleApplyProjectDates() {
     if (!project) return;
 
-    const projectStartDate = project.sanctionDos
-      ? formatDateString(project.sanctionDos)
+    const meta = parseProjectMeta(project.meta);
+    const projectStartDate = meta.sanction_dos
+      ? formatDateString(meta.sanction_dos)
       : '';
-    const projectEndDate = project.sanctionDoc
-      ? formatDateString(project.sanctionDoc)
+    const projectEndDate = meta.sanction_doc
+      ? formatDateString(meta.sanction_doc)
       : '';
 
     if (projectStartDate || projectEndDate) {
@@ -283,15 +286,28 @@ export function ProjectSegmentDrawer({
                 readOnly={isRead}
               />
 
-              <FormSelectField
-                control={form.control}
-                name='segmentType'
-                label='Segment Type'
-                placeholder='Select segment type'
-                options={SEGMENT_TYPE_OPTIONS}
-                required
-                readOnly={isRead}
-              />
+              <div className='space-y-1.5'>
+                <FormInputField
+                  control={form.control}
+                  name='segmentType'
+                  label='Segment Type'
+                  placeholder='Choose a preset or type a custom type'
+                  required
+                  readOnly={isRead}
+                  list={isRead ? undefined : SEGMENT_TYPE_DATALIST_ID}
+                />
+                {!isRead && (
+                  <datalist id={SEGMENT_TYPE_DATALIST_ID}>
+                    {PROJECT_SEGMENT_TYPE_PRESETS.map((preset) => (
+                      <option key={preset} value={preset} />
+                    ))}
+                  </datalist>
+                )}
+                <p className='text-xs text-muted-foreground'>
+                  Suggestions include Phase, Tower, Floor, Area, Activity — or
+                  enter any label your project uses.
+                </p>
+              </div>
 
               <FormTextareaField
                 control={form.control}
@@ -307,7 +323,8 @@ export function ProjectSegmentDrawer({
                   <span className='text-sm font-medium'>Dates</span>
                   {!isRead &&
                     project &&
-                    (project.sanctionDos || project.sanctionDoc) && (
+                    (projectDatesMeta?.sanction_dos ||
+                      projectDatesMeta?.sanction_doc) && (
                       <Button
                         type='button'
                         variant='ghost'

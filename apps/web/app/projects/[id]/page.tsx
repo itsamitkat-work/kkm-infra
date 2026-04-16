@@ -234,7 +234,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink href={`/projects/${project.hashId}`}>
+                  <BreadcrumbLink href={`/projects/${project.id}`}>
                     {project.name}
                   </BreadcrumbLink>
                 </BreadcrumbItem>

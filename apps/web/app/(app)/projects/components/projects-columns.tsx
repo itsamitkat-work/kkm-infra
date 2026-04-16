@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { Project } from '@/types/projects';
+import { parseProjectMeta, type ProjectsListRow } from '@/hooks/useProjects';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,13 +32,23 @@ interface PermissionFlags {
   canDelete: boolean;
 }
 
+function listRowDates(row: ProjectsListRow) {
+  const m = parseProjectMeta(row.meta);
+  return {
+    sanctionDos: m.sanction_dos ?? null,
+    sanctionDoc: m.sanction_doc ?? null,
+    sanctionAmount: m.sanction_amount ?? 0,
+    projectLocation: m.location ?? null,
+  };
+}
+
 export const getColumns = (
-  onProjectAction: (project: Project, mode: 'edit' | 'read') => void,
+  onProjectAction: (project: ProjectsListRow, mode: 'edit' | 'read') => void,
   onDeleteProject: (projectId: string) => void,
-  onMakeCopy: (project: Project) => void,
-  navigateToProjectDetail: (project: Project) => void,
+  onMakeCopy: (project: ProjectsListRow) => void,
+  navigateToProjectDetail: (project: ProjectsListRow) => void,
   permissionFlags: PermissionFlags
-): ColumnDef<Project>[] => [
+): ColumnDef<ProjectsListRow>[] => [
   {
     accessorKey: 'name',
     header: ({ column }) => (
@@ -73,7 +83,8 @@ export const getColumns = (
     size: 400,
   },
   {
-    accessorKey: 'sanctionAmount',
+    id: 'sanctionamount',
+    accessorFn: (row) => listRowDates(row).sanctionAmount,
     header: ({ column }) => (
       <TableColumnHeader
         className='text-left'
@@ -81,36 +92,38 @@ export const getColumns = (
         title='Sanction Amount'
       />
     ),
-    cell: ({ row }) => (
-      <Tooltip delayDuration={500}>
-        <TooltipTrigger asChild>
-          <div className='w-full text-left'>
-            <span className='text-sm text-muted-foreground text-left'>
-              ₹{formatIndianNumber(row.original.sanctionAmount || 0)}
-            </span>
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{numberToText(row.original.sanctionAmount || 0)}</p>
-        </TooltipContent>
-      </Tooltip>
-    ),
+    cell: ({ row }) => {
+      const amount = listRowDates(row.original).sanctionAmount;
+      return (
+        <Tooltip delayDuration={500}>
+          <TooltipTrigger asChild>
+            <div className='w-full text-left'>
+              <span className='text-sm text-muted-foreground text-left'>
+                ₹{formatIndianNumber(amount || 0)}
+              </span>
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{numberToText(amount || 0)}</p>
+          </TooltipContent>
+        </Tooltip>
+      );
+    },
     size: 150,
   },
   {
-    accessorKey: 'sanctionDos',
+    id: 'sanctiondos',
+    accessorFn: (row) => listRowDates(row).sanctionDos,
     header: ({ column }) => <TableColumnHeader column={column} title='DOS' />,
     cell: ({ row }) => {
-      const duration = calculateDuration(
-        row.original.sanctionDos,
-        row.original.sanctionDoc
-      );
-      const daysRemaining = calculateDaysRemaining(row.original.sanctionDoc);
+      const { sanctionDos, sanctionDoc } = listRowDates(row.original);
+      const duration = calculateDuration(sanctionDos, sanctionDoc);
+      const daysRemaining = calculateDaysRemaining(sanctionDoc);
       return (
         <Tooltip delayDuration={500}>
           <TooltipTrigger asChild>
             <div className='text-sm text-muted-foreground truncate cursor-default'>
-              {formatDateSlash(row.original.sanctionDos)}
+              {formatDateSlash(sanctionDos)}
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -125,19 +138,18 @@ export const getColumns = (
     size: 100,
   },
   {
-    accessorKey: 'sanctionDoc',
+    id: 'sanctiondoc',
+    accessorFn: (row) => listRowDates(row).sanctionDoc,
     header: ({ column }) => <TableColumnHeader column={column} title='DOC' />,
     cell: ({ row }) => {
-      const duration = calculateDuration(
-        row.original.sanctionDos,
-        row.original.sanctionDoc
-      );
-      const daysRemaining = calculateDaysRemaining(row.original.sanctionDoc);
+      const { sanctionDos, sanctionDoc } = listRowDates(row.original);
+      const duration = calculateDuration(sanctionDos, sanctionDoc);
+      const daysRemaining = calculateDaysRemaining(sanctionDoc);
       return (
         <Tooltip delayDuration={500}>
           <TooltipTrigger asChild>
             <div className='text-sm text-muted-foreground truncate cursor-default'>
-              {formatDateSlash(row.original.sanctionDoc)}
+              {formatDateSlash(sanctionDoc)}
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -152,13 +164,14 @@ export const getColumns = (
     size: 100,
   },
   {
-    accessorKey: 'projectLocation',
+    id: 'projectlocation',
+    accessorFn: (row) => listRowDates(row).projectLocation,
     header: ({ column }) => (
       <TableColumnHeader column={column} title='Location' />
     ),
     cell: ({ row }) => (
       <div className='text-sm text-muted-foreground truncate'>
-        {row.original.projectLocation || ''}
+        {listRowDates(row.original).projectLocation || ''}
       </div>
     ),
     size: 100,
@@ -178,7 +191,6 @@ export const getColumns = (
     cell: ({ row }) => {
       const { canRead, canUpdate, canDelete } = permissionFlags;
 
-      // Hide actions column if user has no permissions
       if (!canRead && !canUpdate && !canDelete) {
         return null;
       }
@@ -219,7 +231,7 @@ export const getColumns = (
             {canDelete && (
               <DropdownMenuItem
                 variant='destructive'
-                onClick={() => onDeleteProject(row.original.hashId)}
+                onClick={() => onDeleteProject(row.original.id)}
               >
                 Delete
               </DropdownMenuItem>
