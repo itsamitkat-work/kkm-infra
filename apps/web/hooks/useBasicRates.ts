@@ -245,26 +245,24 @@ async function createBasicRateApi(
   if (error) throw error;
 }
 
-async function updateBasicRateApi(
-  input: Pick<
-    BasicRates['Row'],
-    | 'id'
-    | 'basic_rate_type_id'
-    | 'code'
-    | 'description'
-    | 'unit'
-    | 'rate'
-    | 'status'
+export type UpdateBasicRateInput = {
+  id: string;
+} & Partial<
+  Pick<
+    BasicRates['Update'],
+    'basic_rate_type_id' | 'code' | 'description' | 'unit' | 'rate' | 'status'
   >
-): Promise<void> {
+>;
+
+async function updateBasicRateApi(input: UpdateBasicRateInput): Promise<void> {
   const supabase = getSupabase();
   const { id, ...rest } = input;
+  if (Object.keys(rest).length === 0) return;
   const { error } = await supabase.from('basic_rates').update(rest).eq('id', id);
   if (error) throw error;
 }
 
 export type CreateBasicRateInput = Parameters<typeof createBasicRateApi>[0];
-export type UpdateBasicRateInput = Parameters<typeof updateBasicRateApi>[0];
 
 async function deleteBasicRateApi(id: string): Promise<void> {
   const supabase = getSupabase();

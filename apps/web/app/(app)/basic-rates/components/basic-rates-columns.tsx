@@ -48,9 +48,7 @@ export const getColumns = (
   },
   {
     accessorKey: 'description',
-    header: ({ column }) => (
-      <TableColumnHeader column={column} title='Name' />
-    ),
+    header: ({ column }) => <TableColumnHeader column={column} title='Name' />,
     meta: {
       cellClassName: '!whitespace-normal',
     },
@@ -102,9 +100,7 @@ export const getColumns = (
   },
   {
     accessorKey: 'basic_rate_type_id',
-    header: ({ column }) => (
-      <TableColumnHeader column={column} title='Type' />
-    ),
+    header: ({ column }) => <TableColumnHeader column={column} title='Type' />,
     cell: ({ row }) => {
       return (
         <span className='block overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground'>
@@ -116,9 +112,7 @@ export const getColumns = (
   },
   {
     accessorKey: 'unit',
-    header: ({ column }) => (
-      <TableColumnHeader column={column} title='Unit' />
-    ),
+    header: ({ column }) => <TableColumnHeader column={column} title='Unit' />,
     cell: ({ row }) => {
       return (
         <span className='block overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground'>
@@ -130,9 +124,7 @@ export const getColumns = (
   },
   {
     accessorKey: 'rate',
-    header: ({ column }) => (
-      <TableColumnHeader column={column} title='Rate' />
-    ),
+    header: ({ column }) => <TableColumnHeader column={column} title='Rate' />,
     cell: ({ row }) => {
       const rate = row.original.rate;
       return (
@@ -150,7 +142,7 @@ export const getColumns = (
       row.schedule_source_versions?.name ??
       '',
     header: ({ column }) => (
-      <TableColumnHeader column={column} title='State Schedule' />
+      <TableColumnHeader column={column} title='Schedule' />
     ),
     cell: ({ row }) => {
       const label =
@@ -170,9 +162,7 @@ export const getColumns = (
     header: ({ column }) => (
       <TableColumnHeader column={column} title='Status' />
     ),
-    cell: ({ row }) => (
-      <RecordStatusBadge status={row.original.status} />
-    ),
+    cell: ({ row }) => <RecordStatusBadge status={row.original.status} />,
     size: 100,
   },
   {

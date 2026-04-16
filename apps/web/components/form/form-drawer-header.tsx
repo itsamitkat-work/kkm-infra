@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Control, useFormState } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { DrawerClose, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
+import { Loader2 } from 'lucide-react';
 
 /**
  * A reusable FormDrawerHeader component that provides a consistent header layout
@@ -73,13 +74,19 @@ function FormDrawerHeaderComponent<
       </div>
       <div className='flex gap-2'>
         <DrawerClose asChild>
-          <Button variant='outline' onClick={onCancel} disabled={isLoading}>
+          <Button
+            size='sm'
+            variant='outline'
+            onClick={onCancel}
+            disabled={isLoading}
+          >
             {readOnly ? 'Close' : 'Cancel'}
           </Button>
         </DrawerClose>
         {!readOnly && (
           <Button
             type='submit'
+            size='sm'
             form={formId}
             disabled={
               allowSubmitWhenNotDirty
@@ -87,7 +94,8 @@ function FormDrawerHeaderComponent<
                 : !isDirty || !isValid || isLoading
             }
           >
-            {isLoading ? 'Loading...' : submitButtonText}
+            {isLoading && <Loader2 className='h-3 w-3 animate-spin' />}
+            {submitButtonText}
           </Button>
         )}
       </div>

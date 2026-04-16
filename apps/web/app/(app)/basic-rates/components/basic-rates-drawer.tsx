@@ -18,6 +18,8 @@ import {
   useBasicRateTypeOptions,
   formStatusLabelToDb,
 } from '@/hooks/useBasicRates';
+import { toast } from 'sonner';
+import { getDirtyValues } from '@/lib/get-dirty-values';
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import {
   RECORD_STATUS_OPTIONS,
@@ -103,12 +105,12 @@ export function BasicRatesDrawer({
   const getDefaultValues = React.useCallback((): BasicRateFormValues => {
     if (mode === 'create' || !basicRate) {
       return {
-        schedule_source_version_id: scheduleSelectOptions[0]?.value ?? '',
+        schedule_source_version_id: '',
         code: '',
         unit: '',
         description: '',
         rate: '',
-        basic_rate_type_id: typeSelectOptions[0]?.value ?? '',
+        basic_rate_type_id: '',
         status: 'Active',
       };
     }
@@ -129,7 +131,7 @@ export function BasicRatesDrawer({
       basic_rate_type_id: basicRate.basic_rate_type_id,
       status,
     };
-  }, [mode, basicRate, typeSelectOptions, scheduleSelectOptions]);
+  }, [mode, basicRate]);
 
   const form = useForm<BasicRateFormValues>({
     resolver: zodResolver(FORM_SCHEMA),
@@ -141,41 +143,25 @@ export function BasicRatesDrawer({
     form.reset(getDefaultValues());
   }, [basicRate?.id, mode, getDefaultValues, form]);
 
-  React.useEffect(() => {
-    if (mode !== 'create' || typeSelectOptions.length === 0) return;
-    const current = form.getValues('basic_rate_type_id');
-    if (!current) {
-      form.setValue('basic_rate_type_id', typeSelectOptions[0].value);
-    }
-  }, [mode, typeSelectOptions, form]);
-
-  React.useEffect(() => {
-    if (mode !== 'create' || scheduleSelectOptions.length === 0) return;
-    const current = form.getValues('schedule_source_version_id');
-    if (!current) {
-      form.setValue(
-        'schedule_source_version_id',
-        scheduleSelectOptions[0].value
-      );
-    }
-  }, [mode, scheduleSelectOptions, form]);
-
   const handleSubmit = async (values: BasicRateFormValues) => {
     try {
-      const status = formStatusLabelToDb(values.status);
-      const rate = Number(values.rate);
-
       if (isEdit && basicRate) {
+        const dirty = getDirtyValues(values, form.formState.dirtyFields);
+        if (Object.keys(dirty).length === 0) {
+          toast.message('No changes to save');
+          return;
+        }
+        const patch: Record<string, unknown> = { ...dirty };
+        if (patch.rate != null) patch.rate = Number(patch.rate);
+        if (patch.status != null)
+          patch.status = formStatusLabelToDb(patch.status as string);
         await updateBasicRateMutation.mutateAsync({
           id: basicRate.id,
-          basic_rate_type_id: values.basic_rate_type_id,
-          code: values.code,
-          description: values.description,
-          unit: values.unit,
-          rate,
-          status,
+          ...patch,
         });
       } else {
+        const status = formStatusLabelToDb(values.status);
+        const rate = Number(values.rate);
         await createBasicRateMutation.mutateAsync({
           schedule_source_version_id: values.schedule_source_version_id,
           basic_rate_type_id: values.basic_rate_type_id,

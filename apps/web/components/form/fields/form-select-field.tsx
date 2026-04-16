@@ -67,9 +67,7 @@ export function FormSelectField<
           </FormLabel>
           <Select
             onValueChange={(v) =>
-              field.onChange(
-                v === FORM_SELECT_CLEAR_SENTINEL ? '' : v
-              )
+              field.onChange(v === FORM_SELECT_CLEAR_SENTINEL ? '' : v)
             }
             value={
               field.value === undefined || field.value === null
