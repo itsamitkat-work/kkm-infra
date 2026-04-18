@@ -30,6 +30,39 @@ export type Database = {
         }
         Relationships: []
       }
+      role_template_permissions: {
+        Row: {
+          created_at: string
+          permission_id: string
+          template_key: string
+        }
+        Insert: {
+          created_at?: string
+          permission_id: string
+          template_key: string
+        }
+        Update: {
+          created_at?: string
+          permission_id?: string
+          template_key?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "role_template_permissions_permission_id_fkey"
+            columns: ["permission_id"]
+            isOneToOne: false
+            referencedRelation: "permissions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "role_template_permissions_template_key_fkey"
+            columns: ["template_key"]
+            isOneToOne: false
+            referencedRelation: "role_templates"
+            referencedColumns: ["key"]
+          },
+        ]
+      }
       tenant_role_permissions: {
         Row: {
           created_at: string

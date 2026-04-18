@@ -100,6 +100,7 @@ How the three role-related objects fit together (same behavior as before; cleare
 flowchart LR
   subgraph templates [Global templates]
     RT[authz.role_templates]
+    RTP[authz.role_template_permissions]
   end
   subgraph perTenant [Per tenant]
     TR[authz.tenant_roles]
@@ -109,7 +110,9 @@ flowchart LR
     TM[public.tenant_members]
     TMR[authz.tenant_member_roles]
   end
+  RT --> RTP
   RT -->|"handle_new_tenant copies each template"| TR
+  RTP -->|"defaults copied per new tenant"| TRP
   TR --> TRP
   TM --> TMR
   TMR -->|"tenant_role_id"| TR
@@ -122,7 +125,9 @@ flowchart LR
 
 `**tenant_roles**` — Tenant-scoped role instances. `slug` is unique per `tenant_id`. Optional `template_key` FK → `role_templates.key` records which template the row came from.
 
-`**tenant_role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where effective grants live (seed and admin flows write here).
+`**tenant_role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where **effective** grants live for RLS (`has_permission`). On tenant creation, `handle_new_tenant()` seeds rows from **`authz.role_template_permissions`** (defaults per `role_templates.key`); admins may add or remove rows later per tenant.
+
+`**role_template_permissions**` — Global default grants per template (`template_key` → `permissions.id`). Copied into `tenant_role_permissions` for every new tenant. Local dev seeds rows in `supabase/seed/auth_authz_seed.sql`; production-style environments should seed or migrate the same rows before creating tenants.
 
 `**tenant_member_roles**` — Many-to-many: which `tenant_roles` a `tenant_member` may use. `tenant_members.active_role_id` picks the one `authz.has_permission()` consults.
 
@@ -134,7 +139,7 @@ flowchart LR
 
 `**security_events**` — Immutable log of all security-relevant events (failed logins, risk escalations, token replay, etc.). **Partitioned by month** (`PARTITION BY RANGE (created_at)`). Initial partitions for 2026 Q2 are created at migration time. New partitions are auto-created monthly by a pg_cron job.
 
-`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
+`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, role_template_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
 
 > Both tables have a default partition that catches rows for months without explicit partitions. The `create-monthly-partitions` pg_cron job creates next month's partition on the 1st of each month.
 
@@ -448,7 +453,7 @@ Requires `tenant_members.manage` permission. Body: `{ "email", "role_slugs", "pa
 
 ### Tenant role seeding
 
-When a tenant is created, the `handle_new_tenant` trigger copies all `authz.role_templates` into `authz.tenant_roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency). New rows start with no permissions. The seed SQL then attaches `tenant_role_permissions` (e.g. `tenant_admin` vs `platform_admin` splits).
+When a tenant is created, the `handle_new_tenant` trigger copies all `authz.role_templates` into `authz.tenant_roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency), then copies **`authz.role_template_permissions`** into **`authz.tenant_role_permissions`** for those roles (matched by `template_key`). No per-tenant manual permission seeding is required for templates that have default rows.
 
 ---
 
@@ -483,6 +488,7 @@ Automatic change capture via `private.capture_audit_log()` trigger on:
 - `public.tenant_members`
 - `authz.tenant_roles`
 - `authz.tenant_role_permissions`
+- `authz.role_template_permissions`
 - `authz.tenant_member_roles`
 
 Each audit row captures: user_id and tenant_id (from JWT claims), action (insert/update/delete), resource_type (`schema.table`), resource_id, old_data, new_data, and ip_address.
@@ -499,7 +505,7 @@ Each audit row captures: user_id and tenant_id (from JWT claims), action (insert
 | `protect_profiles_system_admin`     | profiles                                                                        | BEFORE UPDATE              | `protect_system_admin_flag()`       |
 | `bump_pv_on_member_role_change`     | tenant_member_roles                                                             | AFTER INSERT/DELETE        | `authz.on_member_role_change()`     |
 | `bump_pv_on_role_permission_change` | tenant_role_permissions                                                                | AFTER INSERT/DELETE        | `authz.on_role_permission_change()` |
-| `audit_`\*                          | tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
+| `audit_`\*                          | tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, role_template_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
 | `on_security_event_create_alerts`   | security_events                                                                 | AFTER INSERT               | `private.create_security_alerts()`  |
 | `on_security_event_notify`          | security_events                                                                 | AFTER INSERT               | `private.notify_security_alert()`   |
 
