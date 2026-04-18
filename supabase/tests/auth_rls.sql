@@ -55,7 +55,7 @@ begin
 
   select r.id
   into engineer_role
-  from authz.roles r
+  from authz.tenant_roles r
   where r.tenant_id = tenant_1
     and r.slug = 'project_engineer'
   limit 1;
@@ -119,7 +119,7 @@ select tests.clear_auth_context();
 
 delete from authz.role_permissions
 where role_id = (
-  select r.id from authz.roles r
+  select r.id from authz.tenant_roles r
   where r.tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
     and r.slug = 'project_engineer'
 );

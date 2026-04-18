@@ -2,7 +2,9 @@
 -- Auth + Authz seed (SQL only — local / CI dev)
 -- ==========================================================================
 -- Runs after migrations via config.toml `db.seed.sql_paths`.
--- Covers: authz.permissions, authz.system_roles, public.tenants, authz.roles
+-- Order: role_templates first (catalog), then permissions, tenants (creates tenant_roles),
+-- role_permissions, users, memberships. See sections below.
+-- Covers: authz.role_templates, authz.permissions, public.tenants, authz.tenant_roles
 -- (via tenant trigger), authz.role_permissions, auth.users, auth.identities,
 -- public.profiles (is_system_admin), public.tenant_members + member roles
 -- (via public.sync_tenant_member_roles).
@@ -14,6 +16,26 @@
 begin;
 
 create extension if not exists pgcrypto with schema extensions;
+
+-- --------------------------------------------------------------------------
+-- authz.role_templates (seed first: tenant insert copies each row → tenant_roles)
+-- --------------------------------------------------------------------------
+insert into authz.role_templates (key, name, description)
+values
+  (
+    'tenant_admin',
+    'Tenant Admin',
+    'Administrative role for a single tenant (excludes tenants.manage)'
+  ),
+  (
+    'platform_admin',
+    'Platform Admin',
+    'Full permission set per tenant, including tenants.manage'
+  )
+on conflict (key) do update
+set
+  name = excluded.name,
+  description = excluded.description;
 
 -- --------------------------------------------------------------------------
 -- authz.permissions (keys referenced by authz.has_permission in RLS migrations)
@@ -41,20 +63,6 @@ on conflict (key) do update
 set description = excluded.description;
 
 -- --------------------------------------------------------------------------
--- authz.system_roles (templates → authz.roles per tenant on insert)
--- --------------------------------------------------------------------------
-insert into authz.system_roles (key, name, description)
-values (
-  'tenant_admin',
-  'Tenant Admin',
-  'Administrative role for a single tenant'
-)
-on conflict (key) do update
-set
-  name = excluded.name,
-  description = excluded.description;
-
--- --------------------------------------------------------------------------
 -- public.tenants
 -- --------------------------------------------------------------------------
 insert into public.tenants (id, name, display_name, slug)
@@ -76,11 +84,14 @@ set
   name = excluded.name,
   display_name = excluded.display_name;
 
--- Full permission set on tenant_admin for each tenant (dev).
+-- tenant_admin: every seeded permission EXCEPT tenants.manage.
+-- tenants.manage exists only for platform operators (platform_admin). It must never
+-- appear on tenant_admin — your customers stay inside their tenant; creating tenants
+-- is blocked in RLS by is_system_admin() anyway, but the catalog grant stays exclusive.
 insert into authz.role_permissions (role_id, permission_id)
 select r.id, p.id
-from authz.roles r
-cross join authz.permissions p
+from authz.tenant_roles r
+join authz.permissions p on p.key <> 'tenants.manage'
 where
   r.slug = 'tenant_admin'
   and r.tenant_id in (
@@ -89,11 +100,26 @@ where
   )
 on conflict (role_id, permission_id) do nothing;
 
--- tenants.manage is catalog-only: tenant_admin must not hold it (only is_system_admin may mutate tenants per RLS).
+-- platform_admin ONLY: full cross-product including tenants.manage (dev system admin user).
+insert into authz.role_permissions (role_id, permission_id)
+select r.id, p.id
+from authz.tenant_roles r
+cross join authz.permissions p
+where
+  r.slug = 'platform_admin'
+  and r.tenant_id in (
+    'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
+    'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22'::uuid
+  )
+on conflict (role_id, permission_id) do nothing;
+
+-- Strip tenants.manage from tenant_admin if anything re-attached it (re-seed / manual edits).
 delete from authz.role_permissions rp
-using authz.permissions p
-where rp.permission_id = p.id
-  and p.key = 'tenants.manage';
+using authz.permissions perm, authz.tenant_roles r
+where rp.permission_id = perm.id
+  and rp.role_id = r.id
+  and perm.key = 'tenants.manage'
+  and r.slug = 'tenant_admin';
 
 -- --------------------------------------------------------------------------
 -- auth.users + auth.identities (fixed UUIDs for stable local dev)
@@ -214,8 +240,8 @@ alter table public.profiles enable trigger protect_profiles_system_admin;
 select public.sync_tenant_member_roles(
   'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
   'ee111111-1111-4111-8111-111111111101'::uuid,
-  array['tenant_admin']::text[],
-  'tenant_admin',
+  array['platform_admin']::text[],
+  'platform_admin',
   'System Admin (dev)',
   null::text
 );

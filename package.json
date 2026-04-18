@@ -14,8 +14,6 @@
     "db:types": "supabase gen types typescript --local > packages/db/src/database.types.ts",
     "sdr": "supabase db reset --local",
     "sdm": "supabase migration up --local",
-    "db:reset": "pnpm run sdr",
-    "db:migrate": "pnpm run sdm",
     "seed:app": "bash supabase/scripts/seed-app.sh",
     "seed:schedule": "bash supabase/scripts/seed-app.sh",
     "db:reset:seed": "pnpm run db:reset && bash supabase/scripts/seed-app.sh",

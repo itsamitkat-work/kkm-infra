@@ -336,7 +336,7 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
   const roleIds = [...new Set((members ?? []).map((m: { role_id: string }) => m.role_id))];
   const { data: roleRows } = await supabase
     .schema('authz')
-    .from('roles')
+    .from('tenant_roles')
     .select('id, slug')
     .in('id', roleIds);
 

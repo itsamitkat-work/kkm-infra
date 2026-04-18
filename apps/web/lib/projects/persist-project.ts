@@ -44,7 +44,7 @@ async function fetchRoleIdsForTenant(
 ): Promise<Map<string, string>> {
   const { data, error } = await supabase
     .schema('authz')
-    .from('roles')
+    .from('tenant_roles')
     .select('id, slug')
     .eq('tenant_id', tenantId);
   if (error) throw error;

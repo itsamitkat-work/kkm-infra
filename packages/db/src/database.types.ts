@@ -58,86 +58,12 @@ export type Database = {
             foreignKeyName: "role_permissions_role_id_fkey"
             columns: ["role_id"]
             isOneToOne: false
-            referencedRelation: "roles"
+            referencedRelation: "tenant_roles"
             referencedColumns: ["id"]
           },
         ]
       }
-      roles: {
-        Row: {
-          created_at: string
-          id: string
-          is_system: boolean
-          name: string
-          slug: string
-          system_role_key: string | null
-          tenant_id: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          is_system?: boolean
-          name: string
-          slug: string
-          system_role_key?: string | null
-          tenant_id: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          is_system?: boolean
-          name?: string
-          slug?: string
-          system_role_key?: string | null
-          tenant_id?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "roles_system_role_key_fkey"
-            columns: ["system_role_key"]
-            isOneToOne: false
-            referencedRelation: "system_roles"
-            referencedColumns: ["key"]
-          },
-        ]
-      }
-      system_role_permissions: {
-        Row: {
-          created_at: string
-          permission_id: string
-          system_role_id: string
-        }
-        Insert: {
-          created_at?: string
-          permission_id: string
-          system_role_id: string
-        }
-        Update: {
-          created_at?: string
-          permission_id?: string
-          system_role_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "system_role_permissions_permission_id_fkey"
-            columns: ["permission_id"]
-            isOneToOne: false
-            referencedRelation: "permissions"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "system_role_permissions_system_role_id_fkey"
-            columns: ["system_role_id"]
-            isOneToOne: false
-            referencedRelation: "system_roles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      system_roles: {
+      role_templates: {
         Row: {
           created_at: string
           description: string | null
@@ -161,6 +87,47 @@ export type Database = {
         }
         Relationships: []
       }
+      tenant_roles: {
+        Row: {
+          created_at: string
+          id: string
+          is_system: boolean
+          name: string
+          slug: string
+          template_key: string | null
+          tenant_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_system?: boolean
+          name: string
+          slug: string
+          template_key?: string | null
+          tenant_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_system?: boolean
+          name?: string
+          slug?: string
+          template_key?: string | null
+          tenant_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tenant_roles_template_key_fkey"
+            columns: ["template_key"]
+            isOneToOne: false
+            referencedRelation: "role_templates"
+            referencedColumns: ["key"]
+          },
+        ]
+      }
       tenant_member_roles: {
         Row: {
           created_at: string
@@ -182,7 +149,7 @@ export type Database = {
             foreignKeyName: "tenant_member_roles_role_id_fkey"
             columns: ["role_id"]
             isOneToOne: false
-            referencedRelation: "roles"
+            referencedRelation: "tenant_roles"
             referencedColumns: ["id"]
           },
         ]

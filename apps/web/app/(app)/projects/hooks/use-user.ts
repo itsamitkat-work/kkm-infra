@@ -11,7 +11,7 @@ async function resolveRoleIdForUserSearch(
   const slug = USER_ROLE_SLUG[userRole];
   const firstResult = await supabase
     .schema('authz')
-    .from('roles')
+    .from('tenant_roles')
     .select('id')
     .eq('tenant_id', tenantId)
     .eq('slug', slug)
@@ -23,7 +23,7 @@ async function resolveRoleIdForUserSearch(
   if (!data && userRole === UserRoleType.Superviser) {
     const alt = await supabase
       .schema('authz')
-      .from('roles')
+      .from('tenant_roles')
       .select('id')
       .eq('tenant_id', tenantId)
       .eq('slug', 'superviser')
@@ -120,9 +120,7 @@ export async function fetchUserOptions(
 
   const options = slice.map((row) => {
     const name =
-      row.profiles?.display_name?.trim() ||
-      row.profiles?.username ||
-      'User';
+      row.profiles?.display_name?.trim() || row.profiles?.username || 'User';
     return {
       value: row.user_id,
       label: name,

@@ -84,7 +84,7 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 | tenant_id                | uuid NOT NULL | FK → tenants, CASCADE                         |
 | user_id                  | uuid NOT NULL | FK → auth.users, CASCADE                      |
 | status                   | text          | `'active'` or `'suspended'`                   |
-| active_role_id           | uuid          | FK → authz.roles, SET NULL on delete          |
+| active_role_id           | uuid          | FK → authz.tenant_roles, SET NULL on delete          |
 | display_name, avatar_url | text          | Tenant-specific overrides                     |
 | permission_version       | integer       | Default 1. Bumped on role/permission changes. |
 | created_at, updated_at   | timestamptz   |                                               |
@@ -94,17 +94,37 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 
 ### 3.2 authz schema
 
-`**permissions**` — Global permission keys (e.g. `items.read`, `tenant_members.manage`)
+How the three role-related objects fit together (same behavior as before; clearer names after migration `20260421120000_rename_authz_role_tables`):
 
-`**system_roles**` — Role templates (e.g. `tenant_admin`, `project_engineer`). When a tenant is created, `handle_new_tenant()` copies these as `authz.roles` for that tenant.
+```mermaid
+flowchart LR
+  subgraph templates [Global templates]
+    RT[authz.role_templates]
+  end
+  subgraph perTenant [Per tenant]
+    TR[authz.tenant_roles]
+    RP[authz.role_permissions]
+  end
+  subgraph assignment [Member assignment]
+    TM[public.tenant_members]
+    TMR[authz.tenant_member_roles]
+  end
+  RT -->|"handle_new_tenant copies each template"| TR
+  TR --> RP
+  TM --> TMR
+  TMR -->|"role_id"| TR
+  TM -->|"active_role_id"| TR
+```
 
-`**system_role_permissions**` — Template-level permission mappings. Not seeded at the system level — per-tenant role→permission assignments are managed via `authz.role_permissions` (the `tenant_admin` role gets all permissions at seed time).
+`**permissions**` — Global permission keys (e.g. `items.read`, `tenant_members.manage`).
 
-`**roles**` — Tenant-scoped roles. Each has a `slug` unique within the tenant and an optional `system_role_key` linking back to the template.
+`**role_templates**` — Global catalog of role templates (`tenant_admin`, `platform_admin`, …). When a tenant is created, `handle_new_tenant()` inserts one `authz.tenant_roles` row per template for that tenant.
 
-`**role_permissions**` — Maps roles to permissions. This is where the actual permission assignments live.
+`**tenant_roles**` — Tenant-scoped role instances. `slug` is unique per `tenant_id`. Optional `template_key` FK → `role_templates.key` records which template the row came from.
 
-`**tenant_member_roles**` — Maps tenant members to roles (many-to-many). A user can have multiple roles but only one is active at a time.
+`**role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where effective grants live (seed and admin flows write here).
+
+`**tenant_member_roles**` — Many-to-many: which `tenant_roles` a `tenant_member` may use. `tenant_members.active_role_id` picks the one `authz.has_permission()` consults.
 
 ### 3.3 private schema
 
@@ -114,7 +134,7 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 
 `**security_events**` — Immutable log of all security-relevant events (failed logins, risk escalations, token replay, etc.). **Partitioned by month** (`PARTITION BY RANGE (created_at)`). Initial partitions for 2026 Q2 are created at migration time. New partitions are auto-created monthly by a pg_cron job.
 
-`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, roles, role_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
+`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, tenant_roles, role_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
 
 > Both tables have a default partition that catches rows for months without explicit partitions. The `create-monthly-partitions` pg_cron job creates next month's partition on the 1st of each month.
 
@@ -124,7 +144,7 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 
 ### 3.4 Indexes
 
-Implemented on: `tenant_members(user_id)`, `tenant_members(tenant_id, status)`, `roles(tenant_id)`, `role_permissions(permission_id)`, `tenant_member_roles(tenant_member_id)`, `tenant_member_roles(role_id)`, `auth_sessions(user_id, is_revoked)`, `auth_sessions(tenant_id)`, `security_events(user_id, created_at DESC)`, `security_events(tenant_id, created_at DESC)`, `audit_logs(tenant_id, created_at DESC)`, `audit_logs(resource_type, resource_id)`, `security_alerts(status, created_at DESC)`.
+Implemented on: `tenant_members(user_id)`, `tenant_members(tenant_id, status)`, `tenant_roles(tenant_id)`, `role_permissions(permission_id)`, `tenant_member_roles(tenant_member_id)`, `tenant_member_roles(role_id)`, `auth_sessions(user_id, is_revoked)`, `auth_sessions(tenant_id)`, `security_events(user_id, created_at DESC)`, `security_events(tenant_id, created_at DESC)`, `audit_logs(tenant_id, created_at DESC)`, `audit_logs(resource_type, resource_id)`, `security_alerts(status, created_at DESC)`.
 
 ---
 
@@ -152,7 +172,7 @@ The `custom_access_token_hook` runs on every token mint/refresh and injects thes
 | ----------------- | ------------------------------------------------------ | ------------------------------------ |
 | `sid`             | `auth.sessions.id` via JWT `session_id`                | Session tracking                     |
 | `tid`             | `private.auth_sessions.tenant_id`                      | Active tenant context                |
-| `active_role`     | `authz.roles.slug` via `tenant_members.active_role_id` | Current role for UI display          |
+| `active_role`     | `authz.tenant_roles.slug` via `tenant_members.active_role_id` | Current role for UI display          |
 | `roles`           | All slugs from `authz.tenant_member_roles`             | Role switcher in frontend            |
 | `pv`              | `tenant_members.permission_version`                    | Stale-JWT detection                  |
 | `is_system_admin` | `profiles.is_system_admin`                             | System admin bypass                  |
@@ -163,7 +183,7 @@ The `custom_access_token_hook` runs on every token mint/refresh and injects thes
 
 ### Hook Grants
 
-The hook is granted to `supabase_auth_admin` only. It is explicitly revoked from `authenticated`, `anon`, and `public`. The hook has SELECT access on profiles, tenant_members, roles, tenant_member_roles, auth_sessions, and user_risk_scores, plus UPDATE on tenant_members (for auto-setting active_role_id).
+The hook is granted to `supabase_auth_admin` only. It is explicitly revoked from `authenticated`, `anon`, and `public`. The hook has SELECT access on profiles, tenant_members, tenant_roles, tenant_member_roles, auth_sessions, and user_risk_scores, plus UPDATE on tenant_members (for auto-setting active_role_id).
 
 ---
 
@@ -428,7 +448,7 @@ Requires `tenant_members.manage` permission. Body: `{ "email", "role_slugs", "pa
 
 ### Tenant role seeding
 
-When a tenant is created, the `handle_new_tenant` trigger copies all `authz.system_roles` as `authz.roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency). New roles start with no permissions. The initial `tenant_admin` role for the seed tenant (KKM Infra) receives all permissions via the seed migration.
+When a tenant is created, the `handle_new_tenant` trigger copies all `authz.role_templates` into `authz.tenant_roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency). New rows start with no permissions. The seed SQL then attaches `role_permissions` (e.g. `tenant_admin` vs `platform_admin` splits).
 
 ---
 
@@ -438,7 +458,7 @@ When a tenant is created, the `handle_new_tenant` trigger copies all `authz.syst
 
 Not a tenant role — stored as `profiles.is_system_admin`. Injected into JWT by the hook. Bypasses tenant-scoped RLS. Protected by a trigger that blocks non-admin writes.
 
-### Tenant roles (seeded from system_roles)
+### Tenant roles (seeded from role_templates)
 
 | Role                 | Purpose                                                    |
 | -------------------- | ---------------------------------------------------------- |
@@ -461,7 +481,7 @@ Automatic change capture via `private.capture_audit_log()` trigger on:
 - `public.tenants`
 - `public.profiles`
 - `public.tenant_members`
-- `authz.roles`
+- `authz.tenant_roles`
 - `authz.role_permissions`
 - `authz.tenant_member_roles`
 
@@ -473,13 +493,13 @@ Each audit row captures: user_id and tenant_id (from JWT claims), action (insert
 
 | Trigger                             | Table                                                                           | Event                      | Function                            |
 | ----------------------------------- | ------------------------------------------------------------------------------- | -------------------------- | ----------------------------------- |
-| `set_*_updated_at`                  | tenants, profiles, tenant_members, roles, user_risk_scores                      | BEFORE UPDATE              | `handle_updated_at()`               |
+| `set_*_updated_at`                  | tenants, profiles, tenant_members, tenant_roles, user_risk_scores                      | BEFORE UPDATE              | `handle_updated_at()`               |
 | `on_auth_user_created`              | auth.users                                                                      | AFTER INSERT               | `handle_new_user_profile()`         |
 | `on_tenant_created`                 | tenants                                                                         | AFTER INSERT               | `handle_new_tenant()`               |
 | `protect_profiles_system_admin`     | profiles                                                                        | BEFORE UPDATE              | `protect_system_admin_flag()`       |
 | `bump_pv_on_member_role_change`     | tenant_member_roles                                                             | AFTER INSERT/DELETE        | `authz.on_member_role_change()`     |
 | `bump_pv_on_role_permission_change` | role_permissions                                                                | AFTER INSERT/DELETE        | `authz.on_role_permission_change()` |
-| `audit_`\*                          | tenants, profiles, tenant_members, roles, role_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
+| `audit_`\*                          | tenants, profiles, tenant_members, tenant_roles, role_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
 | `on_security_event_create_alerts`   | security_events                                                                 | AFTER INSERT               | `private.create_security_alerts()`  |
 | `on_security_event_notify`          | security_events                                                                 | AFTER INSERT               | `private.notify_security_alert()`   |
 
