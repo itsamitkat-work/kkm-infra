@@ -19,7 +19,7 @@ async function removeRole(request: RemoveRoleVariables): Promise<void> {
     .from('tenant_member_roles')
     .delete()
     .eq('tenant_member_id', request.tenantMemberId)
-    .eq('role_id', request.roleId);
+    .eq('tenant_role_id', request.roleId);
   if (error) {
     throw error;
   }

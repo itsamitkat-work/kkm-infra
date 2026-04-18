@@ -3,9 +3,9 @@
 -- ==========================================================================
 -- Runs after migrations via config.toml `db.seed.sql_paths`.
 -- Order: role_templates first (catalog), then permissions, tenants (creates tenant_roles),
--- role_permissions, users, memberships. See sections below.
+-- tenant_role_permissions, users, memberships. See sections below.
 -- Covers: authz.role_templates, authz.permissions, public.tenants, authz.tenant_roles
--- (via tenant trigger), authz.role_permissions, auth.users, auth.identities,
+-- (via tenant trigger), authz.tenant_role_permissions, auth.users, auth.identities,
 -- public.profiles (is_system_admin), public.tenant_members + member roles
 -- (via public.sync_tenant_member_roles).
 --
@@ -41,7 +41,7 @@ set
 -- authz.permissions (keys referenced by authz.has_permission in RLS migrations)
 -- --------------------------------------------------------------------------
 -- Add new rows here when you introduce a permission in a policy. Keys must
--- exist before role_permissions can link them.
+-- exist before tenant_role_permissions can link them.
 insert into authz.permissions (key, description)
 select v.key, v.description
 from (
@@ -88,7 +88,7 @@ set
 -- tenants.manage exists only for platform operators (platform_admin). It must never
 -- appear on tenant_admin — your customers stay inside their tenant; creating tenants
 -- is blocked in RLS by is_system_admin() anyway, but the catalog grant stays exclusive.
-insert into authz.role_permissions (role_id, permission_id)
+insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
 select r.id, p.id
 from authz.tenant_roles r
 join authz.permissions p on p.key <> 'tenants.manage'
@@ -98,10 +98,10 @@ where
     'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
     'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22'::uuid
   )
-on conflict (role_id, permission_id) do nothing;
+on conflict (tenant_role_id, permission_id) do nothing;
 
 -- platform_admin ONLY: full cross-product including tenants.manage (dev system admin user).
-insert into authz.role_permissions (role_id, permission_id)
+insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
 select r.id, p.id
 from authz.tenant_roles r
 cross join authz.permissions p
@@ -111,13 +111,13 @@ where
     'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
     'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22'::uuid
   )
-on conflict (role_id, permission_id) do nothing;
+on conflict (tenant_role_id, permission_id) do nothing;
 
 -- Strip tenants.manage from tenant_admin if anything re-attached it (re-seed / manual edits).
-delete from authz.role_permissions rp
+delete from authz.tenant_role_permissions trp
 using authz.permissions perm, authz.tenant_roles r
-where rp.permission_id = perm.id
-  and rp.role_id = r.id
+where trp.permission_id = perm.id
+  and trp.tenant_role_id = r.id
   and perm.key = 'tenants.manage'
   and r.slug = 'tenant_admin';
 

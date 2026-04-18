@@ -21,7 +21,7 @@ Supabase Auth (JWT issuer + custom_access_token_hook)
   └─ NO permissions in JWT (resolved at DB level)
        ↓
 Postgres (RLS enforced — session + DB-driven permissions + tenant)
-  └─ authz.has_permission() queries role_permissions directly
+  └─ authz.has_permission() queries tenant_role_permissions directly
        ↓
 Security Engine (risk scoring → session revocation → account lock)
        ↓
@@ -94,7 +94,7 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 
 ### 3.2 authz schema
 
-How the three role-related objects fit together (same behavior as before; clearer names after migration `20260421120000_rename_authz_role_tables`):
+How the three role-related objects fit together (same behavior as before; clearer names after migrations `20260421120000_rename_authz_role_tables` and `20260421140000_authz_rename_junction_tables`):
 
 ```mermaid
 flowchart LR
@@ -103,16 +103,16 @@ flowchart LR
   end
   subgraph perTenant [Per tenant]
     TR[authz.tenant_roles]
-    RP[authz.role_permissions]
+    TRP[authz.tenant_role_permissions]
   end
   subgraph assignment [Member assignment]
     TM[public.tenant_members]
     TMR[authz.tenant_member_roles]
   end
   RT -->|"handle_new_tenant copies each template"| TR
-  TR --> RP
+  TR --> TRP
   TM --> TMR
-  TMR -->|"role_id"| TR
+  TMR -->|"tenant_role_id"| TR
   TM -->|"active_role_id"| TR
 ```
 
@@ -122,7 +122,7 @@ flowchart LR
 
 `**tenant_roles**` — Tenant-scoped role instances. `slug` is unique per `tenant_id`. Optional `template_key` FK → `role_templates.key` records which template the row came from.
 
-`**role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where effective grants live (seed and admin flows write here).
+`**tenant_role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where effective grants live (seed and admin flows write here).
 
 `**tenant_member_roles**` — Many-to-many: which `tenant_roles` a `tenant_member` may use. `tenant_members.active_role_id` picks the one `authz.has_permission()` consults.
 
@@ -134,7 +134,7 @@ flowchart LR
 
 `**security_events**` — Immutable log of all security-relevant events (failed logins, risk escalations, token replay, etc.). **Partitioned by month** (`PARTITION BY RANGE (created_at)`). Initial partitions for 2026 Q2 are created at migration time. New partitions are auto-created monthly by a pg_cron job.
 
-`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, tenant_roles, role_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
+`**audit_logs**` — Automatic change capture. **Partitioned by month** (`PARTITION BY RANGE (created_at)`). A trigger (`private.capture_audit_log`) fires on INSERT/UPDATE/DELETE on tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, and tenant_member_roles. Records the user_id (from JWT `sub`), tenant_id (from JWT `tid`), old/new data, and IP address.
 
 > Both tables have a default partition that catches rows for months without explicit partitions. The `create-monthly-partitions` pg_cron job creates next month's partition on the 1st of each month.
 
@@ -144,7 +144,7 @@ flowchart LR
 
 ### 3.4 Indexes
 
-Implemented on: `tenant_members(user_id)`, `tenant_members(tenant_id, status)`, `tenant_roles(tenant_id)`, `role_permissions(permission_id)`, `tenant_member_roles(tenant_member_id)`, `tenant_member_roles(role_id)`, `auth_sessions(user_id, is_revoked)`, `auth_sessions(tenant_id)`, `security_events(user_id, created_at DESC)`, `security_events(tenant_id, created_at DESC)`, `audit_logs(tenant_id, created_at DESC)`, `audit_logs(resource_type, resource_id)`, `security_alerts(status, created_at DESC)`.
+Implemented on: `tenant_members(user_id)`, `tenant_members(tenant_id, status)`, `tenant_roles(tenant_id)`, `tenant_role_permissions(permission_id)`, `tenant_member_roles(tenant_member_id)`, `tenant_member_roles(tenant_role_id)`, `auth_sessions(user_id, is_revoked)`, `auth_sessions(tenant_id)`, `security_events(user_id, created_at DESC)`, `security_events(tenant_id, created_at DESC)`, `audit_logs(tenant_id, created_at DESC)`, `audit_logs(resource_type, resource_id)`, `security_alerts(status, created_at DESC)`.
 
 ---
 
@@ -166,7 +166,7 @@ The `custom_access_token_hook` runs on every token mint/refresh and injects thes
 }
 ```
 
-> **No `perms` in JWT.** Permissions are resolved at the DB level by `authz.has_permission()`, which queries `role_permissions` directly. This keeps the token size constant (~500 bytes) regardless of how many permissions a role has, avoiding the ~8KB HTTP header limit.
+> **No `perms` in JWT.** Permissions are resolved at the DB level by `authz.has_permission()`, which queries `tenant_role_permissions` directly. This keeps the token size constant (~500 bytes) regardless of how many permissions a role has, avoiding the ~8KB HTTP header limit.
 
 | Claim             | Source                                                 | Purpose                              |
 | ----------------- | ------------------------------------------------------ | ------------------------------------ |
@@ -196,7 +196,7 @@ All are `STABLE`, `SECURITY DEFINER`, `SET search_path = ''`. Granted to `authen
 | `authz.current_tenant_id()`        | uuid    | Read `tid` from JWT                                                       |
 | `authz.current_session_id()`       | uuid    | Read `sid` from JWT                                                       |
 | `authz.current_active_role()`      | text    | Read `active_role` from JWT                                               |
-| `authz.has_permission(p text)`     | boolean | **DB-driven.** Resolves user's active role from `tenant_members`, then checks `role_permissions` for the given key. Does NOT read from JWT. |
+| `authz.has_permission(p text)`     | boolean | **DB-driven.** Resolves user's active role from `tenant_members`, then checks `tenant_role_permissions` for the given key. Does NOT read from JWT. |
 | `authz.is_system_admin()`          | boolean | Read `is_system_admin` from JWT                                           |
 | `authz.is_session_valid()`         | boolean | `session_revoked` is false                                                |
 | `authz.is_account_locked()`        | boolean | `is_locked` is true                                                       |
@@ -394,7 +394,7 @@ System admins acknowledge dashboard alerts via `private.acknowledge_security_ale
 When permissions change, the affected user's JWT must be refreshed:
 
 1. A trigger on `authz.tenant_member_roles` (INSERT/DELETE) calls `authz.bump_permission_version()` on the affected tenant member.
-2. A trigger on `authz.role_permissions` (INSERT/DELETE) bumps the version for all members who have that role assigned.
+2. A trigger on `authz.tenant_role_permissions` (INSERT/DELETE) bumps the version for all members who have that role assigned.
 3. On the next request, `authz.check_permission_version()` detects `jwt.pv < db.permission_version` and the RLS policy rejects the request.
 4. The client detects the rejection and calls `auth.refreshSession()` to get a fresh JWT.
 
@@ -448,7 +448,7 @@ Requires `tenant_members.manage` permission. Body: `{ "email", "role_slugs", "pa
 
 ### Tenant role seeding
 
-When a tenant is created, the `handle_new_tenant` trigger copies all `authz.role_templates` into `authz.tenant_roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency). New rows start with no permissions. The seed SQL then attaches `role_permissions` (e.g. `tenant_admin` vs `platform_admin` splits).
+When a tenant is created, the `handle_new_tenant` trigger copies all `authz.role_templates` into `authz.tenant_roles` for that tenant (with `ON CONFLICT DO NOTHING` for idempotency). New rows start with no permissions. The seed SQL then attaches `tenant_role_permissions` (e.g. `tenant_admin` vs `platform_admin` splits).
 
 ---
 
@@ -482,7 +482,7 @@ Automatic change capture via `private.capture_audit_log()` trigger on:
 - `public.profiles`
 - `public.tenant_members`
 - `authz.tenant_roles`
-- `authz.role_permissions`
+- `authz.tenant_role_permissions`
 - `authz.tenant_member_roles`
 
 Each audit row captures: user_id and tenant_id (from JWT claims), action (insert/update/delete), resource_type (`schema.table`), resource_id, old_data, new_data, and ip_address.
@@ -498,8 +498,8 @@ Each audit row captures: user_id and tenant_id (from JWT claims), action (insert
 | `on_tenant_created`                 | tenants                                                                         | AFTER INSERT               | `handle_new_tenant()`               |
 | `protect_profiles_system_admin`     | profiles                                                                        | BEFORE UPDATE              | `protect_system_admin_flag()`       |
 | `bump_pv_on_member_role_change`     | tenant_member_roles                                                             | AFTER INSERT/DELETE        | `authz.on_member_role_change()`     |
-| `bump_pv_on_role_permission_change` | role_permissions                                                                | AFTER INSERT/DELETE        | `authz.on_role_permission_change()` |
-| `audit_`\*                          | tenants, profiles, tenant_members, tenant_roles, role_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
+| `bump_pv_on_role_permission_change` | tenant_role_permissions                                                                | AFTER INSERT/DELETE        | `authz.on_role_permission_change()` |
+| `audit_`\*                          | tenants, profiles, tenant_members, tenant_roles, tenant_role_permissions, tenant_member_roles | AFTER INSERT/UPDATE/DELETE | `private.capture_audit_log()`       |
 | `on_security_event_create_alerts`   | security_events                                                                 | AFTER INSERT               | `private.create_security_alerts()`  |
 | `on_security_event_notify`          | security_events                                                                 | AFTER INSERT               | `private.notify_security_alert()`   |
 
@@ -526,7 +526,7 @@ All seed data lives in one migration (`20260407114000_seed_data.sql`) that runs 
 | 1    | Permission keys                    | 13 keys (`items.read`, `tenant_members.manage`, etc.) — idempotent upsert                          |
 | 2    | System role templates              | 7 roles (`tenant_admin`, `project_engineer`, etc.) — idempotent upsert                      |
 | 3    | Initial tenant                     | KKM Infra (`kkm-infra` slug). `handle_new_tenant` trigger copies system roles automatically |
-| 4    | tenant_admin gets ALL permissions  | `CROSS JOIN authz.permissions` into `role_permissions`                                       |
+| 4    | tenant_admin gets ALL permissions  | `CROSS JOIN authz.permissions` into `tenant_role_permissions`                                       |
 
 > **No users are seeded in migrations.** Creating users with hardcoded passwords in version-controlled migrations is a security risk. The first system admin should sign up via Supabase Auth, then be promoted with a one-time SQL command (see migration header comments).
 
@@ -572,7 +572,7 @@ All dev users share the password `password`.
 7. System admin cross-tenant visibility
 8. Stale permission version blocks access
 
-> Tests validate that permissions are resolved from `role_permissions` rows in the DB, not from JWT claims.
+> Tests validate that permissions are resolved from `tenant_role_permissions` rows in the DB, not from JWT claims.
 
 Run with: `supabase test db`
 
@@ -631,7 +631,7 @@ supabase/
 
 ## 22. Core Principles
 
-- **Permissions are the single source of truth in the DB.** `authz.has_permission()` queries `role_permissions` directly — no duplication in JWT or Edge Functions.
+- **Permissions are the single source of truth in the DB.** `authz.has_permission()` queries `tenant_role_permissions` directly — no duplication in JWT or Edge Functions.
 - **JWT is minimal.** Only identity, tenant, role slugs, and security flags. No permission arrays. Scales to unlimited permissions without token bloat.
 - **RLS is the final security boundary.** Edge Functions validate session/tenant; RLS enforces permissions.
 - **System admin is NOT a tenant role.** It is a profile flag protected by a trigger.

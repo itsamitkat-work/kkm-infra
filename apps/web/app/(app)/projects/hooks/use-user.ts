@@ -76,7 +76,7 @@ export async function fetchUserOptions(
     .schema('authz')
     .from('tenant_member_roles')
     .select('tenant_member_id')
-    .eq('role_id', roleId);
+    .eq('tenant_role_id', roleId);
   if (tmrError) throw tmrError;
 
   const memberIds = (tmr ?? []).map(

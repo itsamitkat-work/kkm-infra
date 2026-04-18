@@ -25,7 +25,7 @@ export function useUserRolesQuery(
       const { data, error } = await supabase
         .schema('authz')
         .from('tenant_member_roles')
-        .select('role_id, roles(id, name, slug, is_system)')
+        .select('tenant_role_id, tenant_roles(id, name, slug, is_system)')
         .eq('tenant_member_id', tenantMemberId);
       if (error) {
         throw error;
@@ -33,12 +33,12 @@ export function useUserRolesQuery(
       const rows: UserRoleRow[] = [];
       for (const row of data ?? []) {
         const r = row as {
-          role_id: string;
-          roles:
+          tenant_role_id: string;
+          tenant_roles:
             | { id: string; name: string; slug: string; is_system: boolean }
             | null;
         };
-        const role = r.roles;
+        const role = r.tenant_roles;
         if (!role) {
           continue;
         }

@@ -33,7 +33,7 @@ type RoleEmbed = { id: string; name: string; slug: string };
 
 type TmrRow = {
   tenant_member_id: string;
-  roles: RoleEmbed | RoleEmbed[] | null;
+  tenant_roles: RoleEmbed | RoleEmbed[] | null;
 };
 
 function mapRowsToUsers(
@@ -142,13 +142,15 @@ export async function fetchTenantUsers(
     const { data: tmrData, error: tmrError } = await supabase
       .schema('authz')
       .from('tenant_member_roles')
-      .select('tenant_member_id, roles(id, name, slug)')
+      .select('tenant_member_id, tenant_roles(id, name, slug)')
       .in('tenant_member_id', memberIds);
     if (tmrError) {
       throw tmrError;
     }
     for (const row of (tmrData ?? []) as TmrRow[]) {
-      const roleObj = Array.isArray(row.roles) ? row.roles[0] : row.roles;
+      const roleObj = Array.isArray(row.tenant_roles)
+        ? row.tenant_roles[0]
+        : row.tenant_roles;
       if (!roleObj) {
         continue;
       }

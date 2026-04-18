@@ -16,7 +16,7 @@ async function assignRole(request: AssignRoleVariables): Promise<void> {
   const supabase = createSupabaseBrowserClient();
   const { error } = await supabase.schema('authz').from('tenant_member_roles').insert({
     tenant_member_id: request.tenantMemberId,
-    role_id: request.roleId,
+    tenant_role_id: request.roleId,
   });
   if (error) {
     throw error;

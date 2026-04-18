@@ -30,21 +30,21 @@ export type Database = {
         }
         Relationships: []
       }
-      role_permissions: {
+      tenant_role_permissions: {
         Row: {
           created_at: string
           permission_id: string
-          role_id: string
+          tenant_role_id: string
         }
         Insert: {
           created_at?: string
           permission_id: string
-          role_id: string
+          tenant_role_id: string
         }
         Update: {
           created_at?: string
           permission_id?: string
-          role_id?: string
+          tenant_role_id?: string
         }
         Relationships: [
           {
@@ -56,7 +56,7 @@ export type Database = {
           },
           {
             foreignKeyName: "role_permissions_role_id_fkey"
-            columns: ["role_id"]
+            columns: ["tenant_role_id"]
             isOneToOne: false
             referencedRelation: "tenant_roles"
             referencedColumns: ["id"]
@@ -131,23 +131,23 @@ export type Database = {
       tenant_member_roles: {
         Row: {
           created_at: string
-          role_id: string
+          tenant_role_id: string
           tenant_member_id: string
         }
         Insert: {
           created_at?: string
-          role_id: string
+          tenant_role_id: string
           tenant_member_id: string
         }
         Update: {
           created_at?: string
-          role_id?: string
+          tenant_role_id?: string
           tenant_member_id?: string
         }
         Relationships: [
           {
             foreignKeyName: "tenant_member_roles_role_id_fkey"
-            columns: ["role_id"]
+            columns: ["tenant_role_id"]
             isOneToOne: false
             referencedRelation: "tenant_roles"
             referencedColumns: ["id"]
