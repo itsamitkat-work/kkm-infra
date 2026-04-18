@@ -10,6 +10,7 @@ import {
   serializeClientAddresses,
   serializeClientContacts,
 } from '@/lib/clients/client-meta';
+import { composeAccessTokenContext } from '@/lib/auth';
 
 type ClientsRow = Database['public']['Tables']['clients']['Row'];
 type ClientsInsert = Database['public']['Tables']['clients']['Insert'];
@@ -121,24 +122,51 @@ export async function createClientWithRelations(
   supabase: SupabaseClient<Database>,
   input: CreateClientPersistInput
 ): Promise<ClientsRow> {
+  const { data: sessionData } = await supabase.auth.getSession();
+  const tenantId = composeAccessTokenContext(
+    sessionData.session?.access_token,
+  ).claims?.tid;
+  if (!tenantId) {
+    throw new Error('Missing tenant in session');
+  }
+
   const metaJson = buildClientMetaPatch({}, input.meta);
+  const addressesJson = serializeClientAddresses(input.addresses);
+  const contactsJson = serializeClientContacts(input.contacts);
+  const clientId = crypto.randomUUID();
+
   const insertRow = {
+    id: clientId,
     display_name: input.display_name,
     full_name: input.full_name,
     gstin: input.gstin,
     status: input.status,
     meta: metaJson,
-    addresses: serializeClientAddresses(input.addresses),
-    contacts: serializeClientContacts(input.contacts),
+    addresses: addressesJson,
+    contacts: contactsJson,
   } as ClientsInsert;
 
-  const { data: client, error: clientError } = await supabase
+  const { error: clientError } = await supabase
     .from('clients')
-    .insert(insertRow)
-    .select()
-    .single();
-  if (clientError) throw clientError;
-  if (!client) throw new Error('Client create returned no row');
+    .insert(insertRow);
+  if (clientError) {
+    throw clientError;
+  }
+
+  const nowIso = new Date().toISOString();
+  const client: ClientsRow = {
+    id: clientId,
+    tenant_id: tenantId,
+    display_name: input.display_name,
+    full_name: input.full_name,
+    gstin: input.gstin,
+    status: input.status,
+    meta: metaJson,
+    addresses: addressesJson,
+    contacts: contactsJson,
+    created_at: nowIso,
+    updated_at: nowIso,
+  };
 
   if (input.schedules.length > 0) {
     try {
