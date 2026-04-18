@@ -1,14 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import {
-  Building2,
-  FolderOpen,
-  HardHat,
-  SquareTerminal,
-  UserCog,
-  Users,
-} from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { NavUser } from '@/components/nav/nav-user';
@@ -27,14 +19,20 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { IconFileText, IconHome, IconUser } from '@tabler/icons-react';
-import { FileText } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import {
+  IconBuilding,
+  IconFileText,
+  IconHardHat,
+  IconHome,
+  IconTerminal2,
+  IconUser,
+  IconUsers,
+} from '@tabler/icons-react';
 import { useAuth } from '@/hooks/auth';
 type NavItem = {
   title: string;
   url: string;
-  icon: LucideIcon | typeof IconHome;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 const generalItems: NavItem[] = [
@@ -87,7 +85,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       items.push({
         title: 'Tenants',
         url: TENANTS_ADMIN_URL,
-        icon: Building2,
+        icon: IconBuilding,
       });
     }
     return items;
@@ -101,7 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       items.push({
         title: 'Clients',
         url: '/clients',
-        icon: Users,
+        icon: IconUsers,
       });
     }
     const canSeeSchedules =
@@ -144,7 +142,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Attendance',
               url: '/attendance',
-              icon: SquareTerminal,
+              icon: IconTerminal2,
             },
           ]
         : []),
@@ -153,7 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Attendance',
               url: '/attendance/supervisors',
-              icon: SquareTerminal,
+              icon: IconTerminal2,
             },
           ]
         : []),
@@ -162,7 +160,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Attendance',
               url: '/attendance/engineers',
-              icon: SquareTerminal,
+              icon: IconTerminal2,
             },
           ]
         : []),
@@ -171,7 +169,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Resource Pool',
               url: '/pool',
-              icon: Users,
+              icon: IconUsers,
             },
           ]
         : []),
@@ -180,7 +178,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Attendance Report',
               url: '/attendance/report',
-              icon: FileText,
+              icon: IconFileText,
             },
           ]
         : []),
@@ -196,7 +194,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {
               title: 'Projects',
               url: '/projects',
-              icon: HardHat,
+              icon: IconHardHat,
             },
           ]
         : []),
