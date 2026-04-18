@@ -45,14 +45,6 @@ const generalItems: NavItem[] = [
   },
 ];
 
-const hrItems: NavItem[] = [
-  {
-    title: 'Employees',
-    url: '/hr/employees',
-    icon: UserCog,
-  },
-];
-
 const purchaseOrderItems: NavItem[] = [
   {
     title: 'Indents',
@@ -131,7 +123,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       ability.can('manage', 'basic_rates');
     if (canSeeBasicRates) {
       items.push({
-        title: 'Basic Rates',
+        title: 'Schedule Basic Rates',
         url: '/basic-rates',
         icon: IconFileText,
       });
@@ -199,16 +191,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   const constructionItems: NavItem[] = React.useMemo(
     () => [
-      ...(ability.can('read', 'assigned_projects')
-        ? [
-            {
-              title: 'Assigned Projects',
-              url: '/projects-assigned',
-              icon: FolderOpen,
-            },
-          ]
-        : []),
-
       ...(ability.can('read', 'projects')
         ? [
             {
@@ -283,11 +265,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarGroup>
           <SidebarGroupLabel>Construction Tools</SidebarGroupLabel>
           <SidebarMenu>{renderNavItems(constructionToolsItems)}</SidebarMenu>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>HR</SidebarGroupLabel>
-          <SidebarMenu>{renderNavItems(hrItems)}</SidebarMenu>
         </SidebarGroup>
 
         {typeof window !== 'undefined' && administrationNavItems.length > 0 && (
