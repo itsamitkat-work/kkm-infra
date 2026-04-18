@@ -9,10 +9,8 @@ Here is a polished version of your rule set that is short, clear, and production
 Engineering Rules
 
 Code Style
-• Prefer named functions over inline arrow callbacks.
-• Avoid excessive comments.
+• Never use if conftion without braces, use braces in fucntions, condtions, clarity over small code tricks.
 • Use function names that clearly describe behavior.
-• Keep components small and focused.
 
 Architecture
 • Prefer proven production libraries over building custom solutions:

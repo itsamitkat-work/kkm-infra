@@ -40,6 +40,7 @@ interface ParsedAnnotation {
   text: string;
   source_page?: number;
   order_index?: number;
+  metadata?: Record<string, unknown>;
 }
 
 interface ParsedContextRate {
@@ -149,6 +150,7 @@ Deno.serve(async (req) => {
       type: string;
       raw_text: string;
       order_index: number | null;
+      metadata: Record<string, unknown>;
     }> = [];
     const pendingItemRates: Array<{
       schedule_item_id: string;
@@ -216,6 +218,7 @@ Deno.serve(async (req) => {
             type: ann.type,
             raw_text: ann.text,
             order_index: ann.order_index ?? null,
+            metadata: normalizeAnnotationMetadata(ann.metadata),
           });
         }
       }
@@ -309,4 +312,17 @@ async function loadUnitMap(
     map.set(row.symbol, row.id);
   }
   return map;
+}
+
+function normalizeAnnotationMetadata(
+  value: unknown,
+): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return {};
+  }
+
+  const entries = Object.entries(value as Record<string, unknown>).filter(
+    ([, entryValue]) => entryValue !== undefined,
+  );
+  return Object.fromEntries(entries);
 }

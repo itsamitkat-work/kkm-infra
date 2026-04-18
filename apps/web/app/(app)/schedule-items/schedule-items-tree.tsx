@@ -77,7 +77,7 @@ async function collectIdsToExpandUnderParent(
 }
 
 const ROW_GRID_CLASS =
-  'grid w-full min-w-0 flex-1 grid-cols-[minmax(5.5rem,7.5rem)_minmax(0,1fr)_minmax(8rem,11rem)] items-start gap-x-3 gap-y-0.5';
+  'grid w-full min-w-0 flex-1 grid-cols-[minmax(5.5rem,7.5rem)_minmax(0,1fr)_minmax(7rem,10rem)_minmax(8rem,11rem)] items-start gap-x-3 gap-y-0.5';
 
 const TREE_CONTROL_CELL_CLASS =
   'inline-flex h-5 w-8 shrink-0 items-center justify-center';
@@ -390,6 +390,35 @@ function ScheduleRowAnnotationsTooltip({
   );
 }
 
+function getNonReferenceAnnotations(
+  annotations: ScheduleItemAnnotation[]
+): ScheduleItemAnnotation[] {
+  return annotations.filter((annotation) => annotation.type !== 'reference');
+}
+
+function getReferenceLabels(row: ScheduleTreeRow): string[] {
+  const referenceLabels = row.annotations
+    .filter((annotation) => annotation.type === 'reference')
+    .map((annotation) => {
+      const sourceName = annotation.metadata.reference_schedule_source_name;
+      const code = annotation.raw_text.trim();
+      if (
+        typeof sourceName === 'string' &&
+        sourceName.trim() !== '' &&
+        code !== ''
+      ) {
+        return `${sourceName.trim()} - ${code}`;
+      }
+      return code;
+    })
+    .filter(
+      (referenceLabel): referenceLabel is string =>
+        typeof referenceLabel === 'string' && referenceLabel.trim() !== ''
+    );
+
+  return [...new Set(referenceLabels)];
+}
+
 type VisibleRow =
   | { type: 'node'; id: string; level: number }
   | { type: 'loading'; parentId: string; level: number };
@@ -434,6 +463,7 @@ function ScheduleTreeColumnHeader({
       >
         <span>Code</span>
         <span>Name</span>
+        <span>Reference Schedule</span>
         <span className='text-end'>Rate</span>
       </div>
     </div>
@@ -835,6 +865,7 @@ export function ScheduleItemsTree() {
                                 <Skeleton className='h-3 w-full' />
                                 <Skeleton className='h-3 w-4/5 max-w-md' />
                               </div>
+                              <Skeleton className='h-3 w-16' />
                               <Skeleton className='h-3 w-14 justify-self-end' />
                             </div>
                           </div>
@@ -851,6 +882,10 @@ export function ScheduleItemsTree() {
                         row.code?.trim() || row.description?.trim() || 'item';
                       const nodeKind = normalizeScheduleNodeType(row.node_type);
                       const typeStyles = scheduleNodeTypeRowClasses(nodeKind);
+                      const detailAnnotations = getNonReferenceAnnotations(
+                        row.annotations
+                      );
+                      const referenceLabels = getReferenceLabels(row);
                       return (
                         <div
                           key={row.id}
@@ -881,7 +916,14 @@ export function ScheduleItemsTree() {
                               className={cn('min-w-0', typeStyles.name)}
                               title={row.description}
                             >
-                              <span className='inline-flex min-w-0 flex-wrap items-baseline gap-x-1 gap-y-0'>
+                              <span className='inline-flex min-w-0 items-start gap-x-1'>
+                                {detailAnnotations.length > 0 ? (
+                                  <span className='shrink-0 pt-0.5'>
+                                    <ScheduleRowAnnotationsTooltip
+                                      annotations={detailAnnotations}
+                                    />
+                                  </span>
+                                ) : null}
                                 <span className='min-w-0 break-words leading-tight'>
                                   {row.description
                                     ? highlightText(
@@ -890,12 +932,19 @@ export function ScheduleItemsTree() {
                                       )
                                     : '—'}
                                 </span>
-                                {row.annotations.length > 0 ? (
-                                  <ScheduleRowAnnotationsTooltip
-                                    annotations={row.annotations}
-                                  />
-                                ) : null}
                               </span>
+                            </span>
+                            <span
+                              className='text-muted-foreground min-w-0 truncate text-xs leading-tight'
+                              title={
+                                referenceLabels.length > 0
+                                  ? referenceLabels.join(', ')
+                                  : undefined
+                              }
+                            >
+                              {referenceLabels.length > 0
+                                ? referenceLabels.join(', ')
+                                : '—'}
                             </span>
                             <ScheduleTreeRateCell
                               row={row}

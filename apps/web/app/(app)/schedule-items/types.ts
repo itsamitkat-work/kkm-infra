@@ -6,11 +6,18 @@ export type ScheduleAnnotationType =
   | 'condition'
   | 'reference';
 
+export type ScheduleAnnotationMetadata = {
+  reference_schedule_source_name?: string;
+  reference_schedule_source_version_id?: string;
+  reference_schedule_source_version_name?: string;
+} & Record<string, unknown>;
+
 export type ScheduleItemAnnotation = {
   id: string;
   type: ScheduleAnnotationType;
   raw_text: string;
   order_index: number | null;
+  metadata: ScheduleAnnotationMetadata;
 };
 
 export type ScheduleItemContextRate = {

@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import type {
+  ScheduleAnnotationMetadata,
   ScheduleAnnotationType,
   ScheduleItemAnnotation,
   ScheduleItemContextRate,
@@ -16,6 +17,15 @@ const ANNOTATION_TYPES = new Set<ScheduleAnnotationType>([
   'condition',
   'reference',
 ]);
+
+function parseScheduleAnnotationMetadata(
+  value: unknown
+): ScheduleAnnotationMetadata {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return {};
+  }
+  return { ...(value as Record<string, unknown>) };
+}
 
 function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
   if (value == null) return [];
@@ -44,6 +54,7 @@ function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
       type,
       raw_text: typeof o.raw_text === 'string' ? o.raw_text : '',
       order_index,
+      metadata: parseScheduleAnnotationMetadata(o.metadata),
     });
   }
   return out;
