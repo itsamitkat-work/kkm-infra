@@ -46,8 +46,10 @@ export const getColumns = ({
       <TableColumnHeader className='text-left' column={column} title='Email' />
     ),
     cell: ({ row }) => (
-      <div className='text-sm text-muted-foreground'>
-        {row.original.email || ''}
+      <div className='text-muted-foreground text-sm'>
+        {row.original.email?.trim()
+          ? row.original.email
+          : '—'}
       </div>
     ),
     size: 250,

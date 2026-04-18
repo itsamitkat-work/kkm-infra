@@ -68,6 +68,7 @@ export async function fetchUserOptions(
   }
 
   const { data: tmr, error: tmrError } = await supabase
+    .schema('authz')
     .from('tenant_member_roles')
     .select('tenant_member_id')
     .eq('role_id', roleId);

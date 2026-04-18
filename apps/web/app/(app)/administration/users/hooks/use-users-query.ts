@@ -1,71 +1,178 @@
 'use client';
 
 import * as React from 'react';
-import { apiFetch } from '@/lib/apiClient';
-import { PaginationResponse } from '@/types/common';
-import { User } from '@/types/users';
-import { SortingState } from '@tanstack/react-table';
-import { Filter } from '@/components/ui/filters';
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
+import type { SortingState } from '@tanstack/react-table';
+
+import { useAuth } from '@/hooks/auth';
+import { useDebounce } from '@/hooks/use-debounce';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import type { Filter } from '@/components/ui/filters';
+import type { PaginationResponse } from '@/types/common';
+import type { User, UserRole } from '@/types/users';
 
 export const USERS_TABLE_ID = 'users';
 
-// API response wrapper type
-interface UsersApiResponse {
-  isSuccess: boolean;
-  data: User[];
-  message: string;
-  statusCode: number;
+function escapeIlike(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/%/g, '\\%').replace(/_/g, '\\_');
 }
 
-// API functions
-export const fetchUsers = async (
-  search: string,
-  page?: number,
-  filters?: Record<string, Filter>,
-  sorting?: SortingState,
-  signal?: AbortSignal
-): Promise<PaginationResponse<User>> => {
-  const params = new URLSearchParams();
+function getSupabase() {
+  return createSupabaseBrowserClient();
+}
 
-  // Add search parameter - trim whitespace for better query handling
-  const trimmedSearch = search?.trim();
-  if (trimmedSearch) {
-    params.append('search', trimmedSearch);
-  }
-
-  // Add pagination parameters
-  if (page !== undefined) params.append('page', page.toString());
-  params.append('pageSize', '20');
-
-  // Add sorting parameters
-  if (sorting && sorting.length > 0) {
-    const sort = sorting[0];
-    params.append('sortBy', sort.id);
-    params.append('order', sort.desc ? 'desc' : 'asc');
-  }
-
-  // Build final URL
-  const queryString = params.toString();
-  const url = queryString ? `v2/user?${queryString}` : 'v2/user';
-
-  const response = await apiFetch<UsersApiResponse>(url, { signal });
-
-  const paginationResponse: PaginationResponse<User> = {
-    data: response.data,
-    totalCount: response.data.length,
-    page: 1,
-    pageSize: 20,
-    totalPages: 1,
-    hasPrevious: false,
-    hasNext: false,
-    isSuccess: response.isSuccess,
-    statusCode: response.statusCode,
-    message: response.message,
-  };
-
-  return paginationResponse;
+type MemberWithProfile = {
+  id: string;
+  user_id: string;
+  status: string;
+  created_at: string;
+  profiles: { username: string | null; display_name: string | null } | null;
 };
+
+type RoleEmbed = { id: string; name: string; slug: string };
+
+type TmrRow = {
+  tenant_member_id: string;
+  roles: RoleEmbed | RoleEmbed[] | null;
+};
+
+function mapRowsToUsers(
+  members: MemberWithProfile[],
+  roleMap: Map<string, UserRole[]>,
+): User[] {
+  return members.map((m) => {
+    const prof = m.profiles;
+    const roles = roleMap.get(m.id) ?? [];
+    return {
+      id: m.user_id,
+      tenantMemberId: m.id,
+      userName: prof?.username ?? '',
+      fullName:
+        prof?.display_name?.trim() ||
+        prof?.username ||
+        m.user_id.slice(0, 8),
+      email: '',
+      isActive: m.status === 'active',
+      roles,
+    };
+  });
+}
+
+export type FetchTenantUsersParams = {
+  tenantId: string;
+  search: string;
+  page: number;
+  pageSize: number;
+  sorting: SortingState;
+};
+
+export async function fetchTenantUsers(
+  params: FetchTenantUsersParams,
+  signal?: AbortSignal,
+): Promise<PaginationResponse<User>> {
+  const supabase = getSupabase();
+  const pageSize = params.pageSize;
+  const page = Math.max(1, params.page);
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+
+  let query = supabase
+    .from('tenant_members')
+    .select(
+      `
+      id,
+      user_id,
+      status,
+      created_at,
+      profiles(username, display_name)
+    `,
+      { count: 'exact' },
+    )
+    .eq('tenant_id', params.tenantId);
+
+  const search = params.search.trim();
+  if (search.length > 0) {
+    const s = escapeIlike(search);
+    query = query.or(
+      `username.ilike.%${s}%,display_name.ilike.%${s}%`,
+      { foreignTable: 'profiles' },
+    );
+  }
+
+  const sort = params.sorting[0];
+  if (sort) {
+    if (sort.id === 'fullName') {
+      query = query.order('display_name', {
+        ascending: !sort.desc,
+        foreignTable: 'profiles',
+        nullsFirst: false,
+      });
+    } else if (sort.id === 'userName') {
+      query = query.order('username', {
+        ascending: !sort.desc,
+        foreignTable: 'profiles',
+        nullsFirst: false,
+      });
+    } else if (sort.id === 'isActive' || sort.id === 'status') {
+      query = query.order('status', { ascending: !sort.desc });
+    } else {
+      query = query.order('created_at', { ascending: false });
+    }
+  } else {
+    query = query.order('created_at', { ascending: false });
+  }
+
+  let ranged = query.range(from, to);
+  if (signal) {
+    ranged = ranged.abortSignal(signal);
+  }
+
+  const { data, error, count } = await ranged;
+  if (error) {
+    throw error;
+  }
+
+  const members = (data ?? []) as MemberWithProfile[];
+  const roleMap = new Map<string, UserRole[]>();
+
+  if (members.length > 0) {
+    const memberIds = members.map((m) => m.id);
+    const { data: tmrData, error: tmrError } = await supabase
+      .schema('authz')
+      .from('tenant_member_roles')
+      .select('tenant_member_id, roles(id, name, slug)')
+      .in('tenant_member_id', memberIds);
+    if (tmrError) {
+      throw tmrError;
+    }
+    for (const row of (tmrData ?? []) as TmrRow[]) {
+      const roleObj = Array.isArray(row.roles) ? row.roles[0] : row.roles;
+      if (!roleObj) {
+        continue;
+      }
+      const ur: UserRole = { name: roleObj.name, hashId: roleObj.id };
+      const list = roleMap.get(row.tenant_member_id) ?? [];
+      list.push(ur);
+      roleMap.set(row.tenant_member_id, list);
+    }
+  }
+
+  const totalCount = count ?? 0;
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
+
+  return {
+    data: mapRowsToUsers(members, roleMap),
+    totalCount,
+    page,
+    pageSize,
+    totalPages,
+    hasPrevious: page > 1,
+    hasNext: page * pageSize < totalCount,
+    isSuccess: true,
+    statusCode: 200,
+    message: '',
+  };
+}
 
 type UseUsersQueryParams = {
   search: string;
@@ -73,34 +180,62 @@ type UseUsersQueryParams = {
   sorting: SortingState;
 };
 
-export const useUsersQuery = ({
+export function useUsersQuery({
   search,
-  filters,
+  filters: _filters,
   sorting,
-}: UseUsersQueryParams) => {
+}: UseUsersQueryParams) {
   const queryClient = useQueryClient();
+  const { claims } = useAuth();
+  const tenantId = claims?.tid ?? null;
+  const debouncedSearch = useDebounce(search, 400);
 
-  const combinedFilters = React.useMemo(() => {
-    const map: Record<string, Filter> = {};
-    filters.forEach((filter) => {
-      map[filter.field] = filter;
-    });
-    return map;
-  }, [filters]);
+  const listParams = React.useMemo(
+    () => ({
+      tenantId: tenantId ?? '',
+      search: debouncedSearch,
+      sorting,
+    }),
+    [tenantId, debouncedSearch, sorting],
+  );
 
   const query = useInfiniteQuery({
-    queryKey: [USERS_TABLE_ID, [search, filters, sorting]],
-    queryFn: ({ pageParam = 1, signal }) =>
-      fetchUsers(search, pageParam, combinedFilters, sorting, signal),
-    getNextPageParam: (lastPage, allPages) => {
-      if (!lastPage) return undefined;
-      if (lastPage.totalPages > allPages.length) {
-        return allPages.length + 1;
+    queryKey: [USERS_TABLE_ID, listParams],
+    queryFn: ({ pageParam = 1, signal }) => {
+      if (!tenantId) {
+        return Promise.resolve({
+          data: [],
+          totalCount: 0,
+          page: 1,
+          pageSize: 20,
+          totalPages: 1,
+          hasPrevious: false,
+          hasNext: false,
+          isSuccess: true,
+          statusCode: 200,
+          message: '',
+        });
       }
-      return undefined;
+      return fetchTenantUsers(
+        {
+          tenantId,
+          search: debouncedSearch,
+          page: pageParam as number,
+          pageSize: 20,
+          sorting,
+        },
+        signal,
+      );
+    },
+    getNextPageParam: (lastPage) => {
+      if (!lastPage?.hasNext) {
+        return undefined;
+      }
+      return lastPage.page + 1;
     },
     initialPageParam: 1,
-    staleTime: Infinity,
+    staleTime: 30_000,
+    enabled: Boolean(tenantId),
   });
 
   return {
@@ -108,4 +243,4 @@ export const useUsersQuery = ({
     invalidate: () =>
       queryClient.invalidateQueries({ queryKey: [USERS_TABLE_ID] }),
   };
-};
+}

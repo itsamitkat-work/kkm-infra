@@ -1,54 +1,48 @@
 'use client';
 
-import { DataTable } from '@/components/tables/data-table/data-table';
 import * as React from 'react';
-import { User } from '@/types/users';
-import { TableErrorState } from '@/components/tables/table-error';
+
+import { AssignRolesDialog } from './assign-roles-dialog';
 import { getColumns } from './users-columns';
-import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
-import { USERS_TABLE_ID, useUsersQuery } from '../hooks/use-users-query';
-import { useRolesQuery } from '@/app/(app)/administration/roles/hooks/use-roles-query';
 import { useAssignRole } from '../hooks/use-assign-role-mutation';
 import { useRemoveRole } from '../hooks/use-remove-role-mutation';
+import { useTenantRolesAdminQuery } from '../hooks/use-tenant-roles-admin-query';
+import { USERS_TABLE_ID, useUsersQuery } from '../hooks/use-users-query';
+import { DataTable } from '@/components/tables/data-table/data-table';
+import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
+import { TableErrorState } from '@/components/tables/table-error';
+import { useAuth } from '@/hooks/auth';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { AssignRolesDialog } from './assign-roles-dialog';
+import type { User } from '@/types/users';
 
 export function UsersTable() {
   const dialog = useOpenClose<User>();
+  const { claims } = useAuth();
+  const tenantId = claims?.tid ?? null;
 
   const assignRoleMutation = useAssignRole({
-    suppressSuccessToast: true, // We'll show custom toast in dialog
-    suppressErrorToast: true, // We'll show custom toast in dialog
+    suppressSuccessToast: true,
+    suppressErrorToast: true,
   });
 
   const removeRoleMutation = useRemoveRole({
-    suppressSuccessToast: true, // We'll show custom toast in dialog
-    suppressErrorToast: true, // We'll show custom toast in dialog
+    suppressSuccessToast: true,
+    suppressErrorToast: true,
   });
 
-  // Fetch all roles once in the parent
-  const { query: rolesQuery } = useRolesQuery({
-    search: '',
-    filters: [],
-    sorting: [],
-  });
-
-  // Get all roles from pages
-  const allRoles = React.useMemo(() => {
-    if (!rolesQuery.data?.pages) return [];
-    return rolesQuery.data.pages.flatMap((page) => page.data);
-  }, [rolesQuery.data]);
+  const rolesQuery = useTenantRolesAdminQuery(tenantId);
+  const allRoles = rolesQuery.data ?? [];
 
   const onClickManageRoles = React.useCallback(
     (user: User) => {
       dialog.open(user);
     },
-    [dialog]
+    [dialog],
   );
 
   const columns = React.useMemo(
     () => getColumns({ onOpenDialog: onClickManageRoles }),
-    [onClickManageRoles]
+    [onClickManageRoles],
   );
 
   const controls = useDataTableControls(USERS_TABLE_ID);
@@ -59,6 +53,14 @@ export function UsersTable() {
     sorting: controls.state.sorting,
   });
 
+  if (!tenantId) {
+    return (
+      <div className='text-muted-foreground p-6 text-sm'>
+        No active workspace is set. Use the workspace switcher or sign in again.
+      </div>
+    );
+  }
+
   return (
     <>
       <DataTable<User>
@@ -66,16 +68,18 @@ export function UsersTable() {
         controls={controls}
         filterFields={[]}
         columns={columns}
-        searchPlaceholder='Search by Username, Full Name, or Email...'
+        searchPlaceholder='Search by username or display name…'
         emptyState={{
           itemType: 'user',
         }}
-        loadingMessage='Loading users...'
+        loadingMessage='Loading users…'
         errorState={
           <TableErrorState
             title='Failed to load users'
-            message={usersQuery.error?.message || 'An error occurred'}
-            onRetry={() => window.location.reload()}
+            message={usersQuery.error?.message ?? 'An error occurred'}
+            onRetry={() => {
+              void usersQuery.refetch();
+            }}
           />
         }
       />
@@ -83,9 +87,13 @@ export function UsersTable() {
       {dialog.isOpen && dialog.data && (
         <AssignRolesDialog
           open={dialog.isOpen}
-          onOpenChange={(open) =>
-            open ? dialog.open(dialog.data!) : dialog.close()
-          }
+          onOpenChange={(open) => {
+            if (open) {
+              dialog.open(dialog.data!);
+            } else {
+              dialog.close();
+            }
+          }}
           user={dialog.data}
           allRoles={allRoles}
           assignRoleMutation={assignRoleMutation}

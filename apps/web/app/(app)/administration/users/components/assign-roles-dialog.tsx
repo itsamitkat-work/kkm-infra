@@ -32,6 +32,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import type { AssignRoleVariables } from '../hooks/use-assign-role-mutation';
+import type { RemoveRoleVariables } from '../hooks/use-remove-role-mutation';
 import { useUserRolesQuery } from '../hooks/use-user-roles-query';
 
 interface AssignRolesDialogProps {
@@ -39,16 +41,8 @@ interface AssignRolesDialogProps {
   onOpenChange: (open: boolean) => void;
   user: User;
   allRoles: Role[];
-  assignRoleMutation: UseMutationResult<
-    { isSuccess: boolean; message: string; statusCode: number },
-    Error,
-    { roleId: string; userId: string }
-  >;
-  removeRoleMutation: UseMutationResult<
-    { isSuccess: boolean; message: string; statusCode: number },
-    Error,
-    { roleId: string; userId: string }
-  >;
+  assignRoleMutation: UseMutationResult<void, Error, AssignRoleVariables>;
+  removeRoleMutation: UseMutationResult<void, Error, RemoveRoleVariables>;
   isLoadingRoles?: boolean;
 }
 
@@ -61,9 +55,10 @@ export function AssignRolesDialog({
   removeRoleMutation,
   isLoadingRoles = false,
 }: AssignRolesDialogProps) {
-  // Fetch user's current assigned roles from API
+  const tenantMemberId = user.tenantMemberId;
+
   const { data: userRoles = [], isLoading: isLoadingUserRoles } =
-    useUserRolesQuery(user.id, open);
+    useUserRolesQuery(tenantMemberId, open);
 
   // Get user's current role IDs from the API response
   const userRoleIds = React.useMemo(() => {
@@ -276,7 +271,14 @@ export function AssignRolesDialog({
     const rolesToAdd = selectedRows.map((row) => row.original.id);
     const rolesToRemoveArray = Array.from(rolesToRemove);
 
-    if (rolesToAdd.length === 0 && rolesToRemoveArray.length === 0) return;
+    if (rolesToAdd.length === 0 && rolesToRemoveArray.length === 0) {
+      return;
+    }
+
+    if (!tenantMemberId) {
+      toast.error('Missing tenant membership for this user.');
+      return;
+    }
 
     let addSuccessCount = 0;
     let addErrorCount = 0;
@@ -289,7 +291,7 @@ export function AssignRolesDialog({
         try {
           await removeRoleMutation.mutateAsync({
             roleId,
-            userId: user.id,
+            tenantMemberId,
           });
           removeSuccessCount++;
         } catch (error) {
@@ -303,7 +305,7 @@ export function AssignRolesDialog({
         try {
           await assignRoleMutation.mutateAsync({
             roleId,
-            userId: user.id,
+            tenantMemberId,
           });
           addSuccessCount++;
         } catch (error) {
@@ -347,7 +349,7 @@ export function AssignRolesDialog({
     table,
     assignRoleMutation,
     removeRoleMutation,
-    user.id,
+    tenantMemberId,
     onOpenChange,
     rolesToRemove,
   ]);
