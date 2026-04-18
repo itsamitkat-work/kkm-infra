@@ -40,6 +40,7 @@ const ROUTE_LABELS: Record<string, string> = {
   'administration/users': 'Users',
   'administration/employee-types': 'Employee Types',
   'administration/designations': 'Designations',
+  'administration/tenants': 'Tenants',
   'administration/material': 'Material',
   'administration/plant-machine-carrige': 'Plant & Machine Carrige',
   'administration/item-map': 'Item Map',

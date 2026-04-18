@@ -1,2 +1,2 @@
--- Schedule permission keys merged into supabase/seed/authz.json and
--- supabase/functions/ensure-authz-seed (no separate SQL seed).
+-- Schedule-related permission keys live in supabase/seed/auth_authz_seed.sql
+-- (authz.permissions upsert) alongside the rest of the authz catalog.

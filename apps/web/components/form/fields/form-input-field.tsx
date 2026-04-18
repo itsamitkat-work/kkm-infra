@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Control, FieldPath, FieldValues, useController } from 'react-hook-form';
 import { Input, InputGroup } from '@/components/ui/input';
-import { Field, FieldLabel, FieldError } from '@/components/ui/field';
+import { Field, FieldDescription, FieldLabel, FieldError } from '@/components/ui/field';
 
 interface FormInputFieldProps<
   TFieldValues extends FieldValues = FieldValues,
@@ -18,7 +18,8 @@ interface FormInputFieldProps<
   className?: string;
   readOnly?: boolean;
   inputAddon?: React.ReactNode;
-  description?: string;
+  /** Helper text below the input; rendered with `FieldDescription`. */
+  description?: React.ReactNode;
   /** HTML `list` attribute (e.g. id of a `<datalist>` for preset suggestions). */
   list?: string;
 }
@@ -36,6 +37,7 @@ export function FormInputField<
   className,
   readOnly = false,
   inputAddon,
+  description,
   list,
 }: FormInputFieldProps<TFieldValues, TName>) {
   const {
@@ -61,6 +63,9 @@ export function FormInputField<
           list={list}
         />
       </InputGroup>
+      {description != null && description !== '' && (
+        <FieldDescription>{description}</FieldDescription>
+      )}
       {error?.message && <FieldError>{error.message}</FieldError>}
     </Field>
   );

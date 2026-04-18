@@ -18,6 +18,7 @@ Tooling at the repo root: **pnpm** workspaces, **Turborepo**, and **Prettier**.
 
 - **Node.js** 20+ (recommended)
 - **pnpm** 9 (`corepack enable` then installs use `packageManager` from root `package.json`)
+- **Installs must use pnpm:** root `preinstall` runs `only-allow pnpm`, so `npm install` / `yarn` fails on purpose with a hint to use `pnpm install`.
 - **Supabase CLI** (optional, for local DB and `pnpm db:types`)
 
 ## Install
@@ -42,7 +43,9 @@ Run from the **repository root** unless noted.
 | `pnpm test`                         | Tests (placeholder app exits successfully; add real tests when you implement PDF tooling) |
 | `pnpm format` / `pnpm format:check` | Prettier                                                                                  |
 | `pnpm db:types`                     | Regenerate `packages/db` types (requires local Supabase: `supabase start`)                |
-| `pnpm deploy`                       | Deploy web (`vercel --prod` in `apps/web`)                                                |
+| `pnpm db:reset` / `pnpm sdr`        | Reset local DB and reapply all migrations (`supabase db reset --local`)                   |
+| `pnpm db:migrate` / `pnpm sdm`      | Apply pending migrations to the local DB (`supabase migration up --local`)              |
+| `pnpm db:reset:seed`                | `db:reset` then `supabase/scripts/seed-app.sh`                                            |
 
 ## Environment variables
 
@@ -53,9 +56,7 @@ Do not commit real secrets; `.env*` files are gitignored except `.env.example`.
 
 ## Deployment
 
-- **Web (Vercel):** set the Vercel project **Root Directory** to `apps/web`. Install/build are configured in `apps/web/vercel.json` to run from the monorepo root.
-- **`apps/python-api`:** nothing to deploy until you add the PDF tooling.
-- **Supabase:** the `deploy` job in `.github/workflows/ci.yml` runs on pushes to `develop` / `main` (`supabase link` + `db push`). GitHub secrets: `SUPABASE_ACCESS_TOKEN`, `PREVIEW_PROJECT_ID`, `PREVIEW_DB_PASSWORD`, `PRODUCTION_PROJECT_ID`, `PRODUCTION_DB_PASSWORD`. Overview: [Supabase environments](https://supabase.com/blog/the-vibe-coders-guide-to-supabase-environments).
+CI/CD for preview/production (web, Supabase migrations, branches) is not wired through root `package.json` scripts; configure that in your pipeline when you are ready. For local reference: **Web (Vercel)** typically uses **Root Directory** `apps/web` and `apps/web/vercel.json`. **`apps/python-api`** has nothing to deploy until PDF tooling exists.
 
 ## API documentation
 
@@ -65,4 +66,4 @@ Swagger UI for the external projects API:
 
 ## Continuous integration
 
-Workflow `.github/workflows/ci.yml` runs a **Supabase** job (local DB, migrations, type drift check), **pnpm install**, Turbo `build` / `lint` for `web` and dependencies, and a **deploy** job that pushes migrations on `develop` / `main` when secrets are set.
+Workflow `.github/workflows/ci.yml` runs **pnpm install**, Turbo `build` / `lint` for `web` and dependencies, and may include Supabase checks or deploy steps depending on how you configure secrets and jobs.

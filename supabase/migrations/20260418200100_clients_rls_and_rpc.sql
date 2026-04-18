@@ -30,9 +30,10 @@ as $$
             c.tenant_id = (select authz.current_tenant_id())
             and (
               (p_action = 'read' and (select authz.has_permission('clients.read')))
-              or (p_action = 'create' and (select authz.has_permission('clients.create')))
-              or (p_action = 'update' and (select authz.has_permission('clients.update')))
-              or (p_action = 'delete' and (select authz.has_permission('clients.delete')))
+              or (
+                p_action in ('create', 'update', 'delete')
+                and (select authz.has_permission('clients.manage'))
+              )
             )
           )
         )
@@ -61,7 +62,7 @@ create policy clients_insert on public.clients
       (select authz.is_system_admin())
       or (
         tenant_id = (select authz.current_tenant_id())
-        and (select authz.has_permission('clients.create'))
+        and (select authz.has_permission('clients.manage'))
       )
     )
   );

@@ -14,7 +14,9 @@ export type AppSubject =
   | 'assigned_projects'
   | 'project_measurement'
   | 'project_billing'
-  | 'clients';
+  | 'clients'
+  | 'tenant_members'
+  | 'tenants';
 
 export type AppAction =
   | 'read'
@@ -28,32 +30,33 @@ export type AppAction =
 
 export type AppAbility = MongoAbility<[AppAction, AppSubject]>;
 
-const PERMISSION_RULES: ReadonlyArray<readonly [key: string, action: AppAction]> =
+/** Permission keys in `authz.permissions` (see `supabase/seed/auth_authz_seed.sql`). */
+const CATALOG_PERMISSION_RULES: ReadonlyArray<readonly [key: string, action: AppAction]> =
   [
-    ['schedules.read', 'read'],
-    ['schedules.manage', 'manage'],
     ['basic_rates.read', 'read'],
     ['basic_rates.manage', 'manage'],
-    ['attendance.read', 'read'],
-    ['attendance.check', 'check'],
-    ['attendance.verify', 'verify'],
-    ['attendance.lock', 'lock'],
-    ['resource_pool.read', 'read'],
-    ['resource_pool.update', 'update'],
-    ['projects.read', 'read'],
-    ['projects.update', 'update'],
-    ['projects.delete', 'delete'],
-    ['projects.create', 'create'],
-    ['assigned_projects.read', 'read'],
     ['clients.read', 'read'],
-    ['clients.update', 'update'],
-    ['clients.delete', 'delete'],
-    ['clients.create', 'create'],
-    ['project_measurement.check', 'check'],
-    ['project_measurement.verify', 'verify'],
-    ['project_billing.check', 'check'],
-    ['project_billing.verify', 'verify'],
+    ['clients.manage', 'manage'],
+    ['tenant_members.manage', 'manage'],
+    ['projects.read', 'read'],
+    ['projects.manage', 'manage'],
+    ['schedules.manage', 'manage'],
+    ['tenants.manage', 'manage'],
   ];
+
+const ALL_APP_SUBJECTS: readonly AppSubject[] = [
+  'schedules',
+  'basic_rates',
+  'attendance',
+  'resource_pool',
+  'projects',
+  'assigned_projects',
+  'project_measurement',
+  'project_billing',
+  'clients',
+  'tenant_members',
+  'tenants',
+];
 
 function subjectFromPermissionKey(permissionKey: string): AppSubject {
   const dot = permissionKey.lastIndexOf('.');
@@ -68,12 +71,12 @@ export function defineAbilityFor(input: {
   const { can, build } = new AbilityBuilder<AppAbility>(createMongoAbility);
 
   if (input.claims?.is_system_admin) {
-    for (const [key, action] of PERMISSION_RULES) {
-      can(action, subjectFromPermissionKey(key));
+    for (const subject of ALL_APP_SUBJECTS) {
+      can('manage', subject);
     }
   } else {
     const granted = new Set(input.permissions);
-    for (const [key, action] of PERMISSION_RULES) {
+    for (const [key, action] of CATALOG_PERMISSION_RULES) {
       if (granted.has(key)) {
         can(action, subjectFromPermissionKey(key));
       }

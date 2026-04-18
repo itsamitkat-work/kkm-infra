@@ -8,7 +8,7 @@
  *
  * Security:
  *   - Requires a valid Bearer token (via requireUserContext)
- *   - Requires `members.manage` permission in the active tenant
+ *   - Requires `tenant_members.manage` permission in the active tenant
  *   - Only system admins can assign the `tenant_admin` role
  *   - Rate-limited: 20 req/min per tenant
  *
@@ -59,10 +59,10 @@ Deno.serve(async (req) => {
     // Permission check via DB (single source of truth — no JWT perms)
     const { data: hasPerm } = await context.serviceClient.rpc(
       "check_user_permission",
-      { p_user_id: context.user.id, p_tenant_id: tenantId, p_permission_key: "members.manage" },
+      { p_user_id: context.user.id, p_tenant_id: tenantId, p_permission_key: "tenant_members.manage" },
     );
     if (hasPerm !== true && context.claims.is_system_admin !== true) {
-      throw new HttpError(403, "Missing members.manage permission");
+      throw new HttpError(403, "Missing tenant_members.manage permission");
     }
 
     const rateLimit = await applyRateLimit(

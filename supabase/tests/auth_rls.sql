@@ -69,7 +69,7 @@ begin
   select p.id
   into members_manage_permission
   from authz.permissions p
-  where p.key = 'members.manage'
+  where p.key = 'tenant_members.manage'
   limit 1;
 
   insert into authz.role_permissions (role_id, permission_id)
@@ -87,7 +87,7 @@ end
 $$;
 
 -- Permissions are now resolved from DB (role_permissions), not JWT.
--- The test data above already assigns members.manage to the engineer_role.
+-- The test data above already assigns tenant_members.manage to the engineer_role.
 
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
@@ -108,10 +108,10 @@ select is(
   'User can read their own tenant member row'
 );
 
--- Insert test: user has members.manage via role_permissions in the DB
+-- Insert test: user has tenant_members.manage via role_permissions in the DB
 select lives_ok(
   $$insert into public.tenant_members (tenant_id, user_id) values ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'aaaaaaaa-1111-1111-1111-111111111111')$$,
-  'Insert works — members.manage resolved from DB role_permissions'
+  'Insert works — tenant_members.manage resolved from DB role_permissions'
 );
 
 -- To test INSERT blocked, we remove the permission from the role first

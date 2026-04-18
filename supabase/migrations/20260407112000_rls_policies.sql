@@ -180,7 +180,7 @@ using (
         (user_id = (select auth.uid()) and tenant_id = (select authz.current_tenant_id()))
         or (
           tenant_id = (select authz.current_tenant_id())
-          and (select authz.has_permission('members.manage'))
+          and (select authz.has_permission('tenant_members.manage'))
         )
       )
     )
@@ -199,7 +199,7 @@ with check (
     (select authz.is_system_admin())
     or (
       tenant_id = (select authz.current_tenant_id())
-      and (select authz.has_permission('members.manage'))
+      and (select authz.has_permission('tenant_members.manage'))
       and (select authz.check_permission_version())
     )
   )
@@ -217,7 +217,7 @@ using (
     (select authz.is_system_admin())
     or (
       tenant_id = (select authz.current_tenant_id())
-      and (select authz.has_permission('members.manage'))
+      and (select authz.has_permission('tenant_members.manage'))
       and (select authz.check_permission_version())
     )
   )
@@ -229,7 +229,7 @@ with check (
     (select authz.is_system_admin())
     or (
       tenant_id = (select authz.current_tenant_id())
-      and (select authz.has_permission('members.manage'))
+      and (select authz.has_permission('tenant_members.manage'))
       and (select authz.check_permission_version())
     )
   )
@@ -247,7 +247,7 @@ using (
     (select authz.is_system_admin())
     or (
       tenant_id = (select authz.current_tenant_id())
-      and (select authz.has_permission('members.manage'))
+      and (select authz.has_permission('tenant_members.manage'))
       and (select authz.check_permission_version())
     )
   )

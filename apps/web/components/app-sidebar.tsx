@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import {
+  Building2,
   FolderOpen,
-  GalleryVerticalEnd,
   HardHat,
   SquareTerminal,
   UserCog,
@@ -12,7 +12,7 @@ import {
 import { usePathname, useRouter } from 'next/navigation';
 
 import { NavUser } from '@/components/nav/nav-user';
-import { TeamSwitcher } from '@/components/team-switcher';
+import { TenantSwitcher } from '@/components/tenant-switcher';
 import {
   Sidebar,
   SidebarContent,
@@ -71,6 +71,8 @@ const purchaseOrderItems: NavItem[] = [
   },
 ];
 
+const TENANTS_ADMIN_URL = '/administration/tenants';
+
 const administrationItems: NavItem[] = [
   {
     title: 'Page Actions',
@@ -104,7 +106,25 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const { state } = useSidebar();
   const isMobile = useIsMobile();
-  const { roles, ability } = useAuth();
+  const { roles, ability, claims } = useAuth();
+
+  const administrationNavItems = React.useMemo((): NavItem[] => {
+    const items: NavItem[] = [];
+    const isSystemAdmin = claims?.is_system_admin === true;
+    const canManageTenantMembers = ability.can('manage', 'tenant_members');
+
+    if (isSystemAdmin || canManageTenantMembers) {
+      items.push(...administrationItems);
+    }
+    if (isSystemAdmin) {
+      items.push({
+        title: 'Tenants',
+        url: TENANTS_ADMIN_URL,
+        icon: Building2,
+      });
+    }
+    return items;
+  }, [claims, ability]);
 
   const constructionToolsItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
@@ -262,15 +282,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible='icon' {...props}>
       <SidebarHeader>
-        <TeamSwitcher
-          teams={[
-            {
-              name: 'KKM Infra',
-              logo: GalleryVerticalEnd,
-              plan: 'Enterprise',
-            },
-          ]}
-        />
+        <TenantSwitcher />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -302,10 +314,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>{renderNavItems(hrItems)}</SidebarMenu>
         </SidebarGroup>
 
-        {typeof window !== 'undefined' && roles.includes('Admin') && (
+        {typeof window !== 'undefined' && administrationNavItems.length > 0 && (
           <SidebarGroup>
             <SidebarGroupLabel>Administration</SidebarGroupLabel>
-            <SidebarMenu>{renderNavItems(administrationItems)}</SidebarMenu>
+            <SidebarMenu>{renderNavItems(administrationNavItems)}</SidebarMenu>
           </SidebarGroup>
         )}
       </SidebarContent>

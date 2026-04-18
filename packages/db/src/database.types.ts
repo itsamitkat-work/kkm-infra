@@ -1409,6 +1409,14 @@ export type Database = {
           updated_at: string
         }[]
       }
+      list_my_switchable_tenants: {
+        Args: never
+        Returns: {
+          tenant_id: string
+          tenant_name: string
+          tenant_slug: string
+        }[]
+      }
       list_projects: {
         Args: {
           p_amount_max?: number

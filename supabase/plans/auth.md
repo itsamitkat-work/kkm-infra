@@ -94,7 +94,7 @@ Alert Pipeline (pg_notify → dispatch-alerts → Slack / Email / Dashboard)
 
 ### 3.2 authz schema
 
-`**permissions**` — Global permission keys (e.g. `items.read`, `members.manage`)
+`**permissions**` — Global permission keys (e.g. `items.read`, `tenant_members.manage`)
 
 `**system_roles**` — Role templates (e.g. `tenant_admin`, `project_engineer`). When a tenant is created, `handle_new_tenant()` copies these as `authz.roles` for that tenant.
 
@@ -214,8 +214,8 @@ authz.is_session_valid() AND NOT authz.is_account_locked()
 
 | Operation              | Who can access                                                                                                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| SELECT                 | System admin, OR (within current tenant: own row, or `members.manage` permission). Self-row visibility is scoped to current tenant only — prevents cross-tenant membership enumeration. Requires `check_permission_version()`. |
-| INSERT, UPDATE, DELETE | System admin, OR `members.manage` permission within current tenant. Requires `check_permission_version()`.                                                                                                                     |
+| SELECT                 | System admin, OR (within current tenant: own row, or `tenant_members.manage` permission). Self-row visibility is scoped to current tenant only — prevents cross-tenant membership enumeration. Requires `check_permission_version()`. |
+| INSERT, UPDATE, DELETE | System admin, OR `tenant_members.manage` permission within current tenant. Requires `check_permission_version()`.                                                                                                                     |
 
 ### RLS pattern for future business tables
 
@@ -258,11 +258,11 @@ Every authenticated Edge Function runs through this pipeline:
 | `refresh-session`     | Bearer token                     | 30/min per user (strict)   | Rotate refresh token hash. Detects replay (hash mismatch → revoke all sessions + risk event).                                                  |
 | `switch-tenant`       | Bearer token                     | 20/min per user+IP (strict) | Switch active tenant. Validates membership, updates session tenant_id, optionally refreshes token.                                            |
 | `switch-role`         | Bearer token                     | 30/min per user+tenant (strict) | Switch active role within current tenant. Updates `active_role_id`, optionally refreshes token.                                           |
-| `add-member`          | Bearer token + DB `members.manage` | 20/min per tenant (moderate) | Find-or-create user, upsert profile, sync tenant membership + roles. Permission checked via `check_user_permission` RPC. Only system admins can assign `tenant_admin`. |
+| `add-member`          | Bearer token + DB `tenant_members.manage` | 20/min per tenant (moderate) | Find-or-create user, upsert profile, sync tenant membership + roles. Permission checked via `check_user_permission` RPC. Only system admins can assign `tenant_admin`. |
 | `assign-tenant-admin` | Bearer token + `is_system_admin` | 10/min per user (moderate) | System-admin-only. Assign a user as `tenant_admin` for a specific tenant.                                                                      |
 | `dispatch-alerts`     | Cron secret or service role key  | N/A (internal)             | Fetch pending alerts, dispatch to Slack/email. Dashboard alerts are skipped (remain `pending` for UI).                                         |
 
-> Edge Functions do NOT duplicate permission checks. The `add-member` function validates `members.manage` via the `check_user_permission` DB RPC (same `authz.has_permission` logic). All other permission enforcement is handled by RLS policies in the database.
+> Edge Functions do NOT duplicate permission checks. The `add-member` function validates `tenant_members.manage` via the `check_user_permission` DB RPC (same `authz.has_permission` logic). All other permission enforcement is handled by RLS policies in the database.
 
 ### Rate limiting
 
@@ -418,9 +418,9 @@ System-admin-only. Body: `{ "tenant_id", "email", "password?", "display_name?", 
 
 ### Member assignment (`POST /functions/v1/add-member`)
 
-Requires `members.manage` permission. Body: `{ "email", "role_slugs", "password?", "display_name?", "avatar_url?", "active_role_slug?" }`
+Requires `tenant_members.manage` permission. Body: `{ "email", "role_slugs", "password?", "display_name?", "avatar_url?", "active_role_slug?" }`
 
-1. Validates caller has `members.manage` permission in their active tenant
+1. Validates caller has `tenant_members.manage` permission in their active tenant
 2. Only system admins can include `tenant_admin` in `role_slugs`
 3. Finds or creates the user
 4. Upserts profile
@@ -450,7 +450,7 @@ Not a tenant role — stored as `profiles.is_system_admin`. Injected into JWT by
 | `project_verifier`   | Verifies completed work                                    |
 | `project_supervisor` | Broad project supervision                                  |
 
-New tenant roles start with no permissions. The seed migration grants the KKM Infra `tenant_admin` all 13 permission keys: `items.read`, `items.manage`, `members.manage`, `roles.read`, `roles.manage`, `roles.assign`, `tenants.read`, `tenants.manage`, `alerts.read`, `alerts.acknowledge`, `sessions.revoke`, `audit.read`, `profiles.manage`.
+New tenant roles start with no permissions. The seed migration grants the KKM Infra `tenant_admin` all 13 permission keys: `items.read`, `items.manage`, `tenant_members.manage`, `roles.read`, `roles.manage`, `roles.assign`, `tenants.read`, `tenants.manage`, `alerts.read`, `alerts.acknowledge`, `sessions.revoke`, `audit.read`, `profiles.manage`.
 
 ---
 
@@ -503,7 +503,7 @@ All seed data lives in one migration (`20260407114000_seed_data.sql`) that runs 
 
 | Step | What                               | Detail                                                                                      |
 | ---- | ---------------------------------- | ------------------------------------------------------------------------------------------- |
-| 1    | Permission keys                    | 13 keys (`items.read`, `members.manage`, etc.) — idempotent upsert                          |
+| 1    | Permission keys                    | 13 keys (`items.read`, `tenant_members.manage`, etc.) — idempotent upsert                          |
 | 2    | System role templates              | 7 roles (`tenant_admin`, `project_engineer`, etc.) — idempotent upsert                      |
 | 3    | Initial tenant                     | KKM Infra (`kkm-infra` slug). `handle_new_tenant` trigger copies system roles automatically |
 | 4    | tenant_admin gets ALL permissions  | `CROSS JOIN authz.permissions` into `role_permissions`                                       |
@@ -519,7 +519,7 @@ Runs only on `supabase db reset`. Creates three test users in the KKM Infra tena
 | `admin@dev.local`      | `tenant_admin`       | All (system admin + tenant admin)                                     |
 | `engineer@dev.local`   | `project_engineer`   | `items.read`, `tenants.read`, `roles.read`                            |
 | `checker@dev.local`    | `project_checker`    | `items.read`, `tenants.read`, `roles.read`                            |
-| `supervisor@dev.local` | `project_supervisor` | `items.*`, `tenants.read`, `roles.read`, `members.manage`, `audit.read`, `alerts.read` |
+| `supervisor@dev.local` | `project_supervisor` | `items.*`, `tenants.read`, `roles.read`, `tenant_members.manage`, `audit.read`, `alerts.read` |
 
 All dev users share the password `password`.
 
@@ -545,7 +545,7 @@ All dev users share the password `password`.
 
 1. Cross-tenant isolation (SELECT blocked)
 2. Own-tenant self-row visibility
-3. INSERT works when role has `members.manage` permission in DB
+3. INSERT works when role has `tenant_members.manage` permission in DB
 4. Permission removal from role blocks INSERT
 5. Revoked session blocks all access
 6. Locked account blocks all access

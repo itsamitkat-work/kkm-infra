@@ -1,34 +1,21 @@
 #!/usr/bin/env bash
-# App seed: dev auth user + authz → units → schedule sources + ingest.
-# JSON lives under supabase/seed/. Requires supabase start, jq, curl.
+# App seed: units → manifest schedules → basic rates (Edge Functions + JSON).
 #
-#   SEED_AUTHZ_JSON=... SEED_MANIFEST=... SEED_UNITS_JSON=...
-#   Optional overrides: SEED_DEV_USER_EMAIL, SEED_DEV_USER_PASSWORD
-#   Dev user defaults live in authz JSON under dev_user.email / dev_user.password.
-#   ./supabase/scripts/seed-app.sh
+# Auth and authz are applied by SQL on `supabase db reset`:
+#   supabase/seed/auth_authz_seed.sql (users, permissions, tenants, roles, memberships).
+# Run `pnpm db:reset:seed` for reset + this script, or `pnpm seed:app` after a reset.
+#
+#   SEED_MANIFEST=... SEED_UNITS_JSON=...
+#
+# Requires: supabase start, jq, curl.  ./supabase/scripts/seed-app.sh
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-AUTHZ_JSON="${SEED_AUTHZ_JSON:-$REPO_ROOT/supabase/seed/authz.json}"
 MANIFEST="${SEED_MANIFEST:-$REPO_ROOT/supabase/seed/manifest.json}"
 
 if ! command -v jq &>/dev/null; then
   echo "seed-app: install jq (e.g. brew install jq)" >&2
-  exit 1
-fi
-
-if [[ ! -f "$AUTHZ_JSON" ]]; then
-  echo "seed-app: authz JSON not found: $AUTHZ_JSON" >&2
-  exit 1
-fi
-
-_json_email="$(jq -r '.dev_user.email // empty' "$AUTHZ_JSON")"
-_json_password="$(jq -r '.dev_user.password // empty' "$AUTHZ_JSON")"
-DEV_USER_EMAIL="${SEED_DEV_USER_EMAIL:-$_json_email}"
-DEV_USER_PASSWORD="${SEED_DEV_USER_PASSWORD:-$_json_password}"
-if [[ -z "$DEV_USER_EMAIL" || -z "$DEV_USER_PASSWORD" ]]; then
-  echo "seed-app: set dev_user.email and dev_user.password in ${AUTHZ_JSON}, or SEED_DEV_USER_EMAIL / SEED_DEV_USER_PASSWORD" >&2
   exit 1
 fi
 
@@ -109,49 +96,13 @@ wait_for_edge_function() {
   return 1
 }
 
-AUTHZ_EP="${API_URL}/functions/v1/ensure-authz-seed"
 UNITS_EP="${API_URL}/functions/v1/ensure-units"
 ENSURE_EP="${API_URL}/functions/v1/ensure-schedule-sources"
 INGEST_EP="${API_URL}/functions/v1/ingest-schedule"
 BASIC_RATES_EP="${API_URL}/functions/v1/ingest-basic-rates"
-AUTH_ADMIN_USERS_EP="${API_URL}/auth/v1/admin/users"
 BASIC_RATES_JSON="${SEED_BASIC_RATES_JSON:-$REPO_ROOT/supabase/seed/schedules/basic_rates.json}"
 
-echo "seed-app: ensure dev auth user (${DEV_USER_EMAIL})"
-existing_user_id="$(
-  curl -sfS "${AUTH_ADMIN_USERS_EP}?page=1&per_page=1000" \
-    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
-    -H "apikey: ${SERVICE_ROLE_KEY}" \
-    | jq -r --arg email "$DEV_USER_EMAIL" '.users[] | select(.email == $email) | .id' \
-    | head -n 1
-)"
-
-if [[ -n "${existing_user_id:-}" ]]; then
-  curl -sfS -X PUT "${AUTH_ADMIN_USERS_EP}/${existing_user_id}" \
-    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
-    -H "apikey: ${SERVICE_ROLE_KEY}" \
-    -H "Content-Type: application/json" \
-    -d "$(jq -n --arg password "$DEV_USER_PASSWORD" --arg email "$DEV_USER_EMAIL" \
-      '{email: $email, password: $password, email_confirm: true}')" \
-    | jq '{id, email, updated_at}'
-else
-  curl -sfS -X POST "${AUTH_ADMIN_USERS_EP}" \
-    -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
-    -H "apikey: ${SERVICE_ROLE_KEY}" \
-    -H "Content-Type: application/json" \
-    -d "$(jq -n --arg email "$DEV_USER_EMAIL" --arg password "$DEV_USER_PASSWORD" \
-      '{email: $email, password: $password, email_confirm: true}')" \
-    | jq '{id, email, created_at}'
-fi
-
-wait_for_edge_function "$AUTHZ_EP" "ensure-authz-seed" || exit 1
-
-echo "seed-app: ensure-authz-seed ($AUTHZ_JSON)"
-curl -sfS -X POST "$AUTHZ_EP" \
-  -H "Authorization: Bearer ${SERVICE_ROLE_KEY}" \
-  -H "Content-Type: application/json" \
-  -d "$(jq -c 'del(.dev_user)' "$AUTHZ_JSON")" \
-  | jq .
+wait_for_edge_function "$UNITS_EP" "ensure-units" || exit 1
 
 resolve_units_file() {
   if [[ -n "${SEED_UNITS_JSON:-}" ]]; then

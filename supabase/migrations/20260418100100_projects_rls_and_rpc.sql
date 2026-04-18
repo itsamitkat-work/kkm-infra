@@ -24,9 +24,10 @@ as $$
             p.tenant_id = (select authz.current_tenant_id())
             and (
               (p_action = 'read' and (select authz.has_permission('projects.read')))
-              or (p_action = 'create' and (select authz.has_permission('projects.create')))
-              or (p_action = 'update' and (select authz.has_permission('projects.update')))
-              or (p_action = 'delete' and (select authz.has_permission('projects.delete')))
+              or (
+                p_action in ('create', 'update', 'delete')
+                and (select authz.has_permission('projects.manage'))
+              )
             )
           )
         )
@@ -55,7 +56,7 @@ create policy projects_insert on public.projects
       (select authz.is_system_admin())
       or (
         tenant_id = (select authz.current_tenant_id())
-        and (select authz.has_permission('projects.create'))
+        and (select authz.has_permission('projects.manage'))
       )
     )
   );
