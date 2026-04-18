@@ -108,6 +108,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   const constructionToolsItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
+    const canSeeClients =
+      ability.can('read', 'clients') || ability.can('manage', 'clients');
+    if (canSeeClients) {
+      items.push({
+        title: 'Clients',
+        url: '/clients',
+        icon: Users,
+      });
+    }
     const canSeeSchedules =
       ability.can('read', 'schedules') || ability.can('manage', 'schedules');
     if (canSeeSchedules) {

@@ -49,6 +49,10 @@
     { "key": "projects.delete", "description": "Delete projects" },
     { "key": "projects.create", "description": "Create projects" },
     { "key": "assigned_projects.read", "description": "View assigned projects" },
+    { "key": "clients.read", "description": "View clients" },
+    { "key": "clients.update", "description": "Update clients" },
+    { "key": "clients.delete", "description": "Delete clients" },
+    { "key": "clients.create", "description": "Create clients" },
     {
       "key": "project_measurement.check",
       "description": "Check project measurement records"
@@ -127,6 +131,9 @@
         "projects.update",
         "projects.create",
         "assigned_projects.read",
+        "clients.read",
+        "clients.update",
+        "clients.create",
         "project_measurement.check",
         "project_billing.check"
       ]
@@ -156,6 +163,10 @@
         "projects.delete",
         "projects.create",
         "assigned_projects.read",
+        "clients.read",
+        "clients.update",
+        "clients.delete",
+        "clients.create",
         "project_measurement.check",
         "project_measurement.verify",
         "project_billing.check",
@@ -174,6 +185,7 @@
         "attendance.verify",
         "projects.read",
         "assigned_projects.read",
+        "clients.read",
         "project_measurement.verify",
         "project_billing.verify"
       ]

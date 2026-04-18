@@ -200,6 +200,7 @@ export type Database = {
       current_active_role: { Args: never; Returns: string }
       current_session_id: { Args: never; Returns: string }
       current_tenant_id: { Args: never; Returns: string }
+      default_platform_tenant_id: { Args: never; Returns: string }
       has_permission: { Args: { p: string }; Returns: boolean }
       is_account_locked: { Args: never; Returns: boolean }
       is_session_valid: { Args: never; Returns: boolean }
@@ -434,6 +435,108 @@ export type Database = {
           },
         ]
       }
+      client_schedules: {
+        Row: {
+          client_id: string
+          created_at: string
+          id: string
+          is_active: boolean
+          is_default: boolean
+          schedule_source_id: string
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          is_default?: boolean
+          schedule_source_id: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          is_default?: boolean
+          schedule_source_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_schedules_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "client_schedules_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["schedule_source_id"]
+          },
+          {
+            foreignKeyName: "client_schedules_schedule_source_id_fkey"
+            columns: ["schedule_source_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_sources"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      clients: {
+        Row: {
+          addresses: Json
+          contacts: Json
+          created_at: string
+          display_name: string
+          full_name: string | null
+          gstin: string | null
+          id: string
+          meta: Json
+          status: string
+          tenant_id: string
+          updated_at: string
+        }
+        Insert: {
+          addresses?: Json
+          contacts?: Json
+          created_at?: string
+          display_name: string
+          full_name?: string | null
+          gstin?: string | null
+          id?: string
+          meta?: Json
+          status?: string
+          tenant_id: string
+          updated_at?: string
+        }
+        Update: {
+          addresses?: Json
+          contacts?: Json
+          created_at?: string
+          display_name?: string
+          full_name?: string | null
+          gstin?: string | null
+          id?: string
+          meta?: Json
+          status?: string
+          tenant_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "clients_tenant_id_fkey"
+            columns: ["tenant_id"]
+            isOneToOne: false
+            referencedRelation: "tenants"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       derived_units: {
         Row: {
           created_at: string | null
@@ -647,6 +750,7 @@ export type Database = {
         Row: {
           created_at: string | null
           id: string
+          metadata: Json
           order_index: number | null
           raw_text: string
           schedule_item_id: string
@@ -655,6 +759,7 @@ export type Database = {
         Insert: {
           created_at?: string | null
           id?: string
+          metadata?: Json
           order_index?: number | null
           raw_text: string
           schedule_item_id: string
@@ -663,6 +768,7 @@ export type Database = {
         Update: {
           created_at?: string | null
           id?: string
+          metadata?: Json
           order_index?: number | null
           raw_text?: string
           schedule_item_id?: string
@@ -1208,7 +1314,12 @@ export type Database = {
         }
         Returns: boolean
       }
+      client_policy_ok: {
+        Args: { p_action: string; p_client_id: string }
+        Returns: boolean
+      }
       custom_access_token_hook: { Args: { event: Json }; Returns: Json }
+      default_platform_tenant_id: { Args: never; Returns: string }
       get_basic_rate_distinct_units: { Args: never; Returns: string[] }
       get_pending_security_alerts: {
         Args: { p_limit?: number }
@@ -1271,6 +1382,32 @@ export type Database = {
           p_session_id: string
         }
         Returns: boolean
+      }
+      list_clients: {
+        Args: {
+          p_limit?: number
+          p_offset?: number
+          p_search?: string
+          p_sort_by?: string
+          p_sort_dir?: string
+          p_status?: string[]
+        }
+        Returns: {
+          addresses: Json
+          contacts: Json
+          created_at: string
+          default_schedule_display_name: string
+          default_schedule_source_id: string
+          display_name: string
+          full_name: string
+          gstin: string
+          id: string
+          meta: Json
+          status: string
+          tenant_id: string
+          total_count: number
+          updated_at: string
+        }[]
       }
       list_projects: {
         Args: {
@@ -1352,6 +1489,10 @@ export type Database = {
           rates: Json
           unit_symbol: string
         }[]
+      }
+      set_default_client_schedule: {
+        Args: { p_client_id: string; p_schedule_source_id: string }
+        Returns: undefined
       }
       set_default_project_schedule: {
         Args: { p_project_id: string; p_schedule_source_id: string }

@@ -13,7 +13,8 @@ export type AppSubject =
   | 'projects'
   | 'assigned_projects'
   | 'project_measurement'
-  | 'project_billing';
+  | 'project_billing'
+  | 'clients';
 
 export type AppAction =
   | 'read'
@@ -44,6 +45,10 @@ const PERMISSION_RULES: ReadonlyArray<readonly [key: string, action: AppAction]>
     ['projects.delete', 'delete'],
     ['projects.create', 'create'],
     ['assigned_projects.read', 'read'],
+    ['clients.read', 'read'],
+    ['clients.update', 'update'],
+    ['clients.delete', 'delete'],
+    ['clients.create', 'create'],
     ['project_measurement.check', 'check'],
     ['project_measurement.verify', 'verify'],
     ['project_billing.check', 'check'],
