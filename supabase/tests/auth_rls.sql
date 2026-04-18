@@ -12,7 +12,7 @@ declare
   managed_user uuid := 'aaaaaaaa-1111-1111-1111-111111111111';
   tenant_1 uuid := 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
   tenant_2 uuid := 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
-  engineer_role uuid := '44444444-4444-4444-4444-444444444444';
+  acting_role_id uuid;
   members_manage_permission uuid;
 begin
   insert into auth.users (
@@ -54,15 +54,15 @@ begin
   on conflict (id) do nothing;
 
   select r.id
-  into engineer_role
+  into acting_role_id
   from authz.tenant_roles r
   where r.tenant_id = tenant_1
-    and r.slug = 'project_engineer'
+    and r.slug = 'tenant_admin'
   limit 1;
 
   insert into public.tenant_members (id, tenant_id, user_id, active_role_id)
   values
-    ('55555555-5555-5555-5555-555555555555', tenant_1, user_a, engineer_role),
+    ('55555555-5555-5555-5555-555555555555', tenant_1, user_a, acting_role_id),
     ('66666666-6666-6666-6666-666666666666', tenant_2, user_b, null)
   on conflict (tenant_id, user_id) do nothing;
 
@@ -73,11 +73,11 @@ begin
   limit 1;
 
   insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
-  values (engineer_role, members_manage_permission)
+  values (acting_role_id, members_manage_permission)
   on conflict do nothing;
 
   insert into authz.tenant_member_roles (tenant_member_id, tenant_role_id)
-  values ('55555555-5555-5555-5555-555555555555', engineer_role)
+  values ('55555555-5555-5555-5555-555555555555', acting_role_id)
   on conflict do nothing;
 
   update public.tenant_members
@@ -87,12 +87,12 @@ end
 $$;
 
 -- Permissions are now resolved from DB (tenant_role_permissions), not JWT.
--- The test data above already assigns tenant_members.manage to the engineer_role.
+-- The test data above uses tenant_admin (template role) with tenant_members.manage.
 
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid,
-  'project_engineer'::text,
+  'tenant_admin'::text,
   1
 );
 
@@ -117,12 +117,13 @@ select lives_ok(
 -- To test INSERT blocked, we remove the permission from the role first
 select tests.clear_auth_context();
 
-delete from authz.tenant_role_permissions
-where tenant_role_id = (
-  select r.id from authz.tenant_roles r
-  where r.tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-    and r.slug = 'project_engineer'
-);
+delete from authz.tenant_role_permissions trp
+using authz.permissions perm, authz.tenant_roles r
+where trp.permission_id = perm.id
+  and trp.tenant_role_id = r.id
+  and r.tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid
+  and r.slug = 'tenant_admin'
+  and perm.key = 'tenant_members.manage';
 
 -- Reset permission version so PV check passes
 update public.tenant_members
@@ -132,7 +133,7 @@ where id = '55555555-5555-5555-5555-555555555555';
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid,
-  'project_engineer'::text,
+  'tenant_admin'::text,
   1
 );
 
@@ -144,7 +145,7 @@ select throws_ok(
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid,
-  'project_engineer'::text,
+  'tenant_admin'::text,
   1,
   false,
   false,
@@ -160,7 +161,7 @@ select is(
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid,
-  'project_engineer'::text,
+  'tenant_admin'::text,
   1,
   false,
   true,
@@ -191,7 +192,7 @@ select ok(
 select tests.set_auth_context(
   '11111111-1111-1111-1111-111111111111'::uuid,
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid,
-  'project_engineer'::text,
+  'tenant_admin'::text,
   0
 );
 

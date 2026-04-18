@@ -63,6 +63,56 @@ export type Database = {
           },
         ]
       }
+      role_templates: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          key: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          key?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      tenant_member_roles: {
+        Row: {
+          created_at: string
+          tenant_member_id: string
+          tenant_role_id: string
+        }
+        Insert: {
+          created_at?: string
+          tenant_member_id: string
+          tenant_role_id: string
+        }
+        Update: {
+          created_at?: string
+          tenant_member_id?: string
+          tenant_role_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tenant_member_roles_role_id_fkey"
+            columns: ["tenant_role_id"]
+            isOneToOne: false
+            referencedRelation: "tenant_roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       tenant_role_permissions: {
         Row: {
           created_at: string
@@ -95,30 +145,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      role_templates: {
-        Row: {
-          created_at: string
-          description: string | null
-          id: string
-          key: string
-          name: string
-        }
-        Insert: {
-          created_at?: string
-          description?: string | null
-          id?: string
-          key: string
-          name: string
-        }
-        Update: {
-          created_at?: string
-          description?: string | null
-          id?: string
-          key?: string
-          name?: string
-        }
-        Relationships: []
       }
       tenant_roles: {
         Row: {
@@ -158,32 +184,6 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "role_templates"
             referencedColumns: ["key"]
-          },
-        ]
-      }
-      tenant_member_roles: {
-        Row: {
-          created_at: string
-          tenant_role_id: string
-          tenant_member_id: string
-        }
-        Insert: {
-          created_at?: string
-          tenant_role_id: string
-          tenant_member_id: string
-        }
-        Update: {
-          created_at?: string
-          tenant_role_id?: string
-          tenant_member_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "tenant_member_roles_role_id_fkey"
-            columns: ["tenant_role_id"]
-            isOneToOne: false
-            referencedRelation: "tenant_roles"
-            referencedColumns: ["id"]
           },
         ]
       }
@@ -1129,6 +1129,13 @@ export type Database = {
             columns: ["tenant_id"]
             isOneToOne: false
             referencedRelation: "tenants"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "tenant_members_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
