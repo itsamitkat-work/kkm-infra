@@ -1,16 +1,22 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
+import type { Database } from '@kkm/db';
 
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
-import type { Role } from '@/types/roles';
 
 export const TENANT_ROLES_ADMIN_QUERY_KEY = 'tenant-roles-admin';
+
+/** Columns loaded for the tenant roles picker (matches `select(...)`). */
+export type TenantRolesAdminRow = Pick<
+  Database['authz']['Tables']['roles']['Row'],
+  'id' | 'name' | 'slug' | 'is_system'
+>;
 
 export function useTenantRolesAdminQuery(tenantId: string | null) {
   return useQuery({
     queryKey: [TENANT_ROLES_ADMIN_QUERY_KEY, tenantId],
-    queryFn: async (): Promise<Role[]> => {
+    queryFn: async (): Promise<TenantRolesAdminRow[]> => {
       if (!tenantId) {
         return [];
       }
@@ -24,13 +30,7 @@ export function useTenantRolesAdminQuery(tenantId: string | null) {
       if (error) {
         throw error;
       }
-      return (data ?? []).map((r) => ({
-        id: r.id,
-        code: r.slug,
-        name: r.name,
-        isSystemRole: r.is_system,
-        isActive: true,
-      }));
+      return data ?? [];
     },
     enabled: Boolean(tenantId),
     staleTime: 60_000,

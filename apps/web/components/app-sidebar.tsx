@@ -27,12 +27,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  IconFileText,
-  IconHome,
-  IconShieldLock,
-  IconUser,
-} from '@tabler/icons-react';
+import { IconFileText, IconHome, IconUser } from '@tabler/icons-react';
 import { FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/hooks/auth';
@@ -75,29 +70,9 @@ const TENANTS_ADMIN_URL = '/administration/tenants';
 
 const administrationItems: NavItem[] = [
   {
-    title: 'Page Actions',
-    url: '/administration/page-actions-matrix',
-    icon: IconShieldLock,
-  },
-  {
-    title: 'Roles & Permissions',
-    url: '/administration/roles',
-    icon: IconShieldLock,
-  },
-  {
     title: 'Users',
     url: '/administration/users',
     icon: IconUser,
-  },
-  {
-    title: 'Employee Types',
-    url: '/administration/employee-types',
-    icon: IconFileText,
-  },
-  {
-    title: 'Designations',
-    url: '/administration/designations',
-    icon: UserCog,
   },
 ];
 
@@ -152,7 +127,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       icon: IconFileText,
     });
     const canSeeBasicRates =
-      ability.can('read', 'basic_rates') || ability.can('manage', 'basic_rates');
+      ability.can('read', 'basic_rates') ||
+      ability.can('manage', 'basic_rates');
     if (canSeeBasicRates) {
       items.push({
         title: 'Basic Rates',

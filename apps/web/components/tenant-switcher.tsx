@@ -69,12 +69,13 @@ export function TenantSwitcher() {
         toast.error('Session is missing; sign in again.');
         return;
       }
-      const { data, error } = await supabase.functions.invoke<SwitchTenantFnResponse>(
+      const { data: invokeData, error } = await supabase.functions.invoke(
         'switch-tenant',
         {
           body: { tenant_id: tenantId, refresh_token: refreshToken },
         },
       );
+      const data = invokeData as SwitchTenantFnResponse | null | undefined;
       if (error) {
         toast.error(error.message ?? 'Failed to switch workspace');
         return;

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiFetch } from '@/lib/apiClient';
-import { Designation } from '@/app/(app)/administration/designations/hooks/use-designations-query';
+import type { Designation } from '@/types/legacy-designations-api';
 import { toast } from 'sonner';
 
 export interface CreateDesignationData {

@@ -132,7 +132,9 @@ export async function fetchTenantUsers(
     throw error;
   }
 
-  const members = (data ?? []) as MemberWithProfile[];
+  // Embed `profiles` is valid at runtime (FK user_id → auth.users = profiles.id) but
+  // generated `Database` relationships omit it, so narrow here.
+  const members = (data ?? []) as unknown as MemberWithProfile[];
   const roleMap = new Map<string, UserRole[]>();
 
   if (members.length > 0) {
@@ -180,11 +182,8 @@ type UseUsersQueryParams = {
   sorting: SortingState;
 };
 
-export function useUsersQuery({
-  search,
-  filters: _filters,
-  sorting,
-}: UseUsersQueryParams) {
+export function useUsersQuery({ search, filters, sorting }: UseUsersQueryParams) {
+  void filters;
   const queryClient = useQueryClient();
   const { claims } = useAuth();
   const tenantId = claims?.tid ?? null;

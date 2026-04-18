@@ -9,14 +9,17 @@ async function resolveRoleIdForUserSearch(
 ): Promise<string | null> {
   const supabase = createSupabaseBrowserClient();
   const slug = USER_ROLE_SLUG[userRole];
-  let { data, error } = await supabase
+  const firstResult = await supabase
     .schema('authz')
     .from('roles')
     .select('id')
     .eq('tenant_id', tenantId)
     .eq('slug', slug)
     .maybeSingle();
-  if (error) throw error;
+  if (firstResult.error) {
+    throw firstResult.error;
+  }
+  let data = firstResult.data;
   if (!data && userRole === UserRoleType.Superviser) {
     const alt = await supabase
       .schema('authz')
@@ -25,7 +28,9 @@ async function resolveRoleIdForUserSearch(
       .eq('tenant_id', tenantId)
       .eq('slug', 'superviser')
       .maybeSingle();
-    if (alt.error) throw alt.error;
+    if (alt.error) {
+      throw alt.error;
+    }
     data = alt.data;
   }
   return data?.id ?? null;
@@ -91,7 +96,7 @@ export async function fetchUserOptions(
   type Profile = { display_name: string | null; username: string | null };
   type Row = { id: string; user_id: string; profiles: Profile | null };
 
-  let list = (rows ?? []) as Row[];
+  let list = (rows ?? []) as unknown as Row[];
 
   const q = query.trim().toLowerCase();
   if (q) {

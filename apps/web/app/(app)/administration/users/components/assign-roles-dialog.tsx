@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { User } from '@/types/users';
-import { Role } from '@/types/roles';
 import {
   Dialog,
   DialogContent,
@@ -34,13 +33,14 @@ import {
 } from '@/components/ui/table';
 import type { AssignRoleVariables } from '../hooks/use-assign-role-mutation';
 import type { RemoveRoleVariables } from '../hooks/use-remove-role-mutation';
+import type { TenantRolesAdminRow } from '../hooks/use-tenant-roles-admin-query';
 import { useUserRolesQuery } from '../hooks/use-user-roles-query';
 
 interface AssignRolesDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   user: User;
-  allRoles: Role[];
+  allRoles: TenantRolesAdminRow[];
   assignRoleMutation: UseMutationResult<void, Error, AssignRoleVariables>;
   removeRoleMutation: UseMutationResult<void, Error, RemoveRoleVariables>;
   isLoadingRoles?: boolean;
@@ -83,8 +83,8 @@ export function AssignRolesDialog({
 
   // Filter roles - separate assigned and unassigned
   const { assignedRoles, unassignedRoles } = React.useMemo(() => {
-    const assigned: Role[] = [];
-    const unassigned: Role[] = [];
+    const assigned: TenantRolesAdminRow[] = [];
+    const unassigned: TenantRolesAdminRow[] = [];
 
     allRoles.forEach((role) => {
       if (userRoleIds.has(role.id)) {
@@ -110,7 +110,7 @@ export function AssignRolesDialog({
     removeRoleMutation.isPending;
 
   // Define columns
-  const columns = React.useMemo<ColumnDef<Role>[]>(
+  const columns = React.useMemo<ColumnDef<TenantRolesAdminRow>[]>(
     () => [
       {
         id: 'select',
@@ -220,20 +220,20 @@ export function AssignRolesDialog({
         size: 200,
       },
       {
-        accessorKey: 'code',
-        header: 'Code',
+        accessorKey: 'slug',
+        header: 'Slug',
         cell: ({ row }) => (
           <span className='text-sm text-muted-foreground'>
-            {row.original.code || '-'}
+            {row.original.slug || '-'}
           </span>
         ),
         size: 150,
       },
       {
-        accessorKey: 'isSystemRole',
+        accessorKey: 'is_system',
         header: 'Type',
         cell: ({ row }) =>
-          row.original.isSystemRole ? (
+          row.original.is_system ? (
             <Badge variant='outline' className='text-xs'>
               System
             </Badge>
@@ -241,13 +241,7 @@ export function AssignRolesDialog({
         size: 100,
       },
     ],
-    [
-      userRoleIds,
-      assignedRoles.length,
-      unassignedRoles.length,
-      rolesToRemove,
-      isLoading,
-    ]
+    [userRoleIds, assignedRoles, unassignedRoles, rolesToRemove, isLoading]
   );
 
   const table = useReactTable({

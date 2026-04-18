@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiFetch } from '@/lib/apiClient';
-import { SubDesignation } from '@/app/(app)/administration/designations/hooks/use-sub-designations-query';
+import type { SubDesignation } from '@/types/legacy-designations-api';
 import { toast } from 'sonner';
 
 export interface CreateSubDesignationData {

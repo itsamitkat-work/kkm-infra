@@ -1,5 +1,7 @@
+import type { Database } from '@kkm/db';
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/env';
 
 function copyCookies(from: NextResponse, to: NextResponse) {
@@ -21,7 +23,7 @@ export async function middleware(request: NextRequest) {
     request,
   });
 
-  const supabase = createServerClient(getSupabaseUrl(), getSupabaseAnonKey(), {
+  const supabase = createServerClient<Database>(getSupabaseUrl(), getSupabaseAnonKey(), {
     cookies: {
       getAll() {
         return request.cookies.getAll();

@@ -163,24 +163,24 @@ export async function fetchProjects(
   const sortCol = sortColumnToRpc(params.sortBy ?? 'created_at');
   const sortDir = params.order === 'asc' ? 'asc' : 'desc';
 
-  const { data, error } = await supabase.rpc(
-    'list_projects',
-    {
-      p_search: params.search?.trim() || null,
-      p_status: params.status?.length ? params.status : null,
-      p_dos_from: params.dosFrom ?? null,
-      p_dos_to: params.dosTo ?? null,
-      p_doc_from: params.docFrom ?? null,
-      p_doc_to: params.docTo ?? null,
-      p_amount_min: params.amountMin ?? null,
-      p_amount_max: params.amountMax ?? null,
-      p_sort_by: sortCol,
-      p_sort_dir: sortDir,
-      p_limit: pageSize,
-      p_offset: offset,
-    },
-    params.signal ? { signal: params.signal } : undefined
-  );
+  let rpc = supabase.rpc('list_projects', {
+    p_search: params.search?.trim() || undefined,
+    p_status: params.status?.length ? params.status : undefined,
+    p_dos_from: params.dosFrom ?? undefined,
+    p_dos_to: params.dosTo ?? undefined,
+    p_doc_from: params.docFrom ?? undefined,
+    p_doc_to: params.docTo ?? undefined,
+    p_amount_min: params.amountMin ?? undefined,
+    p_amount_max: params.amountMax ?? undefined,
+    p_sort_by: sortCol,
+    p_sort_dir: sortDir,
+    p_limit: pageSize,
+    p_offset: offset,
+  });
+  if (params.signal) {
+    rpc = rpc.abortSignal(params.signal);
+  }
+  const { data, error } = await rpc;
   if (error) throw error;
 
   const rows = (data ?? []) as ProjectsListRow[];

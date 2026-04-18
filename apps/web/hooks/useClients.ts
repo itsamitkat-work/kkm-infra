@@ -113,18 +113,18 @@ export async function fetchClients(
   const sortCol = sortColumnToRpc(params.sortBy ?? 'created_at');
   const sortDir = params.order === 'asc' ? 'asc' : 'desc';
 
-  const { data, error } = await supabase.rpc(
-    'list_clients',
-    {
-      p_search: params.search?.trim() || undefined,
-      p_status: params.status?.length ? params.status : undefined,
-      p_sort_by: sortCol,
-      p_sort_dir: sortDir,
-      p_limit: pageSize,
-      p_offset: offset,
-    },
-    params.signal ? { signal: params.signal } : undefined
-  );
+  let rpc = supabase.rpc('list_clients', {
+    p_search: params.search?.trim() || undefined,
+    p_status: params.status?.length ? params.status : undefined,
+    p_sort_by: sortCol,
+    p_sort_dir: sortDir,
+    p_limit: pageSize,
+    p_offset: offset,
+  });
+  if (params.signal) {
+    rpc = rpc.abortSignal(params.signal);
+  }
+  const { data, error } = await rpc;
   if (error) throw error;
 
   const rows = (data ?? []) as ClientsListRow[];
