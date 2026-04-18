@@ -23,9 +23,7 @@ apps/*/.next
 packages/*/dist
 
 # python
-apps/dsr_pdf_pipeline/input
-apps/dsr_pdf_pipeline/final_output
-apps/parser_pipeline
+apps/parser_pipeline/pdfs/*
 .venv
 __pycache__
 *.py[cod]
