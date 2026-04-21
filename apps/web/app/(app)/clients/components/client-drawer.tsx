@@ -1,7 +1,12 @@
 'use client';
 
 import * as React from 'react';
-import { useForm, useFieldArray, type Control } from 'react-hook-form';
+import {
+  useFieldArray,
+  useWatch,
+  type Control,
+  type UseFormSetValue,
+} from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { toast } from 'sonner';
@@ -25,7 +30,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useDebouncedSearch } from '@/hooks/use-debounced-search';
 import { IconChevronDown, IconPlus, IconTrash } from '@tabler/icons-react';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
@@ -39,8 +44,11 @@ import {
   FieldLegend,
   FieldSeparator,
 } from '@/components/ui/field';
-import { getDirtyValues } from '@/lib/get-dirty-values';
-import { fetchScheduleSourceOptions } from '@/hooks/schedules/use-schedule-sources';
+import {
+  useAppForm,
+  type ExtendEditPatchContext,
+} from '@/hooks/use-app-form';
+import { fetchScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
 import {
   RECORD_STATUS_OPTIONS,
   RecordStatusBadge,
@@ -57,15 +65,10 @@ import {
   useCreateClient,
   useUpdateClient,
 } from '@/hooks/useClients';
-import type {
-  ClientAddress,
-  ClientContact,
-  ClientMeta,
-} from '@/types/clients';
+import type { ClientAddress, ClientContact, ClientMeta } from '@/types/clients';
 import { CLIENT_DB_STATUS } from '@/types/clients';
 
-const GSTIN_REGEX =
-  /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+const GSTIN_REGEX = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 
 const scheduleAssignmentSchema = z.object({
   schedule_source_id: z.string().min(1),
@@ -131,7 +134,9 @@ function formStatusToDb(label: string): string {
     : CLIENT_DB_STATUS.ACTIVE;
 }
 
-function dbStatusToForm(status: string | null | undefined): 'Active' | 'Inactive' {
+function dbStatusToForm(
+  status: string | null | undefined
+): 'Active' | 'Inactive' {
   return status === 'inactive' ? 'Inactive' : 'Active';
 }
 
@@ -305,6 +310,91 @@ interface Props {
   onCancel: () => void;
 }
 
+function normalizeScheduleAssignmentsForCompare(
+  rows: ClientFormValues['schedules']
+): { schedule_source_id: string; is_default: boolean }[] {
+  return [...rows]
+    .map((row) => ({
+      schedule_source_id: row.schedule_source_id,
+      is_default: Boolean(row.is_default),
+    }))
+    .sort((a, b) => a.schedule_source_id.localeCompare(b.schedule_source_id));
+}
+
+function scheduleAssignmentsDifferFromBaseline(
+  current: ClientFormValues['schedules'],
+  baseline: ClientFormValues['schedules'] | undefined
+): boolean {
+  if (!baseline) {
+    return current.length > 0;
+  }
+  return (
+    JSON.stringify(normalizeScheduleAssignmentsForCompare(current)) !==
+    JSON.stringify(normalizeScheduleAssignmentsForCompare(baseline))
+  );
+}
+
+function extendClientSchedulesDirtyPatch(
+  ctx: ExtendEditPatchContext<ClientFormValues>
+): Partial<ClientFormValues> {
+  if (Object.keys(ctx.patch).length > 0) {
+    return ctx.patch;
+  }
+  if (!ctx.isDirty) {
+    return ctx.patch;
+  }
+  const baselineSchedules = ctx.registeredDefaultValues?.schedules as
+    | ClientFormValues['schedules']
+    | undefined;
+  if (
+    scheduleAssignmentsDifferFromBaseline(
+      ctx.values.schedules,
+      baselineSchedules
+    )
+  ) {
+    return { ...ctx.patch, schedules: ctx.values.schedules };
+  }
+  return ctx.patch;
+}
+
+function buildClientUpdatePayload(
+  clientDetail: ClientDetail,
+  values: ClientFormValues,
+  dirty: Partial<ClientFormValues>
+) {
+  const metaDirty = 'notes' in dirty;
+  const addressesDirty = 'addresses' in dirty;
+  const contactsDirty = 'contacts' in dirty;
+  const schedulesDirty = 'schedules' in dirty;
+
+  return {
+    clientId: clientDetail.id,
+    ...('display_name' in dirty
+      ? { display_name: values.display_name }
+      : {}),
+    ...('full_name' in dirty
+      ? { full_name: values.full_name?.trim() || null }
+      : {}),
+    ...('gstin' in dirty ? { gstin: values.gstin?.trim() || null } : {}),
+    ...('status' in dirty ? { status: formStatusToDb(values.status) } : {}),
+    ...(addressesDirty
+      ? { addresses: formValuesToAddresses(values.addresses) }
+      : {}),
+    ...(contactsDirty
+      ? { contacts: formValuesToContacts(values.contacts) }
+      : {}),
+    ...(metaDirty
+      ? {
+          metaPatch: buildMetaFromValues(values),
+          baseMeta: clientDetail.meta,
+        }
+      : {}),
+    ...(schedulesDirty
+      ? { schedules: formValuesToSchedules(values.schedules) }
+      : {}),
+  };
+}
+
 export function ClientDrawer({
   mode,
   client,
@@ -341,61 +431,15 @@ export function ClientDrawer({
     return emptyFormValues();
   }, [mode, isCopy, clientDetail, client]);
 
-  const form = useForm<ClientFormValues>({
+  const form = useAppForm<ClientFormValues>({
+    submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
-  });
-
-  React.useEffect(() => {
-    form.reset(getDefaultValues());
-  }, [clientDetail?.id, mode, getDefaultValues, form]);
-
-  const handleSubmit = async (values: ClientFormValues) => {
-    try {
-      if (isEdit && clientDetail) {
-        const dirty = getDirtyValues(values, form.formState.dirtyFields);
-        if (Object.keys(dirty).length === 0) {
-          toast.message('No changes to save');
-          return;
-        }
-
-        const metaDirty = 'notes' in dirty;
-        const addressesDirty = 'addresses' in dirty;
-        const contactsDirty = 'contacts' in dirty;
-        const schedulesDirty = 'schedules' in dirty;
-
-        await updateClientMutation.mutateAsync({
-          clientId: clientDetail.id,
-          ...('display_name' in dirty
-            ? { display_name: values.display_name }
-            : {}),
-          ...('full_name' in dirty
-            ? { full_name: values.full_name?.trim() || null }
-            : {}),
-          ...('gstin' in dirty
-            ? { gstin: values.gstin?.trim() || null }
-            : {}),
-          ...('status' in dirty
-            ? { status: formStatusToDb(values.status) }
-            : {}),
-          ...(addressesDirty
-            ? { addresses: formValuesToAddresses(values.addresses) }
-            : {}),
-          ...(contactsDirty
-            ? { contacts: formValuesToContacts(values.contacts) }
-            : {}),
-          ...(metaDirty
-            ? {
-                metaPatch: buildMetaFromValues(values),
-                baseMeta: clientDetail.meta,
-              }
-            : {}),
-          ...(schedulesDirty
-            ? { schedules: formValuesToSchedules(values.schedules) }
-            : {}),
-        });
-      } else {
+    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
+    extendEditPatch: isEdit ? extendClientSchedulesDirtyPatch : undefined,
+    onCreate: async (values) => {
+      try {
         await createClientMutation.mutateAsync({
           display_name: values.display_name,
           full_name: values.full_name?.trim() || null,
@@ -406,14 +450,32 @@ export function ClientDrawer({
           contacts: formValuesToContacts(values.contacts),
           schedules: formValuesToSchedules(values.schedules),
         });
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting client form:', error);
       }
-      onSubmit();
-    } catch (error) {
-      console.error('Error submitting client form:', error);
-    }
-  };
+    },
+    onPatch: async (patch, values) => {
+      try {
+        if (!clientDetail) {
+          return;
+        }
+        await updateClientMutation.mutateAsync(
+          buildClientUpdatePayload(clientDetail, values, patch)
+        );
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting client form:', error);
+      }
+    },
+  });
 
-  const showDetailLoading = Boolean(detailId) && isDetailLoading && !clientDetail;
+  React.useEffect(() => {
+    form.reset(getDefaultValues());
+  }, [clientDetail?.id, mode, getDefaultValues, form]);
+
+  const showDetailLoading =
+    Boolean(detailId) && isDetailLoading && !clientDetail;
   const showDetailError = Boolean(detailId) && isDetailError && !clientDetail;
 
   return (
@@ -442,14 +504,22 @@ export function ClientDrawer({
             Failed to load client details.
           </div>
         ) : (
-          <form id='client-form' onSubmit={form.handleSubmit(handleSubmit)}>
+          <form id='client-form' onSubmit={form.submit}>
             <FieldGroup density='dense'>
               <BasicInformationSection
                 control={form.control}
                 readOnly={isRead}
-                statusOptions={STATUS_SELECT_OPTIONS.length > 0 ? STATUS_SELECT_OPTIONS : statusOptions}
+                statusOptions={
+                  STATUS_SELECT_OPTIONS.length > 0
+                    ? STATUS_SELECT_OPTIONS
+                    : statusOptions
+                }
               />
-              <SchedulesSection control={form.control} readOnly={isRead} />
+              <SchedulesSection
+                control={form.control}
+                setValue={form.setValue}
+                readOnly={isRead}
+              />
               <AddressesSection control={form.control} readOnly={isRead} />
               <ContactsSection control={form.control} readOnly={isRead} />
               <NotesSection control={form.control} readOnly={isRead} />
@@ -546,9 +616,7 @@ function AddressesSection({
       </div>
 
       {fields.length === 0 ? (
-        <p className='text-sm text-muted-foreground'>
-          No addresses added yet.
-        </p>
+        <p className='text-sm text-muted-foreground'>No addresses added yet.</p>
       ) : (
         fields.map((fieldItem, index) => (
           <AddressRow
@@ -737,21 +805,23 @@ function ContactRow({
           </Button>
         )}
       </div>
-      <FormInputField
-        control={control}
-        name={`contacts.${index}.name`}
-        label='Name'
-        placeholder='Full name'
-        readOnly={readOnly}
-      />
-      <FormInputField
-        control={control}
-        name={`contacts.${index}.position`}
-        label='Position'
-        placeholder='e.g. Director, Accounts'
-        readOnly={readOnly}
-      />
+
       <div className='grid grid-cols-2 gap-3'>
+        <FormInputField
+          control={control}
+          name={`contacts.${index}.position`}
+          label='Position'
+          placeholder='e.g. Director, Accounts'
+          readOnly={readOnly}
+        />
+        <FormInputField
+          control={control}
+          name={`contacts.${index}.name`}
+          label='Name'
+          placeholder='Full name'
+          readOnly={readOnly}
+        />
+
         <FormInputField
           control={control}
           name={`contacts.${index}.mobile`}
@@ -795,19 +865,25 @@ function NotesSection({
 
 function SchedulesSection({
   control,
+  setValue,
   readOnly,
 }: {
   control: Control<ClientFormValues>;
+  setValue: UseFormSetValue<ClientFormValues>;
   readOnly: boolean;
 }) {
-  const { fields, append, remove, replace } = useFieldArray({
+  const watchedSchedules = useWatch({
     control,
     name: 'schedules',
   });
+  const schedules = React.useMemo(
+    () => watchedSchedules ?? [],
+    [watchedSchedules]
+  );
 
   const existingIds = React.useMemo(
-    () => fields.map((f) => f.schedule_source_id),
-    [fields]
+    () => schedules.map((f) => f.schedule_source_id),
+    [schedules]
   );
 
   function handleAddSchedule(scheduleSourceId: string, displayName: string) {
@@ -815,25 +891,42 @@ function SchedulesSection({
       toast.error('This schedule is already assigned.');
       return;
     }
-    append({
-      schedule_source_id: scheduleSourceId,
-      display_name: displayName,
-      is_default: fields.length === 0,
-    });
+    setValue(
+      'schedules',
+      [
+        ...schedules,
+        {
+          schedule_source_id: scheduleSourceId,
+          display_name: displayName,
+          is_default: schedules.length === 0,
+        },
+      ],
+      { shouldDirty: true, shouldValidate: true }
+    );
   }
 
   function handleSetDefault(scheduleSourceId: string) {
-    replace(
-      fields.map((f) => ({
+    setValue(
+      'schedules',
+      schedules.map((f) => ({
         schedule_source_id: f.schedule_source_id,
         display_name: f.display_name,
         is_default: f.schedule_source_id === scheduleSourceId,
-      }))
+      })),
+      { shouldDirty: true, shouldValidate: true }
+    );
+  }
+
+  function handleRemoveSchedule(index: number) {
+    setValue(
+      'schedules',
+      schedules.filter((_, i) => i !== index),
+      { shouldDirty: true, shouldValidate: true }
     );
   }
 
   const currentDefaultId =
-    fields.find((f) => f.is_default)?.schedule_source_id ?? '';
+    schedules.find((f) => f.is_default)?.schedule_source_id ?? '';
 
   return (
     <FieldSet>
@@ -847,7 +940,7 @@ function SchedulesSection({
         )}
       </div>
 
-      {fields.length === 0 ? (
+      {schedules.length === 0 ? (
         <p className='text-sm text-muted-foreground'>
           No schedules assigned yet.
         </p>
@@ -858,17 +951,17 @@ function SchedulesSection({
           disabled={readOnly}
           className='flex flex-col gap-2'
         >
-          {fields.map((fieldItem, index) => (
+          {schedules.map((fieldItem, index) => (
             <div
-              key={fieldItem.id}
+              key={fieldItem.schedule_source_id}
               className='flex items-center gap-3 rounded-md border px-3 py-2'
             >
               <RadioGroupItem
                 value={fieldItem.schedule_source_id}
-                id={`schedule-${fieldItem.id}`}
+                id={`schedule-${fieldItem.schedule_source_id}`}
               />
               <Label
-                htmlFor={`schedule-${fieldItem.id}`}
+                htmlFor={`schedule-${fieldItem.schedule_source_id}`}
                 className='flex-1 truncate font-normal'
               >
                 {fieldItem.display_name}
@@ -883,7 +976,7 @@ function SchedulesSection({
                   type='button'
                   size='icon'
                   variant='ghost'
-                  onClick={() => remove(index)}
+                  onClick={() => handleRemoveSchedule(index)}
                   aria-label='Remove schedule'
                 >
                   <IconTrash className='size-4' />
@@ -907,53 +1000,21 @@ function AddScheduleCombobox({
   const [open, setOpen] = React.useState(false);
   const { debouncedSearchTerm, setSearchTerm } = useDebouncedSearch(300);
 
-  const {
-    data,
-    isFetching,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useInfiniteQuery({
-    queryKey: ['client-schedule-picker', debouncedSearchTerm],
-    queryFn: ({ pageParam = 1 }) =>
-      fetchScheduleSourceOptions(debouncedSearchTerm, pageParam as number),
-    getNextPageParam: (lastPage, allPages) =>
-      lastPage.hasNextPage ? allPages.length + 1 : undefined,
-    initialPageParam: 1,
+  const { data: rows = [], isFetching } = useQuery({
+    queryKey: ['client-schedule-picker', debouncedSearchTerm] as const,
+    queryFn: () => fetchScheduleSourcesList(debouncedSearchTerm),
     enabled: open,
+    staleTime: 30 * 1000,
   });
 
-  const allOptions = React.useMemo(
-    () => data?.pages.flatMap((page) => page.options) ?? [],
-    [data]
-  );
-
-  const availableOptions = React.useMemo(
-    () => allOptions.filter((opt) => !excludeIds.includes(opt.value)),
-    [allOptions, excludeIds]
-  );
-
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-
-  const handleScroll = React.useCallback(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-    const { scrollTop, scrollHeight, clientHeight } = container;
-    if (
-      scrollTop + clientHeight >= scrollHeight - 20 &&
-      hasNextPage &&
-      !isFetchingNextPage
-    ) {
-      fetchNextPage();
-    }
-  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
-
-  React.useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-    container.addEventListener('scroll', handleScroll);
-    return () => container.removeEventListener('scroll', handleScroll);
-  }, [handleScroll, open]);
+  const availableOptions = React.useMemo(() => {
+    return rows
+      .map((row) => ({
+        value: row.id,
+        label: row.display_name || row.name,
+      }))
+      .filter((opt) => !excludeIds.includes(opt.value));
+  }, [rows, excludeIds]);
 
   function handleSelect(value: string) {
     const option = availableOptions.find((o) => o.value === value);
@@ -977,13 +1038,10 @@ function AddScheduleCombobox({
           <CommandInput
             placeholder='Search schedules…'
             onValueChange={setSearchTerm}
-            isLoading={isFetching && !isFetchingNextPage}
+            isLoading={isFetching}
           />
-          <CommandList
-            className='max-h-[280px]'
-            ref={scrollContainerRef}
-          >
-            {isFetching && allOptions.length === 0 ? (
+          <CommandList className='max-h-[280px]'>
+            {isFetching && rows.length === 0 ? (
               <div className='py-6 text-center text-sm text-muted-foreground'>
                 Loading…
               </div>
@@ -1000,11 +1058,6 @@ function AddScheduleCombobox({
                       <span className='truncate'>{option.label}</span>
                     </CommandItem>
                   ))}
-                  {isFetchingNextPage && (
-                    <div className='py-2 text-center text-sm text-muted-foreground'>
-                      Loading more…
-                    </div>
-                  )}
                 </CommandGroup>
               </>
             )}

@@ -34,3 +34,5 @@ UI Behavior
 • Use skeletons, placeholders, and progressive rendering from Shadcn components.
 • Prefer infinite scrolling with TanStack Query for large datasets.
 • Keep UI predictable by using named event handlers.
+. For loading use /apps/web/components/ui/spinner.tsx instead of Loadding text.
+. try to use components from web/components/ui/ instead of re-inventing them, if not found ask to install from shadcn comminity

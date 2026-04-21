@@ -1,7 +1,11 @@
 'use client';
 
 import * as React from 'react';
-import { useForm, useWatch, Control } from 'react-hook-form';
+import {
+  useWatch,
+  type Control,
+  type UseFormReturn,
+} from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { format, parseISO, isValid } from 'date-fns';
@@ -40,7 +44,7 @@ import {
 } from '@/hooks/useProjects';
 import type { ProjectMemberSelection } from '@/lib/projects/persist-project';
 import { useAuth } from '@/hooks/auth';
-import { getDirtyValues } from '@/lib/get-dirty-values';
+import { useAppForm } from '@/hooks/use-app-form';
 import { toast } from 'sonner';
 import { PROJECT_DB_STATUS } from '@/types/projects';
 
@@ -314,10 +318,94 @@ export function ProjectDrawer({
     return emptyFormValues();
   }, [mode, isCopy, projectDetail, project]);
 
-  const form = useForm<ProjectFormValues>({
+  const form = useAppForm<ProjectFormValues>({
+    submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
+    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
+    beforeSubmit: async (values) => {
+      if (!isEdit && !isSystemAdmin && !tenantId) {
+        toast.error('Missing tenant context.');
+        return false;
+      }
+      const members = toMemberSelection(values);
+      const memberRoles = [
+        UserRoleType.Verifier,
+        UserRoleType.Checker,
+        UserRoleType.Maker,
+        UserRoleType.ProjectHead,
+        UserRoleType.Engineer,
+        UserRoleType.Superviser,
+      ];
+      for (const r of memberRoles) {
+        if (!members[r]) {
+          toast.error('Please select all project team members.');
+          return false;
+        }
+      }
+      return true;
+    },
+    onCreate: async (values) => {
+      try {
+        const members = toMemberSelection(values);
+        await createProjectMutation.mutateAsync({
+          name: values.name,
+          code: values.code || null,
+          status: values.status,
+          meta: {
+            ...valuesToMeta(values, false),
+          },
+          schedule_source_id: values.schedule_source.id,
+          members,
+        });
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    },
+    onPatch: async (dirty, values) => {
+      try {
+        if (!projectDetail) {
+          return;
+        }
+        const members = toMemberSelection(values);
+        const metaDirty =
+          Boolean(dirty.short_name) ||
+          Boolean(dirty.location) ||
+          Boolean(dirty.city) ||
+          Boolean(dirty.sanction_amount) ||
+          Boolean(dirty.sanction_dos) ||
+          Boolean(dirty.sanction_doc) ||
+          Boolean(dirty.client_address) ||
+          Boolean(dirty.client_gstn);
+
+        const teamDirty =
+          Boolean(dirty.verifier) ||
+          Boolean(dirty.checker) ||
+          Boolean(dirty.maker) ||
+          Boolean(dirty.project_head) ||
+          Boolean(dirty.project_engineer) ||
+          Boolean(dirty.supervisor);
+
+        await updateProjectMutation.mutateAsync({
+          tenantId: projectDetail.tenant_id,
+          projectId: projectDetail.id,
+          ...('name' in dirty ? { name: values.name } : {}),
+          ...('code' in dirty ? { code: values.code || null } : {}),
+          ...('status' in dirty ? { status: values.status } : {}),
+          baseMeta: projectDetail.meta,
+          metaPatch: metaDirty ? valuesToMeta(values, false) : undefined,
+          ...('schedule_source' in dirty
+            ? { schedule_source_id: values.schedule_source.id }
+            : {}),
+          members: teamDirty ? members : undefined,
+        });
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    },
   });
 
   React.useEffect(() => {
@@ -351,85 +439,6 @@ export function ProjectDrawer({
       };
     });
   }, []);
-
-  const handleSubmit = async (values: ProjectFormValues) => {
-    if (!isEdit && !isSystemAdmin && !tenantId) {
-      toast.error('Missing tenant context.');
-      return;
-    }
-
-    const members = toMemberSelection(values);
-    const memberRoles = [
-      UserRoleType.Verifier,
-      UserRoleType.Checker,
-      UserRoleType.Maker,
-      UserRoleType.ProjectHead,
-      UserRoleType.Engineer,
-      UserRoleType.Superviser,
-    ];
-    for (const r of memberRoles) {
-      if (!members[r]) {
-        toast.error('Please select all project team members.');
-        return;
-      }
-    }
-
-    try {
-      if (isEdit && projectDetail) {
-        const dirty = getDirtyValues(values, form.formState.dirtyFields);
-        if (Object.keys(dirty).length === 0) {
-          toast.message('No changes to save');
-          return;
-        }
-
-        const metaDirty =
-          Boolean(dirty.short_name) ||
-          Boolean(dirty.location) ||
-          Boolean(dirty.city) ||
-          Boolean(dirty.sanction_amount) ||
-          Boolean(dirty.sanction_dos) ||
-          Boolean(dirty.sanction_doc) ||
-          Boolean(dirty.client_address) ||
-          Boolean(dirty.client_gstn);
-
-        const teamDirty =
-          Boolean(dirty.verifier) ||
-          Boolean(dirty.checker) ||
-          Boolean(dirty.maker) ||
-          Boolean(dirty.project_head) ||
-          Boolean(dirty.project_engineer) ||
-          Boolean(dirty.supervisor);
-
-        await updateProjectMutation.mutateAsync({
-          tenantId: projectDetail.tenant_id,
-          projectId: projectDetail.id,
-          ...('name' in dirty ? { name: values.name } : {}),
-          ...('code' in dirty ? { code: values.code || null } : {}),
-          ...('status' in dirty ? { status: values.status } : {}),
-          baseMeta: projectDetail.meta,
-          metaPatch: metaDirty ? valuesToMeta(values, false) : undefined,
-          ...('schedule_source' in dirty
-            ? { schedule_source_id: values.schedule_source.id }
-            : {}),
-          members: teamDirty ? members : undefined,
-        });
-      } else {
-        await createProjectMutation.mutateAsync({
-          name: values.name,
-          code: values.code || null,
-          status: values.status,
-          meta: {
-            ...valuesToMeta(values, false),
-          },
-          schedule_source_id: values.schedule_source.id,
-          members,
-        });
-      }
-      onSubmit();
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
-  };
 
   if (project && needsDetail && isLoading) {
     return (
@@ -498,7 +507,7 @@ export function ProjectDrawer({
         <Form {...form}>
           <form
             id='project-form'
-            onSubmit={form.handleSubmit(handleSubmit)}
+            onSubmit={form.submit}
             className='flex flex-col gap-6'
           >
             <BasicInformationSection
@@ -712,7 +721,7 @@ const ScheduleSourceInformationSection = React.memo(
   }: {
     control: Control<ProjectFormValues>;
     readOnly: boolean;
-    form: ReturnType<typeof useForm<ProjectFormValues>>;
+    form: UseFormReturn<ProjectFormValues>;
   }) {
     return (
       <FormSection title='Schedule source'>

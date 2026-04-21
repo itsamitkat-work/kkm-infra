@@ -128,7 +128,9 @@ export async function fetchScheduleSourceOptions(
   };
 }
 
-async function fetchScheduleSourcesList(filter: string): Promise<ScheduleSourceRow[]> {
+export async function fetchScheduleSourcesList(
+  filter: string
+): Promise<ScheduleSourceRow[]> {
   const supabase = getSupabase();
   let q = supabase.from('schedule_sources').select('*').order('display_name');
 

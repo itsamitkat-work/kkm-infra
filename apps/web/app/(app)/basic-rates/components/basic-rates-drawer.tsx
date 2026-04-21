@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useForm, useController } from 'react-hook-form';
+import { useController } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import {
@@ -18,7 +18,7 @@ import {
 } from '@/hooks/useBasicRates';
 import { useBasicRateDistinctUnits } from '@/hooks/use-basic-rate-distinct-units';
 import { toast } from 'sonner';
-import { getDirtyValues } from '@/lib/get-dirty-values';
+import { useAppForm } from '@/hooks/use-app-form';
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import {
   RECORD_STATUS_OPTIONS,
@@ -155,33 +155,14 @@ export function BasicRatesDrawer({
     };
   }, [mode, basicRate]);
 
-  const form = useForm<BasicRateFormValues>({
+  const form = useAppForm<BasicRateFormValues>({
+    submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
-  });
-
-  React.useEffect(() => {
-    form.reset(getDefaultValues());
-  }, [basicRate?.id, mode, getDefaultValues, form]);
-
-  const handleSubmit = async (values: BasicRateFormValues) => {
-    try {
-      if (isEdit && basicRate) {
-        const dirty = getDirtyValues(values, form.formState.dirtyFields);
-        if (Object.keys(dirty).length === 0) {
-          toast.message('No changes to save');
-          return;
-        }
-        const patch: Record<string, unknown> = { ...dirty };
-        if (patch.rate != null) patch.rate = Number(patch.rate);
-        if (patch.status != null)
-          patch.status = formStatusLabelToDb(patch.status as string);
-        await updateBasicRateMutation.mutateAsync({
-          id: basicRate.id,
-          ...patch,
-        });
-      } else {
+    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
+    onCreate: async (values) => {
+      try {
         const status = formStatusLabelToDb(values.status);
         const rate = Number(values.rate);
         await createBasicRateMutation.mutateAsync({
@@ -193,12 +174,37 @@ export function BasicRatesDrawer({
           rate,
           status,
         });
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting form:', error);
       }
-      onSubmit();
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
-  };
+    },
+    onPatch: async (patch) => {
+      try {
+        if (!basicRate) {
+          return;
+        }
+        const patchRecord: Record<string, unknown> = { ...patch };
+        if (patchRecord.rate != null) {
+          patchRecord.rate = Number(patchRecord.rate);
+        }
+        if (patchRecord.status != null) {
+          patchRecord.status = formStatusLabelToDb(patchRecord.status as string);
+        }
+        await updateBasicRateMutation.mutateAsync({
+          id: basicRate.id,
+          ...patchRecord,
+        });
+        onSubmit();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    },
+  });
+
+  React.useEffect(() => {
+    form.reset(getDefaultValues());
+  }, [basicRate?.id, mode, getDefaultValues, form]);
 
   const scheduleNote =
     basicRate?.schedule_source_versions?.display_name ??
@@ -225,7 +231,7 @@ export function BasicRatesDrawer({
       />
 
       <DrawerContentContainer>
-        <form id='basic-rate-form' onSubmit={form.handleSubmit(handleSubmit)}>
+        <form id='basic-rate-form' onSubmit={form.submit}>
           <FieldGroup density='dense'>
             <BasicInformationSection
               control={form.control}
