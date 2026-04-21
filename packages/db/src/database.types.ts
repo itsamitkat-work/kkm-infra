@@ -197,11 +197,19 @@ export type Database = {
         Returns: undefined
       }
       check_permission_version: { Args: never; Returns: boolean }
+      check_permission_version_for_tenant: {
+        Args: { p_tenant_id: string }
+        Returns: boolean
+      }
       current_active_role: { Args: never; Returns: string }
       current_session_id: { Args: never; Returns: string }
       current_tenant_id: { Args: never; Returns: string }
       default_platform_tenant_id: { Args: never; Returns: string }
       has_permission: { Args: { p: string }; Returns: boolean }
+      has_permission_for_tenant: {
+        Args: { p_permission: string; p_tenant_id: string }
+        Returns: boolean
+      }
       is_account_locked: { Args: never; Returns: boolean }
       is_session_valid: { Args: never; Returns: boolean }
       is_system_admin: { Args: never; Returns: boolean }
@@ -1324,6 +1332,32 @@ export type Database = {
       client_policy_ok: {
         Args: { p_action: string; p_client_id: string }
         Returns: boolean
+      }
+      create_project_with_relations: {
+        Args: {
+          p_code: string
+          p_members_by_slug?: Json
+          p_meta: Json
+          p_name: string
+          p_schedule_source_id?: string
+          p_status: string
+        }
+        Returns: {
+          code: string | null
+          created_at: string
+          id: string
+          meta: Json
+          name: string
+          status: string
+          tenant_id: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "projects"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       custom_access_token_hook: { Args: { event: Json }; Returns: Json }
       default_platform_tenant_id: { Args: never; Returns: string }

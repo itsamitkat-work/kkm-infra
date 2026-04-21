@@ -19,6 +19,7 @@ import {
   createProjectWithRelations,
   parseProjectMeta,
   updateProjectWithRelations,
+  PROJECTS_ROW_SELECT,
   type CreateProjectPersistInput,
   type ProjectMemberSelection,
   type UpdateProjectPersistInput,
@@ -305,7 +306,7 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
 
   const { data: project, error: pe } = await supabase
     .from('projects')
-    .select('*')
+    .select(PROJECTS_ROW_SELECT)
     .eq('id', projectId)
     .single();
   if (pe) throw pe;

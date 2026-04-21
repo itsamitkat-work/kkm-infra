@@ -1,10 +1,17 @@
 import type { Database, Json } from '@kkm/db';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { UserRoleType } from '@/app/(app)/user/types';
-import { buildProjectMetaPatch, parseProjectMeta } from '@/lib/projects/project-meta';
+import {
+  buildProjectMetaPatch,
+  parseProjectMeta,
+} from '@/lib/projects/project-meta';
 import type { ProjectMeta } from '@/types/projects';
 
 type ProjectsRow = Database['public']['Tables']['projects']['Row'];
+
+/** PostgREST `projects` row fragment — explicit columns instead of `select=*`. */
+export const PROJECTS_ROW_SELECT =
+  'id, tenant_id, name, code, status, meta, created_at, updated_at' as const;
 
 const USER_ROLE_SLUG: Record<UserRoleType, string> = {
   [UserRoleType.Maker]: 'maker',
@@ -22,7 +29,7 @@ export type CreateProjectPersistInput = {
   code: string | null;
   status: string;
   meta: ProjectMeta;
-  schedule_source_id: string;
+  schedule_source_id?: string;
   members: ProjectMemberSelection;
 };
 
@@ -124,19 +131,24 @@ async function ensureDefaultSchedule(
   if (findError) throw findError;
 
   if (!existing) {
-    const { error: insertError } = await supabase.from('project_schedules').insert({
-      project_id: projectId,
-      schedule_source_id: scheduleSourceId,
-      is_default: false,
-      is_active: true,
-    });
+    const { error: insertError } = await supabase
+      .from('project_schedules')
+      .insert({
+        project_id: projectId,
+        schedule_source_id: scheduleSourceId,
+        is_default: false,
+        is_active: true,
+      });
     if (insertError) throw insertError;
   }
 
-  const { error: rpcError } = await supabase.rpc('set_default_project_schedule', {
-    p_project_id: projectId,
-    p_schedule_source_id: scheduleSourceId,
-  });
+  const { error: rpcError } = await supabase.rpc(
+    'set_default_project_schedule',
+    {
+      p_project_id: projectId,
+      p_schedule_source_id: scheduleSourceId,
+    }
+  );
   if (rpcError) throw rpcError;
 }
 
@@ -145,32 +157,45 @@ export async function createProjectWithRelations(
   input: CreateProjectPersistInput
 ): Promise<ProjectsRow> {
   const metaJson = buildProjectMetaPatch({}, input.meta) as Json;
-  const insertRow = {
-    name: input.name,
-    code: input.code,
-    status: input.status,
-    meta: metaJson,
-  } as Database['public']['Tables']['projects']['Insert'];
 
-  const { data: project, error: projectError } = await supabase
-    .from('projects')
-    .insert(insertRow)
-    .select()
-    .single();
-  if (projectError) throw projectError;
-  if (!project) throw new Error('Project create returned no row');
+  const membersBySlug: Record<string, string> = {};
+  const roleOrder: UserRoleType[] = [
+    UserRoleType.Verifier,
+    UserRoleType.Checker,
+    UserRoleType.Maker,
+    UserRoleType.ProjectHead,
+    UserRoleType.Engineer,
+    UserRoleType.Superviser,
+  ];
+  for (const r of roleOrder) {
+    const userId = input.members[r];
+    if (!userId) {
+      continue;
+    }
+    membersBySlug[USER_ROLE_SLUG[r]] = userId;
+  }
 
-  try {
-    await ensureDefaultSchedule(supabase, project.id, input.schedule_source_id);
-    await replaceProjectMembers(
-      supabase,
-      project.id,
-      project.tenant_id,
-      input.members
-    );
-  } catch (e) {
-    await supabase.from('projects').delete().eq('id', project.id);
-    throw e;
+  const rpcPayload: Database['public']['Functions']['create_project_with_relations']['Args'] =
+    {
+      p_name: input.name,
+      p_code: input.code ?? '',
+      p_status: input.status,
+      p_meta: metaJson,
+      p_members_by_slug: membersBySlug,
+    };
+  if (input.schedule_source_id) {
+    rpcPayload.p_schedule_source_id = input.schedule_source_id;
+  }
+
+  const { data: project, error: projectError } = await supabase.rpc(
+    'create_project_with_relations',
+    rpcPayload
+  );
+  if (projectError) {
+    throw projectError;
+  }
+  if (!project) {
+    throw new Error('Project create returned no row');
   }
 
   return project;
@@ -203,7 +228,11 @@ export async function updateProjectWithRelations(
   }
 
   if (input.schedule_source_id) {
-    await ensureDefaultSchedule(supabase, input.projectId, input.schedule_source_id);
+    await ensureDefaultSchedule(
+      supabase,
+      input.projectId,
+      input.schedule_source_id
+    );
   }
 
   if (input.members) {

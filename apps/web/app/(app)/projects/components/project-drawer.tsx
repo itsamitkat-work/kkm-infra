@@ -64,37 +64,30 @@ const schedulePickSchema = z.object({
   name: z.string(),
 });
 
+const optionalNonNegativeAmount = z.string().refine(
+  (val) => val.trim() === '' || (!isNaN(Number(val)) && Number(val) >= 0),
+  { message: 'Sanction amount must be a valid number' }
+);
+
+const optionalFormDate = z.string().refine(validDateFormat, {
+  message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
+});
+
 const FORM_SCHEMA = z.object({
   name: z.string().min(1, 'Project name is required'),
-  code: z.string().min(1, 'Project code is required'),
+  code: z.string(),
   status: z.enum(
     [PROJECT_DB_STATUS.ACTIVE, PROJECT_DB_STATUS.ON_HOLD, PROJECT_DB_STATUS.CLOSED],
     { message: 'Status is required' }
   ),
-  short_name: z.string().min(1, 'Short name is required'),
-  sanction_amount: z
-    .string()
-    .min(1, 'Sanction amount is required')
-    .refine(
-      (val) => !isNaN(Number(val)) && Number(val) >= 0,
-      'Sanction amount must be a valid number'
-    ),
-  sanction_dos: z
-    .string()
-    .min(1, 'Sanction DOS is required')
-    .refine(validDateFormat, {
-      message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
-    }),
-  sanction_doc: z
-    .string()
-    .min(1, 'Sanction DOC is required')
-    .refine(validDateFormat, {
-      message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
-    }),
-  location: z.string().min(1, 'Project location is required'),
-  city: z.string().min(1, 'Project city is required'),
+  short_name: z.string(),
+  sanction_amount: optionalNonNegativeAmount,
+  sanction_dos: optionalFormDate,
+  sanction_doc: optionalFormDate,
+  location: z.string(),
+  city: z.string(),
   schedule_source: schedulePickSchema,
-  client_address: z.string().min(1, 'Client address is required'),
+  client_address: z.string(),
   client_gstn: z
     .string()
     .optional()
@@ -246,17 +239,29 @@ function valuesToMeta(
   v: ProjectFormValues,
   forDirty: boolean
 ): import('@/types/projects').ProjectMeta {
+  const sanctionTrim = v.sanction_amount.trim();
+  const parsedSanction =
+    sanctionTrim === '' ? null : Number(sanctionTrim);
+  const sanction_amount =
+    sanctionTrim === '' ||
+    parsedSanction === null ||
+    Number.isNaN(parsedSanction)
+      ? null
+      : parsedSanction;
+
   const base = {
-    short_name: v.short_name,
-    location: v.location,
-    city: v.city,
-    sanction_amount: Number(v.sanction_amount),
-    sanction_dos: v.sanction_dos || null,
-    sanction_doc: v.sanction_doc || null,
-    client_address: v.client_address,
+    short_name: v.short_name.trim() || null,
+    location: v.location.trim() || null,
+    city: v.city.trim() || null,
+    sanction_amount,
+    sanction_dos: v.sanction_dos?.trim() ? v.sanction_dos : null,
+    sanction_doc: v.sanction_doc?.trim() ? v.sanction_doc : null,
+    client_address: v.client_address.trim() || null,
     client_gstn: v.client_gstn || null,
   };
-  if (forDirty) return base;
+  if (forDirty) {
+    return base;
+  }
   return { ...base, client_label: v.schedule_source.name || null };
 }
 
@@ -324,25 +329,10 @@ export function ProjectDrawer({
     defaultValues: getDefaultValues(),
     mode: 'all',
     onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
-    beforeSubmit: async (values) => {
+    beforeSubmit: async () => {
       if (!isEdit && !isSystemAdmin && !tenantId) {
         toast.error('Missing tenant context.');
         return false;
-      }
-      const members = toMemberSelection(values);
-      const memberRoles = [
-        UserRoleType.Verifier,
-        UserRoleType.Checker,
-        UserRoleType.Maker,
-        UserRoleType.ProjectHead,
-        UserRoleType.Engineer,
-        UserRoleType.Superviser,
-      ];
-      for (const r of memberRoles) {
-        if (!members[r]) {
-          toast.error('Please select all project team members.');
-          return false;
-        }
       }
       return true;
     },
@@ -351,12 +341,14 @@ export function ProjectDrawer({
         const members = toMemberSelection(values);
         await createProjectMutation.mutateAsync({
           name: values.name,
-          code: values.code || null,
+          code: values.code.trim() || null,
           status: values.status,
           meta: {
             ...valuesToMeta(values, false),
           },
-          schedule_source_id: values.schedule_source.id,
+          ...(values.schedule_source.id.trim()
+            ? { schedule_source_id: values.schedule_source.id }
+            : {}),
           members,
         });
         onSubmit();
@@ -572,7 +564,6 @@ const SanctionAmountField = React.memo(function SanctionAmountField({
         name='sanction_amount'
         label='Sanction Amount (Rupees)'
         placeholder='Enter amount'
-        required
         type='number'
         readOnly={readOnly}
         inputAddon={<InputAddon>₹</InputAddon>}
@@ -614,7 +605,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
         name='code'
         label='Project Code'
         placeholder='Enter project code'
-        required
         readOnly={readOnly}
       />
 
@@ -623,7 +613,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
         name='short_name'
         label='Short Name'
         placeholder='Enter project short name'
-        required
         readOnly={readOnly}
       />
 
@@ -632,7 +621,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
         name='sanction_amount'
         label='Sanction Amount (Rupees)'
         placeholder='Enter amount'
-        required
         readOnly={readOnly}
       />
 
@@ -641,7 +629,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
           control={control}
           name='sanction_dos'
           label='Sanction DOS'
-          required
           readOnly={readOnly}
         />
 
@@ -649,7 +636,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
           control={control}
           name='sanction_doc'
           label='Sanction DOC'
-          required
           readOnly={readOnly}
         />
       </div>
@@ -668,7 +654,6 @@ const BasicInformationSection = React.memo(function BasicInformationSection({
           label='Status'
           placeholder='Select status'
           options={statusOptions}
-          required
           readOnly={readOnly}
           searchPlaceholder='Search statuses...'
           emptyMessage='No statuses found'
@@ -697,7 +682,6 @@ const LocationDetailsSection = React.memo(function LocationDetailsSection({
         name='location'
         label='Project Location'
         placeholder='Enter project location'
-        required
         readOnly={readOnly}
       />
 
@@ -706,7 +690,6 @@ const LocationDetailsSection = React.memo(function LocationDetailsSection({
         name='city'
         label='Project City'
         placeholder='Enter project city'
-        required
         readOnly={readOnly}
       />
     </FormSection>
@@ -731,7 +714,6 @@ const ScheduleSourceInformationSection = React.memo(
           label='Schedule'
           placeholder='Select schedule source'
           fetchOptions={fetchScheduleSourceOptions}
-          required
           readOnly={readOnly}
           searchPlaceholder='Search schedules…'
           emptyMessage='No schedules found'
@@ -766,7 +748,6 @@ const ScheduleSourceInformationSection = React.memo(
           name='client_address'
           label='Client Address'
           placeholder='Enter client address'
-          required
           readOnly={readOnly}
         />
 
@@ -796,14 +777,13 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
   ) => (query: string, page?: number) => ReturnType<typeof fetchUserOptions>;
 }) {
   return (
-    <FormSection title='Project Teams' showSeparator>
+    <FormSection title='Project teams' showSeparator>
       <FormSearchableComboboxField
         control={control}
         name='verifier'
         label='Measurement Verifier'
         placeholder='Select measurement verifier'
         fetchOptions={fetchUser(UserRoleType.Verifier)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
@@ -822,7 +802,6 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
         label='Measurement Checker'
         placeholder='Select measurement checker'
         fetchOptions={fetchUser(UserRoleType.Checker)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
@@ -841,7 +820,6 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
         label='Measurement Maker'
         placeholder='Select measurement maker'
         fetchOptions={fetchUser(UserRoleType.Maker)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
@@ -860,7 +838,6 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
         label='Project Head'
         placeholder='Select project head'
         fetchOptions={fetchUser(UserRoleType.ProjectHead)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
@@ -879,7 +856,6 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
         label='Project Engineer'
         placeholder='Select project engineer'
         fetchOptions={fetchUser(UserRoleType.Engineer)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
@@ -898,7 +874,6 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
         label='Supervisor'
         placeholder='Select supervisor'
         fetchOptions={fetchUser(UserRoleType.Superviser)}
-        required
         readOnly={readOnly}
         searchPlaceholder='Search users...'
         emptyMessage='No users found'
