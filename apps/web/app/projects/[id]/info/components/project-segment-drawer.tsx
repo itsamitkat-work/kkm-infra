@@ -276,106 +276,104 @@ export function ProjectSegmentDrawer({
             onSubmit={form.handleSubmit(handleSubmit)}
             className='flex flex-col gap-6'
           >
-            <FormSection title='Segment Information'>
+            <FormInputField
+              control={form.control}
+              name='segmentName'
+              label='Segment Name'
+              placeholder='Enter segment name'
+              required
+              readOnly={isRead}
+            />
+
+            <div className='space-y-1.5'>
               <FormInputField
                 control={form.control}
-                name='segmentName'
-                label='Segment Name'
-                placeholder='Enter segment name'
+                name='segmentType'
+                label='Segment Type'
+                placeholder='Choose a preset or type a custom type'
+                required
+                readOnly={isRead}
+                list={isRead ? undefined : SEGMENT_TYPE_DATALIST_ID}
+              />
+              {!isRead && (
+                <datalist id={SEGMENT_TYPE_DATALIST_ID}>
+                  {PROJECT_SEGMENT_TYPE_PRESETS.map((preset) => (
+                    <option key={preset} value={preset} />
+                  ))}
+                </datalist>
+              )}
+              <p className='text-xs text-muted-foreground'>
+                Suggestions include Phase, Tower, Floor, Area, Activity — or
+                enter any label your project uses.
+              </p>
+            </div>
+
+            <FormTextareaField
+              control={form.control}
+              name='description'
+              label='Description'
+              placeholder='Enter description (optional)'
+              readOnly={isRead}
+              rows={3}
+            />
+
+            <div className='space-y-2'>
+              <div className='flex items-center justify-between'>
+                <span className='text-sm font-medium'>Dates</span>
+                {!isRead &&
+                  project &&
+                  (projectDatesMeta?.sanction_dos ||
+                    projectDatesMeta?.sanction_doc) && (
+                    <Button
+                      type='button'
+                      variant='ghost'
+                      size='xs'
+                      onClick={handleApplyProjectDates}
+                      className='h-auto py-1 px-2 text-xs text-muted-foreground hover:text-foreground'
+                    >
+                      <ArrowRight className='h-3 w-3 mr-1' />
+                      Use sanction dates
+                    </Button>
+                  )}
+              </div>
+              <div className='grid grid-cols-2 gap-4'>
+                <FormDateField
+                  control={form.control}
+                  name='startDate'
+                  label='Start Date'
+                  readOnly={isRead}
+                />
+
+                <FormDateField
+                  control={form.control}
+                  name='endDate'
+                  label='End Date'
+                  readOnly={isRead}
+                />
+              </div>
+            </div>
+
+            <div className='grid grid-cols-2 gap-4'>
+              <FormSelectField
+                control={form.control}
+                name='status'
+                label='Status'
+                placeholder='Select status'
+                options={SEGMENT_STATUS_OPTIONS}
                 required
                 readOnly={isRead}
               />
 
-              <div className='space-y-1.5'>
-                <FormInputField
-                  control={form.control}
-                  name='segmentType'
-                  label='Segment Type'
-                  placeholder='Choose a preset or type a custom type'
-                  required
-                  readOnly={isRead}
-                  list={isRead ? undefined : SEGMENT_TYPE_DATALIST_ID}
-                />
-                {!isRead && (
-                  <datalist id={SEGMENT_TYPE_DATALIST_ID}>
-                    {PROJECT_SEGMENT_TYPE_PRESETS.map((preset) => (
-                      <option key={preset} value={preset} />
-                    ))}
-                  </datalist>
-                )}
-                <p className='text-xs text-muted-foreground'>
-                  Suggestions include Phase, Tower, Floor, Area, Activity — or
-                  enter any label your project uses.
-                </p>
-              </div>
-
-              <FormTextareaField
+              <FormInputField
                 control={form.control}
-                name='description'
-                label='Description'
-                placeholder='Enter description (optional)'
+                name='displayOrder'
+                label='Display Order'
+                placeholder='Enter display order'
+                required
+                type='number'
                 readOnly={isRead}
-                rows={3}
               />
-
-              <div className='space-y-2'>
-                <div className='flex items-center justify-between'>
-                  <span className='text-sm font-medium'>Dates</span>
-                  {!isRead &&
-                    project &&
-                    (projectDatesMeta?.sanction_dos ||
-                      projectDatesMeta?.sanction_doc) && (
-                      <Button
-                        type='button'
-                        variant='ghost'
-                        size='xs'
-                        onClick={handleApplyProjectDates}
-                        className='h-auto py-1 px-2 text-xs text-muted-foreground hover:text-foreground'
-                      >
-                        <ArrowRight className='h-3 w-3 mr-1' />
-                        Use sanction dates
-                      </Button>
-                    )}
-                </div>
-                <div className='grid grid-cols-2 gap-4'>
-                  <FormDateField
-                    control={form.control}
-                    name='startDate'
-                    label='Start Date'
-                    readOnly={isRead}
-                  />
-
-                  <FormDateField
-                    control={form.control}
-                    name='endDate'
-                    label='End Date'
-                    readOnly={isRead}
-                  />
-                </div>
-              </div>
-
-              <div className='grid grid-cols-2 gap-4'>
-                <FormSelectField
-                  control={form.control}
-                  name='status'
-                  label='Status'
-                  placeholder='Select status'
-                  options={SEGMENT_STATUS_OPTIONS}
-                  required
-                  readOnly={isRead}
-                />
-
-                <FormInputField
-                  control={form.control}
-                  name='displayOrder'
-                  label='Display Order'
-                  placeholder='Enter display order'
-                  required
-                  type='number'
-                  readOnly={isRead}
-                />
-              </div>
-            </FormSection>
+            </div>
           </form>
         </Form>
       </DrawerContentContainer>

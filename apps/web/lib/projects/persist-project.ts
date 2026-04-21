@@ -1,6 +1,10 @@
 import type { Database, Json } from '@kkm/db';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { UserRoleType } from '@/app/(app)/user/types';
+import {
+  PROJECT_MEMBER_ROLE_ORDER,
+  PROJECT_MEMBER_ROLE_SLUGS,
+  type ProjectMemberRoleSlug,
+} from '@/types/project-member-roles';
 import {
   buildProjectMetaPatch,
   parseProjectMeta,
@@ -13,16 +17,12 @@ type ProjectsRow = Database['public']['Tables']['projects']['Row'];
 export const PROJECTS_ROW_SELECT =
   'id, tenant_id, name, code, status, meta, created_at, updated_at' as const;
 
-const USER_ROLE_SLUG: Record<UserRoleType, string> = {
-  [UserRoleType.Maker]: 'maker',
-  [UserRoleType.Checker]: 'checker',
-  [UserRoleType.Verifier]: 'verifier',
-  [UserRoleType.ProjectHead]: 'project_head',
-  [UserRoleType.Engineer]: 'engineer',
-  [UserRoleType.Superviser]: 'supervisor',
-};
+export type ProjectMemberSelection = Record<ProjectMemberRoleSlug, string>;
 
-export type ProjectMemberSelection = Record<UserRoleType, string>;
+export type ProjectScheduleCreateRow = {
+  schedule_source_id: string;
+  is_default: boolean;
+};
 
 export type CreateProjectPersistInput = {
   name: string;
@@ -30,6 +30,8 @@ export type CreateProjectPersistInput = {
   status: string;
   meta: ProjectMeta;
   schedule_source_id?: string;
+  /** When creating with multiple client schedules, extras are inserted after RPC. */
+  additional_schedule_source_ids?: string[];
   members: ProjectMemberSelection;
 };
 
@@ -62,12 +64,11 @@ async function fetchRoleIdsForTenant(
   return map;
 }
 
-function resolveRoleId(map: Map<string, string>, role: UserRoleType): string {
-  const slug = USER_ROLE_SLUG[role];
-  let id = map.get(slug);
-  if (!id && role === UserRoleType.Superviser) {
-    id = map.get('superviser') ?? map.get('supervisor');
-  }
+function resolveRoleId(
+  map: Map<string, string>,
+  slug: ProjectMemberRoleSlug
+): string {
+  const id = map.get(slug);
   if (!id) {
     throw new Error(`Missing tenant role for slug "${slug}".`);
   }
@@ -90,22 +91,13 @@ async function replaceProjectMembers(
   const inserts: Database['public']['Tables']['project_members']['Insert'][] =
     [];
 
-  const roles: UserRoleType[] = [
-    UserRoleType.Verifier,
-    UserRoleType.Checker,
-    UserRoleType.Maker,
-    UserRoleType.ProjectHead,
-    UserRoleType.Engineer,
-    UserRoleType.Superviser,
-  ];
-
-  for (const r of roles) {
-    const userId = members[r];
+  for (const slug of PROJECT_MEMBER_ROLE_ORDER) {
+    const userId = members[slug];
     if (!userId) continue;
     inserts.push({
       project_id: projectId,
       user_id: userId,
-      role_id: resolveRoleId(roleMap, r),
+      role_id: resolveRoleId(roleMap, slug),
     });
   }
 
@@ -159,20 +151,12 @@ export async function createProjectWithRelations(
   const metaJson = buildProjectMetaPatch({}, input.meta) as Json;
 
   const membersBySlug: Record<string, string> = {};
-  const roleOrder: UserRoleType[] = [
-    UserRoleType.Verifier,
-    UserRoleType.Checker,
-    UserRoleType.Maker,
-    UserRoleType.ProjectHead,
-    UserRoleType.Engineer,
-    UserRoleType.Superviser,
-  ];
-  for (const r of roleOrder) {
-    const userId = input.members[r];
+  for (const slug of PROJECT_MEMBER_ROLE_ORDER) {
+    const userId = input.members[slug];
     if (!userId) {
       continue;
     }
-    membersBySlug[USER_ROLE_SLUG[r]] = userId;
+    membersBySlug[slug] = userId;
   }
 
   const rpcPayload: Database['public']['Functions']['create_project_with_relations']['Args'] =
@@ -196,6 +180,37 @@ export async function createProjectWithRelations(
   }
   if (!project) {
     throw new Error('Project create returned no row');
+  }
+
+  const extras = input.additional_schedule_source_ids ?? [];
+  if (extras.length > 0 && input.schedule_source_id) {
+    for (const sid of extras) {
+      if (!sid || sid === input.schedule_source_id) {
+        continue;
+      }
+      const { data: existing, error: findError } = await supabase
+        .from('project_schedules')
+        .select('id')
+        .eq('project_id', project.id)
+        .eq('schedule_source_id', sid)
+        .maybeSingle();
+      if (findError) {
+        throw findError;
+      }
+      if (!existing) {
+        const { error: insertError } = await supabase
+          .from('project_schedules')
+          .insert({
+            project_id: project.id,
+            schedule_source_id: sid,
+            is_default: false,
+            is_active: true,
+          });
+        if (insertError) {
+          throw insertError;
+        }
+      }
+    }
   }
 
   return project;
@@ -249,11 +264,10 @@ export function membersEqual(
   a: ProjectMemberSelection,
   b: ProjectMemberSelection
 ): boolean {
-  const keys = Object.keys(USER_ROLE_SLUG) as UserRoleType[];
-  for (const k of keys) {
+  for (const k of PROJECT_MEMBER_ROLE_SLUGS) {
     if ((a[k] || '') !== (b[k] || '')) return false;
   }
   return true;
 }
 
-export { parseProjectMeta, USER_ROLE_SLUG };
+export { parseProjectMeta };

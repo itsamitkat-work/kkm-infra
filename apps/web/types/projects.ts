@@ -9,6 +9,9 @@ export interface ProjectMeta {
   client_address?: string | null;
   client_gstn?: string | null;
   client_label?: string | null;
+  /** Linked client (projects created from client drawer flow). */
+  client_id?: string | null;
+  client_display_name?: string | null;
 }
 
 export const PROJECT_DB_STATUS = {
@@ -27,7 +30,7 @@ export function projectDbStatusLabel(status: string): string {
   return status;
 }
 
-/** @deprecated Segments API — kept for REST-backed segment flows. */
+/** Preset labels for segment type (stored as plain text). */
 export const PROJECT_SEGMENT_TYPE_PRESETS = [
   'Phase',
   'Tower',
@@ -69,23 +72,3 @@ export interface ProjectSegmentFormData {
 }
 
 export type ProjectCreateSegmentData = Omit<ProjectSegmentFormData, 'id'>;
-
-export interface SegmentApiRequest {
-  id?: string;
-  segmentId?: string;
-  projectId: string;
-  segmentName: string;
-  segmentType: ProjectSegmentType;
-  description?: string | null;
-  startDate?: string | null;
-  endDate?: string | null;
-  status: ProjectSegmentStatus;
-  displayOrder: number;
-}
-
-export interface SegmentApiResponse {
-  data: ProjectSegment;
-  isSuccess: boolean;
-  statusCode: number;
-  message: string;
-}

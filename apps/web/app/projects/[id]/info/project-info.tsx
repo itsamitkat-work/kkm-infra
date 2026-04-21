@@ -3,7 +3,7 @@
 import { TableLoadingState } from '@/components/tables/table-loading';
 import { Button } from '@/components/ui/button';
 import { StatusLabel } from '@/components/ui/status-label';
-import { formatCurrency, formatDate } from '@/lib/utils';
+import { cn, formatCurrency, formatDate } from '@/lib/utils';
 import {
   Calendar,
   MapPin,
@@ -26,17 +26,16 @@ import { useOpenClose } from '@/hooks/use-open-close';
 import { ProjectDrawer } from '@/app/(app)/projects/components/project-drawer';
 import { useQueryClient } from '@tanstack/react-query';
 import { ProjectSegmentSection } from './components/project-segment-section';
+import { PROJECT_SEGMENTS_TABLE_ID } from '../hooks/use-project-segments-query';
 import type {
   ProjectDetail,
   ProjectDetailMember,
   ProjectsListRow,
 } from '@/hooks/useProjects';
-import {
-  parseProjectMeta,
-  projectDetailToListRow,
-} from '@/hooks/useProjects';
+import { parseProjectMeta, projectDetailToListRow } from '@/hooks/useProjects';
 import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
-import { UserRoleType } from '@/app/(app)/user/types';
+import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
+import { FieldGroup, FieldLegend, FieldSet } from '@/components/ui/field';
 
 interface ProjectInfoTabProps {
   project: ProjectDetail | null | undefined;
@@ -44,14 +43,27 @@ interface ProjectInfoTabProps {
   isError: boolean;
 }
 
-const ROLE_LABEL: Record<UserRoleType, string> = {
-  [UserRoleType.Verifier]: 'Measurement Verifier',
-  [UserRoleType.Checker]: 'Measurement Checker',
-  [UserRoleType.Maker]: 'Measurement Maker',
-  [UserRoleType.ProjectHead]: 'Project Head',
-  [UserRoleType.Engineer]: 'Project Engineer',
-  [UserRoleType.Superviser]: 'Supervisor',
+/** Row captions aligned with project-drawer `TeamRoleField` labels. */
+const TEAM_SLOT_LABEL: Record<ProjectMemberRoleSlug, string> = {
+  project_maker: 'Project Maker',
+  project_checker: 'Project Checker',
+  project_verifier: 'Project Verifier',
+  project_head: 'Project Head',
+  project_engineer: 'Project Engineer',
+  project_supervisor: 'Supervisor',
 };
+
+const ESTIMATION_ROLE_ORDER: readonly ProjectMemberRoleSlug[] = [
+  'project_maker',
+  'project_checker',
+  'project_verifier',
+];
+
+const OPERATIONS_ROLE_ORDER: readonly ProjectMemberRoleSlug[] = [
+  'project_head',
+  'project_engineer',
+  'project_supervisor',
+];
 
 export function ProjectInfo({
   project,
@@ -60,6 +72,14 @@ export function ProjectInfo({
 }: ProjectInfoTabProps) {
   const projectDrawer = useOpenClose<ProjectsListRow | null>();
   const queryClient = useQueryClient();
+
+  const memberByRole = React.useMemo(() => {
+    const map = new Map<ProjectMemberRoleSlug, ProjectDetailMember>();
+    for (const row of project?.members_detail ?? []) {
+      map.set(row.role, row);
+    }
+    return map;
+  }, [project?.members_detail]);
 
   if (isLoading) {
     return <TableLoadingState />;
@@ -88,9 +108,7 @@ export function ProjectInfo({
 
   const meta = parseProjectMeta(project.meta);
   const scheduleLabel =
-    project.default_schedule_display_name ||
-    meta.client_label ||
-    '—';
+    project.default_schedule_display_name || meta.client_label || '—';
 
   return (
     <div className='space-y-6'>
@@ -98,7 +116,8 @@ export function ProjectInfo({
         <Button
           size='sm'
           onClick={() =>
-            project && projectDrawer.open(projectDetailToListRow(project), 'edit')
+            project &&
+            projectDrawer.open(projectDetailToListRow(project), 'edit')
           }
           className='h-8'
         >
@@ -184,18 +203,44 @@ export function ProjectInfo({
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
                 <h3 className='text-lg font-semibold text-foreground'>
-                  Project Teams
+                  Project Team
                 </h3>
               </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                {project.members_detail.map((m: ProjectDetailMember) => (
-                  <TeamMember
-                    key={`${m.role}-${m.user_id}`}
-                    role={ROLE_LABEL[m.role]}
-                    name={m.display_name}
-                    userId={m.user_id}
-                  />
-                ))}
+              <div className='space-y-4'>
+                <FieldSet
+                  className={cn(
+                    'gap-3 rounded-lg border bg-muted/30 p-4',
+                    '[&>[data-slot=field-legend]]:mb-0'
+                  )}
+                >
+                  <FieldLegend variant='legend'>Estimation</FieldLegend>
+                  <FieldGroup className='gap-3'>
+                    {ESTIMATION_ROLE_ORDER.map((slug) => (
+                      <TeamRoleReadOnlyRow
+                        key={slug}
+                        slug={slug}
+                        member={memberByRole.get(slug)}
+                      />
+                    ))}
+                  </FieldGroup>
+                </FieldSet>
+                <FieldSet
+                  className={cn(
+                    'gap-3 rounded-lg border bg-muted/30 p-4',
+                    '[&>[data-slot=field-legend]]:mb-0'
+                  )}
+                >
+                  <FieldLegend variant='legend'>Operations</FieldLegend>
+                  <FieldGroup className='gap-3'>
+                    {OPERATIONS_ROLE_ORDER.map((slug) => (
+                      <TeamRoleReadOnlyRow
+                        key={slug}
+                        slug={slug}
+                        member={memberByRole.get(slug)}
+                      />
+                    ))}
+                  </FieldGroup>
+                </FieldSet>
               </div>
             </div>
           </section>
@@ -216,6 +261,12 @@ export function ProjectInfo({
             const id = projectDrawer.data?.id || project.id;
             if (id) {
               queryClient.invalidateQueries({ queryKey: ['project', id] });
+              queryClient.invalidateQueries({
+                queryKey: [PROJECT_SEGMENTS_TABLE_ID, id],
+              });
+              queryClient.invalidateQueries({
+                queryKey: ['projectSegments', id],
+              });
             }
           }}
           onCancel={projectDrawer.close}
@@ -250,24 +301,43 @@ interface TeamMemberProps {
   name: string;
   userId: string;
   imageUrl?: string | null;
+  roleSlug?: ProjectMemberRoleSlug;
 }
+
+const AVATAR_CLASS_BY_ROLE_SLUG: Record<ProjectMemberRoleSlug, string> = {
+  project_maker: 'bg-blue-100 text-blue-700',
+  project_checker: 'bg-yellow-100 text-yellow-700',
+  project_verifier: 'bg-green-100 text-green-700',
+  project_head: 'bg-pink-100 text-pink-700',
+  project_engineer: 'bg-indigo-100 text-indigo-700',
+  project_supervisor: 'bg-purple-100 text-purple-700',
+};
 
 const roleColors: { [key: string]: string } = {
   Maker: 'bg-blue-100 text-blue-700',
   'Measurement Maker': 'bg-blue-100 text-blue-700',
+  'Project Maker': 'bg-blue-100 text-blue-700',
   Checker: 'bg-yellow-100 text-yellow-700',
   'Measurement Checker': 'bg-yellow-100 text-yellow-700',
+  'Project Checker': 'bg-yellow-100 text-yellow-700',
   Verifier: 'bg-green-100 text-green-700',
   'Measurement Verifier': 'bg-green-100 text-green-700',
+  'Project Verifier': 'bg-green-100 text-green-700',
   Supervisor: 'bg-purple-100 text-purple-700',
   Engineer: 'bg-indigo-100 text-indigo-700',
   'Project Engineer': 'bg-indigo-100 text-indigo-700',
   'Project Head': 'bg-pink-100 text-pink-700',
 };
 
-const getColorFromRole = (role: string) => {
+function getAvatarColorClass(
+  role: string,
+  roleSlug?: ProjectMemberRoleSlug
+): string {
+  if (roleSlug) {
+    return AVATAR_CLASS_BY_ROLE_SLUG[roleSlug];
+  }
   return roleColors[role] || 'bg-gray-100 text-gray-700';
-};
+}
 
 const getInitials = (name: string) => {
   if (!name) return '?';
@@ -278,8 +348,45 @@ const getInitials = (name: string) => {
   return `${firstInitial}${lastInitial}`.toUpperCase();
 };
 
-function TeamMember({ role, name, userId, imageUrl }: TeamMemberProps) {
-  const colorClass = getColorFromRole(role);
+function TeamRoleReadOnlyRow({
+  slug,
+  member,
+}: {
+  slug: ProjectMemberRoleSlug;
+  member: ProjectDetailMember | undefined;
+}) {
+  const label = TEAM_SLOT_LABEL[slug];
+  if (member) {
+    return (
+      <TeamMember
+        role={label}
+        name={member.display_name}
+        userId={member.user_id}
+        roleSlug={slug}
+      />
+    );
+  }
+  return (
+    <div className='flex items-center gap-3 rounded-lg border border-dashed bg-background/50 p-3'>
+      <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground'>
+        —
+      </div>
+      <div className='min-w-0 flex-1'>
+        <p className='truncate text-sm text-muted-foreground'>Not assigned</p>
+        <p className='truncate text-xs text-muted-foreground/80'>{label}</p>
+      </div>
+    </div>
+  );
+}
+
+function TeamMember({
+  role,
+  name,
+  userId,
+  imageUrl,
+  roleSlug,
+}: TeamMemberProps) {
+  const colorClass = getAvatarColorClass(role, roleSlug);
 
   return (
     <Link href={`/user/${userId}`} className='block'>

@@ -1,44 +1,28 @@
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { composeAccessTokenContext } from '@/lib/auth';
-import { UserRoleType } from '../../user/types';
-import { USER_ROLE_SLUG } from '@/lib/projects/persist-project';
+import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
 
 async function resolveRoleIdForUserSearch(
   tenantId: string,
-  userRole: UserRoleType
+  roleSlug: ProjectMemberRoleSlug
 ): Promise<string | null> {
   const supabase = createSupabaseBrowserClient();
-  const slug = USER_ROLE_SLUG[userRole];
   const firstResult = await supabase
     .schema('authz')
     .from('tenant_roles')
     .select('id')
     .eq('tenant_id', tenantId)
-    .eq('slug', slug)
+    .eq('slug', roleSlug)
     .maybeSingle();
   if (firstResult.error) {
     throw firstResult.error;
   }
-  let data = firstResult.data;
-  if (!data && userRole === UserRoleType.Superviser) {
-    const alt = await supabase
-      .schema('authz')
-      .from('tenant_roles')
-      .select('id')
-      .eq('tenant_id', tenantId)
-      .eq('slug', 'superviser')
-      .maybeSingle();
-    if (alt.error) {
-      throw alt.error;
-    }
-    data = alt.data;
-  }
-  return data?.id ?? null;
+  return firstResult.data?.id ?? null;
 }
 
 export async function fetchUserOptions(
   query: string,
-  userRole: UserRoleType,
+  roleSlug: ProjectMemberRoleSlug,
   page: number = 1,
   pageSize: number = 50,
   tenantId?: string | null
@@ -67,7 +51,7 @@ export async function fetchUserOptions(
     return { options: [], hasNextPage: false };
   }
 
-  const roleId = await resolveRoleIdForUserSearch(resolvedTenantId, userRole);
+  const roleId = await resolveRoleIdForUserSearch(resolvedTenantId, roleSlug);
   if (!roleId) {
     return { options: [], hasNextPage: false };
   }

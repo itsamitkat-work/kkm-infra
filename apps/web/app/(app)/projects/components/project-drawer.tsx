@@ -4,6 +4,7 @@ import * as React from 'react';
 import {
   useWatch,
   type Control,
+  type FieldPath,
   type UseFormReturn,
 } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -24,10 +25,16 @@ import { DrawerContentContainer } from '@/components/drawer/drawer-content-conta
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
 import { fetchScheduleSourceOptions } from '@/hooks/schedules/use-schedule-sources';
-import { projectStatusDisplayLabel, getStatusConfig } from '@/hooks/projects/use-project-status';
+import { fetchClientOptions } from '../hooks/use-client-options';
+import { parseClientAddresses, useClient } from '@/hooks/useClients';
+import type { ClientAddress } from '@/types/clients';
+import {
+  projectStatusDisplayLabel,
+  getStatusConfig,
+} from '@/hooks/projects/use-project-status';
 import { StatusLabel } from '@/components/ui/status-label';
 import { OpenCloseMode } from '@/hooks/use-open-close';
-import { UserRoleType } from '../../user/types';
+import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
 import { InputAddon } from '@/components/ui/input';
 import { Loader } from 'lucide-react';
 import { useProject } from '@/hooks/projects/use-project';
@@ -47,6 +54,10 @@ import { useAuth } from '@/hooks/auth';
 import { useAppForm } from '@/hooks/use-app-form';
 import { toast } from 'sonner';
 import { PROJECT_DB_STATUS } from '@/types/projects';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { FieldLegend } from '@/components/ui/field';
 
 interface SearchableOption {
   value: string;
@@ -59,25 +70,43 @@ const userPickSchema = z.object({
   name: z.string(),
 });
 
+const clientPickSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+});
+
+const projectScheduleRowSchema = z.object({
+  schedule_source_id: z.string(),
+  display_name: z.string(),
+  selected: z.boolean(),
+  is_default: z.boolean(),
+});
+
 const schedulePickSchema = z.object({
   id: z.string(),
   name: z.string(),
 });
 
-const optionalNonNegativeAmount = z.string().refine(
-  (val) => val.trim() === '' || (!isNaN(Number(val)) && Number(val) >= 0),
-  { message: 'Sanction amount must be a valid number' }
-);
+const optionalNonNegativeAmount = z
+  .string()
+  .refine(
+    (val) => val.trim() === '' || (!isNaN(Number(val)) && Number(val) >= 0),
+    { message: 'Sanction amount must be a valid number' }
+  );
 
 const optionalFormDate = z.string().refine(validDateFormat, {
   message: 'Invalid date. Use dd/MM/yyyy format or select from calendar.',
 });
 
-const FORM_SCHEMA = z.object({
+const FORM_SCHEMA_BASE = z.object({
   name: z.string().min(1, 'Project name is required'),
   code: z.string(),
   status: z.enum(
-    [PROJECT_DB_STATUS.ACTIVE, PROJECT_DB_STATUS.ON_HOLD, PROJECT_DB_STATUS.CLOSED],
+    [
+      PROJECT_DB_STATUS.ACTIVE,
+      PROJECT_DB_STATUS.ON_HOLD,
+      PROJECT_DB_STATUS.CLOSED,
+    ],
     { message: 'Status is required' }
   ),
   short_name: z.string(),
@@ -86,6 +115,8 @@ const FORM_SCHEMA = z.object({
   sanction_doc: optionalFormDate,
   location: z.string(),
   city: z.string(),
+  client: clientPickSchema,
+  project_schedule_rows: z.array(projectScheduleRowSchema),
   schedule_source: schedulePickSchema,
   client_address: z.string(),
   client_gstn: z
@@ -106,9 +137,130 @@ const FORM_SCHEMA = z.object({
   supervisor: userPickSchema,
 });
 
-type ProjectFormValues = z.infer<typeof FORM_SCHEMA>;
+function addDuplicatePersonIssues<T extends string>(
+  ctx: z.RefinementCtx,
+  entries: { path: T; id: string }[],
+  message: string
+) {
+  const byId = new Map<string, T[]>();
+  for (const { path, id } of entries) {
+    if (!id) {
+      continue;
+    }
+    const list = byId.get(id) ?? [];
+    list.push(path);
+    byId.set(id, list);
+  }
+  for (const paths of byId.values()) {
+    if (paths.length > 1) {
+      for (const p of paths) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message,
+          path: [p],
+        });
+      }
+    }
+  }
+}
+
+type ProjectFormValues = z.infer<typeof FORM_SCHEMA_BASE>;
+
+const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
+  const headId = val.project_head.id.trim();
+  const engineerId = val.project_engineer.id.trim();
+  const supervisorId = val.supervisor.id.trim();
+  const makerId = val.maker.id.trim();
+  const checkerId = val.checker.id.trim();
+  const verifierId = val.verifier.id.trim();
+
+  if (!headId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a project head.',
+      path: ['project_head'],
+    });
+  }
+  if (!engineerId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a project engineer.',
+      path: ['project_engineer'],
+    });
+  }
+  if (!supervisorId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a supervisor.',
+      path: ['supervisor'],
+    });
+  }
+
+  addDuplicatePersonIssues(
+    ctx,
+    [
+      { path: 'project_head', id: headId },
+      { path: 'project_engineer', id: engineerId },
+      { path: 'supervisor', id: supervisorId },
+    ],
+    'Team Operations: Project Head, Project Engineer, and Supervisor must be three different people.'
+  );
+
+  if (!makerId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a project maker.',
+      path: ['maker'],
+    });
+  }
+  if (!checkerId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a project checker.',
+      path: ['checker'],
+    });
+  }
+  if (!verifierId) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Select a project verifier.',
+      path: ['verifier'],
+    });
+  }
+
+  addDuplicatePersonIssues(
+    ctx,
+    [
+      { path: 'maker', id: makerId },
+      { path: 'checker', id: checkerId },
+      { path: 'verifier', id: verifierId },
+    ],
+    'Team Estimation: Project Maker, Checker, and Verifier must be three different people.'
+  );
+});
 
 const EMPTY_USER = { id: '', name: '' };
+
+const EMPTY_CLIENT = { id: '', name: '' };
+
+function addressesToSingleLine(addresses: ClientAddress[]): string {
+  if (!addresses.length) {
+    return '';
+  }
+  const a = addresses[0];
+  if (!a) {
+    return '';
+  }
+  const parts = [
+    a.line1,
+    a.line2,
+    a.city,
+    a.state,
+    a.pincode,
+    a.country,
+  ].filter((x) => typeof x === 'string' && x.trim().length > 0);
+  return parts.join(', ');
+}
 
 const STATUS_OPTIONS = [
   { value: PROJECT_DB_STATUS.ACTIVE, label: 'Active' },
@@ -139,10 +291,10 @@ function formatDateToForm(dateString?: string | null): string {
 function detailToFormValues(d: ProjectDetail): ProjectFormValues {
   const meta = parseProjectMeta(d.meta);
   const members = projectMembersToSelection(d.project_members);
-  const pick = (r: UserRoleType) => {
-    const id = members[r] ?? '';
+  const pick = (slug: ProjectMemberRoleSlug) => {
+    const id = members[slug] ?? '';
     const name =
-      d.members_detail.find((m: ProjectDetailMember) => m.role === r)
+      d.members_detail.find((m: ProjectDetailMember) => m.role === slug)
         ?.display_name ?? '';
     return { id, name };
   };
@@ -170,15 +322,20 @@ function detailToFormValues(d: ProjectDetail): ProjectFormValues {
     sanction_doc: formatDateToForm(meta.sanction_doc),
     location: meta.location ?? '',
     city: meta.city ?? '',
+    client: {
+      id: meta.client_id ?? '',
+      name: meta.client_display_name ?? '',
+    },
+    project_schedule_rows: [],
     schedule_source: { id: sid, name: sname },
     client_address: meta.client_address ?? '',
     client_gstn: meta.client_gstn ?? '',
-    verifier: pick(UserRoleType.Verifier),
-    checker: pick(UserRoleType.Checker),
-    maker: pick(UserRoleType.Maker),
-    project_head: pick(UserRoleType.ProjectHead),
-    project_engineer: pick(UserRoleType.Engineer),
-    supervisor: pick(UserRoleType.Superviser),
+    verifier: pick('project_verifier'),
+    checker: pick('project_checker'),
+    maker: pick('project_maker'),
+    project_head: pick('project_head'),
+    project_engineer: pick('project_engineer'),
+    supervisor: pick('project_supervisor'),
   };
 }
 
@@ -197,6 +354,11 @@ function listRowToFormValues(row: ProjectsListRow): ProjectFormValues {
     sanction_doc: formatDateToForm(meta.sanction_doc),
     location: meta.location ?? '',
     city: meta.city ?? '',
+    client: {
+      id: meta.client_id ?? '',
+      name: meta.client_display_name ?? '',
+    },
+    project_schedule_rows: [],
     schedule_source: {
       id: row.default_schedule_source_id ?? '',
       name: row.default_schedule_display_name ?? '',
@@ -223,6 +385,8 @@ function emptyFormValues(): ProjectFormValues {
     sanction_doc: '',
     location: '',
     city: '',
+    client: { ...EMPTY_CLIENT },
+    project_schedule_rows: [],
     schedule_source: { id: '', name: '' },
     client_address: '',
     client_gstn: '',
@@ -240,8 +404,7 @@ function valuesToMeta(
   forDirty: boolean
 ): import('@/types/projects').ProjectMeta {
   const sanctionTrim = v.sanction_amount.trim();
-  const parsedSanction =
-    sanctionTrim === '' ? null : Number(sanctionTrim);
+  const parsedSanction = sanctionTrim === '' ? null : Number(sanctionTrim);
   const sanction_amount =
     sanctionTrim === '' ||
     parsedSanction === null ||
@@ -259,20 +422,31 @@ function valuesToMeta(
     client_address: v.client_address.trim() || null,
     client_gstn: v.client_gstn || null,
   };
+  const clientLink =
+    v.client && typeof v.client.id === 'string' && v.client.id.trim().length > 0
+      ? {
+          client_id: v.client.id.trim(),
+          client_display_name: v.client.name.trim() || null,
+        }
+      : {};
   if (forDirty) {
-    return base;
+    return { ...base, ...clientLink };
   }
-  return { ...base, client_label: v.schedule_source.name || null };
+  return {
+    ...base,
+    ...clientLink,
+    client_label: v.schedule_source.name || null,
+  };
 }
 
 function toMemberSelection(v: ProjectFormValues): ProjectMemberSelection {
   return {
-    [UserRoleType.Verifier]: v.verifier.id,
-    [UserRoleType.Checker]: v.checker.id,
-    [UserRoleType.Maker]: v.maker.id,
-    [UserRoleType.ProjectHead]: v.project_head.id,
-    [UserRoleType.Engineer]: v.project_engineer.id,
-    [UserRoleType.Superviser]: v.supervisor.id,
+    project_verifier: v.verifier.id,
+    project_checker: v.checker.id,
+    project_maker: v.maker.id,
+    project_head: v.project_head.id,
+    project_engineer: v.project_engineer.id,
+    project_supervisor: v.supervisor.id,
   };
 }
 
@@ -287,6 +461,7 @@ export function ProjectDrawer({
   const isRead = mode === 'read';
   const isCopy =
     mode === 'create' && Boolean(project?.name?.includes('(Copy)'));
+  const isNewCreate = mode === 'create' && !isCopy;
 
   const createProjectMutation = useCreateProject();
   const updateProjectMutation = useUpdateProject();
@@ -301,11 +476,7 @@ export function ProjectDrawer({
 
   const detailId = needsDetail ? project?.id : undefined;
 
-  const {
-    project: projectDetail,
-    isLoading,
-    isError,
-  } = useProject(detailId);
+  const { project: projectDetail, isLoading, isError } = useProject(detailId);
 
   const effectiveMemberTenantId =
     projectDetail?.tenant_id ?? (tenantId || null);
@@ -328,17 +499,47 @@ export function ProjectDrawer({
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
-    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
-    beforeSubmit: async () => {
+    onEmptyPatch: isEdit
+      ? () => toast.message('No changes to save')
+      : undefined,
+    beforeSubmit: async (values) => {
       if (!isEdit && !isSystemAdmin && !tenantId) {
         toast.error('Missing tenant context.');
         return false;
+      }
+      if (isNewCreate) {
+        const cid = values.client.id?.trim();
+        if (!cid) {
+          toast.error('Select a client.');
+          return false;
+        }
+        const rows = values.project_schedule_rows ?? [];
+        const selected = rows.filter((r) => r.selected);
+        if (selected.length === 0) {
+          toast.error(
+            'Select at least one schedule from the client. Add schedules on the client first.'
+          );
+          return false;
+        }
+        if (!selected.some((r) => r.is_default)) {
+          toast.error('Choose a default schedule among the selected ones.');
+          return false;
+        }
       }
       return true;
     },
     onCreate: async (values) => {
       try {
         const members = toMemberSelection(values);
+        const rows = values.project_schedule_rows ?? [];
+        const selected = rows.filter((r) => r.selected);
+        const defaultRow = selected.find((r) => r.is_default) ?? selected[0];
+        const defaultScheduleId =
+          defaultRow?.schedule_source_id ?? values.schedule_source.id.trim();
+        const additionalScheduleIds = selected
+          .map((r) => r.schedule_source_id)
+          .filter((id) => id && id !== defaultScheduleId);
+
         await createProjectMutation.mutateAsync({
           name: values.name,
           code: values.code.trim() || null,
@@ -346,8 +547,11 @@ export function ProjectDrawer({
           meta: {
             ...valuesToMeta(values, false),
           },
-          ...(values.schedule_source.id.trim()
-            ? { schedule_source_id: values.schedule_source.id }
+          ...(defaultScheduleId
+            ? { schedule_source_id: defaultScheduleId }
+            : {}),
+          ...(additionalScheduleIds.length > 0
+            ? { additional_schedule_source_ids: additionalScheduleIds }
             : {}),
           members,
         });
@@ -404,9 +608,77 @@ export function ProjectDrawer({
     form.reset(getDefaultValues());
   }, [projectDetail?.id, mode, getDefaultValues, form]);
 
+  const watchClientId = useWatch({
+    control: form.control,
+    name: 'client.id',
+  });
+
+  const { client: linkedClientDetail } = useClient(
+    isNewCreate && watchClientId?.trim() ? watchClientId : undefined
+  );
+
+  const lastHydratedClientIdRef = React.useRef<string | null>(null);
+
+  React.useEffect(() => {
+    if (!isNewCreate) {
+      return;
+    }
+    if (!watchClientId?.trim()) {
+      lastHydratedClientIdRef.current = null;
+      form.setValue('project_schedule_rows', []);
+      form.setValue('client_gstn', '');
+      form.setValue('client_address', '');
+      form.setValue('schedule_source', { id: '', name: '' });
+      return;
+    }
+    if (!linkedClientDetail || linkedClientDetail.id !== watchClientId) {
+      return;
+    }
+    if (lastHydratedClientIdRef.current === watchClientId) {
+      return;
+    }
+    lastHydratedClientIdRef.current = watchClientId;
+    const addressStr = addressesToSingleLine(
+      parseClientAddresses(linkedClientDetail.addresses)
+    );
+    form.setValue('client_gstn', linkedClientDetail.gstin ?? '', {
+      shouldValidate: true,
+    });
+    form.setValue('client_address', addressStr, {
+      shouldValidate: true,
+    });
+    const rows = (linkedClientDetail.client_schedules ?? [])
+      .filter((s) => s.is_active)
+      .map((s) => ({
+        schedule_source_id: s.schedule_source_id,
+        display_name:
+          s.schedule_sources?.display_name ??
+          s.schedule_sources?.name ??
+          'Schedule',
+        selected: true,
+        is_default: Boolean(s.is_default),
+      }));
+    form.setValue('project_schedule_rows', rows, { shouldValidate: true });
+    const def = rows.find((r) => r.is_default) ?? rows[0];
+    if (def) {
+      form.setValue(
+        'schedule_source',
+        { id: def.schedule_source_id, name: def.display_name },
+        { shouldValidate: true }
+      );
+    }
+  }, [isNewCreate, watchClientId, linkedClientDetail, form]);
+
   const memberFetcher = React.useCallback(
-    (role: UserRoleType) => (query: string, page: number = 1) =>
-      fetchUserOptions(query, role, page, 50, effectiveMemberTenantId),
+    (roleSlug: ProjectMemberRoleSlug) =>
+      (query: string, page: number = 1) =>
+        fetchUserOptions(
+          query,
+          roleSlug,
+          page,
+          50,
+          effectiveMemberTenantId
+        ),
     [effectiveMemberTenantId]
   );
 
@@ -515,11 +787,22 @@ export function ProjectDrawer({
               statusOptions={statusOptions}
             />
             <LocationDetailsSection control={form.control} readOnly={isRead} />
-            <ScheduleSourceInformationSection
-              control={form.control}
-              readOnly={isRead}
-              form={form}
-            />
+            {isNewCreate ? (
+              <ClientLinkedScheduleSection
+                control={form.control}
+                readOnly={isRead}
+                form={form}
+                clientSchedulesLoading={
+                  Boolean(watchClientId?.trim()) && !linkedClientDetail
+                }
+              />
+            ) : (
+              <ScheduleSourceInformationSection
+                control={form.control}
+                readOnly={isRead}
+                form={form}
+              />
+            )}
             <ProjectTeamsSection
               control={form.control}
               readOnly={isRead}
@@ -696,6 +979,199 @@ const LocationDetailsSection = React.memo(function LocationDetailsSection({
   );
 });
 
+const ClientLinkedScheduleSection = React.memo(
+  function ClientLinkedScheduleSection({
+    control,
+    readOnly,
+    form,
+    clientSchedulesLoading,
+  }: {
+    control: Control<ProjectFormValues>;
+    readOnly: boolean;
+    form: UseFormReturn<ProjectFormValues>;
+    clientSchedulesLoading: boolean;
+  }) {
+    const rows = useWatch({ control, name: 'project_schedule_rows' }) ?? [];
+    const { setValue } = form;
+
+    function syncSchedulePickFromRows(
+      next: ProjectFormValues['project_schedule_rows']
+    ) {
+      const def =
+        next.find((r) => r.selected && r.is_default) ??
+        next.find((r) => r.selected);
+      if (def) {
+        setValue(
+          'schedule_source',
+          { id: def.schedule_source_id, name: def.display_name },
+          { shouldValidate: true }
+        );
+      }
+    }
+
+    function updateRows(next: ProjectFormValues['project_schedule_rows']) {
+      setValue('project_schedule_rows', next, {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+      syncSchedulePickFromRows(next);
+    }
+
+    function handleToggleSelected(index: number, checked: boolean) {
+      const prev = rows[index];
+      if (!prev) {
+        return;
+      }
+      let next = rows.map((r, i) =>
+        i === index ? { ...r, selected: Boolean(checked) } : { ...r }
+      );
+      if (!checked && prev.is_default) {
+        next = next.map((r) => ({ ...r, is_default: false }));
+        const first = next.find((r) => r.selected);
+        if (first) {
+          const fi = next.findIndex(
+            (r) => r.schedule_source_id === first.schedule_source_id
+          );
+          if (fi >= 0) {
+            next[fi] = { ...next[fi], is_default: true };
+          }
+        }
+      }
+      if (checked && !next.some((r) => r.selected && r.is_default)) {
+        next = next.map((r) => ({
+          ...r,
+          is_default: r.schedule_source_id === next[index].schedule_source_id,
+        }));
+      }
+      updateRows(next);
+    }
+
+    function handleSetDefaultSchedule(scheduleSourceId: string) {
+      const next = rows.map((r) => ({
+        ...r,
+        is_default: r.selected && r.schedule_source_id === scheduleSourceId,
+      }));
+      updateRows(next);
+    }
+
+    const selectedDefaultId =
+      rows.find((r) => r.selected && r.is_default)?.schedule_source_id ?? '';
+
+    return (
+      <FormSection title='Client and schedules'>
+        <FormSearchableComboboxField
+          control={control}
+          name='client'
+          label='Client'
+          placeholder='Search and select a client'
+          fetchOptions={fetchClientOptions}
+          readOnly={readOnly}
+          required
+          searchPlaceholder='Search clients…'
+          emptyMessage='No clients found'
+          getValue={(option) => ({
+            id: option.value,
+            name: option.label,
+          })}
+          getDisplayValue={(fieldValue) =>
+            (fieldValue as { name?: string })?.name || ''
+          }
+          getOptionValue={(fieldValue) =>
+            (fieldValue as { id?: string })?.id || ''
+          }
+        />
+
+        {clientSchedulesLoading && (
+          <p className='text-sm text-muted-foreground flex items-center gap-2'>
+            <Loader className='h-4 w-4 animate-spin' aria-hidden />
+            Loading client schedules…
+          </p>
+        )}
+
+        {!readOnly && rows.length > 0 && (
+          <div className='space-y-2'>
+            <Label className='text-sm font-medium'>
+              Schedules for this project
+            </Label>
+            <p className='text-xs text-muted-foreground'>
+              Only schedules linked to the client are listed. Uncheck any you do
+              not need; choose one default for pricing and tree data.
+            </p>
+            <RadioGroup
+              value={selectedDefaultId}
+              onValueChange={handleSetDefaultSchedule}
+              className='flex flex-col gap-2'
+            >
+              {rows.map((row, index) => (
+                <div
+                  key={row.schedule_source_id}
+                  className='flex items-center gap-3 rounded-md border px-3 py-2'
+                >
+                  <Checkbox
+                    checked={row.selected}
+                    disabled={readOnly}
+                    onCheckedChange={(v) => {
+                      handleToggleSelected(index, v === true);
+                    }}
+                    aria-label={`Include ${row.display_name}`}
+                  />
+                  <RadioGroupItem
+                    value={row.schedule_source_id}
+                    id={`proj-sched-${row.schedule_source_id}`}
+                    disabled={!row.selected}
+                  />
+                  <Label
+                    htmlFor={`proj-sched-${row.schedule_source_id}`}
+                    className='flex-1 truncate font-normal'
+                  >
+                    {row.display_name}
+                    {row.selected && row.is_default && (
+                      <span className='ml-2 text-xs text-muted-foreground'>
+                        (default)
+                      </span>
+                    )}
+                  </Label>
+                </div>
+              ))}
+            </RadioGroup>
+          </div>
+        )}
+
+        {readOnly && rows.length > 0 && (
+          <ul className='list-disc pl-5 text-sm text-muted-foreground'>
+            {rows
+              .filter((r) => r.selected)
+              .map((r) => (
+                <li key={r.schedule_source_id}>
+                  {r.display_name}
+                  {r.is_default ? ' (default)' : ''}
+                </li>
+              ))}
+          </ul>
+        )}
+
+        <FormInputField
+          control={control}
+          name='client_address'
+          label='Client address'
+          placeholder='Imported from client (editable)'
+          readOnly={readOnly}
+        />
+
+        <FormInputField
+          control={control}
+          name='client_gstn'
+          label='Client GSTIN'
+          placeholder='Imported from client (editable)'
+          readOnly={readOnly}
+          type='text'
+          inputAddon={<InputAddon>GST</InputAddon>}
+        />
+      </FormSection>
+    );
+  }
+);
+
 const ScheduleSourceInformationSection = React.memo(
   function ScheduleSourceInformationSection({
     control,
@@ -765,126 +1241,122 @@ const ScheduleSourceInformationSection = React.memo(
   }
 );
 
+type ProjectMemberOptionsFetcher = (
+  search: string,
+  page?: number
+) => Promise<{
+  options: { value: string; label: string }[];
+  hasNextPage: boolean;
+}>;
+
+type ProjectTeamsSectionProps = {
+  control: Control<ProjectFormValues>;
+  readOnly: boolean;
+  fetchUser: (
+    roleSlug: ProjectMemberRoleSlug
+  ) => (query: string, page?: number) => ReturnType<typeof fetchUserOptions>;
+};
+
+function TeamRoleField({
+  control,
+  readOnly,
+  name,
+  label,
+  placeholder,
+  fetchOptions,
+}: {
+  control: Control<ProjectFormValues>;
+  readOnly: boolean;
+  name: FieldPath<ProjectFormValues>;
+  label: string;
+  placeholder: string;
+  fetchOptions: ProjectMemberOptionsFetcher;
+}) {
+  return (
+    <FormSearchableComboboxField
+      control={control}
+      name={name}
+      label={label}
+      placeholder={placeholder}
+      fetchOptions={fetchOptions}
+      readOnly={readOnly}
+      required
+      searchPlaceholder='Search users…'
+      emptyMessage='No users found'
+      getValue={(option) => ({ id: option.value, name: option.label })}
+      getDisplayValue={(fieldValue) =>
+        (fieldValue as { name?: string })?.name || ''
+      }
+      getOptionValue={(fieldValue) => (fieldValue as { id?: string })?.id || ''}
+    />
+  );
+}
+
 const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
   control,
   readOnly,
   fetchUser,
-}: {
-  control: Control<ProjectFormValues>;
-  readOnly: boolean;
-  fetchUser: (
-    role: UserRoleType
-  ) => (query: string, page?: number) => ReturnType<typeof fetchUserOptions>;
-}) {
+}: ProjectTeamsSectionProps) {
   return (
-    <FormSection title='Project teams' showSeparator>
-      <FormSearchableComboboxField
-        control={control}
-        name='verifier'
-        label='Measurement Verifier'
-        placeholder='Select measurement verifier'
-        fetchOptions={fetchUser(UserRoleType.Verifier)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
-
-      <FormSearchableComboboxField
-        control={control}
-        name='checker'
-        label='Measurement Checker'
-        placeholder='Select measurement checker'
-        fetchOptions={fetchUser(UserRoleType.Checker)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
-
-      <FormSearchableComboboxField
-        control={control}
-        name='maker'
-        label='Measurement Maker'
-        placeholder='Select measurement maker'
-        fetchOptions={fetchUser(UserRoleType.Maker)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
-
-      <FormSearchableComboboxField
-        control={control}
-        name='project_head'
-        label='Project Head'
-        placeholder='Select project head'
-        fetchOptions={fetchUser(UserRoleType.ProjectHead)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
-
-      <FormSearchableComboboxField
-        control={control}
-        name='project_engineer'
-        label='Project Engineer'
-        placeholder='Select project engineer'
-        fetchOptions={fetchUser(UserRoleType.Engineer)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
-
-      <FormSearchableComboboxField
-        control={control}
-        name='supervisor'
-        label='Supervisor'
-        placeholder='Select supervisor'
-        fetchOptions={fetchUser(UserRoleType.Superviser)}
-        readOnly={readOnly}
-        searchPlaceholder='Search users...'
-        emptyMessage='No users found'
-        getValue={(option) => ({ id: option.value, name: option.label })}
-        getDisplayValue={(fieldValue) =>
-          (fieldValue as { name?: string })?.name || ''
-        }
-        getOptionValue={(fieldValue) =>
-          (fieldValue as { id?: string })?.id || ''
-        }
-      />
+    <FormSection title='Project Team' showSeparator={false}>
+      <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
+        <FieldLegend variant='legend'>Estimation</FieldLegend>
+        <div className='space-y-4'>
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='maker'
+            label='Project Maker'
+            placeholder='Select project maker'
+            fetchOptions={fetchUser('project_maker')}
+          />
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='checker'
+            label='Project Checker'
+            placeholder='Select project checker'
+            fetchOptions={fetchUser('project_checker')}
+          />
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='verifier'
+            label='Project Verifier'
+            placeholder='Select project verifier'
+            fetchOptions={fetchUser('project_verifier')}
+          />
+        </div>
+      </div>
+      <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
+        <FieldLegend variant='legend'>Operations</FieldLegend>
+        <div className='space-y-4'>
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='project_head'
+            label='Project Head'
+            placeholder='Select project head'
+            fetchOptions={fetchUser('project_head')}
+          />
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='project_engineer'
+            label='Project Engineer'
+            placeholder='Select project engineer'
+            fetchOptions={fetchUser('project_engineer')}
+          />
+          <TeamRoleField
+            control={control}
+            readOnly={readOnly}
+            name='supervisor'
+            label='Supervisor'
+            placeholder='Select supervisor'
+            fetchOptions={fetchUser('project_supervisor')}
+          />
+        </div>
+      </div>
     </FormSection>
   );
 });
@@ -892,6 +1364,7 @@ const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
 SanctionAmountField.displayName = 'SanctionAmountField';
 BasicInformationSection.displayName = 'BasicInformationSection';
 LocationDetailsSection.displayName = 'LocationDetailsSection';
+ClientLinkedScheduleSection.displayName = 'ClientLinkedScheduleSection';
 ScheduleSourceInformationSection.displayName =
   'ScheduleSourceInformationSection';
 ProjectTeamsSection.displayName = 'ProjectTeamsSection';

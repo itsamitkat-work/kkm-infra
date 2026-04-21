@@ -713,8 +713,59 @@ export type Database = {
           },
         ]
       }
+      project_segments: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number
+          end_date: string | null
+          id: string
+          project_id: string
+          segment_name: string
+          segment_type: string
+          start_date: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          end_date?: string | null
+          id?: string
+          project_id: string
+          segment_name: string
+          segment_type?: string
+          start_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          end_date?: string | null
+          id?: string
+          project_id?: string
+          segment_name?: string
+          segment_type?: string
+          start_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_segments_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       projects: {
         Row: {
+          client_id: string | null
           code: string | null
           created_at: string
           id: string
@@ -725,6 +776,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          client_id?: string | null
           code?: string | null
           created_at?: string
           id?: string
@@ -735,6 +787,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          client_id?: string | null
           code?: string | null
           created_at?: string
           id?: string

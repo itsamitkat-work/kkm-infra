@@ -12,8 +12,12 @@ import type { Filter } from '@/components/ui/filters';
 import type { PaginationResponse } from '@/types/common';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import type { Database, Json } from '@kkm/db';
-import { UserRoleType } from '@/app/(app)/user/types';
 import type { ProjectMeta } from '@/types/projects';
+import {
+  isProjectMemberRoleSlug,
+  PROJECT_MEMBER_ROLE_SLUGS,
+  type ProjectMemberRoleSlug,
+} from '@/types/project-member-roles';
 import { buildProjectMetaPatch } from '@/lib/projects/project-meta';
 import {
   createProjectWithRelations,
@@ -55,7 +59,7 @@ export type ProjectMemberDetail = {
 };
 
 export type ProjectDetailMember = {
-  role: UserRoleType;
+  role: ProjectMemberRoleSlug;
   user_id: string;
   display_name: string;
 };
@@ -252,25 +256,12 @@ export function useProjectsQuery(params: {
   };
 }
 
-const SLUG_TO_MEMBER_ROLE: Record<string, UserRoleType> = {
-  maker: UserRoleType.Maker,
-  checker: UserRoleType.Checker,
-  verifier: UserRoleType.Verifier,
-  project_head: UserRoleType.ProjectHead,
-  engineer: UserRoleType.Engineer,
-  supervisor: UserRoleType.Superviser,
-  superviser: UserRoleType.Superviser,
-};
-
 function emptyMemberSelection(): ProjectMemberSelection {
-  return {
-    [UserRoleType.Maker]: '',
-    [UserRoleType.Checker]: '',
-    [UserRoleType.Verifier]: '',
-    [UserRoleType.ProjectHead]: '',
-    [UserRoleType.Engineer]: '',
-    [UserRoleType.Superviser]: '',
-  };
+  const sel = {} as ProjectMemberSelection;
+  for (const slug of PROJECT_MEMBER_ROLE_SLUGS) {
+    sel[slug] = '';
+  }
+  return sel;
 }
 
 export function projectMembersToSelection(
@@ -279,8 +270,9 @@ export function projectMembersToSelection(
   const sel = emptyMemberSelection();
   for (const m of members) {
     const slug = (m.role_slug ?? '').toLowerCase();
-    const role = SLUG_TO_MEMBER_ROLE[slug];
-    if (role) sel[role] = m.user_id;
+    if (isProjectMemberRoleSlug(slug)) {
+      sel[slug] = m.user_id;
+    }
   }
   return sel;
 }
@@ -372,10 +364,11 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
   const members_detail: ProjectDetailMember[] = [];
   for (const m of memberDetails) {
     const slug = (m.role_slug ?? '').toLowerCase();
-    const role = SLUG_TO_MEMBER_ROLE[slug];
-    if (!role) continue;
+    if (!isProjectMemberRoleSlug(slug)) {
+      continue;
+    }
     members_detail.push({
-      role,
+      role: slug,
       user_id: m.user_id,
       display_name: nameByUser.get(m.user_id) ?? '—',
     });

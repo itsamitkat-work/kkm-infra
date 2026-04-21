@@ -16,6 +16,8 @@ export function parseProjectMeta(meta: Json | null | undefined): ProjectMeta {
     client_address: readString(o.client_address),
     client_gstn: readString(o.client_gstn),
     client_label: readString(o.client_label),
+    client_id: readString(o.client_id),
+    client_display_name: readString(o.client_display_name),
   };
 }
 

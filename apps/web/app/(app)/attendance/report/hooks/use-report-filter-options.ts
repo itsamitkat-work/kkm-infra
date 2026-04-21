@@ -3,19 +3,19 @@
 import * as React from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { fetchUserOptions } from '@/app/(app)/projects/hooks/use-user';
-import { UserRoleType } from '@/app/(app)/user/types';
+import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
 import { fetchProjects } from '@/hooks/useProjects';
 import { useWorkers } from './use-workers';
 
 // Fetch all users by role (for project heads, engineers, supervisors)
-function useUsersByRole(role: UserRoleType) {
+function useUsersByRole(roleSlug: ProjectMemberRoleSlug) {
   const query = useInfiniteQuery({
-    queryKey: ['users-by-role', role],
+    queryKey: ['users-by-role', roleSlug],
     queryFn: async ({ pageParam = 1 }) => {
       // Fetch with empty query to get all users
       const result = await fetchUserOptions(
         '',
-        role,
+        roleSlug,
         pageParam as number,
         50,
         undefined
@@ -107,9 +107,9 @@ function useAllProjects() {
 }
 
 export function useReportFilterOptions() {
-  const projectHeads = useUsersByRole(UserRoleType.ProjectHead);
-  const engineers = useUsersByRole(UserRoleType.Engineer);
-  const supervisors = useUsersByRole(UserRoleType.Superviser);
+  const projectHeads = useUsersByRole('project_head');
+  const engineers = useUsersByRole('project_engineer');
+  const supervisors = useUsersByRole('project_supervisor');
   const projects = useAllProjects();
   const workers = useWorkers();
 

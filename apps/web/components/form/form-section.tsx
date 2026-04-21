@@ -7,6 +7,7 @@ import {
   FieldLegend,
   FieldDescription,
   FieldSeparator,
+  FieldTitle,
 } from '@/components/ui/field';
 
 interface FormSectionProps {
@@ -19,17 +20,20 @@ interface FormSectionProps {
 }
 
 export const FormSection = React.memo<FormSectionProps>(
-  ({ title, description, children, showSeparator = true, className, titleClassName }) => {
+  ({
+    title,
+    description,
+    children,
+    showSeparator = true,
+    className,
+    titleClassName,
+  }) => {
     return (
       <FieldSet className={className}>
         {showSeparator && <FieldSeparator />}
-        <FieldLegend variant='label' className={titleClassName}>
-          {title}
-        </FieldLegend>
+        <FieldTitle className={titleClassName}>{title}</FieldTitle>
         {description && <FieldDescription>{description}</FieldDescription>}
-        <FieldGroup>
-          {children}
-        </FieldGroup>
+        <FieldGroup>{children}</FieldGroup>
       </FieldSet>
     );
   }
