@@ -26,6 +26,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarSeparator,
   useSidebar,
 } from '@/components/ui/sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -262,15 +263,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>{renderNavItems(purchaseOrderItems)}</SidebarMenu>
         </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>Construction Tools</SidebarGroupLabel>
-          <SidebarMenu>{renderNavItems(constructionToolsItems)}</SidebarMenu>
-        </SidebarGroup>
-
         {typeof window !== 'undefined' && administrationNavItems.length > 0 && (
           <SidebarGroup>
             <SidebarGroupLabel>Administration</SidebarGroupLabel>
-            <SidebarMenu>{renderNavItems(administrationNavItems)}</SidebarMenu>
+            <SidebarMenu>
+              {renderNavItems(constructionToolsItems)}
+              <SidebarSeparator />
+              {renderNavItems(administrationNavItems)}
+            </SidebarMenu>
           </SidebarGroup>
         )}
       </SidebarContent>
