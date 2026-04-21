@@ -16,7 +16,7 @@
     "sdm": "supabase migration up --local",
     "seed:app": "bash supabase/scripts/seed-app.sh",
     "seed:schedule": "bash supabase/scripts/seed-app.sh",
-    "db:reset:seed": "pnpm run db:reset && bash supabase/scripts/seed-app.sh",
+    "db:reset:seed": "pnpm run sdr && bash supabase/scripts/seed-app.sh",
     "parse:bypl": "python3 apps/parser_pipeline/parse_bypl_csv.py",
     "parse:pdfs": "python3 apps/parser_pipeline/parse_pdf.py --all",
     "generate:units": "python3 supabase/scripts/generate-units-from-schedules.py"

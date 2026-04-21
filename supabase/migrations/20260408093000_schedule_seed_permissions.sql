@@ -1,2 +1,0 @@
--- Schedule-related permission keys live in supabase/seed/auth_authz_seed.sql
--- (authz.permissions upsert) alongside the rest of the authz catalog.

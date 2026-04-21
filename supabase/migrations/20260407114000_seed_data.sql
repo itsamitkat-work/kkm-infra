@@ -1,5 +1,0 @@
--- Core authz + dev auth users are seeded by SQL after migrations:
---   supabase/seed/auth_authz_seed.sql (see config.toml db.seed.sql_paths)
--- App seed (units, schedules, basic rates): pnpm seed:app
---
--- Intentionally a no-op; run db reset + seed scripts after migrations.

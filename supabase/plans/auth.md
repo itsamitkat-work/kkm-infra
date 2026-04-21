@@ -523,39 +523,15 @@ Each audit row captures: user_id and tenant_id (from JWT claims), action (insert
 
 ## 18. Seed Data Strategy
 
-All seed data lives in one migration (`20260407114000_seed_data.sql`) that runs identically on local, preview, and production.
-
-### Migration seed contents
-
-| Step | What                               | Detail                                                                                      |
-| ---- | ---------------------------------- | ------------------------------------------------------------------------------------------- |
-| 1    | Permission keys                    | 13 keys (`items.read`, `tenant_members.manage`, etc.) — idempotent upsert                          |
-| 2    | System role templates              | 7 roles (`tenant_admin`, `project_engineer`, etc.) — idempotent upsert                      |
-| 3    | Initial tenant                     | KKM Infra (`kkm-infra` slug). `handle_new_tenant` trigger copies system roles automatically |
-| 4    | tenant_admin gets ALL permissions  | `CROSS JOIN authz.permissions` into `tenant_role_permissions`                                       |
-
-> **No users are seeded in migrations.** Creating users with hardcoded passwords in version-controlled migrations is a security risk. The first system admin should sign up via Supabase Auth, then be promoted with a one-time SQL command (see migration header comments).
-
-### Local dev seed (`seed.sql`)
-
-Runs only on `supabase db reset`. Creates three test users in the KKM Infra tenant:
-
-| Email                  | Role                 | Extra permissions                                                     |
-| ---------------------- | -------------------- | --------------------------------------------------------------------- |
-| `admin@dev.local`      | `tenant_admin`       | All (system admin + tenant admin)                                     |
-| `engineer@dev.local`   | `project_engineer`   | `items.read`, `tenants.read`, `roles.read`                            |
-| `checker@dev.local`    | `project_checker`    | `items.read`, `tenants.read`, `roles.read`                            |
-| `supervisor@dev.local` | `project_supervisor` | `items.*`, `tenants.read`, `roles.read`, `tenant_members.manage`, `audit.read`, `alerts.read` |
-
-All dev users share the password `password`.
+Schema is applied by migrations only (`supabase/migrations/`). After each `supabase db reset`, SQL seeds run in order from `config.toml` (`db.seed.sql_paths`): `seed.sql` then `seed/auth_authz_seed.sql` (local/CI dev users, authz catalog, tenants). App data (schedules, units, and so on) is loaded separately (for example `pnpm seed:app`).
 
 ### Key design decisions
 
-- **No users in migrations**: User creation with hardcoded passwords in VCS is a security risk. Only schema data (permissions, roles, tenant) goes in migrations.
-- **Single migration, not `seed.sql`**: Production environments get seed data via `supabase db push` (which applies migrations). `seed.sql` only runs on local reset.
-- **Idempotent**: All inserts use `ON CONFLICT DO NOTHING` / `DO UPDATE`. Safe to re-run.
-- **Production admin bootstrap**: After deploying, the first admin signs up normally, then is promoted via `UPDATE public.profiles SET is_system_admin = true` + `sync_tenant_member_roles`.
-- **Future tenants**: Created at runtime via Edge Functions or via new migrations.
+- **No auth users in migrations**: Dev users and catalog data live in seed SQL, not in versioned schema migrations.
+- **`db push` applies migrations only**: Hosted preview/production do not run `seed.sql` on push unless you configure that separately.
+- **Idempotent seeds**: Seed files use `ON CONFLICT` patterns where appropriate.
+- **Production admin bootstrap**: After deploying, the first admin signs up via Auth, then is promoted as needed (`profiles.is_system_admin`, membership sync).
+- **Future tenants**: Created at runtime via APIs or admin flows.
 
 ---
 
@@ -610,13 +586,10 @@ Run with: `supabase test db`
 supabase/
 ├── config.toml                                    # Auth settings, hook config
 ├── migrations/
-│   ├── 20260407105459_foundation_auth_schemas.sql  # Tables, indexes, schema grants
-│   ├── 20260407110000_auth_functions_and_triggers.sql  # Functions, triggers, privilege guard
-│   ├── 20260407111000_custom_access_token_hook.sql # JWT enrichment hook
-│   ├── 20260407112000_rls_policies.sql             # RLS on tenants, profiles, tenant_members
-│   ├── 20260407113000_session_security_and_alerting.sql  # Sessions, risk, alerts, cron jobs, RPCs
-│   ├── 20260407114000_seed_data.sql                         # Permissions, roles, initial tenant, system admin
-│   └── 20260407115000_pgtap_test_helpers.sql       # Test schema + helpers
+│   └── 20260422180000_init_schema.sql              # Squashed baseline (schema + RLS + functions + hooks)
+├── seed.sql                                        # No-op placeholder; ordering hook for seeds
+├── seed/
+│   └── auth_authz_seed.sql                         # Local/CI auth + authz catalog and dev users
 ├── functions/
 │   ├── _shared/runtime.ts                          # Shared middleware, rate limiting, CORS, helpers
 │   ├── bind-session/index.ts

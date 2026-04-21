@@ -1,6 +1,0 @@
--- Unit seed for local/CI moved to:
---   supabase/schedule-seed/manifest.json  (top-level "units")
---   supabase/functions/ensure-units
---   pnpm seed:schedule  (or db:reset:schedule)
---
--- Intentionally a no-op; new environments rely on the manifest pipeline.
