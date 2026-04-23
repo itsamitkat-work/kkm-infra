@@ -2,6 +2,7 @@
 
 import { useQuery, type QueryClient } from '@tanstack/react-query';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import type { ProjectBoqDomainLinesType } from '@/app/projects/[id]/estimation/types';
 
 export type ProjectTabCounts = {
   plannedBoqLines: number;
@@ -16,22 +17,17 @@ export function projectTabCountsQueryKey(projectId: string) {
   return [PROJECT_TAB_COUNTS_ROOT_QUERY_KEY, projectId] as const;
 }
 
-type CountTable =
-  | 'project_boq_lines'
-  | 'project_estimation_lines'
-  | 'project_measurement_lines'
-  | 'project_billing_lines';
-
-async function countByProjectId(
-  table: Exclude<CountTable, 'project_boq_lines'>,
+async function countBoqLinesByType(
   projectId: string,
+  projectBoqLinesType: 'planned',
   signal?: AbortSignal
 ): Promise<number> {
   const supabase = createSupabaseBrowserClient();
   let q = supabase
-    .from(table)
+    .from('project_boq_lines')
     .select('id', { count: 'exact', head: true })
-    .eq('project_id', projectId);
+    .eq('project_id', projectId)
+    .eq('project_boq_lines_type', projectBoqLinesType);
   if (signal) {
     q = q.abortSignal(signal);
   }
@@ -42,8 +38,10 @@ async function countByProjectId(
   return count ?? 0;
 }
 
-async function countPlannedBoqLinesByProjectId(
+/** Same rows as `fetchAllProjectBoqLines(projectId, domain)` — baseline + that sheet's supplementary lines. */
+async function countBoqLinesForDomainTab(
   projectId: string,
+  domain: ProjectBoqDomainLinesType,
   signal?: AbortSignal
 ): Promise<number> {
   const supabase = createSupabaseBrowserClient();
@@ -51,7 +49,7 @@ async function countPlannedBoqLinesByProjectId(
     .from('project_boq_lines')
     .select('id', { count: 'exact', head: true })
     .eq('project_id', projectId)
-    .eq('project_boq_lines_type', 'planned');
+    .or(`project_boq_lines_type.eq.planned,project_boq_lines_type.eq.${domain}`);
   if (signal) {
     q = q.abortSignal(signal);
   }
@@ -72,10 +70,10 @@ async function fetchProjectTabCounts(
     measurementLines,
     billingLines,
   ] = await Promise.all([
-    countPlannedBoqLinesByProjectId(projectId, signal),
-    countByProjectId('project_estimation_lines', projectId, signal),
-    countByProjectId('project_measurement_lines', projectId, signal),
-    countByProjectId('project_billing_lines', projectId, signal),
+    countBoqLinesByType(projectId, 'planned', signal),
+    countBoqLinesForDomainTab(projectId, 'estimation', signal),
+    countBoqLinesForDomainTab(projectId, 'measurement', signal),
+    countBoqLinesForDomainTab(projectId, 'billing', signal),
   ]);
 
   return {
