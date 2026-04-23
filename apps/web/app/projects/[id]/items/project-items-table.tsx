@@ -125,7 +125,8 @@ const codeColumnConfig: MasterItemEditorConfigType = {
   getOptionLabel: (option: ScheduleItemPickerOption) => option.code,
   renderSelectedValue: (option, placeholder, rowValue) =>
     option?.code || String(rowValue ?? '') || placeholder,
-  getOnChangeValue: (option: ScheduleItemPickerOption | null) => option?.code ?? '',
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) =>
+    option?.code ?? '',
   getRowValue: (row) => row.item_code ?? '',
   triggerClassName: 'justify-center gap-1 px-1',
   labelClassName: cn(
@@ -420,9 +421,7 @@ function ProjectItemsQuantityWithUnitCell({
   if (disabled) {
     return (
       <div className='flex min-h-8 w-full min-w-0 items-center justify-end gap-2 px-0'>
-        <span
-          className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}
-        >
+        <span className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}>
           {String(row.original.contract_quantity ?? '')}
         </span>
         <span
@@ -785,9 +784,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
       header: 'Sub Code',
       cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
         return (
-          <span
-            className={cn('px-2 text-center', HIERARCHY_BODY_CLASS)}
-          >
+          <span className={cn('px-2 text-center', HIERARCHY_BODY_CLASS)}>
             {String(cellContext.row.original.reference_schedule_text ?? '')}
           </span>
         );
@@ -1129,8 +1126,8 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
           const isDisabled =
             rowBulkDisabled || disabledColumnsForRow.includes(columnId);
           const errorMsg = cellErrors[groupKey]?.[rowId]?.[columnId] || null;
-          const isEditable = !isDisabled;
           const isSelectColumn = columnId === 'select';
+          const isLastVisibleCell = cellIndex === visibleCells.length - 1;
 
           const currentValue = cell.getValue();
           let isDirty = false;
@@ -1187,11 +1184,14 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
                   data-cell-id={cell.id}
                   className={cn(
                     'relative !border !p-0 align-middle transition-[background-color,box-shadow,border-color] duration-150',
+                    !isLastVisibleCell &&
+                      rowData.is_new &&
+                      "after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-[2] after:block after:w-px after:bg-border/75 after:content-['']",
                     frameEditorCell &&
                       'rounded-none border-input bg-background shadow-xs',
                     !frameEditorCell &&
                       (isNewRowPlainCell
-                        ? 'border-transparent shadow-none'
+                        ? 'border-border/70 shadow-none'
                         : 'border-border/70'),
                     !isDisabled &&
                       !errorMsg &&
@@ -1802,7 +1802,10 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
           const serverRow = newItem?.data;
           updatedRowId = serverRow?.id ?? rowData.id;
           if (String(rowData.id) !== String(updatedRowId)) {
-            migrateSchedulePickSelection(String(rowData.id), String(updatedRowId));
+            migrateSchedulePickSelection(
+              String(rowData.id),
+              String(updatedRowId)
+            );
           }
           api.updateRow(rowData.id, {
             ...rowData,
