@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { EstimationRowData, ProjectItemType } from '../types';
+import { EstimationRowData, type ProjectBoqDomainLinesType } from '../types';
 import { fetchEstimationData } from '@/hooks/use-estimation';
 import {
   exportToExcel,
@@ -13,7 +13,7 @@ import {
 
 interface UseEstimationExportProps {
   projectId: string;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   items: EstimationRowData[];
   kpiData: {
     amount1: number;

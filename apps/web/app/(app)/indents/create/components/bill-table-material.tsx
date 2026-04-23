@@ -223,10 +223,10 @@ export function BillTableMaterial({
   const materialControls = useDataTableControls(TABLE_ID_MATERIAL, []);
   const itemsControls = useDataTableControls(TABLE_ID_ITEMS, []);
 
-  const materialQuery = useBolBomQuery(projectId, 'bom', 'GEN');
+  const materialQuery = useBolBomQuery(projectId, 'bom', '');
   const itemsQuery = useProjectItemsInfiniteQuery({
     projectId,
-    type: 'GEN',
+    scope: 'planned',
     enabled: !!projectId,
   });
 
@@ -258,7 +258,7 @@ export function BillTableMaterial({
                 projectId={projectId}
                 code={row.original.code}
                 type='Material'
-                itemType='GEN'
+                itemType='planned'
                 basicRateId={row.original.basicRateHashId}
               />
             )}

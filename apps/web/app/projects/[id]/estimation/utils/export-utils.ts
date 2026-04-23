@@ -3,7 +3,7 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {
   EstimationRowData,
-  ProjectItemType,
+  type ProjectBoqDomainLinesType,
   ItemMeasurmentRowData,
 } from '../types';
 import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
@@ -22,9 +22,9 @@ function formatCurrencyForExport(amount: number): string {
 /**
  * Get config based on item type
  */
-function getTypeConfig(type: ProjectItemType) {
+function getTypeConfig(type: ProjectBoqDomainLinesType) {
   switch (type) {
-    case 'MSR':
+    case 'measurement':
       return {
         summaryTitle: 'Measurement Report Summary',
         dataSheetName: 'Measurement Data',
@@ -33,7 +33,7 @@ function getTypeConfig(type: ProjectItemType) {
         quantity1Label: 'Estimated Qty',
         quantity2Label: 'Measured Qty',
       };
-    case 'BLG':
+    case 'billing':
       return {
         summaryTitle: 'Billing Report Summary',
         dataSheetName: 'Billing Data',
@@ -42,7 +42,7 @@ function getTypeConfig(type: ProjectItemType) {
         quantity1Label: 'Estimated Qty',
         quantity2Label: 'Measured Qty',
       };
-    case 'EST':
+    case 'estimation':
       return {
         summaryTitle: 'Estimation Report Summary',
         dataSheetName: 'Estimation Data',
@@ -66,17 +66,20 @@ function getTypeConfig(type: ProjectItemType) {
 /**
  * Calculate item quantities and costs
  */
-function calculateItemMetrics(item: ExportParentItem, type: ProjectItemType) {
+function calculateItemMetrics(
+  item: ExportParentItem,
+  type: ProjectBoqDomainLinesType
+) {
   let quantity1: number;
   let quantity2: number;
 
   switch (type) {
-    case 'EST':
+    case 'estimation':
       quantity1 = parseFloat(item.contract_quantity || '0');
       quantity2 = parseFloat(item.estimate_quantity || '0');
       break;
-    case 'MSR':
-    case 'BLG':
+    case 'measurement':
+    case 'billing':
       quantity1 = parseFloat(item.estimate_quantity || '0');
       quantity2 = parseFloat(item.measurment_quantity || '0');
       break;
@@ -98,16 +101,16 @@ function calculateItemMetrics(item: ExportParentItem, type: ProjectItemType) {
  */
 function calculateGrandTotals(
   items: ExportParentItem[],
-  type: ProjectItemType
+  type: ProjectBoqDomainLinesType
 ) {
   const totalAmount1 = items.reduce((sum, item) => {
     let qty: number;
     switch (type) {
-      case 'EST':
+      case 'estimation':
         qty = parseFloat(item.contract_quantity || '0');
         break;
-      case 'MSR':
-      case 'BLG':
+      case 'measurement':
+      case 'billing':
         qty = parseFloat(item.estimate_quantity || '0');
         break;
       default:
@@ -120,11 +123,11 @@ function calculateGrandTotals(
   const totalAmount2 = items.reduce((sum, item) => {
     let qty: number;
     switch (type) {
-      case 'EST':
+      case 'estimation':
         qty = parseFloat(item.estimate_quantity || '0');
         break;
-      case 'MSR':
-      case 'BLG':
+      case 'measurement':
+      case 'billing':
         qty = parseFloat(item.measurment_quantity || '0');
         break;
       default:
@@ -145,7 +148,7 @@ export interface ExportParentItem extends EstimationRowData {
 
 export interface ExportData {
   projectId: string;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   kpiData: {
     amount1: number;
     amount2: number;
@@ -214,7 +217,7 @@ export function exportToExcel(data: ExportData) {
  * Create summary sheet data
  */
 function createSummarySheet(
-  type: ProjectItemType,
+  type: ProjectBoqDomainLinesType,
   kpiData: ExportData['kpiData']
 ): (string | number)[][] {
   const config = getTypeConfig(type);
@@ -237,7 +240,7 @@ function createSummarySheet(
  * Create main data sheet with parent items and sub-items
  */
 function createMainDataSheet(
-  type: ProjectItemType,
+  type: ProjectBoqDomainLinesType,
   items: ExportParentItem[]
 ): (string | number)[][] {
   const config = getTypeConfig(type);

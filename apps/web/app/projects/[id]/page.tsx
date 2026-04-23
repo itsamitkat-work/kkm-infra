@@ -16,8 +16,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Spinner } from '@/components/ui/spinner';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   AlertTriangle,
   ArrowLeft,
@@ -30,9 +32,14 @@ import {
   Receipt,
   Ruler,
 } from 'lucide-react';
-import { use, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { ActionMenuItem } from '@/components/detail-page-header';
+import {
+  useProjectTabCountsQuery,
+  type ProjectTabCounts,
+} from '@/hooks/projects/use-project-tab-counts-query';
 import { useProject } from '@/hooks/projects/use-project';
+import { cn } from '@/lib/utils';
 import { TableLoadingState } from '@/components/tables/table-loading';
 import { ProjectItems } from './items/project-items-table';
 import { ItemsTab } from './estimation/Items-tab';
@@ -45,8 +52,29 @@ interface ProjectDetailPageProps {
   }>;
 }
 
-// Tab configuration
-const TAB_CONFIG = [
+/** Older links used `?tab=est|msr|blg`; normalize to `ProjectBoqLinesType` tab ids. */
+function sheetTabFromUrlParam(tab: string | null): string | null {
+  if (!tab) {
+    return null;
+  }
+  switch (tab) {
+    case 'est':
+      return 'estimation';
+    case 'msr':
+      return 'measurement';
+    case 'blg':
+      return 'billing';
+    default:
+      return tab;
+  }
+}
+
+const TAB_CONFIG: {
+  id: string;
+  label: string;
+  mobileLabel: string;
+  badgeCountKey?: keyof ProjectTabCounts;
+}[] = [
   {
     id: 'project-info',
     label: 'Project Info',
@@ -56,21 +84,25 @@ const TAB_CONFIG = [
     id: 'project-items',
     label: 'Planned Items',
     mobileLabel: 'Planned',
+    badgeCountKey: 'plannedBoqLines',
   },
   {
-    id: 'est',
+    id: 'estimation',
     label: 'Estimation',
     mobileLabel: 'Estimation',
+    badgeCountKey: 'estimationLines',
   },
   {
-    id: 'msr',
+    id: 'measurement',
     label: 'Measurement',
     mobileLabel: 'Measurement',
+    badgeCountKey: 'measurementLines',
   },
   {
-    id: 'blg',
+    id: 'billing',
     label: 'Billing',
     mobileLabel: 'Billing',
+    badgeCountKey: 'billingLines',
   },
   {
     id: 'deviation-report',
@@ -101,9 +133,15 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
   const { project, isLoading, isError } = useProject(resolvedParams.id);
 
+  const {
+    data: tabCounts,
+    isPending: isTabCountsPending,
+    isError: isTabCountsError,
+  } = useProjectTabCountsQuery({ projectId: resolvedParams.id });
+
   // Initialize active tab from URL search params to prevent flashing
   const getInitialTab = () => {
-    const tabFromUrl = searchParams.get('tab');
+    const tabFromUrl = sheetTabFromUrlParam(searchParams.get('tab'));
     if (tabFromUrl && TAB_CONFIG.some((tab) => tab.id === tabFromUrl)) {
       return tabFromUrl;
     }
@@ -111,6 +149,27 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   };
 
   const [activeTab, setActiveTab] = useState(getInitialTab);
+
+  useEffect(() => {
+    const raw = searchParams.get('tab');
+    if (!raw) {
+      return;
+    }
+    const normalized = sheetTabFromUrlParam(raw);
+    if (
+      normalized &&
+      normalized !== raw &&
+      TAB_CONFIG.some((tab) => tab.id === normalized)
+    ) {
+      const next = new URLSearchParams(searchParams.toString());
+      next.set('tab', normalized);
+      router.replace(
+        `/projects/${resolvedParams.id}?${next.toString()}`,
+        { scroll: false }
+      );
+      setActiveTab(normalized);
+    }
+  }, [searchParams, router, resolvedParams.id]);
 
   const handleBack = () => {
     router.back();
@@ -127,8 +186,8 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     );
   };
 
-  const renderTabContent = () => {
-    switch (activeTab) {
+  function renderTabContent(tabId: string) {
+    switch (tabId) {
       case 'project-info':
         return (
           <ProjectInfo
@@ -141,29 +200,29 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         return (
           <ProjectItems key='project-items' projectId={resolvedParams.id} />
         );
-      case 'est':
+      case 'estimation':
         return (
           <ItemsTab
-            key={`estimation-${activeTab}`}
+            key={`estimation-${tabId}`}
             projectId={resolvedParams.id}
-            type='EST'
+            type='estimation'
           />
         );
-      case 'msr':
+      case 'measurement':
         return (
           <ItemsTab
-            key={`measurement-${activeTab}`}
+            key={`measurement-${tabId}`}
             projectId={resolvedParams.id}
-            type='MSR'
+            type='measurement'
           />
         );
 
-      case 'blg':
+      case 'billing':
         return (
           <ItemsTab
-            key={`billing-${activeTab}`}
+            key={`billing-${tabId}`}
             projectId={resolvedParams.id}
-            type='BLG'
+            type='billing'
           />
         );
       case 'deviation-report':
@@ -177,7 +236,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           />
         );
     }
-  };
+  }
 
   if (isLoading) {
     return <TableLoadingState />;
@@ -211,15 +270,15 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     <div className='min-h-screen bg-background flex flex-col w-full'>
       {/* Page Header with Breadcrumb */}
       <div className='border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-        <div className='flex items-center justify-between px-6 py-4'>
-          <div className='flex items-center gap-4'>
+        <div className='flex items-center justify-between gap-2 px-3 py-2 sm:px-4 sm:py-2.5'>
+          <div className='flex min-w-0 items-center gap-2 sm:gap-3'>
             <Button
               variant='ghost'
               size='sm'
               onClick={handleBack}
-              className='flex items-center gap-2 text-muted-foreground hover:text-foreground'
+              className='h-8 shrink-0 gap-1.5 px-2 text-muted-foreground hover:text-foreground'
             >
-              <ArrowLeft className='size-4' />
+              <ArrowLeft className='size-3.5' />
               Back
             </Button>
 
@@ -287,39 +346,58 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
       {/* Tab Content */}
       <div className='flex-1 overflow-auto bg-muted/20 p-0'>
-        <Card className='@container/card border-0 rounded-none m-0 gap-0'>
-          <CardHeader>
-            <div className='flex justify-end'>
-              <ToggleGroup
-                type='single'
-                value={activeTab}
-                onValueChange={(value) => value && handleTabChange(value)}
-                variant='outline'
-                size='sm'
-                className='flex flex-wrap *:data-[slot=toggle-group-item]:!px-4'
-              >
+        <Card className='@container/card m-0 gap-0 rounded-none border-0 py-0 shadow-none'>
+          <Tabs
+            value={activeTab}
+            onValueChange={handleTabChange}
+            className='gap-0'
+          >
+            <CardHeader className='gap-0 px-3 pb-0 pt-2 sm:px-4 sm:pt-2.5'>
+              <TabsList variant='line' className='w-full justify-start'>
                 {TAB_CONFIG.map((tab) => {
+                  const countKey = tab.badgeCountKey;
+                  const showCountBadge = countKey != null;
+                  const badgeValue =
+                    tabCounts && countKey != null
+                      ? tabCounts[countKey]
+                      : undefined;
+
                   return (
-                    <ToggleGroupItem
+                    <TabsTrigger
                       key={tab.id}
                       value={tab.id}
-                      className='flex items-center gap-2 px-3 py-2 min-w-fit whitespace-nowrap'
+                      className={cn(
+                        'h-8 flex-none shrink-0 px-2 py-0 text-xs sm:px-2.5 sm:text-sm',
+                        showCountBadge && 'gap-2'
+                      )}
                     >
-                      <span className='hidden sm:inline text-sm'>
-                        {tab.label}
-                      </span>
-                      <span className='sm:hidden text-sm'>
-                        {tab.mobileLabel}
-                      </span>
-                    </ToggleGroupItem>
+                      <span className='hidden sm:inline'>{tab.label}</span>
+                      <span className='sm:hidden'>{tab.mobileLabel}</span>
+                      {showCountBadge &&
+                        (isTabCountsPending ? (
+                          <Spinner className='size-3 opacity-60' />
+                        ) : (
+                          <Badge variant='primary-light' size='sm'>
+                            {isTabCountsError ? '–' : (badgeValue ?? 0)}
+                          </Badge>
+                        ))}
+                    </TabsTrigger>
                   );
                 })}
-              </ToggleGroup>
-            </div>
-          </CardHeader>
-          <CardContent className='px-4 pt-2 sm:px-6 sm:pt-3'>
-            {renderTabContent()}
-          </CardContent>
+              </TabsList>
+            </CardHeader>
+            <CardContent className='px-3 pb-3 pt-1 sm:px-4 sm:pb-4 sm:pt-1.5'>
+              {TAB_CONFIG.map((tab) => (
+                <TabsContent
+                  key={tab.id}
+                  value={tab.id}
+                  className='m-0 mt-0 outline-none'
+                >
+                  {renderTabContent(tab.id)}
+                </TabsContent>
+              ))}
+            </CardContent>
+          </Tabs>
         </Card>
       </div>
     </div>

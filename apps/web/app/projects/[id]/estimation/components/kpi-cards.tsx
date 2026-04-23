@@ -10,12 +10,12 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SectionCard } from '@/components/ui/section-card';
-import { ProjectItemType } from '../types';
+import type { ProjectBoqLinesType } from '../types';
 
 interface EstimationReportsKPICardsProps {
   compact?: boolean;
   isLoading?: boolean;
-  type: ProjectItemType;
+  type: ProjectBoqLinesType;
   kpiData?: {
     amount1: number;
     amount2: number;
@@ -33,14 +33,14 @@ export function EstimationReportsKPICards({
 }: EstimationReportsKPICardsProps) {
   const config = React.useMemo(() => {
     switch (type) {
-      case 'MSR':
+      case 'measurement':
         return {
           amount1Title: 'Estimated Amount',
           amount1Description: 'Total Estimated amount',
           amount2Title: 'Measured Amount',
           amount2Description: 'Total measured amount',
         };
-      case 'EST':
+      case 'estimation':
         return {
           amount1Title: 'Planned Amount',
           amount1Description: 'Total Planned amount',
@@ -69,7 +69,7 @@ export function EstimationReportsKPICards({
 
   const costDeviationConfig = getCostDeviationConfig(kpiData?.costImpact ?? 0);
 
-  if (type === 'BLG') {
+  if (type === 'billing') {
     return null;
   }
 

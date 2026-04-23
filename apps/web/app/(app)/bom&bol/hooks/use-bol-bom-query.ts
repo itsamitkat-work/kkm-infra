@@ -1,8 +1,9 @@
 'use client';
 
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { fetchBolBomBoc, BolBomType, BolBomItemType } from '../api/bol-bom-api';
+import { fetchBolBomBoc, BolBomType } from '../api/bol-bom-api';
 import { PaginationResponse } from '@/types/common';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
 
 export type BillRow = {
   id: string;
@@ -20,6 +21,24 @@ export const TAB_TO_API_TYPE: Record<string, BolBomType> = {
   bol: 'Labour',
   tp: 'Carrige',
 };
+
+function normalizeBolBomItemScope(
+  raw: string | null | undefined
+): ProjectBoqLinesQueryScope {
+  if (raw == null || raw === '' || raw === 'GEN') {
+    return 'planned';
+  }
+  if (raw === 'estimation' || raw === 'EST') {
+    return 'estimation';
+  }
+  if (raw === 'measurement' || raw === 'MSR') {
+    return 'measurement';
+  }
+  if (raw === 'billing' || raw === 'BLG') {
+    return 'billing';
+  }
+  return 'planned';
+}
 
 function mapPageToBillRows(
   data: PaginationResponse<{ basicRateHashId: string; [key: string]: unknown }>
@@ -39,18 +58,15 @@ export function useBolBomQuery(
   itemType: string | null
 ) {
   const apiType = TAB_TO_API_TYPE[tab] ?? 'Material';
-  const validItemType =
-    itemType === 'GEN' || itemType === 'EST' || itemType === 'MSR'
-      ? (itemType as BolBomItemType)
-      : 'GEN';
+  const itemScope = normalizeBolBomItemScope(itemType);
 
   return useInfiniteQuery({
-    queryKey: ['bol-bom-boc', projectId, apiType, validItemType],
+    queryKey: ['bol-bom-boc', projectId, apiType, itemScope],
     queryFn: ({ pageParam = 1, signal }) =>
       fetchBolBomBoc(
         projectId!,
         apiType,
-        validItemType,
+        itemScope,
         pageParam,
         signal
       ).then(mapPageToBillRows),

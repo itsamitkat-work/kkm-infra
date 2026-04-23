@@ -27,7 +27,7 @@ import {
   IconAlertCircle,
 } from '@tabler/icons-react';
 import { useBillItemBreakdownQuery } from '../hooks/use-bill-item-breakdown-query';
-import type { BolBomType, BolBomItemType } from '../api/bol-bom-api';
+import type { BolBomType } from '../api/bol-bom-api';
 
 function formatCurrency(value: number): string {
   return `₹${value.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
@@ -70,7 +70,7 @@ export function BillBreakdownDialog({
     projectId,
     code,
     type,
-    itemType as BolBomItemType | null,
+    itemType,
     open
   );
 

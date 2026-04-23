@@ -15,7 +15,10 @@ import {
 import { Filter } from '@/components/ui/filters';
 import { useProjectItemsQuery } from '@/app/(app)/projects/hooks/use-project-items-query';
 import { ProjectItemRowType as HookProjectRowData } from '@/types/project-item';
-import { EstimationRowData, ProjectItemType } from './types';
+import {
+  EstimationRowData,
+  type ProjectBoqDomainLinesType,
+} from './types';
 import { EstimationReportsKPICards } from './components/kpi-cards';
 import { useSearchShortcut } from '@/hooks/use-search-shortcut';
 import { Plus, Share2 } from 'lucide-react';
@@ -46,7 +49,7 @@ export function ItemsTab({
   type,
 }: {
   projectId: string;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
 }) {
   const searchParams = useSearchParams();
   const searchInputRef = useSearchShortcut();
@@ -105,7 +108,7 @@ export function ItemsTab({
     refetch,
   } = useProjectItemsQuery({
     projectId: projectId,
-    type,
+    scope: type,
   });
 
   // Transform hook data to match the expected structure for estimation reports
@@ -221,7 +224,7 @@ export function ItemsTab({
         const rate = parseFloat(item.rate_amount || '0');
         let costDeviation = 0;
 
-        if (type === 'EST') {
+        if (type === 'estimation') {
           const plannedQty = parseFloat(item.contract_quantity || '0');
           const estimatedQty = parseFloat(item.estimate_quantity || '0');
           const plannedAmount = plannedQty * rate;

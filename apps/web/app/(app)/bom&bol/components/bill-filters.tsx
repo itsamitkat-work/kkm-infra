@@ -8,9 +8,9 @@ import {
 } from '@/components/filters/project-filter';
 
 const ITEM_TYPE_OPTIONS = [
-  { value: 'GEN', label: 'Project Items' },
-  { value: 'EST', label: 'Estimation' },
-  { value: 'MSR', label: 'Measurement' },
+  { value: 'planned', label: 'Project Items' },
+  { value: 'estimation', label: 'Estimation' },
+  { value: 'measurement', label: 'Measurement' },
 ] as const;
 
 export function getBillFilterFields(): FilterFieldConfig[] {
@@ -31,7 +31,7 @@ export function getBillFilterFields(): FilterFieldConfig[] {
   ];
 }
 
-const DEFAULT_ITEM_TYPE = 'GEN';
+const DEFAULT_ITEM_TYPE = '';
 
 export function getBillDefaultFilters() {
   return [

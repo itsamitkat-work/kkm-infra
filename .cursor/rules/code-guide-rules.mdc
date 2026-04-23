@@ -2,37 +2,78 @@
 alwaysApply: true
 ---
 
-Here is a polished version of your rule set that is short, clear, and production-ready. No comments, no arrows, no fluff, and aligned with modern frontend best practices.
+You are a Backend and Frontend architect.
+If any requirement is unclear, ask clarifying questions before implementing.
 
-⸻
+---
 
-Engineering Rules
+## Engineering Rules
 
-Code Style
-• Never use if conftion without braces, use braces in fucntions, condtions, clarity over small code tricks.
-• Use function names that clearly describe behavior.
+### Code Style
 
-Architecture
-• Prefer proven production libraries over building custom solutions:
-• Data: TanStack Query, TanStack Table
-• UI: Shadcn UI
-• State: Zustand
-• Forms: React Hook Form
-• Animations: Framer Motion
+- Always use braces `{}` for all conditionals and functions. No implicit single-line blocks.
+- Prefer clarity over brevity. Avoid clever or condensed code.
+- Use descriptive function and variable names that clearly communicate intent.
+- Avoid inline logic in JSX; extract into named functions.
 
-Performance
-• Avoid unnecessary re-renders by extracting handlers into named functions.
-• Use stable references for callbacks, queries, and memoized values.
-• Use virtualization, infinite queries, and batching for large lists.
+### Frontend API Layer
 
-API and Data
-• Use cursor-based pagination with deterministic sort order.
-• Always return nextCursor and hasMore.
-• Invalidate cursor when filters or sort change.
+- Each API module must encapsulate in single file:
+  - Fetcher logic
+  - Types
+  - Hook
+- Prefer multiple small, focused hooks over one large generic hook and multiple files
+- Keep API concerns isolated from UI components.
 
-UI Behavior
-• Use skeletons, placeholders, and progressive rendering from Shadcn components.
-• Prefer infinite scrolling with TanStack Query for large datasets.
-• Keep UI predictable by using named event handlers.
-. For loading use /apps/web/components/ui/spinner.tsx instead of Loadding text.
-. try to use components from web/components/ui/ instead of re-inventing them, if not found ask to install from shadcn comminity
+### Architecture (Preferred Libraries)
+
+Use proven, production-grade libraries instead of building custom solutions:
+
+- Data Fetching: TanStack Query
+- Tables: TanStack Table
+- UI Components: Shadcn UI
+- State Management: Zustand
+- Forms: React Hook Form
+- Animations: Framer Motion
+
+If a required component is missing:
+
+- First check `/apps/web/components/ui/`
+- If not available, request installation from Shadcn before building custom
+
+### Performance
+
+- Prevent unnecessary re-renders:
+  - Extract handlers into named functions
+  - Use stable references (`useCallback`, `useMemo`) where appropriate
+- Use:
+  - Virtualization for large lists
+  - Infinite queries where applicable
+  - Batching for heavy updates
+
+### API & Data Design
+
+- Use cursor-based pagination with deterministic sorting
+- Always return:
+  - `nextCursor`
+  - `hasMore`
+- Invalidate cursor when filters or sorting change
+- Avoid offset-based pagination in scalable systems
+
+### UI & UX Behavior
+
+- Use skeletons and placeholders for loading states (Shadcn components)
+- Prefer progressive rendering over blocking UI
+- Use infinite scrolling for large datasets where appropriate
+- Keep UI predictable:
+  - Use named event handlers
+  - Avoid inline anonymous functions in JSX
+- For loading indicators:
+  - Use `/apps/web/components/ui/spinner.tsx`
+  - Do not use plain "Loading..." text
+
+### General Principles
+
+- Optimize for maintainability over short-term speed
+- Prefer consistency across the codebase over local optimizations
+- Avoid premature abstraction, but enforce patterns once repeated

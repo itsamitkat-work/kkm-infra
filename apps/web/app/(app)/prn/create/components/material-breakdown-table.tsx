@@ -22,10 +22,8 @@ import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/auth';
 import { useBillItemBreakdownQuery } from '@/app/(app)/bom&bol/hooks/use-bill-item-breakdown-query';
-import type {
-  BolBomType,
-  BolBomItemType,
-} from '@/app/(app)/bom&bol/api/bol-bom-api';
+import type { BolBomType } from '@/app/(app)/bom&bol/api/bol-bom-api';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
 import { useSavePrnMutation } from '../../hooks/use-save-prn-mutation';
 
 function formatQty(value: number): string {
@@ -40,7 +38,7 @@ interface MaterialBreakdownTableProps {
   projectId: string;
   code: string;
   type?: BolBomType;
-  itemType?: BolBomItemType;
+  itemType?: ProjectBoqLinesQueryScope;
   basicRateId: string;
 }
 
@@ -49,7 +47,7 @@ export function MaterialBreakdownTable({
   code,
   basicRateId,
   type = 'Material',
-  itemType = 'GEN',
+  itemType = 'planned',
 }: MaterialBreakdownTableProps) {
   const { user } = useAuth();
   const {

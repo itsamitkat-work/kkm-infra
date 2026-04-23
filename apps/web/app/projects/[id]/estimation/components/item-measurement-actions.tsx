@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader2, SaveAll, Trash2, Download, RotateCcw } from 'lucide-react';
 import { CopyPasteButtonGroup } from '@/components/ui/copy-paste-button-group';
-import { ProjectItemType } from '../types';
+import type { ProjectBoqDomainLinesType } from '../types';
 
 interface ItemMeasurementActionsProps {
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   editedRowsCount: number;
   isSavingAll: boolean;
   handleSaveAll: () => void;
@@ -43,7 +43,7 @@ export function ItemMeasurementActions({
 }: ItemMeasurementActionsProps) {
   return (
     <div className='flex items-center gap-2'>
-      {type === 'BLG' && (
+      {type === 'billing' && (
         <Button
           variant='outline'
           size='sm'

@@ -20,7 +20,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 
-import { ItemMeasurmentRowData, ProjectItemType } from './types';
+import { ItemMeasurmentRowData, type ProjectBoqDomainLinesType } from './types';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -45,7 +45,7 @@ export function ItemMeasurmentTable({
   projectItemHashId: string;
   rate: number;
   scheduleQuantity: number;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   selectedSegmentId?: string;
 }) {
   const tableContainerRef = useRef<HTMLDivElement>(null);
@@ -276,7 +276,7 @@ export function ItemMeasurmentTable({
         </AlertDialog>
 
         {/* Import from Measurement Dialog */}
-        {type === 'BLG' && (
+        {type === 'billing' && (
           <ImportMeasurementDialog
             open={showImportDialog}
             onOpenChange={setShowImportDialog}

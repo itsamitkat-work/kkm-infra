@@ -98,7 +98,7 @@ export function ImportMeasurementDialog({
     data: measurementData,
     isLoading,
     isError,
-  } = useEstimation(projectItemHashId, 'MSR', open);
+  } = useEstimation(projectItemHashId, 'measurement', open);
 
   // Transform measurement data to table format and mark duplicates
   const measurementItems = useMemo(() => {

@@ -15,7 +15,7 @@ const SERVICE_ITEMS_SCHEDULE_NAME = 'Service Items';
 export function useProjectServiceItems(projectId: string) {
   const result = useProjectItemsQuery({
     projectId,
-    type: 'GEN',
+    scope: 'planned',
   });
 
   const serviceItems = React.useMemo(() => {

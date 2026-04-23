@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ColumnDef } from '@tanstack/react-table';
-import { EstimationRowData, ProjectItemType } from '../types';
+import { EstimationRowData, type ProjectBoqLinesType } from '../types';
 import { formatCurrency } from '@/lib/utils';
 import {
   ArrowDownRight,
@@ -22,7 +22,7 @@ import { flattenItemDescription } from '@/app/(app)/schedule-items/item-descript
 import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-description-hierarchy';
 
 interface ColumnProps {
-  type: ProjectItemType;
+  type: ProjectBoqLinesType;
   onDelete?: (row: EstimationRowData) => void;
   openDeleteConfirmation?: (data: DeleteConfirmationData) => void;
 }
@@ -85,14 +85,14 @@ const Quantity2Cell = ({
   type,
 }: {
   row: EstimationRowData;
-  type: ProjectItemType;
+  type: ProjectBoqLinesType;
 }) => {
   const updatedQuantity = useEstimationStore(
     (state) => state.updatedQuantities[row.id]
   );
 
   const quantity2 = parseFloat(
-    type === 'EST'
+    type === 'estimation'
       ? row.estimate_quantity || '0'
       : row.measurment_quantity || '0'
   );
@@ -114,19 +114,19 @@ const Amount2Cell = ({
   type,
 }: {
   row: EstimationRowData;
-  type: ProjectItemType;
+  type: ProjectBoqLinesType;
 }) => {
   const updatedAmount = useEstimationStore(
     (state) => state.updatedAmounts[row.id]
   );
 
   const quantity1 = parseFloat(
-    type === 'EST'
+    type === 'estimation'
       ? row.contract_quantity
       : row.estimate_quantity || '0'
   );
   const quantity2 = parseFloat(
-    type === 'EST'
+    type === 'estimation'
       ? row.estimate_quantity || '0'
       : row.measurment_quantity || '0'
   );
@@ -244,13 +244,13 @@ export const getMainColumns = ({
   },
   {
     id: 'group1',
-    header: type === 'EST' ? 'Planned' : 'Estimated',
+    header: type === 'estimation' ? 'Planned' : 'Estimated',
     columns: [
       {
         id: 'quantity1',
         accessorFn: (row) => {
           const val =
-            type === 'EST'
+            type === 'estimation'
               ? row.contract_quantity
               : row.estimate_quantity || '0';
           return parseFloat(String(val));
@@ -264,7 +264,7 @@ export const getMainColumns = ({
         ),
         cell: ({ row }) => {
           const quantity1 = parseFloat(
-            type === 'EST'
+            type === 'estimation'
               ? row.original.contract_quantity
               : row.original.estimate_quantity || '0'
           );
@@ -281,7 +281,7 @@ export const getMainColumns = ({
         accessorFn: (row) => {
           const qty = parseFloat(
             String(
-              type === 'EST'
+              type === 'estimation'
                 ? row.contract_quantity
                 : row.estimate_quantity || '0'
             )
@@ -294,7 +294,7 @@ export const getMainColumns = ({
         ),
         cell: ({ row }) => {
           const quantity1 = parseFloat(
-            type === 'EST'
+            type === 'estimation'
               ? row.original.contract_quantity
               : row.original.estimate_quantity || '0'
           );
@@ -314,13 +314,13 @@ export const getMainColumns = ({
   },
   {
     id: 'group2',
-    header: type === 'EST' ? 'Estimated' : 'Measured',
+    header: type === 'estimation' ? 'Estimated' : 'Measured',
     columns: [
       {
         id: 'quantity2',
         accessorFn: (row) => {
           const val =
-            type === 'EST'
+            type === 'estimation'
               ? row.estimate_quantity || '0'
               : row.measurment_quantity || '0';
           return parseFloat(String(val));
@@ -346,7 +346,7 @@ export const getMainColumns = ({
         accessorFn: (row) => {
           const qty = parseFloat(
             String(
-              type === 'EST'
+              type === 'estimation'
                 ? row.estimate_quantity || '0'
                 : row.measurment_quantity || '0'
             )

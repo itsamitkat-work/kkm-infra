@@ -1,15 +1,16 @@
 import { useCallback, useState } from 'react';
 import { toast } from 'sonner';
 import { useEstimationMutations } from '@/hooks/use-estimation';
-import { ItemMeasurmentRowData, ProjectItemType } from '../types';
+import { ItemMeasurmentRowData, type ProjectBoqDomainLinesType } from '../types';
 import { TableMeta } from '@tanstack/react-table';
 import { useQueryClient } from '@tanstack/react-query';
+import { invalidateProjectTabCounts } from '@/hooks/projects/use-project-tab-counts-query';
 import { ProjectSegment } from '@/types/projects';
 
 export function useProjectItemMeasurmentMutations(
   projectItemHashId: string,
   projectHashId: string,
-  type: ProjectItemType,
+  type: ProjectBoqDomainLinesType,
   segments: ProjectSegment[]
 ) {
   const [saveErrors, setSaveErrors] = useState<Record<string, string | null>>(
@@ -65,7 +66,10 @@ export function useProjectItemMeasurmentMutations(
         projectItemId: projectItemHashId, // only in BLG
         projectId: projectHashId, // only in BLG
         ...(segmentHashId
-          ? { [type === 'BLG' ? 'segmentId' : 'segmentHashId']: segmentHashId }
+          ? {
+              [type === 'billing' ? 'segmentId' : 'segmentHashId']:
+                segmentHashId,
+            }
           : {}),
         no1: Number(rowData.no1) || 0,
         no2: Number(rowData.no2) || 0,
@@ -74,7 +78,7 @@ export function useProjectItemMeasurmentMutations(
         height: Number(rowData.height) || 0,
         quantity: Number(rowData.quantity) || 0,
         ...(orderKey !== undefined ? { orderKey } : {}),
-        ...(type === 'MSR'
+        ...(type === 'measurement'
           ? {
               checked: rowData.checked === 'true' ? true : false,
               verified: rowData.verified === 'true' ? true : false,
@@ -96,6 +100,7 @@ export function useProjectItemMeasurmentMutations(
       queryClient.invalidateQueries({
         queryKey: ['estimation', projectItemHashId, type],
       });
+      invalidateProjectTabCounts(queryClient, projectHashId);
     },
     [queryClient, projectHashId, type, projectItemHashId]
   );

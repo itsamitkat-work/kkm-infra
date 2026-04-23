@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { invalidateProjectTabCounts } from '@/hooks/projects/use-project-tab-counts-query';
 import { ProjectItemRowType } from '@/types/project-item';
 import { toast } from 'sonner';
 import {
@@ -9,10 +10,8 @@ import {
   type UpdateBoqLineInput,
 } from '@/lib/projects/project-boq-repo';
 
-/** Same field names as `CreateBoqLineInput`; `type` is UI-only and stripped before the repo call. */
 export type CreateProjectItemPayload = Omit<CreateBoqLineInput, 'signal'> & {
   suppressToast?: boolean;
-  type?: string;
 };
 
 /**
@@ -26,7 +25,7 @@ export type UpdateProjectItemPayload = Omit<UpdateBoqLineInput, 'signal'> & {
 const createProjectItem = async (
   item: CreateProjectItemPayload
 ): Promise<{ data: ProjectItemRowType }> => {
-  const { suppressToast: _suppressToast, type: _type, ...input } = item;
+  const { suppressToast: _suppressToast, ...input } = item;
   if (!input.schedule_item_id?.trim()) {
     throw new Error('A schedule item must be selected before saving.');
   }
@@ -82,6 +81,7 @@ export const useCreateProjectItem = (projectId: string) => {
       queryClient.invalidateQueries({
         queryKey: ['project-items', variables.project_id],
       });
+      invalidateProjectTabCounts(queryClient, variables.project_id);
       queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
   });
@@ -114,6 +114,7 @@ export const useUpdateProjectItem = (projectId: string) => {
       queryClient.invalidateQueries({
         queryKey: ['project-items', pid],
       });
+      invalidateProjectTabCounts(queryClient, pid);
       queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
   });
@@ -146,6 +147,7 @@ export const useDeleteProjectItem = (projectId: string) => {
       queryClient.invalidateQueries({
         queryKey: ['project-items', projectId],
       });
+      invalidateProjectTabCounts(queryClient, projectId);
       queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
     onError: (_error, variables) => {

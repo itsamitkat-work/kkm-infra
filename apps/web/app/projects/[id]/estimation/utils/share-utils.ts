@@ -1,12 +1,12 @@
 import { toast } from 'sonner';
 import { Filter } from '@/components/ui/filters';
-import { ProjectItemType } from '../types';
+import type { ProjectBoqDomainLinesType } from '../types';
 
 export interface ShareableState {
   filters: Filter[];
   query: string;
   segmentId?: string | null;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
 }
 
 /**
@@ -16,13 +16,13 @@ export function getShareableState(
   filters: Filter[],
   query: string,
   segmentId?: string | null,
-  type?: ProjectItemType
+  type?: ProjectBoqDomainLinesType
 ): ShareableState {
   return {
     filters,
     query,
     segmentId: segmentId || null,
-    type: type || 'EST',
+    type: type ?? 'estimation',
   };
 }
 
@@ -36,8 +36,7 @@ export function generateShareableUrl(
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const url = new URL(`/projects/${projectId}`, baseUrl);
 
-  // Add tab parameter (type)
-  url.searchParams.set('tab', state.type.toLowerCase());
+  url.searchParams.set('tab', state.type);
 
   // Add filters if any
   if (state.filters.length > 0) {

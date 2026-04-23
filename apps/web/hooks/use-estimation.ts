@@ -1,8 +1,9 @@
 'use client';
 
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { invalidateProjectTabCounts } from '@/hooks/projects/use-project-tab-counts-query';
 import { PaginationResponse } from '@/types/common';
-import { ProjectItemType } from '@/app/projects/[id]/estimation/types';
+import type { ProjectBoqLinesType } from '@/app/projects/[id]/estimation/types';
 import React from 'react';
 import type { Database } from '@kkm/db';
 import { appendOrderKey } from '@/lib/projects/order-key';
@@ -43,7 +44,7 @@ export interface EstimationItemPayload {
   projectItemHashId: string;
   projectHashId: string;
   segmentHashId?: string;
-  /** Billing (BLG) API used `segmentId` in the legacy payload. */
+  /** Billing domain API used `segmentId` in the legacy payload. */
   segmentId?: string;
   no1: number;
   no2: number;
@@ -79,7 +80,7 @@ function segmentIdFromPayload(item: EstimationItemPayload): string | undefined {
 
 export const createEstimationItem = async (
   item: Omit<EstimationItemPayload, 'hashId'>,
-  type: ProjectItemType
+  type: ProjectBoqLinesType
 ): Promise<{ data: EstimationItem }> => {
   const schedule_item_id = await fetchScheduleItemIdForBoqLine(
     item.projectItemHashId
@@ -118,7 +119,7 @@ export const createEstimationItem = async (
 
 export const updateEstimationItem = async (
   item: EstimationItemPayload,
-  type: ProjectItemType
+  type: ProjectBoqLinesType
 ): Promise<{ data: EstimationItem }> => {
   if (!item.hashId) {
     throw new Error('hashId is required for updating an estimation item.');
@@ -145,7 +146,7 @@ export const updateEstimationItem = async (
 
 export const deleteEstimationItem = async (
   itemId: string,
-  type: ProjectItemType
+  type: ProjectBoqLinesType
 ): Promise<{ message: string }> => {
   await deleteDomainLine(type, itemId);
   return { message: 'ok' };
@@ -153,7 +154,7 @@ export const deleteEstimationItem = async (
 
 export const fetchEstimationData = async (
   estimationId: string,
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   signal?: AbortSignal
 ): Promise<EstimationResponse> => {
   if (!estimationId) {
@@ -177,7 +178,7 @@ export const fetchEstimationData = async (
 
 export const useEstimation = (
   estimationId: string,
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   enabled?: boolean
 ) => {
   if (!estimationId) {
@@ -207,7 +208,7 @@ export const useEstimation = (
 
 export const useEstimationMutations = (
   estimationId: string,
-  type: ProjectItemType
+  type: ProjectBoqLinesType
 ) => {
   const queryClient = useQueryClient();
 
@@ -220,6 +221,9 @@ export const useEstimationMutations = (
         queryClient.invalidateQueries({
           queryKey: ['project-items', projectHashId],
         });
+        invalidateProjectTabCounts(queryClient, projectHashId);
+      } else {
+        invalidateProjectTabCounts(queryClient);
       }
     },
     [queryClient, estimationId, type]

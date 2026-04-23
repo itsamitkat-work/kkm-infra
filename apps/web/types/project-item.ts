@@ -45,6 +45,8 @@ export interface ProjectItem {
   remark: NonNullable<BoqRow['remark']> | null;
   /** `project_boq_lines.order_key` — used for row ordering. */
   order_key: BoqRow['order_key'];
+  /** Postgres enum; `planned` = contract baseline BOQ row. */
+  project_boq_lines_type: BoqRow['project_boq_lines_type'];
 }
 
 /**
@@ -79,6 +81,9 @@ export const projectItemZodSchema = z.object({
   is_new: z.boolean().optional().default(false),
   header_key: z.string().nullable().optional(),
   order_key: z.number().nullable().optional(),
+  project_boq_lines_type: z
+    .enum(['planned', 'estimation', 'measurement', 'billing'])
+    .default('planned'),
 });
 
 export type ProjectItemRowType = z.infer<typeof projectItemZodSchema> & {

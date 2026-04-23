@@ -5,15 +5,15 @@ import { PaginationResponse } from '@/types/common';
 import { ProjectItemRowType } from '@/types/project-item';
 import { ProjectItem } from '@/types/project-item';
 import React from 'react';
-import { ProjectItemType } from '@/app/projects/[id]/estimation/types';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
 import { fetchAllProjectBoqLines } from '@/lib/projects/project-boq-repo';
 
 export const fetchProjectItems = async (
   projectId: string,
-  _type: ProjectItemType,
+  scope: ProjectBoqLinesQueryScope,
   signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItem>> => {
-  return fetchAllProjectBoqLines(projectId, signal);
+  return fetchAllProjectBoqLines(projectId, scope, signal);
 };
 
 function mapProjectItemToRow(item: ProjectItem): ProjectItemRowType {
@@ -40,16 +40,17 @@ function mapProjectItemToRow(item: ProjectItem): ProjectItemRowType {
     is_new: false,
     _original: null,
     order_key: item.order_key ?? null,
+    project_boq_lines_type: item.project_boq_lines_type,
   };
 }
 
 /** Full list as rows for DataTable (single network request). */
 export async function fetchProjectItemsAsRows(
   projectId: string,
-  type: ProjectItemType,
+  scope: ProjectBoqLinesQueryScope,
   signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItemRowType>> {
-  const raw = await fetchProjectItems(projectId, type, signal);
+  const raw = await fetchProjectItems(projectId, scope, signal);
   return {
     ...raw,
     data: (raw.data || []).map((item) => mapProjectItemToRow(item)),
@@ -62,20 +63,20 @@ export async function fetchProjectItemsAsRows(
  */
 export function useProjectItemsInfiniteQuery({
   projectId,
-  type,
+  scope,
   enabled = true,
 }: {
   projectId: string;
-  type: ProjectItemType;
+  scope: ProjectBoqLinesQueryScope;
   enabled?: boolean;
 }) {
   return useInfiniteQuery({
-    queryKey: ['project-items-infinite', projectId, type],
+    queryKey: ['project-items-infinite', projectId, scope],
     queryFn: ({ signal }) =>
-      fetchProjectItemsAsRows(projectId, type, signal),
+      fetchProjectItemsAsRows(projectId, scope, signal),
     getNextPageParam: () => undefined,
     initialPageParam: 1,
-    enabled: !!projectId && !!type && enabled,
+    enabled: !!projectId && enabled,
   });
 }
 
@@ -85,16 +86,16 @@ export type UseProjectItemsInfiniteQueryResult = ReturnType<
 
 export const useProjectItemsQuery = ({
   projectId,
-  type,
+  scope,
 }: {
   projectId: string;
-  type: ProjectItemType;
+  scope: ProjectBoqLinesQueryScope;
 }) => {
   const { data, isPending, isLoading, isFetching, isError, error, refetch } =
     useQuery({
-      queryKey: ['project-items', projectId, type],
-      queryFn: ({ signal }) => fetchProjectItems(projectId, type, signal),
-      enabled: !!projectId && !!type,
+      queryKey: ['project-items', projectId, scope],
+      queryFn: ({ signal }) => fetchProjectItems(projectId, scope, signal),
+      enabled: !!projectId,
       refetchOnWindowFocus: 'always',
     });
 

@@ -5,7 +5,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import SheetTable from '@/components/tables/sheet-table/sheet-table';
 import { useSheetTable } from '@/components/tables/sheet-table/hooks/use-sheet-table';
 import { cn } from '@/lib/utils';
-import { EstimationRowData, ProjectItemType } from '../types';
+import { EstimationRowData, type ProjectBoqDomainLinesType } from '../types';
 import { getExtraItemsColumns } from './extra-items-table-columns';
 import { projectItemZodSchema } from '@/types/project-item';
 import { emptyItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
@@ -19,7 +19,7 @@ import { toast } from 'sonner';
 
 interface ExtraItemsTableProps {
   projectId: string;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   onItemSaved?: () => void; // Callback when an item is successfully saved
 }
 
@@ -69,6 +69,7 @@ export const ExtraItemsTable = forwardRef<
         costDeviation: 0,
         is_new: true,
         is_edited: true,
+        project_boq_lines_type: type,
       };
       addExtraItem(newItem);
     },
@@ -79,6 +80,7 @@ export const ExtraItemsTable = forwardRef<
         work_order_number: '',
         is_new: true,
         is_edited: true,
+        project_boq_lines_type: type,
       };
       addExtraItem(newItem);
     },
@@ -127,7 +129,7 @@ export const ExtraItemsTable = forwardRef<
         remark: item.remark ?? null,
         reference_schedule_text: item.reference_schedule_text ?? '',
         project_segment_ids: item.project_segment_ids ?? [],
-        type,
+        project_boq_lines_type: type,
       };
 
       try {

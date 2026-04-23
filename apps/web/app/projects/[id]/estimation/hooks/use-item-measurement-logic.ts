@@ -14,7 +14,7 @@ import { getColumns } from '../components/item-measurement-table-columns';
 import { calculateQuantity } from '../utils';
 import {
   ItemMeasurmentRowData,
-  ProjectItemType,
+  type ProjectBoqDomainLinesType,
   rowDataZodSchema,
 } from '../types';
 import { useProjectSegments } from '../../hooks/use-project-segments';
@@ -25,7 +25,7 @@ interface UseItemMeasurementLogicProps {
   projectItemHashId: string;
   rate: number;
   scheduleQuantity: number;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   selectedSegmentId?: string;
 }
 
@@ -564,14 +564,14 @@ export function useItemMeasurementLogic({
         measurementPermissions;
 
       function canCheckForType(): boolean {
-        if (type === 'MSR') return canCheckMSR;
-        if (type === 'BLG') return canCheckBLG;
+        if (type === 'measurement') return canCheckMSR;
+        if (type === 'billing') return canCheckBLG;
         return false;
       }
 
       function canVerifyForType(): boolean {
-        if (type === 'MSR') return canVerifyMSR;
-        if (type === 'BLG') return canVerifyBLG;
+        if (type === 'measurement') return canVerifyMSR;
+        if (type === 'billing') return canVerifyBLG;
         return false;
       }
 

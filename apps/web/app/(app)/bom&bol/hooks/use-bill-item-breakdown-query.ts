@@ -5,30 +5,45 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import {
   fetchProjectItemBreakdown,
   BolBomType,
-  BolBomItemType,
 } from '../api/bol-bom-api';
 import type { ProjectItemBreakdownRow } from '../api/bol-bom-api';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
+
+function normalizeBreakdownScope(
+  raw: ProjectBoqLinesQueryScope | string | null | undefined
+): ProjectBoqLinesQueryScope {
+  if (raw == null || raw === '' || raw === 'GEN') {
+    return 'planned';
+  }
+  if (raw === 'estimation' || raw === 'EST') {
+    return 'estimation';
+  }
+  if (raw === 'measurement' || raw === 'MSR') {
+    return 'measurement';
+  }
+  if (raw === 'billing' || raw === 'BLG') {
+    return 'billing';
+  }
+  return 'planned';
+}
 
 export function useBillItemBreakdownQuery(
   projectId: string | null,
   code: string | null,
   type: BolBomType,
-  itemType: BolBomItemType | null,
+  itemScope: ProjectBoqLinesQueryScope | string | null,
   enabled: boolean
 ) {
-  const validItemType =
-    itemType === 'GEN' || itemType === 'EST' || itemType === 'MSR'
-      ? (itemType as BolBomItemType)
-      : 'GEN';
+  const validScope = normalizeBreakdownScope(itemScope);
 
   const query = useInfiniteQuery({
-    queryKey: ['project-item-breakdown', projectId, code, type, validItemType],
+    queryKey: ['project-item-breakdown', projectId, code, type, validScope],
     queryFn: ({ pageParam = 1, signal }) =>
       fetchProjectItemBreakdown(
         projectId!,
         code!,
         type,
-        validItemType,
+        validScope,
         pageParam,
         signal
       ),

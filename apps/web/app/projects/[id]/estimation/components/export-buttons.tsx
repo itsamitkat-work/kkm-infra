@@ -4,7 +4,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, FileSpreadsheet, FileText, Loader2 } from 'lucide-react';
 import { useEstimationExport } from '../hooks/use-estimation-export';
-import { EstimationRowData, ProjectItemType } from '../types';
+import { EstimationRowData, type ProjectBoqDomainLinesType } from '../types';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import {
 
 interface ExportButtonsProps {
   projectId: string;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   items: EstimationRowData[];
   kpiData: {
     amount1: number;

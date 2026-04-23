@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Filter } from '@/components/ui/filters';
+import type { ProjectBoqDomainLinesType } from '../types';
 
 interface UseEstimationUrlSyncProps {
   projectId: string;
-  type: string;
+  type: ProjectBoqDomainLinesType;
   filters: Filter[];
   query: string;
   segmentId?: string | null;
@@ -41,8 +42,7 @@ export function useEstimationUrlSync({
 
     const newSearchParams = new URLSearchParams(searchParams.toString());
 
-    // Update tab (type)
-    newSearchParams.set('tab', type.toLowerCase());
+    newSearchParams.set('tab', type);
 
     // Update filters
     if (filters.length > 0) {

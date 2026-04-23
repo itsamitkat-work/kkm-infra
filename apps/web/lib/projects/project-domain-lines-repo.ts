@@ -1,6 +1,6 @@
 import type { Database } from '@kkm/db';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
-import type { ProjectItemType } from '@/app/projects/[id]/estimation/types';
+import type { ProjectBoqLinesType } from '@/app/projects/[id]/estimation/types';
 
 type EstimationRow = Database['public']['Tables']['project_estimation_lines']['Row'];
 
@@ -30,15 +30,15 @@ export type DomainLineUpdate = Partial<
 };
 
 function tableForType(
-  type: ProjectItemType
+  type: ProjectBoqLinesType
 ): 'project_estimation_lines' | 'project_measurement_lines' | 'project_billing_lines' {
-  if (type === 'EST') {
+  if (type === 'estimation') {
     return 'project_estimation_lines';
   }
-  if (type === 'MSR') {
+  if (type === 'measurement') {
     return 'project_measurement_lines';
   }
-  if (type === 'BLG') {
+  if (type === 'billing') {
     return 'project_billing_lines';
   }
   throw new Error(`Unsupported domain type: ${type}`);
@@ -46,7 +46,7 @@ function tableForType(
 
 export async function fetchDomainLinesForBoqLine(
   projectBoqLineId: string,
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   signal?: AbortSignal
 ): Promise<EstimationRow[]> {
   const supabase = createSupabaseBrowserClient();
@@ -69,7 +69,7 @@ export async function fetchDomainLinesForBoqLine(
 
 export async function fetchMaxOrderKeyForDomainLines(
   projectBoqLineId: string,
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   signal?: AbortSignal
 ): Promise<number> {
   const supabase = createSupabaseBrowserClient();
@@ -113,7 +113,7 @@ export async function fetchScheduleItemIdForBoqLine(
 }
 
 export async function insertDomainLine(
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   row: DomainLineInsert,
   signal?: AbortSignal
 ): Promise<EstimationRow> {
@@ -131,7 +131,7 @@ export async function insertDomainLine(
 }
 
 export async function updateDomainLine(
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   id: string,
   patch: DomainLineUpdate,
   signal?: AbortSignal
@@ -150,7 +150,7 @@ export async function updateDomainLine(
 }
 
 export async function deleteDomainLine(
-  type: ProjectItemType,
+  type: ProjectBoqLinesType,
   id: string,
   signal?: AbortSignal
 ): Promise<void> {

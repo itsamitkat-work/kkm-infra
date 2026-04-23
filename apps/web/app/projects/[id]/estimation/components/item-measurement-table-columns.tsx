@@ -6,7 +6,7 @@ import { Trash2, X, Copy, ClipboardCheck } from 'lucide-react';
 import { TableMeta } from '@tanstack/react-table';
 import {
   ItemMeasurmentRowData,
-  ProjectItemType,
+  type ProjectBoqDomainLinesType,
   rowDataZodSchema,
 } from '../types';
 import { calculateQuantity } from '../utils';
@@ -28,7 +28,7 @@ type ColumnFactoryProps = {
     meta: TableMeta<ItemMeasurmentRowData>
   ) => Promise<void>;
   saveErrors: Record<string, string | null>;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   createNewRow: (headerKey?: string) => ItemMeasurmentRowData;
   isRowCopied?: (rowId: string) => boolean;
   segmentNames?: string[];
@@ -281,7 +281,7 @@ export const getColumns = ({
     },
     computeValue: calculateQuantity,
   },
-  ...(type == 'MSR' || type == 'BLG' ? measurementColumns : []),
+  ...(type === 'measurement' || type === 'billing' ? measurementColumns : []),
   {
     id: 'actions',
     header: 'Actions',

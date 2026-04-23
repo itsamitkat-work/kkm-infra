@@ -1733,7 +1733,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
     refetch,
   } = useProjectItemsQuery({
     projectId: projectId,
-    type: 'GEN',
+    scope: 'planned',
   });
 
   const { mutateAsync: createItem, isPending: isCreating } =
@@ -1798,7 +1798,6 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
             project_id: projectId,
             schedule_item_id: String(validated.schedule_item_id ?? ''),
             suppressToast: options?.suppressToast,
-            type: 'GEN' as const,
           });
           const serverRow = newItem?.data;
           updatedRowId = serverRow?.id ?? rowData.id;
@@ -2001,6 +2000,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
         _original: null,
         project_segment_ids: [],
         order_key: null,
+        project_boq_lines_type: 'planned',
       };
 
       tableApi.addRow(newRow);

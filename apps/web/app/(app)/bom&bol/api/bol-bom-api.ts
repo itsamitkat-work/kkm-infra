@@ -1,8 +1,24 @@
 import { apiFetch } from '@/lib/apiClient';
 import { PaginationResponse } from '@/types/common';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
 
 export type BolBomType = 'Material' | 'Labour' | 'Carrige';
-export type BolBomItemType = 'GEN' | 'EST' | 'MSR';
+
+/** BOM/BOL APIs still expect legacy `GEN` | `EST` | `MSR` query params; map from BOQ scope here only. */
+function bolBomItemTypeQueryParam(
+  scope: ProjectBoqLinesQueryScope
+): 'GEN' | 'EST' | 'MSR' {
+  if (scope === 'planned') {
+    return 'GEN';
+  }
+  if (scope === 'estimation') {
+    return 'EST';
+  }
+  if (scope === 'measurement') {
+    return 'MSR';
+  }
+  return 'GEN';
+}
 
 export type BolBomRow = {
   totalAmount: number;
@@ -21,13 +37,13 @@ const PAGE_SIZE = 50;
 export async function fetchBolBomBoc(
   projectId: string,
   type: BolBomType,
-  itemType: BolBomItemType,
+  itemScope: ProjectBoqLinesQueryScope,
   page: number = 1,
   signal?: AbortSignal
 ): Promise<PaginationResponse<BolBomRow>> {
   const params = new URLSearchParams();
   params.append('type', type);
-  params.append('itemType', itemType);
+  params.append('itemType', bolBomItemTypeQueryParam(itemScope));
   params.append('page', page.toString());
   params.append('pageSize', PAGE_SIZE.toString());
 
@@ -55,13 +71,13 @@ export async function fetchProjectItemBreakdown(
   projectId: string,
   code: string,
   type: BolBomType,
-  itemType: BolBomItemType,
+  itemScope: ProjectBoqLinesQueryScope,
   page: number = 1,
   signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItemBreakdownRow>> {
   const params = new URLSearchParams();
   params.append('type', type);
-  params.append('itemType', itemType);
+  params.append('itemType', bolBomItemTypeQueryParam(itemScope));
   params.append('page', page.toString());
   params.append('pageSize', BREAKDOWN_PAGE_SIZE.toString());
   const path = `v2/${projectId}/projectitems/${encodeURIComponent(code)}?${params.toString()}`;

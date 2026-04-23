@@ -21,6 +21,7 @@
   "registries": {
     "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
     "@reui": "https://reui.io/r/{name}.json",
-    "@diceui": "https://diceui.com/r/{name}.json"
+    "@diceui": "https://diceui.com/r/{name}.json",
+    "@ss-components": "https://shadcnstudio.com/r/{name}.json"
   }
 }

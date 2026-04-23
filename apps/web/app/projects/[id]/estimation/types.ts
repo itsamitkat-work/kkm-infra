@@ -1,7 +1,15 @@
+import type { Database } from '@kkm/db';
 import { ProjectItemRowType as HookProjectRowData } from '@/types/project-item';
 import z from 'zod';
 
-export type ProjectItemType = 'GEN' | 'EST' | 'MSR' | 'BLG';
+export type ProjectBoqLinesType =
+  Database['public']['Enums']['project_boq_lines_type'];
+
+/** Domain sheet tabs only (`planned` is the Items / baseline list, not a URL tab). */
+export type ProjectBoqDomainLinesType = Exclude<ProjectBoqLinesType, 'planned'>;
+
+/** BOQ list / query scope: `planned` = baseline contract lines; other values = that domain + baseline. */
+export type ProjectBoqLinesQueryScope = ProjectBoqLinesType;
 
 // Extended type for estimation reports that includes estimatedQty
 export type EstimationRowData = HookProjectRowData & {

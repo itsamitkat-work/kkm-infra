@@ -769,6 +769,7 @@ export type Database = {
           item_code: string
           item_description: Json
           order_key: number
+          project_boq_lines_type: Database["public"]["Enums"]["project_boq_lines_type"]
           project_id: string
           rate_amount: number | null
           reference_schedule_text: string
@@ -785,6 +786,7 @@ export type Database = {
           item_code?: string
           item_description?: Json
           order_key?: number
+          project_boq_lines_type?: Database["public"]["Enums"]["project_boq_lines_type"]
           project_id: string
           rate_amount?: number | null
           reference_schedule_text?: string
@@ -801,6 +803,7 @@ export type Database = {
           item_code?: string
           item_description?: Json
           order_key?: number
+          project_boq_lines_type?: Database["public"]["Enums"]["project_boq_lines_type"]
           project_id?: string
           rate_amount?: number | null
           reference_schedule_text?: string
@@ -2092,6 +2095,11 @@ export type Database = {
       uuid_to_short_id: { Args: { uid: string }; Returns: string }
     }
     Enums: {
+      project_boq_lines_type:
+        | "planned"
+        | "estimation"
+        | "measurement"
+        | "billing"
       project_deviation_comparison: "GENvsEST" | "GENvsMSR" | "ESTvsMSR"
       record_status: "active" | "inactive" | "deprecated"
       schedule_annotation_type: "note" | "remark" | "condition" | "reference"
@@ -2230,6 +2238,12 @@ export const Constants = {
   },
   public: {
     Enums: {
+      project_boq_lines_type: [
+        "planned",
+        "estimation",
+        "measurement",
+        "billing",
+      ],
       project_deviation_comparison: ["GENvsEST", "GENvsMSR", "ESTvsMSR"],
       record_status: ["active", "inactive", "deprecated"],
       schedule_annotation_type: ["note", "remark", "condition", "reference"],

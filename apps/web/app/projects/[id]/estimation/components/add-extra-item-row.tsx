@@ -11,7 +11,7 @@ import { TableRow, TableCell } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { SaveButton } from '@/components/ui/save-button';
 import { Copy, Trash2 } from 'lucide-react';
-import { ProjectItemType } from '../types';
+import type { ProjectBoqDomainLinesType } from '../types';
 import { CellEditor } from '@/components/tables/sheet-table/cell-editor';
 import { ExtendedColumnDef } from '@/components/tables/sheet-table/utils';
 import { projectItemZodSchema } from '@/types/project-item';
@@ -40,7 +40,7 @@ interface AddExtraItemProps {
   onItemRemove: (itemId: string) => void;
   onItemDuplicate?: (item: EstimationRowData) => void;
   onSave: (item: EstimationRowData) => void;
-  type: ProjectItemType;
+  type: ProjectBoqDomainLinesType;
   rowClassName: string;
   scheduleCatalogPicks: BoqSchedulePick[];
   onSearch: (query: string, field: string) => void;
@@ -236,7 +236,10 @@ export function AddExtraItemRow({
       },
       contract_quantity: {
         accessorKey: 'contract_quantity',
-        header: type === 'MSR' ? 'Estimated Qty' : 'Planned Qty',
+        header:
+          type === 'measurement' || type === 'billing'
+            ? 'Estimated Qty'
+            : 'Planned Qty',
         inputType: 'input',
         validationSchema: projectItemZodSchema.shape.contract_quantity,
         className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',

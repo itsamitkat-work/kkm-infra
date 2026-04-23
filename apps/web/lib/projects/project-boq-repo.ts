@@ -15,22 +15,30 @@ import {
   parseItemDescriptionFromDb,
   serializeItemDescriptionToDb,
 } from '@/app/(app)/schedule-items/item-description-doc';
+import type { ProjectBoqLinesQueryScope } from '@/app/projects/[id]/estimation/types';
 
 type BoqRow = Database['public']['Tables']['project_boq_lines']['Row'];
 type BoqInsert = Database['public']['Tables']['project_boq_lines']['Insert'];
 type BoqUpdate = Database['public']['Tables']['project_boq_lines']['Update'];
 
-async function fetchMaxOrderKeyForProject(
+async function fetchMaxOrderKeyWithScope(
   projectId: string,
+  scope: ProjectBoqLinesQueryScope,
   signal?: AbortSignal
 ): Promise<number> {
   const supabase = createSupabaseBrowserClient();
   let q = supabase
     .from('project_boq_lines')
     .select('order_key')
-    .eq('project_id', projectId)
-    .order('order_key', { ascending: false })
-    .limit(1);
+    .eq('project_id', projectId);
+  if (scope === 'planned') {
+    q = q.eq('project_boq_lines_type', 'planned');
+  } else {
+    q = q.or(
+      `project_boq_lines_type.eq.planned,project_boq_lines_type.eq.${scope}`
+    );
+  }
+  q = q.order('order_key', { ascending: false }).limit(1);
   if (signal) {
     q = q.abortSignal(signal);
   }
@@ -210,6 +218,7 @@ function mapBoqToProjectItem(
     project_segment_ids: segmentIds,
     remark: row.remark ?? '',
     order_key: row.order_key,
+    project_boq_lines_type: row.project_boq_lines_type,
   };
 }
 
@@ -252,12 +261,14 @@ function mapBoqToProjectItemRow(
     is_new: false,
     _original: null,
     order_key: row.order_key,
+    project_boq_lines_type: row.project_boq_lines_type,
   };
 }
 
 /** Loads every BOQ line for the project in one request (no range / pagination). */
 export async function fetchAllProjectBoqLines(
   projectId: string,
+  scope: ProjectBoqLinesQueryScope,
   signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItem>> {
   const supabase = createSupabaseBrowserClient();
@@ -265,7 +276,17 @@ export async function fetchAllProjectBoqLines(
   let dataQ = supabase
     .from('project_boq_lines')
     .select('*')
-    .eq('project_id', projectId)
+    .eq('project_id', projectId);
+
+  if (scope === 'planned') {
+    dataQ = dataQ.eq('project_boq_lines_type', 'planned');
+  } else {
+    dataQ = dataQ.or(
+      `project_boq_lines_type.eq.planned,project_boq_lines_type.eq.${scope}`
+    );
+  }
+
+  dataQ = dataQ
     .order('order_key', { ascending: true })
     .order('id', { ascending: true });
   if (signal) {
@@ -329,6 +350,7 @@ export type CreateBoqLineInput = Required<
   remark: BoqInsert['remark'];
   reference_schedule_text?: BoqInsert['reference_schedule_text'];
   project_segment_ids: string[];
+  project_boq_lines_type?: BoqInsert['project_boq_lines_type'];
   signal?: AbortSignal;
 };
 
@@ -336,8 +358,11 @@ export async function createProjectBoqLine(
   input: CreateBoqLineInput
 ): Promise<ProjectItemRowType> {
   const supabase = createSupabaseBrowserClient();
-  const maxKey = await fetchMaxOrderKeyForProject(
+  const scope: ProjectBoqLinesQueryScope =
+    input.project_boq_lines_type ?? 'planned';
+  const maxKey = await fetchMaxOrderKeyWithScope(
     input.project_id,
+    scope,
     input.signal
   );
   const orderKey = appendOrderKey(maxKey);
@@ -354,6 +379,7 @@ export async function createProjectBoqLine(
     contract_quantity: input.contract_quantity,
     remark: input.remark ?? null,
     reference_schedule_text: input.reference_schedule_text ?? '',
+    project_boq_lines_type: input.project_boq_lines_type ?? 'planned',
   };
 
   let iq = supabase.from('project_boq_lines').insert(insert);
