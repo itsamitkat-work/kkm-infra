@@ -34,7 +34,13 @@ import type {
 } from '@/hooks/useProjects';
 import { parseProjectMeta, projectDetailToListRow } from '@/hooks/useProjects';
 import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
-import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
+import {
+  PROJECT_TEAM_ESTIMATION_ROLES,
+  PROJECT_TEAM_OPERATIONS_ROLES,
+  PROJECT_TEAM_ROLE_LABELS,
+  type ProjectMemberRoleSlug,
+  useProjectMembersByRole,
+} from '@/hooks/projects/use-project-member';
 import { FieldGroup, FieldLegend, FieldSet } from '@/components/ui/field';
 
 interface ProjectInfoTabProps {
@@ -42,28 +48,6 @@ interface ProjectInfoTabProps {
   isLoading: boolean;
   isError: boolean;
 }
-
-/** Row captions aligned with project-drawer `TeamRoleField` labels. */
-const TEAM_SLOT_LABEL: Record<ProjectMemberRoleSlug, string> = {
-  project_maker: 'Project Maker',
-  project_checker: 'Project Checker',
-  project_verifier: 'Project Verifier',
-  project_head: 'Project Head',
-  project_engineer: 'Project Engineer',
-  project_supervisor: 'Supervisor',
-};
-
-const ESTIMATION_ROLE_ORDER: readonly ProjectMemberRoleSlug[] = [
-  'project_maker',
-  'project_checker',
-  'project_verifier',
-];
-
-const OPERATIONS_ROLE_ORDER: readonly ProjectMemberRoleSlug[] = [
-  'project_head',
-  'project_engineer',
-  'project_supervisor',
-];
 
 export function ProjectInfo({
   project,
@@ -73,13 +57,7 @@ export function ProjectInfo({
   const projectDrawer = useOpenClose<ProjectsListRow | null>();
   const queryClient = useQueryClient();
 
-  const memberByRole = React.useMemo(() => {
-    const map = new Map<ProjectMemberRoleSlug, ProjectDetailMember>();
-    for (const row of project?.members_detail ?? []) {
-      map.set(row.role, row);
-    }
-    return map;
-  }, [project?.members_detail]);
+  const memberByRole = useProjectMembersByRole(project?.members_detail);
 
   if (isLoading) {
     return <TableLoadingState />;
@@ -215,7 +193,7 @@ export function ProjectInfo({
                 >
                   <FieldLegend variant='legend'>Estimation</FieldLegend>
                   <FieldGroup className='gap-3'>
-                    {ESTIMATION_ROLE_ORDER.map((slug) => (
+                    {PROJECT_TEAM_ESTIMATION_ROLES.map((slug) => (
                       <TeamRoleReadOnlyRow
                         key={slug}
                         slug={slug}
@@ -232,7 +210,7 @@ export function ProjectInfo({
                 >
                   <FieldLegend variant='legend'>Operations</FieldLegend>
                   <FieldGroup className='gap-3'>
-                    {OPERATIONS_ROLE_ORDER.map((slug) => (
+                    {PROJECT_TEAM_OPERATIONS_ROLES.map((slug) => (
                       <TeamRoleReadOnlyRow
                         key={slug}
                         slug={slug}
@@ -355,7 +333,7 @@ function TeamRoleReadOnlyRow({
   slug: ProjectMemberRoleSlug;
   member: ProjectDetailMember | undefined;
 }) {
-  const label = TEAM_SLOT_LABEL[slug];
+  const label = PROJECT_TEAM_ROLE_LABELS[slug];
   if (member) {
     return (
       <TeamMember

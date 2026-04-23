@@ -71,7 +71,7 @@ function calculateItemMetrics(item: ExportParentItem, type: ProjectItemType) {
 
   switch (type) {
     case 'EST':
-      quantity1 = parseFloat(item.quantity || '0');
+      quantity1 = parseFloat(item.contract_quantity || '0');
       quantity2 = parseFloat(item.estimate_quantity || '0');
       break;
     case 'MSR':
@@ -80,11 +80,11 @@ function calculateItemMetrics(item: ExportParentItem, type: ProjectItemType) {
       quantity2 = parseFloat(item.measurment_quantity || '0');
       break;
     default:
-      quantity1 = parseFloat(item.quantity || '0');
+      quantity1 = parseFloat(item.contract_quantity || '0');
       quantity2 = parseFloat(item.estimate_quantity || '0');
   }
 
-  const rate = parseFloat(item.rate || '0');
+  const rate = parseFloat(item.rate_amount || '0');
   const cost1 = quantity1 * rate;
   const cost2 = quantity2 * rate;
   const costDeviation = cost2 - cost1;
@@ -103,16 +103,16 @@ function calculateGrandTotals(
     let qty: number;
     switch (type) {
       case 'EST':
-        qty = parseFloat(item.quantity || '0');
+        qty = parseFloat(item.contract_quantity || '0');
         break;
       case 'MSR':
       case 'BLG':
         qty = parseFloat(item.estimate_quantity || '0');
         break;
       default:
-        qty = parseFloat(item.quantity || '0');
+        qty = parseFloat(item.contract_quantity || '0');
     }
-    const rate = parseFloat(item.rate || '0');
+    const rate = parseFloat(item.rate_amount || '0');
     return sum + qty * rate;
   }, 0);
 
@@ -129,7 +129,7 @@ function calculateGrandTotals(
       default:
         qty = parseFloat(item.estimate_quantity || '0');
     }
-    const rate = parseFloat(item.rate || '0');
+    const rate = parseFloat(item.rate_amount || '0');
     return sum + qty * rate;
   }, 0);
 
@@ -265,11 +265,11 @@ function createMainDataSheet(
     // Add parent item row
     rows.push([
       index + 1,
-      item.srNo || '',
-      item.code || '',
-      item.dsrCode || '',
-      item.name || '',
-      item.unit || '',
+      String(item.work_order_number ?? ''),
+      item.item_code || '',
+      item.reference_schedule_text || '',
+      item.item_description || '',
+      item.unit_display || '',
       rate,
       quantity1,
       cost1,
@@ -476,9 +476,9 @@ export function exportToPDF(data: ExportData) {
     // Add parent item row
     tableData.push([
       (index + 1).toString(),
-      item.srNo || '',
-      item.name || '',
-      item.unit || '',
+      String(item.work_order_number ?? ''),
+      item.item_description || '',
+      item.unit_display || '',
       rate.toFixed(2),
       quantity1.toFixed(2),
       cost1.toFixed(2),

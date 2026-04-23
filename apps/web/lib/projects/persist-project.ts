@@ -4,7 +4,7 @@ import {
   PROJECT_MEMBER_ROLE_ORDER,
   PROJECT_MEMBER_ROLE_SLUGS,
   type ProjectMemberRoleSlug,
-} from '@/types/project-member-roles';
+} from '@/hooks/projects/use-project-member';
 import {
   buildProjectMetaPatch,
   parseProjectMeta,
@@ -15,7 +15,7 @@ type ProjectsRow = Database['public']['Tables']['projects']['Row'];
 
 /** PostgREST `projects` row fragment — explicit columns instead of `select=*`. */
 export const PROJECTS_ROW_SELECT =
-  'id, tenant_id, name, code, status, meta, created_at, updated_at' as const;
+  'id, tenant_id, name, code, status, meta, created_at, updated_at, client_id' as const;
 
 export type ProjectMemberSelection = Record<ProjectMemberRoleSlug, string>;
 

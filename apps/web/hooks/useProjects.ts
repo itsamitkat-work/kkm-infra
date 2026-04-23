@@ -17,7 +17,7 @@ import {
   isProjectMemberRoleSlug,
   PROJECT_MEMBER_ROLE_SLUGS,
   type ProjectMemberRoleSlug,
-} from '@/types/project-member-roles';
+} from '@/hooks/projects/use-project-member';
 import { buildProjectMetaPatch } from '@/lib/projects/project-meta';
 import {
   createProjectWithRelations,
@@ -65,6 +65,8 @@ export type ProjectDetailMember = {
 };
 
 export type ProjectDetail = ProjectsRow & {
+  /** Matches `list_projects` / drawer list row shape when opening from detail. */
+  client_display_name: string;
   project_schedules: ProjectScheduleDetail[];
   project_members: ProjectMemberDetail[];
   members_detail: ProjectDetailMember[];
@@ -288,6 +290,8 @@ export function projectDetailToListRow(p: ProjectDetail): ProjectsListRow {
     created_at: p.created_at,
     updated_at: p.updated_at,
     total_count: 0,
+    client_id: p.client_id ?? '',
+    client_display_name: p.client_display_name,
     default_schedule_source_id: p.default_schedule_source_id ?? '',
     default_schedule_display_name: p.default_schedule_display_name ?? '',
   };
@@ -383,8 +387,22 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
     defaultSched?.schedule_sources?.name ??
     null;
 
+  let client_display_name = '';
+  if (project.client_id) {
+    const { data: clientRow, error: clientErr } = await supabase
+      .from('clients')
+      .select('display_name')
+      .eq('id', project.client_id)
+      .maybeSingle();
+    if (clientErr) {
+      throw clientErr;
+    }
+    client_display_name = clientRow?.display_name?.trim() ?? '';
+  }
+
   return {
     ...project,
+    client_display_name,
     project_schedules: schedRows,
     project_members: memberDetails,
     members_detail,

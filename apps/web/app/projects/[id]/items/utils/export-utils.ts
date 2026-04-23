@@ -49,7 +49,7 @@ export function exportProjectItemsToExcel(data: ProjectItemsExportData) {
     'Sr No',
     'Wo. No.',
     'Code',
-    'DSR Code',
+    'Reference Schedule',
     'Schedule',
     'Item Name',
     'Unit',
@@ -62,18 +62,18 @@ export function exportProjectItemsToExcel(data: ProjectItemsExportData) {
   const rows: (string | number)[][] = [headers];
 
   items.forEach((item, index) => {
-    const quantity = parseFloat(item.quantity || '0');
-    const rate = parseFloat(item.rate || '0');
+    const quantity = parseFloat(item.contract_quantity || '0');
+    const rate = parseFloat(item.rate_amount || '0');
     const total = quantity * rate;
 
     rows.push([
       index + 1,
-      item.srNo || '',
-      item.code || '',
-      item.dsrCode || '',
-      item.scheduleName || '',
-      item.name || '',
-      item.unit || '',
+      item.work_order_number || '',
+      item.item_code || '',
+      item.reference_schedule_text || '',
+      item.schedule_name || '',
+      item.item_description || '',
+      item.unit_display || '',
       quantity,
       rate,
       total,
@@ -92,7 +92,7 @@ export function exportProjectItemsToExcel(data: ProjectItemsExportData) {
     { wch: 8 }, // Sr No
     { wch: 12 }, // Wo. No.
     { wch: 15 }, // Code
-    { wch: 15 }, // DSR Code
+    { wch: 28 }, // Reference Schedule
     { wch: 15 }, // Schedule
     { wch: 40 }, // Item Name
     { wch: 10 }, // Unit
@@ -187,18 +187,18 @@ export function exportProjectItemsToPDF(data: ProjectItemsExportData) {
   const tableData: (string | number)[][] = [];
 
   items.forEach((item, index) => {
-    const quantity = parseFloat(item.quantity || '0');
-    const rate = parseFloat(item.rate || '0');
+    const quantity = parseFloat(item.contract_quantity || '0');
+    const rate = parseFloat(item.rate_amount || '0');
     const total = quantity * rate;
 
     tableData.push([
       (index + 1).toString(),
-      item.srNo || '',
-      item.code || '',
-      item.dsrCode || '',
-      item.scheduleName || '',
-      item.name || '',
-      item.unit || '',
+      item.work_order_number || '',
+      item.item_code || '',
+      item.reference_schedule_text || '',
+      item.schedule_name || '',
+      item.item_description || '',
+      item.unit_display || '',
       quantity.toFixed(2),
       rate.toFixed(2),
       total.toFixed(2),
@@ -229,7 +229,7 @@ export function exportProjectItemsToPDF(data: ProjectItemsExportData) {
         'Sr No',
         'Wo. No.',
         'Code',
-        'DSR Code',
+        'Reference Schedule',
         'Schedule',
         'Name',
         'Unit',
@@ -256,7 +256,7 @@ export function exportProjectItemsToPDF(data: ProjectItemsExportData) {
       0: { cellWidth: 10, halign: 'center' }, // Sr No
       1: { cellWidth: 15, halign: 'center' }, // Wo. No.
       2: { cellWidth: 15, halign: 'center' }, // Code
-      3: { cellWidth: 15, halign: 'center' }, // DSR Code
+      3: { cellWidth: 22, halign: 'center' }, // Reference Schedule
       4: { cellWidth: 20, halign: 'center' }, // Schedule
       5: { cellWidth: 50 }, // Name
       6: { cellWidth: 12, halign: 'center' }, // Unit

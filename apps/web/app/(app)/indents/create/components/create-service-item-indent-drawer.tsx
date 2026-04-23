@@ -47,10 +47,10 @@ export function CreateServiceItemIndentDrawer({
   const serviceItemOptions = React.useMemo(
     () =>
       serviceItems.map((item) => {
-        const id = item.hashId ?? item.id ?? '';
+        const id = item.id ?? '';
         return {
           value: id,
-          label: `${item.code ?? ''} – ${item.name ?? ''}`.trim(),
+          label: `${item.item_code ?? ''} – ${item.item_description ?? ''}`.trim(),
         };
       }),
     [serviceItems]
@@ -69,11 +69,11 @@ export function CreateServiceItemIndentDrawer({
 
   async function handleSubmit(values: FormValues) {
     const selectedItem = serviceItems.find(
-      (item) => (item.hashId ?? item.id) === values.serviceItemId
+      (item) => item.id === values.serviceItemId
     );
     if (!selectedItem) return;
-    const projectItemId = selectedItem.hashId ?? selectedItem.id ?? '';
-    const serviceItemCode = selectedItem.code ?? '';
+    const projectItemId = selectedItem.id ?? '';
+    const serviceItemCode = selectedItem.item_code ?? '';
     const qty = Number(values.quantity);
     if (!projectItemId || !serviceItemCode) return;
 

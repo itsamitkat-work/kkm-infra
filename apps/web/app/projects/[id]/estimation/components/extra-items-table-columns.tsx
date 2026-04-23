@@ -30,12 +30,12 @@ function createMasterItemOnChangeUpdateRow() {
     const selectedMasterItem = getSelectedMasterItem(rowId);
 
     if (!selectedMasterItem) {
-      return { isEdited: true };
+      return { is_edited: true };
     }
 
     // Build and return the patch to update all related fields
     const patch = buildPatchFromSelection(selectedMasterItem);
-    return { ...patch, isEdited: true };
+    return { ...patch, is_edited: true };
   };
 }
 
@@ -53,7 +53,7 @@ const codeColumnConfig: MasterItemEditorConfigType = {
     rowValue?: string
   ) => option?.code || rowValue || placeholder,
   getOnChangeValue: (option: MasterItemOption | null) => option?.code ?? '',
-  getRowValue: (row: EstimationRowData) => row.code ?? '',
+  getRowValue: (row: EstimationRowData) => row.item_code ?? '',
 };
 
 // Config for name column
@@ -68,7 +68,7 @@ const nameColumnConfig: MasterItemEditorConfigType = {
   ) => option?.name || rowValue || placeholder,
   getOnChangeValue: (option: MasterItemOption | null) => option?.name ?? '',
   getOptionLabel: (option: MasterItemOption) => option.name,
-  getRowValue: (row: EstimationRowData) => row.name ?? '',
+  getRowValue: (row: EstimationRowData) => row.item_description ?? '',
 };
 
 export const getExtraItemsColumns = ({
@@ -80,16 +80,16 @@ export const getExtraItemsColumns = ({
 }: ExtraItemsColumnProps): ExtendedColumnDef<EstimationRowData>[] => {
   return [
     {
-      accessorKey: 'srNo',
+      accessorKey: 'work_order_number',
       header: 'Wo. No.',
       inputType: 'input',
-      validationSchema: projectItemZodSchema.shape.srNo,
+      validationSchema: projectItemZodSchema.shape.work_order_number,
       size: 80,
     },
     {
-      accessorKey: 'code',
+      accessorKey: 'item_code',
       header: 'Code',
-      validationSchema: projectItemZodSchema.shape.code,
+      validationSchema: projectItemZodSchema.shape.item_code,
       size: 120,
       inputType: 'combobox' as const,
       editor: (props) => (
@@ -103,11 +103,11 @@ export const getExtraItemsColumns = ({
       onChangeUpdateRow: masterItemOnChangeUpdateRow,
     },
     {
-      accessorKey: 'dsrCode',
-      header: 'DSR Code',
+      accessorKey: 'reference_schedule_text',
+      header: 'Reference Schedule',
       inputType: 'input',
       className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
-      validationSchema: projectItemZodSchema.shape.dsrCode,
+      validationSchema: projectItemZodSchema.shape.reference_schedule_text,
       size: 120,
       // DSR Code is auto-filled, so we disable editing
       cell: ({ getValue }) => {
@@ -120,11 +120,11 @@ export const getExtraItemsColumns = ({
       },
     },
     {
-      accessorKey: 'scheduleName',
+      accessorKey: 'schedule_name',
       header: 'Schedule',
       inputType: 'input',
       className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
-      validationSchema: projectItemZodSchema.shape.scheduleName,
+      validationSchema: projectItemZodSchema.shape.schedule_name,
       size: 120,
       cell: ({ getValue }) => {
         const value = getValue() as string;
@@ -136,9 +136,9 @@ export const getExtraItemsColumns = ({
       },
     },
     {
-      accessorKey: 'name',
+      accessorKey: 'item_description',
       header: 'Name',
-      validationSchema: projectItemZodSchema.shape.name,
+      validationSchema: projectItemZodSchema.shape.item_description,
       size: 250,
       minSize: 200,
       maxSize: 400,
@@ -154,16 +154,16 @@ export const getExtraItemsColumns = ({
       onChangeUpdateRow: masterItemOnChangeUpdateRow,
     },
     {
-      accessorKey: 'rate',
+      accessorKey: 'rate_amount',
       header: 'Rate',
       inputType: 'input',
-      validationSchema: projectItemZodSchema.shape.rate,
+      validationSchema: projectItemZodSchema.shape.rate_amount,
       size: 100,
       onChangeUpdateRow: ({ draftRow, newValue }) => {
         return {
           ...draftRow,
-          rate: newValue as string,
-          isEdited: true,
+          rate_amount: newValue as string,
+          is_edited: true,
         };
       },
     },
@@ -174,7 +174,7 @@ export const getExtraItemsColumns = ({
       enableSorting: false,
       cell: ({ row }) => {
         const item = row.original;
-        const isSaveDisabled = !item.isEdited && !item.isNew;
+        const isSaveDisabled = !item.is_edited && !item.is_new;
         const isSaving = Boolean(savingItemIds[item.id]);
         const errorMessage = itemErrors[item.id] ?? null;
 
@@ -190,8 +190,8 @@ export const getExtraItemsColumns = ({
               disabled={isSaveDisabled || isSaving}
               isLoading={isSaving}
               errorMessage={errorMessage}
-              isNew={!!item.isNew}
-              isEdited={!!item.isEdited}
+              isNew={!!item.is_new}
+              isEdited={!!item.is_edited}
             />
             {onItemDuplicate && (
               <Button

@@ -57,6 +57,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.34.3",
+    "immer": "^11.1.4",
     "jspdf": "^3.0.3",
     "jspdf-autotable": "^5.0.2",
     "lucide-react": "^0.544.0",
@@ -83,7 +84,7 @@
     "vaul": "^1.1.2",
     "xlsx": "^0.18.5",
     "zod": "^4.1.9",
-    "zustand": "^5.0.8"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -1,79 +1,65 @@
 'use client';
 
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { apiFetch } from '@/lib/apiClient';
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { PaginationResponse } from '@/types/common';
 import { ProjectItemRowType } from '@/types/project-item';
 import { ProjectItem } from '@/types/project-item';
 import React from 'react';
 import { ProjectItemType } from '@/app/projects/[id]/estimation/types';
+import { fetchAllProjectBoqLines } from '@/lib/projects/project-boq-repo';
 
 export const fetchProjectItems = async (
   projectId: string,
-  page: number,
-  type: ProjectItemType
+  _type: ProjectItemType,
+  signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItem>> => {
-  const params = new URLSearchParams();
-
-  params.append('type', type);
-  params.append('page', page.toString());
-  params.append('pageSize', '200');
-  params.append('sortBy', 'srNo');
-  params.append('order', 'asc');
-
-  const queryString = params.toString();
-
-  const data = await apiFetch<PaginationResponse<ProjectItem>>(
-    `/v2/project/items/${projectId}?${queryString}`
-  );
-
-  if (!data?.isSuccess || data?.statusCode !== 200) {
-    throw new Error('Failed to fetch project items');
-  }
-
-  return data;
+  return fetchAllProjectBoqLines(projectId, signal);
 };
 
 function mapProjectItemToRow(item: ProjectItem): ProjectItemRowType {
-  const quantity = Number(item.quantity) || 0;
-  const rate = Number(item.rate) || 0;
+  const quantity = Number(item.contract_quantity) || 0;
+  const rate = Number(item.rate_amount) || 0;
   const total = (quantity * rate).toFixed(2);
   return {
-    id: item.hashId,
-    hashId: item.hashId,
-    srNo: item.srNo?.toString() || '',
-    code: item.code,
-    name: item.name,
-    unit: item.unit || '',
-    quantity: quantity.toString(),
-    rate: rate.toString(),
+    id: item.id,
+    work_order_number: item.work_order_number?.toString() || '',
+    item_code: item.item_code,
+    item_description: item.item_description,
+    unit_display: item.unit_display || '',
+    contract_quantity: quantity.toString(),
+    rate_amount: rate.toString(),
     total,
-    scheduleName: item.scheduleName || '',
-    segmentHashIds: item.segmentHashIds || [],
+    schedule_name: item.schedule_name || '',
+    project_segment_ids: item.project_segment_ids || [],
     estimate_quantity: item.estimate_quantity?.toString() || '0',
     measurment_quantity: item.measurment_quantity?.toString() || '0',
-    remark: item.remarks || '',
-    dsrCode: item.dsrCode || '',
-    isEdited: false,
-    isNew: false,
+    remark: item.remark || '',
+    reference_schedule_text: item.reference_schedule_text || '',
+    schedule_item_id: item.schedule_item_id,
+    is_edited: false,
+    is_new: false,
     _original: null,
+    order_key: item.order_key ?? null,
   };
 }
 
-/** Fetches one page and returns PaginationResponse<ProjectItemRowType> for use with DataTable (infinite query shape). */
+/** Full list as rows for DataTable (single network request). */
 export async function fetchProjectItemsAsRows(
   projectId: string,
-  page: number,
-  type: ProjectItemType
+  type: ProjectItemType,
+  signal?: AbortSignal
 ): Promise<PaginationResponse<ProjectItemRowType>> {
-  const raw = await fetchProjectItems(projectId, page, type);
+  const raw = await fetchProjectItems(projectId, type, signal);
   return {
     ...raw,
-    data: (raw.data || []).map(mapProjectItemToRow),
+    data: (raw.data || []).map((item) => mapProjectItemToRow(item)),
   };
 }
 
-/** Infinite query for project items compatible with DataTable (pages of ProjectItemRowType). */
+/**
+ * Infinite-query shape for DataTable; loads the full BOQ list in one request
+ * (`getNextPageParam` is always undefined).
+ */
 export function useProjectItemsInfiniteQuery({
   projectId,
   type,
@@ -85,14 +71,9 @@ export function useProjectItemsInfiniteQuery({
 }) {
   return useInfiniteQuery({
     queryKey: ['project-items-infinite', projectId, type],
-    queryFn: ({ pageParam }) =>
-      fetchProjectItemsAsRows(projectId, pageParam as number, type),
-    getNextPageParam: (lastPage, allPages) => {
-      if (lastPage.totalPages > allPages.length) {
-        return allPages.length + 1;
-      }
-      return undefined;
-    },
+    queryFn: ({ signal }) =>
+      fetchProjectItemsAsRows(projectId, type, signal),
+    getNextPageParam: () => undefined,
     initialPageParam: 1,
     enabled: !!projectId && !!type && enabled,
   });
@@ -105,92 +86,45 @@ export type UseProjectItemsInfiniteQueryResult = ReturnType<
 export const useProjectItemsQuery = ({
   projectId,
   type,
-  fetchAll = true,
 }: {
   projectId: string;
   type: ProjectItemType;
-  fetchAll?: boolean;
 }) => {
-  const {
-    data,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    isPending,
-    isLoading,
-    isError,
-    error,
-    refetch,
-  } = useInfiniteQuery({
-    queryKey: ['project-items', projectId, type],
-    queryFn: ({ pageParam }) => fetchProjectItems(projectId, pageParam, type),
-    getNextPageParam: (lastPage, allPages) => {
-      if (lastPage.totalPages > allPages.length) {
-        return allPages.length + 1;
-      }
-      return undefined;
-    },
-    initialPageParam: 1,
-    enabled: !!projectId && !!type,
-    refetchOnWindowFocus: 'always',
-  });
-
-  React.useEffect(() => {
-    if (fetchAll && hasNextPage && !isFetchingNextPage) {
-      fetchNextPage();
-    }
-  }, [fetchAll, hasNextPage, isFetchingNextPage, fetchNextPage]);
+  const { data, isPending, isLoading, isFetching, isError, error, refetch } =
+    useQuery({
+      queryKey: ['project-items', projectId, type],
+      queryFn: ({ signal }) => fetchProjectItems(projectId, type, signal),
+      enabled: !!projectId && !!type,
+      refetchOnWindowFocus: 'always',
+    });
 
   const projectItemRows: ProjectItemRowType[] = React.useMemo(() => {
-    if (!data?.pages) return [];
-
-    return data.pages.flatMap((page) =>
-      (page.data || []).map((item: ProjectItem) => {
-        // Calculate total with proper number handling
-        const quantity = Number(item.quantity) || 0;
-        const rate = Number(item.rate) || 0;
-        const total = (quantity * rate).toFixed(2);
-
-        return {
-          id: item.hashId,
-          hashId: item.hashId,
-          srNo: item.srNo?.toString() || '',
-          code: item.code,
-          name: item.name,
-          unit: item.unit || '',
-          quantity: quantity.toString(),
-          rate: rate.toString(),
-          total,
-          scheduleName: item.scheduleName || '',
-          segmentHashIds: item.segmentHashIds || [],
-          estimate_quantity: item.estimate_quantity?.toString() || '0',
-          measurment_quantity: item.measurment_quantity?.toString() || '0',
-          remark: item.remarks || '',
-          dsrCode: item.dsrCode || '',
-
-          isEdited: false,
-          isNew: false,
-          _original: null,
-        };
-      })
+    return (data?.data ?? []).map((item: ProjectItem) =>
+      mapProjectItemToRow(item)
     );
   }, [data]);
 
+  const page = data?.page ?? 1;
+  const pageSize = data?.pageSize ?? 0;
+  const totalPages = data?.totalPages ?? 1;
+  const totalCount = data?.totalCount ?? 0;
+
   return {
     data: projectItemRows,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    totalCount: data?.pages[0]?.totalCount ?? 0,
-    totalPages: data?.pages[0]?.totalPages ?? 0,
-    currentPage: data?.pages[0]?.page ?? 1,
-    pageSize: data?.pages[0]?.pageSize ?? 500,
-    hasPrevious: data?.pages[0]?.hasPrevious ?? false,
-    hasNext: data?.pages[0]?.hasNext ?? false,
+    totalCount,
+    totalPages,
+    currentPage: page,
+    pageSize,
+    hasPrevious: data?.hasPrevious ?? false,
+    hasNext: data?.hasNext ?? false,
     isPending,
     isLoading,
+    isFetching,
     isError,
     error,
     refetch,
+    fetchNextPage: async () => {},
+    hasNextPage: false,
+    isFetchingNextPage: false,
   };
 };

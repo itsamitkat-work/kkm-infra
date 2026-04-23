@@ -1,6 +1,6 @@
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { composeAccessTokenContext } from '@/lib/auth';
-import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
+import type { ProjectMemberRoleSlug } from '@/hooks/projects/use-project-member';
 
 async function resolveRoleIdForUserSearch(
   tenantId: string,

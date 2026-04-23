@@ -20,6 +20,14 @@ import { buildPatchFromSelection } from '../../utils';
 import { cn } from '@/lib/utils';
 import { useHotkeys } from 'react-hotkeys-hook';
 
+type AddExtraEditableKey =
+  | 'work_order_number'
+  | 'item_code'
+  | 'reference_schedule_text'
+  | 'item_description'
+  | 'contract_quantity'
+  | 'rate_amount';
+
 interface AddExtraItemProps {
   item: EstimationRowData;
   index: number;
@@ -65,7 +73,7 @@ export function AddExtraItemRow({
   const masterItemOptions = useMasterItemOptions(masterProjectItems);
   const rowRef = React.useRef<HTMLTableRowElement | null>(null);
   const errorMessage = error ?? null;
-  const isSaveDisabled = !item.isEdited && !item.isNew;
+  const isSaveDisabled = !item.is_edited && !item.is_new;
   const isSaving = Boolean(isSavingProp);
 
   const handleSave = useCallback(() => {
@@ -93,17 +101,17 @@ export function AddExtraItemRow({
   );
 
   const columnDefs: Partial<
-    Record<keyof EstimationRowData, ExtendedColumnDef<EstimationRowData>>
+    Record<AddExtraEditableKey, ExtendedColumnDef<EstimationRowData>>
   > = useMemo(
     () => ({
-      srNo: {
-        accessorKey: 'srNo',
+      work_order_number: {
+        accessorKey: 'work_order_number',
         header: 'Wo. No.',
         inputType: 'input',
-        validationSchema: projectItemZodSchema.shape.srNo,
+        validationSchema: projectItemZodSchema.shape.work_order_number,
       },
-      code: {
-        accessorKey: 'code',
+      item_code: {
+        accessorKey: 'item_code',
         header: 'Code',
         inputType: 'combobox',
         inputConfig: {
@@ -137,8 +145,8 @@ export function AddExtraItemRow({
             }),
           renderSelectedValue: (option, rowData) => {
             if (!option)
-              return rowData.code ? (
-                <span className='truncate'>{rowData.code}</span>
+              return rowData.item_code ? (
+                <span className='truncate'>{rowData.item_code}</span>
               ) : (
                 <span className='text-muted-foreground'>Code</span>
               );
@@ -146,22 +154,25 @@ export function AddExtraItemRow({
             const selected = option as MasterItemOption;
             return (
               <span className='truncate'>
-                {selected.code || selected.name || rowData.code || 'Code'}
+                {selected.code ||
+                  selected.name ||
+                  rowData.item_code ||
+                  'Code'}
               </span>
             );
           },
         },
-        validationSchema: projectItemZodSchema.shape.code,
+        validationSchema: projectItemZodSchema.shape.item_code,
       },
-      dsrCode: {
-        accessorKey: 'dsrCode',
+      reference_schedule_text: {
+        accessorKey: 'reference_schedule_text',
         header: 'DSR Code',
         inputType: 'input',
         className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
-        validationSchema: projectItemZodSchema.shape.dsrCode,
+        validationSchema: projectItemZodSchema.shape.reference_schedule_text,
       },
-      name: {
-        accessorKey: 'name',
+      item_description: {
+        accessorKey: 'item_description',
         header: 'Name',
         inputType: 'combobox',
         inputConfig: {
@@ -195,8 +206,8 @@ export function AddExtraItemRow({
             }),
           renderSelectedValue: (option, rowData) => {
             if (!option)
-              return rowData.name ? (
-                <span className='truncate'>{rowData.name}</span>
+              return rowData.item_description ? (
+                <span className='truncate'>{rowData.item_description}</span>
               ) : (
                 <span className='text-muted-foreground'>Item</span>
               );
@@ -204,25 +215,28 @@ export function AddExtraItemRow({
             const selected = option as MasterItemOption;
             return (
               <span className='truncate'>
-                {selected.name || selected.code || rowData.name || 'Item'}
+                {selected.name ||
+                  selected.code ||
+                  rowData.item_description ||
+                  'Item'}
               </span>
             );
           },
         },
-        validationSchema: projectItemZodSchema.shape.name,
+        validationSchema: projectItemZodSchema.shape.item_description,
       },
-      quantity: {
-        accessorKey: 'quantity',
+      contract_quantity: {
+        accessorKey: 'contract_quantity',
         header: type === 'MSR' ? 'Estimated Qty' : 'Planned Qty',
         inputType: 'input',
-        validationSchema: projectItemZodSchema.shape.quantity,
+        validationSchema: projectItemZodSchema.shape.contract_quantity,
         className: 'text-center bg-gray-100 dark:bg-gray-800 font-semibold',
       },
-      rate: {
-        accessorKey: 'rate',
+      rate_amount: {
+        accessorKey: 'rate_amount',
         header: 'Rate',
         inputType: 'input',
-        validationSchema: projectItemZodSchema.shape.rate,
+        validationSchema: projectItemZodSchema.shape.rate_amount,
       },
     }),
     [
@@ -240,12 +254,12 @@ export function AddExtraItemRow({
   );
 
   const handleChange = useCallback(
-    (field: keyof EstimationRowData, value: string) => {
+    (field: AddExtraEditableKey, value: string) => {
       const updatedItem = { ...item, [field]: value };
 
-      if (field === 'code' || field === 'name') {
+      if (field === 'item_code' || field === 'item_description') {
         const matchedMasterItem = masterProjectItems.find((masterItem) => {
-          if (field === 'code') {
+          if (field === 'item_code') {
             return masterItem.code === value;
           }
 
@@ -266,16 +280,17 @@ export function AddExtraItemRow({
     [item, onItemChange, masterProjectItems]
   );
 
-  const renderCell = (name: keyof EstimationRowData) => {
+  const renderCell = (name: AddExtraEditableKey) => {
     const colDef = columnDefs[name];
     if (!colDef) return <TableCell className='border-r p-0'></TableCell>;
 
     return (
       <TableCell
         className={cn(
-          `border-r p-0 ${name === 'name' ? 'max-w-[300px]' : ''}`,
+          `border-r p-0 ${name === 'item_description' ? 'max-w-[300px]' : ''}`,
           {
-            'bg-muted': name === 'quantity' || name === 'dsrCode',
+            'bg-muted':
+              name === 'contract_quantity' || name === 'reference_schedule_text',
           }
         )}
       >
@@ -286,10 +301,12 @@ export function AddExtraItemRow({
             item[colDef.accessorKey as keyof EstimationRowData] ?? ''
           )}
           onValueChange={(value) =>
-            handleChange(colDef.accessorKey as keyof EstimationRowData, value)
+            handleChange(colDef.accessorKey as AddExtraEditableKey, value)
           }
           enableEditing={true}
-          disabled={name === 'quantity' || name === 'dsrCode'}
+          disabled={
+            name === 'contract_quantity' || name === 'reference_schedule_text'
+          }
         />
       </TableCell>
     );
@@ -297,20 +314,20 @@ export function AddExtraItemRow({
 
   return (
     <TableRow ref={rowRef} className={rowClassName}>
-      {renderCell('srNo')}
-      {renderCell('code')}
-      {renderCell('dsrCode')}
-      {renderCell('name')}
-      {renderCell('quantity')}
-      {renderCell('rate')}
+      {renderCell('work_order_number')}
+      {renderCell('item_code')}
+      {renderCell('reference_schedule_text')}
+      {renderCell('item_description')}
+      {renderCell('contract_quantity')}
+      {renderCell('rate_amount')}
       <TableCell className='text-center flex items-center justify-center gap-1'>
         <SaveButton
           onClick={handleSave}
           disabled={isSaveDisabled || isSaving}
           isLoading={isSaving}
           errorMessage={errorMessage}
-          isNew={!!item.isNew}
-          isEdited={!!item.isEdited}
+          isNew={!!item.is_new}
+          isEdited={!!item.is_edited}
         />
         {onItemDuplicate && (
           <Button

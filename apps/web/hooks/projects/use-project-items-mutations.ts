@@ -1,49 +1,48 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { apiFetch } from '@/lib/apiClient';
 import { ProjectItemRowType } from '@/types/project-item';
 import { toast } from 'sonner';
+import {
+  createProjectBoqLine,
+  deleteProjectBoqLine,
+  patchProjectBoqLine,
+  type CreateBoqLineInput,
+  type UpdateBoqLineInput,
+} from '@/lib/projects/project-boq-repo';
 
-interface CreateProjectItemPayload extends Omit<
-  UpdateProjectItemPayload,
-  'hashId'
-> {
-  projectId: string;
+/** Same field names as `CreateBoqLineInput`; `type` is UI-only and stripped before the repo call. */
+export type CreateProjectItemPayload = Omit<CreateBoqLineInput, 'signal'> & {
   suppressToast?: boolean;
-}
+  type?: string;
+};
 
-interface UpdateProjectItemPayload {
-  hashId: string;
-  rate?: number;
-  quantity?: number;
-  remarks?: string | null;
-  srNo?: string | null;
-  dsrCode?: string | null;
-  name?: string;
-  code?: string;
-  unit?: string;
-  scheduleName?: string | null;
-  segmentHashIds?: string[];
+/**
+ * Partial BOQ line body for `patchProjectItem` (PostgREST PATCH via Supabase `.update()`).
+ * Include only fields that changed; `id` and `project_id` are required.
+ */
+export type UpdateProjectItemPayload = Omit<UpdateBoqLineInput, 'signal'> & {
   suppressToast?: boolean;
-}
+};
 
 const createProjectItem = async (
   item: CreateProjectItemPayload
 ): Promise<{ data: ProjectItemRowType }> => {
-  const { suppressToast: _suppressToast, ...payload } = item;
-  return await apiFetch<{ data: ProjectItemRowType }>('/v2/project/item', {
-    method: 'POST',
-    data: payload,
-  });
+  const { suppressToast: _suppressToast, type: _type, ...input } = item;
+  if (!input.schedule_item_id?.trim()) {
+    throw new Error('A schedule item must be selected before saving.');
+  }
+  const row = await createProjectBoqLine(input);
+  return { data: row };
 };
 
-const updateProjectItem = async (
+const patchProjectItem = async (
   item: UpdateProjectItemPayload
 ): Promise<{ data: ProjectItemRowType }> => {
-  const { suppressToast: _suppressToast, ...payload } = item;
-  return await apiFetch<{ data: ProjectItemRowType }>('/v2/project/item', {
-    method: 'PUT',
-    data: payload,
-  });
+  const { suppressToast: _suppressToast, ...input } = item;
+  if (!input.project_id) {
+    throw new Error('project_id is required to update a project item.');
+  }
+  const row = await patchProjectBoqLine(input);
+  return { data: row };
 };
 
 interface DeleteProjectItemOptions {
@@ -52,13 +51,14 @@ interface DeleteProjectItemOptions {
 
 const deleteProjectItem = async (
   itemId: string,
+  projectId: string,
   _options?: DeleteProjectItemOptions
 ): Promise<void> => {
-  return await apiFetch<void>(`/v2/project/item/${itemId}`, {
-    method: 'DELETE',
-  });
+  await deleteProjectBoqLine(itemId, projectId);
 };
-export const useCreateProjectItem = (_projectId: string) => {
+
+export const useCreateProjectItem = (projectId: string) => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: createProjectItem,
     retry: 0,
@@ -69,7 +69,7 @@ export const useCreateProjectItem = (_projectId: string) => {
         toast.loading('Creating new item...');
       }
     },
-    onError: (error, variables) => {
+    onError: (_error, variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
       }
@@ -79,31 +79,42 @@ export const useCreateProjectItem = (_projectId: string) => {
         toast.dismiss();
         toast.success('Item created successfully!');
       }
+      queryClient.invalidateQueries({
+        queryKey: ['project-items', variables.project_id],
+      });
+      queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
   });
 };
 
-export const useUpdateProjectItem = (_projectId: string) => {
+/** Persists BOQ line changes via PATCH (partial `project_boq_lines` update). */
+export const useUpdateProjectItem = (projectId: string) => {
+  const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: updateProjectItem,
+    mutationFn: patchProjectItem,
     retry: 0,
-    mutationKey: ['updateProjectItem'],
+    mutationKey: ['patchProjectItem'],
     onMutate: (variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
         toast.loading('Saving item...');
       }
     },
-    onError: (error, variables) => {
+    onError: (_error, variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
       }
     },
-    onSuccess: (data, variables) => {
+    onSuccess: (_data, variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
         toast.success('Item saved successfully!');
       }
+      const pid = variables.project_id ?? projectId;
+      queryClient.invalidateQueries({
+        queryKey: ['project-items', pid],
+      });
+      queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
   });
 };
@@ -118,7 +129,7 @@ export const useDeleteProjectItem = (projectId: string) => {
     }: {
       itemId: string;
       suppressToast?: boolean;
-    }) => deleteProjectItem(itemId, { suppressToast }),
+    }) => deleteProjectItem(itemId, projectId, { suppressToast }),
     retry: 0,
     mutationKey: ['deleteProjectItem'],
     onMutate: (variables) => {
@@ -127,7 +138,7 @@ export const useDeleteProjectItem = (projectId: string) => {
         toast.loading('Deleting item...');
       }
     },
-    onSuccess: (data, variables) => {
+    onSuccess: (_data, variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
         toast.success('Item deleted successfully!');
@@ -135,8 +146,9 @@ export const useDeleteProjectItem = (projectId: string) => {
       queryClient.invalidateQueries({
         queryKey: ['project-items', projectId],
       });
+      queryClient.invalidateQueries({ queryKey: ['estimation'] });
     },
-    onError: (error, variables) => {
+    onError: (_error, variables) => {
       if (!variables.suppressToast) {
         toast.dismiss();
         toast.error('Failed to delete item. Please try again.');

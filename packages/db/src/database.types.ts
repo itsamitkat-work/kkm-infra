@@ -629,6 +629,415 @@ export type Database = {
         }
         Relationships: []
       }
+      project_billing_lines: {
+        Row: {
+          created_at: string
+          height: number
+          id: string
+          is_checked: boolean
+          is_verified: boolean
+          length: number
+          line_description: string
+          no1: number
+          no2: number
+          order_key: number
+          project_boq_line_id: string | null
+          project_id: string
+          project_segment_id: string | null
+          quantity: number
+          rate_amount: number | null
+          remark: string | null
+          schedule_item_id: string
+          updated_at: string
+          width: number
+        }
+        Insert: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id: string
+          updated_at?: string
+          width?: number
+        }
+        Update: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id?: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id?: string
+          updated_at?: string
+          width?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_billing_lines_project_boq_line_id_fkey"
+            columns: ["project_boq_line_id"]
+            isOneToOne: false
+            referencedRelation: "project_boq_lines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_billing_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_billing_lines_project_segment_id_fkey"
+            columns: ["project_segment_id"]
+            isOneToOne: false
+            referencedRelation: "project_segments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_billing_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_billing_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_boq_line_segments: {
+        Row: {
+          project_boq_line_id: string
+          project_segment_id: string
+        }
+        Insert: {
+          project_boq_line_id: string
+          project_segment_id: string
+        }
+        Update: {
+          project_boq_line_id?: string
+          project_segment_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_boq_line_segments_project_boq_line_id_fkey"
+            columns: ["project_boq_line_id"]
+            isOneToOne: false
+            referencedRelation: "project_boq_lines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_boq_line_segments_project_segment_id_fkey"
+            columns: ["project_segment_id"]
+            isOneToOne: false
+            referencedRelation: "project_segments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_boq_lines: {
+        Row: {
+          contract_quantity: number
+          created_at: string
+          id: string
+          item_code: string
+          item_description: string
+          order_key: number
+          project_id: string
+          rate_amount: number | null
+          reference_schedule_text: string
+          remark: string | null
+          schedule_item_id: string
+          unit_display: string
+          updated_at: string
+          work_order_number: string
+        }
+        Insert: {
+          contract_quantity?: number
+          created_at?: string
+          id?: string
+          item_code?: string
+          item_description?: string
+          order_key?: number
+          project_id: string
+          rate_amount?: number | null
+          reference_schedule_text?: string
+          remark?: string | null
+          schedule_item_id: string
+          unit_display?: string
+          updated_at?: string
+          work_order_number?: string
+        }
+        Update: {
+          contract_quantity?: number
+          created_at?: string
+          id?: string
+          item_code?: string
+          item_description?: string
+          order_key?: number
+          project_id?: string
+          rate_amount?: number | null
+          reference_schedule_text?: string
+          remark?: string | null
+          schedule_item_id?: string
+          unit_display?: string
+          updated_at?: string
+          work_order_number?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_boq_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_boq_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_boq_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_estimation_lines: {
+        Row: {
+          created_at: string
+          height: number
+          id: string
+          is_checked: boolean
+          is_verified: boolean
+          length: number
+          line_description: string
+          no1: number
+          no2: number
+          order_key: number
+          project_boq_line_id: string | null
+          project_id: string
+          project_segment_id: string | null
+          quantity: number
+          rate_amount: number | null
+          remark: string | null
+          schedule_item_id: string
+          updated_at: string
+          width: number
+        }
+        Insert: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id: string
+          updated_at?: string
+          width?: number
+        }
+        Update: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id?: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id?: string
+          updated_at?: string
+          width?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_estimation_lines_project_boq_line_id_fkey"
+            columns: ["project_boq_line_id"]
+            isOneToOne: false
+            referencedRelation: "project_boq_lines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_estimation_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_estimation_lines_project_segment_id_fkey"
+            columns: ["project_segment_id"]
+            isOneToOne: false
+            referencedRelation: "project_segments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_estimation_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_estimation_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_measurement_lines: {
+        Row: {
+          created_at: string
+          height: number
+          id: string
+          is_checked: boolean
+          is_verified: boolean
+          length: number
+          line_description: string
+          no1: number
+          no2: number
+          order_key: number
+          project_boq_line_id: string | null
+          project_id: string
+          project_segment_id: string | null
+          quantity: number
+          rate_amount: number | null
+          remark: string | null
+          schedule_item_id: string
+          updated_at: string
+          width: number
+        }
+        Insert: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id: string
+          updated_at?: string
+          width?: number
+        }
+        Update: {
+          created_at?: string
+          height?: number
+          id?: string
+          is_checked?: boolean
+          is_verified?: boolean
+          length?: number
+          line_description?: string
+          no1?: number
+          no2?: number
+          order_key?: number
+          project_boq_line_id?: string | null
+          project_id?: string
+          project_segment_id?: string | null
+          quantity?: number
+          rate_amount?: number | null
+          remark?: string | null
+          schedule_item_id?: string
+          updated_at?: string
+          width?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_measurement_lines_project_boq_line_id_fkey"
+            columns: ["project_boq_line_id"]
+            isOneToOne: false
+            referencedRelation: "project_boq_lines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_measurement_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_measurement_lines_project_segment_id_fkey"
+            columns: ["project_segment_id"]
+            isOneToOne: false
+            referencedRelation: "project_segments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_measurement_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_measurement_lines_schedule_item_id_fkey"
+            columns: ["schedule_item_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_items_tree"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       project_members: {
         Row: {
           created_at: string
@@ -798,6 +1207,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "projects_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "projects_tenant_id_fkey"
             columns: ["tenant_id"]
@@ -1388,6 +1804,7 @@ export type Database = {
       }
       create_project_with_relations: {
         Args: {
+          p_client_id?: string
           p_code: string
           p_members_by_slug?: Json
           p_meta: Json
@@ -1396,6 +1813,7 @@ export type Database = {
           p_status: string
         }
         Returns: {
+          client_id: string | null
           code: string | null
           created_at: string
           id: string
@@ -1527,6 +1945,8 @@ export type Database = {
           p_status?: string[]
         }
         Returns: {
+          client_display_name: string
+          client_id: string
           code: string
           created_at: string
           default_schedule_display_name: string
@@ -1562,6 +1982,19 @@ export type Database = {
       revoke_user_sessions_service: {
         Args: { p_reason?: string; p_user_id: string }
         Returns: number
+      }
+      rpc_project_deviation_rows: {
+        Args: {
+          p_comparison: Database["public"]["Enums"]["project_deviation_comparison"]
+          p_project_id: string
+        }
+        Returns: {
+          item_description: string
+          quantity_compare: number
+          quantity_reference: number
+          rate_amount: number
+          work_order_number: string
+        }[]
       }
       schedule_item_path_slug: { Args: { p_item_id: string }; Returns: string }
       schedule_item_path_slug_sort_key: {
@@ -1659,6 +2092,7 @@ export type Database = {
       uuid_to_short_id: { Args: { uid: string }; Returns: string }
     }
     Enums: {
+      project_deviation_comparison: "GENvsEST" | "GENvsMSR" | "ESTvsMSR"
       record_status: "active" | "inactive" | "deprecated"
       schedule_annotation_type: "note" | "remark" | "condition" | "reference"
       schedule_node_type: "section" | "group" | "item"
@@ -1796,6 +2230,7 @@ export const Constants = {
   },
   public: {
     Enums: {
+      project_deviation_comparison: ["GENvsEST", "GENvsMSR", "ESTvsMSR"],
       record_status: ["active", "inactive", "deprecated"],
       schedule_annotation_type: ["note", "remark", "condition", "reference"],
       schedule_node_type: ["section", "group", "item"],

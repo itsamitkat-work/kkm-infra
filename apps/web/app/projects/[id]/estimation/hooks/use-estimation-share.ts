@@ -23,7 +23,7 @@ export function useEstimationShare() {
     // Remove existing query parameter
     url.searchParams.delete('query');
     // Add new query parameter with item name
-    url.searchParams.set('query', row.name || '');
+    url.searchParams.set('query', row.item_description || '');
 
     await copyToClipboard(url.toString());
   }, []);

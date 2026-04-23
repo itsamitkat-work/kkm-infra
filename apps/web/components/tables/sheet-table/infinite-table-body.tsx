@@ -32,7 +32,7 @@ export function InfiniteTableBody<T extends { id: string }>({
   // Use type assertion to check for optional properties that may exist on some row types
   const hasActualData = rows.some((row) => {
     const original = row.original as Record<string, unknown>;
-    return !original.isNew || original.hashId;
+    return !original.is_new || original.id;
   });
 
   if (isLoading && !hasActualData) {

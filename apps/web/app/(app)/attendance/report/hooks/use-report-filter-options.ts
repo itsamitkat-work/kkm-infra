@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { fetchUserOptions } from '@/app/(app)/projects/hooks/use-user';
-import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
+import type { ProjectMemberRoleSlug } from '@/hooks/projects/use-project-member';
 import { fetchProjects } from '@/hooks/useProjects';
 import { useWorkers } from './use-workers';
 

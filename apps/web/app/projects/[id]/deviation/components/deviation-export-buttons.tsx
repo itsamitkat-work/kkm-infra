@@ -85,22 +85,7 @@ export function DeviationExportButtons({
           exportType
         );
 
-        const allItems: DeviationResponse[] = [];
-        const totalPages = response.totalPages;
-
-        // Fetch all pages
-        allItems.push(...response.data);
-        for (let page = 2; page <= totalPages; page++) {
-          const pageResponse = await fetchDeviationReportItems(
-            projectId,
-            page,
-            undefined,
-            undefined,
-            undefined,
-            exportType
-          );
-          allItems.push(...pageResponse.data);
-        }
+        const allItems = response.data;
 
         const calculatedKpiData = calculateKpiData(allItems);
 
@@ -176,21 +161,7 @@ export function DeviationExportButtons({
             deviationType
           );
 
-          const allItems: DeviationResponse[] = [];
-          const totalPages = response.totalPages;
-
-          allItems.push(...response.data);
-          for (let page = 2; page <= totalPages; page++) {
-            const pageResponse = await fetchDeviationReportItems(
-              projectId,
-              page,
-              undefined,
-              undefined,
-              undefined,
-              deviationType
-            );
-            allItems.push(...pageResponse.data);
-          }
+          const allItems = response.data;
 
           allData[deviationType] = {
             kpiData: calculateKpiData(allItems),

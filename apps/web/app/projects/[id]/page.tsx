@@ -19,16 +19,16 @@ import {
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import {
-  IconCircleX,
-  IconInfoCircle,
-  IconList,
-  IconChartBar,
-  IconRuler,
-  IconAlertTriangle,
-  IconReceipt,
-  IconDotsVertical,
-  IconArrowLeft,
-} from '@tabler/icons-react';
+  AlertTriangle,
+  ArrowLeft,
+  BarChart3,
+  CircleX,
+  Info,
+  List,
+  MoreVertical,
+  Receipt,
+  Ruler,
+} from 'lucide-react';
 import { use, useState } from 'react';
 import { ActionMenuItem } from '@/components/detail-page-header';
 import { useProject } from '@/hooks/projects/use-project';
@@ -50,37 +50,37 @@ const TAB_CONFIG = [
     id: 'project-info',
     label: 'Project Info',
     mobileLabel: 'Info',
-    icon: IconInfoCircle,
+    icon: Info,
   },
   {
     id: 'project-items',
     label: 'Project Items',
     mobileLabel: 'Items',
-    icon: IconList,
+    icon: List,
   },
   {
     id: 'est',
     label: 'Estimation Report',
     mobileLabel: 'Reports',
-    icon: IconChartBar,
+    icon: BarChart3,
   },
   {
     id: 'msr',
     label: 'Measurement Report',
     mobileLabel: 'Measure',
-    icon: IconRuler,
+    icon: Ruler,
   },
   {
     id: 'deviation-report',
     label: 'Deviation Report',
     mobileLabel: 'Deviation',
-    icon: IconAlertTriangle,
+    icon: AlertTriangle,
   },
   {
     id: 'blg',
     label: 'Billing',
     mobileLabel: 'Billing',
-    icon: IconReceipt,
+    icon: Receipt,
   },
 ];
 
@@ -89,7 +89,7 @@ const ACTION_MENU_ITEMS: ActionMenuItem[] = [];
 // Additional actions for dropdown menu
 const ADDITIONAL_ACTIONS: ActionMenuItem[] = [
   // {
-  //   icon: IconCircleX,
+  //   icon: CircleX,
   //   label: "Archive Project",
   //   variant: "destructive",
   //   onClick: () => {
@@ -193,7 +193,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         <div className='text-center space-y-6'>
           <div className='relative'>
             <div className='h-16 w-16 mx-auto rounded-full bg-destructive/10 flex items-center justify-center'>
-              <IconCircleX className='h-8 w-8 text-destructive' />
+              <CircleX className='h-8 w-8 text-destructive' />
             </div>
           </div>
           <div className='space-y-2'>
@@ -223,7 +223,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               onClick={handleBack}
               className='flex items-center gap-2 text-muted-foreground hover:text-foreground'
             >
-              <IconArrowLeft className='size-4' />
+              <ArrowLeft className='size-4' />
               Back
             </Button>
 
@@ -267,7 +267,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant='ghost' size='sm'>
-                  <IconDotsVertical className='size-4' />
+                  <MoreVertical className='size-4' />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align='end'>
@@ -293,13 +293,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       <div className='flex-1 overflow-auto bg-muted/20 p-0'>
         <Card className='@container/card border-0 rounded-none m-0 gap-0'>
           <CardHeader>
-            {/* <CardTitle>{project.name}</CardTitle> */}
-            {/* <CardDescription>
-              <span className="hidden @[540px]/card:block">
-                Project management and reporting
-              </span>
-              <span className="@[540px]/card:hidden">Project details</span>
-            </CardDescription> */}
             <div className='flex justify-end'>
               <ToggleGroup
                 type='single'

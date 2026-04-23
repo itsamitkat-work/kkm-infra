@@ -1,12 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import {
-  useWatch,
-  type Control,
-  type FieldPath,
-  type UseFormReturn,
-} from 'react-hook-form';
+import { useWatch, type FieldPath } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { format, parseISO, isValid } from 'date-fns';
@@ -24,7 +19,6 @@ import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
-import { fetchScheduleSourceOptions } from '@/hooks/schedules/use-schedule-sources';
 import { fetchClientOptions } from '../hooks/use-client-options';
 import { parseClientAddresses, useClient } from '@/hooks/useClients';
 import type { ClientAddress } from '@/types/clients';
@@ -34,7 +28,12 @@ import {
 } from '@/hooks/projects/use-project-status';
 import { StatusLabel } from '@/components/ui/status-label';
 import { OpenCloseMode } from '@/hooks/use-open-close';
-import type { ProjectMemberRoleSlug } from '@/types/project-member-roles';
+import {
+  PROJECT_MEMBER_ROLE_SLUGS,
+  PROJECT_TEAM_DRAWER_ESTIMATION_FIELDS,
+  PROJECT_TEAM_DRAWER_OPERATIONS_FIELDS,
+  type ProjectMemberRoleSlug,
+} from '@/hooks/projects/use-project-member';
 import { InputAddon } from '@/components/ui/input';
 import { Loader } from 'lucide-react';
 import { useProject } from '@/hooks/projects/use-project';
@@ -58,12 +57,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { FieldLegend } from '@/components/ui/field';
-
-interface SearchableOption {
-  value: string;
-  label: string;
-  id?: string | number;
-}
 
 const userPickSchema = z.object({
   id: z.string(),
@@ -129,12 +122,12 @@ const FORM_SCHEMA_BASE = z.object({
         /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(val),
       'Invalid GSTIN format. E.g., 22AAAAA0000A1Z5'
     ),
-  verifier: userPickSchema,
-  checker: userPickSchema,
-  maker: userPickSchema,
+  project_verifier: userPickSchema,
+  project_checker: userPickSchema,
+  project_maker: userPickSchema,
   project_head: userPickSchema,
   project_engineer: userPickSchema,
-  supervisor: userPickSchema,
+  project_supervisor: userPickSchema,
 });
 
 function addDuplicatePersonIssues<T extends string>(
@@ -169,10 +162,10 @@ type ProjectFormValues = z.infer<typeof FORM_SCHEMA_BASE>;
 const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
   const headId = val.project_head.id.trim();
   const engineerId = val.project_engineer.id.trim();
-  const supervisorId = val.supervisor.id.trim();
-  const makerId = val.maker.id.trim();
-  const checkerId = val.checker.id.trim();
-  const verifierId = val.verifier.id.trim();
+  const supervisorId = val.project_supervisor.id.trim();
+  const makerId = val.project_maker.id.trim();
+  const checkerId = val.project_checker.id.trim();
+  const verifierId = val.project_verifier.id.trim();
 
   if (!headId) {
     ctx.addIssue({
@@ -192,7 +185,7 @@ const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Select a supervisor.',
-      path: ['supervisor'],
+      path: ['project_supervisor'],
     });
   }
 
@@ -201,7 +194,7 @@ const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
     [
       { path: 'project_head', id: headId },
       { path: 'project_engineer', id: engineerId },
-      { path: 'supervisor', id: supervisorId },
+      { path: 'project_supervisor', id: supervisorId },
     ],
     'Team Operations: Project Head, Project Engineer, and Supervisor must be three different people.'
   );
@@ -210,30 +203,30 @@ const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Select a project maker.',
-      path: ['maker'],
+      path: ['project_maker'],
     });
   }
   if (!checkerId) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Select a project checker.',
-      path: ['checker'],
+      path: ['project_checker'],
     });
   }
   if (!verifierId) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Select a project verifier.',
-      path: ['verifier'],
+      path: ['project_verifier'],
     });
   }
 
   addDuplicatePersonIssues(
     ctx,
     [
-      { path: 'maker', id: makerId },
-      { path: 'checker', id: checkerId },
-      { path: 'verifier', id: verifierId },
+      { path: 'project_maker', id: makerId },
+      { path: 'project_checker', id: checkerId },
+      { path: 'project_verifier', id: verifierId },
     ],
     'Team Estimation: Project Maker, Checker, and Verifier must be three different people.'
   );
@@ -309,6 +302,18 @@ function detailToFormValues(d: ProjectDetail): ProjectFormValues {
     d.default_schedule_display_name ??
     '';
 
+  const projectScheduleRows = d.project_schedules
+    .filter((s: ProjectScheduleDetail) => s.is_active)
+    .map((s: ProjectScheduleDetail) => ({
+      schedule_source_id: s.schedule_source_id,
+      display_name:
+        s.schedule_sources?.display_name ??
+        s.schedule_sources?.name ??
+        'Schedule',
+      selected: true,
+      is_default: Boolean(s.is_default),
+    }));
+
   return {
     name: d.name,
     code: d.code ?? '',
@@ -326,16 +331,16 @@ function detailToFormValues(d: ProjectDetail): ProjectFormValues {
       id: meta.client_id ?? '',
       name: meta.client_display_name ?? '',
     },
-    project_schedule_rows: [],
+    project_schedule_rows: projectScheduleRows,
     schedule_source: { id: sid, name: sname },
     client_address: meta.client_address ?? '',
     client_gstn: meta.client_gstn ?? '',
-    verifier: pick('project_verifier'),
-    checker: pick('project_checker'),
-    maker: pick('project_maker'),
+    project_verifier: pick('project_verifier'),
+    project_checker: pick('project_checker'),
+    project_maker: pick('project_maker'),
     project_head: pick('project_head'),
     project_engineer: pick('project_engineer'),
-    supervisor: pick('project_supervisor'),
+    project_supervisor: pick('project_supervisor'),
   };
 }
 
@@ -365,12 +370,12 @@ function listRowToFormValues(row: ProjectsListRow): ProjectFormValues {
     },
     client_address: meta.client_address ?? '',
     client_gstn: meta.client_gstn ?? '',
-    verifier: EMPTY_USER,
-    checker: EMPTY_USER,
-    maker: EMPTY_USER,
+    project_verifier: EMPTY_USER,
+    project_checker: EMPTY_USER,
+    project_maker: EMPTY_USER,
     project_head: EMPTY_USER,
     project_engineer: EMPTY_USER,
-    supervisor: EMPTY_USER,
+    project_supervisor: EMPTY_USER,
   };
 }
 
@@ -390,12 +395,12 @@ function emptyFormValues(): ProjectFormValues {
     schedule_source: { id: '', name: '' },
     client_address: '',
     client_gstn: '',
-    verifier: EMPTY_USER,
-    checker: EMPTY_USER,
-    maker: EMPTY_USER,
+    project_verifier: EMPTY_USER,
+    project_checker: EMPTY_USER,
+    project_maker: EMPTY_USER,
     project_head: EMPTY_USER,
     project_engineer: EMPTY_USER,
-    supervisor: EMPTY_USER,
+    project_supervisor: EMPTY_USER,
   };
 }
 
@@ -440,14 +445,11 @@ function valuesToMeta(
 }
 
 function toMemberSelection(v: ProjectFormValues): ProjectMemberSelection {
-  return {
-    project_verifier: v.verifier.id,
-    project_checker: v.checker.id,
-    project_maker: v.maker.id,
-    project_head: v.project_head.id,
-    project_engineer: v.project_engineer.id,
-    project_supervisor: v.supervisor.id,
-  };
+  const out = {} as ProjectMemberSelection;
+  for (const slug of PROJECT_MEMBER_ROLE_SLUGS) {
+    out[slug] = v[slug].id;
+  }
+  return out;
 }
 
 export function ProjectDrawer({
@@ -462,6 +464,8 @@ export function ProjectDrawer({
   const isCopy =
     mode === 'create' && Boolean(project?.name?.includes('(Copy)'));
   const isNewCreate = mode === 'create' && !isCopy;
+  const allowClientHydration =
+    (isNewCreate || isCopy) && !isEdit && !isRead;
 
   const createProjectMutation = useCreateProject();
   const updateProjectMutation = useUpdateProject();
@@ -576,13 +580,15 @@ export function ProjectDrawer({
           Boolean(dirty.client_address) ||
           Boolean(dirty.client_gstn);
 
-        const teamDirty =
-          Boolean(dirty.verifier) ||
-          Boolean(dirty.checker) ||
-          Boolean(dirty.maker) ||
-          Boolean(dirty.project_head) ||
-          Boolean(dirty.project_engineer) ||
-          Boolean(dirty.supervisor);
+        const teamDirty = PROJECT_MEMBER_ROLE_SLUGS.some(
+          (slug) => Boolean(dirty[slug])
+        );
+
+        const scheduleDirty =
+          'schedule_source' in dirty ||
+          'project_schedule_rows' in dirty;
+        const defaultScheduleId =
+          values.schedule_source.id?.trim() ?? '';
 
         await updateProjectMutation.mutateAsync({
           tenantId: projectDetail.tenant_id,
@@ -592,8 +598,8 @@ export function ProjectDrawer({
           ...('status' in dirty ? { status: values.status } : {}),
           baseMeta: projectDetail.meta,
           metaPatch: metaDirty ? valuesToMeta(values, false) : undefined,
-          ...('schedule_source' in dirty
-            ? { schedule_source_id: values.schedule_source.id }
+          ...(scheduleDirty && defaultScheduleId
+            ? { schedule_source_id: defaultScheduleId }
             : {}),
           members: teamDirty ? members : undefined,
         });
@@ -614,13 +620,13 @@ export function ProjectDrawer({
   });
 
   const { client: linkedClientDetail } = useClient(
-    isNewCreate && watchClientId?.trim() ? watchClientId : undefined
+    allowClientHydration && watchClientId?.trim() ? watchClientId : undefined
   );
 
   const lastHydratedClientIdRef = React.useRef<string | null>(null);
 
   React.useEffect(() => {
-    if (!isNewCreate) {
+    if (!allowClientHydration) {
       return;
     }
     if (!watchClientId?.trim()) {
@@ -667,7 +673,7 @@ export function ProjectDrawer({
         { shouldValidate: true }
       );
     }
-  }, [isNewCreate, watchClientId, linkedClientDetail, form]);
+  }, [allowClientHydration, watchClientId, linkedClientDetail, form]);
 
   const memberFetcher = React.useCallback(
     (roleSlug: ProjectMemberRoleSlug) =>
@@ -703,6 +709,107 @@ export function ProjectDrawer({
       };
     });
   }, []);
+
+  const watchSanctionAmount = useWatch({
+    control: form.control,
+    name: 'sanction_amount',
+  });
+
+  const sanctionAmountWords = React.useMemo(() => {
+    const n = Number(watchSanctionAmount);
+    if (!Number.isFinite(n) || n <= 0) {
+      return '';
+    }
+    return numberToText(n);
+  }, [watchSanctionAmount]);
+
+  const scheduleRows =
+    useWatch({ control: form.control, name: 'project_schedule_rows' }) ?? [];
+
+  const updateProjectScheduleRows = React.useCallback(
+    (next: ProjectFormValues['project_schedule_rows']) => {
+      form.setValue('project_schedule_rows', next, {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+      const defaultRow =
+        next.find((r) => r.selected && r.is_default) ??
+        next.find((r) => r.selected);
+      if (defaultRow) {
+        form.setValue(
+          'schedule_source',
+          {
+            id: defaultRow.schedule_source_id,
+            name: defaultRow.display_name,
+          },
+          { shouldValidate: true },
+        );
+      }
+    },
+    [form],
+  );
+
+  const handleToggleProjectScheduleSelected = React.useCallback(
+    (index: number, checked: boolean) => {
+      const rows = form.getValues('project_schedule_rows') ?? [];
+      const prev = rows[index];
+      if (!prev) {
+        return;
+      }
+      let next = rows.map((r, i) =>
+        i === index ? { ...r, selected: Boolean(checked) } : { ...r },
+      );
+      if (!checked && prev.is_default) {
+        next = next.map((r) => ({ ...r, is_default: false }));
+        const first = next.find((r) => r.selected);
+        if (first) {
+          const fi = next.findIndex(
+            (r) => r.schedule_source_id === first.schedule_source_id,
+          );
+          if (fi >= 0) {
+            next = next.map((r, i) =>
+              i === fi ? { ...r, is_default: true } : r,
+            );
+          }
+        }
+      }
+      if (checked && !next.some((r) => r.selected && r.is_default)) {
+        const toggled = next[index];
+        if (toggled) {
+          next = next.map((r) => ({
+            ...r,
+            is_default: r.schedule_source_id === toggled.schedule_source_id,
+          }));
+        }
+      }
+      updateProjectScheduleRows(next);
+    },
+    [form, updateProjectScheduleRows],
+  );
+
+  const handleSetDefaultProjectSchedule = React.useCallback(
+    (scheduleSourceId: string) => {
+      const rows = form.getValues('project_schedule_rows') ?? [];
+      const next = rows.map((r) => ({
+        ...r,
+        is_default: r.selected && r.schedule_source_id === scheduleSourceId,
+      }));
+      updateProjectScheduleRows(next);
+    },
+    [form, updateProjectScheduleRows],
+  );
+
+  const selectedDefaultScheduleSourceId = React.useMemo(() => {
+    const row = scheduleRows.find((r) => r.selected && r.is_default);
+    return row?.schedule_source_id ?? '';
+  }, [scheduleRows]);
+
+  const projectStatusLabel =
+    projectDetail != null
+      ? projectStatusDisplayLabel(projectDetail.status)
+      : project != null
+        ? projectStatusDisplayLabel(project.status)
+        : undefined;
 
   if (project && needsDetail && isLoading) {
     return (
@@ -774,597 +881,285 @@ export function ProjectDrawer({
             onSubmit={form.submit}
             className='flex flex-col gap-6'
           >
-            <BasicInformationSection
-              control={form.control}
-              readOnly={isRead}
-              projectStatusLabel={
-                projectDetail
-                  ? projectStatusDisplayLabel(projectDetail.status)
-                  : project
-                    ? projectStatusDisplayLabel(project.status)
-                    : undefined
-              }
-              statusOptions={statusOptions}
-            />
-            <LocationDetailsSection control={form.control} readOnly={isRead} />
-            {isNewCreate ? (
-              <ClientLinkedScheduleSection
+            <FormSection title='Basic Information' showSeparator={false}>
+              <FormInputField
                 control={form.control}
+                name='name'
+                label='Project Name'
+                placeholder='Enter project name'
+                required
                 readOnly={isRead}
-                form={form}
-                clientSchedulesLoading={
-                  Boolean(watchClientId?.trim()) && !linkedClientDetail
+              />
+              <FormInputField
+                control={form.control}
+                name='code'
+                label='Project Code'
+                placeholder='Enter project code'
+                readOnly={isRead || isEdit}
+              />
+              <FormInputField
+                control={form.control}
+                name='short_name'
+                label='Short Name'
+                placeholder='Enter project short name'
+                readOnly={isRead}
+              />
+              <div>
+                <FormInputField
+                  control={form.control}
+                  name='sanction_amount'
+                  label='Sanction Amount (Rupees)'
+                  placeholder='Enter amount'
+                  type='number'
+                  readOnly={isRead}
+                  inputAddon={<InputAddon>₹</InputAddon>}
+                />
+                {sanctionAmountWords && !isRead && (
+                  <div className='text-sm text-muted-foreground mt-1 italic'>
+                    {sanctionAmountWords}
+                  </div>
+                )}
+                <FormMessage />
+              </div>
+              <div className='grid grid-cols-2 gap-4'>
+                <FormDateField
+                  control={form.control}
+                  name='sanction_dos'
+                  label='Sanction DOS'
+                  readOnly={isRead}
+                />
+                <FormDateField
+                  control={form.control}
+                  name='sanction_doc'
+                  label='Sanction DOC'
+                  readOnly={isRead}
+                />
+              </div>
+              {isRead ? (
+                <div className='space-y-2'>
+                  <label className='text-sm font-medium text-muted-foreground'>
+                    Project Status
+                  </label>
+                  <StatusLabel
+                    status={projectStatusLabel}
+                    fallback='Not specified'
+                  />
+                </div>
+              ) : (
+                <FormSearchableComboboxField
+                  control={form.control}
+                  name='status'
+                  label='Status'
+                  placeholder='Select status'
+                  options={statusOptions}
+                  readOnly={isRead}
+                  searchPlaceholder='Search statuses...'
+                  emptyMessage='No statuses found'
+                  getValue={(option) => option.value}
+                  getDisplayValue={(fieldValue) =>
+                    projectStatusDisplayLabel(String(fieldValue ?? ''))
+                  }
+                  getOptionValue={(fieldValue) => String(fieldValue ?? '')}
+                />
+              )}
+            </FormSection>
+
+            <FormSection title='Location Details'>
+              <FormInputField
+                control={form.control}
+                name='location'
+                label='Project Location'
+                placeholder='Enter project location'
+                readOnly={isRead}
+              />
+              <FormInputField
+                control={form.control}
+                name='city'
+                label='Project City'
+                placeholder='Enter project city'
+                readOnly={isRead}
+              />
+            </FormSection>
+
+            <FormSection title='Client and schedules'>
+              <FormSearchableComboboxField
+                control={form.control}
+                name='client'
+                label='Client'
+                placeholder='Search and select a client'
+                fetchOptions={fetchClientOptions}
+                readOnly={isRead || isEdit}
+                required
+                searchPlaceholder='Search clients…'
+                emptyMessage='No clients found'
+                getValue={(option) => ({
+                  id: option.value,
+                  name: option.label,
+                })}
+                getDisplayValue={(fieldValue) =>
+                  (fieldValue as { name?: string })?.name || ''
+                }
+                getOptionValue={(fieldValue) =>
+                  (fieldValue as { id?: string })?.id || ''
                 }
               />
-            ) : (
-              <ScheduleSourceInformationSection
+              {allowClientHydration &&
+                Boolean(watchClientId?.trim()) &&
+                !linkedClientDetail && (
+                  <p className='text-sm text-muted-foreground flex items-center gap-2'>
+                    <Loader className='h-4 w-4 animate-spin' aria-hidden />
+                    Loading client schedules…
+                  </p>
+                )}
+              {!isRead && scheduleRows.length > 0 && (
+                <div className='space-y-2'>
+                  <Label className='text-sm font-medium'>
+                    Schedules for this project
+                  </Label>
+                  <p className='text-xs text-muted-foreground'>
+                    Only schedules linked to the client are listed. Uncheck any
+                    you do not need; choose one default for pricing and tree
+                    data.
+                  </p>
+                  <RadioGroup
+                    value={selectedDefaultScheduleSourceId}
+                    onValueChange={handleSetDefaultProjectSchedule}
+                    className='flex flex-col gap-2'
+                  >
+                    {scheduleRows.map((row, index) => (
+                      <div
+                        key={row.schedule_source_id}
+                        className='flex items-center gap-3 rounded-md border px-3 py-2'
+                      >
+                        <Checkbox
+                          checked={row.selected}
+                          disabled={isRead}
+                          onCheckedChange={(v) => {
+                            handleToggleProjectScheduleSelected(
+                              index,
+                              v === true,
+                            );
+                          }}
+                          aria-label={`Include ${row.display_name}`}
+                        />
+                        <RadioGroupItem
+                          value={row.schedule_source_id}
+                          id={`proj-sched-${row.schedule_source_id}`}
+                          disabled={!row.selected || isRead}
+                        />
+                        <Label
+                          htmlFor={`proj-sched-${row.schedule_source_id}`}
+                          className='flex-1 truncate font-normal'
+                        >
+                          {row.display_name}
+                          {row.selected && row.is_default && (
+                            <span className='ml-2 text-xs text-muted-foreground'>
+                              (default)
+                            </span>
+                          )}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+              )}
+              {isRead && scheduleRows.length > 0 && (
+                <ul className='list-disc pl-5 text-sm text-muted-foreground'>
+                  {scheduleRows
+                    .filter((r) => r.selected)
+                    .map((r) => (
+                      <li key={r.schedule_source_id}>
+                        {r.display_name}
+                        {r.is_default ? ' (default)' : ''}
+                      </li>
+                    ))}
+                </ul>
+              )}
+              <FormInputField
                 control={form.control}
+                name='client_address'
+                label='Client address'
+                placeholder='Imported from client (editable)'
                 readOnly={isRead}
-                form={form}
               />
-            )}
-            <ProjectTeamsSection
-              control={form.control}
-              readOnly={isRead}
-              fetchUser={memberFetcher}
-            />
+              <FormInputField
+                control={form.control}
+                name='client_gstn'
+                label='Client GSTIN'
+                placeholder='Imported from client (editable)'
+                readOnly={isRead}
+                type='text'
+                inputAddon={<InputAddon>GST</InputAddon>}
+              />
+            </FormSection>
+
+            <FormSection title='Project Team' showSeparator={false}>
+              <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
+                <FieldLegend variant='legend'>Estimation</FieldLegend>
+                <div className='space-y-4'>
+                  {PROJECT_TEAM_DRAWER_ESTIMATION_FIELDS.map((field) => (
+                    <FormSearchableComboboxField
+                      key={field.roleSlug}
+                      control={form.control}
+                      name={
+                        field.roleSlug as FieldPath<ProjectFormValues>
+                      }
+                      label={field.label}
+                      placeholder={field.placeholder}
+                      fetchOptions={memberFetcher(field.roleSlug)}
+                      readOnly={isRead}
+                      required
+                      searchPlaceholder='Search users…'
+                      emptyMessage='No users found'
+                      getValue={(option) => ({
+                        id: option.value,
+                        name: option.label,
+                      })}
+                      getDisplayValue={(fieldValue) =>
+                        (fieldValue as { name?: string })?.name || ''
+                      }
+                      getOptionValue={(fieldValue) =>
+                        (fieldValue as { id?: string })?.id || ''
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
+                <FieldLegend variant='legend'>Operations</FieldLegend>
+                <div className='space-y-4'>
+                  {PROJECT_TEAM_DRAWER_OPERATIONS_FIELDS.map((field) => (
+                    <FormSearchableComboboxField
+                      key={field.roleSlug}
+                      control={form.control}
+                      name={
+                        field.roleSlug as FieldPath<ProjectFormValues>
+                      }
+                      label={field.label}
+                      placeholder={field.placeholder}
+                      fetchOptions={memberFetcher(field.roleSlug)}
+                      readOnly={isRead}
+                      required
+                      searchPlaceholder='Search users…'
+                      emptyMessage='No users found'
+                      getValue={(option) => ({
+                        id: option.value,
+                        name: option.label,
+                      })}
+                      getDisplayValue={(fieldValue) =>
+                        (fieldValue as { name?: string })?.name || ''
+                      }
+                      getOptionValue={(fieldValue) =>
+                        (fieldValue as { id?: string })?.id || ''
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+            </FormSection>
           </form>
         </Form>
       </DrawerContentContainer>
     </DrawerWrapper>
   );
 }
-
-const SanctionAmountField = React.memo(function SanctionAmountField({
-  control,
-  name,
-  readOnly,
-}: {
-  control: Control<ProjectFormValues>;
-  name: string;
-  label: string;
-  placeholder?: string;
-  required?: boolean;
-  readOnly?: boolean;
-}) {
-  const fieldValue = useWatch({
-    control,
-    name: name as keyof ProjectFormValues,
-  });
-
-  const amountText = React.useMemo(() => {
-    const numValue = Number(fieldValue);
-    if (!fieldValue || isNaN(numValue) || numValue <= 0) {
-      return '';
-    }
-    return numberToText(numValue);
-  }, [fieldValue]);
-
-  return (
-    <div>
-      <FormInputField
-        control={control}
-        name='sanction_amount'
-        label='Sanction Amount (Rupees)'
-        placeholder='Enter amount'
-        type='number'
-        readOnly={readOnly}
-        inputAddon={<InputAddon>₹</InputAddon>}
-      />
-      {amountText && !readOnly && (
-        <div className='text-sm text-muted-foreground mt-1 italic'>
-          {amountText}
-        </div>
-      )}
-      <FormMessage />
-    </div>
-  );
-});
-
-const BasicInformationSection = React.memo(function BasicInformationSection({
-  control,
-  readOnly,
-  projectStatusLabel,
-  statusOptions,
-}: {
-  control: Control<ProjectFormValues>;
-  readOnly: boolean;
-  projectStatusLabel?: string;
-  statusOptions: { value: string; label: string }[];
-}) {
-  return (
-    <FormSection title='Basic Information' showSeparator={false}>
-      <FormInputField
-        control={control}
-        name='name'
-        label='Project Name'
-        placeholder='Enter project name'
-        required
-        readOnly={readOnly}
-      />
-
-      <FormInputField
-        control={control}
-        name='code'
-        label='Project Code'
-        placeholder='Enter project code'
-        readOnly={readOnly}
-      />
-
-      <FormInputField
-        control={control}
-        name='short_name'
-        label='Short Name'
-        placeholder='Enter project short name'
-        readOnly={readOnly}
-      />
-
-      <SanctionAmountField
-        control={control}
-        name='sanction_amount'
-        label='Sanction Amount (Rupees)'
-        placeholder='Enter amount'
-        readOnly={readOnly}
-      />
-
-      <div className='grid grid-cols-2 gap-4'>
-        <FormDateField
-          control={control}
-          name='sanction_dos'
-          label='Sanction DOS'
-          readOnly={readOnly}
-        />
-
-        <FormDateField
-          control={control}
-          name='sanction_doc'
-          label='Sanction DOC'
-          readOnly={readOnly}
-        />
-      </div>
-
-      {readOnly ? (
-        <div className='space-y-2'>
-          <label className='text-sm font-medium text-muted-foreground'>
-            Project Status
-          </label>
-          <StatusLabel status={projectStatusLabel} fallback='Not specified' />
-        </div>
-      ) : (
-        <FormSearchableComboboxField
-          control={control}
-          name='status'
-          label='Status'
-          placeholder='Select status'
-          options={statusOptions}
-          readOnly={readOnly}
-          searchPlaceholder='Search statuses...'
-          emptyMessage='No statuses found'
-          getValue={(option) => option.value}
-          getDisplayValue={(fieldValue) =>
-            projectStatusDisplayLabel(String(fieldValue ?? ''))
-          }
-          getOptionValue={(fieldValue) => String(fieldValue ?? '')}
-        />
-      )}
-    </FormSection>
-  );
-});
-
-const LocationDetailsSection = React.memo(function LocationDetailsSection({
-  control,
-  readOnly,
-}: {
-  control: Control<ProjectFormValues>;
-  readOnly: boolean;
-}) {
-  return (
-    <FormSection title='Location Details'>
-      <FormInputField
-        control={control}
-        name='location'
-        label='Project Location'
-        placeholder='Enter project location'
-        readOnly={readOnly}
-      />
-
-      <FormInputField
-        control={control}
-        name='city'
-        label='Project City'
-        placeholder='Enter project city'
-        readOnly={readOnly}
-      />
-    </FormSection>
-  );
-});
-
-const ClientLinkedScheduleSection = React.memo(
-  function ClientLinkedScheduleSection({
-    control,
-    readOnly,
-    form,
-    clientSchedulesLoading,
-  }: {
-    control: Control<ProjectFormValues>;
-    readOnly: boolean;
-    form: UseFormReturn<ProjectFormValues>;
-    clientSchedulesLoading: boolean;
-  }) {
-    const rows = useWatch({ control, name: 'project_schedule_rows' }) ?? [];
-    const { setValue } = form;
-
-    function syncSchedulePickFromRows(
-      next: ProjectFormValues['project_schedule_rows']
-    ) {
-      const def =
-        next.find((r) => r.selected && r.is_default) ??
-        next.find((r) => r.selected);
-      if (def) {
-        setValue(
-          'schedule_source',
-          { id: def.schedule_source_id, name: def.display_name },
-          { shouldValidate: true }
-        );
-      }
-    }
-
-    function updateRows(next: ProjectFormValues['project_schedule_rows']) {
-      setValue('project_schedule_rows', next, {
-        shouldDirty: true,
-        shouldValidate: true,
-      });
-      syncSchedulePickFromRows(next);
-    }
-
-    function handleToggleSelected(index: number, checked: boolean) {
-      const prev = rows[index];
-      if (!prev) {
-        return;
-      }
-      let next = rows.map((r, i) =>
-        i === index ? { ...r, selected: Boolean(checked) } : { ...r }
-      );
-      if (!checked && prev.is_default) {
-        next = next.map((r) => ({ ...r, is_default: false }));
-        const first = next.find((r) => r.selected);
-        if (first) {
-          const fi = next.findIndex(
-            (r) => r.schedule_source_id === first.schedule_source_id
-          );
-          if (fi >= 0) {
-            next[fi] = { ...next[fi], is_default: true };
-          }
-        }
-      }
-      if (checked && !next.some((r) => r.selected && r.is_default)) {
-        next = next.map((r) => ({
-          ...r,
-          is_default: r.schedule_source_id === next[index].schedule_source_id,
-        }));
-      }
-      updateRows(next);
-    }
-
-    function handleSetDefaultSchedule(scheduleSourceId: string) {
-      const next = rows.map((r) => ({
-        ...r,
-        is_default: r.selected && r.schedule_source_id === scheduleSourceId,
-      }));
-      updateRows(next);
-    }
-
-    const selectedDefaultId =
-      rows.find((r) => r.selected && r.is_default)?.schedule_source_id ?? '';
-
-    return (
-      <FormSection title='Client and schedules'>
-        <FormSearchableComboboxField
-          control={control}
-          name='client'
-          label='Client'
-          placeholder='Search and select a client'
-          fetchOptions={fetchClientOptions}
-          readOnly={readOnly}
-          required
-          searchPlaceholder='Search clients…'
-          emptyMessage='No clients found'
-          getValue={(option) => ({
-            id: option.value,
-            name: option.label,
-          })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
-
-        {clientSchedulesLoading && (
-          <p className='text-sm text-muted-foreground flex items-center gap-2'>
-            <Loader className='h-4 w-4 animate-spin' aria-hidden />
-            Loading client schedules…
-          </p>
-        )}
-
-        {!readOnly && rows.length > 0 && (
-          <div className='space-y-2'>
-            <Label className='text-sm font-medium'>
-              Schedules for this project
-            </Label>
-            <p className='text-xs text-muted-foreground'>
-              Only schedules linked to the client are listed. Uncheck any you do
-              not need; choose one default for pricing and tree data.
-            </p>
-            <RadioGroup
-              value={selectedDefaultId}
-              onValueChange={handleSetDefaultSchedule}
-              className='flex flex-col gap-2'
-            >
-              {rows.map((row, index) => (
-                <div
-                  key={row.schedule_source_id}
-                  className='flex items-center gap-3 rounded-md border px-3 py-2'
-                >
-                  <Checkbox
-                    checked={row.selected}
-                    disabled={readOnly}
-                    onCheckedChange={(v) => {
-                      handleToggleSelected(index, v === true);
-                    }}
-                    aria-label={`Include ${row.display_name}`}
-                  />
-                  <RadioGroupItem
-                    value={row.schedule_source_id}
-                    id={`proj-sched-${row.schedule_source_id}`}
-                    disabled={!row.selected}
-                  />
-                  <Label
-                    htmlFor={`proj-sched-${row.schedule_source_id}`}
-                    className='flex-1 truncate font-normal'
-                  >
-                    {row.display_name}
-                    {row.selected && row.is_default && (
-                      <span className='ml-2 text-xs text-muted-foreground'>
-                        (default)
-                      </span>
-                    )}
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
-          </div>
-        )}
-
-        {readOnly && rows.length > 0 && (
-          <ul className='list-disc pl-5 text-sm text-muted-foreground'>
-            {rows
-              .filter((r) => r.selected)
-              .map((r) => (
-                <li key={r.schedule_source_id}>
-                  {r.display_name}
-                  {r.is_default ? ' (default)' : ''}
-                </li>
-              ))}
-          </ul>
-        )}
-
-        <FormInputField
-          control={control}
-          name='client_address'
-          label='Client address'
-          placeholder='Imported from client (editable)'
-          readOnly={readOnly}
-        />
-
-        <FormInputField
-          control={control}
-          name='client_gstn'
-          label='Client GSTIN'
-          placeholder='Imported from client (editable)'
-          readOnly={readOnly}
-          type='text'
-          inputAddon={<InputAddon>GST</InputAddon>}
-        />
-      </FormSection>
-    );
-  }
-);
-
-const ScheduleSourceInformationSection = React.memo(
-  function ScheduleSourceInformationSection({
-    control,
-    readOnly,
-    form,
-  }: {
-    control: Control<ProjectFormValues>;
-    readOnly: boolean;
-    form: UseFormReturn<ProjectFormValues>;
-  }) {
-    return (
-      <FormSection title='Schedule source'>
-        <FormSearchableComboboxField
-          control={control}
-          name='schedule_source'
-          label='Schedule'
-          placeholder='Select schedule source'
-          fetchOptions={fetchScheduleSourceOptions}
-          readOnly={readOnly}
-          searchPlaceholder='Search schedules…'
-          emptyMessage='No schedules found'
-          onSelect={(option) => {
-            if (!readOnly) {
-              const optionWithExtras = option as SearchableOption & {
-                address?: string;
-                gstn?: string;
-              };
-              form.setValue('client_address', optionWithExtras.address || '', {
-                shouldValidate: true,
-              });
-              form.setValue('client_gstn', optionWithExtras.gstn || '', {
-                shouldValidate: true,
-              });
-            }
-          }}
-          getValue={(option) => ({
-            id: option.value,
-            name: option.label,
-          })}
-          getDisplayValue={(fieldValue) =>
-            (fieldValue as { name?: string })?.name || ''
-          }
-          getOptionValue={(fieldValue) =>
-            (fieldValue as { id?: string })?.id || ''
-          }
-        />
-
-        <FormInputField
-          control={control}
-          name='client_address'
-          label='Client Address'
-          placeholder='Enter client address'
-          readOnly={readOnly}
-        />
-
-        <FormInputField
-          control={control}
-          name='client_gstn'
-          label='Client GSTIN No'
-          placeholder='Enter client GSTIN No'
-          readOnly={readOnly}
-          type='text'
-          inputAddon={<InputAddon>GST</InputAddon>}
-        />
-      </FormSection>
-    );
-  }
-);
-
-type ProjectMemberOptionsFetcher = (
-  search: string,
-  page?: number
-) => Promise<{
-  options: { value: string; label: string }[];
-  hasNextPage: boolean;
-}>;
-
-type ProjectTeamsSectionProps = {
-  control: Control<ProjectFormValues>;
-  readOnly: boolean;
-  fetchUser: (
-    roleSlug: ProjectMemberRoleSlug
-  ) => (query: string, page?: number) => ReturnType<typeof fetchUserOptions>;
-};
-
-function TeamRoleField({
-  control,
-  readOnly,
-  name,
-  label,
-  placeholder,
-  fetchOptions,
-}: {
-  control: Control<ProjectFormValues>;
-  readOnly: boolean;
-  name: FieldPath<ProjectFormValues>;
-  label: string;
-  placeholder: string;
-  fetchOptions: ProjectMemberOptionsFetcher;
-}) {
-  return (
-    <FormSearchableComboboxField
-      control={control}
-      name={name}
-      label={label}
-      placeholder={placeholder}
-      fetchOptions={fetchOptions}
-      readOnly={readOnly}
-      required
-      searchPlaceholder='Search users…'
-      emptyMessage='No users found'
-      getValue={(option) => ({ id: option.value, name: option.label })}
-      getDisplayValue={(fieldValue) =>
-        (fieldValue as { name?: string })?.name || ''
-      }
-      getOptionValue={(fieldValue) => (fieldValue as { id?: string })?.id || ''}
-    />
-  );
-}
-
-const ProjectTeamsSection = React.memo(function ProjectTeamsSection({
-  control,
-  readOnly,
-  fetchUser,
-}: ProjectTeamsSectionProps) {
-  return (
-    <FormSection title='Project Team' showSeparator={false}>
-      <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
-        <FieldLegend variant='legend'>Estimation</FieldLegend>
-        <div className='space-y-4'>
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='maker'
-            label='Project Maker'
-            placeholder='Select project maker'
-            fetchOptions={fetchUser('project_maker')}
-          />
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='checker'
-            label='Project Checker'
-            placeholder='Select project checker'
-            fetchOptions={fetchUser('project_checker')}
-          />
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='verifier'
-            label='Project Verifier'
-            placeholder='Select project verifier'
-            fetchOptions={fetchUser('project_verifier')}
-          />
-        </div>
-      </div>
-      <div className='space-y-4 rounded-lg border bg-muted/30 p-4'>
-        <FieldLegend variant='legend'>Operations</FieldLegend>
-        <div className='space-y-4'>
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='project_head'
-            label='Project Head'
-            placeholder='Select project head'
-            fetchOptions={fetchUser('project_head')}
-          />
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='project_engineer'
-            label='Project Engineer'
-            placeholder='Select project engineer'
-            fetchOptions={fetchUser('project_engineer')}
-          />
-          <TeamRoleField
-            control={control}
-            readOnly={readOnly}
-            name='supervisor'
-            label='Supervisor'
-            placeholder='Select supervisor'
-            fetchOptions={fetchUser('project_supervisor')}
-          />
-        </div>
-      </div>
-    </FormSection>
-  );
-});
-
-SanctionAmountField.displayName = 'SanctionAmountField';
-BasicInformationSection.displayName = 'BasicInformationSection';
-LocationDetailsSection.displayName = 'LocationDetailsSection';
-ClientLinkedScheduleSection.displayName = 'ClientLinkedScheduleSection';
-ScheduleSourceInformationSection.displayName =
-  'ScheduleSourceInformationSection';
-ProjectTeamsSection.displayName = 'ProjectTeamsSection';

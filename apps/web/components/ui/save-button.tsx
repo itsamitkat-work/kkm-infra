@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
-import { Kbd } from "@/components/ui/kbd";
-import { Loader2, Save } from "lucide-react";
-import { getPlatformSpecificKbd } from "@/lib/utils";
+} from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button';
+import { Kbd } from '@/components/ui/kbd';
+import { Loader2, Save } from 'lucide-react';
+import { getPlatformSpecificKbd } from '@/lib/utils';
 
 type SaveButtonProps = {
   onClick: () => void;
@@ -34,43 +34,43 @@ export const SaveButton: React.FC<SaveButtonProps> = ({
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
-          size="xs"
-          variant="outline"
+          size='xs'
+          variant='outline'
           onClick={onClick}
           disabled={disabled}
           className={`relative h-6 w-6 p-0 ${
             hasError
-              ? "text-destructive hover:text-destructive hover:bg-destructive/10 border-destructive"
+              ? 'text-destructive hover:text-destructive hover:bg-destructive/10 border-destructive'
               : disabled
-              ? "text-muted-foreground"
-              : "text-primary hover:text-primary hover:bg-muted/30"
+                ? 'text-muted-foreground'
+                : 'text-primary hover:text-primary hover:bg-muted/30'
           }`}
         >
           {hasError && (
-            <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-destructive border-2 border-background" />
+            <span className='absolute top-0 right-0 h-2 w-2 rounded-full bg-destructive border-2 border-background' />
           )}
           {isLoading ? (
-            <Loader2 className="h-3 w-3 animate-spin" />
+            <Loader2 className='h-3 w-3 animate-spin' />
           ) : (
-            <Save className="h-3 w-3" />
+            <Save className='h-3 w-3' />
           )}
         </Button>
       </TooltipTrigger>
       <TooltipContent>
         {hasError ? (
-          <p className="text-destructive">{errorMessage}</p>
+          <p className='text-destructive'>{errorMessage}</p>
         ) : (
-          <div className="flex items-center gap-2">
+          <div className='flex items-center gap-2'>
             <p>
               {isLoading
-                ? "Loading..."
+                ? 'Loading...'
                 : isNew
-                ? "Save New Item"
-                : isEdited
-                ? "Save Changes"
-                : "No Changes to Save"}
+                  ? 'Save New Item'
+                  : isEdited
+                    ? 'Save Changes'
+                    : 'No Changes to Save'}
             </p>
-            {!disabled && <Kbd>{getPlatformSpecificKbd("S")}</Kbd>}
+            {!disabled && <Kbd>{getPlatformSpecificKbd('S')}</Kbd>}
           </div>
         )}
       </TooltipContent>

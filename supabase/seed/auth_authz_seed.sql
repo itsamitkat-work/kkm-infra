@@ -15,7 +15,7 @@
 --
 -- Project drawer (KKM tenant): tenant_roles named with a Project … prefix; slugs are
 -- project_maker, project_checker, project_verifier, project_head, project_engineer,
--- project_supervisor (see apps/web/types/project-member-roles.ts).
+-- project_supervisor (see apps/web/hooks/projects/use-project-member.ts).
 -- Seed users use project.* emails and Project … display names for clarity in pickers.
 -- ==========================================================================
 
@@ -111,7 +111,7 @@ set
 
 -- --------------------------------------------------------------------------
 -- Project team roles for KKM tenant (project drawer user pickers)
--- Role names: Project … prefix. Slugs must match ProjectMemberRoleSlug in apps/web/types/project-member-roles.ts.
+-- Role names: Project … prefix. Slugs must match ProjectMemberRoleSlug in apps/web/hooks/projects/use-project-member.ts.
 -- --------------------------------------------------------------------------
 insert into authz.tenant_roles (tenant_id, name, slug, template_key, is_system)
 select v.tenant_id, v.name, v.slug, null::text, false

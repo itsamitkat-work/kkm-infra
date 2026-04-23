@@ -9,12 +9,12 @@ export const buildPatchFromSelection = (
   if (!matched) return;
 
   return {
-    code: matched.code ?? '',
-    dsrCode: matched.dsrCode ?? matched.dsrId ?? '',
-    scheduleName: matched.scheduleName || matched.scheduleRate || null,
-    name: matched.name ?? '',
-    unit: matched.unit ?? '',
-    rate: matched.rate?.toString() ?? '',
-    masterItemHashId: matched.hashId ?? '',
+    item_code: matched.code ?? '',
+    reference_schedule_text: matched.referenceScheduleLabel ?? '',
+    schedule_name: matched.scheduleName || matched.scheduleRate || null,
+    item_description: matched.name ?? '',
+    unit_display: matched.unit ?? '',
+    rate_amount: matched.rate?.toString() ?? '',
+    schedule_item_id: matched.hashId ?? '',
   } as Partial<ProjectItemRowType>;
 };

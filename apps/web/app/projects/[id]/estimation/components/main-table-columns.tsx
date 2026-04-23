@@ -119,14 +119,16 @@ const Amount2Cell = ({
   );
 
   const quantity1 = parseFloat(
-    type === 'EST' ? row.quantity : row.estimate_quantity || '0'
+    type === 'EST'
+      ? row.contract_quantity
+      : row.estimate_quantity || '0'
   );
   const quantity2 = parseFloat(
     type === 'EST'
       ? row.estimate_quantity || '0'
       : row.measurment_quantity || '0'
   );
-  const rate = parseFloat(row.rate || '0');
+  const rate = parseFloat(row.rate_amount || '0');
 
   // Calculate the final amount (use updatedAmount if available, otherwise calculate from quantity2)
   const finalAmount =
@@ -181,15 +183,17 @@ export const getMainColumns = ({
     enableSorting: false,
   },
   {
-    accessorKey: 'srNo',
+    accessorKey: 'work_order_number',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title='Wo. No.' />
     ),
-    cell: ({ row }) => <div className='text-center'>{row.original.srNo}</div>,
+    cell: ({ row }) => (
+      <div className='text-center'>{row.original.work_order_number}</div>
+    ),
     size: 70,
   },
   {
-    accessorKey: 'name',
+    accessorKey: 'item_description',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title='Item Name' />
     ),
@@ -200,7 +204,7 @@ export const getMainColumns = ({
           variant='ghost'
           className='w-full justify-start hover:text-primary transition-all duration-200 hover:bg-muted/30 rounded-sm px-1 py-0.5 -mx-1 -my-0.5 h-auto whitespace-normal text-left font-normal'
           onClick={() => row.toggleExpanded()}
-          title={row.original.name}
+          title={row.original.item_description}
         >
           <div
             className={`flex items-center gap-2 w-full min-w-0 ${
@@ -226,7 +230,7 @@ export const getMainColumns = ({
                 isExpanded ? 'break-words whitespace-normal' : 'truncate'
               }`}
             >
-              {row.original.name}
+              {row.original.item_description}
             </span>
           </div>
         </Button>
@@ -242,7 +246,9 @@ export const getMainColumns = ({
         id: 'quantity1',
         accessorFn: (row) => {
           const val =
-            type === 'EST' ? row.quantity : row.estimate_quantity || '0';
+            type === 'EST'
+              ? row.contract_quantity
+              : row.estimate_quantity || '0';
           return parseFloat(String(val));
         },
         header: ({ column }) => (
@@ -255,7 +261,7 @@ export const getMainColumns = ({
         cell: ({ row }) => {
           const quantity1 = parseFloat(
             type === 'EST'
-              ? row.original.quantity
+              ? row.original.contract_quantity
               : row.original.estimate_quantity || '0'
           );
           return (
@@ -270,9 +276,13 @@ export const getMainColumns = ({
         id: 'amount1',
         accessorFn: (row) => {
           const qty = parseFloat(
-            String(type === 'EST' ? row.quantity : row.estimate_quantity || '0')
+            String(
+              type === 'EST'
+                ? row.contract_quantity
+                : row.estimate_quantity || '0'
+            )
           );
-          const rate = parseFloat(row.rate || '0');
+          const rate = parseFloat(row.rate_amount || '0');
           return qty * rate;
         },
         header: ({ column }) => (
@@ -281,10 +291,10 @@ export const getMainColumns = ({
         cell: ({ row }) => {
           const quantity1 = parseFloat(
             type === 'EST'
-              ? row.original.quantity
+              ? row.original.contract_quantity
               : row.original.estimate_quantity || '0'
           );
-          const rate = parseFloat(row.original.rate || '0');
+          const rate = parseFloat(row.original.rate_amount || '0');
           const amount = quantity1 * rate;
           // Round to 2 decimal places before formatting
           const formattedAmount = parseFloat(amount.toFixed(2));
@@ -337,7 +347,7 @@ export const getMainColumns = ({
                 : row.measurment_quantity || '0'
             )
           );
-          const rate = parseFloat(row.rate || '0');
+          const rate = parseFloat(row.rate_amount || '0');
           return qty * rate;
         },
         header: ({ column }) => (

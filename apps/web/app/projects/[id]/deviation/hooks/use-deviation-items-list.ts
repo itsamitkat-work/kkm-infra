@@ -1,27 +1,70 @@
 'use client';
 
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { apiFetch } from '@/lib/apiClient';
+import { useQuery } from '@tanstack/react-query';
 import { PaginationResponse } from '@/types/common';
 import { SortingState } from '@tanstack/react-table';
 import { Filter } from '@/components/ui/filters';
-import React from 'react';
 import { DeviationReportType, DeviationResponse } from '../types';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import type { Database } from '@kkm/db';
+
+type DeviationComparison =
+  Database['public']['Enums']['project_deviation_comparison'];
+
+function applyClientFilters(
+  rows: DeviationResponse[],
+  filters?: Record<string, Filter>
+): DeviationResponse[] {
+  if (!filters || Object.keys(filters).length === 0) {
+    return rows;
+  }
+  return rows.filter((row) => {
+    for (const key of Object.keys(filters)) {
+      const filter = filters[key];
+      if (!filter?.values?.length) {
+        continue;
+      }
+      const v = filter.values[0];
+      if (key === 'name' && typeof v === 'string') {
+        if (!String(row.name).toLowerCase().includes(v.toLowerCase())) {
+          return false;
+        }
+      }
+    }
+    return true;
+  });
+}
+
+function applyClientSort(
+  rows: DeviationResponse[],
+  sorting?: SortingState
+): DeviationResponse[] {
+  if (!sorting?.length) {
+    return [...rows].sort((a, b) => {
+      const sa = String(a.srNo);
+      const sb = String(b.srNo);
+      return sa.localeCompare(sb, undefined, { numeric: true });
+    });
+  }
+  const s = sorting[0];
+  const dir = s.desc ? -1 : 1;
+  return [...rows].sort((a, b) => {
+    const av = (a as unknown as Record<string, unknown>)[s.id];
+    const bv = (b as unknown as Record<string, unknown>)[s.id];
+    if (typeof av === 'number' && typeof bv === 'number') {
+      return (av - bv) * dir;
+    }
+    return String(av ?? '').localeCompare(String(bv ?? '')) * dir;
+  });
+}
 
 /**
- * Fetches project items from the API with pagination, filtering, and sorting support
- * @param id - Project ID
- * @param page - Page number (1-based)
- * @param pageSize - Number of items per page
- * @param filters - Filter criteria
- * @param sorting - Sorting configuration
- * @param type - Project item type (GEN, EST, MSR)
- * @returns Promise with paginated project items
+ * Fetches all deviation rows for the project in one RPC call (no paging).
  */
 export const fetchDeviationReportItems = async (
   id: string,
-  page?: number,
-  pageSize?: number,
+  _page?: number,
+  _pageSize?: number,
   filters?: Record<string, Filter>,
   sorting?: SortingState,
   type?: DeviationReportType
@@ -29,148 +72,98 @@ export const fetchDeviationReportItems = async (
   if (!id) {
     throw new Error('Project ID is required');
   }
-  const params = new URLSearchParams();
-  if (page !== undefined) params.append('page', page.toString());
-  if (pageSize !== undefined) params.append('pageSize', pageSize.toString());
-
-  if (filters) {
-    for (const key in filters) {
-      const filter = filters[key];
-      const { operator, values } = filter;
-
-      if (!values || values.length === 0) continue;
-
-      switch (operator) {
-        case 'between':
-        case 'not_between':
-          if (values.length === 2) {
-            if (
-              typeof values[0] === 'number' &&
-              typeof values[1] === 'number'
-            ) {
-              params.append(`${key}_min`, values[0].toString());
-              params.append(`${key}_max`, values[1].toString());
-            } else {
-              params.append(`${key}_from`, String(values[0]));
-              params.append(`${key}_to`, String(values[1]));
-            }
-          }
-          break;
-        case 'is_any_of':
-        case 'is_not_any_of':
-          params.append(key, values.join(','));
-          break;
-        case 'greater_than':
-          params.append(`${key}_gt`, String(values[0]));
-          break;
-        case 'less_than':
-          params.append(`${key}_lt`, String(values[0]));
-          break;
-        case 'not_equals':
-          params.append(`${key}_ne`, String(values[0]));
-          break;
-        case 'equals':
-        case 'is':
-        default:
-          params.append(key, String(values[0]));
-          break;
-      }
-    }
+  if (!type) {
+    throw new Error('Deviation comparison type is required');
   }
 
-  if (sorting && sorting.length > 0) {
-    const sort = sorting[0];
-    params.append('sortBy', sort.id);
-    params.append('order', sort.desc ? 'desc' : 'asc');
-  }
+  const supabase = createSupabaseBrowserClient();
+  const { data, error } = await supabase.rpc('rpc_project_deviation_rows', {
+    p_project_id: id,
+    p_comparison: type as DeviationComparison,
+  });
 
-  const queryString = params.toString();
-  let url = `/v2/project/deviations/${id}?type=${type}`;
-  if (queryString) {
-    url += `&${queryString}`;
-  }
-
-  if (!sorting || sorting.length === 0) {
-    url += `&sortBy=srNo&order=asc`;
-  }
-
-  try {
-    return await apiFetch<PaginationResponse<DeviationResponse>>(url);
-  } catch (error) {
-    console.error('Failed to fetch project items:', error);
+  if (error) {
+    console.error('Failed to fetch deviation rows:', error);
     throw error;
   }
+
+  const rawRows = (data ?? []) as {
+    work_order_number: string;
+    item_description: string;
+    rate_amount: number | null;
+    quantity_reference: number | null;
+    quantity_compare: number | null;
+  }[];
+
+  let mapped: DeviationResponse[] = rawRows.map((r) => ({
+    srNo: r.work_order_number,
+    type,
+    name: r.item_description,
+    rate: Number(r.rate_amount ?? 0),
+    quantity1: Number(r.quantity_reference ?? 0),
+    quantity2: Number(r.quantity_compare ?? 0),
+  }));
+
+  mapped = applyClientFilters(mapped, filters);
+  mapped = applyClientSort(mapped, sorting);
+
+  const totalCount = mapped.length;
+  const pageSize = Math.max(totalCount, 1);
+
+  return {
+    data: mapped,
+    totalCount,
+    page: 1,
+    pageSize,
+    totalPages: 1,
+    hasPrevious: false,
+    hasNext: false,
+    isSuccess: true,
+    statusCode: 200,
+    message: '',
+  };
 };
 
-/**
- * React hook for managing project items list with infinite scrolling
- * @param id - Project ID (required)
- * @param pageSize - Number of items per page (default: 50)
- * @param filters - Filter criteria
- * @param sorting - Sorting configuration
- * @param type - Project item type (GEN, EST, MSR)
- * @returns Object containing data, pagination info, and control functions
- */
 export const useDeviationReportItemsList = ({
   id,
-  pageSize = 50,
   filters,
   sorting,
   type,
-  fetchAll = true,
 }: {
   id: string;
   pageSize?: number;
   filters?: Record<string, Filter>;
   sorting?: SortingState;
   type: DeviationReportType;
-  fetchAll?: boolean;
 }) => {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, ...rest } =
-    useInfiniteQuery({
-      queryKey: ['deviations', id, { filters, sorting, pageSize, type }],
-      queryFn: ({ pageParam }) =>
+  const { data, isLoading, isError, error, refetch, isFetching, isPending } =
+    useQuery({
+      queryKey: ['deviations', id, { filters, sorting, type }],
+      queryFn: () =>
         fetchDeviationReportItems(
           id,
-          pageParam,
-          pageSize,
+          undefined,
+          undefined,
           filters,
           sorting,
           type
         ),
-      getNextPageParam: (lastPage, allPages) => {
-        if (lastPage.totalPages > allPages.length) {
-          return allPages.length + 1;
-        }
-        return undefined;
-      },
-      initialPageParam: 1,
+      enabled: !!id && !!type,
     });
 
-  // Automatically fetch all pages if fetchAll flag is true
-  React.useEffect(() => {
-    if (fetchAll && hasNextPage && !isFetchingNextPage) {
-      fetchNextPage();
-    }
-  }, [fetchAll, hasNextPage, isFetchingNextPage, fetchNextPage]);
-
-  const mappedData = React.useMemo(() => {
-    if (!data?.pages) return [];
-
-    return data.pages.flatMap((page) => page.data);
-  }, [data]);
-
   return {
-    data: mappedData,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    totalCount: data?.pages[0]?.totalCount ?? 0,
-    totalPages: data?.pages[0]?.totalPages ?? 0,
-    currentPage: data?.pages[0]?.page ?? 1,
-    pageSize: data?.pages[0]?.pageSize ?? pageSize,
-    hasPrevious: data?.pages[0]?.hasPrevious ?? false,
-    hasNext: data?.pages[0]?.hasNext ?? false,
-    ...rest,
+    data: data?.data ?? [],
+    totalCount: data?.totalCount ?? 0,
+    totalPages: data?.totalPages ?? 1,
+    currentPage: data?.page ?? 1,
+    pageSize: data?.pageSize ?? 0,
+    hasPrevious: data?.hasPrevious ?? false,
+    hasNext: data?.hasNext ?? false,
+    isLoading,
+    isFetching,
+    isPending,
+    isError,
+    error,
+    refetch,
   };
 };

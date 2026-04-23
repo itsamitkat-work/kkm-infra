@@ -52,21 +52,22 @@ export const ExtraItemsTable = forwardRef<
     addNewItem: () => {
       const newItem: EstimationRowData = {
         id: `extra-${Date.now()}`,
-        srNo: '',
-        name: '',
-        code: '',
-        dsrCode: '',
-        unit: '',
-        rate: '',
-        quantity: '0',
-        segmentHashIds: [],
+        work_order_number: '',
+        schedule_item_id: '',
+        item_description: '',
+        item_code: '',
+        reference_schedule_text: '',
+        unit_display: '',
+        rate_amount: '',
+        contract_quantity: '0',
+        project_segment_ids: [],
         estimate_quantity: '0',
         measurment_quantity: '0',
         deviationQty: 0,
         deviationPercent: 0,
         costDeviation: 0,
-        isNew: true,
-        isEdited: true,
+        is_new: true,
+        is_edited: true,
       };
       addExtraItem(newItem);
     },
@@ -74,10 +75,9 @@ export const ExtraItemsTable = forwardRef<
       const newItem: EstimationRowData = {
         ...itemToDuplicate,
         id: `extra-${Date.now()}`,
-        srNo: '',
-        hashId: undefined,
-        isNew: true,
-        isEdited: true,
+        work_order_number: '',
+        is_new: true,
+        is_edited: true,
       };
       addExtraItem(newItem);
     },
@@ -101,27 +101,46 @@ export const ExtraItemsTable = forwardRef<
         return;
       }
 
-      const payload = {
-        rate: parseNumber(item.rate),
-        [type === 'EST' ? 'quantity' : 'estimate_quantity']: 0,
-        remarks: item.remark,
-        srNo: item.srNo,
-        dsrCode: item.dsrCode,
-        code: item.code,
-        itemId: item.masterItemHashId,
+      const updatePayload = {
+        project_id: projectId,
+        rate_amount: parseNumber(item.rate_amount),
+        contract_quantity: 0,
+        remark: item.remark ?? null,
+        work_order_number: item.work_order_number,
+        item_code: item.item_code,
+        item_description: item.item_description,
+        unit_display: item.unit_display,
+        reference_schedule_text: item.reference_schedule_text ?? '',
+        project_segment_ids: item.project_segment_ids ?? [],
+      };
+
+      const createPayload = {
+        project_id: projectId,
+        schedule_item_id: String(item.schedule_item_id ?? ''),
+        work_order_number: String(item.work_order_number ?? ''),
+        item_code: item.item_code ?? '',
+        item_description: item.item_description ?? '',
+        unit_display: item.unit_display ?? '',
+        rate_amount: parseNumber(item.rate_amount),
+        contract_quantity: parseNumber(item.contract_quantity),
+        remark: item.remark ?? null,
+        reference_schedule_text: item.reference_schedule_text ?? '',
+        project_segment_ids: item.project_segment_ids ?? [],
         type,
-        projectId,
-      } as const;
+      };
 
       try {
-        if (item.hashId) {
-          await updateItem({ ...payload, hashId: item.hashId });
-          updateExtraItem({ ...item, isEdited: false });
+        if (!item.is_new) {
+          await updateItem({
+            ...updatePayload,
+            id: item.id,
+          });
+          updateExtraItem({ ...item, is_edited: false });
           setItemError(item.id, null);
           onItemSaved?.();
         } else {
-          const result = await createItem(payload);
-          if (result?.data?.hashId) {
+          const result = await createItem(createPayload);
+          if (result?.data?.id) {
             removeExtraItem(item.id);
             setItemError(item.id, null);
             onItemSaved?.();
@@ -171,18 +190,17 @@ export const ExtraItemsTable = forwardRef<
     (item: EstimationRowData) => {
       // Create a clean duplicate without internal table fields
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { _original, headerKey, ...itemWithoutInternal } =
+      const { _original, header_key, ...itemWithoutInternal } =
         item as EstimationRowData & {
           _original?: unknown;
-          headerKey?: string | null;
+          header_key?: string | null;
         };
       const newItem: EstimationRowData = {
         ...itemWithoutInternal,
         id: `extra-${Date.now()}`,
-        srNo: '',
-        hashId: undefined,
-        isNew: true,
-        isEdited: true,
+        work_order_number: '',
+        is_new: true,
+        is_edited: true,
       };
       // Add to store
       addExtraItem(newItem);
@@ -212,7 +230,10 @@ export const ExtraItemsTable = forwardRef<
     ]
   );
 
-  const searchKeys = useMemo(() => ['name', 'code', 'srNo'], []);
+  const searchKeys = useMemo(
+    () => ['item_description', 'item_code', 'work_order_number'],
+    []
+  );
   const filters = useMemo(() => [], []);
 
   const sheetTable = useSheetTable<EstimationRowData>({
@@ -243,7 +264,7 @@ export const ExtraItemsTable = forwardRef<
             if (rowId) {
               // Get item from table data (source of truth for edited data)
               const item = sheetTable.data.find((item) => item.id === rowId);
-              if (item && (item.isEdited || item.isNew)) {
+              if (item && (item.is_edited || item.is_new)) {
                 e.preventDefault();
                 handleSave(item as EstimationRowData);
               }
@@ -270,7 +291,7 @@ export const ExtraItemsTable = forwardRef<
 
   // Disable editing for actions column
   const getDisabledColumns = React.useCallback(() => {
-    return ['scheduleName', 'dsrCode', 'actions'] as string[];
+    return ['schedule_name', 'reference_schedule_text', 'actions'] as string[];
   }, []);
 
   // Memoize onEdit to prevent infinite loops

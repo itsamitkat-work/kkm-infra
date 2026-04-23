@@ -137,7 +137,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'srNo',
+    accessorKey: 'work_order_number',
     header: () => <div className='text-start'>Sr.No.</div>,
     size: 80,
     cell: ({ getValue }) => (
@@ -147,7 +147,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'code',
+    accessorKey: 'item_code',
     header: 'Item Code',
     size: 120,
     cell: ({ getValue }) => (
@@ -155,7 +155,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'name',
+    accessorKey: 'item_description',
     header: 'Item',
     size: 400,
     cell: ({ getValue }) => (
@@ -165,7 +165,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'quantity',
+    accessorKey: 'contract_quantity',
     header: () => <div className='text-right'>Quantity</div>,
     size: 100,
     cell: ({ getValue }) => (
@@ -177,7 +177,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'unit',
+    accessorKey: 'unit_display',
     header: () => <div className='text-center'>Unit</div>,
     size: 80,
     cell: ({ getValue }) => (
@@ -187,7 +187,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     ),
   },
   {
-    accessorKey: 'rate',
+    accessorKey: 'rate_amount',
     header: () => <div className='text-right'>Rate</div>,
     size: 120,
     cell: ({ getValue }) => (
@@ -287,7 +287,7 @@ export function BillTableMaterial({
             renderExpandedRow={(row) => (
               <ItemBasicRatesTable
                 projectId={projectId}
-                projectItemId={row.original.hashId ?? row.original.id ?? ''}
+                projectItemId={row.original.id ?? ''}
                 type='Material'
               />
             )}

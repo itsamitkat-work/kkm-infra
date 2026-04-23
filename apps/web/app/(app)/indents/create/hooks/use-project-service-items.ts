@@ -16,14 +16,13 @@ export function useProjectServiceItems(projectId: string) {
   const result = useProjectItemsQuery({
     projectId,
     type: 'GEN',
-    fetchAll: true,
   });
 
   const serviceItems = React.useMemo(() => {
     if (!result.data) return [];
     return result.data.filter(
       (item) =>
-        (item.scheduleName?.trim() ?? '').toLowerCase() ===
+        (item.schedule_name?.trim() ?? '').toLowerCase() ===
         SERVICE_ITEMS_SCHEDULE_NAME.toLowerCase()
     );
   }, [result.data]);

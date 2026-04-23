@@ -1,16 +1,24 @@
 import { ProjectItemRowType } from '@/types/project-item';
-import { Combobox } from '@/components/ui/combobox';
 import {
-  MasterItemOption,
+  type MasterItemOption,
   mapMasterItemToOption,
-  renderMasterItemOption,
-  useMasterItemOptions,
 } from '../components/master-item-options';
-import { useMasterProjectItemsQuery } from '@/app/(app)/projects/hooks/use-master-project-items-query';
+import type { MasterItem } from '@/hooks/items/types';
+import type { ScheduleTreeRow } from '@/app/(app)/schedule-items/types';
+import { getReferenceScheduleLabelString } from '@/app/(app)/schedule-items/reference-schedule-labels';
+import { ScheduleItemsTree } from '@/app/(app)/schedule-items/schedule-items-tree';
 import React from 'react';
-import { useScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
-import { useDebouncedSearch } from '@/hooks/use-debounced-search';
 import { useMasterItemSelection } from './use-master-item-selection';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
+import { ChevronsUpDown } from 'lucide-react';
 
 /**
  * Configuration for a master item editor column
@@ -27,6 +35,10 @@ export interface MasterItemEditorConfigType {
   ) => React.ReactNode;
   getOnChangeValue: (option: MasterItemOption | null) => string;
   getRowValue: (row: ProjectItemRowType) => string;
+  /** Merged into the schedule-picker trigger `Button` (e.g. `justify-center` for narrow columns). */
+  triggerClassName?: string;
+  /** Merged into the label `span` inside the trigger (overrides default `flex-1` growth when set). */
+  labelClassName?: string;
 }
 
 interface MasterItemEditorProps {
@@ -36,9 +48,29 @@ interface MasterItemEditorProps {
   autoFocus?: boolean;
 }
 
+function mapScheduleTreeRowToMasterItem(
+  treeRow: ScheduleTreeRow,
+  scheduleVersionLabel: string
+): MasterItem {
+  const rate = treeRow.rate;
+  const referenceScheduleText = getReferenceScheduleLabelString(treeRow);
+  return {
+    hashId: treeRow.id,
+    code: treeRow.code ?? '',
+    referenceScheduleLabel:
+      referenceScheduleText !== '' ? referenceScheduleText : null,
+    name: treeRow.description ?? '',
+    unit: treeRow.unit_symbol ?? '',
+    rate: typeof rate === 'number' && Number.isFinite(rate) ? rate : 0,
+    scheduleName: scheduleVersionLabel || null,
+    scheduleRate: scheduleVersionLabel || null,
+  };
+}
+
 /**
- * MasterItemEditorConfig - A reusable editor component for selecting master items
- * by code or name. Handles the complexity of cross-column synchronization.
+ * MasterItemEditorConfig — pick a schedule leaf item via the same tree as
+ * Schedule Items, opened in a dialog. Cross-column sync uses
+ * `useMasterItemSelection` + `buildPatchFromSelection` as before.
  */
 export const MasterItemEditorConfig = ({
   config,
@@ -46,146 +78,120 @@ export const MasterItemEditorConfig = ({
   onChange,
   autoFocus = false,
 }: MasterItemEditorProps) => {
-  const { debouncedSearchTerm, setSearchTerm } = useDebouncedSearch();
-  const [scheduleName, setScheduleName] = React.useState<string | undefined>();
+  const [open, setOpen] = React.useState(false);
   const { setSelection, getSelection } = useMasterItemSelection(row.id);
 
-  // Fetch master items based on search
-  const {
-    data: masterProjectItems,
-    fetchNextPage: fetchNextMasterProjectItems,
-    hasNextPage: hasNextMasterProjectItems,
-    isFetchingNextPage: isFetchingNextMasterProjectItems,
-    isLoading: isLoadingMasterProjectItems,
-  } = useMasterProjectItemsQuery(
-    { search: debouncedSearchTerm, searchField: config.searchField },
-    scheduleName
-  );
-
-  const masterItemOptions = useMasterItemOptions(masterProjectItems);
-
-  // Get the stored master item (if selected in another column)
   const storedMasterItem = getSelection();
 
-  // Ensure stored master item is in options list for display
-  const optionsWithStoredItem = React.useMemo(() => {
-    if (!storedMasterItem) {
-      return masterItemOptions;
-    }
-
-    const existsInOptions = masterItemOptions.some(
-      (opt) => opt.hashId === storedMasterItem.hashId
-    );
-
-    if (!existsInOptions) {
-      return [...masterItemOptions, mapMasterItemToOption(storedMasterItem)];
-    }
-
-    return masterItemOptions;
-  }, [masterItemOptions, storedMasterItem]);
-
-  // Find the option that matches the current row's masterItemHashId
   const matchedOption = React.useMemo(() => {
-    if (!row.masterItemHashId) {
+    if (!row.schedule_item_id) {
       return null;
     }
-    return (
-      optionsWithStoredItem.find(
-        (option) => option.hashId === row.masterItemHashId
-      ) ?? null
-    );
-  }, [optionsWithStoredItem, row.masterItemHashId]);
+    if (storedMasterItem && storedMasterItem.hashId === row.schedule_item_id) {
+      return mapMasterItemToOption(storedMasterItem);
+    }
+    return mapMasterItemToOption({
+      hashId: row.schedule_item_id,
+      code: row.item_code ?? '',
+      referenceScheduleLabel: row.reference_schedule_text ?? null,
+      name: row.item_description ?? '',
+      unit: row.unit_display ?? '',
+      rate: parseFloat(row.rate_amount || '0') || 0,
+      scheduleName: row.schedule_name ?? null,
+      scheduleRate: row.schedule_name ?? null,
+    } satisfies MasterItem);
+  }, [row, storedMasterItem]);
 
-  // Determine the effective option to display (matched or stored)
   const effectiveOption = React.useMemo(() => {
-    return (
-      matchedOption ||
-      (storedMasterItem ? mapMasterItemToOption(storedMasterItem) : null)
-    );
+    if (matchedOption) {
+      return matchedOption;
+    }
+    if (storedMasterItem) {
+      return mapMasterItemToOption(storedMasterItem);
+    }
+    return null;
   }, [matchedOption, storedMasterItem]);
 
-  const comboboxValue = effectiveOption?.hashId ?? row.masterItemHashId ?? '';
-
-  // Schedule filter handling
-  const handleScheduleFilterChange = React.useCallback(
-    (scheduleId: string | null) => {
-      setScheduleName(scheduleId ?? undefined);
-    },
-    []
-  );
-
-  const { data: scheduleSources = [] } = useScheduleSourcesList(
-    debouncedSearchTerm
-  );
-
-  const scheduleFilterOptions = React.useMemo(
-    () =>
-      Array.from(
-        new Set(
-          scheduleSources.map((s) => s.display_name || s.name).filter(Boolean)
-        )
-      ).map((label) => ({ id: label, label })),
-    [scheduleSources]
-  );
-
-  // Handle selection change
-  const handleChange = React.useCallback(
-    (optionId: string, option: MasterItemOption) => {
-      // Store the selected master item for use in onChangeUpdateRow
-      setSelection(option.raw);
-
-      // Get the value to set for this specific column (code or name)
-      const newValue = config.getOnChangeValue(option);
-
-      // Trigger the onChange callback
-      onChange?.(newValue);
+  const handleSelectLeaf = React.useCallback(
+    ({
+      row: treeRow,
+      scheduleVersionLabel,
+    }: {
+      row: ScheduleTreeRow;
+      scheduleVersionLabel: string;
+    }) => {
+      const masterItem = mapScheduleTreeRowToMasterItem(
+        treeRow,
+        scheduleVersionLabel
+      );
+      const option = mapMasterItemToOption(masterItem);
+      setSelection(masterItem);
+      onChange?.(config.getOnChangeValue(option));
+      setOpen(false);
     },
     [setSelection, config, onChange]
   );
 
-  // Render the selected value with fallbacks
-  const renderSelectedValue = React.useCallback(
-    (option: MasterItemOption | null) => {
-      // Use the option if available, otherwise fall back to effective option or row value
-      const optionToRender = option || effectiveOption;
-      const rowValue = config.getRowValue(row);
-
-      return config.renderSelectedValue(
-        optionToRender,
-        config.placeholder,
-        rowValue
-      );
-    },
-    [effectiveOption, config, row]
-  );
+  const displayLabel = React.useMemo(() => {
+    const rowValue = config.getRowValue(row);
+    return config.renderSelectedValue(
+      effectiveOption,
+      config.placeholder,
+      rowValue
+    );
+  }, [effectiveOption, config, row]);
 
   return (
-    <div className='w-full'>
-      <Combobox<MasterItemOption>
-        value={comboboxValue}
-        options={optionsWithStoredItem}
-        placeholder={config.placeholder}
-        className='text-sm !px-2 !py-0'
-        getOptionId={(option) => option.hashId}
-        getOptionLabel={
-          config.getOptionLabel ?? ((option) => option.name || option.code)
-        }
-        renderOption={renderMasterItemOption}
-        renderSelectedValue={renderSelectedValue}
-        searchPlaceholder={config.searchPlaceholder}
-        filterOptions={scheduleFilterOptions}
-        filterValue={scheduleName ?? null}
-        filterPlaceholder='Schedule'
-        onFilterChange={handleScheduleFilterChange}
-        onSearch={setSearchTerm}
-        onLoadMore={fetchNextMasterProjectItems}
-        hasMore={hasNextMasterProjectItems}
-        loading={
-          isFetchingNextMasterProjectItems || isLoadingMasterProjectItems
-        }
-        autoFocus={autoFocus}
-        onChange={handleChange}
-      />
+    <div className='w-full min-w-0 max-w-full overflow-hidden'>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button
+            type='button'
+            variant='ghost'
+            autoFocus={autoFocus}
+            className={cn(
+              'flex h-auto min-h-8 w-full min-w-0 max-w-full items-center justify-between gap-2 overflow-hidden rounded-none border-0 bg-transparent px-2 py-1 text-left text-sm font-normal text-muted-foreground shadow-none ring-offset-0',
+              'hover:bg-muted/40 hover:text-foreground',
+              'focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring',
+              config.triggerClassName
+            )}
+            aria-label={`${config.searchField === 'code' ? 'Choose item by code' : 'Choose item by name'}. Opens schedule tree.`}
+          >
+            <span
+              className={cn(
+                'min-w-0 flex-1 truncate text-foreground',
+                config.labelClassName
+              )}
+            >
+              {displayLabel}
+            </span>
+            <ChevronsUpDown
+              className='text-muted-foreground size-4 shrink-0 opacity-60'
+              aria-hidden
+            />
+          </Button>
+        </DialogTrigger>
+        <DialogContent
+          showCloseButton
+          className='flex max-h-[min(90vh,880px)] w-[min(96vw,56rem)] max-w-[min(96vw,56rem)] flex-col gap-0 overflow-hidden p-0 sm:max-w-[min(96vw,56rem)]'
+        >
+          <DialogHeader className='border-border shrink-0 border-b px-4 py-3 text-left'>
+            <DialogTitle>Select schedule item</DialogTitle>
+            <p className='text-muted-foreground text-sm font-normal'>
+              Expand folders, then use{' '}
+              <span className='text-foreground font-medium'>Select</span> on a
+              line item (leaf).
+            </p>
+          </DialogHeader>
+          <div className='flex min-h-0 min-h-[50vh] flex-1 flex-col px-2 pb-3 pt-0 sm:min-h-[55vh]'>
+            <ScheduleItemsTree
+              embedded
+              className='min-h-0 flex-1'
+              onSelectLeaf={handleSelectLeaf}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

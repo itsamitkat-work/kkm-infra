@@ -8,8 +8,8 @@ export { ALL_SEGMENTS_TOGGLE_VALUE, UNASSIGNED_SECTION_ID };
 
 interface RowWithSegment {
   id: string;
-  segmentHashIds?: string[];
-  headerKey?: string | null;
+  project_segment_ids?: string[];
+  header_key?: string | null;
 }
 
 interface UseProjectSegmentsFilterProps<T extends RowWithSegment> {
@@ -29,39 +29,39 @@ export function useProjectSegmentsFilter<T extends RowWithSegment>({
 
   const hasSegments = segments.length > 0;
 
-  // Create stable segment name map for headerKey lookup
+  // Create stable segment name map for header_key lookup
   const segmentNameMap = React.useMemo(() => {
     return new Map(
       segments.map((s) => [s.hashId, s.segmentName || 'Untitled'])
     );
   }, [segments]);
 
-  // Filter items based on segmentHashIds array
+  // Filter items based on project_segment_ids array
   const processedData = React.useMemo(() => {
     if (selectedSegmentId === ALL_SEGMENTS_TOGGLE_VALUE) {
       // Show all items when "All segments" tab is selected
       return data.map((item): T => {
         return {
           ...item,
-          headerKey: null,
+          header_key: null,
         };
       });
     }
 
-    // Filter items that have the selected segment hashId in their segmentHashIds array
+    // Filter items that have the selected segment id in their project_segment_ids array
     return data
       .filter((item) => {
-        const segmentHashIds = item.segmentHashIds || [];
+        const projectSegmentIds = item.project_segment_ids || [];
         // Handle unassigned segment case if needed, though usually handled by ALL or explicit ID
         if (selectedSegmentId === UNASSIGNED_SECTION_ID) {
-          return segmentHashIds.length === 0;
+          return projectSegmentIds.length === 0;
         }
-        return segmentHashIds.includes(selectedSegmentId);
+        return projectSegmentIds.includes(selectedSegmentId);
       })
       .map((item): T => {
         return {
           ...item,
-          headerKey: null,
+          header_key: null,
         };
       });
   }, [data, selectedSegmentId]);
@@ -91,11 +91,11 @@ export function useProjectSegmentsFilter<T extends RowWithSegment>({
 
     const allItemsCount = data.length;
 
-    // Count items for each segment based on segmentHashIds array
+    // Count items for each segment based on project_segment_ids array
     const segmentCounts = segments.map((segment) => {
       const count = data.filter((item) => {
-        const segmentHashIds = item.segmentHashIds || [];
-        return segmentHashIds.includes(segment.hashId);
+        const projectSegmentIds = item.project_segment_ids || [];
+        return projectSegmentIds.includes(segment.hashId);
       }).length;
 
       return {

@@ -58,10 +58,10 @@ export function ServiceItemPrnDrawer({
   const serviceItemOptions = React.useMemo(
     () =>
       serviceItems.map((item) => {
-        const id = item.hashId ?? item.id ?? '';
+        const id = item.id ?? '';
         return {
           value: id,
-          label: `${item.code ?? ''} – ${item.name ?? ''}`.trim(),
+          label: `${item.item_code ?? ''} – ${item.item_description ?? ''}`.trim(),
         };
       }),
     [serviceItems]
@@ -109,11 +109,11 @@ export function ServiceItemPrnDrawer({
         });
       } else {
         const selectedItem = serviceItems.find(
-          (item) => (item.hashId ?? item.id) === values.serviceItemId
+          (item) => item.id === values.serviceItemId
         );
         if (!selectedItem) return;
-        const projectItemHashId = selectedItem.hashId ?? selectedItem.id ?? '';
-        const userItemCode = selectedItem.code ?? '';
+        const projectItemHashId = selectedItem.id ?? '';
+        const userItemCode = selectedItem.item_code ?? '';
         const qty = Number(values.quantity);
         if (!projectItemHashId || !userItemCode) return;
         await createMutation.mutateAsync({

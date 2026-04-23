@@ -12,7 +12,7 @@ import { MasterItem } from '@/hooks/items/types';
 export type MasterItemOption = {
   hashId: string;
   code: string;
-  dsrCode: string;
+  referenceScheduleLabel: string;
   name: string;
   scheduleName: string;
   unit: string;
@@ -20,16 +20,27 @@ export type MasterItemOption = {
   raw: MasterItem;
 };
 
-export const mapMasterItemToOption = (item: MasterItem): MasterItemOption => ({
-  hashId: item.hashId,
-  code: item.code ?? '',
-  dsrCode: item.dsrCode ?? item.dsrId ?? '',
-  name: item.name ?? '',
-  scheduleName: item.scheduleName ?? item.scheduleRate ?? '',
-  unit: item.unit ?? '',
-  rate: typeof item.rate === 'number' ? item.rate : null,
-  raw: item,
-});
+export const mapMasterItemToOption = (item: MasterItem): MasterItemOption => {
+  const legacy = item as MasterItem & {
+    dsrCode?: string | null;
+    dsrId?: string | null;
+  };
+  const referenceScheduleLabel =
+    item.referenceScheduleLabel ??
+    legacy.dsrCode ??
+    legacy.dsrId ??
+    '';
+  return {
+    hashId: item.hashId,
+    code: item.code ?? '',
+    referenceScheduleLabel,
+    name: item.name ?? '',
+    scheduleName: item.scheduleName ?? item.scheduleRate ?? '',
+    unit: item.unit ?? '',
+    rate: typeof item.rate === 'number' ? item.rate : null,
+    raw: item,
+  };
+};
 
 export const useMasterItemOptions = (
   masterProjectItems: MasterItem[]
@@ -62,7 +73,7 @@ export const renderMasterItemOption = ({
           <span>Schedule: {option.scheduleName}</span>
         ) : null}
         <span>Code: {option.code || '--'}</span>
-        <span>DSR Code: {option.dsrCode || '--'}</span>
+        <span>Reference schedule: {option.referenceScheduleLabel || '--'}</span>
       </div>
     </div>
   );

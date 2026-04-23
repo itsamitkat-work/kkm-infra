@@ -1,15 +1,27 @@
 'use client';
 
-import { useMutation, useInfiniteQuery } from '@tanstack/react-query';
-import { apiFetch } from '@/lib/apiClient';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { PaginationResponse } from '@/types/common';
 import { ProjectItemType } from '@/app/projects/[id]/estimation/types';
 import React from 'react';
+import type { Database } from '@kkm/db';
+import { appendOrderKey } from '@/lib/projects/order-key';
+import {
+  deleteDomainLine,
+  fetchDomainLinesForBoqLine,
+  fetchMaxOrderKeyForDomainLines,
+  fetchScheduleItemIdForBoqLine,
+  insertDomainLine,
+  updateDomainLine,
+  type DomainLineInsert,
+  type DomainLineUpdate,
+} from '@/lib/projects/project-domain-lines-repo';
 
-// Types for estimation API response
+type DomainRow = Database['public']['Tables']['project_estimation_lines']['Row'];
+
 export interface EstimationItem {
   hashId: string;
-  hashid?: string; // wrong fieldname in BE
+  hashid?: string;
   description: string;
   no1: number;
   no2: number;
@@ -17,21 +29,22 @@ export interface EstimationItem {
   width: number;
   height: number;
   quantity: number;
-  createdOn: string; // ISO date string
+  createdOn: string;
   checked?: boolean;
   verified?: boolean;
-  orderKey?: number; // floating sort order key
+  orderKey?: number;
 }
 
 export type EstimationResponse = PaginationResponse<EstimationItem>;
 
-// Type for mutation payload
 export interface EstimationItemPayload {
-  hashId?: string; // for updates
+  hashId?: string;
   description: string;
   projectItemHashId: string;
   projectHashId: string;
-  segmentHashId?: string; // optional, provided when #segment_name is in description
+  segmentHashId?: string;
+  /** Billing (BLG) API used `segmentId` in the legacy payload. */
+  segmentId?: string;
   no1: number;
   no2: number;
   length: number;
@@ -40,93 +53,69 @@ export interface EstimationItemPayload {
   quantity: number;
   checked?: boolean;
   verified?: boolean;
-  orderKey?: number; // floating sort order key: index * 1000.0
+  orderKey?: number;
 }
 
-type EndpointOperation = 'create' | 'update' | 'delete' | 'fetch';
+function mapRowToEstimationItem(row: DomainRow): EstimationItem {
+  return {
+    hashId: row.id,
+    description: row.line_description,
+    no1: Number(row.no1),
+    no2: Number(row.no2),
+    length: Number(row.length),
+    width: Number(row.width),
+    height: Number(row.height),
+    quantity: Number(row.quantity),
+    createdOn: row.created_at,
+    checked: row.is_checked,
+    verified: row.is_verified,
+    orderKey: row.order_key,
+  };
+}
 
-/**
- * Gets the API endpoint based on the item type and operation
- */
-const getEndpoint = (
-  type: ProjectItemType,
-  operation: EndpointOperation,
-  id?: string,
-  page?: number
-): string => {
-  switch (type) {
-    case 'EST': {
-      switch (operation) {
-        case 'create':
-        case 'update':
-          return '/v2/estimation';
-        case 'delete':
-          return `/v2/estimation/${id}`;
-        case 'fetch': {
-          const baseUrl = `/v2/estimation/${id}?status=Active&sortBy=orderKey&order=asc`;
-          if (page !== undefined) {
-            return `${baseUrl}&page=${page}&pageSize=500`;
-          }
-          return baseUrl;
-        }
-      }
-    }
-    case 'BLG': {
-      switch (operation) {
-        case 'create':
-        case 'update':
-          return '/v2/project/billing';
-        case 'delete':
-          return `/v2/project/billing/${id}`;
-        case 'fetch': {
-          const baseUrl = `/v2/project/billing/${id}`;
-          if (page !== undefined) {
-            return `${baseUrl}?page=${page}&pageSize=500`;
-          }
-          return baseUrl;
-        }
-      }
-    }
-    case 'MSR': {
-      switch (operation) {
-        case 'create':
-        case 'update':
-          return '/v2/measurement';
-        case 'delete':
-          return `/v2/measurement/${id}`;
-        case 'fetch': {
-          const baseUrl = `/v2/measurement/${id}?status=Active&sortBy=orderKey&order=asc`;
-          if (page !== undefined) {
-            return `${baseUrl}&page=${page}&pageSize=500`;
-          }
-          return baseUrl;
-        }
-      }
-    }
-    case 'GEN':
-    default: {
-      throw new Error(`Unsupported item type: ${type}`);
-    }
-  }
-};
+function segmentIdFromPayload(item: EstimationItemPayload): string | undefined {
+  return item.segmentId ?? item.segmentHashId;
+}
 
-/**
- * Creates a new estimation item
- */
 export const createEstimationItem = async (
   item: Omit<EstimationItemPayload, 'hashId'>,
   type: ProjectItemType
 ): Promise<{ data: EstimationItem }> => {
-  const endpoint = getEndpoint(type, 'create');
-  return await apiFetch<{ data: EstimationItem }>(endpoint, {
-    method: 'POST',
-    data: item,
-  });
+  const schedule_item_id = await fetchScheduleItemIdForBoqLine(
+    item.projectItemHashId
+  );
+  const maxKey = await fetchMaxOrderKeyForDomainLines(
+    item.projectItemHashId,
+    type
+  );
+  const orderKey =
+    item.orderKey !== undefined && item.orderKey !== null
+      ? item.orderKey
+      : appendOrderKey(maxKey);
+
+  const segmentId = segmentIdFromPayload(item);
+
+  const insert: DomainLineInsert = {
+    project_id: item.projectHashId,
+    project_boq_line_id: item.projectItemHashId,
+    schedule_item_id,
+    project_segment_id: segmentId ?? null,
+    line_description: item.description,
+    length: item.length,
+    width: item.width,
+    height: item.height,
+    no1: item.no1,
+    no2: item.no2,
+    quantity: item.quantity,
+    is_checked: item.checked ?? false,
+    is_verified: item.verified ?? false,
+    order_key: orderKey,
+  };
+
+  const row = await insertDomainLine(type, insert);
+  return { data: mapRowToEstimationItem(row) };
 };
 
-/**
- * Updates an existing estimation item
- */
 export const updateEstimationItem = async (
   item: EstimationItemPayload,
   type: ProjectItemType
@@ -134,45 +123,56 @@ export const updateEstimationItem = async (
   if (!item.hashId) {
     throw new Error('hashId is required for updating an estimation item.');
   }
-  const endpoint = getEndpoint(type, 'update');
-  return await apiFetch<{ data: EstimationItem }>(endpoint, {
-    method: 'PUT',
-    data: item,
-  });
+  const segmentId = segmentIdFromPayload(item);
+  const patch: DomainLineUpdate = {
+    line_description: item.description,
+    length: item.length,
+    width: item.width,
+    height: item.height,
+    no1: item.no1,
+    no2: item.no2,
+    quantity: item.quantity,
+    project_segment_id: segmentId ?? null,
+    is_checked: item.checked ?? false,
+    is_verified: item.verified ?? false,
+  };
+  if (item.orderKey !== undefined && item.orderKey !== null) {
+    patch.order_key = item.orderKey;
+  }
+  const row = await updateDomainLine(type, item.hashId, patch);
+  return { data: mapRowToEstimationItem(row) };
 };
 
-/**
- * Deletes an estimation item by its ID
- */
 export const deleteEstimationItem = async (
   itemId: string,
   type: ProjectItemType
 ): Promise<{ message: string }> => {
-  if (!itemId) {
-    throw new Error('Item ID is required for deleting an estimation item.');
-  }
-  const endpoint = getEndpoint(type, 'delete', itemId);
-  return await apiFetch<{ message: string }>(endpoint, {
-    method: 'DELETE',
-  });
+  await deleteDomainLine(type, itemId);
+  return { message: 'ok' };
 };
 
 export const fetchEstimationData = async (
   estimationId: string,
   type: ProjectItemType,
-  page?: number
+  signal?: AbortSignal
 ): Promise<EstimationResponse> => {
   if (!estimationId) {
     throw new Error('Estimation ID is required');
   }
-
-  try {
-    const endpoint = getEndpoint(type, 'fetch', estimationId, page);
-    return await apiFetch<EstimationResponse>(endpoint);
-  } catch (error) {
-    console.error('Failed to fetch estimation data:', error);
-    throw error;
-  }
+  const rows = await fetchDomainLinesForBoqLine(estimationId, type, signal);
+  const data = rows.map(mapRowToEstimationItem);
+  return {
+    data,
+    totalCount: data.length,
+    page: 1,
+    pageSize: Math.max(data.length, 1),
+    totalPages: 1,
+    hasPrevious: false,
+    hasNext: false,
+    isSuccess: true,
+    statusCode: 200,
+    message: '',
+  };
 };
 
 export const useEstimation = (
@@ -187,81 +187,65 @@ export const useEstimation = (
   const isEnabled =
     enabled !== undefined ? enabled && !!estimationId : !!estimationId;
 
-  const infiniteQuery = useInfiniteQuery({
+  const query = useQuery({
     queryKey: ['estimation', estimationId, type],
-    queryFn: ({ pageParam }) =>
-      fetchEstimationData(estimationId, type, pageParam as number),
-    getNextPageParam: (lastPage, allPages) => {
-      if (lastPage.totalPages > allPages.length) {
-        return allPages.length + 1;
-      }
-      return undefined;
-    },
-    initialPageParam: 1,
+    queryFn: ({ signal }) => fetchEstimationData(estimationId, type, signal),
     enabled: isEnabled,
   });
 
-  // Always automatically fetch all pages
-  React.useEffect(() => {
-    if (
-      isEnabled &&
-      infiniteQuery.hasNextPage &&
-      !infiniteQuery.isFetchingNextPage &&
-      !infiniteQuery.isLoading
-    ) {
-      infiniteQuery.fetchNextPage();
-    }
-  }, [isEnabled, infiniteQuery]);
-
-  // Flatten all pages into a single data array for backward compatibility
-  const flattenedData = React.useMemo(() => {
-    if (!infiniteQuery.data?.pages) {
-      return undefined;
-    }
-
-    const allItems = infiniteQuery.data.pages.flatMap(
-      (page) => page.data || []
-    );
-    const firstPage = infiniteQuery.data.pages[0];
-
-    return {
-      ...firstPage,
-      data: allItems,
-    };
-  }, [infiniteQuery.data]);
-
   return {
-    data: flattenedData,
-    isLoading: infiniteQuery.isLoading,
-    isError: infiniteQuery.isError,
-    error: infiniteQuery.error,
-    refetch: infiniteQuery.refetch,
-    // Expose infinite query methods for advanced usage
-    fetchNextPage: infiniteQuery.fetchNextPage,
-    hasNextPage: infiniteQuery.hasNextPage,
-    isFetchingNextPage: infiniteQuery.isFetchingNextPage,
+    data: query.data,
+    isLoading: query.isLoading,
+    isError: query.isError,
+    error: query.error,
+    refetch: query.refetch,
+    fetchNextPage: async () => {},
+    hasNextPage: false,
+    isFetchingNextPage: false,
   };
 };
 
-/**
- * React hook for managing estimation mutations
- */
 export const useEstimationMutations = (
   estimationId: string,
   type: ProjectItemType
 ) => {
+  const queryClient = useQueryClient();
+
+  const invalidate = React.useCallback(
+    (projectHashId?: string) => {
+      queryClient.invalidateQueries({
+        queryKey: ['estimation', estimationId, type],
+      });
+      if (projectHashId) {
+        queryClient.invalidateQueries({
+          queryKey: ['project-items', projectHashId],
+        });
+      }
+    },
+    [queryClient, estimationId, type]
+  );
+
   const createMutation = useMutation({
     mutationFn: (item: Omit<EstimationItemPayload, 'hashId'>) =>
       createEstimationItem(item, type),
+    onSuccess: (_data, variables) => {
+      invalidate(variables.projectHashId);
+    },
   });
 
   const updateMutation = useMutation({
     mutationFn: (item: EstimationItemPayload) =>
       updateEstimationItem(item, type),
+    onSuccess: (_data, variables) => {
+      invalidate(variables.projectHashId);
+    },
   });
 
   const deleteMutation = useMutation({
     mutationFn: (itemId: string) => deleteEstimationItem(itemId, type),
+    onSuccess: () => {
+      invalidate();
+    },
   });
 
   return { createMutation, updateMutation, deleteMutation };

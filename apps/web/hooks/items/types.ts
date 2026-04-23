@@ -1,8 +1,8 @@
 export interface MasterItem {
   hashId: string;
   code: string;
-  dsrCode: string | null;
-  dsrId: string | null;
+  /** Label from reference schedule annotations (any schedule version / item). */
+  referenceScheduleLabel: string | null;
   name: string;
   unit: string;
   rate: number;

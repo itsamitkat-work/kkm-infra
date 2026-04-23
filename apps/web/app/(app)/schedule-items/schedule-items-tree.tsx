@@ -51,6 +51,7 @@ import type {
   ScheduleNodeType,
   ScheduleTreeRow,
 } from './types';
+import { getReferenceScheduleLabelList } from './reference-schedule-labels';
 
 const ROOT_PARENT_KEY = '__root__';
 const INDENT_PX = 20;
@@ -396,29 +397,6 @@ function getNonReferenceAnnotations(
   return annotations.filter((annotation) => annotation.type !== 'reference');
 }
 
-function getReferenceLabels(row: ScheduleTreeRow): string[] {
-  const referenceLabels = row.annotations
-    .filter((annotation) => annotation.type === 'reference')
-    .map((annotation) => {
-      const sourceName = annotation.metadata.reference_schedule_source_name;
-      const code = annotation.raw_text.trim();
-      if (
-        typeof sourceName === 'string' &&
-        sourceName.trim() !== '' &&
-        code !== ''
-      ) {
-        return `${sourceName.trim()} - ${code}`;
-      }
-      return code;
-    })
-    .filter(
-      (referenceLabel): referenceLabel is string =>
-        typeof referenceLabel === 'string' && referenceLabel.trim() !== ''
-    );
-
-  return [...new Set(referenceLabels)];
-}
-
 type VisibleRow =
   | { type: 'node'; id: string; level: number }
   | { type: 'loading'; parentId: string; level: number };
@@ -476,7 +454,25 @@ function versionLabel(v: { display_name: string | null; year: number | null }) {
   return name;
 }
 
-export function ScheduleItemsTree() {
+export type ScheduleItemsTreeProps = {
+  /**
+   * When set, leaf rows (`!has_children`) show a Select action and call this
+   * with the schedule item row (same `id` as `schedule_items` / BOQ picker).
+   */
+  onSelectLeaf?: (args: {
+    row: ScheduleTreeRow;
+    scheduleVersionLabel: string;
+  }) => void;
+  /** Sticky header offset for embedding in a dialog (no app shell header). */
+  embedded?: boolean;
+  className?: string;
+};
+
+export function ScheduleItemsTree({
+  onSelectLeaf,
+  embedded = false,
+  className,
+}: ScheduleItemsTreeProps = {}) {
   const {
     data: versions,
     isLoading: versionsLoading,
@@ -530,6 +526,14 @@ export function ScheduleItemsTree() {
   const rootsQuery = useScheduleTreeRoots(versionId);
 
   const searchQuery = useScheduleTreeSearch(versionId, debouncedSearch, 60);
+
+  const scheduleVersionLabelForPick = useMemo(() => {
+    if (!versions?.length || !versionId) {
+      return '';
+    }
+    const v = versions.find((x) => x.id === versionId);
+    return v ? versionLabel(v) : '';
+  }, [versions, versionId]);
 
   const upsertRows = useCallback((rows: ScheduleTreeRow[]) => {
     if (rows.length === 0) return;
@@ -732,10 +736,24 @@ export function ScheduleItemsTree() {
     setExpandedIds(new Set());
   }, [isSearchActive, searchQuery.data]);
 
+  const stickyTopClass = embedded
+    ? 'sticky top-0 z-20'
+    : 'sticky top-[var(--header-height)] z-20';
+
   return (
     <TooltipProvider delayDuration={250}>
-      <div className='flex min-h-0 min-w-0 flex-1 flex-col gap-0'>
-        <div className='bg-background/95 supports-[backdrop-filter]:bg-background/80 sticky top-[var(--header-height)] z-20 grid w-full min-w-0 gap-1.5 py-1.5 backdrop-blur sm:grid-cols-[minmax(18rem,32rem)_minmax(12rem,1fr)] sm:items-end'>
+      <div
+        className={cn(
+          'flex min-h-0 min-w-0 flex-1 flex-col gap-0',
+          className
+        )}
+      >
+        <div
+          className={cn(
+            'bg-background/95 supports-[backdrop-filter]:bg-background/80 grid w-full min-w-0 gap-1.5 py-1.5 backdrop-blur sm:grid-cols-[minmax(18rem,32rem)_minmax(12rem,1fr)] sm:items-end',
+            stickyTopClass
+          )}
+        >
           <div className='flex min-w-0 w-full flex-col gap-0'>
             <div className='flex w-full min-w-0 items-center gap-2'>
               <div className='min-w-[12rem] flex-1 sm:min-w-[18rem]'>
@@ -885,7 +903,7 @@ export function ScheduleItemsTree() {
                       const detailAnnotations = getNonReferenceAnnotations(
                         row.annotations
                       );
-                      const referenceLabels = getReferenceLabels(row);
+                      const referenceLabels = getReferenceScheduleLabelList(row);
                       return (
                         <div
                           key={row.id}
@@ -951,6 +969,25 @@ export function ScheduleItemsTree() {
                               rateClassName={typeStyles.rate}
                             />
                           </div>
+                          {onSelectLeaf && !row.has_children ? (
+                            <div className='flex shrink-0 items-start pt-0.5 ps-1'>
+                              <Button
+                                type='button'
+                                variant='secondary'
+                                size='xs'
+                                className='h-7 shrink-0 text-xs whitespace-nowrap'
+                                onClick={() =>
+                                  onSelectLeaf({
+                                    row,
+                                    scheduleVersionLabel:
+                                      scheduleVersionLabelForPick,
+                                  })
+                                }
+                              >
+                                Select
+                              </Button>
+                            </div>
+                          ) : null}
                         </div>
                       );
                     })

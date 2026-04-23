@@ -114,8 +114,8 @@ export function ItemsTab({
 
     return projectItemsData.map(
       (item: HookProjectRowData): EstimationRowData => {
-        const plannedQtyValue = parseFloat(item.quantity || '0');
-        const rate = parseFloat(item.rate || '0');
+        const plannedQtyValue = parseFloat(item.contract_quantity || '0');
+        const rate = parseFloat(item.rate_amount || '0');
 
         // Use estimatedQty directly from backend API
         const estimatedQtyString = item.estimate_quantity || '0';
@@ -218,11 +218,11 @@ export function ItemsTab({
 
     const totals = dataWithComputed.reduce(
       (acc, item) => {
-        const rate = parseFloat(item.rate || '0');
+        const rate = parseFloat(item.rate_amount || '0');
         let costDeviation = 0;
 
         if (type === 'EST') {
-          const plannedQty = parseFloat(item.quantity || '0');
+          const plannedQty = parseFloat(item.contract_quantity || '0');
           const estimatedQty = parseFloat(item.estimate_quantity || '0');
           const plannedAmount = plannedQty * rate;
           const estimatedAmount = estimatedQty * rate;
@@ -323,7 +323,7 @@ export function ItemsTab({
                   </span>
                   <span className='font-semibold tabular-nums'>
                     {/* Assuming rate is in user's currency, prefixing with ₹ as in original code */}
-                    ₹{original.rate}
+                    ₹{original.rate_amount}
                   </span>
                 </div>
                 <div className='flex items-center gap-2'>
@@ -331,7 +331,7 @@ export function ItemsTab({
                     Unit:
                   </span>
                   <UnitDisplay
-                    unit={original.unit || ''}
+                    unit={original.unit_display || ''}
                     size='sm'
                     labelClassName='font-semibold text-foreground'
                   />
@@ -341,8 +341,10 @@ export function ItemsTab({
             <ItemMeasurmentTable
               selectedSegmentId={selectedSegmentId}
               projectItemHashId={original.id}
-              rate={parseFloat(original.rate || '0')}
-              scheduleQuantity={parseFloat(original.quantity || '0')}
+              rate={parseFloat(original.rate_amount || '0')}
+              scheduleQuantity={parseFloat(
+                original.contract_quantity || '0'
+              )}
               type={type}
             />
           </div>

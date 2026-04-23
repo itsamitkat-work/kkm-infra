@@ -69,11 +69,11 @@ export function EstimationReportsFilters({
 export function useEstimationReportsFilters<
   T extends {
     id: string;
-    quantity?: string;
+    contract_quantity?: string;
     estimate_quantity?: string;
-    rate?: string;
-    name?: string;
-    srNo?: string;
+    rate_amount?: string;
+    item_description?: string;
+    work_order_number?: string | number;
     costDeviation?: number;
   },
 >(data: T[], initialFilters?: Filter[], initialQuery?: string) {
@@ -87,9 +87,9 @@ export function useEstimationReportsFilters<
     const q = query.trim().toLowerCase();
     if (q) {
       result = result.filter((item) => {
-        const name = (item.name || '').toLowerCase();
-        const srNo = (item.srNo || '').toLowerCase();
-        return name.includes(q) || srNo.includes(q);
+        const name = (item.item_description || '').toLowerCase();
+        const wo = String(item.work_order_number ?? '').toLowerCase();
+        return name.includes(q) || wo.includes(q);
       });
     }
 
@@ -102,9 +102,9 @@ export function useEstimationReportsFilters<
 
           switch (field) {
             case 'status': {
-              const planned = parseFloat(item.quantity || '0');
+              const planned = parseFloat(item.contract_quantity || '0');
               const estimated = parseFloat(item.estimate_quantity || '0');
-              const rate = parseFloat(item.rate || '0');
+              const rate = parseFloat(item.rate_amount || '0');
               const costDev = (estimated - planned) * rate;
 
               let condition;
@@ -149,7 +149,7 @@ export function useEstimationReportsFilters<
               }
             }
             case 'plannedQty': {
-              const plannedQty = parseFloat(item.quantity || '0');
+              const plannedQty = parseFloat(item.contract_quantity || '0');
               const valueNum = Number(value);
 
               if (operator !== 'between' && isNaN(valueNum)) {
