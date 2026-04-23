@@ -2,6 +2,7 @@ import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { ProjectItemRowType } from '@/types/project-item';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 /**
  * Format currency for export (without special characters)
@@ -72,7 +73,7 @@ export function exportProjectItemsToExcel(data: ProjectItemsExportData) {
       item.item_code || '',
       item.reference_schedule_text || '',
       item.schedule_name || '',
-      item.item_description || '',
+      flattenItemDescription(item.item_description),
       item.unit_display || '',
       quantity,
       rate,
@@ -197,7 +198,7 @@ export function exportProjectItemsToPDF(data: ProjectItemsExportData) {
       item.item_code || '',
       item.reference_schedule_text || '',
       item.schedule_name || '',
-      item.item_description || '',
+      flattenItemDescription(item.item_description),
       item.unit_display || '',
       quantity.toFixed(2),
       rate.toFixed(2),

@@ -5,6 +5,11 @@ import { Search } from 'lucide-react';
 import { Filter, Filters, FilterFieldConfig } from '@/components/ui/filters';
 import { SearchInput } from '@/components/ui/search-input';
 import { getPlatformSpecificKbd } from '@/lib/utils';
+import type { Json } from '@kkm/db';
+import {
+  flattenItemDescription,
+  parseItemDescriptionFromDb,
+} from '@/app/(app)/schedule-items/item-description-doc';
 
 export const filterFields: FilterFieldConfig[] = [
   {
@@ -72,7 +77,7 @@ export function useEstimationReportsFilters<
     contract_quantity?: string;
     estimate_quantity?: string;
     rate_amount?: string;
-    item_description?: string;
+    item_description?: unknown;
     work_order_number?: string | number;
     costDeviation?: number;
   },
@@ -87,7 +92,9 @@ export function useEstimationReportsFilters<
     const q = query.trim().toLowerCase();
     if (q) {
       result = result.filter((item) => {
-        const name = (item.item_description || '').toLowerCase();
+        const name = flattenItemDescription(
+          parseItemDescriptionFromDb(item.item_description as Json)
+        ).toLowerCase();
         const wo = String(item.work_order_number ?? '').toLowerCase();
         return name.includes(q) || wo.includes(q);
       });

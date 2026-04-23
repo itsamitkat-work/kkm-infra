@@ -767,7 +767,7 @@ export type Database = {
           created_at: string
           id: string
           item_code: string
-          item_description: string
+          item_description: Json
           order_key: number
           project_id: string
           rate_amount: number | null
@@ -783,7 +783,7 @@ export type Database = {
           created_at?: string
           id?: string
           item_code?: string
-          item_description?: string
+          item_description?: Json
           order_key?: number
           project_id: string
           rate_amount?: number | null
@@ -799,7 +799,7 @@ export type Database = {
           created_at?: string
           id?: string
           item_code?: string
-          item_description?: string
+          item_description?: Json
           order_key?: number
           project_id?: string
           rate_amount?: number | null

@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { copyToClipboard } from '../utils/share-utils';
 import { EstimationRowData } from '../types';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 export function useEstimationShare() {
   /**
@@ -23,7 +24,7 @@ export function useEstimationShare() {
     // Remove existing query parameter
     url.searchParams.delete('query');
     // Add new query parameter with item name
-    url.searchParams.set('query', row.item_description || '');
+    url.searchParams.set('query', flattenItemDescription(row.item_description));
 
     await copyToClipboard(url.toString());
   }, []);

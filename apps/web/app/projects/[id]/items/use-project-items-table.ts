@@ -4,6 +4,11 @@ import * as React from 'react';
 import { create } from 'zustand';
 import { produce } from 'immer';
 import { useStore } from 'zustand';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  flattenItemDescription,
+  itemDescriptionDocsEqual,
+} from '@/app/(app)/schedule-items/item-description-doc';
 import {
   getCoreRowModel,
   getFilteredRowModel,
@@ -100,6 +105,12 @@ function computeRowEdited(
     const colDef = baseColumns.find((col) => col.accessorKey === key);
     const isNumeric = colDef?.isNumeric;
 
+    if (key === 'item_description') {
+      return !itemDescriptionDocsEqual(
+        currentValue as ItemDescriptionDoc,
+        originalValue as ItemDescriptionDoc
+      );
+    }
     if (isNumeric) {
       return (
         parseFloat(String(currentValue ?? '')) !==
@@ -122,8 +133,7 @@ const projectItemsGlobalFilterFn = (
     return true;
   }
   const o = row.original;
-  const name = String(o.item_description ?? '')
-    .toLowerCase();
+  const name = flattenItemDescription(o.item_description).toLowerCase();
   const code = String(o.item_code ?? '')
     .toLowerCase();
   const unit = String(o.unit_display ?? '')

@@ -16,6 +16,7 @@ import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { useProjectServiceItems } from '../hooks/use-project-service-items';
 import { useCreateIndentServiceItemMutation } from '../hooks/use-indent-service-item-mutations';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 const FORM_SCHEMA = z.object({
   serviceItemId: z.string().min(1, 'Service item is required'),
@@ -50,7 +51,7 @@ export function CreateServiceItemIndentDrawer({
         const id = item.id ?? '';
         return {
           value: id,
-          label: `${item.item_code ?? ''} – ${item.item_description ?? ''}`.trim(),
+          label: `${item.item_code ?? ''} – ${flattenItemDescription(item.item_description)}`.trim(),
         };
       }),
     [serviceItems]

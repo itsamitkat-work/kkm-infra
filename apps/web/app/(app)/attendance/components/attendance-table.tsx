@@ -32,7 +32,7 @@ import {
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useHeadsSubheads } from '@/hooks/use-heads-subheads';
+import type { HeadOption } from '../hooks/use-project-heads-query';
 import { getConfigForProject } from '../config/attendance-config';
 import { useQueryState } from 'nuqs';
 import type { SortingState } from '@tanstack/react-table';
@@ -459,7 +459,7 @@ export function AttendanceTable({
     ]
   );
 
-  const { headOptions: allHeads } = useHeadsSubheads();
+  const allHeads = React.useMemo<HeadOption[]>(() => [], []);
 
   const { ability } = useAuth();
 

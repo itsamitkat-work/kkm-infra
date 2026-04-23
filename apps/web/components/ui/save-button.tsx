@@ -8,8 +8,9 @@ import {
 } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
 import { Kbd } from '@/components/ui/kbd';
-import { Loader2, Save } from 'lucide-react';
+import { Save } from 'lucide-react';
 import { getPlatformSpecificKbd } from '@/lib/utils';
+import { Spinner } from './spinner';
 
 type SaveButtonProps = {
   onClick: () => void;
@@ -34,7 +35,7 @@ export const SaveButton: React.FC<SaveButtonProps> = ({
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
-          size='xs'
+          size='icon'
           variant='outline'
           onClick={onClick}
           disabled={disabled}
@@ -49,11 +50,7 @@ export const SaveButton: React.FC<SaveButtonProps> = ({
           {hasError && (
             <span className='absolute top-0 right-0 h-2 w-2 rounded-full bg-destructive border-2 border-background' />
           )}
-          {isLoading ? (
-            <Loader2 className='h-3 w-3 animate-spin' />
-          ) : (
-            <Save className='h-3 w-3' />
-          )}
+          {isLoading ? <Spinner /> : <Save />}
         </Button>
       </TooltipTrigger>
       <TooltipContent>
@@ -62,13 +59,15 @@ export const SaveButton: React.FC<SaveButtonProps> = ({
         ) : (
           <div className='flex items-center gap-2'>
             <p>
-              {isLoading
-                ? 'Loading...'
-                : isNew
-                  ? 'Save New Item'
-                  : isEdited
-                    ? 'Save Changes'
-                    : 'No Changes to Save'}
+              {isLoading ? (
+                <Spinner />
+              ) : isNew ? (
+                'Save New Item'
+              ) : isEdited ? (
+                'Save Changes'
+              ) : (
+                'No Changes to Save'
+              )}
             </p>
             {!disabled && <Kbd>{getPlatformSpecificKbd('S')}</Kbd>}
           </div>

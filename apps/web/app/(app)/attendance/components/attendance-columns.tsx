@@ -52,7 +52,7 @@ import {
   AssignedProjectType,
   useAssignedProjectsQuery,
 } from '../../../../hooks/projects/use-assigned-projects-query';
-import { type HeadOption } from '@/hooks/use-heads-subheads';
+import { type HeadOption } from '../hooks/use-project-heads-query';
 import { useProjectHeadsQuery } from '../hooks/use-project-heads-query';
 import type { AppAbility } from '@/lib/authz/define-ability';
 import { useAuth } from '@/hooks/auth';

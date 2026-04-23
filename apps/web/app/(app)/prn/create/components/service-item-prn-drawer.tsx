@@ -20,6 +20,7 @@ import {
   useUpdatePrnServiceItemMutation,
 } from '../hooks/use-prn-service-item-mutations';
 import type { PrnServiceItemRow } from '../hooks/use-prn-service-items-by-project';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 const FORM_SCHEMA = z.object({
   serviceItemId: z.string().min(1, 'Service item is required'),
@@ -61,7 +62,7 @@ export function ServiceItemPrnDrawer({
         const id = item.id ?? '';
         return {
           value: id,
-          label: `${item.item_code ?? ''} – ${item.item_description ?? ''}`.trim(),
+          label: `${item.item_code ?? ''} – ${flattenItemDescription(item.item_description)}`.trim(),
         };
       }),
     [serviceItems]

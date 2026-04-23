@@ -52,10 +52,92 @@ import type {
   ScheduleTreeRow,
 } from './types';
 import { getReferenceScheduleLabelList } from './reference-schedule-labels';
+import {
+  ITEM_DESCRIPTION_DOC_VERSION,
+  type ItemDescriptionDoc,
+} from './item-description-doc';
+import { HIERARCHY_BODY_CLASS } from './item-description-hierarchy';
 
 const ROOT_PARENT_KEY = '__root__';
 const INDENT_PX = 20;
 const ROW_PAD_LEFT_BASE_PX = 6;
+
+/** Root → leaf labels for persisting as project item description (walks `parent_item_id`). */
+export function buildScheduleItemHierarchyPathLabel(
+  leaf: ScheduleTreeRow,
+  nodesById: Record<string, ScheduleTreeRow>
+): string {
+  const chainFromLeaf: ScheduleTreeRow[] = [];
+  let cur: ScheduleTreeRow | undefined = leaf;
+  const seen = new Set<string>();
+  while (cur) {
+    if (seen.has(cur.id)) {
+      break;
+    }
+    seen.add(cur.id);
+    chainFromLeaf.push(cur);
+    const p: string | null = cur.parent_item_id;
+    if (p == null || p.trim() === '') {
+      break;
+    }
+    const nextId = p.trim();
+    const next: ScheduleTreeRow | undefined = nodesById[nextId];
+    if (!next) {
+      break;
+    }
+    cur = next;
+  }
+  chainFromLeaf.reverse();
+  return chainFromLeaf
+    .map((r) => {
+      const d = (r.description ?? '').trim();
+      if (d) {
+        return d;
+      }
+      return (r.code ?? '').trim();
+    })
+    .filter(Boolean)
+    .join(' › ');
+}
+
+/** Root → leaf ids and labels for persisting structured BOQ item description (jsonb). */
+export function buildScheduleItemHierarchyDescriptionDoc(
+  leaf: ScheduleTreeRow,
+  nodesById: Record<string, ScheduleTreeRow>
+): ItemDescriptionDoc {
+  const chainFromLeaf: ScheduleTreeRow[] = [];
+  let cur: ScheduleTreeRow | undefined = leaf;
+  const seen = new Set<string>();
+  while (cur) {
+    if (seen.has(cur.id)) {
+      break;
+    }
+    seen.add(cur.id);
+    chainFromLeaf.push(cur);
+    const p: string | null = cur.parent_item_id;
+    if (p == null || p.trim() === '') {
+      break;
+    }
+    const nextId = p.trim();
+    const next: ScheduleTreeRow | undefined = nodesById[nextId];
+    if (!next) {
+      break;
+    }
+    cur = next;
+  }
+  chainFromLeaf.reverse();
+  const segments = chainFromLeaf.map((r) => {
+    const d = (r.description ?? '').trim();
+    const c = (r.code ?? '').trim();
+    const label = d || c || r.id;
+    return { id: r.id, label };
+  });
+  return {
+    v: ITEM_DESCRIPTION_DOC_VERSION,
+    leafScheduleItemId: leaf.id,
+    segments,
+  };
+}
 
 async function collectIdsToExpandUnderParent(
   rootId: string,
@@ -329,7 +411,12 @@ function ScheduleTreeRateCell({
                 key={r.id ? `${r.id}-${index}` : `${r.context}-${index}`}
                 className='border-border/60 border-b last:border-0'
               >
-                <td className='max-w-[14rem] px-3 py-1.5 text-xs leading-snug'>
+                <td
+                  className={cn(
+                    'max-w-[14rem] px-3 py-1.5',
+                    HIERARCHY_BODY_CLASS
+                  )}
+                >
                   {r.label?.trim() || r.context}
                 </td>
                 <td className='px-3 py-1.5 text-right tabular-nums whitespace-nowrap'>
@@ -372,7 +459,10 @@ function ScheduleRowAnnotationsTooltip({
         side='right'
         align='start'
         sideOffset={8}
-        className='max-h-[min(70vh,22rem)] max-w-md overflow-y-auto p-3 text-left text-xs'
+        className={cn(
+          'max-h-[min(70vh,22rem)] max-w-md overflow-y-auto p-3 text-left',
+          HIERARCHY_BODY_CLASS
+        )}
       >
         <ul className='m-0 list-none space-y-3 p-0'>
           {annotations.map((ann) => (
@@ -456,12 +546,16 @@ function versionLabel(v: { display_name: string | null; year: number | null }) {
 
 export type ScheduleItemsTreeProps = {
   /**
-   * When set, leaf rows (`!has_children`) show a Select action and call this
-   * with the schedule item row (same `id` as `schedule_items` / BOQ picker).
+   * When set, leaf rows (`!has_children`) use a clickable name: choosing calls
+   * this with the schedule item row (same `id` as `schedule_items` / BOQ picker).
    */
   onSelectLeaf?: (args: {
     row: ScheduleTreeRow;
     scheduleVersionLabel: string;
+    /** Root → leaf path (e.g. `Section › Group › Item`) for search / legacy display. */
+    hierarchyPathLabel: string;
+    /** Structured path for `project_boq_lines.item_description` (jsonb). */
+    hierarchyDescriptionDoc: ItemDescriptionDoc;
   }) => void;
   /** Sticky header offset for embedding in a dialog (no app shell header). */
   embedded?: boolean;
@@ -736,6 +830,24 @@ export function ScheduleItemsTree({
     setExpandedIds(new Set());
   }, [isSearchActive, searchQuery.data]);
 
+  const handleSelectLeafRow = useCallback(
+    (row: ScheduleTreeRow) => {
+      if (!onSelectLeaf || row.has_children) {
+        return;
+      }
+      onSelectLeaf({
+        row,
+        scheduleVersionLabel: scheduleVersionLabelForPick,
+        hierarchyPathLabel: buildScheduleItemHierarchyPathLabel(row, nodesById),
+        hierarchyDescriptionDoc: buildScheduleItemHierarchyDescriptionDoc(
+          row,
+          nodesById
+        ),
+      });
+    },
+    [nodesById, onSelectLeaf, scheduleVersionLabelForPick]
+  );
+
   const stickyTopClass = embedded
     ? 'sticky top-0 z-20'
     : 'sticky top-[var(--header-height)] z-20';
@@ -743,10 +855,7 @@ export function ScheduleItemsTree({
   return (
     <TooltipProvider delayDuration={250}>
       <div
-        className={cn(
-          'flex min-h-0 min-w-0 flex-1 flex-col gap-0',
-          className
-        )}
+        className={cn('flex min-h-0 min-w-0 flex-1 flex-col gap-0', className)}
       >
         <div
           className={cn(
@@ -903,7 +1012,18 @@ export function ScheduleItemsTree({
                       const detailAnnotations = getNonReferenceAnnotations(
                         row.annotations
                       );
-                      const referenceLabels = getReferenceScheduleLabelList(row);
+                      const referenceLabels =
+                        getReferenceScheduleLabelList(row);
+                      const isLeafSelectable = Boolean(
+                        onSelectLeaf && !row.has_children
+                      );
+                      const nameBody = (
+                        <span className='min-w-0 break-words [overflow-wrap:anywhere]'>
+                          {row.description
+                            ? highlightText(row.description, highlightQuery)
+                            : '—'}
+                        </span>
+                      );
                       return (
                         <div
                           key={row.id}
@@ -931,7 +1051,10 @@ export function ScheduleItemsTree({
                                 : '—'}
                             </span>
                             <span
-                              className={cn('min-w-0', typeStyles.name)}
+                              className={cn(
+                                'min-w-0',
+                                !isLeafSelectable ? typeStyles.name : undefined
+                              )}
                               title={row.description}
                             >
                               <span className='inline-flex min-w-0 items-start gap-x-1'>
@@ -942,18 +1065,33 @@ export function ScheduleItemsTree({
                                     />
                                   </span>
                                 ) : null}
-                                <span className='min-w-0 break-words leading-tight'>
-                                  {row.description
-                                    ? highlightText(
-                                        row.description,
-                                        highlightQuery
-                                      )
-                                    : '—'}
-                                </span>
+                                {isLeafSelectable ? (
+                                  <button
+                                    type='button'
+                                    className={cn(
+                                      typeStyles.name,
+                                      'min-w-0 cursor-pointer rounded-sm text-left',
+                                      'underline-offset-2 hover:underline',
+                                      'focus-visible:ring-ring focus-visible:ring-offset-background focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none'
+                                    )}
+                                    aria-label={`Select schedule item: ${rowLabel}`}
+                                    title='Select this item'
+                                    onClick={() => {
+                                      handleSelectLeafRow(row);
+                                    }}
+                                  >
+                                    {nameBody}
+                                  </button>
+                                ) : (
+                                  nameBody
+                                )}
                               </span>
                             </span>
                             <span
-                              className='text-muted-foreground min-w-0 truncate text-xs leading-tight'
+                              className={cn(
+                                'text-muted-foreground min-w-0 truncate',
+                                HIERARCHY_BODY_CLASS
+                              )}
                               title={
                                 referenceLabels.length > 0
                                   ? referenceLabels.join(', ')
@@ -969,25 +1107,6 @@ export function ScheduleItemsTree({
                               rateClassName={typeStyles.rate}
                             />
                           </div>
-                          {onSelectLeaf && !row.has_children ? (
-                            <div className='flex shrink-0 items-start pt-0.5 ps-1'>
-                              <Button
-                                type='button'
-                                variant='secondary'
-                                size='xs'
-                                className='h-7 shrink-0 text-xs whitespace-nowrap'
-                                onClick={() =>
-                                  onSelectLeaf({
-                                    row,
-                                    scheduleVersionLabel:
-                                      scheduleVersionLabelForPick,
-                                  })
-                                }
-                              >
-                                Select
-                              </Button>
-                            </div>
-                          ) : null}
                         </div>
                       );
                     })

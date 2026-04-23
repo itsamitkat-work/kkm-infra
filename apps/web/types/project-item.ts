@@ -1,5 +1,7 @@
 import type { Database } from '@kkm/db';
 import z from 'zod';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import { projectItemItemDescriptionFieldSchema } from '@/app/(app)/schedule-items/item-description-doc';
 
 type BoqRow = Database['public']['Tables']['project_boq_lines']['Row'];
 
@@ -31,7 +33,8 @@ export interface ProjectItem {
   item_code: BoqRow['item_code'];
   /** Denormalized snapshot of schedule reference annotations (see `reference_schedule_text` on BOQ). */
   reference_schedule_text: string;
-  item_description: BoqRow['item_description'];
+  /** Parsed from `project_boq_lines.item_description` (jsonb hierarchy or legacy text). */
+  item_description: ItemDescriptionDoc;
   unit_display: BoqRow['unit_display'];
   rate_amount: NonNullable<BoqRow['rate_amount']> | null;
   contract_quantity: BoqRow['contract_quantity'];
@@ -56,7 +59,7 @@ export const projectItemZodSchema = z.object({
   schedule_item_id: z.string().nullable().optional(),
   item_code: z.string().min(1, 'Code cannot be empty.'),
   reference_schedule_text: z.string().nullable().optional(),
-  item_description: z.string().min(1, 'Item name cannot be empty.'),
+  item_description: projectItemItemDescriptionFieldSchema,
   unit_display: z.string().min(1, 'Unit cannot be empty.'),
   rate_amount: z.string().refine((val) => {
     const num = parseFloat(val);

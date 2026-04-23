@@ -20,6 +20,7 @@ import {
   useUpdateIndentServiceItemMutation,
 } from '../hooks/use-indent-service-item-mutations';
 import type { IndentServiceItemRow } from '../hooks/use-indent-service-items-by-project';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 const FORM_SCHEMA = z.object({
   serviceItemId: z.string().min(1, 'Service item is required'),
@@ -62,7 +63,7 @@ export function ServiceItemIndentDrawer({
         const id = item.id ?? '';
         return {
           value: id,
-          label: `${item.item_code ?? ''} – ${item.item_description ?? ''}`.trim(),
+          label: `${item.item_code ?? ''} – ${flattenItemDescription(item.item_description)}`.trim(),
         };
       }),
     [serviceItems]

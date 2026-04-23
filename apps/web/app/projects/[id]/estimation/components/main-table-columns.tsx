@@ -18,6 +18,8 @@ import { DeleteConfirmationData } from '@/hooks/use-delete-confirmation';
 import { useEstimationShare } from '../hooks/use-estimation-share';
 import { DataTableColumnHeader } from './column-header';
 import { Button } from '@/components/ui/button';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
+import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-description-hierarchy';
 
 interface ColumnProps {
   type: ProjectItemType;
@@ -199,12 +201,14 @@ export const getMainColumns = ({
     ),
     cell: ({ row }) => {
       const isExpanded = row.getIsExpanded();
+      const descDoc = row.original.item_description;
+      const titleText = flattenItemDescription(descDoc);
       return (
         <Button
           variant='ghost'
           className='w-full justify-start hover:text-primary transition-all duration-200 hover:bg-muted/30 rounded-sm px-1 py-0.5 -mx-1 -my-0.5 h-auto whitespace-normal text-left font-normal'
           onClick={() => row.toggleExpanded()}
-          title={row.original.item_description}
+          title={titleText}
         >
           <div
             className={`flex items-center gap-2 w-full min-w-0 ${
@@ -230,7 +234,7 @@ export const getMainColumns = ({
                 isExpanded ? 'break-words whitespace-normal' : 'truncate'
               }`}
             >
-              {row.original.item_description}
+              <ItemDescriptionHierarchy doc={descDoc} />
             </span>
           </div>
         </Button>

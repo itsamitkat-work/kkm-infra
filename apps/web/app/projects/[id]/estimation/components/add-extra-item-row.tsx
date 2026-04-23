@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useCallback, useMemo } from 'react';
+import type { BoqSchedulePick } from '@/app/(app)/schedule-items/boq-schedule-pick';
 import {
-  MasterItemOption,
-  renderMasterItemOption,
-  useMasterItemOptions,
-} from '@/app/projects/[id]/components/master-item-options';
+  type ScheduleItemPickerOption,
+  renderScheduleItemPickerOption,
+  useScheduleItemPickerOptions,
+} from '@/app/(app)/schedule-items/schedule-item-picker-option';
 import { TableRow, TableCell } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { SaveButton } from '@/components/ui/save-button';
@@ -13,11 +14,15 @@ import { Copy, Trash2 } from 'lucide-react';
 import { ProjectItemType } from '../types';
 import { CellEditor } from '@/components/tables/sheet-table/cell-editor';
 import { ExtendedColumnDef } from '@/components/tables/sheet-table/utils';
-import { MasterItem } from '@/hooks/items/types';
 import { projectItemZodSchema } from '@/types/project-item';
 import { ProjectItemRowType as EstimationRowData } from '@/types/project-item';
-import { buildPatchFromSelection } from '../../utils';
+import { buildPatchFromSchedulePick } from '../../utils';
 import { cn } from '@/lib/utils';
+import {
+  flattenItemDescription,
+  itemDescriptionFromPlainText,
+} from '@/app/(app)/schedule-items/item-description-doc';
+import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-description-hierarchy';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 type AddExtraEditableKey =
@@ -37,7 +42,7 @@ interface AddExtraItemProps {
   onSave: (item: EstimationRowData) => void;
   type: ProjectItemType;
   rowClassName: string;
-  masterProjectItems: MasterItem[];
+  scheduleCatalogPicks: BoqSchedulePick[];
   onSearch: (query: string, field: string) => void;
   onLoadMore: () => void;
   hasMore?: boolean;
@@ -58,7 +63,7 @@ export function AddExtraItemRow({
   onItemDuplicate,
   onSave,
   rowClassName,
-  masterProjectItems,
+  scheduleCatalogPicks,
   onSearch,
   onLoadMore,
   hasMore,
@@ -70,7 +75,7 @@ export function AddExtraItemRow({
   scheduleFilterPlaceholder,
   isSaving: isSavingProp = false,
 }: AddExtraItemProps) {
-  const masterItemOptions = useMasterItemOptions(masterProjectItems);
+  const schedulePickerOptions = useScheduleItemPickerOptions(scheduleCatalogPicks);
   const rowRef = React.useRef<HTMLTableRowElement | null>(null);
   const errorMessage = error ?? null;
   const isSaveDisabled = !item.is_edited && !item.is_new;
@@ -115,7 +120,7 @@ export function AddExtraItemRow({
         header: 'Code',
         inputType: 'combobox',
         inputConfig: {
-          options: masterItemOptions,
+          options: schedulePickerOptions,
           onSearch: (query) => onSearch(query, 'code'),
           onLoadMore,
           hasMore,
@@ -126,19 +131,19 @@ export function AddExtraItemRow({
           filterPlaceholder: scheduleFilterPlaceholder ?? 'Schedule',
           onFilterChange: onScheduleFilterChange,
           getOptionId: (option) => {
-            const itemOption = option as MasterItemOption;
+            const itemOption = option as ScheduleItemPickerOption;
             return itemOption.code || itemOption.hashId;
           },
           getOptionLabel: (option) => {
-            const itemOption = option as MasterItemOption;
+            const itemOption = option as ScheduleItemPickerOption;
             return itemOption.code || itemOption.name;
           },
           renderOption: (option, context) =>
-            renderMasterItemOption({
-              option: option as MasterItemOption,
+            renderScheduleItemPickerOption({
+              option: option as ScheduleItemPickerOption,
               label:
-                (option as MasterItemOption).code ||
-                (option as MasterItemOption).name ||
+                (option as ScheduleItemPickerOption).code ||
+                (option as ScheduleItemPickerOption).name ||
                 '',
               isSelected: context.isSelected,
               searchValue: context.searchValue,
@@ -151,7 +156,7 @@ export function AddExtraItemRow({
                 <span className='text-muted-foreground'>Code</span>
               );
 
-            const selected = option as MasterItemOption;
+            const selected = option as ScheduleItemPickerOption;
             return (
               <span className='truncate'>
                 {selected.code ||
@@ -176,7 +181,7 @@ export function AddExtraItemRow({
         header: 'Name',
         inputType: 'combobox',
         inputConfig: {
-          options: masterItemOptions,
+          options: schedulePickerOptions,
           onSearch: (query) => onSearch(query, 'name'),
           onLoadMore,
           hasMore,
@@ -187,37 +192,41 @@ export function AddExtraItemRow({
           filterPlaceholder: scheduleFilterPlaceholder ?? 'Schedule',
           onFilterChange: onScheduleFilterChange,
           getOptionId: (option) => {
-            const itemOption = option as MasterItemOption;
+            const itemOption = option as ScheduleItemPickerOption;
             return itemOption.name || itemOption.code;
           },
           getOptionLabel: (option) => {
-            const itemOption = option as MasterItemOption;
+            const itemOption = option as ScheduleItemPickerOption;
             return itemOption.name || itemOption.code;
           },
           renderOption: (option, context) =>
-            renderMasterItemOption({
-              option: option as MasterItemOption,
+            renderScheduleItemPickerOption({
+              option: option as ScheduleItemPickerOption,
               label:
-                (option as MasterItemOption).name ||
-                (option as MasterItemOption).code ||
+                (option as ScheduleItemPickerOption).name ||
+                (option as ScheduleItemPickerOption).code ||
                 '',
               isSelected: context.isSelected,
               searchValue: context.searchValue,
             }),
           renderSelectedValue: (option, rowData) => {
-            if (!option)
-              return rowData.item_description ? (
-                <span className='truncate'>{rowData.item_description}</span>
-              ) : (
-                <span className='text-muted-foreground'>Item</span>
-              );
+            if (!option) {
+              if (flattenItemDescription(rowData.item_description).trim() !== '') {
+                return (
+                  <span className='truncate'>
+                    <ItemDescriptionHierarchy doc={rowData.item_description} />
+                  </span>
+                );
+              }
+              return <span className='text-muted-foreground'>Item</span>;
+            }
 
-            const selected = option as MasterItemOption;
+            const selected = option as ScheduleItemPickerOption;
             return (
               <span className='truncate'>
                 {selected.name ||
                   selected.code ||
-                  rowData.item_description ||
+                  flattenItemDescription(rowData.item_description) ||
                   'Item'}
               </span>
             );
@@ -242,7 +251,7 @@ export function AddExtraItemRow({
     [
       hasMore,
       loading,
-      masterItemOptions,
+      schedulePickerOptions,
       onLoadMore,
       onSearch,
       onScheduleFilterChange,
@@ -254,19 +263,31 @@ export function AddExtraItemRow({
   );
 
   const handleChange = useCallback(
-    (field: AddExtraEditableKey, value: string) => {
-      const updatedItem = { ...item, [field]: value };
+    (field: AddExtraEditableKey, value: unknown) => {
+      let normalized: unknown = value;
+      if (field === 'item_description' && typeof value === 'string') {
+        normalized = itemDescriptionFromPlainText(value);
+      }
+      const updatedItem = {
+        ...item,
+        [field]: normalized,
+      } as EstimationRowData;
 
       if (field === 'item_code' || field === 'item_description') {
-        const matchedMasterItem = masterProjectItems.find((masterItem) => {
+        const matchKey = typeof value === 'string' ? value : '';
+        const matchedPick = scheduleCatalogPicks.find((pick) => {
           if (field === 'item_code') {
-            return masterItem.code === value;
+            return pick.treeRow.code === matchKey;
           }
 
-          return masterItem.name === value;
+          return (
+            pick.treeRow.description === matchKey ||
+            flattenItemDescription(pick.itemDescriptionDoc) === matchKey
+          );
         });
 
-        const patch = buildPatchFromSelection(matchedMasterItem);
+        const patch =
+          matchedPick != null ? buildPatchFromSchedulePick(matchedPick) : null;
         if (patch) {
           onItemChange({
             ...updatedItem,
@@ -277,7 +298,7 @@ export function AddExtraItemRow({
       }
       onItemChange(updatedItem);
     },
-    [item, onItemChange, masterProjectItems]
+    [item, onItemChange, scheduleCatalogPicks]
   );
 
   const renderCell = (name: AddExtraEditableKey) => {
@@ -297,9 +318,13 @@ export function AddExtraItemRow({
         <CellEditor
           colDef={colDef}
           rowData={item}
-          value={String(
-            item[colDef.accessorKey as keyof EstimationRowData] ?? ''
-          )}
+          value={
+            name === 'item_description'
+              ? flattenItemDescription(item.item_description)
+              : String(
+                  item[colDef.accessorKey as keyof EstimationRowData] ?? ''
+                )
+          }
           onValueChange={(value) =>
             handleChange(colDef.accessorKey as AddExtraEditableKey, value)
           }

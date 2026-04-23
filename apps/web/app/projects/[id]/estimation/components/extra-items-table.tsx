@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { EstimationRowData, ProjectItemType } from '../types';
 import { getExtraItemsColumns } from './extra-items-table-columns';
 import { projectItemZodSchema } from '@/types/project-item';
+import { emptyItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
 import { useExtraItemsStore } from '../hooks/use-extra-items-store';
 import {
   useCreateProjectItem,
@@ -54,7 +55,7 @@ export const ExtraItemsTable = forwardRef<
         id: `extra-${Date.now()}`,
         work_order_number: '',
         schedule_item_id: '',
-        item_description: '',
+        item_description: emptyItemDescriptionDoc(),
         item_code: '',
         reference_schedule_text: '',
         unit_display: '',
@@ -119,7 +120,7 @@ export const ExtraItemsTable = forwardRef<
         schedule_item_id: String(item.schedule_item_id ?? ''),
         work_order_number: String(item.work_order_number ?? ''),
         item_code: item.item_code ?? '',
-        item_description: item.item_description ?? '',
+        item_description: item.item_description ?? emptyItemDescriptionDoc(),
         unit_display: item.unit_display ?? '',
         rate_amount: parseNumber(item.rate_amount),
         contract_quantity: parseNumber(item.contract_quantity),

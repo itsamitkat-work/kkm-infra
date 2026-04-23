@@ -6,6 +6,7 @@ import {
   ProjectItemType,
   ItemMeasurmentRowData,
 } from '../types';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 
 /**
  * Format currency for export (without special characters)
@@ -268,7 +269,7 @@ function createMainDataSheet(
       String(item.work_order_number ?? ''),
       item.item_code || '',
       item.reference_schedule_text || '',
-      item.item_description || '',
+      flattenItemDescription(item.item_description),
       item.unit_display || '',
       rate,
       quantity1,
@@ -477,7 +478,7 @@ export function exportToPDF(data: ExportData) {
     tableData.push([
       (index + 1).toString(),
       String(item.work_order_number ?? ''),
-      item.item_description || '',
+      flattenItemDescription(item.item_description),
       item.unit_display || '',
       rate.toFixed(2),
       quantity1.toFixed(2),

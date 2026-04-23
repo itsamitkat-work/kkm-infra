@@ -23,6 +23,7 @@ import {
   ArrowLeft,
   BarChart3,
   CircleX,
+  IndianRupeeIcon,
   Info,
   List,
   MoreVertical,
@@ -50,37 +51,31 @@ const TAB_CONFIG = [
     id: 'project-info',
     label: 'Project Info',
     mobileLabel: 'Info',
-    icon: Info,
   },
   {
     id: 'project-items',
-    label: 'Project Items',
-    mobileLabel: 'Items',
-    icon: List,
+    label: 'Planned Items',
+    mobileLabel: 'Planned',
   },
   {
     id: 'est',
-    label: 'Estimation Report',
-    mobileLabel: 'Reports',
-    icon: BarChart3,
+    label: 'Estimation',
+    mobileLabel: 'Estimation',
   },
   {
     id: 'msr',
-    label: 'Measurement Report',
-    mobileLabel: 'Measure',
-    icon: Ruler,
-  },
-  {
-    id: 'deviation-report',
-    label: 'Deviation Report',
-    mobileLabel: 'Deviation',
-    icon: AlertTriangle,
+    label: 'Measurement',
+    mobileLabel: 'Measurement',
   },
   {
     id: 'blg',
     label: 'Billing',
     mobileLabel: 'Billing',
-    icon: Receipt,
+  },
+  {
+    id: 'deviation-report',
+    label: 'Reports',
+    mobileLabel: 'Reports',
   },
 ];
 
@@ -162,8 +157,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             type='MSR'
           />
         );
-      case 'deviation-report':
-        return <DeviationReportTab projectId={resolvedParams.id} />;
+
       case 'blg':
         return (
           <ItemsTab
@@ -172,6 +166,8 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             type='BLG'
           />
         );
+      case 'deviation-report':
+        return <DeviationReportTab projectId={resolvedParams.id} />;
       default:
         return (
           <ProjectInfo
@@ -303,14 +299,12 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 className='flex flex-wrap *:data-[slot=toggle-group-item]:!px-4'
               >
                 {TAB_CONFIG.map((tab) => {
-                  const IconComponent = tab.icon;
                   return (
                     <ToggleGroupItem
                       key={tab.id}
                       value={tab.id}
                       className='flex items-center gap-2 px-3 py-2 min-w-fit whitespace-nowrap'
                     >
-                      <IconComponent className='size-4 flex-shrink-0' />
                       <span className='hidden sm:inline text-sm'>
                         {tab.label}
                       </span>

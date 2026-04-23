@@ -8,12 +8,18 @@ import {
   MasterItemEditorConfig,
   type MasterItemEditorConfigType,
 } from '@/app/projects/[id]/items/MasterItemEditorConfig';
-import type { MasterItemOption } from '@/app/projects/[id]/components/master-item-options';
-import { getSelectedMasterItem } from '@/app/projects/[id]/items/use-master-item-selection';
-import { buildPatchFromSelection } from '../../utils';
+import type { ScheduleItemPickerOption } from '@/app/(app)/schedule-items/schedule-item-picker-option';
+import { getSelectedSchedulePick } from '@/app/projects/[id]/items/use-schedule-pick-selection';
+import { buildPatchFromSchedulePick } from '../../utils';
 import { SaveButton } from '@/components/ui/save-button';
 import { Button } from '@/components/ui/button';
 import { Copy, Trash2 } from 'lucide-react';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  flattenItemDescription,
+  itemDescriptionFromPlainText,
+} from '@/app/(app)/schedule-items/item-description-doc';
+import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-description-hierarchy';
 
 interface ExtraItemsColumnProps {
   onItemRemove: (itemId: string) => void;
@@ -27,14 +33,13 @@ interface ExtraItemsColumnProps {
 function createMasterItemOnChangeUpdateRow() {
   return ({ draftRow }: { draftRow: EstimationRowData }) => {
     const rowId = String(draftRow.id);
-    const selectedMasterItem = getSelectedMasterItem(rowId);
+    const selectedPick = getSelectedSchedulePick(rowId);
 
-    if (!selectedMasterItem) {
+    if (!selectedPick) {
       return { is_edited: true };
     }
 
-    // Build and return the patch to update all related fields
-    const patch = buildPatchFromSelection(selectedMasterItem);
+    const patch = buildPatchFromSchedulePick(selectedPick);
     return { ...patch, is_edited: true };
   };
 }
@@ -46,13 +51,13 @@ const codeColumnConfig: MasterItemEditorConfigType = {
   placeholder: 'Code',
   searchPlaceholder: 'Search by code',
   searchField: 'code',
-  getOptionLabel: (option: MasterItemOption) => option.code,
+  getOptionLabel: (option: ScheduleItemPickerOption) => option.code,
   renderSelectedValue: (
-    option: MasterItemOption | null,
+    option: ScheduleItemPickerOption | null,
     placeholder: string,
-    rowValue?: string
-  ) => option?.code || rowValue || placeholder,
-  getOnChangeValue: (option: MasterItemOption | null) => option?.code ?? '',
+    rowValue?: unknown
+  ) => option?.code || String(rowValue ?? '') || placeholder,
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) => option?.code ?? '',
   getRowValue: (row: EstimationRowData) => row.item_code ?? '',
 };
 
@@ -62,13 +67,28 @@ const nameColumnConfig: MasterItemEditorConfigType = {
   searchPlaceholder: 'Search by name',
   searchField: 'name',
   renderSelectedValue: (
-    option: MasterItemOption | null,
+    option: ScheduleItemPickerOption | null,
     placeholder: string,
-    rowValue?: string
-  ) => option?.name || rowValue || placeholder,
-  getOnChangeValue: (option: MasterItemOption | null) => option?.name ?? '',
-  getOptionLabel: (option: MasterItemOption) => option.name,
-  getRowValue: (row: EstimationRowData) => row.item_description ?? '',
+    rowValue?: unknown
+  ) => {
+    const doc =
+      option?.itemDescriptionDoc ??
+      (rowValue != null && typeof rowValue === 'object'
+        ? (rowValue as ItemDescriptionDoc)
+        : itemDescriptionFromPlainText(String(rowValue ?? '')));
+    if (flattenItemDescription(doc).trim() === '') {
+      return placeholder;
+    }
+    return <ItemDescriptionHierarchy doc={doc} />;
+  },
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) =>
+    option?.itemDescriptionDoc ??
+    itemDescriptionFromPlainText(option?.name ?? ''),
+  getOptionLabel: (option: ScheduleItemPickerOption) => option.name,
+  getRowValue: (row: EstimationRowData) => row.item_description,
+  triggerClassName: 'items-start py-1.5',
+  labelClassName:
+    'min-w-0 flex-1 whitespace-normal break-words text-left text-foreground',
 };
 
 export const getExtraItemsColumns = ({

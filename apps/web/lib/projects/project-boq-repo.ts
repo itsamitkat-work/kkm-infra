@@ -9,6 +9,12 @@ import type {
 } from '@/types/project-item';
 import { appendOrderKey } from '@/lib/projects/order-key';
 import { parseNumber } from '@/lib/utils';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  itemDescriptionDocsEqual,
+  parseItemDescriptionFromDb,
+  serializeItemDescriptionToDb,
+} from '@/app/(app)/schedule-items/item-description-doc';
 
 type BoqRow = Database['public']['Tables']['project_boq_lines']['Row'];
 type BoqInsert = Database['public']['Tables']['project_boq_lines']['Insert'];
@@ -194,7 +200,7 @@ function mapBoqToProjectItem(
     work_order_number: row.work_order_number,
     item_code: row.item_code,
     reference_schedule_text: row.reference_schedule_text ?? '',
-    item_description: row.item_description,
+    item_description: parseItemDescriptionFromDb(row.item_description),
     unit_display: row.unit_display,
     rate_amount: Number(row.rate_amount ?? 0),
     contract_quantity: Number(row.contract_quantity ?? 0),
@@ -314,11 +320,11 @@ export type CreateBoqLineInput = Required<
     | 'schedule_item_id'
     | 'work_order_number'
     | 'item_code'
-    | 'item_description'
     | 'unit_display'
     | 'contract_quantity'
   >
 > & {
+  item_description: ItemDescriptionDoc;
   rate_amount: NonNullable<BoqInsert['rate_amount']> | null;
   remark: BoqInsert['remark'];
   reference_schedule_text?: BoqInsert['reference_schedule_text'];
@@ -342,7 +348,7 @@ export async function createProjectBoqLine(
     work_order_number: input.work_order_number,
     order_key: orderKey,
     item_code: input.item_code,
-    item_description: input.item_description,
+    item_description: serializeItemDescriptionToDb(input.item_description),
     unit_display: input.unit_display,
     rate_amount: input.rate_amount ?? null,
     contract_quantity: input.contract_quantity,
@@ -400,7 +406,6 @@ export type UpdateBoqLineInput = Pick<BoqRow, 'id' | 'project_id'> & {
     BoqRow,
     | 'work_order_number'
     | 'item_code'
-    | 'item_description'
     | 'unit_display'
     | 'rate_amount'
     | 'contract_quantity'
@@ -409,7 +414,10 @@ export type UpdateBoqLineInput = Pick<BoqRow, 'id' | 'project_id'> & {
     | 'schedule_item_id'
     | 'reference_schedule_text'
   >
->;
+> & {
+  /** Parsed BOQ item name; serialized to jsonb in {@link patchProjectBoqLine}. */
+  item_description?: ItemDescriptionDoc;
+};
 
 function sameProjectSegmentIds(
   a: string[] | undefined,
@@ -470,10 +478,7 @@ export function buildDirtyProjectBoqLineUpdateInput(args: {
   if (String(current.item_code ?? '') !== String(baseline.item_code ?? '')) {
     patch.item_code = current.item_code;
   }
-  if (
-    String(current.item_description ?? '') !==
-    String(baseline.item_description ?? '')
-  ) {
+  if (!itemDescriptionDocsEqual(current.item_description, baseline.item_description)) {
     patch.item_description = current.item_description;
   }
   if (
@@ -556,7 +561,9 @@ export async function patchProjectBoqLine(
     patch.item_code = item_code;
   }
   if (item_description !== undefined && item_description !== null) {
-    patch.item_description = item_description;
+    patch.item_description = serializeItemDescriptionToDb(
+      item_description
+    ) as BoqRow['item_description'];
   }
   if (unit_display !== undefined && unit_display !== null) {
     patch.unit_display = unit_display;

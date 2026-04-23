@@ -63,8 +63,12 @@ import {
   MasterItemEditorConfig,
   type MasterItemEditorConfigType,
 } from './MasterItemEditorConfig';
-import { getSelectedMasterItem } from './use-master-item-selection';
-import { buildPatchFromSelection } from '../utils';
+import type { ScheduleItemPickerOption } from '@/app/(app)/schedule-items/schedule-item-picker-option';
+import {
+  getSelectedSchedulePick,
+  migrateSchedulePickSelection,
+} from './use-schedule-pick-selection';
+import { buildPatchFromSchedulePick } from '../utils';
 import { TableErrorState } from '@/components/tables/table-error';
 import {
   useDeleteConfirmation,
@@ -79,6 +83,16 @@ import { buildDirtyProjectBoqLineUpdateInput } from '@/lib/projects/project-boq-
 import { midpointOrderKey, ORDER_KEY_STEP } from '@/lib/projects/order-key';
 import { cn, getPlatformSpecificKbd, parseNumber } from '@/lib/utils';
 import { ProjectItemRowType, projectItemZodSchema } from '@/types/project-item';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  emptyItemDescriptionDoc,
+  flattenItemDescription,
+  itemDescriptionFromPlainText,
+} from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  HIERARCHY_BODY_CLASS,
+  ItemDescriptionHierarchy,
+} from '@/app/(app)/schedule-items/item-description-hierarchy';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { toast } from 'sonner';
 import {
@@ -94,11 +108,11 @@ import {
 function createMasterItemOnChangeUpdateRow() {
   return ({ draftRow }: { draftRow: ProjectItemRowType }) => {
     const rowId = String(draftRow.id);
-    const selectedMasterItem = getSelectedMasterItem(rowId);
-    if (!selectedMasterItem) {
+    const selectedPick = getSelectedSchedulePick(rowId);
+    if (!selectedPick) {
       return;
     }
-    return buildPatchFromSelection(selectedMasterItem);
+    return buildPatchFromSchedulePick(selectedPick);
   };
 }
 
@@ -108,24 +122,47 @@ const codeColumnConfig: MasterItemEditorConfigType = {
   placeholder: 'Code',
   searchPlaceholder: 'Search by code',
   searchField: 'code',
-  getOptionLabel: (option) => option.code,
+  getOptionLabel: (option: ScheduleItemPickerOption) => option.code,
   renderSelectedValue: (option, placeholder, rowValue) =>
-    option?.code || rowValue || placeholder,
-  getOnChangeValue: (option) => option?.code ?? '',
+    option?.code || String(rowValue ?? '') || placeholder,
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) => option?.code ?? '',
   getRowValue: (row) => row.item_code ?? '',
   triggerClassName: 'justify-center gap-1 px-1',
-  labelClassName: 'max-w-[min(100%,5.5rem)] flex-none text-center tabular-nums',
+  labelClassName: cn(
+    'max-w-[min(100%,5.5rem)] flex-none truncate text-center tabular-nums',
+    HIERARCHY_BODY_CLASS
+  ),
 };
 
 const nameColumnConfig: MasterItemEditorConfigType = {
   placeholder: 'Item',
   searchPlaceholder: 'Search by name',
   searchField: 'name',
-  renderSelectedValue: (option, placeholder, rowValue) =>
-    option?.name || rowValue || placeholder,
-  getOnChangeValue: (option) => option?.name ?? '',
-  getOptionLabel: (option) => option.name,
-  getRowValue: (row) => row.item_description ?? '',
+  renderSelectedValue: (
+    option: ScheduleItemPickerOption | null,
+    placeholder: string,
+    rowValue?: unknown
+  ) => {
+    const doc =
+      option?.itemDescriptionDoc ??
+      (rowValue != null && typeof rowValue === 'object'
+        ? (rowValue as ItemDescriptionDoc)
+        : itemDescriptionFromPlainText(String(rowValue ?? '')));
+    if (flattenItemDescription(doc).trim() === '') {
+      return placeholder;
+    }
+    return <ItemDescriptionHierarchy doc={doc} />;
+  },
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) =>
+    option?.itemDescriptionDoc ??
+    itemDescriptionFromPlainText(option?.name ?? ''),
+  getOptionLabel: (option: ScheduleItemPickerOption) => option.name,
+  getRowValue: (row) => row.item_description,
+  triggerClassName: 'items-start py-1.5',
+  labelClassName: cn(
+    'min-w-0 flex-1 whitespace-normal break-words text-left text-foreground',
+    HIERARCHY_BODY_CLASS
+  ),
 };
 
 function columnIdFromCell(cell: { column: { id: string } }): string {
@@ -383,7 +420,9 @@ function ProjectItemsQuantityWithUnitCell({
   if (disabled) {
     return (
       <div className='flex min-h-8 w-full min-w-0 items-center justify-end gap-2 px-0'>
-        <span className='text-end text-sm tabular-nums'>
+        <span
+          className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}
+        >
           {String(row.original.contract_quantity ?? '')}
         </span>
         <span
@@ -413,7 +452,10 @@ function ProjectItemsQuantityWithUnitCell({
               setLocal(next);
               debouncedCommit(next);
             }}
-            className='!m-0 !h-auto min-h-0 w-full !rounded-none !border-0 !px-1 !py-0 text-end tabular-nums !shadow-none !ring-0 focus-visible:!border-transparent focus-visible:!outline-none focus-visible:!ring-0'
+            className={cn(
+              '!m-0 !h-auto min-h-0 w-full !rounded-none !border-0 !px-1 !py-0 text-end tabular-nums !shadow-none !ring-0 focus-visible:!border-transparent focus-visible:!outline-none focus-visible:!ring-0',
+              HIERARCHY_BODY_CLASS
+            )}
           />
           <InputGroupAddon
             align='inline-end'
@@ -473,7 +515,8 @@ function DebouncedTextCell({
       autoFocus={autoFocus}
       placeholder={placeholder}
       className={cn(
-        'h-auto min-h-8 w-full border-none bg-transparent outline-none ring-0 !px-2 text-sm transition-colors',
+        'h-auto min-h-8 w-full border-none bg-transparent outline-none ring-0 !px-2 transition-colors',
+        HIERARCHY_BODY_CLASS,
         'hover:bg-muted/30 focus:bg-transparent focus:outline-none focus-visible:ring-0',
         dense ? '!py-0' : '!py-1',
         className,
@@ -668,7 +711,12 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         if (disabled) {
           return (
             <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
-              <span className='text-center text-sm tabular-nums whitespace-nowrap'>
+              <span
+                className={cn(
+                  'text-center tabular-nums whitespace-nowrap',
+                  HIERARCHY_BODY_CLASS
+                )}
+              >
                 {String(row.original.work_order_number ?? '')}
               </span>
             </div>
@@ -705,7 +753,12 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         if (disabled) {
           return (
             <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
-              <span className='text-center text-sm tabular-nums whitespace-nowrap'>
+              <span
+                className={cn(
+                  'text-center tabular-nums whitespace-nowrap',
+                  HIERARCHY_BODY_CLASS
+                )}
+              >
                 {String(row.original.item_code ?? '')}
               </span>
             </div>
@@ -732,7 +785,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
       header: 'Sub Code',
       cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
         return (
-          <span className='px-2 text-center text-sm'>
+          <span
+            className={cn('px-2 text-center', HIERARCHY_BODY_CLASS)}
+          >
             {String(cellContext.row.original.reference_schedule_text ?? '')}
           </span>
         );
@@ -747,7 +802,12 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
       cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
         return (
           <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
-            <span className='text-center text-sm tabular-nums whitespace-nowrap'>
+            <span
+              className={cn(
+                'text-center tabular-nums whitespace-nowrap',
+                HIERARCHY_BODY_CLASS
+              )}
+            >
               {String(cellContext.row.original.schedule_name ?? '')}
             </span>
           </div>
@@ -773,23 +833,31 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
         const columnId = column.id;
         const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        const value = String(row.original.item_description ?? '');
+        const doc = row.original.item_description;
+        const flat = flattenItemDescription(doc);
         if (disabled) {
           return (
             <Tooltip delayDuration={500}>
               <TooltipTrigger asChild>
-                <div className='min-w-0 max-w-full cursor-help truncate px-2 text-left text-sm'>
-                  {value}
+                <div
+                  className={cn(
+                    'min-w-0 max-w-full cursor-help px-2 text-left',
+                    HIERARCHY_BODY_CLASS
+                  )}
+                >
+                  <span className='block whitespace-normal break-words'>
+                    <ItemDescriptionHierarchy doc={doc} />
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent>
-                <p className='max-w-xs'>{value}</p>
+                <p className={cn('max-w-xs', HIERARCHY_BODY_CLASS)}>{flat}</p>
               </TooltipContent>
             </Tooltip>
           );
         }
         return (
-          <div className='min-w-0 w-full max-w-full overflow-hidden'>
+          <div className='min-w-0 w-full max-w-full overflow-x-hidden'>
             <MasterItemEditorConfig
               row={row.original}
               onChange={(v) => {
@@ -801,7 +869,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         );
       },
       validationSchema: projectItemZodSchema.shape.item_description,
-      className: 'overflow-hidden bg-muted/20',
+      className: 'min-w-0 overflow-x-hidden bg-muted/20 align-top',
       tableWidthPercent: PROJECT_ITEMS_ITEM_NAME_COL_WIDTH_PCT,
       onChangeUpdateRow: masterItemOnChangeUpdateRow,
     },
@@ -841,7 +909,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         if (disabled) {
           return (
             <div className='flex min-h-8 w-full min-w-0 items-center justify-end px-2'>
-              <span className='text-end text-sm tabular-nums'>
+              <span
+                className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}
+              >
                 {String(row.original.rate_amount ?? '')}
               </span>
             </div>
@@ -885,7 +955,12 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         const v = row.original.total ?? getValue();
         return (
           <div className='flex min-h-8 w-full min-w-0 items-center justify-end px-2'>
-            <span className='text-end text-sm font-semibold tabular-nums'>
+            <span
+              className={cn(
+                'text-end font-semibold tabular-nums',
+                HIERARCHY_BODY_CLASS
+              )}
+            >
               {v === null || v === undefined ? '' : String(v)}
             </span>
           </div>
@@ -917,7 +992,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         const displayValue = projectItemsDisplayString(getValue());
         if (disabled) {
           return (
-            <span className='px-2 text-sm'>
+            <span className={cn('px-2', HIERARCHY_BODY_CLASS)}>
               {String(row.original.remark ?? '')}
             </span>
           );
@@ -1725,9 +1800,14 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
             suppressToast: options?.suppressToast,
             type: 'GEN' as const,
           });
-          updatedRowId = newItem?.data?.id || rowData.id;
+          const serverRow = newItem?.data;
+          updatedRowId = serverRow?.id ?? rowData.id;
+          if (String(rowData.id) !== String(updatedRowId)) {
+            migrateSchedulePickSelection(String(rowData.id), String(updatedRowId));
+          }
           api.updateRow(rowData.id, {
             ...rowData,
+            ...(serverRow ?? {}),
             id: updatedRowId,
             is_new: false,
             is_edited: false,
@@ -1739,12 +1819,14 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
             current: validated,
             baseline: rowData._original ?? undefined,
           });
-          await patchProjectItem({
+          const patchResult = await patchProjectItem({
             ...dirtyPatch,
             suppressToast: options?.suppressToast,
           });
+          const serverRow = patchResult?.data;
           api.updateRow(rowData.id, {
             ...rowData,
+            ...(serverRow ?? {}),
             is_edited: false,
           });
         }
@@ -1907,7 +1989,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
         work_order_number: '',
         schedule_item_id: '',
         item_code: '',
-        item_description: '',
+        item_description: emptyItemDescriptionDoc(),
         unit_display: '',
         rate_amount: '',
         contract_quantity: '',
@@ -2146,7 +2228,8 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
                   const lastRow = data.at(-1);
                   if (
                     !!lastRow?.work_order_number ||
-                    !!lastRow?.item_description
+                    flattenItemDescription(lastRow?.item_description).trim() !==
+                      ''
                   ) {
                     return true;
                   }

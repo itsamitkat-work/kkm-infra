@@ -14,6 +14,8 @@ import {
 import { useProjectItemsInfiniteQuery } from '@/app/(app)/projects/hooks/use-project-items-query';
 import { useProject } from '@/hooks/projects/use-project';
 import type { ProjectItemRowType } from '@/types/project-item';
+import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 import { IconChevronRight, IconChevronDown } from '@tabler/icons-react';
 import { ItemBasicRatesTable } from './item-basic-rates-table';
 import { MaterialBreakdownTable } from './material-breakdown-table';
@@ -160,7 +162,7 @@ const itemsColumns: ColumnDef<ProjectItemRowType>[] = [
     size: 400,
     cell: ({ getValue }) => (
       <div className='text-sm leading-relaxed text-left w-full'>
-        {getValue() as string}
+        {flattenItemDescription(getValue() as ItemDescriptionDoc)}
       </div>
     ),
   },

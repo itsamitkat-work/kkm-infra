@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import React from "react";
-import { LucideIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { LucideIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { MoreHorizontal } from "lucide-react";
+} from '@/components/ui/dropdown-menu';
+import { MoreVerticalIcon } from 'lucide-react';
 
 export interface ActionItem {
   id: string;
   label: string;
   icon: LucideIcon;
   onClick: () => void;
-  variant?: "default" | "destructive" | "warning";
+  variant?: 'default' | 'destructive' | 'warning';
   disabled?: boolean;
   show?: boolean;
 }
@@ -26,18 +26,18 @@ export interface ActionsDropdownProps {
   actions: ActionItem[];
   triggerClassName?: string;
   contentClassName?: string;
-  align?: "start" | "center" | "end";
-  side?: "top" | "right" | "bottom" | "left";
+  align?: 'start' | 'center' | 'end';
+  side?: 'top' | 'right' | 'bottom' | 'left';
   disabled?: boolean;
   modal?: boolean;
 }
 
 export function ActionsDropdown({
   actions,
-  triggerClassName = "",
-  contentClassName = "",
-  align = "end",
-  side = "bottom",
+  triggerClassName = '',
+  contentClassName = '',
+  align = 'end',
+  side = 'bottom',
   disabled = false,
   modal = true,
 }: ActionsDropdownProps) {
@@ -45,23 +45,26 @@ export function ActionsDropdown({
   const visibleActions = actions.filter((action) => action.show !== false);
 
   // Group actions by variant for separators
-  const groupedActions = visibleActions.reduce((groups, action) => {
-    const variant = action.variant || "default";
-    if (!groups[variant]) {
-      groups[variant] = [];
-    }
-    groups[variant].push(action);
-    return groups;
-  }, {} as Record<string, ActionItem[]>);
+  const groupedActions = visibleActions.reduce(
+    (groups, action) => {
+      const variant = action.variant || 'default';
+      if (!groups[variant]) {
+        groups[variant] = [];
+      }
+      groups[variant].push(action);
+      return groups;
+    },
+    {} as Record<string, ActionItem[]>
+  );
 
-  const getVariantClassName = (variant: ActionItem["variant"]) => {
+  const getVariantClassName = (variant: ActionItem['variant']) => {
     switch (variant) {
-      case "destructive":
-        return "text-red-600 focus:text-red-700 focus:bg-red-50";
-      case "warning":
-        return "text-orange-600 focus:text-orange-700 focus:bg-orange-50";
+      case 'destructive':
+        return 'text-red-600 focus:text-red-700 focus:bg-red-50';
+      case 'warning':
+        return 'text-orange-600 focus:text-orange-700 focus:bg-orange-50';
       default:
-        return "";
+        return '';
     }
   };
 
@@ -73,12 +76,12 @@ export function ActionsDropdown({
     <DropdownMenu modal={modal}>
       <DropdownMenuTrigger asChild>
         <Button
-          size="sm"
-          variant="ghost"
+          size='icon'
+          variant='ghost'
           disabled={disabled}
-          className={`h-8 w-8 p-0 ${triggerClassName}`}
+          className={`${triggerClassName}`}
         >
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreVerticalIcon className='h-4 w-4' />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -97,7 +100,7 @@ export function ActionsDropdown({
                   disabled={action.disabled}
                   className={getVariantClassName(action.variant)}
                 >
-                  <action.icon className="h-4 w-4 mr-2" />
+                  <action.icon className='h-4 w-4 mr-2' />
                   {action.label}
                 </DropdownMenuItem>
               ))}
