@@ -18,6 +18,7 @@ import { DeleteConfirmationData } from '@/hooks/use-delete-confirmation';
 import { useEstimationShare } from '../hooks/use-estimation-share';
 import { DataTableColumnHeader } from './column-header';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { flattenItemDescription } from '@/app/(app)/schedule-items/item-description-doc';
 import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-description-hierarchy';
 
@@ -121,9 +122,7 @@ const Amount2Cell = ({
   );
 
   const quantity1 = parseFloat(
-    type === 'estimation'
-      ? row.contract_quantity
-      : row.estimate_quantity || '0'
+    type === 'estimation' ? row.contract_quantity : row.estimate_quantity || '0'
   );
   const quantity2 = parseFloat(
     type === 'estimation'
@@ -203,41 +202,64 @@ export const getMainColumns = ({
       const isExpanded = row.getIsExpanded();
       const descDoc = row.original.item_description;
       const titleText = flattenItemDescription(descDoc);
+      const lineType = row.original.project_boq_lines_type;
+      const isExtraBoqLine =
+        lineType === 'estimation' ||
+        lineType === 'measurement' ||
+        lineType === 'billing';
       return (
-        <Button
-          variant='ghost'
-          className='w-full justify-start hover:text-primary transition-all duration-200 hover:bg-muted/30 rounded-sm px-1 py-0.5 -mx-1 -my-0.5 h-auto whitespace-normal text-left font-normal'
-          onClick={() => row.toggleExpanded()}
-          title={titleText}
+        <div
+          className={`flex w-full min-w-0 gap-2 ${
+            isExpanded ? 'items-start' : 'items-center'
+          }`}
         >
-          <div
-            className={`flex items-center gap-2 w-full min-w-0 ${
-              isExpanded ? 'items-start' : 'items-center'
-            }`}
+          <Button
+            type='button'
+            variant='ghost'
+            className='min-w-0 flex-1 justify-start hover:text-primary transition-all duration-200 hover:bg-muted/30 rounded-sm px-1 py-0.5 -mx-1 -my-0.5 h-auto whitespace-normal text-left font-normal'
+            onClick={() => row.toggleExpanded()}
+            title={titleText}
           >
-            <div className='relative flex h-4 w-4 items-center justify-center'>
-              <ChevronDown
-                className={`h-4 w-4 text-muted-foreground flex-shrink-0 transition-all duration-200 ease-in-out absolute ${
-                  isExpanded
-                    ? 'rotate-0 opacity-100'
-                    : 'rotate-[-90deg] opacity-0'
+            <div className='flex w-full min-w-0 items-center gap-2'>
+              <div className='relative flex h-4 w-4 shrink-0 items-center justify-center'>
+                <ChevronDown
+                  className={`h-4 w-4 text-muted-foreground shrink-0 transition-all duration-200 ease-in-out absolute ${
+                    isExpanded
+                      ? 'rotate-0 opacity-100'
+                      : 'rotate-[-90deg] opacity-0'
+                  }`}
+                />
+                <ChevronRight
+                  className={`h-4 w-4 text-muted-foreground shrink-0 transition-all duration-200 ease-in-out absolute ${
+                    isExpanded ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
+                  }`}
+                />
+              </div>
+              <span
+                className={`min-w-0 flex-1 text-left ${
+                  isExpanded ? 'break-words whitespace-normal' : 'truncate'
                 }`}
-              />
-              <ChevronRight
-                className={`h-4 w-4 text-muted-foreground flex-shrink-0 transition-all duration-200 ease-in-out absolute ${
-                  isExpanded ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
-                }`}
-              />
+              >
+                <ItemDescriptionHierarchy doc={descDoc} />
+              </span>
             </div>
+          </Button>
+          {isExtraBoqLine ? (
             <span
-              className={`flex-1 ${
-                isExpanded ? 'break-words whitespace-normal' : 'truncate'
-              }`}
+              className='shrink-0 self-start pt-0.5'
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              onMouseDown={(e) => {
+                e.stopPropagation();
+              }}
             >
-              <ItemDescriptionHierarchy doc={descDoc} />
+              <Badge variant='outline' size='sm'>
+                Extra
+              </Badge>
             </span>
-          </div>
-        </Button>
+          ) : null}
+        </div>
       );
     },
     // size: undefined, // Let it be fluid

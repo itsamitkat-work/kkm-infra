@@ -204,6 +204,7 @@ export const ExtraItemsTable = forwardRef<
         work_order_number: '',
         is_new: true,
         is_edited: true,
+        project_boq_lines_type: type,
       };
       // Add to store
       addExtraItem(newItem);
@@ -212,7 +213,7 @@ export const ExtraItemsTable = forwardRef<
         addRowRef.current(newItem);
       }
     },
-    [addExtraItem]
+    [addExtraItem, type]
   );
 
   const columns = useMemo(

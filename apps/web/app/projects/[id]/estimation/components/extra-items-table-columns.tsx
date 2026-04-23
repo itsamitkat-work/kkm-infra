@@ -57,7 +57,8 @@ const codeColumnConfig: MasterItemEditorConfigType = {
     placeholder: string,
     rowValue?: unknown
   ) => option?.code || String(rowValue ?? '') || placeholder,
-  getOnChangeValue: (option: ScheduleItemPickerOption | null) => option?.code ?? '',
+  getOnChangeValue: (option: ScheduleItemPickerOption | null) =>
+    option?.code ?? '',
   getRowValue: (row: EstimationRowData) => row.item_code ?? '',
 };
 
