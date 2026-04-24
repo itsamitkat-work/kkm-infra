@@ -17,25 +17,15 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Spinner } from '@/components/ui/spinner';
 import {
+  formatRoleSlugForDisplay,
+  switchActiveRole,
+} from '@/hooks/auth';
+import {
   composeAccessTokenContext,
   needsPostLoginRoleSelection,
 } from '@/lib/auth';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
-
-type SwitchRoleFnResponse = {
-  active_role?: string;
-  session_refresh_required?: boolean;
-  session?: {
-    access_token: string;
-    refresh_token: string;
-  } | null;
-  error?: string;
-};
-
-function formatRoleSlugForDisplay(slug: string): string {
-  const spaced = slug.replace(/_/g, ' ');
-  return spaced.replace(/\b\w/g, (c) => c.toUpperCase());
-}
+import { EdgeFunctionRateLimitedError } from '@/lib/supabase/invoke-edge-function';
 
 function sanitizeNextPath(raw: string | null): string {
   if (!raw) {
@@ -129,48 +119,14 @@ export function SelectActiveRoleScreen() {
     }
     setIsSubmitting(true);
     try {
-      const supabase = createSupabaseBrowserClient();
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      const refreshToken = session?.refresh_token;
-      if (!refreshToken) {
-        toast.error('Session is missing; sign in again.');
-        return;
-      }
-      const { data: invokeData, error } = await supabase.functions.invoke(
-        'switch-role',
-        {
-          body: { role_slug: selectedSlug, refresh_token: refreshToken },
-        },
-      );
-      const data = invokeData as SwitchRoleFnResponse | null | undefined;
-      if (error) {
-        toast.error(error.message ?? 'Could not set active role');
-        return;
-      }
-      if (data?.error) {
-        toast.error(data.error);
-        return;
-      }
-      if (data?.session?.access_token && data.session.refresh_token) {
-        const { error: setErr } = await supabase.auth.setSession({
-          access_token: data.session.access_token,
-          refresh_token: data.session.refresh_token,
-        });
-        if (setErr) {
-          throw setErr;
-        }
-      } else if (data?.session_refresh_required) {
-        const { error: refErr } = await supabase.auth.refreshSession();
-        if (refErr) {
-          throw refErr;
-        }
-      }
+      await switchActiveRole(selectedSlug);
       const next = sanitizeNextPath(searchParams.get('next'));
       router.replace(next);
       router.refresh();
     } catch (e) {
+      if (e instanceof EdgeFunctionRateLimitedError) {
+        return;
+      }
       const message =
         e instanceof Error ? e.message : 'Could not set active role';
       toast.error(message);

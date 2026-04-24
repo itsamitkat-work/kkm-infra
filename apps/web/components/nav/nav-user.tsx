@@ -2,13 +2,22 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import {
   IconDotsVertical,
   IconLogout,
   IconNotification,
   IconUserCircle,
 } from '@tabler/icons-react';
-import { Moon, Sun, Monitor } from 'lucide-react';
+import {
+  BadgeCheck,
+  Check,
+  Loader2,
+  Moon,
+  Monitor,
+  Sun,
+} from 'lucide-react';
+import { toast } from 'sonner';
 import { useTheme } from 'next-themes';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -35,8 +44,15 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { useAuth } from '@/hooks/auth';
+import {
+  formatRoleSlugForDisplay,
+  getDistinctSortedRoleSlugs,
+  switchActiveRole,
+  useAuth,
+} from '@/hooks/auth';
 import { useMyProfileQuery } from '@/hooks/use-my-profile-query';
+import { MY_SWITCHABLE_TENANTS_QUERY_KEY } from '@/hooks/use-my-switchable-tenants';
+import { EdgeFunctionRateLimitedError } from '@/lib/supabase/invoke-edge-function';
 import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
 
 type UserData = {
@@ -90,6 +106,40 @@ function NavUserItem({ user, avatarClassName, trailing }: NavUserItemProps) {
   );
 }
 
+interface NavUserRoleRowProps {
+  slug: string;
+  isActive: boolean;
+  isBusy: boolean;
+  onActivate: () => void;
+}
+
+function NavUserRoleRow({
+  slug,
+  isActive,
+  isBusy,
+  onActivate,
+}: NavUserRoleRowProps) {
+  return (
+    <DropdownMenuItem
+      disabled={isBusy || isActive}
+      onClick={onActivate}
+      className='gap-2 p-2'
+    >
+      <div className='flex size-6 items-center justify-center rounded-md border'>
+        <BadgeCheck className='size-3.5 shrink-0' />
+      </div>
+      <div className='grid flex-1 text-left text-sm leading-tight'>
+        <span className='truncate font-medium'>
+          {formatRoleSlugForDisplay(slug)}
+        </span>
+        <span className='text-muted-foreground truncate text-xs'>{slug}</span>
+      </div>
+      {isActive ? <Check className='size-4 shrink-0 opacity-60' /> : null}
+      {isBusy ? <Loader2 className='size-4 shrink-0 animate-spin' /> : null}
+    </DropdownMenuItem>
+  );
+}
+
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
@@ -118,9 +168,47 @@ const ThemeSwitcher = () => {
 
 export function NavUser() {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const { isMobile } = useSidebar();
-  const { signOut, user, isLoading } = useAuth();
+  const { signOut, user, isLoading, claims, roles } = useAuth();
   const profileQuery = useMyProfileQuery(!isLoading && Boolean(user));
+
+  const roleOptions = React.useMemo(
+    () => getDistinctSortedRoleSlugs(roles),
+    [roles],
+  );
+  const canSwitchRoles = Boolean(user) && roleOptions.length > 1;
+  const activeRoleSlug =
+    typeof claims?.active_role === 'string' ? claims.active_role.trim() : '';
+  const activeRoleSlugOrNull =
+    activeRoleSlug.length > 0 ? activeRoleSlug : null;
+  const [pendingRoleSlug, setPendingRoleSlug] = React.useState<string | null>(
+    null,
+  );
+
+  async function handleActiveRoleSelect(slug: string) {
+    if (!user || slug === activeRoleSlugOrNull) {
+      return;
+    }
+    setPendingRoleSlug(slug);
+    try {
+      await switchActiveRole(slug);
+      await queryClient.invalidateQueries({
+        queryKey: MY_SWITCHABLE_TENANTS_QUERY_KEY,
+      });
+      router.refresh();
+      toast.success('Active role updated');
+    } catch (e) {
+      if (e instanceof EdgeFunctionRateLimitedError) {
+        return;
+      }
+      const message =
+        e instanceof Error ? e.message : 'Failed to switch active role';
+      toast.error(message);
+    } finally {
+      setPendingRoleSlug(null);
+    }
+  }
 
   const profile = profileQuery.data;
   const displayNameFromProfile = profile?.display_name?.trim();
@@ -178,6 +266,30 @@ export function NavUser() {
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
+            {canSwitchRoles ? (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel className='text-muted-foreground text-xs'>
+                  Active role
+                </DropdownMenuLabel>
+                {roleOptions.map((slug) => {
+                  const isActive = slug === activeRoleSlugOrNull;
+                  const isBusy = pendingRoleSlug === slug;
+                  function handleRoleRowActivate() {
+                    void handleActiveRoleSelect(slug);
+                  }
+                  return (
+                    <NavUserRoleRow
+                      key={slug}
+                      slug={slug}
+                      isActive={isActive}
+                      isBusy={isBusy}
+                      onActivate={handleRoleRowActivate}
+                    />
+                  );
+                })}
+              </>
+            ) : null}
             <DropdownMenuSeparator />
             <ThemeSwitcher />
             <DropdownMenuSeparator />
