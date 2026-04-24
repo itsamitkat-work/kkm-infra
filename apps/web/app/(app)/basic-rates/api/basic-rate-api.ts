@@ -30,7 +30,13 @@ type UpdateBasicRateInput = {
 } & Partial<
   Pick<
     BasicRatesTable['Update'],
-    'basic_rate_type_id' | 'code' | 'description' | 'unit' | 'rate' | 'status'
+    | 'schedule_source_version_id'
+    | 'basic_rate_type_id'
+    | 'code'
+    | 'description'
+    | 'unit'
+    | 'rate'
+    | 'status'
   >
 >;
 

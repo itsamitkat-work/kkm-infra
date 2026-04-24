@@ -9,21 +9,22 @@ import {
   FormSelectField,
   FormDrawerHeader,
 } from '@/components/form';
-import type { BasicRate } from '@/app/(app)/basic-rates/api/basic-rate-api';
+import type {
+  BasicRate,
+  UpdateBasicRateInput,
+} from '@/app/(app)/basic-rates/api/basic-rate-api';
 import { useBasicRateTypesQuery } from '@/app/(app)/basic-rates/hooks/use-basic-rate-types-query';
 import {
   useCreateBasicRate,
   useUpdateBasicRate,
 } from '@/app/(app)/basic-rates/hooks/use-basic-rates-mutations';
 import { useBasicRateDistinctUnits } from '@/hooks/use-basic-rate-distinct-units';
-import { toast } from 'sonner';
 import { useAppForm } from '@/hooks/use-app-form';
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import {
   RECORD_STATUS_OPTIONS,
   RECORD_STATUS_FORM_VALUES,
   RecordStatusBadge,
-  isRecordStatus,
   type RecordStatusValue,
 } from '@/components/ui/record-status-badge';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
@@ -158,11 +159,13 @@ export function BasicRatesDrawer({
         if (!basicRate) {
           return;
         }
-        await updateBasicRateMutation.mutateAsync({
+        const { rate, ...restPatch } = patch;
+        const updateInput: UpdateBasicRateInput = {
           id: basicRate.id,
-          ...patch,
-          rate: Number(patch.rate),
-        });
+          ...restPatch,
+          ...(rate !== undefined ? { rate: Number(rate) } : {}),
+        };
+        await updateBasicRateMutation.mutateAsync(updateInput);
         onSubmit();
       } catch (error) {
         console.error('Error submitting form:', error);

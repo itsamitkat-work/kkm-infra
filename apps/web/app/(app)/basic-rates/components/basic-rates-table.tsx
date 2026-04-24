@@ -138,7 +138,9 @@ export function BasicRatesTable() {
           <TableErrorState
             title='Failed to load basic rates'
             message={basicRatesQuery.error?.message || 'An error occurred'}
-            onRetry={() => window.location.reload()}
+            onRetry={() => {
+              void basicRatesQuery.refetch();
+            }}
           />
         }
         stickyContext='page'

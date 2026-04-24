@@ -56,7 +56,19 @@ export function DataTableBody<T extends WithId>({
 }) {
   const { isLoading, error } = query;
 
-  const hasFilters = controls.filters.length > 0 || !!controls.search;
+  const hasFilters =
+    controls.search.trim().length > 0 ||
+    controls.filters.some((filter) => {
+      if (filter.operator === 'empty' || filter.operator === 'not_empty') {
+        return true;
+      }
+      return filter.values.some((value) => {
+        if (typeof value === 'string') {
+          return value.trim().length > 0;
+        }
+        return value !== null && value !== undefined;
+      });
+    });
 
   const handleClearFilters = React.useCallback(() => {
     controls.setSearch('');
