@@ -44,17 +44,21 @@ import { useAppForm, type ExtendEditPatchContext } from '@/hooks/use-app-form';
 import { fetchScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 import type { OpenCloseMode } from '@/hooks/use-open-close';
+import type {
+  ClientDetail,
+  ClientsListRow,
+  ClientScheduleAssignment,
+} from '@/app/(app)/clients/api/client-api';
 import {
   parseClientAddresses,
   parseClientContacts,
   parseClientMeta,
-  type ClientsListRow,
-  type ClientDetail,
-  type ClientScheduleAssignment,
-  useClient,
+} from '@/app/(app)/clients/api/client-meta';
+import { useClient } from '@/app/(app)/clients/hooks/use-client-detail-query';
+import {
   useCreateClient,
   useUpdateClient,
-} from '@/hooks/useClients';
+} from '@/app/(app)/clients/hooks/use-clients-mutations';
 import type { ClientAddress, ClientContact, ClientMeta } from '@/types/clients';
 import { CLIENT_DB_STATUS } from '@/types/clients';
 

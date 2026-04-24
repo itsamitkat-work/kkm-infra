@@ -1,4 +1,6 @@
-import { fetchClients } from '@/hooks/useClients';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+
+import { fetchClients } from '@/app/(app)/clients/api/client-api';
 
 type ClientComboboxOption = {
   value: string;
@@ -15,7 +17,7 @@ async function fetchClientOptions(
   page = 1
 ): Promise<ClientOptionsResponse> {
   const pageSize = 20;
-  const response = await fetchClients({
+  const response = await fetchClients(createSupabaseBrowserClient(), {
     search: search.trim(),
     page,
     pageSize,

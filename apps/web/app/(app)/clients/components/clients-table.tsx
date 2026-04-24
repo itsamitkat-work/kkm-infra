@@ -10,12 +10,12 @@ import { Button } from '@/components/ui/button';
 import { useOpenClose } from '@/hooks/use-open-close';
 import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { useAuth } from '@/hooks/auth';
+import type { ClientsListRow } from '@/app/(app)/clients/api/client-api';
 import {
   CLIENTS_TABLE_ID,
   useClientsQuery,
-  useDeleteClient,
-  type ClientsListRow,
-} from '@/hooks/useClients';
+} from '@/app/(app)/clients/hooks/use-clients-query';
+import { useDeleteClient } from '@/app/(app)/clients/hooks/use-clients-mutations';
 import { getColumns } from './clients-columns';
 import { defaultClientTableFilters, filterFields } from './client-filters';
 import { ClientDrawer } from './client-drawer';

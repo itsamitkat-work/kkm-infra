@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import type { ClientsListRow } from '@/hooks/useClients';
+import type { ClientsListRow } from '@/app/(app)/clients/api/client-api';
 import {
   DropdownMenu,
   DropdownMenuContent,

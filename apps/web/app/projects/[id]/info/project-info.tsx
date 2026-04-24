@@ -20,8 +20,9 @@ import type {
   ProjectsListRow,
 } from '@/hooks/useProjects';
 import { parseProjectMeta, projectDetailToListRow } from '@/hooks/useProjects';
-import { parseClientAddresses, useClient } from '@/hooks/useClients';
-import { billingSummaryForIndex } from '@/lib/clients/address-display';
+import { parseClientAddresses } from '@/app/(app)/clients/api/client-meta';
+import { useClient } from '@/app/(app)/clients/hooks/use-client-detail-query';
+import { billingSummaryForIndex } from '@/lib/client-address-display';
 import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
 import {
   PROJECT_TEAM_ESTIMATION_ROLES,

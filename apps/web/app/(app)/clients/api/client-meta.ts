@@ -10,17 +10,25 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 }
 
 function asTrimmedString(value: unknown): string | null {
-  if (typeof value !== 'string') return null;
+  if (typeof value !== 'string') {
+    return null;
+  }
   const trimmed = value.trim();
   return trimmed.length > 0 ? trimmed : null;
 }
 
 export function parseClientMeta(meta: Json | null | undefined): ClientMeta {
-  if (!isPlainObject(meta)) return {};
+  if (!isPlainObject(meta)) {
+    return {};
+  }
   const out: ClientMeta = {};
-  if ('notes' in meta) out.notes = asTrimmedString(meta.notes);
+  if ('notes' in meta) {
+    out.notes = asTrimmedString(meta.notes);
+  }
   for (const [key, value] of Object.entries(meta)) {
-    if (key === 'notes') continue;
+    if (key === 'notes') {
+      continue;
+    }
     out[key] = value;
   }
   return out;
@@ -32,7 +40,9 @@ export function buildClientMetaPatch(
 ): Json {
   const baseObj = isPlainObject(base) ? { ...base } : {};
   for (const [key, value] of Object.entries(patch)) {
-    if (value === undefined) continue;
+    if (value === undefined) {
+      continue;
+    }
     if (value === null || value === '') {
       delete baseObj[key];
       continue;
@@ -42,11 +52,17 @@ export function buildClientMetaPatch(
   return baseObj as Json;
 }
 
-export function parseClientAddresses(value: Json | null | undefined): ClientAddress[] {
-  if (!Array.isArray(value)) return [];
+export function parseClientAddresses(
+  value: Json | null | undefined
+): ClientAddress[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
   const out: ClientAddress[] = [];
   for (const entry of value) {
-    if (!isPlainObject(entry)) continue;
+    if (!isPlainObject(entry)) {
+      continue;
+    }
     out.push({
       line1: asTrimmedString(entry.line1),
       line2: asTrimmedString(entry.line2),
@@ -61,11 +77,17 @@ export function parseClientAddresses(value: Json | null | undefined): ClientAddr
   return out;
 }
 
-export function parseClientContacts(value: Json | null | undefined): ClientContact[] {
-  if (!Array.isArray(value)) return [];
+export function parseClientContacts(
+  value: Json | null | undefined
+): ClientContact[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
   const out: ClientContact[] = [];
   for (const entry of value) {
-    if (!isPlainObject(entry)) continue;
+    if (!isPlainObject(entry)) {
+      continue;
+    }
     out.push({
       position: asTrimmedString(entry.position),
       name: asTrimmedString(entry.name),

@@ -21,15 +21,14 @@ import { DrawerContentContainer } from '@/components/drawer/drawer-content-conta
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
 import { fetchClientOptions } from '../api/project-client-api';
-import {
-  fetchClientDetail,
-  parseClientAddresses,
-  useClient,
-} from '@/hooks/useClients';
+import { fetchClientDetail } from '@/app/(app)/clients/api/client-api';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import { parseClientAddresses } from '@/app/(app)/clients/api/client-meta';
+import { useClient } from '@/app/(app)/clients/hooks/use-client-detail-query';
 import {
   billingAddressSelectOptions,
   billingSummaryForIndex,
-} from '@/lib/clients/address-display';
+} from '@/lib/client-address-display';
 import {
   projectStatusDisplayLabel,
   getStatusConfig,
@@ -514,7 +513,10 @@ export function ProjectDrawer({
       try {
         const cid = values.client.id?.trim();
         if (cid) {
-          const clientRow = await fetchClientDetail(cid);
+          const clientRow = await fetchClientDetail(
+            createSupabaseBrowserClient(),
+            cid
+          );
           const addrCount = parseClientAddresses(clientRow.addresses).length;
           if (addrCount === 0) {
             toast.error(
