@@ -5,7 +5,10 @@ import {
 } from '@/app/(app)/schedule-items/schedule-item-picker-option';
 import type { ScheduleTreeRow } from '@/app/(app)/schedule-items/types';
 import { ScheduleItemsTree } from '@/app/(app)/schedule-items/schedule-items-tree';
-import type { ItemDescriptionDoc } from '@/app/(app)/schedule-items/item-description-doc';
+import {
+  type ItemDescriptionDoc,
+  flattenItemDescription,
+} from '@/app/(app)/schedule-items/item-description-doc';
 import {
   boqSchedulePickFromProjectBoqRow,
   boqSchedulePickFromTreeLeaf,
@@ -119,8 +122,24 @@ export const MasterItemEditorConfig = ({
     );
   }, [effectiveOption, config, row]);
 
+  const hasPickedOrRowValue = React.useMemo(() => {
+    if (effectiveOption) {
+      return true;
+    }
+    const rowValue = config.getRowValue(row);
+    if (rowValue == null) {
+      return false;
+    }
+    if (typeof rowValue === 'object') {
+      return (
+        flattenItemDescription(rowValue as ItemDescriptionDoc).trim() !== ''
+      );
+    }
+    return String(rowValue).trim() !== '';
+  }, [effectiveOption, config, row]);
+
   return (
-    <div className='w-full min-w-0 max-w-full overflow-x-hidden'>
+    <div className='flex h-full min-h-8 w-full min-w-0 max-w-full flex-col overflow-x-hidden'>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <Button
@@ -128,16 +147,18 @@ export const MasterItemEditorConfig = ({
             variant='ghost'
             autoFocus={autoFocus}
             className={cn(
-              'flex h-auto min-h-8 w-full min-w-0 max-w-full items-center justify-between gap-2 overflow-x-hidden rounded-none border-0 bg-transparent px-2 py-1 text-left text-sm font-normal text-muted-foreground shadow-none ring-offset-0',
-              'hover:bg-muted/40 hover:text-foreground',
-              'focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring',
+              'flex h-full min-h-8 w-full min-w-0 max-w-full items-center justify-between gap-0.5 overflow-x-hidden rounded-none border-0 bg-transparent px-0 py-0 text-left text-sm font-normal text-foreground/90 shadow-none ring-0 ring-offset-0',
+              'hover:bg-transparent hover:text-foreground',
+              'focus-visible:outline-none focus-visible:ring-0',
+              'active:bg-transparent',
               config.triggerClassName
             )}
             aria-label={`${config.searchField === 'code' ? 'Choose item by code' : 'Choose item by name'}. Opens schedule tree.`}
           >
             <span
               className={cn(
-                'min-w-0 flex-1 text-foreground',
+                'min-w-0 flex-1',
+                hasPickedOrRowValue ? 'text-foreground' : 'text-muted-foreground',
                 config.labelClassName === undefined ? 'truncate' : undefined,
                 config.labelClassName
               )}
@@ -145,7 +166,7 @@ export const MasterItemEditorConfig = ({
               {displayLabel}
             </span>
             <ChevronsUpDown
-              className='text-muted-foreground size-4 shrink-0 opacity-60'
+              className='size-3.5 shrink-0 text-muted-foreground opacity-35'
               aria-hidden
             />
           </Button>

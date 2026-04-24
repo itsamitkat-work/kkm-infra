@@ -128,7 +128,7 @@ const codeColumnConfig: MasterItemEditorConfigType = {
   getOnChangeValue: (option: ScheduleItemPickerOption | null) =>
     option?.code ?? '',
   getRowValue: (row) => row.item_code ?? '',
-  triggerClassName: 'justify-center gap-1 px-1',
+  triggerClassName: 'justify-center gap-0.5 px-0',
   labelClassName: cn(
     'max-w-[min(100%,5.5rem)] flex-none truncate text-center tabular-nums',
     HIERARCHY_BODY_CLASS
@@ -159,7 +159,7 @@ const nameColumnConfig: MasterItemEditorConfigType = {
     itemDescriptionFromPlainText(option?.name ?? ''),
   getOptionLabel: (option: ScheduleItemPickerOption) => option.name,
   getRowValue: (row) => row.item_description,
-  triggerClassName: 'items-start py-1.5',
+  triggerClassName: 'items-center py-0',
   labelClassName: cn(
     'min-w-0 flex-1 whitespace-normal break-words text-left text-foreground',
     HIERARCHY_BODY_CLASS
@@ -435,11 +435,11 @@ function ProjectItemsQuantityWithUnitCell({
   }
 
   return (
-    <div className='flex h-auto w-full min-w-0 items-stretch'>
-      <Field className='w-full min-w-0 gap-0'>
+    <div className='flex h-full min-h-8 w-full min-w-0 items-stretch'>
+      <Field className='h-full w-full min-w-0 gap-0'>
         <InputGroup
           variant='ghost'
-          className='w-full rounded-none has-[>[data-align=inline-end]]:[&>input]:!pr-0'
+          className='h-full min-h-8 w-full rounded-none has-[>[data-align=inline-end]]:[&>input]:!px-0 has-[>[data-align=inline-end]]:[&>input]:!pr-0'
         >
           <InputGroupInput
             value={local}
@@ -452,13 +452,13 @@ function ProjectItemsQuantityWithUnitCell({
               debouncedCommit(next);
             }}
             className={cn(
-              '!m-0 !h-auto min-h-0 w-full !rounded-none !border-0 !px-1 !py-0 text-end tabular-nums !shadow-none !ring-0 focus-visible:!border-transparent focus-visible:!outline-none focus-visible:!ring-0',
+              '!m-0 !h-auto min-h-0 w-full !rounded-none !border-0 !px-0 !py-0 text-end tabular-nums !shadow-none !ring-0 focus-visible:!border-transparent focus-visible:!outline-none focus-visible:!ring-0',
               HIERARCHY_BODY_CLASS
             )}
           />
           <InputGroupAddon
             align='inline-end'
-            className='h-auto max-w-[4.5rem] shrink-0 self-stretch border-l border-border/20 !px-1 !py-0 dark:border-border/25'
+            className='h-auto max-w-[4.5rem] shrink-0 self-stretch border-l border-border/20 !px-0.5 !py-0 dark:border-border/25'
           >
             <InputGroupText
               className='truncate text-xs font-medium tabular-nums text-muted-foreground'
@@ -514,10 +514,11 @@ function DebouncedTextCell({
       autoFocus={autoFocus}
       placeholder={placeholder}
       className={cn(
-        'h-auto min-h-8 w-full border-none bg-transparent outline-none ring-0 !px-2 transition-colors',
+        'h-full min-h-8 w-full border-none bg-transparent text-foreground outline-none ring-0 !px-0 transition-none',
+        'placeholder:text-muted-foreground/45 selection:bg-primary/15',
         HIERARCHY_BODY_CLASS,
-        'hover:bg-muted/30 focus:bg-transparent focus:outline-none focus-visible:ring-0',
-        dense ? '!py-0' : '!py-1',
+        'hover:bg-transparent focus:bg-transparent focus:outline-none focus-visible:ring-0',
+        '!py-0',
         className,
         disabled && 'cursor-not-allowed bg-transparent text-muted-foreground'
       )}
@@ -722,7 +723,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           );
         }
         return (
-          <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
+          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
             <DebouncedTextCell
               value={displayValue}
               disabled={disabled}
@@ -764,7 +765,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           );
         }
         return (
-          <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
+          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
             <MasterItemEditorConfig
               row={row.original}
               onChange={(v) => {
@@ -854,7 +855,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           );
         }
         return (
-          <div className='min-w-0 w-full max-w-full overflow-x-hidden'>
+          <div className='flex h-full min-h-8 min-w-0 w-full max-w-full flex-col overflow-x-hidden'>
             <MasterItemEditorConfig
               row={row.original}
               onChange={(v) => {
@@ -866,7 +867,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
         );
       },
       validationSchema: projectItemZodSchema.shape.item_description,
-      className: 'min-w-0 overflow-x-hidden bg-muted/20 align-top',
+      className: 'min-w-0 overflow-x-hidden align-top',
       tableWidthPercent: PROJECT_ITEMS_ITEM_NAME_COL_WIDTH_PCT,
       onChangeUpdateRow: masterItemOnChangeUpdateRow,
     },
@@ -915,7 +916,7 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           );
         }
         return (
-          <div className='flex min-h-8 w-full min-w-0 items-center justify-end px-2'>
+          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-end px-0'>
             <DebouncedTextCell
               value={displayValue}
               disabled={disabled}
@@ -995,16 +996,18 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           );
         }
         return (
-          <DebouncedTextCell
-            value={displayValue}
-            disabled={disabled}
-            dense={tableCtx.dense}
-            placeholder='remark'
-            className='text-center'
-            onCommit={(v) => {
-              tableCtx.commitCell(row.original, colDef, v);
-            }}
-          />
+          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch'>
+            <DebouncedTextCell
+              value={displayValue}
+              disabled={disabled}
+              dense={tableCtx.dense}
+              placeholder='remark'
+              className='text-center'
+              onCommit={(v) => {
+                tableCtx.commitCell(row.original, colDef, v);
+              }}
+            />
+          </div>
         );
       },
       validationSchema: projectItemZodSchema.shape.remark,
@@ -1168,8 +1171,7 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
           const frameEditorCell =
             !isDisabled && PROJECT_ITEMS_EDITOR_CELL_IDS.has(columnId);
 
-          const showFocusWithinStyle =
-            frameEditorCell && columnId !== 'contract_quantity';
+          const showFocusWithinStyle = frameEditorCell;
 
           const isNewRowPlainCell = rowData.is_new && !isDisabled && !errorMsg;
 
@@ -1186,9 +1188,9 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
                     'relative !border !p-0 align-middle transition-[background-color,box-shadow,border-color] duration-150',
                     !isLastVisibleCell &&
                       rowData.is_new &&
-                      "after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-[2] after:block after:w-px after:bg-border/75 after:content-['']",
+                      "after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-0 after:block after:w-px after:bg-border/75 after:content-['']",
                     frameEditorCell &&
-                      'rounded-none border-input bg-background shadow-xs',
+                      'rounded-none border-border/55 bg-transparent shadow-none dark:border-border/45',
                     !frameEditorCell &&
                       (isNewRowPlainCell
                         ? 'border-border/70 shadow-none'
@@ -1204,7 +1206,7 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
                       !(isDirty && !rowData.is_new) &&
                       !rowData.is_new &&
                       frameEditorCell &&
-                      'hover:border-input/80',
+                      'hover:border-border/85 hover:bg-muted/25 dark:hover:bg-muted/20',
                     resolvedClass,
                     errorMsg &&
                       'bg-destructive/15 shadow-[inset_0_0_0_1px] shadow-destructive/35 dark:bg-destructive/20',
@@ -1218,13 +1220,14 @@ function ProjectItemsTableRowView({ row }: { row: Row<ProjectItemRowType> }) {
                     isDisabled &&
                       '!bg-muted/90 !text-muted-foreground dark:!bg-muted/30',
                     showFocusWithinStyle &&
-                      'focus-within:z-[1] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/25'
+                      'isolate focus-within:z-30 focus-within:bg-background focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary/85 focus-within:ring-offset-0 dark:focus-within:ring-primary/75'
                   )}
                   style={style}
                 >
                   <div
                     className={cn(
                       'flex w-full min-w-0',
+                      frameEditorCell && 'h-full min-h-8',
                       isSelectColumn ||
                         columnId === PROJECT_ITEMS_REORDER_COLUMN_ID
                         ? 'items-center justify-center'
@@ -1614,7 +1617,7 @@ function ProjectItemsDataTable({
   }
 
   return (
-    <div className='space-y-4' ref={tableContainerRef}>
+    <div className='space-y-0' ref={tableContainerRef}>
       <div className='flex flex-col gap-3'>
         <div className='flex flex-wrap items-center gap-3 pb-3'>
           {toolbarTitle != null ? (
@@ -1653,8 +1656,10 @@ function ProjectItemsDataTable({
 
       <div className='overflow-hidden rounded-lg border'>
         <UITable
-          className={cn('dense table-fixed w-full min-w-0 max-w-full')}
-          containerClassName='max-h-[65vh] overflow-x-auto overflow-y-auto'
+          className={cn(
+            'dense border-separate border-spacing-0 table-fixed w-full min-w-0 max-w-full'
+          )}
+          containerClassName='max-h-[76vh] overflow-x-auto overflow-y-auto'
         >
           <TableHeader className='sticky top-[0px] z-20  bg-slate-100 shadow-sm dark:bg-slate-900'>
             <TableRow className='border-b-0 bg-transparent hover:bg-slate-200/40 dark:hover:bg-slate-800/50'>
