@@ -36,6 +36,7 @@ export function getPrnFilterFields(
           label: 'Date Range',
           type: 'daterange',
           required: false,
+          showOperatorDropdown: true,
         },
       ],
     },

@@ -62,6 +62,7 @@ export default function FiltersDemo() {
           type: 'text',
           icon: <Type />,
           placeholder: 'Search text...',
+          showOperatorDropdown: true,
         },
         {
           key: 'email',
@@ -69,6 +70,7 @@ export default function FiltersDemo() {
           type: 'email',
           icon: <Mail />,
           placeholder: 'user@example.com',
+          showOperatorDropdown: true,
         },
         {
           key: 'website',
@@ -77,6 +79,7 @@ export default function FiltersDemo() {
           type: 'url',
           className: 'w-40',
           placeholder: 'https://example.com',
+          showOperatorDropdown: true,
         },
         {
           key: 'phone',
@@ -85,12 +88,14 @@ export default function FiltersDemo() {
           type: 'tel',
           className: 'w-40',
           placeholder: '+1 (123) 456-7890',
+          showOperatorDropdown: true,
         },
         {
           key: 'isActive',
           label: 'Is active ?',
           icon: <CheckCircle />,
           type: 'boolean',
+          showOperatorDropdown: true,
         },
       ],
     },
@@ -134,6 +139,7 @@ export default function FiltersDemo() {
           type: 'multiselect',
           className: 'w-[180px]',
           selectedOptionsClassName: '-space-x-1',
+          showOperatorDropdown: true,
           options: [
             {
               value: 'low',
@@ -168,6 +174,7 @@ export default function FiltersDemo() {
           icon: <UserRoundCheck />,
           type: 'multiselect',
           maxSelections: 5,
+          showOperatorDropdown: true,
           options: [
             {
               value: 'john',
@@ -227,6 +234,7 @@ export default function FiltersDemo() {
           icon: <Calendar />,
           type: 'date',
           className: 'w-36',
+          showOperatorDropdown: true,
         },
         {
           key: 'orderDate',
@@ -249,18 +257,21 @@ export default function FiltersDemo() {
           label: 'Date Range',
           icon: <Calendar />,
           type: 'daterange',
+          showOperatorDropdown: true,
         },
         {
           key: 'createdAt',
           label: 'Created At',
           icon: <Clock />,
           type: 'datetime',
+          showOperatorDropdown: true,
         },
         {
           key: 'workingHours',
           label: 'Working Hours',
           icon: <Timer />,
           type: 'time',
+          showOperatorDropdown: true,
         },
       ],
     },
@@ -275,6 +286,7 @@ export default function FiltersDemo() {
           min: 0,
           max: 100,
           step: 1,
+          showOperatorDropdown: true,
         },
         {
           key: 'salary',
@@ -286,6 +298,7 @@ export default function FiltersDemo() {
           min: 0,
           max: 500000,
           step: 1000,
+          showOperatorDropdown: true,
         },
         {
           key: 'completion',
@@ -295,13 +308,14 @@ export default function FiltersDemo() {
           suffix: '%',
           type: 'number',
           step: 5,
+          showOperatorDropdown: true,
         },
       ],
     },
   ];
 
   const [filters, setFilters] = useState<Filter[]>([
-    createFilter('priority', 'contains', ['low', 'medium', 'critical']),
+    createFilter('priority', 'is_any_of', ['low', 'medium', 'critical']),
   ]);
 
   const handleFiltersChange = useCallback((filters: Filter[]) => {

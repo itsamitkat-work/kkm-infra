@@ -23,7 +23,6 @@ import {
 export const getColumns = (
   onBasicRateAction: (basicRate: BasicRate, mode: 'edit' | 'read') => void,
   onDeleteBasicRate: (id: string) => void,
-  onSelectMaterial: ((basicRate: BasicRate) => void) | undefined,
   canManage: boolean
 ): ColumnDef<BasicRate>[] => [
   {
@@ -35,7 +34,7 @@ export const getColumns = (
       <TextCell
         label={row.original.code || '—'}
         onClick={() => {
-          onBasicRateAction(row.original, 'read');
+          onBasicRateAction(row.original, canManage ? 'edit' : 'read');
         }}
         emphasis
         className='pl-2'
@@ -58,13 +57,6 @@ export const getColumns = (
       <TextCell
         label={row.original.description || '—'}
         variant='description'
-        onClick={
-          onSelectMaterial
-            ? () => {
-                onSelectMaterial(row.original);
-              }
-            : undefined
-        }
         muted={false}
       />
     ),

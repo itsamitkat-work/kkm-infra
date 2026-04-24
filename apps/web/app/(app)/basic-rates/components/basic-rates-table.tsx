@@ -22,15 +22,8 @@ import { getBasicRatesFilterFields } from './basic-rates-filters';
 import { createFilter } from '@/components/ui/filters';
 import { BasicRatesDrawer } from './basic-rates-drawer';
 import { useAuth } from '@/hooks/auth';
-interface BasicRatesTableProps {
-  onSelectMaterial?: (material: BasicRate) => void;
-  inDialog?: boolean;
-}
 
-export function BasicRatesTable({
-  onSelectMaterial,
-  inDialog,
-}: BasicRatesTableProps = {}) {
+export function BasicRatesTable() {
   const { ability } = useAuth();
   const canManage = ability.can('manage', 'basic_rates');
 
@@ -59,10 +52,9 @@ export function BasicRatesTable({
       getColumns(
         onClickEditOrRead,
         (id) => onClickDeleteRef.current(id),
-        onSelectMaterial,
         canManage
       ),
-    [onClickEditOrRead, onSelectMaterial, canManage]
+    [onClickEditOrRead, canManage]
   );
 
   const defaultFilters = React.useMemo(
@@ -149,15 +141,15 @@ export function BasicRatesTable({
             onRetry={() => window.location.reload()}
           />
         }
-        stickyContext={inDialog ? 'dialog' : 'page'}
+        stickyContext='page'
         actions={
-          inDialog || !canManage
+          !canManage
             ? undefined
             : {
                 end: (
                   <Button onClick={handleCreateBasicRate}>
                     <IconPlus />
-                    <span className='hidden lg:inline'>Create Basic Rate</span>
+                    Create Basic Rate
                   </Button>
                 ),
               }

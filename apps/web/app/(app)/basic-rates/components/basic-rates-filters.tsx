@@ -7,7 +7,7 @@ import { SlidersHorizontal } from 'lucide-react';
 
 export function getBasicRatesFilterFields(
   typeOptions: Array<{ value: string; label: string }>,
-  scheduleOptions: Array<{ value: string; label: string }>,
+  scheduleOptions: Array<{ value: string; label: string }>
 ): FilterFieldConfig[] {
   return [
     {

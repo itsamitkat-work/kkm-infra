@@ -69,6 +69,7 @@ export function getAttendanceReportFilterFields(
           label: 'Date Range',
           type: 'daterange',
           icon: <Calendar className='h-4 w-4' />,
+          showOperatorDropdown: true,
         },
         {
           key: 'projectHead',

@@ -751,7 +751,11 @@ export interface FilterFieldConfig<T = unknown> {
   // Field-specific options
   options?: FilterOption<T>[];
   operators?: FilterOperator[];
-  hideOperatorDropdown?: boolean;
+  /**
+   * When true, shows the operator dropdown (is / contains / between, etc.).
+   * Omit or false for plain select-style filters (default).
+   */
+  showOperatorDropdown?: boolean;
   customRenderer?: (props: CustomRendererProps<T>) => React.ReactNode;
   customValueRenderer?: (
     values: T[],
@@ -980,7 +984,7 @@ function FilterOperatorDropdown<T = unknown>({
     field.disabled ||
     (operators.length === 1 && operators[0].value === operator);
 
-  if (field.hideOperatorDropdown) {
+  if (!field.showOperatorDropdown) {
     return null;
   }
 

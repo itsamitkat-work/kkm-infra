@@ -24,6 +24,7 @@ export const filterFields: FilterFieldConfig[] = [
     key: 'plannedQty',
     label: 'Planned Qty',
     type: 'number',
+    showOperatorDropdown: true,
   },
 ];
 

@@ -208,11 +208,6 @@ export function BasicRatesDrawer({
     form.reset(getDefaultValues());
   }, [basicRate?.id, mode, getDefaultValues, form]);
 
-  const scheduleNote =
-    basicRate?.schedule_source_versions?.display_name ??
-    basicRate?.schedule_source_versions?.name ??
-    '—';
-
   return (
     <DrawerWrapper open={open} onClose={onCancel}>
       <FormDrawerHeader
@@ -235,119 +230,75 @@ export function BasicRatesDrawer({
       <DrawerContentContainer>
         <form id='basic-rate-form' onSubmit={form.submit}>
           <FieldGroupDense>
-            <BasicInformationSection
-              control={form.control}
-              readOnly={isRead}
-              isCreate={mode === 'create'}
-              typeOptions={typeSelectOptions}
-              scheduleOptions={scheduleSelectOptions}
-              scheduleLabel={scheduleNote}
-            />
-            <RateInformationSection control={form.control} readOnly={isRead} />
+            <FieldSet>
+              <FormSelectField
+                control={form.control}
+                name='schedule_source_version_id'
+                label='Schedule'
+                placeholder='Select schedule'
+                options={scheduleSelectOptions}
+                required
+                readOnly={isRead || mode !== 'create'}
+              />
+
+              <FormInputField
+                control={form.control}
+                name='code'
+                label='Code'
+                placeholder='Enter code'
+                required
+                readOnly={isRead}
+              />
+
+              <FormInputField
+                control={form.control}
+                name='description'
+                label='Description'
+                placeholder='Enter description'
+                required
+                readOnly={isRead}
+              />
+
+              <FormSelectField
+                control={form.control}
+                name='basic_rate_type_id'
+                label='Type'
+                placeholder='Select type'
+                options={typeSelectOptions}
+                required
+                readOnly={isRead}
+              />
+
+              <FormSelectField
+                control={form.control}
+                name='status'
+                label='Status'
+                placeholder='Select status'
+                options={RECORD_STATUS_OPTIONS}
+                required
+                readOnly={isRead}
+                renderOption={recordStatusSelectOption}
+                renderValue={recordStatusSelectValue}
+              />
+            </FieldSet>
+
+            <FieldSet>
+              <FormInputField
+                control={form.control}
+                name='rate'
+                label='Rate'
+                placeholder='Enter rate'
+                required
+                type='number'
+                readOnly={isRead}
+              />
+
+              <UnitField control={form.control} readOnly={isRead} />
+            </FieldSet>
           </FieldGroupDense>
         </form>
       </DrawerContentContainer>
     </DrawerWrapper>
-  );
-}
-
-const BasicInformationSection = React.memo(
-  ({
-    control,
-    readOnly,
-    isCreate,
-    typeOptions,
-    scheduleOptions,
-    scheduleLabel,
-  }: {
-    control: Control<BasicRateFormValues>;
-    readOnly: boolean;
-    isCreate: boolean;
-    typeOptions: Array<{ value: string; label: string }>;
-    scheduleOptions: Array<{ value: string; label: string }>;
-    scheduleLabel: string;
-  }) => (
-    <FieldSet>
-      {isCreate ? (
-        <FormSelectField
-          control={control}
-          name='schedule_source_version_id'
-          label='Schedule'
-          placeholder='Select schedule'
-          options={scheduleOptions}
-          required
-          readOnly={readOnly}
-        />
-      ) : (
-        <p className='text-muted-foreground text-sm'>
-          Schedule: {scheduleLabel}
-        </p>
-      )}
-
-      <FormInputField
-        control={control}
-        name='code'
-        label='Code'
-        placeholder='Enter code'
-        required
-        readOnly={readOnly}
-      />
-
-      <FormInputField
-        control={control}
-        name='description'
-        label='Description'
-        placeholder='Enter description'
-        required
-        readOnly={readOnly}
-      />
-
-      <FormSelectField
-        control={control}
-        name='basic_rate_type_id'
-        label='Type'
-        placeholder='Select type'
-        options={typeOptions}
-        required
-        readOnly={readOnly}
-      />
-
-      <FormSelectField
-        control={control}
-        name='status'
-        label='Status'
-        placeholder='Select status'
-        options={RECORD_STATUS_OPTIONS}
-        required
-        readOnly={readOnly}
-        renderOption={recordStatusSelectOption}
-        renderValue={recordStatusSelectValue}
-      />
-    </FieldSet>
-  )
-);
-
-function RateInformationSection({
-  control,
-  readOnly,
-}: {
-  control: Control<BasicRateFormValues>;
-  readOnly: boolean;
-}) {
-  return (
-    <FieldSet>
-      <FormInputField
-        control={control}
-        name='rate'
-        label='Rate'
-        placeholder='Enter rate'
-        required
-        type='number'
-        readOnly={readOnly}
-      />
-
-      <UnitField control={control} readOnly={readOnly} />
-    </FieldSet>
   );
 }
 
@@ -443,5 +394,3 @@ function UnitField({
     </Field>
   );
 }
-
-BasicInformationSection.displayName = 'BasicInformationSection';
