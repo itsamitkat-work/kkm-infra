@@ -74,6 +74,7 @@ export function DataTable<T extends WithId>({
   showIndexColumn = false,
   showSearch = true,
   showFilters = true,
+  filtersInlineWithSearch = false,
   showFilterAddButton = true,
   showFilterClearButton = true,
   showTotalBadge = true,
@@ -105,6 +106,8 @@ export function DataTable<T extends WithId>({
   showIndexColumn?: boolean;
   showSearch?: boolean;
   showFilters?: boolean;
+  /** When true, filter controls render on the same row as the search input (after it). */
+  filtersInlineWithSearch?: boolean;
   showFilterAddButton?: boolean;
   showFilterClearButton?: boolean;
   showTotalBadge?: boolean;
@@ -264,12 +267,21 @@ export function DataTable<T extends WithId>({
             <div
               className={cn(
                 'flex items-center gap-3',
-                !(showSearch || tableName) && 'justify-end'
+                !(
+                  showSearch ||
+                  tableName ||
+                  (showFilters && filtersInlineWithSearch)
+                ) && 'justify-end'
               )}
             >
               {/* Left: Table name + Search */}
-              {(tableName || showSearch) && (
-                <div className='flex shrink-0 items-center gap-2'>
+              {(tableName || showSearch || (showFilters && filtersInlineWithSearch)) && (
+                <div
+                  className={cn(
+                    'flex min-w-0 items-center gap-2',
+                    filtersInlineWithSearch && 'flex-1 flex-wrap'
+                  )}
+                >
                   {tableName && (
                     <>
                       <h3 className='text-sm font-medium text-muted-foreground'>
@@ -291,6 +303,15 @@ export function DataTable<T extends WithId>({
                       kbd={getPlatformSpecificKbd('K')}
                       variant='sm'
                       autoFocus
+                    />
+                  )}
+                  {showFilters && filtersInlineWithSearch && (
+                    <DataTableFilters
+                      controls={controls}
+                      filterFields={filterFields}
+                      showAddButton={showFilterAddButton}
+                      showClearButton={showFilterClearButton}
+                      inline
                     />
                   )}
                 </div>
@@ -320,8 +341,8 @@ export function DataTable<T extends WithId>({
               </div>
             </div>
 
-            {/* Row 2: Filters – full width when showFilters; content wraps inside this row */}
-            {showFilters && (
+            {/* Row 2: Filters – full width when not inline with search */}
+            {showFilters && !filtersInlineWithSearch && (
               <div className='w-full'>
                 <DataTableFilters
                   controls={controls}

@@ -1,4 +1,4 @@
-import { type FilterFieldConfig } from '@/components/ui/filters';
+import { type Filter, type FilterFieldsConfig } from '@/components/ui/filters';
 import { IconCalendar, IconCurrencyRupee } from '@tabler/icons-react';
 import { SlidersHorizontal } from 'lucide-react';
 
@@ -15,7 +15,17 @@ const STATUS_FILTER_OPTIONS = [
   { value: 'closed', label: 'Closed', dotClass: 'bg-slate-500' },
 ] as const;
 
-export const filterFields: FilterFieldConfig[] = [
+/** Initial URL/query state: Active only; status stays applied on the projects table. */
+export const defaultProjectTableFilters: Filter[] = [
+  {
+    id: 'project-status-default',
+    field: 'status',
+    operator: 'is_any_of',
+    values: ['active'],
+  },
+];
+
+export const filterFields: FilterFieldsConfig = [
   {
     group: 'Filters',
     fields: [
@@ -24,6 +34,7 @@ export const filterFields: FilterFieldConfig[] = [
         label: 'Status',
         icon: <SlidersHorizontal />,
         type: 'multiselect',
+        required: true,
         className: 'w-[180px]',
         selectedOptionsClassName: '-space-x-1',
         options: STATUS_FILTER_OPTIONS.map(({ value, label, dotClass }) => ({
@@ -31,24 +42,6 @@ export const filterFields: FilterFieldConfig[] = [
           label,
           icon: STATUS_ICON(dotClass),
         })),
-      },
-      {
-        key: 'dosRange',
-        label: 'DOS',
-        icon: <IconCalendar />,
-        type: 'daterange',
-      },
-      {
-        key: 'docRange',
-        label: 'DOC',
-        icon: <IconCalendar />,
-        type: 'daterange',
-      },
-      {
-        key: 'amount',
-        label: 'Amount',
-        icon: <IconCurrencyRupee />,
-        type: 'number',
       },
     ],
   },

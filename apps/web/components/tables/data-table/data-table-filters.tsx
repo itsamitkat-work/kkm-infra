@@ -14,23 +14,28 @@ export function DataTableFilters({
   showAddButton = true,
   showClearButton = true,
   className,
+  inline = false,
 }: {
   filterFields: FilterFieldsConfig;
   controls: DataTableControls;
   showAddButton?: boolean;
   showClearButton?: boolean;
   className?: string;
+  /** Single row with search: no full-width grow, sits after search input. */
+  inline?: boolean;
 }) {
   const { filters, handleFiltersChange } = controls;
 
   return (
     <div
       className={cn(
-        'flex items-start gap-2.5 grow space-y-6 self-start content-start flex-wrap',
+        inline
+          ? 'flex shrink-0 items-center gap-2 min-w-0'
+          : 'flex items-start gap-2.5 grow space-y-6 self-start content-start flex-wrap',
         className
       )}
     >
-      <div className='flex-1 mb-0'>
+      <div className={cn(!inline && 'flex-1 mb-0')}>
         <Filters
           filters={filters}
           fields={filterFields || []}

@@ -14,7 +14,10 @@ import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
 import { useDeleteProject } from '@/hooks/projects/use-project-mutations';
 import { getColumns } from './projects-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
-import { filterFields } from './project-filters';
+import {
+  defaultProjectTableFilters,
+  filterFields,
+} from './project-filters';
 import {
   PROJECTS_TABLE_ID,
   useProjectsQuery,
@@ -86,7 +89,10 @@ export function ProjectsTable() {
     ]
   );
 
-  const controls = useDataTableControls(PROJECTS_TABLE_ID);
+  const controls = useDataTableControls(
+    PROJECTS_TABLE_ID,
+    defaultProjectTableFilters
+  );
 
   const { query: projectsQuery, invalidate: invalidateProjectsQuery } =
     useProjectsQuery({
@@ -118,6 +124,9 @@ export function ProjectsTable() {
         query={projectsQuery}
         controls={controls}
         filterFields={filterFields}
+        filtersInlineWithSearch
+        showFilterAddButton
+        showFilterClearButton={false}
         columns={columns}
         searchPlaceholder='Search by Project Name...'
         emptyState={{

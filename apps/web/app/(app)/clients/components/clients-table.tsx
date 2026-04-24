@@ -17,7 +17,10 @@ import {
   type ClientsListRow,
 } from '@/hooks/useClients';
 import { getColumns } from './clients-columns';
-import { filterFields } from './client-filters';
+import {
+  defaultClientTableFilters,
+  filterFields,
+} from './client-filters';
 import { ClientDrawer } from './client-drawer';
 
 export function ClientsTable() {
@@ -85,7 +88,10 @@ export function ClientsTable() {
     [onClickEditOrRead, onClickCopy, openClientFromRow, permissionFlags]
   );
 
-  const controls = useDataTableControls(CLIENTS_TABLE_ID);
+  const controls = useDataTableControls(
+    CLIENTS_TABLE_ID,
+    defaultClientTableFilters
+  );
 
   const { query: clientsQuery, invalidate: invalidateClientsQuery } =
     useClientsQuery({
@@ -118,6 +124,9 @@ export function ClientsTable() {
         controls={controls}
         filterFields={filterFields}
         columns={columns}
+        filtersInlineWithSearch
+        showFilterAddButton={false}
+        showFilterClearButton={false}
         searchPlaceholder='Search by display name or full name…'
         emptyState={{
           itemType: 'client',
