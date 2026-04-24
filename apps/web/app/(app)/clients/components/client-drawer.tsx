@@ -414,10 +414,6 @@ export function ClientDrawer({
     submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
-    mode: 'all',
-    onEmptyPatch: isEdit
-      ? () => toast.message('No changes to save')
-      : undefined,
     extendEditPatch: isEdit ? extendClientSchedulesDirtyPatch : undefined,
     onCreate: async (values) => {
       try {

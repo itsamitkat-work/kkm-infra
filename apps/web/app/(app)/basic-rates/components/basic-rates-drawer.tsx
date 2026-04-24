@@ -137,10 +137,6 @@ export function BasicRatesDrawer({
     submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
-    mode: 'all',
-    onEmptyPatch: isEdit
-      ? () => toast.message('No changes to save')
-      : undefined,
     onCreate: async (values) => {
       try {
         await createBasicRateMutation.mutateAsync({
@@ -162,21 +158,10 @@ export function BasicRatesDrawer({
         if (!basicRate) {
           return;
         }
-        const patchRecord: Record<string, unknown> = { ...patch };
-        if (patchRecord.rate != null) {
-          patchRecord.rate = Number(patchRecord.rate);
-        }
-        if (patchRecord.status != null) {
-          const statusStr = String(patchRecord.status);
-          if (!isRecordStatus(statusStr)) {
-            toast.error('Invalid status.');
-            return;
-          }
-          patchRecord.status = statusStr;
-        }
         await updateBasicRateMutation.mutateAsync({
           id: basicRate.id,
-          ...patchRecord,
+          ...patch,
+          rate: Number(patch.rate),
         });
         onSubmit();
       } catch (error) {

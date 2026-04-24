@@ -10,6 +10,7 @@ import {
   type UseFormProps,
   type UseFormReturn,
 } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { buildDirtyPatch } from '@/lib/rhf-dirty-patch';
 
@@ -22,6 +23,12 @@ export type ExtendEditPatchContext<T extends FieldValues> = {
   registeredDefaultValues: Partial<T> | undefined;
 };
 
+/**
+ * App form wrapper around `useForm`.
+ * Defaults: React Hook Form `mode` is `'all'`; in `submitMode: 'edit'`, empty
+ * dirty patches show `toast.message('No changes to save')` unless `onEmptyPatch`
+ * is set (use a no-op to silence).
+ */
 export type UseAppFormParams<T extends FieldValues> = Omit<
   UseFormProps<T>,
   'defaultValues'
@@ -29,7 +36,7 @@ export type UseAppFormParams<T extends FieldValues> = Omit<
   /**
    * create → POST full values via onCreate.
    * edit → PATCH dirty subset via onPatch (unless forceFullUpdate).
-   * Named submitMode so it does not clash with useForm({ mode: 'all' }).
+   * Named submitMode so it does not clash with React Hook Form's `mode`.
    */
   submitMode: AppFormSubmitMode;
   defaultValues: DefaultValues<T>;
@@ -37,7 +44,11 @@ export type UseAppFormParams<T extends FieldValues> = Omit<
   onPatch?: (patch: Partial<T>, full: T) => void | Promise<void>;
   /** edit: ignore dirty map and pass full values as the patch object. */
   forceFullUpdate?: boolean;
-  /** edit: invoked when the computed patch is empty (e.g. toast). */
+  /**
+   * edit: invoked when the computed patch is empty.
+   * Defaults to `toast.message('No changes to save')` when omitted and
+   * `submitMode` is `'edit'`. Pass a no-op to silence.
+   */
   onEmptyPatch?: () => void;
   /** edit: refine patch after buildDirtyPatch (e.g. field-array edge cases). */
   extendEditPatch?: (ctx: ExtendEditPatchContext<T>) => Partial<T>;
@@ -73,11 +84,13 @@ export function useAppForm<T extends FieldValues>(
     onEmptyPatch,
     extendEditPatch,
     beforeSubmit,
+    mode = 'all',
     ...formProps
   } = params;
 
   const form = useForm<T>({
     ...formProps,
+    mode,
     defaultValues,
   });
 
@@ -87,12 +100,20 @@ export function useAppForm<T extends FieldValues>(
       disabled: submitMode === 'create',
     });
 
+  const resolvedOnEmptyPatch =
+    onEmptyPatch ??
+    (submitMode === 'edit'
+      ? () => {
+          toast.message('No changes to save');
+        }
+      : undefined);
+
   const configRef = React.useRef<ConfigRef<T>>({
     submitMode,
     onCreate,
     onPatch,
     forceFullUpdate,
-    onEmptyPatch,
+    onEmptyPatch: resolvedOnEmptyPatch,
     extendEditPatch,
     beforeSubmit,
   });
@@ -101,7 +122,7 @@ export function useAppForm<T extends FieldValues>(
     onCreate,
     onPatch,
     forceFullUpdate,
-    onEmptyPatch,
+    onEmptyPatch: resolvedOnEmptyPatch,
     extendEditPatch,
     beforeSubmit,
   };

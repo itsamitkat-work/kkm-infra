@@ -482,10 +482,6 @@ export function ProjectDrawer({
     submitMode: isEdit ? 'edit' : 'create',
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
-    mode: 'all',
-    onEmptyPatch: isEdit
-      ? () => toast.message('No changes to save')
-      : undefined,
     beforeSubmit: async (values) => {
       if (!isEdit && !isSystemAdmin && !tenantId) {
         toast.error('Missing tenant context.');
