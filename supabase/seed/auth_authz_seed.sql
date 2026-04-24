@@ -94,12 +94,6 @@ values
     'KKM Infra',
     'KKM Infra',
     'kkm-infra'
-  ),
-  (
-    'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22',
-    'Test Infra',
-    'Test Infra',
-    'test-infra'
   )
 on conflict (slug) do update
 set
@@ -540,15 +534,6 @@ select public.sync_tenant_member_roles(
 
 select public.sync_tenant_member_roles(
   'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-  'ee222222-2222-4222-8222-222222222202'::uuid,
-  array['tenant_admin']::text[],
-  'tenant_admin',
-  'Tenant admin',
-  null::text
-);
-
-select public.sync_tenant_member_roles(
-  'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22'::uuid,
   'ee222222-2222-4222-8222-222222222202'::uuid,
   array['tenant_admin']::text[],
   'tenant_admin',
