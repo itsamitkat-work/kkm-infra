@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import type { ScheduleSourceRow } from '@/hooks/schedules/use-schedule-sources';
+import type { ScheduleSourceRow } from '@/app/(app)/schedules/api/schedule-sources-api';
 import {
   DropdownMenu,
   DropdownMenuContent,

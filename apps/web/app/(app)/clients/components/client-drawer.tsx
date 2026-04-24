@@ -41,7 +41,8 @@ import { Label } from '@/components/ui/label';
 import { FieldSet, FieldLegend, FieldSeparator } from '@/components/ui/field';
 import { FieldGroupDense } from '@/components/field-group-dense';
 import { useAppForm, type ExtendEditPatchContext } from '@/hooks/use-app-form';
-import { fetchScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
+import { fetchScheduleSourcesList } from '@/app/(app)/schedules/api/schedule-sources-api';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 import type { OpenCloseMode } from '@/hooks/use-open-close';
 import type {
@@ -968,7 +969,12 @@ function AddScheduleCombobox({
 
   const { data: rows = [], isFetching } = useQuery({
     queryKey: ['client-schedule-picker', debouncedSearchTerm] as const,
-    queryFn: () => fetchScheduleSourcesList(debouncedSearchTerm),
+    queryFn: ({ signal }) =>
+      fetchScheduleSourcesList(
+        createSupabaseBrowserClient(),
+        debouncedSearchTerm,
+        signal
+      ),
     enabled: open,
     staleTime: 30 * 1000,
   });

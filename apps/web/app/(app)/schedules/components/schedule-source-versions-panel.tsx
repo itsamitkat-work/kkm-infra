@@ -11,12 +11,12 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import type { ScheduleSourceRow } from '@/hooks/schedules/use-schedule-sources';
-import { useScheduleSourceVersionsBySourceId } from '@/hooks/schedules/use-schedule-source-versions-by-source';
-import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versions';
+import type { ScheduleSourceRow } from '@/app/(app)/schedules/api/schedule-sources-api';
+import type { ScheduleSourceVersionRow } from '@/app/(app)/schedules/api/schedule-source-versions-api';
+import { useScheduleSourceVersionsBySourceId } from '@/app/(app)/schedules/hooks/use-schedule-source-versions-by-source-query';
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 import { ScheduleSourceVersionDialog } from './schedule-source-version-dialog';
-import { useDeleteScheduleSourceVersion } from '@/hooks/schedules/use-schedule-source-mutations';
+import { useDeleteScheduleSourceVersion } from '@/app/(app)/schedules/hooks/use-schedule-source-mutations';
 import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import {

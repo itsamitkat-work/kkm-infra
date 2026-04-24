@@ -20,7 +20,7 @@ import {
 } from '@/app/(app)/basic-rates/hooks/use-basic-rates-mutations';
 import { useBasicRateDistinctUnits } from '@/hooks/use-basic-rate-distinct-units';
 import { useAppForm } from '@/hooks/use-app-form';
-import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
+import { useScheduleVersionOptions } from '@/app/(app)/schedules/hooks/use-schedule-source-versions-query';
 import {
   RECORD_STATUS_OPTIONS,
   RECORD_STATUS_FORM_VALUES,

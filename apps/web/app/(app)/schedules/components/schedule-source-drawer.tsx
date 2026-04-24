@@ -11,11 +11,11 @@ import {
   FormDrawerHeader,
   FormSection,
 } from '@/components/form';
-import type { ScheduleSourceRow } from '@/hooks/schedules/use-schedule-sources';
+import type { ScheduleSourceRow } from '@/app/(app)/schedules/api/schedule-sources-api';
 import {
   useCreateScheduleSource,
   useUpdateScheduleSource,
-} from '@/hooks/schedules/use-schedule-source-mutations';
+} from '@/app/(app)/schedules/hooks/use-schedule-source-mutations';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { OpenCloseMode } from '@/hooks/use-open-close';

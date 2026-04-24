@@ -118,7 +118,7 @@ function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
 export {
   useScheduleSourceVersions,
   SCHEDULE_SOURCE_VERSIONS_QUERY_KEY as SCHEDULE_VERSIONS_QUERY_KEY,
-} from '@/hooks/use-schedule-source-versions';
+} from '@/app/(app)/schedules/hooks/use-schedule-source-versions-query';
 
 export const SCHEDULE_TREE_ROOTS_QUERY_KEY = ['schedule_tree_roots'] as const;
 

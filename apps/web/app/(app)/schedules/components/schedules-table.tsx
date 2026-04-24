@@ -5,11 +5,11 @@ import * as React from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
-import type { ScheduleSourceRow } from '@/hooks/schedules/use-schedule-sources';
+import type { ScheduleSourceRow } from '@/app/(app)/schedules/api/schedule-sources-api';
 import {
   SCHEDULE_SOURCES_TABLE_ID,
   useScheduleSourcesQuery,
-} from '@/hooks/schedules/use-schedule-sources';
+} from '@/app/(app)/schedules/hooks/use-schedule-sources-query';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
 import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
@@ -17,7 +17,7 @@ import { getSchedulesColumns } from './schedules-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
 import { ScheduleSourceDrawer } from './schedule-source-drawer';
 import { useAuth } from '@/hooks/auth';
-import { useDeleteScheduleSource } from '@/hooks/schedules/use-schedule-source-mutations';
+import { useDeleteScheduleSource } from '@/app/(app)/schedules/hooks/use-schedule-source-mutations';
 import { Row } from '@tanstack/react-table';
 import { ScheduleSourceVersionsPanel } from './schedule-source-versions-panel';
 

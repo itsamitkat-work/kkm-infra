@@ -14,11 +14,11 @@ import {
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { FormInputField, FormSelectField } from '@/components/form';
-import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versions';
+import type { ScheduleSourceVersionRow } from '@/app/(app)/schedules/api/schedule-source-versions-api';
 import {
   useCreateScheduleSourceVersion,
   useUpdateScheduleSourceVersion,
-} from '@/hooks/schedules/use-schedule-source-mutations';
+} from '@/app/(app)/schedules/hooks/use-schedule-source-mutations';
 import type { Database } from '@kkm/db';
 
 const RECORD_STATUS_OPTIONS: Array<{

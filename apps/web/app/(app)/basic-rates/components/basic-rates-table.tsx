@@ -12,7 +12,7 @@ import {
 } from '@/app/(app)/basic-rates/hooks/use-basic-rates-query';
 import { useBasicRateTypesQuery } from '@/app/(app)/basic-rates/hooks/use-basic-rate-types-query';
 import { useDeleteBasicRate } from '@/app/(app)/basic-rates/hooks/use-basic-rates-mutations';
-import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
+import { useScheduleVersionOptions } from '@/app/(app)/schedules/hooks/use-schedule-source-versions-query';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
 import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';

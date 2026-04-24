@@ -1,7 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 import type { Database } from '@kkm/db';
-import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versions';
+import type { ScheduleSourceVersionRow } from '@/app/(app)/schedules/api/schedule-source-versions-api';
 import { normalizeError } from '@/lib/supabase/errors';
 import type { PaginationResponse } from '@/types/common';
 

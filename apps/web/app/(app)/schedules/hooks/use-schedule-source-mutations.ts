@@ -5,29 +5,30 @@ import {
   useQueryClient,
   type QueryClient,
 } from '@tanstack/react-query';
+import { toast } from 'sonner';
+
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { resolveSupabaseUserMessage } from '@/lib/supabase/errors';
+
 import {
   scheduleSourceMutationMessages,
   scheduleSourceVersionMutationMessages,
-} from '@/lib/schedules/schedule-mutation-messages';
-import { toast } from 'sonner';
-import type { Database } from '@kkm/db';
-import { SCHEDULE_SOURCES_TABLE_ID } from '@/hooks/schedules/use-schedule-sources';
-import { SCHEDULE_SOURCE_VERSIONS_QUERY_KEY } from '@/hooks/use-schedule-source-versions';
+} from '../api/schedule-mutation-messages';
+import {
+  deleteScheduleSource,
+  deleteScheduleSourceVersion,
+  insertScheduleSource,
+  insertScheduleSourceVersion,
+  updateScheduleSource,
+  updateScheduleSourceVersion,
+  type ScheduleSourcesInsert,
+  type ScheduleSourcesUpdate,
+  type ScheduleSourceVersionsInsert,
+  type ScheduleSourceVersionsUpdate,
+} from '../api/schedule-source-mutations-api';
+import { SCHEDULE_SOURCE_VERSIONS_QUERY_KEY } from '../api/schedule-source-versions-api';
 
-type ScheduleSourcesInsert =
-  Database['public']['Tables']['schedule_sources']['Insert'];
-type ScheduleSourcesUpdate =
-  Database['public']['Tables']['schedule_sources']['Update'];
-type ScheduleSourceVersionsInsert =
-  Database['public']['Tables']['schedule_source_versions']['Insert'];
-type ScheduleSourceVersionsUpdate =
-  Database['public']['Tables']['schedule_source_versions']['Update'];
-
-function getSupabase() {
-  return createSupabaseBrowserClient();
-}
+import { SCHEDULE_SOURCES_QUERY_KEY_PREFIX } from './use-schedule-sources-query';
 
 function toastMutationError(message: string) {
   toast.error(message, { duration: Infinity });
@@ -53,70 +54,19 @@ function toastScheduleSourceVersionMutationError(
 }
 
 function invalidateScheduleSourcesQueries(queryClient: QueryClient) {
-  queryClient.invalidateQueries({ queryKey: [SCHEDULE_SOURCES_TABLE_ID] });
   queryClient.invalidateQueries({
-    queryKey: SCHEDULE_SOURCE_VERSIONS_QUERY_KEY,
+    queryKey: [...SCHEDULE_SOURCES_QUERY_KEY_PREFIX],
+  });
+  queryClient.invalidateQueries({
+    queryKey: [...SCHEDULE_SOURCE_VERSIONS_QUERY_KEY],
   });
 }
 
-async function insertScheduleSource(
-  input: ScheduleSourcesInsert
-): Promise<void> {
-  const { error } = await getSupabase().from('schedule_sources').insert(input);
-  if (error) throw error;
-}
-
-async function updateScheduleSource(
-  id: string,
-  patch: ScheduleSourcesUpdate
-): Promise<void> {
-  const { error } = await getSupabase()
-    .from('schedule_sources')
-    .update(patch)
-    .eq('id', id);
-  if (error) throw error;
-}
-
-async function deleteScheduleSource(id: string): Promise<void> {
-  const { error } = await getSupabase()
-    .from('schedule_sources')
-    .delete()
-    .eq('id', id);
-  if (error) throw error;
-}
-
-async function insertScheduleSourceVersion(
-  input: ScheduleSourceVersionsInsert
-): Promise<void> {
-  const { error } = await getSupabase()
-    .from('schedule_source_versions')
-    .insert(input);
-  if (error) throw error;
-}
-
-async function updateScheduleSourceVersion(
-  id: string,
-  patch: ScheduleSourceVersionsUpdate
-): Promise<void> {
-  const { error } = await getSupabase()
-    .from('schedule_source_versions')
-    .update(patch)
-    .eq('id', id);
-  if (error) throw error;
-}
-
-async function deleteScheduleSourceVersion(id: string): Promise<void> {
-  const { error } = await getSupabase()
-    .from('schedule_source_versions')
-    .delete()
-    .eq('id', id);
-  if (error) throw error;
-}
-
-export function useCreateScheduleSource() {
+function useCreateScheduleSource() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: insertScheduleSource,
+    mutationFn: (input: ScheduleSourcesInsert) =>
+      insertScheduleSource(createSupabaseBrowserClient(), input),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) =>
       toastScheduleSourceMutationError(err, 'Failed to create schedule.'),
@@ -125,11 +75,16 @@ export function useCreateScheduleSource() {
   });
 }
 
-export function useUpdateScheduleSource() {
+function useUpdateScheduleSource() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, patch }: { id: string; patch: ScheduleSourcesUpdate }) =>
-      updateScheduleSource(id, patch),
+    mutationFn: ({
+      id,
+      patch,
+    }: {
+      id: string;
+      patch: ScheduleSourcesUpdate;
+    }) => updateScheduleSource(createSupabaseBrowserClient(), id, patch),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) =>
       toastScheduleSourceMutationError(err, 'Failed to update schedule.'),
@@ -138,10 +93,11 @@ export function useUpdateScheduleSource() {
   });
 }
 
-export function useDeleteScheduleSource() {
+function useDeleteScheduleSource() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: deleteScheduleSource,
+    mutationFn: (id: string) =>
+      deleteScheduleSource(createSupabaseBrowserClient(), id),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) =>
       toastScheduleSourceMutationError(err, 'Failed to delete schedule.'),
@@ -150,10 +106,11 @@ export function useDeleteScheduleSource() {
   });
 }
 
-export function useCreateScheduleSourceVersion() {
+function useCreateScheduleSourceVersion() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: insertScheduleSourceVersion,
+    mutationFn: (input: ScheduleSourceVersionsInsert) =>
+      insertScheduleSourceVersion(createSupabaseBrowserClient(), input),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) => {
       toastScheduleSourceVersionMutationError(
@@ -166,7 +123,7 @@ export function useCreateScheduleSourceVersion() {
   });
 }
 
-export function useUpdateScheduleSourceVersion() {
+function useUpdateScheduleSourceVersion() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({
@@ -175,7 +132,7 @@ export function useUpdateScheduleSourceVersion() {
     }: {
       id: string;
       patch: ScheduleSourceVersionsUpdate;
-    }) => updateScheduleSourceVersion(id, patch),
+    }) => updateScheduleSourceVersion(createSupabaseBrowserClient(), id, patch),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) => {
       toastScheduleSourceVersionMutationError(
@@ -188,10 +145,11 @@ export function useUpdateScheduleSourceVersion() {
   });
 }
 
-export function useDeleteScheduleSourceVersion() {
+function useDeleteScheduleSourceVersion() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: deleteScheduleSourceVersion,
+    mutationFn: (id: string) =>
+      deleteScheduleSourceVersion(createSupabaseBrowserClient(), id),
     onMutate: () => toast.dismiss(),
     onError: (err: unknown) =>
       toastScheduleSourceMutationError(err, 'Failed to delete edition.'),
@@ -199,3 +157,12 @@ export function useDeleteScheduleSourceVersion() {
     onSettled: () => invalidateScheduleSourcesQueries(queryClient),
   });
 }
+
+export {
+  useCreateScheduleSource,
+  useCreateScheduleSourceVersion,
+  useDeleteScheduleSource,
+  useDeleteScheduleSourceVersion,
+  useUpdateScheduleSource,
+  useUpdateScheduleSourceVersion,
+};
