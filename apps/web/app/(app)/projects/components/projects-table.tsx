@@ -10,7 +10,7 @@ import { ProjectDrawer } from './project-drawer';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useRouter } from 'next/navigation';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { useDeleteProject } from '@/hooks/projects/use-project-mutations';
 import { getColumns } from './projects-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
@@ -24,7 +24,7 @@ import { useAuth } from '@/hooks/auth';
 export function ProjectsTable() {
   const router = useRouter();
   const drawer = useOpenClose<ProjectsListRow | null>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
   const deleteProjectMutation = useDeleteProject();
   const { ability } = useAuth();
 
@@ -100,7 +100,7 @@ export function ProjectsTable() {
 
   const onClickDelete = React.useCallback(
     (projectId: string) => {
-      deleteConfirmation.openDeleteConfirmation({
+      confirmation.openConfirmation({
         onConfirm: async () => {
           await deleteProjectMutation.mutateAsync(projectId);
           invalidateProjectsQuery();
@@ -108,7 +108,7 @@ export function ProjectsTable() {
         itemName: 'project',
       });
     },
-    [deleteConfirmation, deleteProjectMutation, invalidateProjectsQuery]
+    [confirmation, deleteProjectMutation, invalidateProjectsQuery]
   );
 
   React.useEffect(() => {
@@ -163,22 +163,22 @@ export function ProjectsTable() {
         />
       )}
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {confirmation.isOpen && confirmation.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={confirmation.isOpen}
           onOpenChange={(open) =>
             open
-              ? deleteConfirmation.openDeleteConfirmation(
-                  deleteConfirmation.data!
+              ? confirmation.openConfirmation(
+                  confirmation.data!
                 )
-              : deleteConfirmation.closeDeleteConfirmation()
+              : confirmation.closeConfirmation()
           }
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={confirmation.data.onConfirm}
           isLoading={
-            deleteConfirmation.data.isLoading || deleteProjectMutation.isPending
+            confirmation.data.isLoading || deleteProjectMutation.isPending
           }
           itemName='project'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={confirmation.data.itemCount}
         />
       )}
     </>

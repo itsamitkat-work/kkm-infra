@@ -70,9 +70,9 @@ import {
 import { buildPatchFromSchedulePick } from '../utils';
 import { TableErrorState } from '@/components/tables/table-error';
 import {
-  useDeleteConfirmation,
-  type DeleteConfirmationData,
-} from '@/hooks/use-delete-confirmation';
+  useConfirmationDialog,
+  type ConfirmationDialogData,
+} from '@/hooks/use-confirmation-dialog';
 import {
   useCreateProjectItem,
   useDeleteProjectItem,
@@ -553,7 +553,7 @@ type ProjectItemsTableCellsContextValue = {
     tableApi: ProjectItemsTableApi
   ) => void;
   itemsTableApi: ProjectItemsTableApi;
-  openDeleteConfirmation: (data: DeleteConfirmationData) => void;
+  openConfirmation: (data: ConfirmationDialogData) => void;
   savingRowId: string | null;
   saveErrors: Record<string, string | null>;
   isSaving: boolean;
@@ -838,7 +838,7 @@ function ProjectItemsActionsCell({
       label: 'Delete',
       icon: Trash2,
       onClick: () =>
-        tableCtx.openDeleteConfirmation({
+        tableCtx.openConfirmation({
           onConfirm: () =>
             tableCtx.handleDeleteRow(rowData, tableCtx.itemsTableApi),
           itemName: 'project item',
@@ -1353,7 +1353,7 @@ type ProjectItemsDataTableProps = {
     tableApi: ProjectItemsTableApi
   ) => void;
   itemsTableApi: ProjectItemsTableApi;
-  openDeleteConfirmation: (data: DeleteConfirmationData) => void;
+  openConfirmation: (data: ConfirmationDialogData) => void;
   savingRowId: string | null;
   saveErrors: Record<string, string | null>;
   isSaving: boolean;
@@ -1383,7 +1383,7 @@ function ProjectItemsDataTable({
   handleSaveRow,
   handleDeleteRow,
   itemsTableApi,
-  openDeleteConfirmation,
+  openConfirmation,
   savingRowId,
   saveErrors,
   isSaving,
@@ -1482,7 +1482,7 @@ function ProjectItemsDataTable({
       handleSaveRow,
       handleDeleteRow,
       itemsTableApi,
-      openDeleteConfirmation,
+      openConfirmation,
       savingRowId,
       saveErrors,
       isSaving,
@@ -1495,7 +1495,7 @@ function ProjectItemsDataTable({
       handleSaveRow,
       handleDeleteRow,
       itemsTableApi,
-      openDeleteConfirmation,
+      openConfirmation,
       savingRowId,
       saveErrors,
       isSaving,
@@ -1795,11 +1795,11 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
   const isSaving = isCreating || isUpdating;
 
   const {
-    isOpen: isDeleteConfirmationOpen,
-    openDeleteConfirmation,
-    closeDeleteConfirmation,
-    data: deleteConfirmationData,
-  } = useDeleteConfirmation();
+    isOpen: isConfirmationOpen,
+    openConfirmation,
+    closeConfirmation,
+    data: confirmationData,
+  } = useConfirmationDialog();
 
   const tableData = React.useMemo(() => {
     return projectItemRows || [];
@@ -1963,16 +1963,16 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
     (rowData: ProjectItemRowType, api: ProjectItemsTableApi) => {
       if (rowData.is_new) {
         api.deleteRow(String(rowData.id));
-        closeDeleteConfirmation();
+        closeConfirmation();
         return;
       }
 
       deleteItem({ itemId: rowData.id }).then(() => {
         api.deleteRow(String(rowData.id));
-        closeDeleteConfirmation();
+        closeConfirmation();
       });
     },
-    [closeDeleteConfirmation, deleteItem]
+    [closeConfirmation, deleteItem]
   );
 
   const handlePersistRowOrder = React.useCallback(
@@ -2103,7 +2103,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
       });
 
       api.setRowSelection({});
-      closeDeleteConfirmation();
+      closeConfirmation();
 
       if (failedCount === 0) {
         toast.success(
@@ -2144,7 +2144,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
     selectedRows,
     selectedRowsCount,
     deleteItem,
-    closeDeleteConfirmation,
+    closeConfirmation,
     itemsTableStore,
     api,
   ]);
@@ -2191,7 +2191,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
             <Button
               variant='destructive'
               onClick={() =>
-                openDeleteConfirmation({
+                openConfirmation({
                   onConfirm: handleBulkDelete,
                   itemName: 'project item',
                   itemCount: selectedRowsCount,
@@ -2226,7 +2226,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
       isBulkOperationInProgress,
       isSaving,
       isDeleting,
-      openDeleteConfirmation,
+      openConfirmation,
       handleBulkDelete,
     ]
   );
@@ -2299,7 +2299,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
                 handleSaveRow={handleSaveRow}
                 handleDeleteRow={handleDeleteRow}
                 itemsTableApi={api}
-                openDeleteConfirmation={openDeleteConfirmation}
+                openConfirmation={openConfirmation}
                 savingRowId={savingRowId}
                 saveErrors={saveErrors}
                 isSaving={isSaving}
@@ -2308,12 +2308,12 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
             </div>
           </div>
         </div>
-        {deleteConfirmationData && (
+        {confirmationData && (
           <DeleteConfirmationDialog
-            open={isDeleteConfirmationOpen}
-            onOpenChange={closeDeleteConfirmation}
-            onConfirm={deleteConfirmationData.onConfirm}
-            itemName={deleteConfirmationData.itemName}
+            open={isConfirmationOpen}
+            onOpenChange={closeConfirmation}
+            onConfirm={confirmationData.onConfirm}
+            itemName={confirmationData.itemName}
             isLoading={isDeleting}
           />
         )}

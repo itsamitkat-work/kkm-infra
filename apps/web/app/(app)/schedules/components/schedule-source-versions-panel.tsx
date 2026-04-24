@@ -17,7 +17,7 @@ import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versi
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 import { ScheduleSourceVersionDialog } from './schedule-source-version-dialog';
 import { useDeleteScheduleSourceVersion } from '@/hooks/schedules/use-schedule-source-mutations';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import {
   Empty,
@@ -55,7 +55,7 @@ export function ScheduleSourceVersionsPanel({
   const [editingVersion, setEditingVersion] =
     React.useState<ScheduleSourceVersionRow | null>(null);
 
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
   const deleteMutation = useDeleteScheduleSourceVersion();
 
   function openCreateDialog() {
@@ -71,7 +71,7 @@ export function ScheduleSourceVersionsPanel({
   }
 
   function requestDeleteVersion(version: ScheduleSourceVersionRow) {
-    deleteConfirmation.openDeleteConfirmation({
+    confirmation.openConfirmation({
       itemName: 'edition',
       onConfirm: () => {
         void deleteMutation.mutateAsync(version.id).then(() => refetch());
@@ -193,22 +193,22 @@ export function ScheduleSourceVersionsPanel({
         }}
       />
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {confirmation.isOpen && confirmation.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={confirmation.isOpen}
           onOpenChange={(open) =>
             open
-              ? deleteConfirmation.openDeleteConfirmation(
-                  deleteConfirmation.data!
+              ? confirmation.openConfirmation(
+                  confirmation.data!
                 )
-              : deleteConfirmation.closeDeleteConfirmation()
+              : confirmation.closeConfirmation()
           }
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={confirmation.data.onConfirm}
           isLoading={
-            deleteConfirmation.data.isLoading || deleteMutation.isPending
+            confirmation.data.isLoading || deleteMutation.isPending
           }
           itemName='edition'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={confirmation.data.itemCount}
         />
       )}
     </div>

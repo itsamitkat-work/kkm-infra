@@ -23,7 +23,8 @@ import {
   RECORD_STATUS_OPTIONS,
   RECORD_STATUS_FORM_VALUES,
   RecordStatusBadge,
-  formStatusLabelToRecordStatus,
+  isRecordStatus,
+  type RecordStatusValue,
 } from '@/components/ui/record-status-badge';
 import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
@@ -65,16 +66,6 @@ const FORM_SCHEMA = z.object({
 });
 
 type BasicRateFormValues = z.infer<typeof FORM_SCHEMA>;
-
-function recordStatusSelectOption(option: { value: string; label: string }) {
-  return (
-    <RecordStatusBadge status={formStatusLabelToRecordStatus(option.value)} />
-  );
-}
-
-function recordStatusSelectValue(value: string) {
-  return <RecordStatusBadge status={formStatusLabelToRecordStatus(value)} />;
-}
 
 interface Props {
   mode: OpenCloseMode;
@@ -127,16 +118,9 @@ export function BasicRatesDrawer({
         description: '',
         rate: '',
         basic_rate_type_id: '',
-        status: 'Active',
+        status: 'active',
       };
     }
-
-    const status: BasicRateFormValues['status'] =
-      basicRate.status === 'inactive'
-        ? 'Inactive'
-        : basicRate.status === 'deprecated'
-          ? 'Deprecated'
-          : 'Active';
 
     return {
       schedule_source_version_id: basicRate.schedule_source_version_id,
@@ -145,7 +129,7 @@ export function BasicRatesDrawer({
       description: basicRate.description,
       rate: String(basicRate.rate),
       basic_rate_type_id: basicRate.basic_rate_type_id,
-      status,
+      status: basicRate.status ?? 'active',
     };
   }, [mode, basicRate]);
 
@@ -159,7 +143,6 @@ export function BasicRatesDrawer({
       : undefined,
     onCreate: async (values) => {
       try {
-        const status = formStatusLabelToRecordStatus(values.status);
         await createBasicRateMutation.mutateAsync({
           schedule_source_version_id: values.schedule_source_version_id,
           basic_rate_type_id: values.basic_rate_type_id,
@@ -167,7 +150,7 @@ export function BasicRatesDrawer({
           description: values.description,
           unit: values.unit,
           rate: Number(values.rate),
-          status,
+          status: values.status,
         });
         onSubmit();
       } catch (error) {
@@ -184,14 +167,12 @@ export function BasicRatesDrawer({
           patchRecord.rate = Number(patchRecord.rate);
         }
         if (patchRecord.status != null) {
-          const mapped = formStatusLabelToRecordStatus(
-            patchRecord.status as string
-          );
-          if (mapped == null) {
+          const statusStr = String(patchRecord.status);
+          if (!isRecordStatus(statusStr)) {
             toast.error('Invalid status.');
             return;
           }
-          patchRecord.status = mapped;
+          patchRecord.status = statusStr;
         }
         await updateBasicRateMutation.mutateAsync({
           id: basicRate.id,
@@ -277,8 +258,14 @@ export function BasicRatesDrawer({
                 options={RECORD_STATUS_OPTIONS}
                 required
                 readOnly={isRead}
-                renderOption={recordStatusSelectOption}
-                renderValue={recordStatusSelectValue}
+                renderOption={(option) => (
+                  <RecordStatusBadge
+                    status={option.value as RecordStatusValue}
+                  />
+                )}
+                renderValue={(value) => (
+                  <RecordStatusBadge status={value as RecordStatusValue} />
+                )}
               />
             </FieldSet>
 

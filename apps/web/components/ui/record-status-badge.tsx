@@ -32,22 +32,30 @@ const RECORD_STATUS_CONFIG: Record<
   },
 };
 
-const RECORD_STATUS_ORDER: Database['public']['Enums']['record_status'][] = [
+/** DB `record_status` enum values — single source for forms, filters, and Zod. */
+export const RECORD_STATUS_FORM_VALUES = [
   'active',
   'inactive',
   'deprecated',
+] as const satisfies readonly Database['public']['Enums']['record_status'][];
+
+const RECORD_STATUS_ORDER: Database['public']['Enums']['record_status'][] = [
+  ...RECORD_STATUS_FORM_VALUES,
 ];
 
-export const RECORD_STATUS_OPTIONS = RECORD_STATUS_ORDER.map((key) => {
-  const label = RECORD_STATUS_CONFIG[key].label;
-  return { value: label, label };
-});
-
-export const RECORD_STATUS_FILTER_OPTIONS = RECORD_STATUS_ORDER.map((key) => ({
+/** Select / multiselect options: `value` is DB enum, `label` is display text. */
+export const RECORD_STATUS_OPTIONS = RECORD_STATUS_FORM_VALUES.map((key) => ({
   value: key,
   label: RECORD_STATUS_CONFIG[key].label,
-  dotClass: RECORD_STATUS_CONFIG[key].dotClass,
 }));
+
+export const RECORD_STATUS_FILTER_OPTIONS = RECORD_STATUS_FORM_VALUES.map(
+  (key) => ({
+    value: key,
+    label: RECORD_STATUS_CONFIG[key].label,
+    dotClass: RECORD_STATUS_CONFIG[key].dotClass,
+  })
+);
 
 export function RecordStatusDot({
   dotClass,
@@ -68,21 +76,10 @@ export function RecordStatusDot({
   );
 }
 
-export const RECORD_STATUS_FORM_VALUES = [
-  RECORD_STATUS_CONFIG.active.label,
-  RECORD_STATUS_CONFIG.inactive.label,
-  RECORD_STATUS_CONFIG.deprecated.label,
-] as const;
-
-export function formStatusLabelToRecordStatus(
-  formLabel: string
-): Database['public']['Enums']['record_status'] | null {
-  for (const key of RECORD_STATUS_ORDER) {
-    if (RECORD_STATUS_CONFIG[key].label === formLabel) {
-      return key;
-    }
-  }
-  return null;
+export function isRecordStatus(
+  value: string
+): value is Database['public']['Enums']['record_status'] {
+  return (RECORD_STATUS_FORM_VALUES as readonly string[]).includes(value);
 }
 
 const DEFAULT_CONFIG: RecordStatusConfig = {

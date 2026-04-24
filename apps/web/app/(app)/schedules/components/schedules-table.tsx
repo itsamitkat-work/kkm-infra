@@ -12,7 +12,7 @@ import {
 } from '@/hooks/schedules/use-schedule-sources';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { getSchedulesColumns } from './schedules-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
 import { ScheduleSourceDrawer } from './schedule-source-drawer';
@@ -26,7 +26,7 @@ export function SchedulesTable() {
   const canManage = ability.can('manage', 'schedules');
 
   const drawer = useOpenClose<ScheduleSourceRow | null>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
 
   const handleCreate = React.useCallback(() => {
     drawer.open(null, 'create');
@@ -73,7 +73,7 @@ export function SchedulesTable() {
 
   const onClickDelete = React.useCallback(
     (id: string) => {
-      deleteConfirmation.openDeleteConfirmation({
+      confirmation.openConfirmation({
         onConfirm: async () => {
           await deleteMutation.mutateAsync(id);
           invalidateSchedulesQuery();
@@ -81,7 +81,7 @@ export function SchedulesTable() {
         itemName: 'schedule',
       });
     },
-    [deleteConfirmation, deleteMutation, invalidateSchedulesQuery]
+    [confirmation, deleteMutation, invalidateSchedulesQuery]
   );
 
   React.useEffect(() => {
@@ -147,22 +147,20 @@ export function SchedulesTable() {
         />
       )}
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {confirmation.isOpen && confirmation.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={confirmation.isOpen}
           onOpenChange={(open) =>
             open
-              ? deleteConfirmation.openDeleteConfirmation(
-                  deleteConfirmation.data!
-                )
-              : deleteConfirmation.closeDeleteConfirmation()
+              ? confirmation.openConfirmation(confirmation.data!)
+              : confirmation.closeConfirmation()
           }
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={confirmation.data.onConfirm}
           isLoading={
-            deleteConfirmation.data.isLoading || deleteMutation.isPending
+            confirmation.data.isLoading || deleteMutation.isPending
           }
           itemName='schedule'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={confirmation.data.itemCount}
         />
       )}
     </>

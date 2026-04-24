@@ -8,7 +8,7 @@ import { TableErrorState } from '@/components/tables/table-error';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { useAuth } from '@/hooks/auth';
 import {
   CLIENTS_TABLE_ID,
@@ -22,7 +22,7 @@ import { ClientDrawer } from './client-drawer';
 
 export function ClientsTable() {
   const drawer = useOpenClose<ClientsListRow | null>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
   const deleteClientMutation = useDeleteClient();
   const { ability } = useAuth();
 
@@ -99,7 +99,7 @@ export function ClientsTable() {
 
   const onClickDelete = React.useCallback(
     (clientId: string) => {
-      deleteConfirmation.openDeleteConfirmation({
+      confirmation.openConfirmation({
         onConfirm: async () => {
           await deleteClientMutation.mutateAsync(clientId);
           invalidateClientsQuery();
@@ -107,7 +107,7 @@ export function ClientsTable() {
         itemName: 'client',
       });
     },
-    [deleteConfirmation, deleteClientMutation, invalidateClientsQuery]
+    [confirmation, deleteClientMutation, invalidateClientsQuery]
   );
 
   React.useEffect(() => {
@@ -162,22 +162,22 @@ export function ClientsTable() {
         />
       )}
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {confirmation.isOpen && confirmation.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={confirmation.isOpen}
           onOpenChange={(open) =>
             open
-              ? deleteConfirmation.openDeleteConfirmation(
-                  deleteConfirmation.data!
+              ? confirmation.openConfirmation(
+                  confirmation.data!
                 )
-              : deleteConfirmation.closeDeleteConfirmation()
+              : confirmation.closeConfirmation()
           }
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={confirmation.data.onConfirm}
           isLoading={
-            deleteConfirmation.data.isLoading || deleteClientMutation.isPending
+            confirmation.data.isLoading || deleteClientMutation.isPending
           }
           itemName='client'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={confirmation.data.itemCount}
         />
       )}
     </>

@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { useEstimationStore } from '../hooks/use-estimation-store';
 import { ActionsDropdown, ActionItem } from '@/components/ui/actions-dropdown';
-import { DeleteConfirmationData } from '@/hooks/use-delete-confirmation';
+import type { ConfirmationDialogData } from '@/hooks/use-confirmation-dialog';
 import { useEstimationShare } from '../hooks/use-estimation-share';
 import { DataTableColumnHeader } from './column-header';
 import { Button } from '@/components/ui/button';
@@ -25,22 +25,22 @@ import { ItemDescriptionHierarchy } from '@/app/(app)/schedule-items/item-descri
 interface ColumnProps {
   type: ProjectBoqLinesType;
   onDelete?: (row: EstimationRowData) => void;
-  openDeleteConfirmation?: (data: DeleteConfirmationData) => void;
+  openConfirmation?: (data: ConfirmationDialogData) => void;
 }
 
 // Component for actions cell that can use hooks
 function ShareActionsCell({
   row,
   onDelete,
-  openDeleteConfirmation,
+  openConfirmation,
 }: {
   row: { original: EstimationRowData };
   onDelete?: (row: EstimationRowData) => void;
-  openDeleteConfirmation?: (data: DeleteConfirmationData) => void;
+  openConfirmation?: (data: ConfirmationDialogData) => void;
 }) {
   const { handleShareItem } = useEstimationShare();
 
-  if (!onDelete || !openDeleteConfirmation) {
+  if (!onDelete || !openConfirmation) {
     return null;
   }
 
@@ -56,7 +56,7 @@ function ShareActionsCell({
       label: 'Delete',
       icon: Trash2,
       onClick: () => {
-        openDeleteConfirmation({
+        openConfirmation({
           onConfirm: () => onDelete(row.original),
           itemName: 'project item',
         });
@@ -172,7 +172,7 @@ const Amount2Cell = ({
 export const getMainColumns = ({
   type,
   onDelete,
-  openDeleteConfirmation,
+  openConfirmation,
 }: ColumnProps): ColumnDef<EstimationRowData>[] => [
   {
     accessorKey: 'index',
@@ -384,7 +384,7 @@ export const getMainColumns = ({
       },
     ],
   },
-  ...(onDelete && openDeleteConfirmation
+  ...(onDelete && openConfirmation
     ? [
         {
           id: 'actions',
@@ -392,7 +392,7 @@ export const getMainColumns = ({
             <ShareActionsCell
               row={row}
               onDelete={onDelete}
-              openDeleteConfirmation={openDeleteConfirmation}
+              openConfirmation={openConfirmation}
             />
           ),
           size: 40,

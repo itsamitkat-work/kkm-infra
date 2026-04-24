@@ -8,7 +8,7 @@ import { TableErrorState } from '@/components/tables/table-error';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import {
   TENANTS_ADMIN_TABLE_ID,
   useDeleteTenantAdmin,
@@ -23,7 +23,7 @@ const TENANT_FILTER_FIELDS: [] = [];
 
 export function TenantsTable() {
   const drawer = useOpenClose<TenantAdminRow | null>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
   const deleteTenantMutation = useDeleteTenantAdmin();
 
   const handleCreate = React.useCallback(() => {
@@ -39,14 +39,14 @@ export function TenantsTable() {
 
   const onClickDelete = React.useCallback(
     (id: string) => {
-      deleteConfirmation.openDeleteConfirmation({
+      confirmation.openConfirmation({
         onConfirm: async () => {
           await deleteTenantMutation.mutateAsync(id);
         },
         itemName: 'tenant',
       });
     },
-    [deleteConfirmation, deleteTenantMutation]
+    [confirmation, deleteTenantMutation]
   );
 
   const columns = React.useMemo(
@@ -115,18 +115,18 @@ export function TenantsTable() {
         }}
       />
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {confirmation.isOpen && confirmation.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={confirmation.isOpen}
           onOpenChange={(open) => {
             if (!open) {
-              deleteConfirmation.closeDeleteConfirmation();
+              confirmation.closeConfirmation();
             }
           }}
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={confirmation.data.onConfirm}
           isLoading={deleteTenantMutation.isPending}
           itemName='tenant'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={confirmation.data.itemCount}
         />
       )}
     </>

@@ -42,10 +42,7 @@ import { FieldSet, FieldLegend, FieldSeparator } from '@/components/ui/field';
 import { FieldGroupDense } from '@/components/field-group-dense';
 import { useAppForm, type ExtendEditPatchContext } from '@/hooks/use-app-form';
 import { fetchScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
-import {
-  RECORD_STATUS_OPTIONS,
-  RecordStatusBadge,
-} from '@/components/ui/record-status-badge';
+import { RecordStatusBadge } from '@/components/ui/record-status-badge';
 import type { OpenCloseMode } from '@/hooks/use-open-close';
 import {
   parseClientAddresses,
@@ -406,14 +403,6 @@ export function ClientDrawer({
     isError: isDetailError,
   } = useClient(detailId);
 
-  const statusOptions = React.useMemo(
-    () =>
-      RECORD_STATUS_OPTIONS.filter(
-        (o) => o.value === 'Active' || o.value === 'Inactive'
-      ),
-    []
-  );
-
   const getDefaultValues = React.useCallback((): ClientFormValues => {
     if (mode === 'create' && !isCopy) return emptyFormValues();
     if (clientDetail) return detailToFormValues(clientDetail);
@@ -500,11 +489,7 @@ export function ClientDrawer({
               <BasicInformationSection
                 control={form.control}
                 readOnly={isRead}
-                statusOptions={
-                  STATUS_SELECT_OPTIONS.length > 0
-                    ? STATUS_SELECT_OPTIONS
-                    : statusOptions
-                }
+                statusOptions={STATUS_SELECT_OPTIONS}
               />
               <SchedulesSection
                 control={form.control}

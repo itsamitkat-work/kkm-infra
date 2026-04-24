@@ -15,7 +15,7 @@ import {
   PROJECT_SEGMENTS_TABLE_ID,
 } from '../../hooks/use-project-segments-query';
 import { getSegmentColumns } from './project-segment-columns';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { TableErrorState } from '@/components/tables/table-error';
 
@@ -25,7 +25,7 @@ export const ProjectSegmentSection = ({
   project: ProjectDetail;
 }) => {
   const segmentDrawer = useOpenClose<ProjectSegment>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const confirmation = useConfirmationDialog();
   const deleteSegmentMutation = useDeleteSegment(project?.id || '');
 
   const controls = useDataTableControls(PROJECT_SEGMENTS_TABLE_ID);
@@ -67,7 +67,7 @@ export const ProjectSegmentSection = ({
 
   const handleDeleteSegment = React.useCallback(
     (segment: ProjectSegment) => {
-      deleteConfirmation.openDeleteConfirmation({
+      confirmation.openConfirmation({
         onConfirm: async () => {
           await deleteSegmentMutation.mutateAsync(segment.hashId);
           invalidateSegmentsQuery();
@@ -75,7 +75,7 @@ export const ProjectSegmentSection = ({
         itemName: 'segment',
       });
     },
-    [deleteConfirmation, deleteSegmentMutation, invalidateSegmentsQuery]
+    [confirmation, deleteSegmentMutation, invalidateSegmentsQuery]
   );
 
   const columns = React.useMemo(
@@ -141,23 +141,23 @@ export const ProjectSegmentSection = ({
             />
           )}
 
-          {deleteConfirmation.isOpen && deleteConfirmation.data && (
+          {confirmation.isOpen && confirmation.data && (
             <DeleteConfirmationDialog
-              open={deleteConfirmation.isOpen}
+              open={confirmation.isOpen}
               onOpenChange={(open) =>
                 open
-                  ? deleteConfirmation.openDeleteConfirmation(
-                      deleteConfirmation.data!
+                  ? confirmation.openConfirmation(
+                      confirmation.data!
                     )
-                  : deleteConfirmation.closeDeleteConfirmation()
+                  : confirmation.closeConfirmation()
               }
-              onConfirm={deleteConfirmation.data.onConfirm}
+              onConfirm={confirmation.data.onConfirm}
               isLoading={
-                deleteConfirmation.data.isLoading ||
+                confirmation.data.isLoading ||
                 deleteSegmentMutation.isPending
               }
               itemName='segment'
-              itemCount={deleteConfirmation.data.itemCount}
+              itemCount={confirmation.data.itemCount}
             />
           )}
         </>

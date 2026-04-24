@@ -30,7 +30,7 @@ import {
 } from './components/extra-items-table';
 import { useExtraItemsStore } from './hooks/use-extra-items-store';
 import { useDeleteProjectItem } from '@/hooks/projects/use-project-items-mutations';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { useEstimationShare } from './hooks/use-estimation-share';
 import { useEstimationUrlSync } from './hooks/use-estimation-url-sync';
@@ -65,30 +65,30 @@ export function ItemsTab({
     useDeleteProjectItem(projectId);
 
   const {
-    isOpen: isDeleteConfirmationOpen,
-    openDeleteConfirmation,
-    closeDeleteConfirmation,
-    data: deleteConfirmationData,
-  } = useDeleteConfirmation();
+    isOpen: isConfirmationOpen,
+    openConfirmation,
+    closeConfirmation,
+    data: confirmationData,
+  } = useConfirmationDialog();
 
   // Control dialog open state to keep it open during deletion
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const pendingDeleteRef = React.useRef<EstimationRowData | null>(null);
 
   React.useEffect(() => {
-    if (isDeleteConfirmationOpen) {
+    if (isConfirmationOpen) {
       setIsDialogOpen(true);
     }
-  }, [isDeleteConfirmationOpen]);
+  }, [isConfirmationOpen]);
 
   React.useEffect(() => {
     if (!isDeleting && pendingDeleteRef.current && isDialogOpen) {
       // Deletion completed, close dialog
       setIsDialogOpen(false);
-      closeDeleteConfirmation();
+      closeConfirmation();
       pendingDeleteRef.current = null;
     }
-  }, [isDeleting, isDialogOpen, closeDeleteConfirmation]);
+  }, [isDeleting, isDialogOpen, closeConfirmation]);
 
   React.useEffect(() => {
     return () => {
@@ -281,11 +281,11 @@ export function ItemsTab({
       } catch {
         // Error handling is done in the mutation hook
         setIsDialogOpen(false);
-        closeDeleteConfirmation();
+        closeConfirmation();
         pendingDeleteRef.current = null;
       }
     },
-    [deleteItem, refetch, closeDeleteConfirmation]
+    [deleteItem, refetch, closeConfirmation]
   );
 
   const columns = React.useMemo(
@@ -293,9 +293,9 @@ export function ItemsTab({
       getMainColumns({
         type,
         onDelete: handleDeleteItem,
-        openDeleteConfirmation,
+        openConfirmation,
       }),
-    [type, handleDeleteItem, openDeleteConfirmation]
+    [type, handleDeleteItem, openConfirmation]
   );
 
   const getColumnBackground = (columnId: string) => {
@@ -512,19 +512,19 @@ export function ItemsTab({
             </div>
           </div>
         </div>
-        {deleteConfirmationData && (
+        {confirmationData && (
           <DeleteConfirmationDialog
             open={isDialogOpen}
             onOpenChange={(open) => {
               if (!open && !isDeleting) {
                 setIsDialogOpen(false);
-                closeDeleteConfirmation();
+                closeConfirmation();
               } else if (open) {
                 setIsDialogOpen(true);
               }
             }}
-            onConfirm={deleteConfirmationData.onConfirm}
-            itemName={deleteConfirmationData.itemName}
+            onConfirm={confirmationData.onConfirm}
+            itemName={confirmationData.itemName}
             isLoading={isDeleting}
           />
         )}

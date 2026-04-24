@@ -15,7 +15,7 @@ import { useDeleteBasicRate } from '@/app/(app)/basic-rates/hooks/use-basic-rate
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
-import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
+import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
 import { getColumns } from './basic-rates-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
 import { getBasicRatesFilterFields } from './basic-rates-filters';
@@ -28,7 +28,7 @@ export function BasicRatesTable() {
   const canManage = ability.can('manage', 'basic_rates');
 
   const drawer = useOpenClose<BasicRate | null>();
-  const deleteConfirmation = useDeleteConfirmation();
+  const deleteDialog = useConfirmationDialog();
 
   const handleCreateBasicRate = React.useCallback(() => {
     drawer.open(null, 'create');
@@ -106,7 +106,7 @@ export function BasicRatesTable() {
 
   const onClickDelete = React.useCallback(
     (id: string) => {
-      deleteConfirmation.openDeleteConfirmation({
+      deleteDialog.openConfirmation({
         onConfirm: async () => {
           await deleteBasicRateMutation.mutateAsync(id);
           invalidateBasicRatesQuery();
@@ -114,7 +114,7 @@ export function BasicRatesTable() {
         itemName: 'basic rate',
       });
     },
-    [deleteConfirmation, deleteBasicRateMutation, invalidateBasicRatesQuery]
+    [deleteDialog, deleteBasicRateMutation, invalidateBasicRatesQuery]
   );
 
   React.useEffect(() => {
@@ -169,23 +169,20 @@ export function BasicRatesTable() {
         />
       )}
 
-      {deleteConfirmation.isOpen && deleteConfirmation.data && (
+      {deleteDialog.isOpen && deleteDialog.data && (
         <DeleteConfirmationDialog
-          open={deleteConfirmation.isOpen}
+          open={deleteDialog.isOpen}
           onOpenChange={(open) =>
             open
-              ? deleteConfirmation.openDeleteConfirmation(
-                  deleteConfirmation.data!
-                )
-              : deleteConfirmation.closeDeleteConfirmation()
+              ? deleteDialog.openConfirmation(deleteDialog.data!)
+              : deleteDialog.closeConfirmation()
           }
-          onConfirm={deleteConfirmation.data.onConfirm}
+          onConfirm={deleteDialog.data.onConfirm}
           isLoading={
-            deleteConfirmation.data.isLoading ||
-            deleteBasicRateMutation.isPending
+            deleteDialog.data.isLoading || deleteBasicRateMutation.isPending
           }
           itemName='basic rate'
-          itemCount={deleteConfirmation.data.itemCount}
+          itemCount={deleteDialog.data.itemCount}
         />
       )}
     </>
