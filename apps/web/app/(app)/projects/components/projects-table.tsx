@@ -175,9 +175,7 @@ export function ProjectsTable() {
           open={confirmation.isOpen}
           onOpenChange={(open) =>
             open
-              ? confirmation.openConfirmation(
-                  confirmation.data!
-                )
+              ? confirmation.openConfirmation(confirmation.data!)
               : confirmation.closeConfirmation()
           }
           onConfirm={confirmation.data.onConfirm}

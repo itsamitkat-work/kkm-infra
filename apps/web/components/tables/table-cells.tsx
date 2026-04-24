@@ -92,7 +92,7 @@ export function TextCell({
     <>
       <ItemTitle
         className={cn(
-          'block w-full min-w-0 max-w-full overflow-hidden text-sm font-normal leading-snug',
+          'block w-full min-w-0 max-w-full overflow-hidden text-left text-sm font-normal leading-snug',
           isMultiline
             ? 'line-clamp-2 whitespace-normal break-words'
             : 'truncate',
@@ -121,10 +121,13 @@ export function TextCell({
     </Item>
   );
 
+  const triggerClassName =
+    'block w-full min-w-0 max-w-full overflow-hidden text-left text-sm leading-snug';
+
   return (
     <Tooltip delayDuration={tooltipDelayDuration}>
       <TooltipTrigger asChild>
-        <div className='min-w-0 max-w-full overflow-hidden text-sm leading-snug'>
+        <div className={triggerClassName}>
           {onClick != null ? (
             <Button
               type='button'
@@ -132,8 +135,8 @@ export function TextCell({
               onClick={onClick}
               disabled={disabled}
               className={cn(
-                'h-auto min-h-0 w-full min-w-0 max-w-full justify-start overflow-hidden border-0 bg-transparent p-0 font-normal shadow-none',
-                isMultiline && 'items-start whitespace-normal',
+                'flex h-auto min-h-0 w-full min-w-0 max-w-full items-start justify-start overflow-hidden border-0 bg-transparent p-0 text-left font-normal shadow-none',
+                isMultiline && 'whitespace-normal',
                 buttonClassName
               )}
             >

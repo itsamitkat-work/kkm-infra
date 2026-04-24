@@ -201,11 +201,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             },
           ]
         : []),
-      {
-        title: 'BOM & BOL',
-        url: '/bom&bol',
-        icon: FileText,
-      },
+      // {
+      //   title: 'BOM & BOL',
+      //   url: '/bom&bol',
+      //   icon: FileText,
+      // },
     ],
 
     [ability]
@@ -248,20 +248,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>{renderNavItems(generalItems)}</SidebarMenu>
         </SidebarGroup>
 
-        <SidebarGroup>
+        {/* <SidebarGroup>
           <SidebarGroupLabel>Attendance</SidebarGroupLabel>
           <SidebarMenu>{renderNavItems(attendanceItems)}</SidebarMenu>
-        </SidebarGroup>
+        </SidebarGroup> */}
 
         <SidebarGroup>
           <SidebarGroupLabel>Construction Works</SidebarGroupLabel>
           <SidebarMenu>{renderNavItems(constructionItems)}</SidebarMenu>
         </SidebarGroup>
 
-        <SidebarGroup>
+        {/* <SidebarGroup>
           <SidebarGroupLabel>Procurement</SidebarGroupLabel>
           <SidebarMenu>{renderNavItems(purchaseOrderItems)}</SidebarMenu>
-        </SidebarGroup>
+        </SidebarGroup> */}
 
         {typeof window !== 'undefined' && (
           <>

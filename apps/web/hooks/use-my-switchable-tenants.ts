@@ -5,7 +5,9 @@ import type { Database } from '@kkm/db';
 
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
-export const MY_SWITCHABLE_TENANTS_QUERY_KEY = ['my-switchable-tenants'] as const;
+export const MY_SWITCHABLE_TENANTS_QUERY_KEY = [
+  'my-switchable-tenants',
+] as const;
 
 export type SwitchableTenantRow =
   Database['public']['Functions']['list_my_switchable_tenants']['Returns'][number];
@@ -24,5 +26,6 @@ export function useMySwitchableTenants(enabled: boolean) {
     queryKey: MY_SWITCHABLE_TENANTS_QUERY_KEY,
     queryFn: fetchSwitchableTenants,
     enabled,
+    staleTime: 1000 * 60 * 60 * 24, // 24 hours
   });
 }
