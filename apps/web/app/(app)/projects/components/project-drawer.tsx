@@ -20,7 +20,7 @@ import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
-import { fetchClientOptions } from '../hooks/use-client-options';
+import { fetchClientOptions } from '../api/project-client-api';
 import {
   fetchClientDetail,
   parseClientAddresses,
@@ -44,18 +44,20 @@ import {
 } from '@/hooks/projects/use-project-member';
 import { InputGroupAddon } from '@/components/ui/input-group';
 import { Loader } from 'lucide-react';
-import { useProject } from '@/hooks/projects/use-project';
-import { fetchUserOptions } from '../hooks/use-user';
+import { useProject } from '../hooks/use-project-query';
+import { fetchUserOptions } from '../api/project-user-api';
 import {
-  parseProjectMeta,
+  projectMembersToSelection,
   type ProjectsListRow,
   type ProjectDetail,
   type ProjectDetailMember,
   type ProjectScheduleDetail,
-  projectMembersToSelection,
+} from '../api/project-api';
+import { parseProjectMeta } from '@/lib/projects/project-meta';
+import {
   useCreateProject,
   useUpdateProject,
-} from '@/hooks/useProjects';
+} from '../hooks/use-projects-mutations';
 import type { ProjectMemberSelection } from '@/lib/projects/persist-project';
 import { useAuth } from '@/hooks/auth';
 import { useAppForm } from '@/hooks/use-app-form';
@@ -750,8 +752,15 @@ export function ProjectDrawer({
     return numberToText(n);
   }, [watchSanctionAmount]);
 
-  const scheduleRows =
-    useWatch({ control: form.control, name: 'project_schedule_rows' }) ?? [];
+  const watchedScheduleRows = useWatch({
+    control: form.control,
+    name: 'project_schedule_rows',
+  });
+
+  const scheduleRows = React.useMemo(
+    () => watchedScheduleRows ?? [],
+    [watchedScheduleRows]
+  );
 
   const updateProjectScheduleRows = React.useCallback(
     (next: ProjectFormValues['project_schedule_rows']) => {

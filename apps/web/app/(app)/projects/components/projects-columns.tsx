@@ -1,7 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { parseProjectMeta, type ProjectsListRow } from '@/hooks/useProjects';
+import type { ProjectsListRow } from '../api/project-api';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,6 +25,7 @@ import { numberToText, formatIndianNumber } from '@/lib/numberToText';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
 import { TextCell } from '@/components/tables/table-cells';
 import { StatusBadge } from '@/components/ui/status-badge';
+import { parseProjectMeta } from '@/lib/projects/project-meta';
 
 interface PermissionFlags {
   canRead: boolean;

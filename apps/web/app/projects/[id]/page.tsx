@@ -38,7 +38,7 @@ import {
   useProjectTabCountsQuery,
   type ProjectTabCounts,
 } from '@/hooks/projects/use-project-tab-counts-query';
-import { useProject } from '@/hooks/projects/use-project';
+import { useProject } from '@/app/(app)/projects/hooks/use-project-query';
 import { cn } from '@/lib/utils';
 import { TableLoadingState } from '@/components/tables/table-loading';
 import { ProjectItems } from './items/project-items-table';

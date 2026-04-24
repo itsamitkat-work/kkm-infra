@@ -5,16 +5,19 @@ import * as React from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
-import type { ProjectsListRow } from '@/hooks/useProjects';
+import type { ProjectsListRow } from '../api/project-api';
 import { ProjectDrawer } from './project-drawer';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useRouter } from 'next/navigation';
 import { useOpenClose } from '@/hooks/use-open-close';
 import { useConfirmationDialog } from '@/hooks/use-confirmation-dialog';
-import { useDeleteProject } from '@/hooks/projects/use-project-mutations';
+import { useDeleteProject } from '../hooks/use-projects-mutations';
 import { getColumns } from './projects-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
-import { defaultProjectTableFilters, filterFields } from './project-filters';
+import {
+  defaultProjectTableFilters,
+  getProjectFilterFields,
+} from './project-filters';
 import {
   PROJECTS_TABLE_ID,
   useProjectsQuery,
@@ -91,6 +94,8 @@ export function ProjectsTable() {
     defaultProjectTableFilters
   );
 
+  const filterFields = React.useMemo(() => getProjectFilterFields(), []);
+
   const { query: projectsQuery, invalidate: invalidateProjectsQuery } =
     useProjectsQuery({
       search: controls.search,
@@ -137,7 +142,9 @@ export function ProjectsTable() {
           <TableErrorState
             title='Failed to load projects'
             message={projectsQuery.error?.message || 'An error occurred'}
-            onRetry={() => window.location.reload()}
+            onRetry={() => {
+              void projectsQuery.refetch();
+            }}
           />
         }
         actions={{

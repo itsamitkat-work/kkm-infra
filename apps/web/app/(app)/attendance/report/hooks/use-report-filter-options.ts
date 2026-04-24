@@ -62,9 +62,9 @@ function useAllProjects() {
     queryKey: ['all-projects-for-filter'],
     queryFn: async ({ pageParam = 1, signal }) => {
       return await fetchProjects({
-        search: '',
-        page: pageParam as number,
-        pageSize: 20,
+        p_search: '',
+        p_limit: 20,
+        p_offset: ((pageParam as number) - 1) * 20,
         signal,
       });
     },

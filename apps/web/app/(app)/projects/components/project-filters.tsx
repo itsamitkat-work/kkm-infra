@@ -25,45 +25,47 @@ export const defaultProjectTableFilters: Filter[] = [
   },
 ];
 
-export const filterFields: FilterFieldsConfig = [
-  {
-    group: 'Filters',
-    fields: [
-      {
-        key: 'status',
-        label: 'Status',
-        icon: <SlidersHorizontal />,
-        type: 'multiselect',
-        required: true,
-        className: 'w-[180px]',
-        selectedOptionsClassName: '-space-x-1',
-        options: STATUS_FILTER_OPTIONS.map(({ value, label, dotClass }) => ({
-          value,
-          label,
-          icon: STATUS_ICON(dotClass),
-        })),
-      },
-      {
-        key: 'dosRange',
-        label: 'DOS',
-        icon: <IconCalendar />,
-        type: 'daterange',
-        showOperatorDropdown: true,
-      },
-      {
-        key: 'docRange',
-        label: 'DOC',
-        icon: <IconCalendar />,
-        type: 'daterange',
-        showOperatorDropdown: true,
-      },
-      {
-        key: 'amount',
-        label: 'Amount',
-        icon: <IconCurrencyRupee />,
-        type: 'number',
-        showOperatorDropdown: true,
-      },
-    ],
-  },
-];
+export function getProjectFilterFields(): FilterFieldsConfig {
+  return [
+    {
+      group: 'Filters',
+      fields: [
+        {
+          key: 'status',
+          label: 'Status',
+          icon: <SlidersHorizontal />,
+          type: 'multiselect',
+          required: true,
+          className: 'w-[180px]',
+          selectedOptionsClassName: '-space-x-1',
+          options: STATUS_FILTER_OPTIONS.map(({ value, label, dotClass }) => ({
+            value,
+            label,
+            icon: STATUS_ICON(dotClass),
+          })),
+        },
+        {
+          key: 'dosRange',
+          label: 'DOS',
+          icon: <IconCalendar />,
+          type: 'daterange',
+          showOperatorDropdown: true,
+        },
+        {
+          key: 'docRange',
+          label: 'DOC',
+          icon: <IconCalendar />,
+          type: 'daterange',
+          showOperatorDropdown: true,
+        },
+        {
+          key: 'amount',
+          label: 'Amount',
+          icon: <IconCurrencyRupee />,
+          type: 'number',
+          showOperatorDropdown: true,
+        },
+      ],
+    },
+  ];
+}
