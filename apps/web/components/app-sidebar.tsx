@@ -11,7 +11,8 @@ import {
   Users,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { NavUser } from '@/components/nav/nav-user';
 import { TenantSwitcher } from '@/components/tenant-switcher';
@@ -26,10 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-  SidebarSeparator,
-  useSidebar,
 } from '@/components/ui/sidebar';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { useAuth } from '@/hooks/auth';
 
 type NavItem = {
@@ -70,10 +68,7 @@ const administrationItems: NavItem[] = [
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const router = useRouter();
   const pathname = usePathname();
-  const { state } = useSidebar();
-  const isMobile = useIsMobile();
   const { roles, ability, claims } = useAuth();
 
   const administrationNavItems = React.useMemo((): NavItem[] => {
@@ -133,11 +128,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   }, [ability]);
 
   const attendanceItems = React.useMemo(() => {
-    // Only filter when in browser (client-side)
-    if (typeof window === 'undefined') {
-      return [];
-    }
-
     const attendanceItems: NavItem[] = [
       ...(ability.can('read', 'attendance') &&
       !(roles.includes('Verifier') || roles.includes('Checker'))
@@ -211,14 +201,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     [ability]
   );
 
-  function handleNavClick(e: React.MouseEvent, url: string) {
-    if (state === 'collapsed' && !isMobile) {
-      e.preventDefault();
-      e.stopPropagation();
-      router.push(url);
-    }
-  }
-
   function renderNavItems(items: NavItem[]) {
     return items.map((item) => (
       <SidebarMenuItem key={item.url}>
@@ -229,10 +211,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             pathname === item.url || pathname.startsWith(item.url + '/')
           }
         >
-          <a href={item.url} onClick={(e) => handleNavClick(e, item.url)}>
+          <Link href={item.url}>
             <item.icon />
             <span>{item.title}</span>
-          </a>
+          </Link>
         </SidebarMenuButton>
       </SidebarMenuItem>
     ));
@@ -263,21 +245,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>{renderNavItems(purchaseOrderItems)}</SidebarMenu>
         </SidebarGroup> */}
 
-        {typeof window !== 'undefined' && (
-          <>
-            <SidebarGroup>
-              <SidebarGroupLabel>Administration</SidebarGroupLabel>
-              <SidebarMenu>
-                {renderNavItems(constructionToolsItems)}
-              </SidebarMenu>
-            </SidebarGroup>
-            <SidebarGroup>
-              <SidebarMenu>
-                {renderNavItems(administrationNavItems)}
-              </SidebarMenu>
-            </SidebarGroup>
-          </>
-        )}
+        <SidebarGroup>
+          <SidebarGroupLabel>Administration</SidebarGroupLabel>
+          <SidebarMenu>{renderNavItems(constructionToolsItems)}</SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarMenu>{renderNavItems(administrationNavItems)}</SidebarMenu>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <NavUser />
