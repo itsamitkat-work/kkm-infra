@@ -9,13 +9,12 @@ import {
   FormSelectField,
   FormDrawerHeader,
 } from '@/components/form';
-import type { BasicRate } from '@/hooks/useBasicRates';
+import type { BasicRate } from '@/app/(app)/basic-rates/api/basic-rate-api';
+import { useBasicRateTypesQuery } from '@/app/(app)/basic-rates/hooks/use-basic-rate-types-query';
 import {
   useCreateBasicRate,
   useUpdateBasicRate,
-  useBasicRateTypeOptions,
-  formStatusLabelToDb,
-} from '@/hooks/useBasicRates';
+} from '@/app/(app)/basic-rates/hooks/use-basic-rates-mutations';
 import { useBasicRateDistinctUnits } from '@/hooks/use-basic-rate-distinct-units';
 import { toast } from 'sonner';
 import { useAppForm } from '@/hooks/use-app-form';
@@ -97,7 +96,7 @@ export function BasicRatesDrawer({
 
   const createBasicRateMutation = useCreateBasicRate();
   const updateBasicRateMutation = useUpdateBasicRate();
-  const typeOptionsQuery = useBasicRateTypeOptions();
+  const typeOptionsQuery = useBasicRateTypesQuery();
   const scheduleOptionsQuery = useScheduleVersionOptions();
 
   const typeSelectOptions = React.useMemo(
@@ -160,15 +159,14 @@ export function BasicRatesDrawer({
       : undefined,
     onCreate: async (values) => {
       try {
-        const status = formStatusLabelToDb(values.status);
-        const rate = Number(values.rate);
+        const status = formStatusLabelToRecordStatus(values.status);
         await createBasicRateMutation.mutateAsync({
           schedule_source_version_id: values.schedule_source_version_id,
           basic_rate_type_id: values.basic_rate_type_id,
           code: values.code,
           description: values.description,
           unit: values.unit,
-          rate,
+          rate: Number(values.rate),
           status,
         });
         onSubmit();
@@ -186,9 +184,14 @@ export function BasicRatesDrawer({
           patchRecord.rate = Number(patchRecord.rate);
         }
         if (patchRecord.status != null) {
-          patchRecord.status = formStatusLabelToDb(
+          const mapped = formStatusLabelToRecordStatus(
             patchRecord.status as string
           );
+          if (mapped == null) {
+            toast.error('Invalid status.');
+            return;
+          }
+          patchRecord.status = mapped;
         }
         await updateBasicRateMutation.mutateAsync({
           id: basicRate.id,

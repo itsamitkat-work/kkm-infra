@@ -5,13 +5,13 @@ import * as React from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { Button } from '@/components/ui/button';
-import type { BasicRate } from '@/hooks/useBasicRates';
+import type { BasicRate } from '@/app/(app)/basic-rates/api/basic-rate-api';
 import {
   BASIC_RATES_TABLE_ID,
   useBasicRatesQuery,
-  useDeleteBasicRate,
-  useBasicRateTypeOptions,
-} from '@/hooks/useBasicRates';
+} from '@/app/(app)/basic-rates/hooks/use-basic-rates-query';
+import { useBasicRateTypesQuery } from '@/app/(app)/basic-rates/hooks/use-basic-rate-types-query';
+import { useDeleteBasicRate } from '@/app/(app)/basic-rates/hooks/use-basic-rates-mutations';
 import { useScheduleVersionOptions } from '@/hooks/use-schedule-source-versions';
 import { TableErrorState } from '@/components/tables/table-error';
 import { useOpenClose } from '@/hooks/use-open-close';
@@ -76,7 +76,7 @@ export function BasicRatesTable({
 
   const controls = useDataTableControls(BASIC_RATES_TABLE_ID, defaultFilters);
 
-  const { data: typeRows = [] } = useBasicRateTypeOptions();
+  const { data: typeRows = [] } = useBasicRateTypesQuery();
   const { data: scheduleRows = [] } = useScheduleVersionOptions();
 
   const typeFilterOptions = React.useMemo(
@@ -155,7 +155,7 @@ export function BasicRatesTable({
             ? undefined
             : {
                 end: (
-                  <Button  onClick={handleCreateBasicRate}>
+                  <Button onClick={handleCreateBasicRate}>
                     <IconPlus />
                     <span className='hidden lg:inline'>Create Basic Rate</span>
                   </Button>

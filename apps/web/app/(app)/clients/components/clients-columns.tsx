@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { TableLabelCell } from '@/components/tables/table-label-cell';
+import { TextCell } from '@/components/tables/table-cells';
 import { IconDotsVertical } from '@tabler/icons-react';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
@@ -48,12 +48,10 @@ export const getColumns = (
       />
     ),
     cell: ({ row }) => (
-      <TableLabelCell
+      <TextCell
         label={row.original.display_name || '—'}
         onClick={() => openClientFromRow(row.original)}
-        disabled={
-          !permissionFlags.canRead && !permissionFlags.canUpdate
-        }
+        disabled={!permissionFlags.canRead && !permissionFlags.canUpdate}
         emphasis
         className='pl-2'
         buttonClassName='text-foreground hover:text-primary'

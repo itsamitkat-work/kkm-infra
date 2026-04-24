@@ -23,7 +23,7 @@ import {
 } from '@/lib/utils';
 import { numberToText, formatIndianNumber } from '@/lib/numberToText';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
-import { TableLabelCell } from '@/components/tables/table-label-cell';
+import { TextCell } from '@/components/tables/table-cells';
 import { StatusBadge } from '@/components/ui/status-badge';
 
 interface PermissionFlags {
@@ -59,7 +59,7 @@ export const getColumns = (
       />
     ),
     cell: ({ row }) => (
-      <TableLabelCell
+      <TextCell
         label={row.original.name || ''}
         onClick={() => navigateToProjectDetail(row.original)}
         disabled={!permissionFlags.canRead}
