@@ -254,7 +254,7 @@ export const getMainColumns = ({
                 e.stopPropagation();
               }}
             >
-              <Badge variant='outline' size='sm'>
+              <Badge variant='outline' className='h-5 text-[0.625rem]'>
                 Extra
               </Badge>
             </span>

@@ -28,7 +28,7 @@ export default function AttendancePoolPage() {
   return (
     <div className='flex flex-col h-full p-4 lg:p-6 gap-4'>
       <Card className='flex-1 flex flex-col overflow-hidden p-0'>
-        <ResizablePanelGroup direction='horizontal' className='h-full'>
+        <ResizablePanelGroup orientation='horizontal' className='h-full'>
           <ResizablePanel defaultSize={40} minSize={30} className='min-w-0'>
             <PoolUserList
               projects={projects}

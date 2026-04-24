@@ -30,16 +30,8 @@ function formatQty(value: number): string {
   return value?.toLocaleString('en-IN', { maximumFractionDigits: 4 });
 }
 
-export function PrnDetailsTable({
-  prnCode,
-  className,
-}: PrnDetailsTableProps) {
-  const {
-    data: rows,
-    isLoading,
-    isError,
-    error,
-  } = usePrnDetailsQuery(prnCode);
+export function PrnDetailsTable({ prnCode, className }: PrnDetailsTableProps) {
+  const { data: rows, isLoading, isError, error } = usePrnDetailsQuery(prnCode);
   const checkMutation = usePrnCheckMutation();
   const verifyMutation = usePrnVerifyMutation();
 
@@ -56,9 +48,7 @@ export function PrnDetailsTable({
   if (isError) {
     return (
       <div className={cn('p-4 text-sm text-destructive', className)}>
-        {error instanceof Error
-          ? error.message
-          : 'Failed to load PRN details'}
+        {error instanceof Error ? error.message : 'Failed to load PRN details'}
       </div>
     );
   }
@@ -113,7 +103,6 @@ export function PrnDetailsTable({
                   </Badge>
                 ) : (
                   <Button
-                    size='sm'
                     variant='outline'
                     onClick={() =>
                       checkMutation.mutate({
@@ -140,7 +129,6 @@ export function PrnDetailsTable({
                   </Badge>
                 ) : (
                   <Button
-                    size='sm'
                     variant='outline'
                     onClick={() =>
                       verifyMutation.mutate({

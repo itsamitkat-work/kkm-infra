@@ -38,16 +38,9 @@ import { DrawerContentContainer } from '@/components/drawer/drawer-content-conta
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import {
-  FieldGroup,
-  FieldSet,
-  FieldLegend,
-  FieldSeparator,
-} from '@/components/ui/field';
-import {
-  useAppForm,
-  type ExtendEditPatchContext,
-} from '@/hooks/use-app-form';
+import { FieldSet, FieldLegend, FieldSeparator } from '@/components/ui/field';
+import { FieldGroupDense } from '@/components/field-group-dense';
+import { useAppForm, type ExtendEditPatchContext } from '@/hooks/use-app-form';
 import { fetchScheduleSourcesList } from '@/hooks/schedules/use-schedule-sources';
 import {
   RECORD_STATUS_OPTIONS,
@@ -369,9 +362,7 @@ function buildClientUpdatePayload(
 
   return {
     clientId: clientDetail.id,
-    ...('display_name' in dirty
-      ? { display_name: values.display_name }
-      : {}),
+    ...('display_name' in dirty ? { display_name: values.display_name } : {}),
     ...('full_name' in dirty
       ? { full_name: values.full_name?.trim() || null }
       : {}),
@@ -435,7 +426,9 @@ export function ClientDrawer({
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
-    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
+    onEmptyPatch: isEdit
+      ? () => toast.message('No changes to save')
+      : undefined,
     extendEditPatch: isEdit ? extendClientSchedulesDirtyPatch : undefined,
     onCreate: async (values) => {
       try {
@@ -503,7 +496,7 @@ export function ClientDrawer({
           </div>
         ) : (
           <form id='client-form' onSubmit={form.submit}>
-            <FieldGroup density='dense'>
+            <FieldGroupDense>
               <BasicInformationSection
                 control={form.control}
                 readOnly={isRead}
@@ -521,7 +514,7 @@ export function ClientDrawer({
               <AddressesSection control={form.control} readOnly={isRead} />
               <ContactsSection control={form.control} readOnly={isRead} />
               <NotesSection control={form.control} readOnly={isRead} />
-            </FieldGroup>
+            </FieldGroupDense>
           </form>
         )}
       </DrawerContentContainer>
@@ -594,12 +587,7 @@ function AddressesSection({
       <div className='flex items-center justify-between'>
         <FieldLegend variant='label'>Addresses</FieldLegend>
         {!readOnly && (
-          <Button
-            type='button'
-            size='sm'
-            variant='outline'
-            onClick={handleAddAddress}
-          >
+          <Button type='button' variant='outline' onClick={handleAddAddress}>
             <IconPlus className='size-4' />
             Add Address
           </Button>
@@ -741,12 +729,7 @@ function ContactsSection({
       <div className='flex items-center justify-between'>
         <FieldLegend variant='label'>Contacts</FieldLegend>
         {!readOnly && (
-          <Button
-            type='button'
-            size='sm'
-            variant='outline'
-            onClick={handleAddContact}
-          >
+          <Button type='button' variant='outline' onClick={handleAddContact}>
             <IconPlus className='size-4' />
             Add Contact
           </Button>
@@ -1025,7 +1008,7 @@ function AddScheduleCombobox({
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button type='button' size='sm' variant='outline'>
+        <Button type='button' variant='outline'>
           <IconPlus className='size-4' />
           Add Schedule
           <IconChevronDown className='size-4 opacity-50' />
@@ -1036,7 +1019,6 @@ function AddScheduleCombobox({
           <CommandInput
             placeholder='Search schedules…'
             onValueChange={setSearchTerm}
-            isLoading={isFetching}
           />
           <CommandList className='max-h-[280px]'>
             {isFetching && rows.length === 0 ? (

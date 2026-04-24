@@ -203,7 +203,7 @@ export function DeviationExportButtons({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' size='sm' disabled={disabled || isExporting}>
+        <Button variant='outline' disabled={disabled || isExporting}>
           {isExporting ? (
             <>
               <Loader2 className='h-4 w-4 animate-spin' />

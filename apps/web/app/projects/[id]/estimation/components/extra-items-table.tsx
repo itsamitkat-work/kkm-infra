@@ -288,7 +288,6 @@ export const ExtraItemsTable = forwardRef<
     () => ({
       enabled: true,
       placeholder: 'Search extra items...',
-      variant: 'sm' as const,
     }),
     []
   );

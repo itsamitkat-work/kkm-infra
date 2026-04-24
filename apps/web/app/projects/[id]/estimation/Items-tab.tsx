@@ -15,10 +15,7 @@ import {
 import { Filter } from '@/components/ui/filters';
 import { useProjectItemsQuery } from '@/app/(app)/projects/hooks/use-project-items-query';
 import { ProjectItemRowType as HookProjectRowData } from '@/types/project-item';
-import {
-  EstimationRowData,
-  type ProjectBoqDomainLinesType,
-} from './types';
+import { EstimationRowData, type ProjectBoqDomainLinesType } from './types';
 import { EstimationReportsKPICards } from './components/kpi-cards';
 import { useSearchShortcut } from '@/hooks/use-search-shortcut';
 import { Plus, Share2 } from 'lucide-react';
@@ -335,7 +332,6 @@ export function ItemsTab({
                   </span>
                   <UnitDisplay
                     unit={original.unit_display || ''}
-                    size='sm'
                     labelClassName='font-semibold text-foreground'
                   />
                 </div>
@@ -345,9 +341,7 @@ export function ItemsTab({
               selectedSegmentId={selectedSegmentId}
               projectItemHashId={original.id}
               rate={parseFloat(original.rate_amount || '0')}
-              scheduleQuantity={parseFloat(
-                original.contract_quantity || '0'
-              )}
+              scheduleQuantity={parseFloat(original.contract_quantity || '0')}
               type={type}
             />
           </div>
@@ -419,7 +413,6 @@ export function ItemsTab({
 
                   <Button
                     disabled={isLoading}
-                    size='sm'
                     variant='outline'
                     onClick={handleShareLink}
                   >
@@ -429,7 +422,6 @@ export function ItemsTab({
 
                   <Button
                     disabled={isLoading}
-                    size='sm'
                     className='mr-0'
                     onClick={handleAddExtraRow}
                   >

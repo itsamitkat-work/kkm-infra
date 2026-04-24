@@ -41,17 +41,12 @@ export function DataTableFilters({
           fields={filterFields || []}
           variant='outline'
           onChange={handleFiltersChange}
-          size='sm'
           showAddButton={showAddButton}
         />
       </div>
 
       {showClearButton && filters.length > 0 && (
-        <Button
-          variant='outline'
-          size='sm'
-          onClick={() => handleFiltersChange([])}
-        >
+        <Button variant='outline' onClick={() => handleFiltersChange([])}>
           <FunnelX /> Clear
         </Button>
       )}

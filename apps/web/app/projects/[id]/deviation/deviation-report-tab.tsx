@@ -192,7 +192,6 @@ export function DeviationReportTab({ projectId }: { projectId: string }) {
                 }
               }}
               variant='outline'
-              size='sm'
             >
               <ToggleGroupItem value='all' className='w-38 justify-center'>
                 <IconListDetails className='h-4 w-4 mr-2' />
@@ -217,7 +216,6 @@ export function DeviationReportTab({ projectId }: { projectId: string }) {
             {validatedDeviationFilter !== 'all' && (
               <Button
                 variant='ghost'
-                size='sm'
                 onClick={() => handleValueChange('deviation', 'all')}
                 className='flex items-center gap-2'
               >
@@ -242,7 +240,6 @@ export function DeviationReportTab({ projectId }: { projectId: string }) {
                 }
               }}
               variant='outline'
-              size='sm'
             >
               <ToggleGroupItem
                 value='GENvsEST'

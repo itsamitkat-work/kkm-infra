@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { IconSearch, IconX } from "@tabler/icons-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import * as React from 'react';
+import { IconSearch, IconX } from '@tabler/icons-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { DateRangeFilter } from "./date-range-filter";
+} from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
+import { DateRangeFilter } from './date-range-filter';
 
 // Base filter interface
 export interface BaseFilter {
   id: string;
   label: string;
-  type: "text" | "select" | "multiselect" | "date" | "daterange" | "number";
+  type: 'text' | 'select' | 'multiselect' | 'date' | 'daterange' | 'number';
   placeholder?: string;
   options?: Array<{ label: string; value: string }>;
   multiple?: boolean;
@@ -38,24 +38,23 @@ export const TextFilter = React.memo(
     onClear: () => void;
   }) => {
     return (
-      <div className="relative">
-        <IconSearch className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      <div className='relative'>
+        <IconSearch className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
         <Input
           placeholder={
             filter.placeholder || `Filter by ${filter.label.toLowerCase()}...`
           }
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="pl-9 pr-8"
+          className='pl-9 pr-8'
         />
         {value && (
           <Button
-            variant="ghost"
-            size="sm"
-            className="absolute right-1 top-1/2 h-6 w-6 -translate-y-1/2 p-0"
+            variant='ghost'
+            className='absolute right-1 top-1/2 h-6 w-6 -translate-y-1/2 p-0'
             onClick={onClear}
           >
-            <IconX className="h-3 w-3" />
+            <IconX className='h-3 w-3' />
           </Button>
         )}
       </div>
@@ -63,7 +62,7 @@ export const TextFilter = React.memo(
   }
 );
 
-TextFilter.displayName = "TextFilter";
+TextFilter.displayName = 'TextFilter';
 
 // Select filter component
 export const SelectFilter = React.memo(
@@ -79,11 +78,11 @@ export const SelectFilter = React.memo(
     onClear: () => void;
   }) => {
     return (
-      <div className="relative">
+      <div className='relative'>
         <Select value={value} onValueChange={onChange}>
           <SelectTrigger
             className={`w-[160px] transition-all duration-200 ${
-              value ? "pr-8" : ""
+              value ? 'pr-8' : ''
             }`}
           >
             <SelectValue
@@ -102,16 +101,11 @@ export const SelectFilter = React.memo(
         </Select>
         <div
           className={`absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center transition-all duration-200 ${
-            value ? "opacity-100" : "opacity-0 pointer-events-none"
+            value ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-6 w-6 p-0"
-            onClick={onClear}
-          >
-            <IconX className="h-3 w-3" />
+          <Button variant='ghost' className='h-6 w-6 p-0' onClick={onClear}>
+            <IconX className='h-3 w-3' />
           </Button>
         </div>
       </div>
@@ -119,7 +113,7 @@ export const SelectFilter = React.memo(
   }
 );
 
-SelectFilter.displayName = "SelectFilter";
+SelectFilter.displayName = 'SelectFilter';
 
 // Multi-select filter component
 export const MultiSelectFilter = React.memo(
@@ -147,10 +141,10 @@ export const MultiSelectFilter = React.memo(
       filter.options?.filter((option) => value.includes(option.value)) || [];
 
     return (
-      <div className="relative">
+      <div className='relative'>
         <Button
-          variant="outline"
-          className="w-[180px] justify-start"
+          variant='outline'
+          className='w-[180px] justify-start'
           onClick={() => setIsOpen(!isOpen)}
         >
           {selectedOptions.length === 0
@@ -159,33 +153,32 @@ export const MultiSelectFilter = React.memo(
         </Button>
 
         {isOpen && (
-          <div className="absolute top-full z-50 mt-1 w-full rounded-md border bg-background shadow-lg">
-            <div className="max-h-60 overflow-auto p-1">
+          <div className='absolute top-full z-50 mt-1 w-full rounded-md border bg-background shadow-lg'>
+            <div className='max-h-60 overflow-auto p-1'>
               {filter.options?.map((option) => (
                 <div
                   key={option.value}
-                  className="flex items-center space-x-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
+                  className='flex items-center space-x-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent'
                   onClick={() => handleToggleOption(option.value)}
                 >
                   <input
-                    type="checkbox"
+                    type='checkbox'
                     checked={value.includes(option.value)}
                     onChange={() => {}}
-                    className="h-4 w-4"
+                    className='h-4 w-4'
                   />
                   <span>{option.label}</span>
                 </div>
               ))}
             </div>
             {value.length > 0 && (
-              <div className="border-t p-1">
+              <div className='border-t p-1'>
                 <Button
-                  variant="ghost"
-                  size="sm"
-                  className="w-full justify-start"
+                  variant='ghost'
+                  className='w-full justify-start'
                   onClick={onClear}
                 >
-                  <IconX className="mr-2 h-3 w-3" />
+                  <IconX className='mr-2 h-3 w-3' />
                   Clear all
                 </Button>
               </div>
@@ -194,14 +187,13 @@ export const MultiSelectFilter = React.memo(
         )}
 
         {value.length > 0 && (
-          <div className="absolute -top-2 -right-2">
+          <div className='absolute -top-2 -right-2'>
             <Button
-              variant="secondary"
-              size="sm"
-              className="h-5 w-5 rounded-full p-0"
+              variant='secondary'
+              className='h-5 w-5 rounded-full p-0'
               onClick={onClear}
             >
-              <IconX className="h-3 w-3" />
+              <IconX className='h-3 w-3' />
             </Button>
           </div>
         )}
@@ -210,7 +202,7 @@ export const MultiSelectFilter = React.memo(
   }
 );
 
-MultiSelectFilter.displayName = "MultiSelectFilter";
+MultiSelectFilter.displayName = 'MultiSelectFilter';
 
 // Number filter component
 export const NumberFilter = React.memo(
@@ -228,45 +220,44 @@ export const NumberFilter = React.memo(
 
     return (
       <div
-        className={`relative flex items-center gap-2 ${hasValue ? "pr-8" : ""}`}
+        className={`relative flex items-center gap-2 ${hasValue ? 'pr-8' : ''}`}
       >
         <Input
-          type="number"
-          placeholder="Min"
-          value={value.min || ""}
+          type='number'
+          placeholder='Min'
+          value={value.min || ''}
           onChange={(e) =>
             onChange({
               ...value,
               min: e.target.value ? Number(e.target.value) : undefined,
             })
           }
-          className="w-16"
+          className='w-16'
         />
-        <span className="text-muted-foreground">-</span>
+        <span className='text-muted-foreground'>-</span>
         <Input
-          type="number"
-          placeholder="Max"
-          value={value.max || ""}
+          type='number'
+          placeholder='Max'
+          value={value.max || ''}
           onChange={(e) =>
             onChange({
               ...value,
               max: e.target.value ? Number(e.target.value) : undefined,
             })
           }
-          className="w-16"
+          className='w-16'
         />
-        <div className="absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+        <div className='absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center'>
           <Button
-            variant="ghost"
-            size="sm"
+            variant='ghost'
             className={`h-6 w-6 p-0 transition-all duration-200 ${
               hasValue
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-75 pointer-events-none"
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-75 pointer-events-none'
             }`}
             onClick={onClear}
           >
-            <IconX className="h-3 w-3" />
+            <IconX className='h-3 w-3' />
           </Button>
         </div>
       </div>
@@ -274,7 +265,7 @@ export const NumberFilter = React.memo(
   }
 );
 
-NumberFilter.displayName = "NumberFilter";
+NumberFilter.displayName = 'NumberFilter';
 
 // Date filter component
 export const DateFilter = React.memo(
@@ -292,45 +283,44 @@ export const DateFilter = React.memo(
 
     return (
       <div
-        className={`relative flex items-center gap-2 ${hasValue ? "pr-8" : ""}`}
+        className={`relative flex items-center gap-2 ${hasValue ? 'pr-8' : ''}`}
       >
         <Input
-          type="date"
-          placeholder="From"
-          value={value.from || ""}
+          type='date'
+          placeholder='From'
+          value={value.from || ''}
           onChange={(e) =>
             onChange({
               ...value,
               from: e.target.value || undefined,
             })
           }
-          className="w-28"
+          className='w-28'
         />
-        <span className="text-muted-foreground">-</span>
+        <span className='text-muted-foreground'>-</span>
         <Input
-          type="date"
-          placeholder="To"
-          value={value.to || ""}
+          type='date'
+          placeholder='To'
+          value={value.to || ''}
           onChange={(e) =>
             onChange({
               ...value,
               to: e.target.value || undefined,
             })
           }
-          className="w-28"
+          className='w-28'
         />
-        <div className="absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+        <div className='absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center'>
           <Button
-            variant="ghost"
-            size="sm"
+            variant='ghost'
             className={`h-6 w-6 p-0 transition-all duration-200 ${
               hasValue
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-75 pointer-events-none"
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-75 pointer-events-none'
             }`}
             onClick={onClear}
           >
-            <IconX className="h-3 w-3" />
+            <IconX className='h-3 w-3' />
           </Button>
         </div>
       </div>
@@ -338,7 +328,7 @@ export const DateFilter = React.memo(
   }
 );
 
-DateFilter.displayName = "DateFilter";
+DateFilter.displayName = 'DateFilter';
 
 // Date range filter component
 export const DateRangeFilterComponent = React.memo(
@@ -366,7 +356,7 @@ export const DateRangeFilterComponent = React.memo(
   }
 );
 
-DateRangeFilterComponent.displayName = "DateRangeFilterComponent";
+DateRangeFilterComponent.displayName = 'DateRangeFilterComponent';
 
 // Active filters display component
 export const ActiveFilters = React.memo(
@@ -391,31 +381,29 @@ export const ActiveFilters = React.memo(
     if (filters.length === 0) return null;
 
     return (
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm text-muted-foreground">Active filters:</span>
+      <div className='flex flex-wrap items-center gap-2'>
+        <span className='text-sm text-muted-foreground'>Active filters:</span>
         {filters.map((filter) => (
           <Badge
             key={filter.id}
-            variant="secondary"
-            className="flex items-center gap-1"
+            variant='secondary'
+            className='flex items-center gap-1'
           >
-            <span className="text-xs">
+            <span className='text-xs'>
               {filter.label}: {getFilterDisplayValue(filter.value, filter.type)}
             </span>
             <Button
-              variant="ghost"
-              size="sm"
-              className="h-4 w-4 p-0 hover:bg-transparent"
+              variant='ghost'
+              className='h-4 w-4 p-0 hover:bg-transparent'
               onClick={() => onClearFilter(filter.id)}
             >
-              <IconX className="h-3 w-3" />
+              <IconX className='h-3 w-3' />
             </Button>
           </Badge>
         ))}
         <Button
-          variant="ghost"
-          size="sm"
-          className="h-6 px-2 text-xs"
+          variant='ghost'
+          className='h-6 px-2 text-xs'
           onClick={onClearAll}
         >
           Clear all
@@ -425,7 +413,7 @@ export const ActiveFilters = React.memo(
   }
 );
 
-ActiveFilters.displayName = "ActiveFilters";
+ActiveFilters.displayName = 'ActiveFilters';
 
 // Helper function to display filter values
 function getFilterDisplayValue(
@@ -437,10 +425,10 @@ function getFilterDisplayValue(
   type: string
 ): string {
   switch (type) {
-    case "multiselect":
-      return Array.isArray(value) ? value.join(", ") : "";
-    case "number":
-      if (typeof value === "object" && value !== null && "min" in value) {
+    case 'multiselect':
+      return Array.isArray(value) ? value.join(', ') : '';
+    case 'number':
+      if (typeof value === 'object' && value !== null && 'min' in value) {
         const { min, max } = value as { min?: number; max?: number };
         if (min !== undefined && max !== undefined) {
           return `${min} - ${max}`;
@@ -448,10 +436,10 @@ function getFilterDisplayValue(
         if (min !== undefined) return `≥ ${min}`;
         if (max !== undefined) return `≤ ${max}`;
       }
-      return "";
-    case "date":
-    case "daterange":
-      if (typeof value === "object" && value !== null && "from" in value) {
+      return '';
+    case 'date':
+    case 'daterange':
+      if (typeof value === 'object' && value !== null && 'from' in value) {
         const { from, to } = value as { from?: string; to?: string };
         if (from && to) {
           return `${from} - ${to}`;
@@ -459,8 +447,8 @@ function getFilterDisplayValue(
         if (from) return `≥ ${from}`;
         if (to) return `≤ ${to}`;
       }
-      return "";
+      return '';
     default:
-      return String(value || "");
+      return String(value || '');
   }
 }

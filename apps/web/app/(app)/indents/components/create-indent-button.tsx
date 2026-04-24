@@ -58,7 +58,6 @@ export function CreateIndentButton({
   return (
     <div className='flex items-center'>
       <Button
-        size='sm'
         variant='outline'
         onClick={handlePrimaryClick}
         className='rounded-r-none border-r-0'
@@ -69,7 +68,6 @@ export function CreateIndentButton({
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
           <Button
-            size='sm'
             variant='outline'
             className='rounded-l-none border-l-1 pl-2'
             aria-label='Choose project for new indent'

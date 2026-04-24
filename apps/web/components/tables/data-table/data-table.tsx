@@ -26,7 +26,8 @@ import {
   ExpandedState,
 } from '@tanstack/react-table';
 import { Label } from '@/components/ui/label';
-import { Table, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { ComposedTable } from '@/components/composed-table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SearchInput } from '../../ui/search-input';
 import { DataTableControls } from './use-data-table-controls';
@@ -301,7 +302,6 @@ export function DataTable<T extends WithId>({
                       onClear={() => controls.setSearch('')}
                       className='min-w-48 sm:min-w-64 max-w-sm shrink-0'
                       kbd={getPlatformSpecificKbd('K')}
-                      variant='sm'
                       autoFocus
                     />
                   )}
@@ -371,7 +371,7 @@ export function DataTable<T extends WithId>({
             sensors={sensors}
             id={sortableId}
           >
-            <Table
+            <ComposedTable
               className='w-full table-fixed'
               containerClassName='overflow-visible'
             >
@@ -425,7 +425,7 @@ export function DataTable<T extends WithId>({
                 renderExpandedRow={renderExpandedRow}
                 showLoaderWhenPending={showLoaderWhenPending}
               />
-            </Table>
+            </ComposedTable>
           </DndContext>
         </div>
       </TabsContent>

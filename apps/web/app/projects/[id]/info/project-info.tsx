@@ -3,22 +3,9 @@
 import { TableLoadingState } from '@/components/tables/table-loading';
 import { Button } from '@/components/ui/button';
 import { StatusLabel } from '@/components/ui/status-label';
+import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
 import { cn, formatCurrency, formatDate } from '@/lib/utils';
-import {
-  Calendar,
-  MapPin,
-  Wallet,
-  XCircle,
-  Edit,
-  Tag,
-  Hash,
-  Code,
-  Activity,
-  Building,
-  Building2,
-  Receipt,
-  ChevronRight,
-} from 'lucide-react';
+import { XCircle, Edit, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -32,10 +19,7 @@ import type {
   ProjectDetailMember,
   ProjectsListRow,
 } from '@/hooks/useProjects';
-import {
-  parseProjectMeta,
-  projectDetailToListRow,
-} from '@/hooks/useProjects';
+import { parseProjectMeta, projectDetailToListRow } from '@/hooks/useProjects';
 import { parseClientAddresses, useClient } from '@/hooks/useClients';
 import { billingSummaryForIndex } from '@/lib/clients/address-display';
 import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
@@ -47,6 +31,15 @@ import {
   useProjectMembersByRole,
 } from '@/hooks/projects/use-project-member';
 import { FieldGroup, FieldLegend, FieldSet } from '@/components/ui/field';
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from '@/components/ui/item';
 
 interface ProjectInfoTabProps {
   project: ProjectDetail | null | undefined;
@@ -107,7 +100,7 @@ export function ProjectInfo({
   );
 
   return (
-    <div className='space-y-6'>
+    <div className='space-y-4'>
       <div className='flex justify-end'>
         <Button
           size='sm'
@@ -115,105 +108,80 @@ export function ProjectInfo({
             project &&
             projectDrawer.open(projectDetailToListRow(project), 'edit')
           }
-          className='h-8'
         >
-          <Edit className='mr-2 h-4 w-4' />
+          <Edit className='mr-1.5 h-3.5 w-3.5' />
           Edit Project
         </Button>
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-        <div className='border rounded-lg p-6 space-y-6'>
-          <section>
-            <div className='space-y-4'>
-              <div className='flex items-center gap-2'>
-                <h3 className='text-lg font-semibold text-foreground'>
-                  Basic Information
-                </h3>
-              </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <InfoItem label='Project Name' icon={Tag}>
-                  {project.name}
-                </InfoItem>
-                <InfoItem label='Project Code' icon={Code}>
-                  {project.code ?? '—'}
-                </InfoItem>
-                <InfoItem label='Short Name' icon={Hash}>
-                  {meta.short_name ?? '—'}
-                </InfoItem>
-                <InfoItem label='Sanction Amount' icon={Wallet}>
+      <div className='grid grid-cols-1 gap-4 lg:grid-cols-2'>
+        <div className='rounded-lg border p-3'>
+          <ItemGroup className='gap-3'>
+            <section className='space-y-2'>
+              <h3 className='text-sm font-semibold tracking-tight text-foreground'>
+                Basic Information
+              </h3>
+              <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+                <InfoItem label='Project Name'>{project.name}</InfoItem>
+                <InfoItem label='Project Code'>{project.code ?? '—'}</InfoItem>
+                <InfoItem label='Short Name'>{meta.short_name ?? '—'}</InfoItem>
+                <InfoItem label='Sanction Amount'>
                   {formatCurrency(meta.sanction_amount ?? 0)}
                 </InfoItem>
-                <InfoItem label='Sanction DOS' icon={Calendar}>
+                <InfoItem label='Sanction DOS'>
                   {meta.sanction_dos ? formatDate(meta.sanction_dos) : '—'}
                 </InfoItem>
-                <InfoItem label='Sanction DOC' icon={Calendar}>
+                <InfoItem label='Sanction DOC'>
                   {meta.sanction_doc ? formatDate(meta.sanction_doc) : '—'}
                 </InfoItem>
-                <InfoItem label='Status' icon={Activity}>
+                <InfoItem label='Status'>
                   <StatusLabel
                     status={projectStatusDisplayLabel(project.status)}
                   />
                 </InfoItem>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className='pt-6 border-t border-border/50'>
-            <div className='space-y-4'>
-              <div className='flex items-center gap-2'>
-                <h3 className='text-lg font-semibold text-foreground'>
-                  Location Details
-                </h3>
-              </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <InfoItem label='Project Location' icon={MapPin}>
+            <section className='space-y-2'>
+              <h3 className='text-sm font-semibold tracking-tight text-foreground'>
+                Location Details
+              </h3>
+              <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+                <InfoItem label='Project Location'>
                   {meta.location || '—'}
                 </InfoItem>
-                <InfoItem label='Project City' icon={Building}>
-                  {meta.city || '—'}
-                </InfoItem>
+                <InfoItem label='Project City'>{meta.city || '—'}</InfoItem>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className='pt-6 border-t border-border/50'>
-            <div className='space-y-4'>
-              <div className='flex items-center gap-2'>
-                <h3 className='text-lg font-semibold text-foreground'>
-                  Client Information
-                </h3>
-              </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <InfoItem label='Schedule / Client' icon={Building2}>
-                  {scheduleLabel}
-                </InfoItem>
-                <InfoItem label='Billing address' icon={MapPin}>
+            <section className='space-y-2'>
+              <h3 className='text-sm font-semibold tracking-tight text-foreground'>
+                Client Information
+              </h3>
+              <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+                <InfoItem label='Schedule / Client'>{scheduleLabel}</InfoItem>
+                <InfoItem label='Billing address'>
                   {billingClientId ? billingLines.addressLine : '—'}
                 </InfoItem>
-                <InfoItem label='Billing GSTIN' icon={Receipt}>
+                <InfoItem label='Billing GSTIN'>
                   {billingClientId ? billingLines.gstin : '—'}
                 </InfoItem>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className='pt-6 border-t border-border/50'>
-            <div className='space-y-4'>
-              <div className='flex items-center gap-2'>
-                <h3 className='text-lg font-semibold text-foreground'>
-                  Project Team
-                </h3>
-              </div>
-              <div className='space-y-4'>
+            <section className='space-y-2'>
+              <h3 className='text-sm font-semibold tracking-tight text-foreground'>
+                Project Team
+              </h3>
+              <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
                 <FieldSet
                   className={cn(
-                    'gap-3 rounded-lg border bg-muted/30 p-4',
-                    '[&>[data-slot=field-legend]]:mb-0'
+                    'gap-2 rounded-md border bg-muted/30 p-2.5',
+                    '[&>[data-slot=field-legend]]:mb-0 [&>[data-slot=field-legend]]:text-xs'
                   )}
                 >
                   <FieldLegend variant='legend'>Estimation</FieldLegend>
-                  <FieldGroup className='gap-3'>
+                  <FieldGroup className='gap-2'>
                     {PROJECT_TEAM_ESTIMATION_ROLES.map((slug) => (
                       <TeamRoleReadOnlyRow
                         key={slug}
@@ -225,12 +193,12 @@ export function ProjectInfo({
                 </FieldSet>
                 <FieldSet
                   className={cn(
-                    'gap-3 rounded-lg border bg-muted/30 p-4',
-                    '[&>[data-slot=field-legend]]:mb-0'
+                    'gap-2 rounded-md border bg-muted/30 p-2.5',
+                    '[&>[data-slot=field-legend]]:mb-0 [&>[data-slot=field-legend]]:text-xs'
                   )}
                 >
                   <FieldLegend variant='legend'>Operations</FieldLegend>
-                  <FieldGroup className='gap-3'>
+                  <FieldGroup className='gap-2'>
                     {PROJECT_TEAM_OPERATIONS_ROLES.map((slug) => (
                       <TeamRoleReadOnlyRow
                         key={slug}
@@ -241,8 +209,8 @@ export function ProjectInfo({
                   </FieldGroup>
                 </FieldSet>
               </div>
-            </div>
-          </section>
+            </section>
+          </ItemGroup>
         </div>
 
         <div>
@@ -283,15 +251,24 @@ interface InfoItemProps {
 
 function InfoItem({ label, children, icon: Icon }: InfoItemProps) {
   return (
-    <div className='p-3 rounded-lg bg-card space-y-2'>
-      <label className='text-xs font-medium text-muted-foreground flex items-center'>
-        {Icon && <Icon className='mr-1.5 h-3.5 w-3.5' />}
-        {label}
-      </label>
-      <div className='text-sm font-semibold text-foreground break-words'>
-        {children}
-      </div>
-    </div>
+    <Item size='xs' className='items-start'>
+      {Icon ? (
+        <ItemMedia
+          variant='icon'
+          className="text-muted-foreground [&_svg:not([class*='size-'])]:size-3.5"
+        >
+          <Icon />
+        </ItemMedia>
+      ) : null}
+      <ItemContent className='min-w-0 gap-0.5'>
+        <ItemDescription className='text-[0.6875rem] font-medium leading-tight'>
+          {label}
+        </ItemDescription>
+        <ItemTitle className='line-clamp-none whitespace-normal break-words text-xs font-semibold leading-snug text-foreground'>
+          {children}
+        </ItemTitle>
+      </ItemContent>
+    </Item>
   );
 }
 
@@ -361,20 +338,30 @@ function TeamRoleReadOnlyRow({
         role={label}
         name={member.display_name}
         userId={member.user_id}
+        imageUrl={member.avatar_url ?? null}
         roleSlug={slug}
       />
     );
   }
   return (
-    <div className='flex items-center gap-3 rounded-lg border border-dashed bg-background/50 p-3'>
-      <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground'>
-        —
-      </div>
-      <div className='min-w-0 flex-1'>
-        <p className='truncate text-sm text-muted-foreground'>Not assigned</p>
-        <p className='truncate text-xs text-muted-foreground/80'>{label}</p>
-      </div>
-    </div>
+    <Item size='xs' className='border-dashed bg-muted/20 text-muted-foreground'>
+      <ItemMedia variant='icon'>
+        <span
+          className='flex size-8 items-center justify-center rounded-full bg-muted text-[0.625rem] font-semibold'
+          aria-hidden
+        >
+          —
+        </span>
+      </ItemMedia>
+      <ItemContent className='min-w-0 gap-0'>
+        <ItemTitle className='text-xs font-normal text-muted-foreground'>
+          Not assigned
+        </ItemTitle>
+        <ItemDescription className='text-[0.6875rem] leading-tight'>
+          {label}
+        </ItemDescription>
+      </ItemContent>
+    </Item>
   );
 }
 
@@ -386,24 +373,39 @@ function TeamMember({
   roleSlug,
 }: TeamMemberProps) {
   const colorClass = getAvatarColorClass(role, roleSlug);
+  const avatarSrc = resolveProfileAvatarSrc(imageUrl);
 
   return (
-    <Link href={`/user/${userId}`} className='block'>
-      <div className='flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-muted/50 hover:border-primary/50 hover:shadow-sm transition-all cursor-pointer group'>
-        <Avatar className='h-10 w-10'>
-          <AvatarImage src={imageUrl ?? undefined} alt={name} />
-          <AvatarFallback className={`${colorClass} text-xs font-semibold`}>
-            {getInitials(name)}
-          </AvatarFallback>
-        </Avatar>
-        <div className='flex-1 min-w-0'>
-          <p className='text-sm font-semibold text-foreground truncate group-hover:text-primary transition-colors'>
+    <Link
+      href={`/user/${userId}`}
+      className='block rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+    >
+      <Item
+        size='xs'
+        className='cursor-pointer transition-shadow hover:border-primary/40 hover:shadow-sm'
+      >
+        <ItemMedia variant='icon' className='self-center'>
+          <Avatar className='h-8 w-8'>
+            <AvatarImage src={avatarSrc} alt={name} />
+            <AvatarFallback
+              className={`${colorClass} text-[0.625rem] font-semibold`}
+            >
+              {getInitials(name)}
+            </AvatarFallback>
+          </Avatar>
+        </ItemMedia>
+        <ItemContent className='min-w-0 gap-0'>
+          <ItemTitle className='truncate text-xs transition-colors group-hover/item:text-primary'>
             {name}
-          </p>
-          <p className='text-xs text-muted-foreground truncate'>{role}</p>
-        </div>
-        <ChevronRight className='h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0' />
-      </div>
+          </ItemTitle>
+          <ItemDescription className='truncate text-[0.6875rem] leading-tight'>
+            {role}
+          </ItemDescription>
+        </ItemContent>
+        <ItemActions className='shrink-0 self-center'>
+          <ChevronRight className='h-3.5 w-3.5 text-muted-foreground transition-transform group-hover/item:translate-x-0.5 group-hover/item:text-primary' />
+        </ItemActions>
+      </Item>
     </Link>
   );
 }

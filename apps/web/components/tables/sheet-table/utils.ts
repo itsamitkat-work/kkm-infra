@@ -231,7 +231,6 @@ export interface SheetTableProps<T extends Record<string, unknown>> {
   searchConfig?: {
     placeholder?: string;
     enabled?: boolean;
-    variant?: 'sm' | 'md' | 'lg';
   };
 
   /**

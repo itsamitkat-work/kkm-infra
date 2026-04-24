@@ -263,15 +263,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>{renderNavItems(purchaseOrderItems)}</SidebarMenu>
         </SidebarGroup>
 
-        {typeof window !== 'undefined' && administrationNavItems.length > 0 && (
-          <SidebarGroup>
-            <SidebarGroupLabel>Administration</SidebarGroupLabel>
-            <SidebarMenu>
-              {renderNavItems(constructionToolsItems)}
-              <SidebarSeparator />
-              {renderNavItems(administrationNavItems)}
-            </SidebarMenu>
-          </SidebarGroup>
+        {typeof window !== 'undefined' && (
+          <>
+            <SidebarGroup>
+              <SidebarGroupLabel>Administration</SidebarGroupLabel>
+              <SidebarMenu>
+                {renderNavItems(constructionToolsItems)}
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarMenu>
+                {renderNavItems(administrationNavItems)}
+              </SidebarMenu>
+            </SidebarGroup>
+          </>
         )}
       </SidebarContent>
       <SidebarFooter>

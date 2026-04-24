@@ -188,7 +188,6 @@ export function PoolUserList({
       <PopoverTrigger asChild>
         {canUpdate && (
           <Button
-            size='sm'
             disabled={table.getSelectedRowModel().rows.length === 0}
             role='combobox'
             aria-expanded={open}
@@ -412,16 +411,14 @@ export function PoolUserList({
             {/* Quick date selection buttons */}
             <div className='flex items-center gap-2 w-full justify-start'>
               <Button
-                variant={isToday(assignDate) ? 'primary' : 'outline'}
-                size='sm'
+                variant={isToday(assignDate) ? 'default' : 'outline'}
                 className='h-8 px-3 text-xs'
                 onClick={() => setAssignDate(startOfToday())}
               >
                 Today
               </Button>
               <Button
-                variant={isYesterday(assignDate) ? 'primary' : 'outline'}
-                size='sm'
+                variant={isYesterday(assignDate) ? 'default' : 'outline'}
                 className='h-8 px-3 text-xs'
                 onClick={() => setAssignDate(subDays(startOfToday(), 1))}
               >

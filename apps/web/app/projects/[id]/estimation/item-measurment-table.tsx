@@ -115,7 +115,6 @@ export function ItemMeasurmentTable({
     () => ({
       enabled: true,
       placeholder: 'Search descriptions...',
-      variant: 'sm' as const,
     }),
     []
   );

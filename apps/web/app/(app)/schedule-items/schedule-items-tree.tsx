@@ -250,7 +250,7 @@ function ScheduleRowTreeControl({
     <Button
       type='button'
       variant='ghost'
-      size='xs'
+      size='sm'
       className={cn(
         shell,
         'text-muted-foreground h-5 min-h-5 px-0 py-0 font-normal'
@@ -447,8 +447,7 @@ function ScheduleRowAnnotationsTooltip({
         <Button
           type='button'
           variant='ghost'
-          mode='icon'
-          size='xs'
+          size='icon-xs'
           className='-my-0.5 h-5 w-5 min-h-5 min-w-5 shrink-0 p-0 text-muted-foreground'
           aria-label={label}
         >
@@ -505,7 +504,7 @@ function ScheduleTreeColumnHeader({
           <Button
             type='button'
             variant='ghost'
-            size='xs'
+            size='sm'
             className={cn(
               TREE_CONTROL_CELL_CLASS,
               'text-muted-foreground h-5 min-h-5 px-0 py-0 font-normal'
@@ -872,8 +871,7 @@ export function ScheduleItemsTree({
                   onChange={(event) => setSearchText(event.target.value)}
                   onClear={() => setSearchText('')}
                   placeholder='Search by code or description (min 2 chars)'
-                  variant='sm'
-                  className='h-7 w-full'
+                  className='w-full'
                 />
               </div>
               {showSearchHelp ? (

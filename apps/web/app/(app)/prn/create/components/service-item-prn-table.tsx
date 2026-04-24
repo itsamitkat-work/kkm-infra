@@ -90,7 +90,6 @@ export function ServiceItemPrnTable({ projectId }: ServiceItemPrnTableProps) {
         cell: ({ row }) => (
           <div className='text-right'>
             <Button
-              size='sm'
               variant='ghost'
               onClick={() => openEditDrawer(row.original)}
               aria-label='Edit'
@@ -133,7 +132,7 @@ export function ServiceItemPrnTable({ projectId }: ServiceItemPrnTableProps) {
         loadingMessage='Loading PRN service items...'
         actions={{
           end: (
-            <Button size='sm' onClick={openCreateDrawer}>
+            <Button onClick={openCreateDrawer}>
               <IconPlus className='size-4 mr-1' />
               Add Service Item
             </Button>

@@ -7,9 +7,9 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogBody,
   DialogFooter,
 } from '@/components/ui/dialog';
+import { DialogBody } from '@/components/dialog-body';
 import {
   Table,
   TableBody,

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Search } from 'lucide-react';
 import { Filter, Filters, FilterFieldConfig } from '@/components/ui/filters';
 import { SearchInput } from '@/components/ui/search-input';
 import { getPlatformSpecificKbd } from '@/lib/utils';
@@ -45,14 +44,13 @@ export function EstimationReportsFilters({
 }: EstimationReportsFiltersProps) {
   return (
     <div className='flex items-center gap-3 w-full'>
-      <div className='relative flex-1 max-w-md'>
-        <Search className='absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground' />
+      <div className='min-w-0 flex-1 max-w-md'>
         <SearchInput
           ref={searchInputRef}
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder='Search by Wo. No. or Name'
-          className='pl-8 h-8'
+          className='w-full'
           onClear={() => onQueryChange('')}
           kbd={getPlatformSpecificKbd('K')}
         />
@@ -62,7 +60,6 @@ export function EstimationReportsFilters({
         filters={filters}
         onChange={onFiltersChange}
         variant='outline'
-        size='sm'
         className='gap-2'
         showAddButton={true}
       />

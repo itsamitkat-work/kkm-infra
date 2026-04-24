@@ -223,7 +223,6 @@ function AttendancePageContent() {
           <div className='flex items-center gap-2'>
             <Button
               variant='outline'
-              size='sm'
               className='h-8 gap-1.5 px-2.5 font-medium transition-all hover:bg-muted/80'
               onClick={() => setIsAssignFromPoolDialogOpen(true)}
             >

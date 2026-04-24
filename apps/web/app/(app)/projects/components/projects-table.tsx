@@ -14,10 +14,7 @@ import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
 import { useDeleteProject } from '@/hooks/projects/use-project-mutations';
 import { getColumns } from './projects-columns';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
-import {
-  defaultProjectTableFilters,
-  filterFields,
-} from './project-filters';
+import { defaultProjectTableFilters, filterFields } from './project-filters';
 import {
   PROJECTS_TABLE_ID,
   useProjectsQuery,
@@ -145,7 +142,7 @@ export function ProjectsTable() {
         }
         actions={{
           end: permissionFlags.canCreate ? (
-            <Button size='sm' onClick={handleCreateProject}>
+            <Button onClick={handleCreateProject}>
               <IconPlus />
               <span className='hidden lg:inline'>Create Project</span>
             </Button>

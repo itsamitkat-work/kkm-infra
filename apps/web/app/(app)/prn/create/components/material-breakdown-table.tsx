@@ -15,7 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { Input } from '@/components/ui/input';
+import { NumberInput } from '@/components/number-input';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from 'sonner';
@@ -139,7 +139,6 @@ export function MaterialBreakdownTable({
             <span>Breakdown Items</span>
           </div>
           <Button
-            size='sm'
             disabled={!canSave}
             onClick={handleSave}
             aria-busy={savePrnMutation.isPending}
@@ -212,7 +211,7 @@ export function MaterialBreakdownTable({
  w-28 min-w-28 max-w-28'
                     >
                       <div className='flex justify-end'>
-                        <Input
+                        <NumberInput
                           type='number'
                           disableStepArrows
                           min={0}

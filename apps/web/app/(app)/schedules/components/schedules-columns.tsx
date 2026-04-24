@@ -31,7 +31,7 @@ export function getSchedulesColumns(
           <Button
             type='button'
             variant='ghost'
-            mode='icon'
+            size='icon-sm'
             className='text-muted-foreground size-8 shrink-0'
             aria-expanded={expanded}
             aria-label={expanded ? 'Collapse editions' : 'Expand editions'}

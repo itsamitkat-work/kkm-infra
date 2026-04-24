@@ -90,16 +90,14 @@ export function DateSelector({ date, onDateChange }: DateSelectorProps) {
             {/* Quick actions */}
             <div className='flex items-center gap-1 border-b p-2'>
               <Button
-                variant={isToday(date) ? 'primary' : 'ghost'}
-                size='sm'
+                variant={isToday(date) ? 'default' : 'ghost'}
                 className='h-7 px-2 text-xs'
                 onClick={handleToday}
               >
                 Today
               </Button>
               <Button
-                variant={isYesterday(date) ? 'primary' : 'ghost'}
-                size='sm'
+                variant={isYesterday(date) ? 'default' : 'ghost'}
                 className='h-7 px-2 text-xs'
                 onClick={() => {
                   onDateChange(subDays(startOfToday(), 1));

@@ -103,12 +103,11 @@ export function TableLabelCell({
         <Tooltip delayDuration={tooltipDelayDuration}>
           <TooltipTrigger asChild>
             <Button
-              variant='ghost'
-              mode='link'
+              variant='link'
               onClick={onClick}
               disabled={disabled}
               className={cn(
-                'h-auto min-h-0 w-full min-w-0 max-w-full py-1 font-normal text-left overflow-hidden justify-start',
+                'h-auto min-h-0 w-full min-w-0 max-w-full justify-start overflow-hidden py-1 text-left font-normal',
                 buttonClassName
               )}
             >

@@ -36,6 +36,7 @@ export function TextareaWithAutocomplete({
   disableFocusRing = false,
   formatSelectedValue,
   className,
+  rows: rowsFromParent,
   ...props
 }: TextareaWithAutocompleteProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -326,11 +327,16 @@ export function TextareaWithAutocomplete({
           onKeyDown={handleKeyDown}
           onClick={handleClick}
           onSelect={handleSelect}
-          autoSize={autoSize}
-          minRows={minRows}
-          maxRows={maxRows}
-          disableFocusRing={disableFocusRing}
-          className={className}
+          rows={minRows ?? rowsFromParent}
+          className={cn(
+            className,
+            autoSize && "field-sizing-content min-h-0",
+            typeof maxRows === "number" &&
+              maxRows > 0 &&
+              `max-h-[calc(${maxRows}*1.5rem)] overflow-y-auto`,
+            disableFocusRing &&
+              "focus-visible:border-transparent focus-visible:ring-0"
+          )}
           {...props}
         />
         {/* Invisible anchor positioned at cursor location */}

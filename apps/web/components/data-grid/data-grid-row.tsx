@@ -16,13 +16,13 @@ import {
   getColumnBorderVisibility,
   getColumnPinningStyle,
   getRowHeightValue,
-} from "@/components/data-grid/data-grid";
+} from "@/lib/data-grid";
 import { cn } from "@/lib/utils";
 import type {
   CellPosition,
   Direction,
   RowHeightValue,
-} from "@/components/data-grid/data-grid";
+} from "@/types/data-grid";
 
 interface DataGridRowProps<TData> extends React.ComponentProps<"div"> {
   row: Row<TData>;

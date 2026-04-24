@@ -6,7 +6,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { ComboboxRenderOptionProps } from '@/components/ui/combobox';
 import type { BoqSchedulePick } from '@/app/(app)/schedule-items/boq-schedule-pick';
 import { getReferenceScheduleLabelString } from '@/app/(app)/schedule-items/reference-schedule-labels';
 import { flattenItemDescription } from './item-description-doc';
@@ -49,8 +48,16 @@ export function useScheduleItemPickerOptions(
   );
 }
 
+/** Props passed from data-grid combobox `renderOption` into the schedule picker row renderer. */
+export type ScheduleItemPickerOptionRenderProps = {
+  option: ScheduleItemPickerOption;
+  label: string;
+  isSelected: boolean;
+  searchValue: string;
+};
+
 export function renderScheduleItemPickerOption(
-  props: ComboboxRenderOptionProps<ScheduleItemPickerOption>
+  props: ScheduleItemPickerOptionRenderProps
 ) {
   const { option } = props;
   return (

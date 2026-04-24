@@ -71,19 +71,13 @@ function FormDrawerHeaderComponent<
       </div>
       <div className='flex gap-2'>
         <DrawerClose asChild>
-          <Button
-            size='sm'
-            variant='outline'
-            onClick={onCancel}
-            disabled={isLoading}
-          >
+          <Button variant='outline' onClick={onCancel} disabled={isLoading}>
             {readOnly ? 'Close' : 'Cancel'}
           </Button>
         </DrawerClose>
         {!readOnly && (
           <Button
             type='submit'
-            size='sm'
             form={formId}
             disabled={
               allowSubmitWhenNotDirty

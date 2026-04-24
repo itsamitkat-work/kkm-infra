@@ -12,13 +12,13 @@ import {
 } from '@tanstack/react-table';
 
 import {
-  Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { ComposedTable } from '@/components/composed-table';
 import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
@@ -91,7 +91,7 @@ export function ItemsDataTable<TData, TValue>({
 
   return (
     <div className={cn('rounded-md border relative', className)}>
-      <Table containerClassName='overflow-visible'>
+      <ComposedTable containerClassName='overflow-visible'>
         <TableHeader className='sticky top-0 z-20 bg-background'>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -194,7 +194,7 @@ export function ItemsDataTable<TData, TValue>({
             );
           })}
         </TableBody>
-      </Table>
+      </ComposedTable>
     </div>
   );
 }

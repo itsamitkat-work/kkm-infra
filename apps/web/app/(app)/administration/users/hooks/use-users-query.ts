@@ -26,7 +26,13 @@ type MemberWithProfile = {
   user_id: string;
   status: string;
   created_at: string;
-  profiles: { username: string | null; display_name: string | null } | null;
+  display_name: string | null;
+  avatar_url: string | null;
+  profiles: {
+    username: string | null;
+    display_name: string | null;
+    avatar_url: string | null;
+  } | null;
 };
 
 type RoleEmbed = { id: string; name: string; slug: string };
@@ -43,14 +49,21 @@ function mapRowsToUsers(
   return members.map((m) => {
     const prof = m.profiles;
     const roles = roleMap.get(m.id) ?? [];
+    const tmDisplay = m.display_name?.trim() ?? '';
+    const profDisplay = prof?.display_name?.trim() ?? '';
+    const tmAvatar = m.avatar_url?.trim() ?? '';
+    const profAvatar = prof?.avatar_url?.trim() ?? '';
+
     return {
       id: m.user_id,
       tenantMemberId: m.id,
       userName: prof?.username ?? '',
       fullName:
-        prof?.display_name?.trim() ||
+        tmDisplay ||
+        profDisplay ||
         prof?.username ||
         m.user_id.slice(0, 8),
+      avatarUrl: tmAvatar || profAvatar || null,
       email: '',
       isActive: m.status === 'active',
       roles,
@@ -84,7 +97,9 @@ export async function fetchTenantUsers(
       user_id,
       status,
       created_at,
-      profiles(username, display_name)
+      display_name,
+      avatar_url,
+      profiles(username, display_name, avatar_url)
     `,
       { count: 'exact' },
     )

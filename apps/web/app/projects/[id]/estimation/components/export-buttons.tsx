@@ -50,7 +50,6 @@ export function ExportButtons({
       <DropdownMenuTrigger asChild>
         <Button
           variant='outline'
-          size='sm'
           disabled={disabled || isExporting || items.length === 0}
         >
           {isExporting ? (

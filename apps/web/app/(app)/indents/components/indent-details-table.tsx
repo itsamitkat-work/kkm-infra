@@ -115,7 +115,6 @@ export function IndentDetailsTable({
                   </Badge>
                 ) : (
                   <Button
-                    size='sm'
                     variant='outline'
                     onClick={() =>
                       checkMutation.mutate({
@@ -142,7 +141,6 @@ export function IndentDetailsTable({
                   </Badge>
                 ) : (
                   <Button
-                    size='sm'
                     variant='outline'
                     onClick={() =>
                       verifyMutation.mutate({

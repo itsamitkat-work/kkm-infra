@@ -11,7 +11,6 @@ type Props<T extends Record<string, unknown>> = {
     placeholder?: string;
     enabled?: boolean;
     kbd?: string;
-    variant?: 'sm' | 'md' | 'lg';
   };
   filters: FilterFieldConfig[] | undefined;
   actions: React.ReactNode;
@@ -44,7 +43,6 @@ export function Filters<T extends Record<string, unknown>>({
                   className='min-w-48 sm:min-w-64 max-w-sm shrink-0'
                   onClear={() => setSearchValue('')}
                   kbd={searchConfig.kbd}
-                  variant={searchConfig.variant}
                 />
               )}
               <AdvancedFilters

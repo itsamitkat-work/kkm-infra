@@ -17,10 +17,7 @@ import {
   type ClientsListRow,
 } from '@/hooks/useClients';
 import { getColumns } from './clients-columns';
-import {
-  defaultClientTableFilters,
-  filterFields,
-} from './client-filters';
+import { defaultClientTableFilters, filterFields } from './client-filters';
 import { ClientDrawer } from './client-drawer';
 
 export function ClientsTable() {
@@ -144,7 +141,7 @@ export function ClientsTable() {
         }
         actions={{
           end: permissionFlags.canCreate ? (
-            <Button size='sm' onClick={handleCreateClient}>
+            <Button onClick={handleCreateClient}>
               <IconPlus />
               <span className='hidden lg:inline'>Create Client</span>
             </Button>

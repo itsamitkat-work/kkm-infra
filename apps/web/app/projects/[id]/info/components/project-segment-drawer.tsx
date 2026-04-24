@@ -327,7 +327,7 @@ export function ProjectSegmentDrawer({
                     <Button
                       type='button'
                       variant='ghost'
-                      size='xs'
+                      size='sm'
                       onClick={handleApplyProjectDates}
                       className='h-auto py-1 px-2 text-xs text-muted-foreground hover:text-foreground'
                     >

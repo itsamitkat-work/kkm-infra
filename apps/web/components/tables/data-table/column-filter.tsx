@@ -19,7 +19,7 @@ export const ColumnFilter = <T extends object>({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' size='sm'>
+        <Button variant='outline'>
           <IconLayoutColumns />
           <IconChevronDown />
         </Button>

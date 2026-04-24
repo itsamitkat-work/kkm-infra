@@ -194,12 +194,7 @@ export function StickyNotesSection() {
               </Button>
             ))}
           </div>
-          <Button
-            type='button'
-            onClick={createNote}
-            size='sm'
-            className='w-full'
-          >
+          <Button type='button' onClick={createNote} className='w-full'>
             <Plus className='mr-2 size-4' />
             Add note
           </Button>

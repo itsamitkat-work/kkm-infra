@@ -26,13 +26,13 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { FunctionSquare, GripVertical, Plus, Trash2, X } from 'lucide-react';
 import {
-  Table as UITable,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { ComposedTable as UITable } from '@/components/composed-table';
 import { Field } from '@/components/ui/field';
 import {
   InputGroup,
@@ -58,7 +58,6 @@ import {
   TooltipTrigger,
   TooltipProvider,
 } from '@/components/ui/tooltip';
-import { FullscreenWrapper } from '@/components/fullscreen-wrapper';
 import {
   MasterItemEditorConfig,
   type MasterItemEditorConfigType,
@@ -438,8 +437,9 @@ function ProjectItemsQuantityWithUnitCell({
     <div className='flex h-full min-h-8 w-full min-w-0 items-stretch'>
       <Field className='h-full w-full min-w-0 gap-0'>
         <InputGroup
-          variant='ghost'
-          className='h-full min-h-8 w-full rounded-none has-[>[data-align=inline-end]]:[&>input]:!px-0 has-[>[data-align=inline-end]]:[&>input]:!pr-0'
+          className={cn(
+            'h-full min-h-8 w-full rounded-none border-0 bg-transparent shadow-none ring-0 dark:bg-transparent has-[[data-slot=input-group-control]:focus-visible]:border-transparent has-[[data-slot=input-group-control]:focus-visible]:ring-0 has-[>[data-align=inline-end]]:[&>input]:!px-0 has-[>[data-align=inline-end]]:[&>input]:!pr-0'
+          )}
         >
           <InputGroupInput
             value={local}
@@ -589,46 +589,299 @@ function projectItemsDisplayString(value: unknown): string {
   return String(value);
 }
 
+function ProjectItemsReorderColumnCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const ctx = useProjectItemsRowSortableContext();
+  if (!ctx) {
+    return null;
+  }
+  const { listeners, attributes, isDragDisabled } = ctx;
+
+  return (
+    <div className='flex w-full items-center justify-center gap-1'>
+      <Button
+        variant='ghost'
+        className={cn(
+          'inline-flex size-8 items-center justify-center rounded-md text-muted-foreground touch-none',
+          isDragDisabled
+            ? 'cursor-not-allowed opacity-40'
+            : 'cursor-grab active:cursor-grabbing hover:bg-muted/60'
+        )}
+        aria-label={
+          isDragDisabled ? 'Save row to enable reorder' : 'Drag to reorder'
+        }
+        disabled={isDragDisabled}
+        {...(isDragDisabled ? {} : listeners)}
+        {...(isDragDisabled ? {} : attributes)}
+      >
+        <GripVertical
+          className='size-4 shrink-0 fill-muted-foreground'
+          aria-hidden
+        />
+        {cellContext.row.index + 1}
+      </Button>
+    </div>
+  );
+}
+
+function ProjectItemsWorkOrderNumberCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const { row, column, getValue } = cellContext;
+  const tableCtx = useProjectItemsTableCellsContext();
+  const colDef = column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
+  const columnId = column.id;
+  const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
+  const displayValue = projectItemsDisplayString(getValue());
+  if (disabled) {
+    return (
+      <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
+        <span
+          className={cn(
+            'text-center tabular-nums whitespace-nowrap',
+            HIERARCHY_BODY_CLASS
+          )}
+        >
+          {String(row.original.work_order_number ?? '')}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
+      <DebouncedTextCell
+        value={displayValue}
+        disabled={disabled}
+        dense={tableCtx.dense}
+        placeholder='Work Order No.'
+        className='text-center tabular-nums'
+        onCommit={(v) => {
+          tableCtx.commitCell(row.original, colDef, v);
+        }}
+      />
+    </div>
+  );
+}
+
+function ProjectItemsItemCodeCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const { row, column } = cellContext;
+  const tableCtx = useProjectItemsTableCellsContext();
+  const colDef = column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
+  const columnId = column.id;
+  const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
+  if (disabled) {
+    return (
+      <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
+        <span
+          className={cn(
+            'text-center tabular-nums whitespace-nowrap',
+            HIERARCHY_BODY_CLASS
+          )}
+        >
+          {String(row.original.item_code ?? '')}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
+      <MasterItemEditorConfig
+        row={row.original}
+        onChange={(v) => {
+          tableCtx.commitCell(row.original, colDef, v);
+        }}
+        config={codeColumnConfig}
+      />
+    </div>
+  );
+}
+
+function ProjectItemsItemDescriptionCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const { row, column } = cellContext;
+  const tableCtx = useProjectItemsTableCellsContext();
+  const colDef = column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
+  const columnId = column.id;
+  const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
+  const doc = row.original.item_description;
+  const flat = flattenItemDescription(doc);
+  if (disabled) {
+    return (
+      <Tooltip delayDuration={500}>
+        <TooltipTrigger asChild>
+          <div
+            className={cn(
+              'min-w-0 max-w-full cursor-help px-2 text-left',
+              HIERARCHY_BODY_CLASS
+            )}
+          >
+            <span className='block whitespace-normal break-words'>
+              <ItemDescriptionHierarchy doc={doc} />
+            </span>
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p className={cn('max-w-xs', HIERARCHY_BODY_CLASS)}>{flat}</p>
+        </TooltipContent>
+      </Tooltip>
+    );
+  }
+  return (
+    <div className='flex h-full min-h-8 min-w-0 w-full max-w-full flex-col overflow-x-hidden'>
+      <MasterItemEditorConfig
+        row={row.original}
+        onChange={(v) => {
+          tableCtx.commitCell(row.original, colDef, v);
+        }}
+        config={nameColumnConfig}
+      />
+    </div>
+  );
+}
+
+function ProjectItemsRateAmountCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const { row, column, getValue } = cellContext;
+  const tableCtx = useProjectItemsTableCellsContext();
+  const colDef = column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
+  const columnId = column.id;
+  const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
+  const displayValue = projectItemsDisplayString(getValue());
+  if (disabled) {
+    return (
+      <div className='flex min-h-8 w-full min-w-0 items-center justify-end px-2'>
+        <span className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}>
+          {String(row.original.rate_amount ?? '')}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-end px-0'>
+      <DebouncedTextCell
+        value={displayValue}
+        disabled={disabled}
+        dense={tableCtx.dense}
+        placeholder='rate'
+        className='text-end tabular-nums'
+        onCommit={(v) => {
+          tableCtx.commitCell(row.original, colDef, v);
+        }}
+      />
+    </div>
+  );
+}
+
+function ProjectItemsRemarkCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const { row, column, getValue } = cellContext;
+  const tableCtx = useProjectItemsTableCellsContext();
+  const colDef = column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
+  const columnId = column.id;
+  const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
+  const displayValue = projectItemsDisplayString(getValue());
+  if (disabled) {
+    return (
+      <span className={cn('px-2', HIERARCHY_BODY_CLASS)}>
+        {String(row.original.remark ?? '')}
+      </span>
+    );
+  }
+  return (
+    <div className='flex h-full min-h-8 w-full min-w-0 items-stretch'>
+      <DebouncedTextCell
+        value={displayValue}
+        disabled={disabled}
+        dense={tableCtx.dense}
+        placeholder='remark'
+        className='text-center'
+        onCommit={(v) => {
+          tableCtx.commitCell(row.original, colDef, v);
+        }}
+      />
+    </div>
+  );
+}
+
+function ProjectItemsActionsCell({
+  cellContext,
+}: {
+  cellContext: CellContext<ProjectItemRowType, unknown>;
+}) {
+  const tableCtx = useProjectItemsTableCellsContext();
+  const rowData = cellContext.row.original;
+  const isCurrentRowSaving = tableCtx.savingRowId === rowData.id;
+  const isSaveDisabled =
+    (!rowData.is_edited && !rowData.is_new) || tableCtx.isSaving;
+
+  const actions: ActionItem[] = [
+    {
+      id: 'delete',
+      label: 'Delete',
+      icon: Trash2,
+      onClick: () =>
+        tableCtx.openDeleteConfirmation({
+          onConfirm: () =>
+            tableCtx.handleDeleteRow(rowData, tableCtx.itemsTableApi),
+          itemName: 'project item',
+        }),
+      variant: 'destructive',
+    },
+  ];
+
+  if (!rowData.is_new) {
+    actions.unshift({
+      id: 'discard',
+      label: 'Discard Changes',
+      icon: X,
+      onClick: () => tableCtx.itemsTableApi.cancelUpdate(String(rowData.id)),
+      disabled: !rowData.is_edited,
+    });
+  }
+
+  return (
+    <div className='flex min-h-8 w-full min-w-0 items-center justify-end gap-1 px-2'>
+      <SaveButton
+        onClick={() => {
+          void tableCtx.handleSaveRow(rowData, tableCtx.itemsTableApi);
+        }}
+        disabled={isSaveDisabled}
+        isLoading={isCurrentRowSaving}
+        errorMessage={tableCtx.saveErrors[rowData.id] ?? null}
+        isNew={rowData.is_new}
+        isEdited={rowData.is_edited}
+      />
+      <ActionsDropdown actions={actions} />
+    </div>
+  );
+}
+
 function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
   return [
     {
       id: PROJECT_ITEMS_REORDER_COLUMN_ID,
       header: () => <div className='text-muted-foreground text-sm'>#</div>,
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const ctx = useProjectItemsRowSortableContext();
-        if (!ctx) {
-          return null;
-        }
-        const { listeners, attributes, isDragDisabled } = ctx;
-
-        return (
-          <div className='flex w-full items-center justify-center gap-1'>
-            <Button
-              variant='ghost'
-              className={cn(
-                'inline-flex size-8 items-center justify-center rounded-md text-muted-foreground touch-none',
-                isDragDisabled
-                  ? 'cursor-not-allowed opacity-40'
-                  : 'cursor-grab active:cursor-grabbing hover:bg-muted/60'
-              )}
-              aria-label={
-                isDragDisabled
-                  ? 'Save row to enable reorder'
-                  : 'Drag to reorder'
-              }
-              disabled={isDragDisabled}
-              {...(isDragDisabled ? {} : listeners)}
-              {...(isDragDisabled ? {} : attributes)}
-            >
-              <GripVertical
-                className='size-4 shrink-0 fill-muted-foreground'
-                aria-hidden
-              />
-              {cellContext.row.index + 1}
-            </Button>
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsReorderColumnCell cellContext={cellContext} />
+      ),
       enableSorting: false,
       enableHiding: false,
       tableWidthPercent: PROJECT_ITEMS_REORDER_COL_WIDTH_PCT,
@@ -700,82 +953,18 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           Work Order No.
         </div>
       ),
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const { row, column, getValue } = cellContext;
-        const tableCtx = useProjectItemsTableCellsContext();
-        const colDef =
-          column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
-        const columnId = column.id;
-        const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        const displayValue = projectItemsDisplayString(getValue());
-        if (disabled) {
-          return (
-            <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
-              <span
-                className={cn(
-                  'text-center tabular-nums whitespace-nowrap',
-                  HIERARCHY_BODY_CLASS
-                )}
-              >
-                {String(row.original.work_order_number ?? '')}
-              </span>
-            </div>
-          );
-        }
-        return (
-          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
-            <DebouncedTextCell
-              value={displayValue}
-              disabled={disabled}
-              dense={tableCtx.dense}
-              placeholder='Work Order No.'
-              className='text-center tabular-nums'
-              onCommit={(v) => {
-                tableCtx.commitCell(row.original, colDef, v);
-              }}
-            />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsWorkOrderNumberCell cellContext={cellContext} />
+      ),
       validationSchema: projectItemZodSchema.shape.work_order_number,
       tableWidthPercent: PROJECT_ITEMS_EQUAL_COL_WIDTH_PCT,
     },
     {
       accessorKey: 'item_code',
       header: () => 'Code',
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const { row, column } = cellContext;
-        const tableCtx = useProjectItemsTableCellsContext();
-        const colDef =
-          column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
-        const columnId = column.id;
-        const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        if (disabled) {
-          return (
-            <div className='flex min-h-8 w-full min-w-0 items-center justify-center px-1'>
-              <span
-                className={cn(
-                  'text-center tabular-nums whitespace-nowrap',
-                  HIERARCHY_BODY_CLASS
-                )}
-              >
-                {String(row.original.item_code ?? '')}
-              </span>
-            </div>
-          );
-        }
-        return (
-          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-center px-0'>
-            <MasterItemEditorConfig
-              row={row.original}
-              onChange={(v) => {
-                tableCtx.commitCell(row.original, colDef, v);
-              }}
-              config={codeColumnConfig}
-            />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsItemCodeCell cellContext={cellContext} />
+      ),
       validationSchema: projectItemZodSchema.shape.item_code,
       tableWidthPercent: PROJECT_ITEMS_EQUAL_COL_WIDTH_PCT,
       onChangeUpdateRow: masterItemOnChangeUpdateRow,
@@ -824,48 +1013,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           Item Name
         </div>
       ),
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const { row, column } = cellContext;
-        const tableCtx = useProjectItemsTableCellsContext();
-        const colDef =
-          column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
-        const columnId = column.id;
-        const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        const doc = row.original.item_description;
-        const flat = flattenItemDescription(doc);
-        if (disabled) {
-          return (
-            <Tooltip delayDuration={500}>
-              <TooltipTrigger asChild>
-                <div
-                  className={cn(
-                    'min-w-0 max-w-full cursor-help px-2 text-left',
-                    HIERARCHY_BODY_CLASS
-                  )}
-                >
-                  <span className='block whitespace-normal break-words'>
-                    <ItemDescriptionHierarchy doc={doc} />
-                  </span>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className={cn('max-w-xs', HIERARCHY_BODY_CLASS)}>{flat}</p>
-              </TooltipContent>
-            </Tooltip>
-          );
-        }
-        return (
-          <div className='flex h-full min-h-8 min-w-0 w-full max-w-full flex-col overflow-x-hidden'>
-            <MasterItemEditorConfig
-              row={row.original}
-              onChange={(v) => {
-                tableCtx.commitCell(row.original, colDef, v);
-              }}
-              config={nameColumnConfig}
-            />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsItemDescriptionCell cellContext={cellContext} />
+      ),
       validationSchema: projectItemZodSchema.shape.item_description,
       className: 'min-w-0 overflow-x-hidden align-top',
       tableWidthPercent: PROJECT_ITEMS_ITEM_NAME_COL_WIDTH_PCT,
@@ -896,40 +1046,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           Rate
         </div>
       ),
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const { row, column, getValue } = cellContext;
-        const tableCtx = useProjectItemsTableCellsContext();
-        const colDef =
-          column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
-        const columnId = column.id;
-        const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        const displayValue = projectItemsDisplayString(getValue());
-        if (disabled) {
-          return (
-            <div className='flex min-h-8 w-full min-w-0 items-center justify-end px-2'>
-              <span
-                className={cn('text-end tabular-nums', HIERARCHY_BODY_CLASS)}
-              >
-                {String(row.original.rate_amount ?? '')}
-              </span>
-            </div>
-          );
-        }
-        return (
-          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch justify-end px-0'>
-            <DebouncedTextCell
-              value={displayValue}
-              disabled={disabled}
-              dense={tableCtx.dense}
-              placeholder='rate'
-              className='text-end tabular-nums'
-              onCommit={(v) => {
-                tableCtx.commitCell(row.original, colDef, v);
-              }}
-            />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsRateAmountCell cellContext={cellContext} />
+      ),
       validationSchema: projectItemZodSchema.shape.rate_amount,
       className: 'text-end',
       isNumeric: true,
@@ -980,36 +1099,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
     {
       accessorKey: 'remark',
       header: 'Remark',
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const { row, column, getValue } = cellContext;
-        const tableCtx = useProjectItemsTableCellsContext();
-        const colDef =
-          column.columnDef as ExtendedColumnDef<ProjectItemRowType>;
-        const columnId = column.id;
-        const disabled = isProjectItemsColumnDisabled(row, columnId, tableCtx);
-        const displayValue = projectItemsDisplayString(getValue());
-        if (disabled) {
-          return (
-            <span className={cn('px-2', HIERARCHY_BODY_CLASS)}>
-              {String(row.original.remark ?? '')}
-            </span>
-          );
-        }
-        return (
-          <div className='flex h-full min-h-8 w-full min-w-0 items-stretch'>
-            <DebouncedTextCell
-              value={displayValue}
-              disabled={disabled}
-              dense={tableCtx.dense}
-              placeholder='remark'
-              className='text-center'
-              onCommit={(v) => {
-                tableCtx.commitCell(row.original, colDef, v);
-              }}
-            />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsRemarkCell cellContext={cellContext} />
+      ),
       validationSchema: projectItemZodSchema.shape.remark,
       className: 'text-center',
       tableWidthPercent: PROJECT_ITEMS_EQUAL_COL_WIDTH_PCT,
@@ -1021,55 +1113,9 @@ function getProjectItemsColumns(): ExtendedColumnDef<ProjectItemRowType>[] {
           Actions
         </div>
       ),
-      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => {
-        const tableCtx = useProjectItemsTableCellsContext();
-        const rowData = cellContext.row.original;
-        const isCurrentRowSaving = tableCtx.savingRowId === rowData.id;
-        const isSaveDisabled =
-          (!rowData.is_edited && !rowData.is_new) || tableCtx.isSaving;
-
-        const actions: ActionItem[] = [
-          {
-            id: 'delete',
-            label: 'Delete',
-            icon: Trash2,
-            onClick: () =>
-              tableCtx.openDeleteConfirmation({
-                onConfirm: () =>
-                  tableCtx.handleDeleteRow(rowData, tableCtx.itemsTableApi),
-                itemName: 'project item',
-              }),
-            variant: 'destructive',
-          },
-        ];
-
-        if (!rowData.is_new) {
-          actions.unshift({
-            id: 'discard',
-            label: 'Discard Changes',
-            icon: X,
-            onClick: () =>
-              tableCtx.itemsTableApi.cancelUpdate(String(rowData.id)),
-            disabled: !rowData.is_edited,
-          });
-        }
-
-        return (
-          <div className='flex min-h-8 w-full min-w-0 items-center justify-end gap-1 px-2'>
-            <SaveButton
-              onClick={() => {
-                void tableCtx.handleSaveRow(rowData, tableCtx.itemsTableApi);
-              }}
-              disabled={isSaveDisabled}
-              isLoading={isCurrentRowSaving}
-              errorMessage={tableCtx.saveErrors[rowData.id] ?? null}
-              isNew={rowData.is_new}
-              isEdited={rowData.is_edited}
-            />
-            <ActionsDropdown actions={actions} />
-          </div>
-        );
-      },
+      cell: (cellContext: CellContext<ProjectItemRowType, unknown>) => (
+        <ProjectItemsActionsCell cellContext={cellContext} />
+      ),
       className: 'text-end',
       tableWidthPercent: PROJECT_ITEMS_EQUAL_COL_WIDTH_PCT,
     },
@@ -1638,7 +1684,6 @@ function ProjectItemsDataTable({
                 onGlobalFilterChange('');
               }}
               kbd={getPlatformSpecificKbd('K')}
-              variant='sm'
             />
           </div>
           {actions ? (
@@ -2144,7 +2189,6 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
               </span>
             </div>
             <Button
-              size='sm'
               variant='destructive'
               onClick={() =>
                 openDeleteConfirmation({
@@ -2162,7 +2206,6 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
         ) : (
           <Button
             disabled={isLoading || isFetching}
-            size='sm'
             onClick={() => {
               handleAddNewRow(api);
             }}
@@ -2210,10 +2253,10 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
                 toolbarTitle={
                   <div className='flex min-w-0 items-center gap-3'>
                     <h2 className='text-base font-semibold text-foreground'>
-                      Project Items
+                      BOQ Items
                     </h2>
                     <span className='text-sm text-muted-foreground'>
-                      {projectItemRows?.length ?? 0} items
+                      {projectItemRows?.length ?? 0}
                     </span>
                   </div>
                 }
@@ -2248,7 +2291,7 @@ export function ProjectItems({ projectId }: ProjectItemsProps) {
                 }}
                 emptyState={
                   <div className='py-4 text-sm text-muted-foreground'>
-                    No project items found.
+                    No BOQ items found.
                   </div>
                 }
                 isTableLoading={isTableLoading}

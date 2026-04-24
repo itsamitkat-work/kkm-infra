@@ -13,6 +13,14 @@ import { useTheme } from 'next-themes';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from '@/components/ui/item';
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -28,6 +36,8 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import { useAuth } from '@/hooks/auth';
+import { useMyProfileQuery } from '@/hooks/use-my-profile-query';
+import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
 
 type UserData = {
   name: string;
@@ -35,26 +45,50 @@ type UserData = {
   avatar: string;
 };
 
-const UserInfo = ({ user }: { user: UserData }) => (
-  <div className='flex items-center gap-2 px-1 py-1.5 text-left text-sm'>
-    <Avatar className='h-8 w-8 rounded-lg'>
-      <AvatarImage src={user.avatar} alt={user.name} />
-      <AvatarFallback className='rounded-lg'>
-        {user.name
-          .split(' ')
-          .map((n) => n[0])
-          .join('')
-          .toUpperCase()}
-      </AvatarFallback>
-    </Avatar>
-    <div className='grid flex-1 text-left text-sm leading-tight'>
-      <span className='truncate font-medium'>{user.name}</span>
-      <span className='text-muted-foreground truncate text-xs'>
-        {user.email}
-      </span>
-    </div>
-  </div>
-);
+function getNavUserInitials(name: string): string {
+  const parts = name.split(/\s+/).filter(Boolean);
+  if (parts.length === 0) {
+    return '?';
+  }
+  return parts
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase();
+}
+
+interface NavUserItemProps {
+  user: UserData;
+  avatarClassName?: string;
+  trailing?: React.ReactNode;
+}
+
+function NavUserItem({ user, avatarClassName, trailing }: NavUserItemProps) {
+  const initials = getNavUserInitials(user.name);
+
+  return (
+    <Item variant='default' size='xs'>
+      <ItemMedia variant='icon'>
+        <Avatar className={avatarClassName}>
+          <AvatarImage
+            key={user.avatar}
+            src={user.avatar}
+            alt={user.name}
+          />
+          <AvatarFallback>{initials}</AvatarFallback>
+        </Avatar>
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>{user.name}</ItemTitle>
+        <ItemDescription>
+          {user.email.trim().length > 0 ? user.email : '\u00a0'}
+        </ItemDescription>
+      </ItemContent>
+      {trailing ? (
+        <ItemActions>{trailing}</ItemActions>
+      ) : null}
+    </Item>
+  );
+}
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
@@ -86,17 +120,27 @@ export function NavUser() {
   const router = useRouter();
   const { isMobile } = useSidebar();
   const { signOut, user, isLoading } = useAuth();
+  const profileQuery = useMyProfileQuery(!isLoading && Boolean(user));
+
+  const profile = profileQuery.data;
+  const displayNameFromProfile = profile?.display_name?.trim();
+  const avatarFromProfile = profile?.avatar_url?.trim() || null;
 
   const userData: UserData = user
     ? {
-        name: user.userName,
+        name:
+          displayNameFromProfile && displayNameFromProfile.length > 0
+            ? displayNameFromProfile
+            : user.userName,
         email: user.email,
-        avatar: '',
+        avatar: resolveProfileAvatarSrc(
+          avatarFromProfile ?? user.avatarUrl ?? null,
+        ),
       }
     : {
         name: isLoading ? 'Loading…' : 'Guest',
         email: isLoading ? '' : 'guest@example.com',
-        avatar: '',
+        avatar: resolveProfileAvatarSrc(null),
       };
 
   return (
@@ -108,33 +152,20 @@ export function NavUser() {
               size='lg'
               className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
             >
-              <Avatar className='h-8 w-8 rounded-lg grayscale'>
-                <AvatarImage src={userData.avatar} alt={userData.name} />
-                <AvatarFallback className='rounded-lg'>
-                  {userData.name
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')
-                    .toUpperCase()}
-                </AvatarFallback>
-              </Avatar>
-              <div className='grid flex-1 text-left text-sm leading-tight'>
-                <span className='truncate font-medium'>{userData.name}</span>
-                <span className='text-muted-foreground truncate text-xs'>
-                  {userData.email}
-                </span>
-              </div>
-              <IconDotsVertical className='ml-auto size-4' />
+              <NavUserItem
+                user={userData}
+                avatarClassName='grayscale'
+                trailing={<IconDotsVertical />}
+              />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className='w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg'
             side={isMobile ? 'bottom' : 'right'}
             align='end'
             sideOffset={4}
           >
-            <DropdownMenuLabel className='p-0 font-normal'>
-              <UserInfo user={userData} />
+            <DropdownMenuLabel className='font-normal text-foreground'>
+              <NavUserItem user={userData} />
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>

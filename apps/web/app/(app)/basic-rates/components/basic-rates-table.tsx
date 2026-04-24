@@ -155,7 +155,7 @@ export function BasicRatesTable({
             ? undefined
             : {
                 end: (
-                  <Button size='sm' onClick={handleCreateBasicRate}>
+                  <Button  onClick={handleCreateBasicRate}>
                     <IconPlus />
                     <span className='hidden lg:inline'>Create Basic Rate</span>
                   </Button>

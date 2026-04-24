@@ -46,7 +46,6 @@ export function ItemMeasurementActions({
       {type === 'billing' && (
         <Button
           variant='outline'
-          size='sm'
           onClick={onImportClick}
           className='gap-1.5 h-7 px-2.5 text-xs'
         >
@@ -58,8 +57,7 @@ export function ItemMeasurementActions({
       {editedRowsCount > 0 && (
         <>
           <Button
-            variant='primary'
-            size='sm'
+            variant='default'
             onClick={handleSaveAll}
             disabled={isSavingAll}
             className='gap-1.5 h-7 px-2.5 text-xs'
@@ -82,7 +80,6 @@ export function ItemMeasurementActions({
           </Button>
           <Button
             variant='outline'
-            size='sm'
             onClick={handleDiscardAll}
             className='gap-1.5 h-7 px-2.5 text-xs'
           >
@@ -109,7 +106,6 @@ export function ItemMeasurementActions({
           />
           <Button
             variant='destructive'
-            size='sm'
             onClick={handleBulkDeleteClick}
             disabled={isDeleting}
             className='gap-1.5 h-7 px-2.5 text-xs text-white disabled:opacity-50'

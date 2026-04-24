@@ -6,6 +6,8 @@ export interface User {
   phone: string;
   email: string;
   designation: string | null;
+  /** From `user_metadata` (e.g. OAuth `avatar_url` / `picture`). */
+  avatarUrl?: string | null;
 }
 
 export interface LoginCredentials {

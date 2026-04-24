@@ -146,8 +146,6 @@ export function FormSearchableComboboxField<
     ? isFetching && !isFetchingNextPage
     : currentOptions.length === 0;
   const currentError = fetchError;
-  const isSearching =
-    isDynamic && isFetching && !isFetchingNextPage && allOptions.length > 0;
 
   function handleSelect(value: string) {
     const selectedOption = currentOptions.find((opt) => opt.value === value);
@@ -221,7 +219,6 @@ export function FormSearchableComboboxField<
               placeholder={searchPlaceholder}
               disabled={isDynamic && isFetching && !data}
               onValueChange={setSearchTerm}
-              isLoading={isSearching}
             />
             <CommandList
               className='max-h-[300px] min-h-[200px]'

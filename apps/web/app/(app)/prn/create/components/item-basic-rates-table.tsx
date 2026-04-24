@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Input } from '@/components/ui/input';
+import { NumberInput } from '@/components/number-input';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from 'sonner';
@@ -87,9 +87,7 @@ export function ItemBasicRatesTable({
     return addVal <= balance && addVal >= 0;
   });
   const canSave =
-    hasNonZeroNewQty &&
-    allWithinBalance &&
-    !savePrnMutation.isPending;
+    hasNonZeroNewQty && allWithinBalance && !savePrnMutation.isPending;
 
   function handleSave() {
     if (!rows?.length) return;
@@ -116,7 +114,6 @@ export function ItemBasicRatesTable({
           <span>Sub Items</span>
         </div>
         <Button
-          size='sm'
           disabled={!canSave}
           onClick={handleSave}
           aria-busy={savePrnMutation.isPending}
@@ -162,7 +159,7 @@ export function ItemBasicRatesTable({
                   {formatQty(balance)}
                 </TableCell>
                 <TableCell className='flex justify-end'>
-                  <Input
+                  <NumberInput
                     type='number'
                     disableStepArrows
                     min={0}

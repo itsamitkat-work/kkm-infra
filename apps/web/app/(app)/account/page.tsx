@@ -1,8 +1,32 @@
 'use client';
 
 import * as React from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  AtSign,
+  Briefcase,
+  Building2,
+  Calendar,
+  Clock,
+  Mail,
+  Phone,
+  Shield,
+  User as UserIcon,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+import { TableLoadingState } from '@/components/tables/table-loading';
+import { UserDrawerAvatar } from '../administration/users/components/user-drawer-avatar';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 import {
   Card,
   CardContent,
@@ -10,183 +34,351 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { TableLoadingState } from '@/components/tables/table-loading';
-import { useAuth } from '@/hooks/auth';
 import {
-  User as UserIcon,
-  Mail,
-  Phone,
-  Briefcase,
-  Shield,
-  Building2,
-  Calendar,
-  Clock,
-} from 'lucide-react';
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from '@/components/ui/item';
+import { Spinner } from '@/components/ui/spinner';
+import { useAuth } from '@/hooks/auth';
+import type { FileWithPreview } from '@/hooks/use-file-upload';
+import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
 
-function getInitials(name: string): string {
-  const parts = name.split(' ').filter(Boolean);
-  if (parts.length === 0) return '?';
-  if (parts.length === 1) return parts[0][0].toUpperCase();
-  return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+import { useMyProfileQuery } from '@/hooks/use-my-profile-query';
+import { useUpdateMyProfileAvatarMutation } from './hooks/use-update-my-profile-avatar-mutation';
+
+function formatDisplayLabel(
+  profileName: string | null | undefined,
+  fallback: string
+): string {
+  const trimmed = profileName?.trim();
+  if (trimmed && trimmed.length > 0) {
+    return trimmed;
+  }
+  return fallback;
 }
 
-interface InfoItemProps {
-  icon: React.ElementType;
+function AccountReadOnlyItem({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: LucideIcon;
   label: string;
-  children: React.ReactNode;
-  className?: string;
-}
-
-function InfoItem({ icon: Icon, label, children, className }: InfoItemProps) {
+  value: React.ReactNode;
+}) {
   return (
-    <div className={`space-y-0.5 ${className || ''}`}>
-      <label className='text-xs font-medium text-muted-foreground flex items-center gap-1.5'>
-        <Icon className='h-3.5 w-3.5' />
-        {label}
-      </label>
-      <div className='text-sm text-foreground'>{children}</div>
-    </div>
+    <Item variant='muted' size='sm'>
+      <ItemMedia variant='icon'>
+        <Icon className='text-muted-foreground size-4' aria-hidden />
+      </ItemMedia>
+      <ItemContent className='min-w-0 gap-0'>
+        <ItemTitle className='text-muted-foreground text-xs font-normal'>
+          {label}
+        </ItemTitle>
+        <ItemDescription className='text-foreground text-sm font-medium'>
+          {value}
+        </ItemDescription>
+      </ItemContent>
+    </Item>
   );
 }
 
 export default function AccountPage() {
-  const { user, roles, isLoading } = useAuth();
+  const { user, roles, isLoading: isAuthLoading } = useAuth();
+  const profileQuery = useMyProfileQuery(!isAuthLoading && Boolean(user));
+  const updateAvatarMutation = useUpdateMyProfileAvatarMutation();
 
-  if (isLoading) {
-    return <TableLoadingState />;
+  const [pendingAvatarFile, setPendingAvatarFile] = React.useState<File | null>(
+    null
+  );
+  const [removePhotoDialogOpen, setRemovePhotoDialogOpen] =
+    React.useState(false);
+
+  const profile = profileQuery.data;
+  const displayName = formatDisplayLabel(
+    profile?.display_name,
+    user?.userName ?? '—'
+  );
+  const profileUsername =
+    profile?.username?.trim() || user?.userName?.trim() || '—';
+  const avatarPreviewSource = resolveProfileAvatarSrc(
+    profile?.avatar_url ?? user?.avatarUrl ?? null
+  );
+
+  function handleAvatarFileChange(file: FileWithPreview | null) {
+    if (!file || !(file.file instanceof File)) {
+      setPendingAvatarFile(null);
+      return;
+    }
+    setPendingAvatarFile(file.file);
+  }
+
+  async function handleSaveAvatar() {
+    if (!pendingAvatarFile) {
+      return;
+    }
+    try {
+      await updateAvatarMutation.mutateAsync(pendingAvatarFile);
+      setPendingAvatarFile(null);
+    } catch {
+      // Toast handled in mutation hook.
+    }
+  }
+
+  function handleOpenRemovePhotoDialog() {
+    setRemovePhotoDialogOpen(true);
+  }
+
+  async function handleConfirmRemoveAvatar() {
+    try {
+      await updateAvatarMutation.mutateAsync(null);
+      setPendingAvatarFile(null);
+      setRemovePhotoDialogOpen(false);
+    } catch {
+      // Toast handled in mutation hook.
+    }
+  }
+
+  const showPageLoading =
+    isAuthLoading || (Boolean(user) && profileQuery.isPending);
+
+  if (showPageLoading) {
+    return <TableLoadingState message='Loading account…' />;
   }
 
   if (!user) {
     return (
-      <div className='min-h-screen bg-background flex items-center justify-center'>
-        <div className='text-center space-y-6'>
-          <div className='space-y-2'>
-            <h3 className='text-lg font-semibold'>Not Authenticated</h3>
-            <p className='text-sm text-muted-foreground max-w-md'>
-              Please log in to view your account information.
-            </p>
-          </div>
-        </div>
+      <div className='bg-background flex min-h-screen w-full items-center justify-center p-6'>
+        <Item variant='outline' size='default' className='max-w-md'>
+          <ItemContent>
+            <ItemTitle>Not signed in</ItemTitle>
+            <ItemDescription>
+              Sign in to view your account and update your profile photo.
+            </ItemDescription>
+          </ItemContent>
+        </Item>
       </div>
     );
   }
 
-  return (
-    <div className='min-h-screen bg-background flex flex-col w-full'>
-      <div className='flex-1 overflow-auto bg-muted/20 p-4 sm:p-6'>
-        <div className='mx-auto space-y-6'>
-          {/* Header with Avatar and Basic Info */}
-          <Card>
-            <CardContent className='pt-6'>
-              <div className='flex items-start justify-between'>
-                <div className='flex items-center gap-4'>
-                  <Avatar className='h-20 w-20'>
-                    <AvatarImage src='' alt={user.userName} />
-                    <AvatarFallback className='bg-primary/10 text-primary text-xl font-semibold'>
-                      {getInitials(user.userName)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className='space-y-1'>
-                    <h2 className='text-2xl font-bold text-foreground'>
-                      {user.userName}
-                    </h2>
-                    {user.designation && (
-                      <div className='flex items-center gap-2 text-muted-foreground'>
-                        <Briefcase className='h-4 w-4' />
-                        <span className='text-sm font-medium'>
-                          {user.designation}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+  if (profileQuery.isError) {
+    return (
+      <div className='bg-background flex min-h-screen w-full items-center justify-center p-6'>
+        <Item variant='outline' size='default' className='max-w-md'>
+          <ItemContent>
+            <ItemTitle>Could not load profile</ItemTitle>
+            <ItemDescription>
+              {profileQuery.error?.message ?? 'Try refreshing the page.'}
+            </ItemDescription>
+          </ItemContent>
+        </Item>
+      </div>
+    );
+  }
 
-          {/* User Information */}
+  const hasStoredAvatar = Boolean(profile?.avatar_url?.trim());
+
+  return (
+    <div className='bg-background flex min-h-screen w-full flex-col'>
+      <div className='bg-muted/20 flex-1 overflow-auto p-4 sm:p-6'>
+        <div className='mx-auto flex max-w-3xl flex-col gap-6'>
           <Card>
             <CardHeader>
-              <CardTitle>Personal Information</CardTitle>
+              <CardTitle>Your profile</CardTitle>
+              <CardDescription>
+                You can change your profile photo. Contact an administrator to
+                update other fields.
+              </CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4'>
-                <InfoItem icon={UserIcon} label='Username'>
-                  {user.userName}
-                </InfoItem>
-                {user.email && (
-                  <InfoItem icon={Mail} label='Email'>
-                    {user.email}
-                  </InfoItem>
-                )}
-                {user.phone && (
-                  <InfoItem icon={Phone} label='Phone'>
-                    {user.phone}
-                  </InfoItem>
-                )}
+            <CardContent className='space-y-6'>
+              <Item variant='outline' size='default' className='items-start'>
+                <div className='flex flex-col items-center gap-3 sm:items-start'>
+                  <UserDrawerAvatar
+                    key={`avatar-${user.hashId ?? 'me'}-${profile?.updated_at ?? '0'}`}
+                    defaultAvatar={avatarPreviewSource}
+                    onFileChange={handleAvatarFileChange}
+                  />
+                  <div className='flex flex-wrap items-center justify-center gap-2 sm:justify-start'>
+                    {pendingAvatarFile ? (
+                      <Button
+                        type='button'
+                        className='gap-2'
+                        disabled={updateAvatarMutation.isPending}
+                        onClick={handleSaveAvatar}
+                      >
+                        {updateAvatarMutation.isPending ? (
+                          <Spinner className='size-4' />
+                        ) : null}
+                        Save photo
+                      </Button>
+                    ) : null}
+                    {hasStoredAvatar ? (
+                      <Button
+                        type='button'
+                        variant='outline'
+                        disabled={updateAvatarMutation.isPending}
+                        onClick={handleOpenRemovePhotoDialog}
+                      >
+                        Remove photo
+                      </Button>
+                    ) : null}
+                  </div>
+                </div>
+                <ItemContent className='min-w-0 flex-1 gap-1'>
+                  <ItemTitle className='text-lg'>{displayName}</ItemTitle>
+                  <ItemDescription className='text-sm'>
+                    @{profileUsername}
+                  </ItemDescription>
+                  {user.email ? (
+                    <ItemDescription className='pt-1 text-xs'>
+                      {user.email}
+                    </ItemDescription>
+                  ) : null}
+                </ItemContent>
+              </Item>
+
+              <div>
+                <h3 className='text-muted-foreground mb-3 text-xs font-semibold tracking-wide uppercase'>
+                  Details
+                </h3>
+                <ItemGroup className='gap-2'>
+                  <AccountReadOnlyItem
+                    icon={UserIcon}
+                    label='Display name'
+                    value={displayName}
+                  />
+                  <AccountReadOnlyItem
+                    icon={AtSign}
+                    label='Username'
+                    value={profileUsername}
+                  />
+                  <AccountReadOnlyItem
+                    icon={Mail}
+                    label='Email'
+                    value={user.email?.trim() ? user.email : '—'}
+                  />
+                  <AccountReadOnlyItem
+                    icon={Phone}
+                    label='Phone'
+                    value={user.phone?.trim() ? user.phone : '—'}
+                  />
+                </ItemGroup>
               </div>
             </CardContent>
           </Card>
 
-          {/* Employment Information */}
           <Card>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
-                <Briefcase className='h-5 w-5' />
+                <Briefcase className='size-5' aria-hidden />
                 Employment
               </CardTitle>
-              <CardDescription>
-                Your current employment details and work information
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4'>
-                {user.designation ? (
-                  <InfoItem icon={Briefcase} label='Designation'>
-                    {user.designation}
-                  </InfoItem>
-                ) : (
-                  <InfoItem icon={Briefcase} label='Designation'>
-                    <span className='text-muted-foreground'>Not assigned</span>
-                  </InfoItem>
-                )}
-                <InfoItem icon={Building2} label='Department'>
-                  <span className='text-muted-foreground'>Not available</span>
-                </InfoItem>
-                <InfoItem icon={Calendar} label='Joining Date'>
-                  <span className='text-muted-foreground'>Not available</span>
-                </InfoItem>
-                <InfoItem icon={Clock} label='Employment Type'>
-                  <span className='text-muted-foreground'>Not available</span>
-                </InfoItem>
-              </div>
+              <ItemGroup className='gap-2'>
+                <AccountReadOnlyItem
+                  icon={Briefcase}
+                  label='Designation'
+                  value={
+                    user.designation?.trim() ? (
+                      user.designation
+                    ) : (
+                      <span className='text-muted-foreground font-normal'>
+                        Not assigned
+                      </span>
+                    )
+                  }
+                />
+                <AccountReadOnlyItem
+                  icon={Building2}
+                  label='Department'
+                  value={
+                    <span className='text-muted-foreground font-normal'>
+                      Not available
+                    </span>
+                  }
+                />
+                <AccountReadOnlyItem
+                  icon={Calendar}
+                  label='Joining date'
+                  value={
+                    <span className='text-muted-foreground font-normal'>
+                      Not available
+                    </span>
+                  }
+                />
+                <AccountReadOnlyItem
+                  icon={Clock}
+                  label='Employment type'
+                  value={
+                    <span className='text-muted-foreground font-normal'>
+                      Not available
+                    </span>
+                  }
+                />
+              </ItemGroup>
             </CardContent>
           </Card>
 
-          {/* Permissions from Auth (if available) */}
-          {roles.length > 0 && (
+          {roles.length > 0 ? (
             <Card>
               <CardHeader>
                 <CardTitle className='flex items-center gap-2'>
-                  <Shield className='h-5 w-5' />
-                  Role Codes
+                  <Shield className='size-5' aria-hidden />
+                  Role codes
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className='flex flex-wrap gap-2'>
-                  {roles.map((roleCode, index) => (
-                    <Badge
-                      key={index}
-                      variant='outline'
-                      className='text-sm py-1.5 px-3'
-                    >
-                      {roleCode}
-                    </Badge>
-                  ))}
-                </div>
+                <Item variant='muted' size='sm' className='border-0 p-0'>
+                  <ItemContent>
+                    <div className='flex flex-wrap gap-2'>
+                      {roles.map((roleCode) => (
+                        <Badge key={roleCode} variant='outline'>
+                          {roleCode}
+                        </Badge>
+                      ))}
+                    </div>
+                  </ItemContent>
+                </Item>
               </CardContent>
             </Card>
-          )}
+          ) : null}
+
+          <AlertDialog
+            open={removePhotoDialogOpen}
+            onOpenChange={setRemovePhotoDialogOpen}
+          >
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Remove profile photo?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Your saved profile image will be cleared. You can upload a new
+                  photo anytime.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel disabled={updateAvatarMutation.isPending}>
+                  Cancel
+                </AlertDialogCancel>
+                <Button
+                  type='button'
+                  variant='destructive'
+                  className='gap-2'
+                  disabled={updateAvatarMutation.isPending}
+                  onClick={handleConfirmRemoveAvatar}
+                >
+                  {updateAvatarMutation.isPending ? (
+                    <Spinner className='size-4' />
+                  ) : null}
+                  Remove photo
+                </Button>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </div>
     </div>

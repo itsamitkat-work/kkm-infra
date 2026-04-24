@@ -92,7 +92,6 @@ export function ServiceItemIndentTable({
         cell: ({ row }) => (
           <div className='text-right'>
             <Button
-              size='sm'
               variant='ghost'
               onClick={() => openEditDrawer(row.original)}
               aria-label='Edit'
@@ -135,7 +134,7 @@ export function ServiceItemIndentTable({
         loadingMessage='Loading service item indents...'
         actions={{
           end: (
-            <Button size='sm' onClick={openCreateDrawer}>
+            <Button onClick={openCreateDrawer}>
               <IconPlus className='size-4 mr-1' />
               Add Service Item
             </Button>

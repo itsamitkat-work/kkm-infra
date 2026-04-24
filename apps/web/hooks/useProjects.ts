@@ -62,6 +62,8 @@ export type ProjectDetailMember = {
   role: ProjectMemberRoleSlug;
   user_id: string;
   display_name: string;
+  /** From `profiles.avatar_url`; UI may substitute a default when empty. */
+  avatar_url?: string | null;
 };
 
 export type ProjectDetail = ProjectsRow & {
@@ -355,14 +357,24 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
   const userIds = [...new Set(memberDetails.map((m: ProjectMemberDetail) => m.user_id))];
   const { data: profiles } = await supabase
     .from('profiles')
-    .select('id, display_name')
+    .select('id, display_name, avatar_url')
     .in('id', userIds);
 
+  type ProfileRow = {
+    id: string;
+    display_name: string | null;
+    avatar_url: string | null;
+  };
+
   const nameByUser = new Map<string, string>(
-    (profiles ?? []).map((p: { id: string; display_name: string | null }) => [
+    (profiles ?? []).map((p: ProfileRow) => [
       p.id,
       p.display_name?.trim() || '—',
     ])
+  );
+
+  const avatarByUser = new Map<string, string | null>(
+    (profiles ?? []).map((p: ProfileRow) => [p.id, p.avatar_url])
   );
 
   const members_detail: ProjectDetailMember[] = [];
@@ -375,6 +387,7 @@ export async function fetchProjectDetail(projectId: string): Promise<ProjectDeta
       role: slug,
       user_id: m.user_id,
       display_name: nameByUser.get(m.user_id) ?? '—',
+      avatar_url: avatarByUser.get(m.user_id) ?? null,
     });
   }
 

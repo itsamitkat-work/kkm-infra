@@ -65,7 +65,6 @@ export function AttendanceConfigDialog() {
       <DialogTrigger asChild>
         <Button
           variant='outline'
-          size='sm'
           className='h-8 gap-1.5 px-2.5 font-medium transition-all hover:bg-muted/80'
         >
           <IconSettings className='size-3.5' />
@@ -147,7 +146,6 @@ export function AttendanceConfigDialog() {
         <div className='flex justify-end gap-2 p-3 sm:p-4 border-t bg-muted/10 items-center shrink-0'>
           <Button
             variant='ghost'
-            size='sm'
             className='text-xs h-9 sm:h-8 text-muted-foreground px-3 sm:px-2'
             onClick={() => setIsOpen(false)}
           >
@@ -155,7 +153,6 @@ export function AttendanceConfigDialog() {
           </Button>
           {activeTab === 'global' && (
             <Button
-              size='sm'
               className='h-9 sm:h-8 text-xs px-4 shadow-sm'
               onClick={handleSaveGlobal}
               disabled={isUpdatingGlobal}

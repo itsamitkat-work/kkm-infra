@@ -19,7 +19,11 @@ import { useDeleteConfirmation } from '@/hooks/use-delete-confirmation';
 import { DeleteConfirmationDialog } from '@/components/ui/delete-confirmation-dialog';
 import { TableErrorState } from '@/components/tables/table-error';
 
-export const ProjectSegmentSection = ({ project }: { project: ProjectDetail }) => {
+export const ProjectSegmentSection = ({
+  project,
+}: {
+  project: ProjectDetail;
+}) => {
   const segmentDrawer = useOpenClose<ProjectSegment>();
   const deleteConfirmation = useDeleteConfirmation();
   const deleteSegmentMutation = useDeleteSegment(project?.id || '');
@@ -107,7 +111,7 @@ export const ProjectSegmentSection = ({ project }: { project: ProjectDetail }) =
           }
           actions={{
             end: (
-              <Button size='sm' onClick={handleCreateSegment}>
+              <Button onClick={handleCreateSegment}>
                 <Plus className='mr-2 h-4 w-4' />
                 Add Segment
               </Button>

@@ -904,7 +904,6 @@ export function AttendanceTable({
             <div className='hidden sm:block'>
               <Button
                 variant='outline'
-                size='sm'
                 className='h-7 gap-1.5'
                 onClick={handleExportToPDF}
                 disabled={isExporting || workers.length === 0}
@@ -919,8 +918,7 @@ export function AttendanceTable({
             </div>
             {/* Save button - always visible */}
             <Button
-              variant='primary'
-              size='sm'
+              variant='default'
               className='h-7 gap-1.5'
               onClick={handleSaveChanges}
               disabled={isSaving || dirtyCount === 0}

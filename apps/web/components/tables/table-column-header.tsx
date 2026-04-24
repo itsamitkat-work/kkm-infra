@@ -38,7 +38,6 @@ export function TableColumnHeader<TData, TValue>({
     return (
       <Button
         variant='ghost'
-        size='sm'
         className='-ml-3 h-8 data-[state=open]:bg-accent cursor-default'
         asChild
       >
@@ -53,7 +52,6 @@ export function TableColumnHeader<TData, TValue>({
         <DropdownMenuTrigger asChild>
           <Button
             variant='ghost'
-            size='sm'
             className='-ml-3 h-8 data-[state=open]:bg-accent'
           >
             <span>{title}</span>

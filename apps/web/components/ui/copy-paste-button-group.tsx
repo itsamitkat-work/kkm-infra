@@ -49,6 +49,13 @@ export function CopyPasteButtonGroup({
     return null;
   }
 
+  const buttonSize =
+    size === "md"
+      ? "default"
+      : size === "icon"
+        ? "icon-sm"
+        : size;
+
   const sizeClasses = {
     sm: "h-7 px-2.5 text-xs gap-1.5",
     xs: "h-7 px-2 text-xs gap-1",
@@ -70,7 +77,7 @@ export function CopyPasteButtonGroup({
       {selectedCount > 0 && (
         <Button
           variant="outline"
-          size={size}
+          size={buttonSize}
           onClick={onCopy}
           className={cn(
             sizeClasses[size],
@@ -91,7 +98,7 @@ export function CopyPasteButtonGroup({
         >
           <Button
             variant="outline"
-            size={size}
+            size={buttonSize}
             onClick={onPaste}
             className={cn(
               sizeClasses[size],
@@ -111,7 +118,7 @@ export function CopyPasteButtonGroup({
           {showClear && (
             <Button
               variant="outline"
-              size={size}
+              size={buttonSize}
               onClick={onClear}
               className={cn(
                 size === "sm" || size === "xs"

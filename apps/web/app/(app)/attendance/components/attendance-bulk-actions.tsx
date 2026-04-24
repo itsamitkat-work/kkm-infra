@@ -71,7 +71,6 @@ export function AttendanceBulkActions({
           <DropdownMenuTrigger asChild>
             <Button
               variant='outline'
-              size='sm'
               className='h-7 gap-1.5'
               disabled={!hasUnlockedRows}
             >
@@ -89,7 +88,6 @@ export function AttendanceBulkActions({
         </DropdownMenu>
         <Button
           variant='outline'
-          size='sm'
           className='h-7 w-7 p-0'
           onClick={onIncentiveClick}
           disabled={!hasUnlockedRows}
@@ -100,7 +98,6 @@ export function AttendanceBulkActions({
         {canUpdateResourcePool && (
           <Button
             variant='outline'
-            size='sm'
             className='h-7 w-7 p-0'
             onClick={onReleaseClick}
             disabled={isReleasing}
@@ -117,7 +114,6 @@ export function AttendanceBulkActions({
           <div className='flex items-center rounded-md border border-input overflow-hidden'>
             <Button
               variant='outline'
-              size='sm'
               className='h-7 w-7 p-0 rounded-none border-0 border-r border-input'
               onClick={onLock}
               disabled={isLocking}
@@ -131,7 +127,6 @@ export function AttendanceBulkActions({
             </Button>
             <Button
               variant='outline'
-              size='sm'
               className='h-7 w-7 p-0 rounded-none border-0'
               onClick={onUnlock}
               disabled={isUnlocking}
@@ -147,7 +142,6 @@ export function AttendanceBulkActions({
         )}
         <Button
           variant='outline'
-          size='sm'
           className='h-7 w-7 p-0'
           onClick={onExportPDF}
           disabled={isExporting || workersCount === 0}
@@ -165,7 +159,6 @@ export function AttendanceBulkActions({
       <div className='hidden sm:flex items-center gap-2'>
         <Button
           variant='ghost'
-          size='sm'
           className='h-7 text-xs text-muted-foreground'
           onClick={onClearSelection}
         >
@@ -176,7 +169,6 @@ export function AttendanceBulkActions({
           <DropdownMenuTrigger asChild>
             <Button
               variant='outline'
-              size='sm'
               className='h-7 gap-1.5'
               disabled={!hasUnlockedRows}
             >
@@ -195,7 +187,6 @@ export function AttendanceBulkActions({
         </DropdownMenu>
         <Button
           variant='outline'
-          size='sm'
           className='h-7 gap-1.5'
           onClick={onIncentiveClick}
           disabled={!hasUnlockedRows}
@@ -208,7 +199,6 @@ export function AttendanceBulkActions({
         {canUpdateResourcePool && (
           <Button
             variant='outline'
-            size='sm'
             className='h-7 gap-1.5'
             onClick={onReleaseClick}
             disabled={isReleasing}
@@ -228,7 +218,6 @@ export function AttendanceBulkActions({
             <div className='flex items-center rounded-md border border-input overflow-hidden'>
               <Button
                 variant='outline'
-                size='sm'
                 className='h-7 gap-1.5 rounded-none border-0 border-r border-input last:border-r-0'
                 onClick={onLock}
                 disabled={isLocking}
@@ -242,7 +231,6 @@ export function AttendanceBulkActions({
               </Button>
               <Button
                 variant='outline'
-                size='sm'
                 className='h-7 gap-1.5 rounded-none border-0 border-r border-input last:border-r-0'
                 onClick={onUnlock}
                 disabled={isUnlocking}

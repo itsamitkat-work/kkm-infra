@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import { Control, FieldPath, FieldValues, useController } from 'react-hook-form';
-import { Input, InputGroup } from '@/components/ui/input';
+import { Input } from '@/components/ui/input';
+import { InputGroup } from '@/components/ui/input-group';
 import { Field, FieldDescription, FieldLabel, FieldError } from '@/components/ui/field';
 
 interface FormInputFieldProps<

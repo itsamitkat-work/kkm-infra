@@ -28,10 +28,7 @@ interface CreatePrnButtonProps {
   projects: ProjectOption[];
 }
 
-export function CreatePrnButton({
-  projectId,
-  projects,
-}: CreatePrnButtonProps) {
+export function CreatePrnButton({ projectId, projects }: CreatePrnButtonProps) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
@@ -58,7 +55,6 @@ export function CreatePrnButton({
   return (
     <div className='flex items-center'>
       <Button
-        size='sm'
         variant='outline'
         onClick={handlePrimaryClick}
         className='rounded-r-none border-r-0'
@@ -69,7 +65,6 @@ export function CreatePrnButton({
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
           <Button
-            size='sm'
             variant='outline'
             className='rounded-l-none border-l-1 pl-2'
             aria-label='Choose project for new PRN'

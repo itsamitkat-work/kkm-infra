@@ -43,6 +43,24 @@ export const filterFields: FilterFieldsConfig = [
           icon: STATUS_ICON(dotClass),
         })),
       },
+      {
+        key: 'dosRange',
+        label: 'DOS',
+        icon: <IconCalendar />,
+        type: 'daterange',
+      },
+      {
+        key: 'docRange',
+        label: 'DOC',
+        icon: <IconCalendar />,
+        type: 'daterange',
+      },
+      {
+        key: 'amount',
+        label: 'Amount',
+        icon: <IconCurrencyRupee />,
+        type: 'number',
+      },
     ],
   },
 ];

@@ -1,47 +1,36 @@
 'use client';
 
-import * as React from 'react';
-
-import { User } from '@/types/users';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { IconChevronDown, IconPlus } from '@tabler/icons-react';
+import type { User } from '@/types/users';
+
+const MAX_VISIBLE_ROLE_TAGS = 3;
 
 interface UserRolesCellProps {
   user: User;
-  onOpenDialog: (user: User) => void;
 }
 
-export function UserRolesCell({ user, onOpenDialog }: UserRolesCellProps) {
+export function UserRolesCell({ user }: UserRolesCellProps) {
   const roles = user.roles ?? [];
-  const hasRoles = roles.length > 0;
+
+  if (roles.length === 0) {
+    return <span className='text-muted-foreground text-sm'>No roles</span>;
+  }
+
+  const visibleRoles = roles.slice(0, MAX_VISIBLE_ROLE_TAGS);
+  const overflowCount = roles.length - visibleRoles.length;
 
   return (
-    <div className='flex flex-wrap items-center gap-2'>
-      {hasRoles ? (
-        <div className='flex max-w-[200px] flex-wrap gap-1'>
-          {roles.map((role, index) => (
-            <Badge key={role.hashId ?? index} variant='secondary' className='truncate'>
-              {role.name}
-            </Badge>
-          ))}
-        </div>
-      ) : (
-        <span className='text-muted-foreground text-sm'>No roles</span>
-      )}
-      <Button
-        type='button'
-        variant='dashed'
-        size='xs'
-        title='Manage roles'
-        onClick={() => onOpenDialog(user)}
-      >
-        {hasRoles ? (
-          <IconChevronDown className='h-4 w-4' />
-        ) : (
-          <IconPlus className='h-4 w-4' />
-        )}
-      </Button>
+    <div className='flex flex-wrap items-center gap-1'>
+      {visibleRoles.map((role, index) => (
+        <Badge key={role.hashId ?? `${role.name}-${index}`} variant='ghost'>
+          {role.name}
+        </Badge>
+      ))}
+      {overflowCount > 0 ? (
+        <Badge variant='outline' className='shrink-0 font-normal tabular-nums'>
+          +{overflowCount}
+        </Badge>
+      ) : null}
     </div>
   );
 }

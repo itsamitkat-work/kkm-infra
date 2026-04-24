@@ -469,7 +469,6 @@ function EditableHeadCell({
         <Button
           type='button'
           variant='ghost'
-          size='sm'
           title={error}
           className={cn(
             'h-6 px-1 text-xs tabular-nums justify-start w-full min-w-[80px] truncate',
@@ -588,7 +587,6 @@ function EditableProjectCell({
         <Button
           type='button'
           variant='ghost'
-          size='sm'
           className={cn(
             'h-6 px-1 text-xs justify-start w-full min-w-[80px] truncate',
             'hover:bg-muted/50',
@@ -716,11 +714,10 @@ function EditableTextCell({
 
   return (
     <Input
-      variant='sm'
       value={localValue}
       onChange={handleChange}
       placeholder={placeholder}
-      className={cn('h-7 w-full min-w-[80px] text-xs', className)}
+      className={cn('h-6 w-full min-w-[80px] px-2 text-xs/relaxed', className)}
     />
   );
 }
@@ -977,7 +974,6 @@ function EditableTimeCell({
         <Button
           type='button'
           variant='ghost'
-          size='sm'
           className={cn(
             'h-6 px-1 text-xs tabular-nums justify-start',
             dayOffset > 0 ? 'w-[88px]' : 'w-[72px]',
@@ -1071,15 +1067,14 @@ function IncentiveButtonCell({ row, onUpdate }: IncentiveButtonCellProps) {
     <>
       <Button
         type='button'
-        variant={hasIncentive ? 'ghost' : 'dashed'}
-        size='sm'
+        variant={hasIncentive ? 'ghost' : 'outline'}
         className={cn(
           'h-7 px-1 md:px-2 text-[10px] md:text-xs',
           hasIncentive
             ? row.incentive! < 0
               ? 'text-red-600 font-medium'
               : 'text-foreground font-medium'
-            : 'text-muted-foreground border-dashed'
+            : 'border-dashed border-muted-foreground/40 bg-transparent text-muted-foreground hover:bg-muted/40'
         )}
         onClick={() => setIsDialogOpen(true)}
         disabled={disabled}
@@ -1492,8 +1487,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !ability.can('check', 'attendance') ||
-            row.original.isLocked
+            !ability.can('check', 'attendance') || row.original.isLocked
           }
         />
       ),
@@ -1550,8 +1544,7 @@ export function getAttendanceColumns(
             }
           }}
           disabled={
-            !ability.can('verify', 'attendance') ||
-            row.original.isLocked
+            !ability.can('verify', 'attendance') || row.original.isLocked
           }
         />
       ),

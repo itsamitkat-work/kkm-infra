@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Combobox } from '@/components/ui/combobox';
+import { SheetCellCombobox } from '@/components/tables/sheet-table/sheet-cell-combobox';
 import { AutocompleteInput } from '@/components/ui/autocomplete-input';
 import { ExtendedColumnDef, handleKeyDown, handlePaste } from './utils';
 import DateInput from '@/components/ui/date-input';
@@ -118,9 +118,14 @@ export function CellEditor<T extends Record<string, unknown>>({
   switch (inputType) {
     case 'combobox':
       return (
-        <Combobox
-          {...commonProps}
-          onChange={(optionId) => handleChange(optionId)}
+        <SheetCellCombobox
+          value={inputValue}
+          disabled={disabled}
+          className={commonProps.className}
+          autoFocus={autoFocus}
+          onChange={(optionId) => {
+            handleChange(optionId);
+          }}
           onKeyDown={handleKeyDownEvent}
           onPaste={handlePasteEvent}
           options={comboboxOptions}
@@ -132,7 +137,6 @@ export function CellEditor<T extends Record<string, unknown>>({
           loading={inputConfig.loading}
           filterOptions={inputConfig.filterOptions}
           filterValue={inputConfig.filterValue}
-          filterPlaceholder={inputConfig.filterPlaceholder}
           onFilterChange={inputConfig.onFilterChange}
           getOptionId={
             inputConfig.getOptionId
@@ -146,7 +150,7 @@ export function CellEditor<T extends Record<string, unknown>>({
           }
           renderOption={
             inputConfig.renderOption
-              ? ({ option, isSelected, searchValue }) =>
+              ? (option, { isSelected, searchValue }) =>
                   inputConfig.renderOption?.(option, {
                     rowData,
                     isSelected,
@@ -228,27 +232,23 @@ export function CellEditor<T extends Record<string, unknown>>({
             value={inputValue}
             disabled={disabled}
             placeholder={inputConfig.placeholder}
-            className={cn(
-              commonProps.className,
-              'px-2',
-              dense ? 'py-0' : 'py-1',
-              // No borders/background in table cells; auto sized with overflow when exceeding max rows
-              'min-h-0 h-auto resize-none !border-0 shadow-none rounded-none'
-            )}
-            autoSize
-            disableFocusRing
-            minRows={
+            rows={
               typeof inputConfig.minRows === 'number' && inputConfig.minRows > 0
                 ? inputConfig.minRows
                 : typeof inputConfig.rows === 'number' && inputConfig.rows > 0
                   ? inputConfig.rows
                   : undefined
             }
-            maxRows={
-              typeof inputConfig.maxRows === 'number' && inputConfig.maxRows > 0
-                ? inputConfig.maxRows
-                : undefined
-            }
+            className={cn(
+              commonProps.className,
+              'px-2',
+              dense ? 'py-0' : 'py-1',
+              'field-sizing-content min-h-0 h-auto resize-none !border-0 shadow-none rounded-none',
+              'focus-visible:border-transparent focus-visible:ring-0',
+              typeof inputConfig.maxRows === 'number' &&
+                inputConfig.maxRows > 0 &&
+                `max-h-[calc(${inputConfig.maxRows}*1.5rem)] overflow-y-auto`
+            )}
             onKeyDown={
               handleKeyDownEvent as unknown as React.KeyboardEventHandler<HTMLTextAreaElement>
             }

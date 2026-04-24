@@ -57,7 +57,10 @@ export function SchedulesTable() {
 
   const defaultFilters = React.useMemo(() => [], []);
 
-  const controls = useDataTableControls(SCHEDULE_SOURCES_TABLE_ID, defaultFilters);
+  const controls = useDataTableControls(
+    SCHEDULE_SOURCES_TABLE_ID,
+    defaultFilters
+  );
 
   const { query: schedulesQuery, invalidate: invalidateSchedulesQuery } =
     useScheduleSourcesQuery({
@@ -120,7 +123,7 @@ export function SchedulesTable() {
           canManage
             ? {
                 end: (
-                  <Button size='sm' onClick={handleCreate}>
+                  <Button onClick={handleCreate}>
                     <IconPlus />
                     <span className='hidden lg:inline'>Create schedule</span>
                   </Button>

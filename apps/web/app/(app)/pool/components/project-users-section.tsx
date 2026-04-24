@@ -262,7 +262,6 @@ export function ProjectUsersSection({
               <>
                 <Button
                   variant='ghost'
-                  size='sm'
                   onClick={() => {
                     table.resetRowSelection();
                   }}
@@ -278,7 +277,6 @@ export function ProjectUsersSection({
               <PopoverTrigger asChild>
                 {canUpdate && (
                   <Button
-                    size='sm'
                     variant='outline'
                     disabled={selectedCount === 0}
                     role='combobox'
@@ -335,8 +333,7 @@ export function ProjectUsersSection({
             </Popover>
             {canUpdate && (
               <Button
-                size='sm'
-                variant='primary'
+                variant='default'
                 onClick={async () => {
                   const selectedUserIds = table
                     .getSelectedRowModel()

@@ -86,7 +86,6 @@ export function ProjectItemsExportButtons({
       <DropdownMenuTrigger asChild>
         <Button
           variant='outline'
-          size='sm'
           disabled={disabled || isExporting || items.length === 0}
           className={buttonClassName}
         >

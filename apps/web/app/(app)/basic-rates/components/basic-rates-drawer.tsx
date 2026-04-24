@@ -30,13 +30,8 @@ import { DrawerWrapper } from '@/components/drawer/drawer-wrapper';
 import { DrawerContentContainer } from '@/components/drawer/drawer-content-container';
 import { OpenCloseMode } from '@/hooks/use-open-close';
 import type { Control } from 'react-hook-form';
-import {
-  Field,
-  FieldLabel,
-  FieldError,
-  FieldGroup,
-  FieldSet,
-} from '@/components/ui/field';
+import { Field, FieldLabel, FieldError, FieldSet } from '@/components/ui/field';
+import { FieldGroupDense } from '@/components/field-group-dense';
 import {
   InputGroup,
   InputGroupAddon,
@@ -160,7 +155,9 @@ export function BasicRatesDrawer({
     resolver: zodResolver(FORM_SCHEMA),
     defaultValues: getDefaultValues(),
     mode: 'all',
-    onEmptyPatch: isEdit ? () => toast.message('No changes to save') : undefined,
+    onEmptyPatch: isEdit
+      ? () => toast.message('No changes to save')
+      : undefined,
     onCreate: async (values) => {
       try {
         const status = formStatusLabelToDb(values.status);
@@ -189,7 +186,9 @@ export function BasicRatesDrawer({
           patchRecord.rate = Number(patchRecord.rate);
         }
         if (patchRecord.status != null) {
-          patchRecord.status = formStatusLabelToDb(patchRecord.status as string);
+          patchRecord.status = formStatusLabelToDb(
+            patchRecord.status as string
+          );
         }
         await updateBasicRateMutation.mutateAsync({
           id: basicRate.id,
@@ -232,7 +231,7 @@ export function BasicRatesDrawer({
 
       <DrawerContentContainer>
         <form id='basic-rate-form' onSubmit={form.submit}>
-          <FieldGroup density='dense'>
+          <FieldGroupDense>
             <BasicInformationSection
               control={form.control}
               readOnly={isRead}
@@ -242,7 +241,7 @@ export function BasicRatesDrawer({
               scheduleLabel={scheduleNote}
             />
             <RateInformationSection control={form.control} readOnly={isRead} />
-          </FieldGroup>
+          </FieldGroupDense>
         </form>
       </DrawerContentContainer>
     </DrawerWrapper>
@@ -386,7 +385,7 @@ function UnitField({
                 <InputGroupButton
                   type='button'
                   variant='ghost'
-                  size='xs'
+                  size='sm'
                   className='gap-1.5'
                   disabled={unitsQuery.isPending}
                   aria-label='Select unit'

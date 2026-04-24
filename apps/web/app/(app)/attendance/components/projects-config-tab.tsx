@@ -124,7 +124,6 @@ export function ProjectOverridesTab({ overrides, globalDefaults }: Props) {
                 </div>
                 <Button
                   variant={override ? 'ghost' : 'outline'}
-                  size='sm'
                   className='h-8 sm:h-7 text-xs px-3 sm:px-2.5 opacity-80 group-hover:opacity-100 transition-opacity'
                   onClick={() => setEditingProjectId(project.hashId)}
                 >
@@ -220,7 +219,6 @@ function OverrideEditor({
         <div className='flex items-center gap-2'>
           <Button
             variant='ghost'
-            size='sm'
             onClick={onBack}
             className='h-9 sm:h-7 px-2 -ml-2 text-muted-foreground hover:text-foreground'
           >
@@ -232,7 +230,6 @@ function OverrideEditor({
           </h4>
         </div>
         <Button
-          size='sm'
           className='h-9 sm:h-8 text-xs px-4'
           onClick={() => {
             if (projectId) {

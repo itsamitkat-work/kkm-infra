@@ -34,7 +34,7 @@ export function TenantsTable() {
     (row: TenantAdminRow) => {
       drawer.open(row, 'edit');
     },
-    [drawer],
+    [drawer]
   );
 
   const onClickDelete = React.useCallback(
@@ -46,18 +46,18 @@ export function TenantsTable() {
         itemName: 'tenant',
       });
     },
-    [deleteConfirmation, deleteTenantMutation],
+    [deleteConfirmation, deleteTenantMutation]
   );
 
   const columns = React.useMemo(
     () => getTenantsAdminColumns(handleEdit, onClickDelete),
-    [handleEdit, onClickDelete],
+    [handleEdit, onClickDelete]
   );
 
   const controls = useDataTableControls(
     TENANTS_ADMIN_TABLE_ID,
     [],
-    [{ id: 'display_name', desc: false }],
+    [{ id: 'display_name', desc: false }]
   );
 
   const { query: tenantsQuery, invalidate } = useTenantsAdminQuery({
@@ -93,7 +93,7 @@ export function TenantsTable() {
         showFilterClearButton={false}
         actions={{
           end: (
-            <Button type='button' size='sm' onClick={handleCreate}>
+            <Button type='button' onClick={handleCreate}>
               <IconPlus />
               <span className='hidden lg:inline'>Add tenant</span>
             </Button>

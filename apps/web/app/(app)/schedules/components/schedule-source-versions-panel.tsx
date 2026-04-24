@@ -94,7 +94,7 @@ export function ScheduleSourceVersionsPanel({
           </p>
         </div>
         {canManage ? (
-          <Button type='button' size='sm' onClick={openCreateDialog}>
+          <Button type='button' onClick={openCreateDialog}>
             <IconPlus className='size-4' />
             Add edition
           </Button>
@@ -157,7 +157,6 @@ export function ScheduleSourceVersionsPanel({
                         <Button
                           type='button'
                           variant='ghost'
-                          size='sm'
                           className='h-8'
                           onClick={() => openEditDialog(v)}
                         >
@@ -168,7 +167,6 @@ export function ScheduleSourceVersionsPanel({
                         <Button
                           type='button'
                           variant='ghost'
-                          size='sm'
                           className='text-destructive h-8'
                           onClick={() => requestDeleteVersion(v)}
                         >

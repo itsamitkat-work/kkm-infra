@@ -37,7 +37,7 @@ const ActionDropdownMenu = ({
 }) => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <Button variant='ghost' size='sm' className='h-8 w-8 p-0'>
+      <Button variant='ghost' className='h-8 w-8 p-0'>
         <IconDotsVertical className='size-4' />
         <span className='sr-only'>Open menu</span>
       </Button>
@@ -99,7 +99,6 @@ export function DetailPageHeader({
             <>
               <Button
                 variant='ghost'
-                size='sm'
                 onClick={onBack}
                 className='flex items-center gap-2 shrink-0 h-8 px-2'
               >
@@ -135,7 +134,6 @@ export function DetailPageHeader({
                 <Button
                   key={index}
                   variant='ghost'
-                  size='sm'
                   className='flex items-center gap-2 h-8 px-3'
                   onClick={item.onClick}
                   disabled={item.disabled}

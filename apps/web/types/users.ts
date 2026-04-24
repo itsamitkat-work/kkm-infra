@@ -9,6 +9,8 @@ export interface User extends Record<string, unknown> {
   tenantMemberId?: string;
   userName: string;
   fullName: string;
+  /** From `profiles.avatar_url` when loaded from tenant directory. */
+  avatarUrl?: string | null;
   email: string;
   isActive: boolean;
   roles: UserRole[];

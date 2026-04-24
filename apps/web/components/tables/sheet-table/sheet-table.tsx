@@ -2,7 +2,7 @@
 
 import React, { useCallback, useRef } from 'react';
 import { Row as TanStackRow } from '@tanstack/react-table';
-import { Table } from '@/components/ui/table';
+import { ComposedTable } from '@/components/composed-table';
 import {
   ExtendedColumnDef,
   SheetTableProps,
@@ -456,7 +456,7 @@ function SheetTable<
       {bulkActions && <div className='-mt-2'>{bulkActions}</div>}
 
       <div className='rounded-lg border overflow-hidden'>
-        <Table
+        <ComposedTable
           className={cn(dense && 'dense')}
           containerClassName={
             containerClassName || 'max-h-[65vh] overflow-y-auto'
@@ -568,7 +568,7 @@ function SheetTable<
               )}
             />
           )}
-        </Table>
+        </ComposedTable>
       </div>
     </div>
   );

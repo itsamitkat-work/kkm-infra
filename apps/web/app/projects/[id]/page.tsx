@@ -163,10 +163,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     ) {
       const next = new URLSearchParams(searchParams.toString());
       next.set('tab', normalized);
-      router.replace(
-        `/projects/${resolvedParams.id}?${next.toString()}`,
-        { scroll: false }
-      );
+      router.replace(`/projects/${resolvedParams.id}?${next.toString()}`, {
+        scroll: false,
+      });
       setActiveTab(normalized);
     }
   }, [searchParams, router, resolvedParams.id]);
@@ -274,7 +273,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           <div className='flex min-w-0 items-center gap-2 sm:gap-3'>
             <Button
               variant='ghost'
-              size='sm'
               onClick={handleBack}
               className='h-8 shrink-0 gap-1.5 px-2 text-muted-foreground hover:text-foreground'
             >
@@ -310,7 +308,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               <Button
                 key={index}
                 variant='ghost'
-                size='sm'
                 onClick={action.onClick}
                 className='flex items-center gap-2'
               >
@@ -321,7 +318,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant='ghost' size='sm'>
+                <Button variant='ghost'>
                   <MoreVertical className='size-4' />
                 </Button>
               </DropdownMenuTrigger>
@@ -377,7 +374,10 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                         (isTabCountsPending ? (
                           <Spinner className='size-3 opacity-60' />
                         ) : (
-                          <Badge variant='primary-light' size='sm'>
+                          <Badge
+                            variant='secondary'
+                            className='h-5 min-w-5 border-0 bg-primary/10 px-1.5 text-[0.625rem] text-primary'
+                          >
                             {isTabCountsError ? '–' : (badgeValue ?? 0)}
                           </Badge>
                         ))}

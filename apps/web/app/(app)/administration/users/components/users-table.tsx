@@ -2,11 +2,8 @@
 
 import * as React from 'react';
 
-import { AssignRolesDialog } from './assign-roles-dialog';
 import { getColumns } from './users-columns';
-import { useAssignRole } from '../hooks/use-assign-role-mutation';
-import { useRemoveRole } from '../hooks/use-remove-role-mutation';
-import { useTenantRolesAdminQuery } from '../hooks/use-tenant-roles-admin-query';
+import { UserDrawer } from './user-drawer';
 import { USERS_TABLE_ID, useUsersQuery } from '../hooks/use-users-query';
 import { DataTable } from '@/components/tables/data-table/data-table';
 import { useDataTableControls } from '@/components/tables/data-table/use-data-table-controls';
@@ -16,33 +13,21 @@ import { useOpenClose } from '@/hooks/use-open-close';
 import type { User } from '@/types/users';
 
 export function UsersTable() {
-  const dialog = useOpenClose<User>();
   const { claims } = useAuth();
   const tenantId = claims?.tid ?? null;
 
-  const assignRoleMutation = useAssignRole({
-    suppressSuccessToast: true,
-    suppressErrorToast: true,
-  });
+  const userDrawer = useOpenClose<User>();
 
-  const removeRoleMutation = useRemoveRole({
-    suppressSuccessToast: true,
-    suppressErrorToast: true,
-  });
-
-  const rolesQuery = useTenantRolesAdminQuery(tenantId);
-  const allRoles = rolesQuery.data ?? [];
-
-  const onClickManageRoles = React.useCallback(
-    (user: User) => {
-      dialog.open(user);
+  const handleSelectUser = React.useCallback(
+    (selected: User) => {
+      userDrawer.open(selected, 'edit');
     },
-    [dialog],
+    [userDrawer],
   );
 
   const columns = React.useMemo(
-    () => getColumns({ onOpenDialog: onClickManageRoles }),
-    [onClickManageRoles],
+    () => getColumns({ onSelectUser: handleSelectUser }),
+    [handleSelectUser],
   );
 
   const controls = useDataTableControls(USERS_TABLE_ID);
@@ -84,23 +69,14 @@ export function UsersTable() {
         }
       />
 
-      {dialog.isOpen && dialog.data && (
-        <AssignRolesDialog
-          open={dialog.isOpen}
-          onOpenChange={(open) => {
-            if (open) {
-              dialog.open(dialog.data!);
-            } else {
-              dialog.close();
-            }
-          }}
-          user={dialog.data}
-          allRoles={allRoles}
-          assignRoleMutation={assignRoleMutation}
-          removeRoleMutation={removeRoleMutation}
-          isLoadingRoles={rolesQuery.isLoading}
+      {userDrawer.isOpen && userDrawer.data ? (
+        <UserDrawer
+          open={userDrawer.isOpen}
+          user={userDrawer.data}
+          tenantId={tenantId}
+          onClose={userDrawer.close}
         />
-      )}
+      ) : null}
     </>
   );
 }

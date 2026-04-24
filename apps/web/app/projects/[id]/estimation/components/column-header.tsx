@@ -45,7 +45,6 @@ export function DataTableColumnHeader<TData, TValue>({
         <DropdownMenuTrigger asChild>
           <Button
             variant='ghost'
-            size='sm'
             className={cn(
               'h-8 data-[state=open]:bg-accent w-full group',
               alignment === 'end' ? 'justify-end' : 'justify-start'

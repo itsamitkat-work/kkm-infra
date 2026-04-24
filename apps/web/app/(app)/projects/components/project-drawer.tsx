@@ -42,7 +42,7 @@ import {
   PROJECT_TEAM_DRAWER_OPERATIONS_FIELDS,
   type ProjectMemberRoleSlug,
 } from '@/hooks/projects/use-project-member';
-import { InputAddon } from '@/components/ui/input';
+import { InputGroupAddon } from '@/components/ui/input-group';
 import { Loader } from 'lucide-react';
 import { useProject } from '@/hooks/projects/use-project';
 import { fetchUserOptions } from '../hooks/use-user';
@@ -943,7 +943,7 @@ export function ProjectDrawer({
                   placeholder='Enter amount'
                   type='number'
                   readOnly={isRead}
-                  inputAddon={<InputAddon>₹</InputAddon>}
+                  inputAddon={<InputGroupAddon>₹</InputGroupAddon>}
                 />
                 {sanctionAmountWords && !isRead && (
                   <div className='text-sm text-muted-foreground mt-1 italic'>
