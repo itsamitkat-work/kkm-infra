@@ -25,11 +25,13 @@ import { uploadProfileAvatarToStorage } from '@/lib/supabase/profile-avatar-stor
 import type { FileWithPreview } from '@/hooks/use-file-upload';
 import type { User } from '@/types/users';
 
-import { useAssignRole } from '../hooks/use-assign-role-mutation';
-import { useRemoveRole } from '../hooks/use-remove-role-mutation';
-import type { TenantRolesAdminRow } from '../hooks/use-tenant-roles-admin-query';
+import type { TenantRolesAdminRow } from '../api/tenant-roles-admin-api';
 import { useTenantRolesAdminQuery } from '../hooks/use-tenant-roles-admin-query';
-import { useUpdateTenantMemberDirectoryMutation } from '../hooks/use-update-tenant-member-directory-mutation';
+import {
+  useAssignRole,
+  useRemoveRole,
+  useUpdateTenantMemberDirectoryMutation,
+} from '../hooks/use-users-mutations';
 import { useUserRolesQuery } from '../hooks/use-user-roles-query';
 
 import { UserDrawerAvatar } from './user-drawer-avatar';
@@ -63,11 +65,11 @@ function buildUserDrawerSchema(canEditProfiles: boolean) {
         });
         return;
       }
-      if (!/^[a-z0-9][a-z0-9_-]*$/i.test(u)) {
+      if (!/^[a-z0-9][a-z0-9._-]*$/i.test(u)) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message:
-            'Username may contain letters, numbers, underscores, and hyphens',
+            'Username may contain letters, numbers, dots, underscores, and hyphens',
           path: ['username'],
         });
       }
