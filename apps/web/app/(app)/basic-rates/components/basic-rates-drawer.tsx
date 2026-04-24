@@ -67,6 +67,19 @@ const FORM_SCHEMA = z.object({
 });
 
 type BasicRateFormValues = z.infer<typeof FORM_SCHEMA>;
+type BasicRateFormPatch = Partial<BasicRateFormValues>;
+
+function buildUpdateBasicRateInput(
+  id: string,
+  patch: BasicRateFormPatch
+): UpdateBasicRateInput {
+  const { rate, ...restPatch } = patch;
+  return {
+    id,
+    ...restPatch,
+    ...(rate !== undefined ? { rate: Number(rate) } : {}),
+  };
+}
 
 interface Props {
   mode: OpenCloseMode;
@@ -159,13 +172,9 @@ export function BasicRatesDrawer({
         if (!basicRate) {
           return;
         }
-        const { rate, ...restPatch } = patch;
-        const updateInput: UpdateBasicRateInput = {
-          id: basicRate.id,
-          ...restPatch,
-          ...(rate !== undefined ? { rate: Number(rate) } : {}),
-        };
-        await updateBasicRateMutation.mutateAsync(updateInput);
+        await updateBasicRateMutation.mutateAsync(
+          buildUpdateBasicRateInput(basicRate.id, patch)
+        );
         onSubmit();
       } catch (error) {
         console.error('Error submitting form:', error);
