@@ -5,8 +5,6 @@ import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versi
 import { normalizeError } from '@/lib/supabase/errors';
 import type { PaginationResponse } from '@/types/common';
 
-import { fetchBasicRateTypeIdByName } from './basic-rate-type-api';
-
 type BasicRatesTable = Database['public']['Tables']['basic_rates'];
 
 type BasicRateTypeRow = Database['public']['Tables']['basic_rate_types']['Row'];
@@ -18,7 +16,7 @@ type BasicRate = BasicRatesTable['Row'] & {
 
 type BasicRatesListParams = {
   search?: string;
-  types?: string;
+  basic_rate_type_id?: string;
   sortBy?: string;
   order?: string;
   page?: number;
@@ -85,13 +83,8 @@ async function fetchBasicRates(
     );
   }
 
-  if (params.types) {
-    const typeId = await fetchBasicRateTypeIdByName(
-      supabase,
-      params.types,
-      signal
-    );
-    query = query.eq('basic_rate_type_id', typeId);
+  if (params.basic_rate_type_id) {
+    query = query.eq('basic_rate_type_id', params.basic_rate_type_id);
   }
 
   if (params.statusIn && params.statusIn.length > 0) {

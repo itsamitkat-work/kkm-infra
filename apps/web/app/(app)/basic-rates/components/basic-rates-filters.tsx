@@ -35,7 +35,7 @@ export function getBasicRatesFilterFields(
           ),
         },
         {
-          key: 'types',
+          key: 'basic_rate_type_id',
           label: 'Type',
           type: 'select',
           options: typeOptions,

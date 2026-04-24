@@ -81,7 +81,7 @@ export function TextCell({
   const primaryDisplay = label || '—';
 
   const itemClass = cn(
-    'min-w-0 max-w-full border-0 bg-transparent shadow-none',
+    'min-w-0 max-w-full overflow-hidden border-0 bg-transparent shadow-none',
     'px-1 py-0.5',
     className
   );
@@ -92,10 +92,10 @@ export function TextCell({
     <>
       <ItemTitle
         className={cn(
-          'w-full min-w-0 max-w-full text-sm font-normal leading-snug',
+          'block w-full min-w-0 max-w-full overflow-hidden text-sm font-normal leading-snug',
           isMultiline
-            ? 'line-clamp-2 break-words whitespace-normal'
-            : 'line-clamp-1',
+            ? 'line-clamp-2 whitespace-normal break-words'
+            : 'truncate',
           muted ? 'text-muted-foreground' : 'text-foreground',
           !muted && emphasis && 'font-medium',
           isMultiline &&
@@ -106,7 +106,7 @@ export function TextCell({
         {primaryDisplay}
       </ItemTitle>
       {subLabel ? (
-        <ItemDescription className='line-clamp-1 leading-snug'>
+        <ItemDescription className='line-clamp-1 min-w-0 max-w-full overflow-hidden leading-snug'>
           {subLabel}
         </ItemDescription>
       ) : null}
@@ -115,14 +115,16 @@ export function TextCell({
 
   const itemInner = (
     <Item size='xs' variant='default' className={itemClass}>
-      <ItemContent className='min-w-0 gap-0'>{body}</ItemContent>
+      <ItemContent className='min-w-0 w-full max-w-full gap-0 overflow-hidden'>
+        {body}
+      </ItemContent>
     </Item>
   );
 
   return (
     <Tooltip delayDuration={tooltipDelayDuration}>
       <TooltipTrigger asChild>
-        <div className='min-w-0 max-w-full text-sm leading-snug'>
+        <div className='min-w-0 max-w-full overflow-hidden text-sm leading-snug'>
           {onClick != null ? (
             <Button
               type='button'
@@ -130,7 +132,7 @@ export function TextCell({
               onClick={onClick}
               disabled={disabled}
               className={cn(
-                'h-auto min-h-0 w-full min-w-0 justify-start border-0 bg-transparent p-0 font-normal shadow-none',
+                'h-auto min-h-0 w-full min-w-0 max-w-full justify-start overflow-hidden border-0 bg-transparent p-0 font-normal shadow-none',
                 isMultiline && 'items-start whitespace-normal',
                 buttonClassName
               )}

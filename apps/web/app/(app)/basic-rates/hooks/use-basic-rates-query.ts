@@ -47,8 +47,11 @@ function useBasicRatesQuery(params: {
   const listParams: BasicRatesListParams = React.useMemo(() => {
     const out: BasicRatesListParams = { search: params.search };
     params.filters.forEach((filter) => {
-      if (filter.field === 'types' && filter.values.length > 0) {
-        out.types = filter.values[0] as string;
+      if (
+        filter.field === 'basic_rate_type_id' &&
+        filter.values.length > 0
+      ) {
+        out.basic_rate_type_id = String(filter.values[0]);
       }
       if (
         filter.field === 'schedule_source_version_id' &&

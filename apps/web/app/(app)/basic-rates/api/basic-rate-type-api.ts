@@ -20,22 +20,6 @@ async function fetchBasicRateTypeOptions(
   return (data ?? []) as BasicRateTypeOptionRow[];
 }
 
-async function fetchBasicRateTypeIdByName(
-  supabase: SupabaseClient<Database>,
-  name: string,
-  signal?: AbortSignal
-): Promise<string> {
-  let query = supabase.from('basic_rate_types').select('id').eq('name', name);
-  if (signal) {
-    query = query.abortSignal(signal);
-  }
-  const { data, error } = await query.single();
-  if (error) {
-    throw normalizeError(error);
-  }
-  return data.id;
-}
-
-export { fetchBasicRateTypeOptions, fetchBasicRateTypeIdByName };
+export { fetchBasicRateTypeOptions };
 
 export type { BasicRateTypeOptionRow };

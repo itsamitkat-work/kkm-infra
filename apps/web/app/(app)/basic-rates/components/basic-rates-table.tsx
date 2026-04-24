@@ -60,7 +60,7 @@ export function BasicRatesTable() {
   const defaultFilters = React.useMemo(
     () => [
       createFilter('schedule_source_version_id', 'is', []),
-      createFilter('types', 'is', []),
+      createFilter('basic_rate_type_id', 'is', []),
       createFilter('status', 'is_any_of', []),
     ],
     []
@@ -74,7 +74,7 @@ export function BasicRatesTable() {
   const typeFilterOptions = React.useMemo(
     () =>
       typeRows.map((t) => ({
-        value: t.name,
+        value: t.id,
         label: t.name,
       })),
     [typeRows]
