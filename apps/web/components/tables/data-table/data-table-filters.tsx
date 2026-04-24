@@ -42,6 +42,7 @@ export function DataTableFilters({
           variant='outline'
           onChange={handleFiltersChange}
           showAddButton={showAddButton}
+          size='sm'
         />
       </div>
 

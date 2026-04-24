@@ -3,7 +3,6 @@ import {
   RECORD_STATUS_FILTER_OPTIONS,
   RecordStatusDot,
 } from '@/components/ui/record-status-badge';
-import { SlidersHorizontal } from 'lucide-react';
 
 export function getBasicRatesFilterFields(
   typeOptions: Array<{ value: string; label: string }>,
@@ -22,7 +21,6 @@ export function getBasicRatesFilterFields(
         {
           key: 'status',
           label: 'Status',
-          icon: <SlidersHorizontal />,
           type: 'multiselect',
           className: 'w-[180px]',
           selectedOptionsClassName: '-space-x-1',

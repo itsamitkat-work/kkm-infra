@@ -106,8 +106,9 @@ Separate files/hooks for option lists (`useWidgetCategoriesQuery`) with their ow
 - **`DataTable`** + **`useDataTableControls(TABLE_ID, defaultFilters)`** for search, filters, sorting, persisted UI state.
 - **`getColumns`** in `*-columns.tsx`: pure function returning column defs; inject callbacks via closure or refs if you must avoid unstable columns (see basic-rates delete ref pattern).
 - **`get*FilterFields`** in `*-filters.tsx`: map filter definitions to options loaded from hooks.
+- Filter values should match the API contract directly. For foreign keys, filters should carry ids end-to-end instead of display names that need a second lookup.
 - **Auth / CASL**: gate actions in the table (e.g. hide create, force read-only drawer) with `useAuth` / `ability.can(...)`.
-- **Errors**: render **`TableErrorState`** with retry when the list query fails.
+- **Errors**: render **`TableErrorState`** with retry when the list query fails; prefer query `refetch()` over `window.location.reload()`.
 - **Loading**: prefer shared table loading / skeleton patterns; avoid raw `"Loading..."` text where the design system specifies `Spinner` or skeletons.
 
 ---
@@ -123,7 +124,8 @@ Use **`useConfirmationDialog`** from `@/hooks/use-confirmation-dialog` (not dele
 - **`useAppForm`** with `submitMode: 'edit' | 'create'`, `zodResolver`, and **Zod** schema colocated with the drawer.
 - Rely on **`useAppForm` defaults**: React Hook Form **`mode: 'all'`** and, in edit mode, **empty patch →** `toast.message('No changes to save')` unless you override `onEmptyPatch`.
 - **`onCreate`**: full payload to create mutation.
-- **`onPatch`**: receive dirty patch from `useAppForm`; coerce types (e.g. string → number) before calling update mutation; guard missing parent id.
+- **`onPatch`**: receive dirty patch from `useAppForm`; guard missing parent id, then pass the patch through a small typed helper that transforms only fields that need coercion (for example `rate: string -> number`).
+- Prefer a payload builder like `buildUpdateXInput(id, patch)` over hand-copying fields one by one in the drawer. This keeps new editable fields from being missed later.
 - **Select fields**: store **foreign key ids** in the form (`value` = id, `label` for display). Do not duplicate display names as the persisted value unless the schema has a denormalized text column.
 - Reuse **`FormInputField`**, **`FormSelectField`**, drawer shell components (`DrawerWrapper`, `FormDrawerHeader`, etc.).
 - **`useOpenClose`** (or equivalent) for drawer open state and `create | edit | read` mode.

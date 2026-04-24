@@ -276,7 +276,9 @@ export function DataTable<T extends WithId>({
               )}
             >
               {/* Left: Table name + Search */}
-              {(tableName || showSearch || (showFilters && filtersInlineWithSearch)) && (
+              {(tableName ||
+                showSearch ||
+                (showFilters && filtersInlineWithSearch)) && (
                 <div
                   className={cn(
                     'flex min-w-0 items-center gap-2',
