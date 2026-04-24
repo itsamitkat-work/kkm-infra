@@ -37,9 +37,11 @@ const CATALOG_PERMISSION_RULES: ReadonlyArray<readonly [key: string, action: App
     ['basic_rates.manage', 'manage'],
     ['clients.read', 'read'],
     ['clients.manage', 'manage'],
+    ['tenant_members.read', 'read'],
     ['tenant_members.manage', 'manage'],
     ['projects.read', 'read'],
     ['projects.manage', 'manage'],
+    ['schedules.read', 'read'],
     ['schedules.manage', 'manage'],
     ['tenants.manage', 'manage'],
   ];

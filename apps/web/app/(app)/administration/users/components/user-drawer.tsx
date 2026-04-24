@@ -42,38 +42,24 @@ const STATUS_OPTIONS = [
 ] as const;
 
 function buildUserDrawerSchema(canEditProfiles: boolean) {
-  return z
-    .object({
-      displayName: z
+  const usernameSchema = canEditProfiles
+    ? z
         .string()
         .trim()
-        .min(1, 'Display name is required')
-        .max(200),
-      username: z.string().trim().max(64),
-      status: z.enum(['active', 'suspended']),
-    })
-    .superRefine((val, ctx) => {
-      if (!canEditProfiles) {
-        return;
-      }
-      const u = val.username.trim();
-      if (u.length < 2) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'Username is required',
-          path: ['username'],
-        });
-        return;
-      }
-      if (!/^[a-z0-9][a-z0-9._-]*$/i.test(u)) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message:
-            'Username may contain letters, numbers, dots, underscores, and hyphens',
-          path: ['username'],
-        });
-      }
-    });
+        .min(1, 'Email is required')
+        .max(254)
+        .email('Enter a valid email address')
+    : z.string().trim().max(254);
+
+  return z.object({
+    displayName: z
+      .string()
+      .trim()
+      .min(1, 'Display name is required')
+      .max(200),
+    username: usernameSchema,
+    status: z.enum(['active', 'suspended']),
+  });
 }
 
 type UserDrawerFormValues = z.infer<ReturnType<typeof buildUserDrawerSchema>>;
@@ -371,8 +357,9 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
                   <AlertTitle>Profile fields</AlertTitle>
                   <AlertDescription>
                     Display name, avatar, and status are saved for this
-                    workspace. Username and global profile sync require you to
-                    be this user or a system administrator (database policy).
+                    workspace. Email (profile username) and global profile sync
+                    require you to be this user or a system administrator
+                    (database policy).
                   </AlertDescription>
                 </Alert>
               ) : null}
@@ -396,14 +383,16 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
                   <FormInputField
                     control={form.control}
                     name='username'
-                    label='Username'
-                    placeholder='username'
+                    label='Email'
+                    placeholder='name@example.com'
+                    type='email'
+                    autoComplete='email'
                     required={canEditProfiles}
                     readOnly={readOnly || !canEditProfiles}
                     description={
                       !canEditProfiles
                         ? 'Managed on the global profile when you are this user or a system admin.'
-                        : undefined
+                        : 'Stored as profile username; use the same address as sign-in email.'
                     }
                   />
                   <FormSelectField

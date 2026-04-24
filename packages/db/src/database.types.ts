@@ -2033,6 +2033,7 @@ export type Database = {
         Args: { p_project_id: string; p_schedule_source_id: string }
         Returns: undefined
       }
+      session_permissions: { Args: never; Returns: string[] }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
       switch_active_role: {

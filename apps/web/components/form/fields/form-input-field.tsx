@@ -23,6 +23,7 @@ interface FormInputFieldProps<
   description?: React.ReactNode;
   /** HTML `list` attribute (e.g. id of a `<datalist>` for preset suggestions). */
   list?: string;
+  autoComplete?: string;
 }
 
 export function FormInputField<
@@ -40,6 +41,7 @@ export function FormInputField<
   inputAddon,
   description,
   list,
+  autoComplete,
 }: FormInputFieldProps<TFieldValues, TName>) {
   const {
     field,
@@ -61,6 +63,7 @@ export function FormInputField<
           readOnly={readOnly}
           type={type}
           aria-invalid={!!error}
+          autoComplete={autoComplete}
           list={list}
         />
       </InputGroup>

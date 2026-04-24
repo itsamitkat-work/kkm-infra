@@ -10,7 +10,7 @@
  *   - Requires a valid Bearer token (via requireUserContext)
  *   - Requires an active tenant set on the session
  *   - The role must be assigned to the user (enforced by DB RPC)
- *   - Rate-limited: 30 req/min per user+tenant
+ *   - Rate-limited: 30 req/min per user+tenant (moderate: in-memory fallback when Redis is unset)
  *
  * POST body:
  *   { role_slug, refresh_token? }
@@ -18,7 +18,7 @@
  * Returns:
  *   { active_role, session_refresh_required, session? }
  */
-import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import 'jsr:@supabase/functions-js/edge-runtime.d.ts';
 
 import {
   HttpError,
@@ -30,7 +30,7 @@ import {
   maybeRefreshSession,
   requireJsonBody,
   requireUserContext,
-} from "../_shared/runtime.ts";
+} from '../_shared/runtime.ts';
 
 interface SwitchRoleBody {
   role_slug?: string;
@@ -49,27 +49,27 @@ Deno.serve(async (req) => {
     const tenantId = getCurrentTenantId(context.claims);
 
     if (!tenantId) {
-      throw new HttpError(400, "No active tenant is set on the session");
+      throw new HttpError(400, 'No active tenant is set on the session');
     }
 
     if (!roleSlug) {
-      throw new HttpError(400, "role_slug is required");
+      throw new HttpError(400, 'role_slug is required');
     }
 
     const rateLimit = await applyRateLimit(
       `switch-role:${context.user.id}:${tenantId}`,
       30,
       60,
-      "strict",
+      'moderate'
     );
     if (!rateLimit.allowed) {
       return jsonResponse(
-        { error: "Rate limit exceeded", retry_after: rateLimit.retryAfter },
-        429,
+        { error: 'Rate limit exceeded', retry_after: rateLimit.retryAfter },
+        429
       );
     }
 
-    const { error } = await context.serviceClient.rpc("switch_active_role", {
+    const { error } = await context.serviceClient.rpc('switch_active_role', {
       p_user_id: context.user.id,
       p_tenant_id: tenantId,
       p_role_slug: roleSlug,

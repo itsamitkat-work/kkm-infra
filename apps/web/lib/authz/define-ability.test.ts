@@ -11,12 +11,38 @@ describe('defineAbilityFor', () => {
     expect(ability.can('read', 'schedules')).toBe(true);
   });
 
+  it('maps schedules.read to read schedules only', () => {
+    const ability = defineAbilityFor({
+      permissions: ['schedules.read'],
+      claims: null,
+    });
+    expect(ability.can('read', 'schedules')).toBe(true);
+    expect(ability.can('manage', 'schedules')).toBe(false);
+  });
+
   it('maps tenant_members.manage to manage tenant_members', () => {
     const ability = defineAbilityFor({
       permissions: ['tenant_members.manage'],
       claims: null,
     });
     expect(ability.can('manage', 'tenant_members')).toBe(true);
+  });
+
+  it('implies read on tenant_members when tenant_members.manage is granted', () => {
+    const ability = defineAbilityFor({
+      permissions: ['tenant_members.manage'],
+      claims: null,
+    });
+    expect(ability.can('read', 'tenant_members')).toBe(true);
+  });
+
+  it('maps tenant_members.read to read tenant_members only', () => {
+    const ability = defineAbilityFor({
+      permissions: ['tenant_members.read'],
+      claims: null,
+    });
+    expect(ability.can('read', 'tenant_members')).toBe(true);
+    expect(ability.can('manage', 'tenant_members')).toBe(false);
   });
 
   it('grants manage on every app subject when is_system_admin', () => {

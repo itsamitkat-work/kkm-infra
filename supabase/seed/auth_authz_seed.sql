@@ -2,8 +2,9 @@
 -- Auth + Authz seed (SQL only — local / CI dev)
 -- ==========================================================================
 -- Runs after migrations via config.toml `db.seed.sql_paths`.
--- Order: role_templates, permissions, role_template_permissions (defaults per template),
--- tenants (handle_new_tenant → tenant_roles + tenant_role_permissions), users, memberships.
+-- Order: role_templates (includes project_* keys), permissions, role_template_permissions,
+-- tenants (handle_new_tenant → tenant_roles + tenant_role_permissions for every template key),
+-- KKM project-role sync, users, memberships.
 -- Covers: authz.role_templates, authz.permissions, authz.role_template_permissions,
 -- public.tenants, authz.tenant_roles (via tenant trigger), authz.tenant_role_permissions,
 -- auth.users, auth.identities,
@@ -12,11 +13,13 @@
 --
 -- Dev passwords (all seeded users): 22113355 — change for anything beyond local dev.
 -- Edit emails / UUIDs here if you rename dev accounts.
+-- Sign-in and profiles.username both use the same value as auth.users.email (e.g.
+-- platform.admin@kkm-infra.local) so the login field and directory username stay aligned.
 --
--- Project drawer (KKM tenant): tenant_roles named with a Project … prefix; slugs are
--- project_maker, project_checker, project_verifier, project_head, project_engineer,
--- project_supervisor (see apps/web/hooks/projects/use-project-member.ts).
--- Seed users use role-based locals (e.g. project.head@…) and display names for pickers.
+-- Project drawer roles: each slug is a role_templates.key; handle_new_tenant creates
+-- matching tenant_roles + tenant_role_permissions for new tenants. KKM re-seed sync
+-- below keeps rows aligned. Slugs: project_maker, project_checker, project_verifier,
+-- project_head, project_engineer, project_supervisor (see apps/web/hooks/projects/use-project-member.ts).
 -- ==========================================================================
 
 begin;
@@ -37,6 +40,36 @@ values
     'platform_admin',
     'Platform Admin',
     'Full permission set per tenant, including tenants.manage'
+  ),
+  (
+    'project_head',
+    'Project Head',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
+  ),
+  (
+    'project_engineer',
+    'Project Engineer',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
+  ),
+  (
+    'project_supervisor',
+    'Project Supervisor',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
+  ),
+  (
+    'project_maker',
+    'Project Maker',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
+  ),
+  (
+    'project_checker',
+    'Project Checker',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
+  ),
+  (
+    'project_verifier',
+    'Project Verifier',
+    'Project team: projects read/write + read-only clients, schedules, basic rates'
   )
 on conflict (key) do update
 set
@@ -56,6 +89,7 @@ from (
     ('basic_rates.manage', 'Create, update, and delete basic rates and types'),
     ('clients.read', 'View clients'),
     ('clients.manage', 'Create, update, and delete clients'),
+    ('tenant_members.read', 'View tenant member directory (read-only)'),
     ('tenant_members.manage', 'Add, update, suspend, and remove tenant members'),
     ('projects.read', 'View projects'),
     ('projects.manage', 'Create, update, and delete projects'),
@@ -84,6 +118,28 @@ select 'platform_admin', p.id
 from authz.permissions p
 on conflict (template_key, permission_id) do nothing;
 
+-- Project drawer roles: same catalog for each slug (JWT + RLS); no tenant_members / clients.manage.
+insert into authz.role_template_permissions (template_key, permission_id)
+select t.template_key, p.id
+from (
+  values
+    ('project_head'::text),
+    ('project_engineer'),
+    ('project_supervisor'),
+    ('project_maker'),
+    ('project_checker'),
+    ('project_verifier')
+) as t(template_key)
+cross join authz.permissions p
+where p.key in (
+  'projects.read',
+  'projects.manage',
+  'clients.read',
+  'schedules.read',
+  'basic_rates.read'
+)
+on conflict (template_key, permission_id) do nothing;
+
 -- --------------------------------------------------------------------------
 -- public.tenants
 -- --------------------------------------------------------------------------
@@ -100,90 +156,39 @@ set
   name = excluded.name,
   display_name = excluded.display_name;
 
--- tenant_role_permissions for the rows above are filled by public.handle_new_tenant()
+-- tenant_role_permissions for template-backed roles are filled by public.handle_new_tenant()
 -- from authz.role_template_permissions (same transaction, after this section runs).
 
 -- --------------------------------------------------------------------------
--- Project team roles for KKM tenant (project drawer user pickers)
--- Role names: Project … prefix. Slugs must match ProjectMemberRoleSlug in apps/web/hooks/projects/use-project-member.ts.
+-- KKM tenant: bind project tenant_roles to role_templates and sync permissions
+-- (idempotent; needed when tenants row already existed and INSERT trigger did not run).
 -- --------------------------------------------------------------------------
 insert into authz.tenant_roles (tenant_id, name, slug, template_key, is_system)
-select v.tenant_id, v.name, v.slug, null::text, false
-from (
-  values
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Head',
-      'project_head'
-    ),
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Engineer',
-      'project_engineer'
-    ),
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Supervisor',
-      'project_supervisor'
-    ),
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Maker',
-      'project_maker'
-    ),
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Checker',
-      'project_checker'
-    ),
-    (
-      'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project Verifier',
-      'project_verifier'
-    )
-) as v(tenant_id, name, slug)
-where not exists (
-  select 1
-  from authz.tenant_roles tr
-  where tr.tenant_id = v.tenant_id
-    and tr.slug = v.slug
-);
-
-insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
-select tr.id, ta_perm.permission_id
-from authz.tenant_roles tr
-cross join lateral (
-  select trp.permission_id
-  from authz.tenant_role_permissions trp
-  inner join authz.tenant_roles admin on admin.id = trp.tenant_role_id
-  where admin.tenant_id = tr.tenant_id
-    and admin.slug = 'tenant_admin'
-) ta_perm
-where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
-  and tr.slug in (
-    'project_head',
-    'project_engineer',
-    'project_supervisor',
-    'project_maker',
-    'project_checker',
-    'project_verifier'
-  )
-on conflict (tenant_role_id, permission_id) do nothing;
-
--- Align role labels on re-seed (insert above is no-op if rows already exist).
-update authz.tenant_roles tr
+select
+  'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
+  rt.name,
+  rt.key,
+  rt.key,
+  true
+from authz.role_templates rt
+where rt.key in (
+  'project_head',
+  'project_engineer',
+  'project_supervisor',
+  'project_maker',
+  'project_checker',
+  'project_verifier'
+)
+on conflict (tenant_id, slug) do update
 set
-  name = case tr.slug
-    when 'project_head' then 'Project Head'
-    when 'project_engineer' then 'Project Engineer'
-    when 'project_supervisor' then 'Project Supervisor'
-    when 'project_maker' then 'Project Maker'
-    when 'project_checker' then 'Project Checker'
-    when 'project_verifier' then 'Project Verifier'
-    else tr.name
-  end,
-  updated_at = now()
-where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
+  name = excluded.name,
+  template_key = excluded.template_key,
+  is_system = excluded.is_system;
+
+delete from authz.tenant_role_permissions trp
+using authz.tenant_roles tr
+where trp.tenant_role_id = tr.id
+  and tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
   and tr.slug in (
     'project_head',
     'project_engineer',
@@ -192,6 +197,21 @@ where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
     'project_checker',
     'project_verifier'
   );
+
+insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
+select tr.id, rtp.permission_id
+from authz.tenant_roles tr
+join authz.role_template_permissions rtp on rtp.template_key = tr.template_key
+where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
+  and tr.template_key in (
+    'project_head',
+    'project_engineer',
+    'project_supervisor',
+    'project_maker',
+    'project_checker',
+    'project_verifier'
+  )
+on conflict (tenant_role_id, permission_id) do nothing;
 
 -- --------------------------------------------------------------------------
 -- auth.users + auth.identities (fixed UUIDs for stable local dev)
@@ -507,7 +527,7 @@ set is_system_admin = false
 where id = 'ee222222-2222-4222-8222-222222222202'::uuid;
 
 update public.profiles p
-set username = split_part(u.email, '@', 1)
+set username = u.email
 from auth.users u
 where u.id = p.id
   and u.id in (

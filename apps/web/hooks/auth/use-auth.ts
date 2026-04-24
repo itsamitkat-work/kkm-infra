@@ -9,6 +9,7 @@ import type {
 } from '@supabase/supabase-js';
 import {
   composeAccessTokenContext,
+  fetchSessionPermissionKeys,
   mapSupabaseUserToAppUser,
 } from '@/lib/auth';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
@@ -40,7 +41,6 @@ export function useAuth() {
       }
       setUser(mapSupabaseUserToAppUser(session.user));
       const composed = composeAccessTokenContext(session.access_token);
-      setPermissions(composed.permissions);
       setRoles(composed.roles);
       setClaims(composed.claims);
     }
@@ -48,13 +48,29 @@ export function useAuth() {
     void (async function loadInitialSession() {
       const result = await supabase.auth.getSession();
       if (result.error) setSessionError(result.error);
-      applySession(result.data.session);
+      const initialSession = result.data.session;
+      const initialToken = initialSession?.access_token;
+      applySession(initialSession);
+      const keys = await fetchSessionPermissionKeys(supabase, initialToken);
+      const latest = await supabase.auth.getSession();
+      if (latest.data.session?.access_token === initialToken) {
+        setPermissions(keys);
+      }
       setIsSessionLoading(false);
     })();
 
     const { data: sub } = supabase.auth.onAuthStateChange(
       (_event: AuthChangeEvent, session: Session | null) => {
         applySession(session);
+        void (async function refreshPermissionKeys() {
+          const token = session?.access_token;
+          const keys = await fetchSessionPermissionKeys(supabase, token);
+          const latest = await supabase.auth.getSession();
+          if (latest.data.session?.access_token !== token) {
+            return;
+          }
+          setPermissions(keys);
+        })();
       },
     );
 

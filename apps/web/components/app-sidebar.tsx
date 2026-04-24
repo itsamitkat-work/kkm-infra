@@ -74,9 +74,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const administrationNavItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
     const isSystemAdmin = claims?.is_system_admin === true;
-    const canManageTenantMembers = ability.can('manage', 'tenant_members');
+    const canAccessTenantDirectory =
+      ability.can('read', 'tenant_members') ||
+      ability.can('manage', 'tenant_members');
 
-    if (isSystemAdmin || canManageTenantMembers) {
+    if (isSystemAdmin || canAccessTenantDirectory) {
       items.push(...administrationItems);
     }
     if (isSystemAdmin) {

@@ -104,9 +104,7 @@ export function LoginForm({
 
             {/* Error Display */}
             {isError && (
-              <p className='text-sm text-red-500'>
-                Invalid email or password
-              </p>
+              <p className='text-sm text-red-500'>Invalid email or password</p>
             )}
 
             {/* Submit */}

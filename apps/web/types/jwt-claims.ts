@@ -16,7 +16,7 @@ export interface AccessTokenClaims {
   tid?: string | null;
   active_role?: string | null;
   roles?: string[];
-  /** Present only if your issuer adds them; hook does not embed perms. */
+  /** Optional; app loads permission keys via `session_permissions` RPC instead. */
   permissions?: string[];
   pv?: number;
   is_system_admin?: boolean;
