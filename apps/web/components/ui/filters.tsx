@@ -1085,7 +1085,7 @@ function SelectOptionsPopover<T = unknown>({
                 {selectedOptions.map((option) => (
                   <CommandItem
                     key={String(option.value)}
-                    className='group flex gap-2 items-center'
+                    className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
                     onSelect={() => {
                       if (isMultiSelect) {
                         onChange(
@@ -1096,57 +1096,7 @@ function SelectOptionsPopover<T = unknown>({
                       }
                     }}
                   >
-                    {option.icon && option.icon}
-                    <Tooltip delayDuration={300}>
-                      <TooltipTrigger asChild>
-                        <span
-                          className={cn(
-                            'text-accent-foreground min-w-0',
-                            field.wrapOptionText
-                              ? 'break-words whitespace-normal'
-                              : 'truncate'
-                          )}
-                        >
-                          {option.label}
-                        </span>
-                      </TooltipTrigger>
-                      <TooltipContent side='right' className='max-w-sm'>
-                        <p className='break-words'>{option.label}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                    <Check className='text-primary ms-auto' />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            )}
-
-            {/* Available items */}
-            {unselectedOptions.length > 0 && (
-              <>
-                {selectedOptions.length > 0 && <CommandSeparator />}
-                <CommandGroup>
-                  {unselectedOptions.map((option) => (
-                    <CommandItem
-                      key={String(option.value)}
-                      className='group flex gap-2 items-center'
-                      value={option.label}
-                      onSelect={() => {
-                        if (isMultiSelect) {
-                          const newValues = [...values, option.value] as T[];
-                          if (
-                            field.maxSelections &&
-                            newValues.length > field.maxSelections
-                          ) {
-                            return; // Don't exceed max selections
-                          }
-                          onChange(newValues);
-                          // For multiselect, don't close the popover to allow multiple selections
-                        } else {
-                          onChange([option.value] as T[]);
-                          onClose?.();
-                        }
-                      }}
-                    >
+                    <div className='flex min-w-0 flex-1 items-center gap-2'>
                       {option.icon && option.icon}
                       <Tooltip delayDuration={300}>
                         <TooltipTrigger asChild>
@@ -1165,7 +1115,61 @@ function SelectOptionsPopover<T = unknown>({
                           <p className='break-words'>{option.label}</p>
                         </TooltipContent>
                       </Tooltip>
-                      <Check className='text-primary ms-auto opacity-0' />
+                    </div>
+                    <Check className='shrink-0 text-primary' />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+
+            {/* Available items */}
+            {unselectedOptions.length > 0 && (
+              <>
+                {selectedOptions.length > 0 && <CommandSeparator />}
+                <CommandGroup>
+                  {unselectedOptions.map((option) => (
+                    <CommandItem
+                      key={String(option.value)}
+                      className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
+                      value={option.label}
+                      onSelect={() => {
+                        if (isMultiSelect) {
+                          const newValues = [...values, option.value] as T[];
+                          if (
+                            field.maxSelections &&
+                            newValues.length > field.maxSelections
+                          ) {
+                            return; // Don't exceed max selections
+                          }
+                          onChange(newValues);
+                          // For multiselect, don't close the popover to allow multiple selections
+                        } else {
+                          onChange([option.value] as T[]);
+                          onClose?.();
+                        }
+                      }}
+                    >
+                      <div className='flex min-w-0 flex-1 items-center gap-2'>
+                        {option.icon && option.icon}
+                        <Tooltip delayDuration={300}>
+                          <TooltipTrigger asChild>
+                            <span
+                              className={cn(
+                                'text-accent-foreground min-w-0',
+                                field.wrapOptionText
+                                  ? 'break-words whitespace-normal'
+                                  : 'truncate'
+                              )}
+                            >
+                              {option.label}
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side='right' className='max-w-sm'>
+                            <p className='break-words'>{option.label}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                      <Check className='shrink-0 text-primary opacity-0' />
                     </CommandItem>
                   ))}
                 </CommandGroup>
@@ -1254,7 +1258,7 @@ function SelectOptionsPopover<T = unknown>({
                 {selectedOptions.map((option) => (
                   <CommandItem
                     key={String(option.value)}
-                    className='group flex gap-2 items-center'
+                    className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
                     onSelect={() => {
                       if (isMultiSelect) {
                         onChange(
@@ -1269,57 +1273,7 @@ function SelectOptionsPopover<T = unknown>({
                       }
                     }}
                   >
-                    {option.icon && option.icon}
-                    <Tooltip delayDuration={300}>
-                      <TooltipTrigger asChild>
-                        <span
-                          className={cn(
-                            'text-accent-foreground min-w-0',
-                            field.wrapOptionText
-                              ? 'break-words whitespace-normal'
-                              : 'truncate'
-                          )}
-                        >
-                          {option.label}
-                        </span>
-                      </TooltipTrigger>
-                      <TooltipContent side='right' className='max-w-sm'>
-                        <p className='break-words'>{option.label}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                    <Check className='text-primary ms-auto' />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            )}
-
-            {/* Available items */}
-            {unselectedOptions.length > 0 && (
-              <>
-                {selectedOptions.length > 0 && <CommandSeparator />}
-                <CommandGroup>
-                  {unselectedOptions.map((option) => (
-                    <CommandItem
-                      key={String(option.value)}
-                      className='group flex gap-2 items-center'
-                      value={option.label}
-                      onSelect={() => {
-                        if (isMultiSelect) {
-                          const newValues = [...values, option.value] as T[];
-                          if (
-                            field.maxSelections &&
-                            newValues.length > field.maxSelections
-                          ) {
-                            return; // Don't exceed max selections
-                          }
-                          onChange(newValues);
-                        } else {
-                          onChange([option.value] as T[]);
-                          setOpen(false);
-                          handleClose();
-                        }
-                      }}
-                    >
+                    <div className='flex min-w-0 flex-1 items-center gap-2'>
                       {option.icon && option.icon}
                       <Tooltip delayDuration={300}>
                         <TooltipTrigger asChild>
@@ -1338,7 +1292,61 @@ function SelectOptionsPopover<T = unknown>({
                           <p className='break-words'>{option.label}</p>
                         </TooltipContent>
                       </Tooltip>
-                      <Check className='text-primary ms-auto opacity-0' />
+                    </div>
+                    <Check className='shrink-0 text-primary' />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+
+            {/* Available items */}
+            {unselectedOptions.length > 0 && (
+              <>
+                {selectedOptions.length > 0 && <CommandSeparator />}
+                <CommandGroup>
+                  {unselectedOptions.map((option) => (
+                    <CommandItem
+                      key={String(option.value)}
+                      className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
+                      value={option.label}
+                      onSelect={() => {
+                        if (isMultiSelect) {
+                          const newValues = [...values, option.value] as T[];
+                          if (
+                            field.maxSelections &&
+                            newValues.length > field.maxSelections
+                          ) {
+                            return; // Don't exceed max selections
+                          }
+                          onChange(newValues);
+                        } else {
+                          onChange([option.value] as T[]);
+                          setOpen(false);
+                          handleClose();
+                        }
+                      }}
+                    >
+                      <div className='flex min-w-0 flex-1 items-center gap-2'>
+                        {option.icon && option.icon}
+                        <Tooltip delayDuration={300}>
+                          <TooltipTrigger asChild>
+                            <span
+                              className={cn(
+                                'text-accent-foreground min-w-0',
+                                field.wrapOptionText
+                                  ? 'break-words whitespace-normal'
+                                  : 'truncate'
+                              )}
+                            >
+                              {option.label}
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side='right' className='max-w-sm'>
+                            <p className='break-words'>{option.label}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                      <Check className='shrink-0 text-primary opacity-0' />
                     </CommandItem>
                   ))}
                 </CommandGroup>
@@ -1754,7 +1762,7 @@ function FilterValueSelector<T = unknown>({
                 {selectedOptions.map((option) => (
                   <CommandItem
                     key={String(option.value)}
-                    className='group flex gap-2 items-center'
+                    className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
                     onSelect={() => {
                       if (isMultiSelect) {
                         onChange(
@@ -1766,25 +1774,27 @@ function FilterValueSelector<T = unknown>({
                       if (!isMultiSelect) setOpen(false);
                     }}
                   >
-                    {option.icon && option.icon}
-                    <Tooltip delayDuration={300}>
-                      <TooltipTrigger asChild>
-                        <span
-                          className={cn(
-                            'text-accent-foreground min-w-0',
-                            field.wrapOptionText
-                              ? 'break-words whitespace-normal'
-                              : 'truncate'
-                          )}
-                        >
-                          {option.label}
-                        </span>
-                      </TooltipTrigger>
-                      <TooltipContent side='right' className='max-w-sm'>
-                        <p className='break-words'>{option.label}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                    <Check className='text-primary ms-auto' />
+                    <div className='flex min-w-0 flex-1 items-center gap-2'>
+                      {option.icon && option.icon}
+                      <Tooltip delayDuration={300}>
+                        <TooltipTrigger asChild>
+                          <span
+                            className={cn(
+                              'text-accent-foreground min-w-0',
+                              field.wrapOptionText
+                                ? 'break-words whitespace-normal'
+                                : 'truncate'
+                            )}
+                          >
+                            {option.label}
+                          </span>
+                        </TooltipTrigger>
+                        <TooltipContent side='right' className='max-w-sm'>
+                          <p className='break-words'>{option.label}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                    <Check className='shrink-0 text-primary' />
                   </CommandItem>
                 ))}
               </CommandGroup>
@@ -1798,7 +1808,7 @@ function FilterValueSelector<T = unknown>({
                   {unselectedOptions.map((option) => (
                     <CommandItem
                       key={String(option.value)}
-                      className='group flex gap-2 items-center'
+                      className='group flex w-full min-w-0 items-center gap-2 [&>svg:last-child]:hidden'
                       value={option.label}
                       onSelect={() => {
                         if (isMultiSelect) {
@@ -1816,11 +1826,13 @@ function FilterValueSelector<T = unknown>({
                         }
                       }}
                     >
-                      {option.icon && option.icon}
-                      <span className='text-accent-foreground truncate'>
-                        {option.label}
-                      </span>
-                      <Check className='text-primary ms-auto opacity-0' />
+                      <div className='flex min-w-0 flex-1 items-center gap-2'>
+                        {option.icon && option.icon}
+                        <span className='text-accent-foreground truncate'>
+                          {option.label}
+                        </span>
+                      </div>
+                      <Check className='shrink-0 text-primary opacity-0' />
                     </CommandItem>
                   ))}
                 </CommandGroup>
