@@ -12,7 +12,7 @@ export type UpdateTenantMemberDirectoryInput = {
   userId: string;
   displayName: string;
   status: 'active' | 'suspended';
-  /** Stored on `tenant_members.avatar_url` (e.g. data URL or HTTPS URL). */
+  /** Stored on `tenant_members.avatar_url` (e.g. public storage URL or HTTPS). */
   avatarUrl: string | null;
   /**
    * When set, also updates `public.profiles` (requires system admin or self per RLS).

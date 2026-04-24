@@ -19,8 +19,9 @@ import { Field, FieldLegend, FieldSet } from '@/components/ui/field';
 import { FieldGroupDense } from '@/components/field-group-dense';
 import { Spinner } from '@/components/ui/spinner';
 import { useAuth } from '@/hooks/auth';
-import { readImageFileAsDataUrl } from '@/lib/read-image-data-url';
 import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import { uploadProfileAvatarToStorage } from '@/lib/supabase/profile-avatar-storage';
 import type { FileWithPreview } from '@/hooks/use-file-upload';
 import type { User } from '@/types/users';
 
@@ -268,10 +269,15 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
 
     if (pendingAvatarFile) {
       try {
-        avatarUrl = await readImageFileAsDataUrl(pendingAvatarFile);
+        const supabase = createSupabaseBrowserClient();
+        avatarUrl = await uploadProfileAvatarToStorage(
+          supabase,
+          user.id,
+          pendingAvatarFile,
+        );
       } catch (e) {
         toast.error(
-          e instanceof Error ? e.message : 'Could not read the image file.'
+          e instanceof Error ? e.message : 'Could not upload the image file.',
         );
         return;
       }
