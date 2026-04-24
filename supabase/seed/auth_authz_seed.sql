@@ -16,7 +16,7 @@
 -- Project drawer (KKM tenant): tenant_roles named with a Project … prefix; slugs are
 -- project_maker, project_checker, project_verifier, project_head, project_engineer,
 -- project_supervisor (see apps/web/hooks/projects/use-project-member.ts).
--- Seed users use project.* emails and Project … display names for clarity in pickers.
+-- Seed users use role-based locals (e.g. project.head@…) and display names for pickers.
 -- ==========================================================================
 
 begin;
@@ -119,32 +119,32 @@ from (
   values
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Head',
+      'Project Head',
       'project_head'
     ),
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Engineer',
+      'Project Engineer',
       'project_engineer'
     ),
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Supervisor',
+      'Project Supervisor',
       'project_supervisor'
     ),
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Maker (estimation)',
+      'Project Maker',
       'project_maker'
     ),
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Checker (estimation)',
+      'Project Checker',
       'project_checker'
     ),
     (
       'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-      'Project — Verifier (estimation)',
+      'Project Verifier',
       'project_verifier'
     )
 ) as v(tenant_id, name, slug)
@@ -180,12 +180,12 @@ on conflict (tenant_role_id, permission_id) do nothing;
 update authz.tenant_roles tr
 set
   name = case tr.slug
-    when 'project_head' then 'Project — Head'
-    when 'project_engineer' then 'Project — Engineer'
-    when 'project_supervisor' then 'Project — Supervisor'
-    when 'project_maker' then 'Project — Maker (estimation)'
-    when 'project_checker' then 'Project — Checker (estimation)'
-    when 'project_verifier' then 'Project — Verifier (estimation)'
+    when 'project_head' then 'Project Head'
+    when 'project_engineer' then 'Project Engineer'
+    when 'project_supervisor' then 'Project Supervisor'
+    when 'project_maker' then 'Project Maker'
+    when 'project_checker' then 'Project Checker'
+    when 'project_verifier' then 'Project Verifier'
     else tr.name
   end,
   updated_at = now()
@@ -204,24 +204,15 @@ where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
 -- --------------------------------------------------------------------------
 delete from auth.users
 where lower(email) in (
-  lower('its.amit.kat@gmail.com'),
+  -- Current seed (re-seed idempotent)
+  lower('platform.admin@kkm-infra.local'),
   lower('tenant.admin@kkm-infra.local'),
-  lower('seed.projecthead@kkm-infra.local'),
-  lower('seed.engineer@kkm-infra.local'),
-  lower('seed.supervisor@kkm-infra.local'),
-  lower('seed.maker@kkm-infra.local'),
-  lower('seed.checker@kkm-infra.local'),
-  lower('seed.verifier@kkm-infra.local'),
-  lower('seed.engineer.alt@kkm-infra.local'),
-  lower('seed.checker.alt@kkm-infra.local'),
-  lower('seed.project.head@kkm-infra.local'),
-  lower('seed.project.engineer@kkm-infra.local'),
-  lower('seed.project.supervisor@kkm-infra.local'),
-  lower('seed.project.maker@kkm-infra.local'),
-  lower('seed.project.checker@kkm-infra.local'),
-  lower('seed.project.verifier@kkm-infra.local'),
-  lower('seed.project.engineer.alt@kkm-infra.local'),
-  lower('seed.project.checker.alt@kkm-infra.local')
+  lower('project.head@kkm-infra.local'),
+  lower('project.engineer@kkm-infra.local'),
+  lower('project.supervisor@kkm-infra.local'),
+  lower('project.maker@kkm-infra.local'),
+  lower('project.checker@kkm-infra.local'),
+  lower('project.verifier@kkm-infra.local')
 );
 
 insert into auth.users (
@@ -247,11 +238,11 @@ values
     'ee111111-1111-4111-8111-111111111101'::uuid,
     'authenticated',
     'authenticated',
-    'its.amit.kat@gmail.com',
+    'platform.admin@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"System Admin (dev)"}'::jsonb,
+    '{"display_name":"Platform admin"}'::jsonb,
     now(),
     now(),
     '',
@@ -268,7 +259,7 @@ values
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Tenant Admin (dev)"}'::jsonb,
+    '{"display_name":"Tenant admin"}'::jsonb,
     now(),
     now(),
     '',
@@ -281,11 +272,11 @@ values
     'ee333301-1111-4111-8111-111111113301'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.head@kkm-infra.local',
+    'project.head@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Head (dev)"}'::jsonb,
+    '{"display_name":"Project head"}'::jsonb,
     now(),
     now(),
     '',
@@ -298,11 +289,11 @@ values
     'ee333302-1111-4111-8111-111111113302'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.engineer@kkm-infra.local',
+    'project.engineer@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Engineer (dev)"}'::jsonb,
+    '{"display_name":"Project engineer"}'::jsonb,
     now(),
     now(),
     '',
@@ -315,11 +306,11 @@ values
     'ee333303-1111-4111-8111-111111113303'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.supervisor@kkm-infra.local',
+    'project.supervisor@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Supervisor (dev)"}'::jsonb,
+    '{"display_name":"Project supervisor"}'::jsonb,
     now(),
     now(),
     '',
@@ -332,11 +323,11 @@ values
     'ee333304-1111-4111-8111-111111113304'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.maker@kkm-infra.local',
+    'project.maker@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Maker (dev)"}'::jsonb,
+    '{"display_name":"Project maker"}'::jsonb,
     now(),
     now(),
     '',
@@ -349,11 +340,11 @@ values
     'ee333305-1111-4111-8111-111111113305'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.checker@kkm-infra.local',
+    'project.checker@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Checker (dev)"}'::jsonb,
+    '{"display_name":"Project checker"}'::jsonb,
     now(),
     now(),
     '',
@@ -366,45 +357,11 @@ values
     'ee333306-1111-4111-8111-111111113306'::uuid,
     'authenticated',
     'authenticated',
-    'seed.project.verifier@kkm-infra.local',
+    'project.verifier@kkm-infra.local',
     extensions.crypt('22113355', extensions.gen_salt('bf')),
     now(),
     '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Verifier (dev)"}'::jsonb,
-    now(),
-    now(),
-    '',
-    '',
-    '',
-    ''
-  ),
-  (
-    '00000000-0000-0000-0000-000000000000'::uuid,
-    'ee333307-1111-4111-8111-111111113307'::uuid,
-    'authenticated',
-    'authenticated',
-    'seed.project.engineer.alt@kkm-infra.local',
-    extensions.crypt('22113355', extensions.gen_salt('bf')),
-    now(),
-    '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Engineer alt (dev)"}'::jsonb,
-    now(),
-    now(),
-    '',
-    '',
-    '',
-    ''
-  ),
-  (
-    '00000000-0000-0000-0000-000000000000'::uuid,
-    'ee333308-1111-4111-8111-111111113308'::uuid,
-    'authenticated',
-    'authenticated',
-    'seed.project.checker.alt@kkm-infra.local',
-    extensions.crypt('22113355', extensions.gen_salt('bf')),
-    now(),
-    '{"provider":"email","providers":["email"]}'::jsonb,
-    '{"display_name":"Project · Checker alt (dev)"}'::jsonb,
+    '{"display_name":"Project verifier"}'::jsonb,
     now(),
     now(),
     '',
@@ -432,7 +389,7 @@ values
       'sub',
       'ee111111-1111-4111-8111-111111111101',
       'email',
-      'its.amit.kat@gmail.com'
+      'platform.admin@kkm-infra.local'
     ),
     'email',
     now(),
@@ -462,7 +419,7 @@ values
       'sub',
       'ee333301-1111-4111-8111-111111113301',
       'email',
-      'seed.project.head@kkm-infra.local'
+      'project.head@kkm-infra.local'
     ),
     'email',
     now(),
@@ -477,7 +434,7 @@ values
       'sub',
       'ee333302-1111-4111-8111-111111113302',
       'email',
-      'seed.project.engineer@kkm-infra.local'
+      'project.engineer@kkm-infra.local'
     ),
     'email',
     now(),
@@ -492,7 +449,7 @@ values
       'sub',
       'ee333303-1111-4111-8111-111111113303',
       'email',
-      'seed.project.supervisor@kkm-infra.local'
+      'project.supervisor@kkm-infra.local'
     ),
     'email',
     now(),
@@ -507,7 +464,7 @@ values
       'sub',
       'ee333304-1111-4111-8111-111111113304',
       'email',
-      'seed.project.maker@kkm-infra.local'
+      'project.maker@kkm-infra.local'
     ),
     'email',
     now(),
@@ -522,7 +479,7 @@ values
       'sub',
       'ee333305-1111-4111-8111-111111113305',
       'email',
-      'seed.project.checker@kkm-infra.local'
+      'project.checker@kkm-infra.local'
     ),
     'email',
     now(),
@@ -537,37 +494,7 @@ values
       'sub',
       'ee333306-1111-4111-8111-111111113306',
       'email',
-      'seed.project.verifier@kkm-infra.local'
-    ),
-    'email',
-    now(),
-    now(),
-    now()
-  ),
-  (
-    gen_random_uuid(),
-    'ee333307-1111-4111-8111-111111113307',
-    'ee333307-1111-4111-8111-111111113307'::uuid,
-    jsonb_build_object(
-      'sub',
-      'ee333307-1111-4111-8111-111111113307',
-      'email',
-      'seed.project.engineer.alt@kkm-infra.local'
-    ),
-    'email',
-    now(),
-    now(),
-    now()
-  ),
-  (
-    gen_random_uuid(),
-    'ee333308-1111-4111-8111-111111113308',
-    'ee333308-1111-4111-8111-111111113308'::uuid,
-    jsonb_build_object(
-      'sub',
-      'ee333308-1111-4111-8111-111111113308',
-      'email',
-      'seed.project.checker.alt@kkm-infra.local'
+      'project.verifier@kkm-infra.local'
     ),
     'email',
     now(),
@@ -590,14 +517,14 @@ set username = split_part(u.email, '@', 1)
 from auth.users u
 where u.id = p.id
   and u.id in (
+    'ee111111-1111-4111-8111-111111111101'::uuid,
+    'ee222222-2222-4222-8222-222222222202'::uuid,
     'ee333301-1111-4111-8111-111111113301'::uuid,
     'ee333302-1111-4111-8111-111111113302'::uuid,
     'ee333303-1111-4111-8111-111111113303'::uuid,
     'ee333304-1111-4111-8111-111111113304'::uuid,
     'ee333305-1111-4111-8111-111111113305'::uuid,
-    'ee333306-1111-4111-8111-111111113306'::uuid,
-    'ee333307-1111-4111-8111-111111113307'::uuid,
-    'ee333308-1111-4111-8111-111111113308'::uuid
+    'ee333306-1111-4111-8111-111111113306'::uuid
   );
 
 alter table public.profiles enable trigger protect_profiles_system_admin;
@@ -607,7 +534,7 @@ select public.sync_tenant_member_roles(
   'ee111111-1111-4111-8111-111111111101'::uuid,
   array['platform_admin']::text[],
   'platform_admin',
-  'System Admin (dev)',
+  'Platform admin',
   null::text
 );
 
@@ -616,7 +543,7 @@ select public.sync_tenant_member_roles(
   'ee222222-2222-4222-8222-222222222202'::uuid,
   array['tenant_admin']::text[],
   'tenant_admin',
-  'Tenant Admin (dev)',
+  'Tenant admin',
   null::text
 );
 
@@ -625,17 +552,17 @@ select public.sync_tenant_member_roles(
   'ee222222-2222-4222-8222-222222222202'::uuid,
   array['tenant_admin']::text[],
   'tenant_admin',
-  'Tenant Admin (dev)',
+  'Tenant admin',
   null::text
 );
 
--- KKM tenant: one membership per project-drawer role (+ alt engineer / checker for picker variety)
+-- KKM tenant: one membership per project-drawer role
 select public.sync_tenant_member_roles(
   'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
   'ee333301-1111-4111-8111-111111113301'::uuid,
   array['project_head']::text[],
   'project_head',
-  'Project · Head (dev)',
+  'Project head',
   null::text
 );
 
@@ -644,7 +571,7 @@ select public.sync_tenant_member_roles(
   'ee333302-1111-4111-8111-111111113302'::uuid,
   array['project_engineer']::text[],
   'project_engineer',
-  'Project · Engineer (dev)',
+  'Project engineer',
   null::text
 );
 
@@ -653,7 +580,7 @@ select public.sync_tenant_member_roles(
   'ee333303-1111-4111-8111-111111113303'::uuid,
   array['project_supervisor']::text[],
   'project_supervisor',
-  'Project · Supervisor (dev)',
+  'Project supervisor',
   null::text
 );
 
@@ -662,7 +589,7 @@ select public.sync_tenant_member_roles(
   'ee333304-1111-4111-8111-111111113304'::uuid,
   array['project_maker']::text[],
   'project_maker',
-  'Project · Maker (dev)',
+  'Project maker',
   null::text
 );
 
@@ -671,7 +598,7 @@ select public.sync_tenant_member_roles(
   'ee333305-1111-4111-8111-111111113305'::uuid,
   array['project_checker']::text[],
   'project_checker',
-  'Project · Checker (dev)',
+  'Project checker',
   null::text
 );
 
@@ -680,25 +607,7 @@ select public.sync_tenant_member_roles(
   'ee333306-1111-4111-8111-111111113306'::uuid,
   array['project_verifier']::text[],
   'project_verifier',
-  'Project · Verifier (dev)',
-  null::text
-);
-
-select public.sync_tenant_member_roles(
-  'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-  'ee333307-1111-4111-8111-111111113307'::uuid,
-  array['project_engineer']::text[],
-  'project_engineer',
-  'Project · Engineer alt (dev)',
-  null::text
-);
-
-select public.sync_tenant_member_roles(
-  'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid,
-  'ee333308-1111-4111-8111-111111113308'::uuid,
-  array['project_checker']::text[],
-  'project_checker',
-  'Project · Checker alt (dev)',
+  'Project verifier',
   null::text
 );
 
