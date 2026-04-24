@@ -32,7 +32,12 @@ import type {
   ProjectDetailMember,
   ProjectsListRow,
 } from '@/hooks/useProjects';
-import { parseProjectMeta, projectDetailToListRow } from '@/hooks/useProjects';
+import {
+  parseProjectMeta,
+  projectDetailToListRow,
+} from '@/hooks/useProjects';
+import { parseClientAddresses, useClient } from '@/hooks/useClients';
+import { billingSummaryForIndex } from '@/lib/clients/address-display';
 import { projectStatusDisplayLabel } from '@/hooks/projects/use-project-status';
 import {
   PROJECT_TEAM_ESTIMATION_ROLES,
@@ -58,6 +63,12 @@ export function ProjectInfo({
   const queryClient = useQueryClient();
 
   const memberByRole = useProjectMembersByRole(project?.members_detail);
+
+  const billingClientId =
+    project?.client_id && project.client_id.trim().length > 0
+      ? project.client_id
+      : undefined;
+  const { client: billingClient } = useClient(billingClientId);
 
   if (isLoading) {
     return <TableLoadingState />;
@@ -87,6 +98,13 @@ export function ProjectInfo({
   const meta = parseProjectMeta(project.meta);
   const scheduleLabel =
     project.default_schedule_display_name || meta.client_label || '—';
+
+  const billingIndex = meta.client_billing_address_index ?? 0;
+  const billingAddresses = parseClientAddresses(billingClient?.addresses);
+  const billingLines = billingSummaryForIndex(
+    billingAddresses,
+    String(billingIndex)
+  );
 
   return (
     <div className='space-y-6'>
@@ -170,8 +188,11 @@ export function ProjectInfo({
                 <InfoItem label='Schedule / Client' icon={Building2}>
                   {scheduleLabel}
                 </InfoItem>
-                <InfoItem label='Client GSTIN No' icon={Receipt}>
-                  {meta.client_gstn || '—'}
+                <InfoItem label='Billing address' icon={MapPin}>
+                  {billingClientId ? billingLines.addressLine : '—'}
+                </InfoItem>
+                <InfoItem label='Billing GSTIN' icon={Receipt}>
+                  {billingClientId ? billingLines.gstin : '—'}
                 </InfoItem>
               </div>
             </div>

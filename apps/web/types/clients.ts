@@ -6,6 +6,7 @@ export interface ClientAddress {
   pincode?: string | null;
   country?: string | null;
   type?: string | null;
+  gstin?: string | null;
 }
 
 export interface ClientContact {

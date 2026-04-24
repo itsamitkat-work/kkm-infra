@@ -9,12 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { TableLabelCell } from '@/components/tables/table-label-cell';
 import { IconDotsVertical } from '@tabler/icons-react';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
 import { RecordStatusBadge } from '@/components/ui/record-status-badge';
@@ -39,6 +35,7 @@ export const getColumns = (
   onClientAction: (client: ClientsListRow, mode: 'edit' | 'read') => void,
   onDeleteClient: (clientId: string) => void,
   onMakeCopy: (client: ClientsListRow) => void,
+  openClientFromRow: (client: ClientsListRow) => void,
   permissionFlags: PermissionFlags
 ): ColumnDef<ClientsListRow>[] => [
   {
@@ -51,16 +48,17 @@ export const getColumns = (
       />
     ),
     cell: ({ row }) => (
-      <Tooltip delayDuration={500}>
-        <TooltipTrigger asChild>
-          <div className='pl-2 font-medium text-foreground truncate'>
-            {row.original.display_name || '—'}
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{row.original.display_name || '—'}</p>
-        </TooltipContent>
-      </Tooltip>
+      <TableLabelCell
+        label={row.original.display_name || '—'}
+        onClick={() => openClientFromRow(row.original)}
+        disabled={
+          !permissionFlags.canRead && !permissionFlags.canUpdate
+        }
+        emphasis
+        className='pl-2'
+        buttonClassName='text-foreground hover:text-primary'
+        tooltipDelayDuration={500}
+      />
     ),
     enableHiding: false,
     size: 260,
@@ -76,16 +74,6 @@ export const getColumns = (
       </span>
     ),
     size: 280,
-  },
-  {
-    accessorKey: 'gstin',
-    header: ({ column }) => <TableColumnHeader column={column} title='GSTIN' />,
-    cell: ({ row }) => (
-      <span className='block overflow-hidden text-ellipsis whitespace-nowrap font-mono text-xs text-muted-foreground'>
-        {row.original.gstin || '—'}
-      </span>
-    ),
-    size: 170,
   },
   {
     id: 'default_schedule',

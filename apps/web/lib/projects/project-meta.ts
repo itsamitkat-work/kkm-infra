@@ -13,8 +13,9 @@ export function parseProjectMeta(meta: Json | null | undefined): ProjectMeta {
     sanction_amount: readNumber(o.sanction_amount),
     sanction_dos: readString(o.sanction_dos),
     sanction_doc: readString(o.sanction_doc),
-    client_address: readString(o.client_address),
-    client_gstn: readString(o.client_gstn),
+    client_billing_address_index: readNonNegativeInt(
+      o.client_billing_address_index
+    ),
     client_label: readString(o.client_label),
     client_id: readString(o.client_id),
     client_display_name: readString(o.client_display_name),
@@ -37,6 +38,22 @@ function readNumber(v: unknown): number | null | undefined {
   return undefined;
 }
 
+function readNonNegativeInt(v: unknown): number | null | undefined {
+  if (v === null || v === undefined) {
+    return v ?? undefined;
+  }
+  if (typeof v === 'number' && Number.isInteger(v) && v >= 0) {
+    return v;
+  }
+  if (typeof v === 'string' && v.trim() !== '') {
+    const n = Number.parseInt(v, 10);
+    if (!Number.isNaN(n) && n >= 0) {
+      return n;
+    }
+  }
+  return undefined;
+}
+
 export function buildProjectMetaPatch(base: Json | null, patch: ProjectMeta): Json {
   const prev = parseProjectMeta(base);
   const next: ProjectMeta = { ...prev, ...patch };
@@ -45,5 +62,8 @@ export function buildProjectMetaPatch(base: Json | null, patch: ProjectMeta): Js
     if (val === undefined) continue;
     json[k] = val;
   }
+  const legacy = json as Record<string, unknown>;
+  delete legacy.client_address;
+  delete legacy.client_gstn;
   return json as Json;
 }

@@ -47,6 +47,19 @@ export function ClientsTable() {
     [drawer]
   );
 
+  const openClientFromRow = React.useCallback(
+    (client: ClientsListRow) => {
+      if (permissionFlags.canUpdate) {
+        onClickEditOrRead(client, 'edit');
+        return;
+      }
+      if (permissionFlags.canRead) {
+        onClickEditOrRead(client, 'read');
+      }
+    },
+    [onClickEditOrRead, permissionFlags.canRead, permissionFlags.canUpdate]
+  );
+
   const onClickCopy = React.useCallback(
     (client: ClientsListRow) => {
       const copy = {
@@ -66,9 +79,10 @@ export function ClientsTable() {
         onClickEditOrRead,
         (clientId) => onClickDeleteRef.current(clientId),
         onClickCopy,
+        openClientFromRow,
         permissionFlags
       ),
-    [onClickEditOrRead, onClickCopy, permissionFlags]
+    [onClickEditOrRead, onClickCopy, openClientFromRow, permissionFlags]
   );
 
   const controls = useDataTableControls(CLIENTS_TABLE_ID);
@@ -104,7 +118,7 @@ export function ClientsTable() {
         controls={controls}
         filterFields={filterFields}
         columns={columns}
-        searchPlaceholder='Search by name, full name, or GSTIN...'
+        searchPlaceholder='Search by display name or full name…'
         emptyState={{
           itemType: 'client',
           onCreateNew: permissionFlags.canCreate

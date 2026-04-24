@@ -12,6 +12,7 @@ import {
   FormInputField,
   FormDateField,
   FormSearchableComboboxField,
+  FormSelectField,
   FormDrawerHeader,
   FormSection,
 } from '@/components/form';
@@ -20,8 +21,15 @@ import { DrawerContentContainer } from '@/components/drawer/drawer-content-conta
 import { DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { validDateFormat } from '@/lib/validations';
 import { fetchClientOptions } from '../hooks/use-client-options';
-import { parseClientAddresses, useClient } from '@/hooks/useClients';
-import type { ClientAddress } from '@/types/clients';
+import {
+  fetchClientDetail,
+  parseClientAddresses,
+  useClient,
+} from '@/hooks/useClients';
+import {
+  billingAddressSelectOptions,
+  billingSummaryForIndex,
+} from '@/lib/clients/address-display';
 import {
   projectStatusDisplayLabel,
   getStatusConfig,
@@ -111,17 +119,7 @@ const FORM_SCHEMA_BASE = z.object({
   client: clientPickSchema,
   project_schedule_rows: z.array(projectScheduleRowSchema),
   schedule_source: schedulePickSchema,
-  client_address: z.string(),
-  client_gstn: z
-    .string()
-    .optional()
-    .refine(
-      (val) =>
-        val === undefined ||
-        val.length === 0 ||
-        /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(val),
-      'Invalid GSTIN format. E.g., 22AAAAA0000A1Z5'
-    ),
+  billing_address_index: z.string(),
   project_verifier: userPickSchema,
   project_checker: userPickSchema,
   project_maker: userPickSchema,
@@ -158,6 +156,11 @@ function addDuplicatePersonIssues<T extends string>(
 }
 
 type ProjectFormValues = z.infer<typeof FORM_SCHEMA_BASE>;
+
+function metaBillingIndex(values: ProjectFormValues): number {
+  const n = Number.parseInt(values.billing_address_index || '0', 10);
+  return Number.isNaN(n) || n < 0 ? 0 : n;
+}
 
 const FORM_SCHEMA = FORM_SCHEMA_BASE.superRefine((val, ctx) => {
   const headId = val.project_head.id.trim();
@@ -236,25 +239,6 @@ const EMPTY_USER = { id: '', name: '' };
 
 const EMPTY_CLIENT = { id: '', name: '' };
 
-function addressesToSingleLine(addresses: ClientAddress[]): string {
-  if (!addresses.length) {
-    return '';
-  }
-  const a = addresses[0];
-  if (!a) {
-    return '';
-  }
-  const parts = [
-    a.line1,
-    a.line2,
-    a.city,
-    a.state,
-    a.pincode,
-    a.country,
-  ].filter((x) => typeof x === 'string' && x.trim().length > 0);
-  return parts.join(', ');
-}
-
 const STATUS_OPTIONS = [
   { value: PROJECT_DB_STATUS.ACTIVE, label: 'Active' },
   { value: PROJECT_DB_STATUS.ON_HOLD, label: 'On Hold' },
@@ -328,13 +312,12 @@ function detailToFormValues(d: ProjectDetail): ProjectFormValues {
     location: meta.location ?? '',
     city: meta.city ?? '',
     client: {
-      id: meta.client_id ?? '',
-      name: meta.client_display_name ?? '',
+      id: d.client_id ?? meta.client_id ?? '',
+      name: d.client_display_name ?? meta.client_display_name ?? '',
     },
     project_schedule_rows: projectScheduleRows,
     schedule_source: { id: sid, name: sname },
-    client_address: meta.client_address ?? '',
-    client_gstn: meta.client_gstn ?? '',
+    billing_address_index: String(meta.client_billing_address_index ?? 0),
     project_verifier: pick('project_verifier'),
     project_checker: pick('project_checker'),
     project_maker: pick('project_maker'),
@@ -360,16 +343,15 @@ function listRowToFormValues(row: ProjectsListRow): ProjectFormValues {
     location: meta.location ?? '',
     city: meta.city ?? '',
     client: {
-      id: meta.client_id ?? '',
-      name: meta.client_display_name ?? '',
+      id: row.client_id ?? meta.client_id ?? '',
+      name: row.client_display_name ?? meta.client_display_name ?? '',
     },
     project_schedule_rows: [],
     schedule_source: {
       id: row.default_schedule_source_id ?? '',
       name: row.default_schedule_display_name ?? '',
     },
-    client_address: meta.client_address ?? '',
-    client_gstn: meta.client_gstn ?? '',
+    billing_address_index: String(meta.client_billing_address_index ?? 0),
     project_verifier: EMPTY_USER,
     project_checker: EMPTY_USER,
     project_maker: EMPTY_USER,
@@ -393,8 +375,7 @@ function emptyFormValues(): ProjectFormValues {
     client: { ...EMPTY_CLIENT },
     project_schedule_rows: [],
     schedule_source: { id: '', name: '' },
-    client_address: '',
-    client_gstn: '',
+    billing_address_index: '',
     project_verifier: EMPTY_USER,
     project_checker: EMPTY_USER,
     project_maker: EMPTY_USER,
@@ -424,8 +405,7 @@ function valuesToMeta(
     sanction_amount,
     sanction_dos: v.sanction_dos?.trim() ? v.sanction_dos : null,
     sanction_doc: v.sanction_doc?.trim() ? v.sanction_doc : null,
-    client_address: v.client_address.trim() || null,
-    client_gstn: v.client_gstn || null,
+    client_billing_address_index: metaBillingIndex(v),
   };
   const clientLink =
     v.client && typeof v.client.id === 'string' && v.client.id.trim().length > 0
@@ -534,6 +514,17 @@ export function ProjectDrawer({
     },
     onCreate: async (values) => {
       try {
+        const cid = values.client.id?.trim();
+        if (cid) {
+          const clientRow = await fetchClientDetail(cid);
+          const addrCount = parseClientAddresses(clientRow.addresses).length;
+          if (addrCount === 0) {
+            toast.error(
+              'The selected client has no addresses. Add at least one address on the client before creating a project.'
+            );
+            return;
+          }
+        }
         const members = toMemberSelection(values);
         const rows = values.project_schedule_rows ?? [];
         const selected = rows.filter((r) => r.selected);
@@ -577,8 +568,7 @@ export function ProjectDrawer({
           Boolean(dirty.sanction_amount) ||
           Boolean(dirty.sanction_dos) ||
           Boolean(dirty.sanction_doc) ||
-          Boolean(dirty.client_address) ||
-          Boolean(dirty.client_gstn);
+          Boolean(dirty.billing_address_index);
 
         const teamDirty = PROJECT_MEMBER_ROLE_SLUGS.some(
           (slug) => Boolean(dirty[slug])
@@ -619,9 +609,10 @@ export function ProjectDrawer({
     name: 'client.id',
   });
 
-  const { client: linkedClientDetail } = useClient(
-    allowClientHydration && watchClientId?.trim() ? watchClientId : undefined
-  );
+  const {
+    client: linkedClientDetail,
+    isLoading: isLinkedClientLoading,
+  } = useClient(watchClientId?.trim() ? watchClientId : undefined);
 
   const lastHydratedClientIdRef = React.useRef<string | null>(null);
 
@@ -632,8 +623,7 @@ export function ProjectDrawer({
     if (!watchClientId?.trim()) {
       lastHydratedClientIdRef.current = null;
       form.setValue('project_schedule_rows', []);
-      form.setValue('client_gstn', '');
-      form.setValue('client_address', '');
+      form.setValue('billing_address_index', '');
       form.setValue('schedule_source', { id: '', name: '' });
       return;
     }
@@ -644,13 +634,7 @@ export function ProjectDrawer({
       return;
     }
     lastHydratedClientIdRef.current = watchClientId;
-    const addressStr = addressesToSingleLine(
-      parseClientAddresses(linkedClientDetail.addresses)
-    );
-    form.setValue('client_gstn', linkedClientDetail.gstin ?? '', {
-      shouldValidate: true,
-    });
-    form.setValue('client_address', addressStr, {
+    form.setValue('billing_address_index', '0', {
       shouldValidate: true,
     });
     const rows = (linkedClientDetail.client_schedules ?? [])
@@ -674,6 +658,53 @@ export function ProjectDrawer({
       );
     }
   }, [allowClientHydration, watchClientId, linkedClientDetail, form]);
+
+  const watchBillingIndex = useWatch({
+    control: form.control,
+    name: 'billing_address_index',
+  });
+
+  const clientAddresses = React.useMemo(() => {
+    if (!linkedClientDetail || linkedClientDetail.id !== watchClientId?.trim()) {
+      return [];
+    }
+    return parseClientAddresses(linkedClientDetail.addresses);
+  }, [linkedClientDetail, watchClientId]);
+
+  const billingAddressOptionsList = React.useMemo(
+    () => billingAddressSelectOptions(clientAddresses),
+    [clientAddresses]
+  );
+
+  React.useEffect(() => {
+    if (!watchClientId?.trim() || !linkedClientDetail) {
+      return;
+    }
+    if (linkedClientDetail.id !== watchClientId.trim()) {
+      return;
+    }
+    const n = clientAddresses.length;
+    const cur = form.getValues('billing_address_index');
+    if (n === 0) {
+      if (cur !== '') {
+        form.setValue('billing_address_index', '', { shouldValidate: true });
+      }
+      return;
+    }
+    const idx = Number.parseInt(cur || '0', 10);
+    if (cur === '' || Number.isNaN(idx) || idx < 0 || idx >= n) {
+      form.setValue('billing_address_index', '0', { shouldValidate: true });
+    }
+  }, [watchClientId, linkedClientDetail, clientAddresses, form]);
+
+  const billingDisplay = React.useMemo(
+    () =>
+      billingSummaryForIndex(
+        clientAddresses,
+        String(watchBillingIndex ?? '')
+      ),
+    [clientAddresses, watchBillingIndex]
+  );
 
   const memberFetcher = React.useCallback(
     (roleSlug: ProjectMemberRoleSlug) =>
@@ -1003,12 +1034,12 @@ export function ProjectDrawer({
                   (fieldValue as { id?: string })?.id || ''
                 }
               />
-              {allowClientHydration &&
-                Boolean(watchClientId?.trim()) &&
+              {Boolean(watchClientId?.trim()) &&
+                isLinkedClientLoading &&
                 !linkedClientDetail && (
                   <p className='text-sm text-muted-foreground flex items-center gap-2'>
                     <Loader className='h-4 w-4 animate-spin' aria-hidden />
-                    Loading client schedules…
+                    Loading client…
                   </p>
                 )}
               {!isRead && scheduleRows.length > 0 && (
@@ -1075,22 +1106,33 @@ export function ProjectDrawer({
                     ))}
                 </ul>
               )}
-              <FormInputField
+              <FormSelectField
                 control={form.control}
-                name='client_address'
-                label='Client address'
-                placeholder='Imported from client (editable)'
-                readOnly={isRead}
+                name='billing_address_index'
+                label='Billing address'
+                placeholder={
+                  billingAddressOptionsList.length === 0
+                    ? 'Add addresses on the client first'
+                    : 'Select billing address'
+                }
+                options={billingAddressOptionsList}
+                readOnly={
+                  isRead ||
+                  !watchClientId?.trim() ||
+                  billingAddressOptionsList.length === 0
+                }
               />
-              <FormInputField
-                control={form.control}
-                name='client_gstn'
-                label='Client GSTIN'
-                placeholder='Imported from client (editable)'
-                readOnly={isRead}
-                type='text'
-                inputAddon={<InputAddon>GST</InputAddon>}
-              />
+              <div className='space-y-2 rounded-md border bg-muted/30 p-3'>
+                <p className='text-sm font-medium text-muted-foreground'>
+                  Billing details (from client)
+                </p>
+                <p className='text-sm whitespace-pre-wrap'>
+                  {billingDisplay.addressLine}
+                </p>
+                <p className='text-sm font-mono text-muted-foreground'>
+                  GSTIN: {billingDisplay.gstin}
+                </p>
+              </div>
             </FormSection>
 
             <FormSection title='Project Team' showSeparator={false}>

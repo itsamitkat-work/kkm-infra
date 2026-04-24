@@ -22,8 +22,8 @@ import {
   calculateDaysRemaining,
 } from '@/lib/utils';
 import { numberToText, formatIndianNumber } from '@/lib/numberToText';
-import React from 'react';
 import { TableColumnHeader } from '@/components/tables/table-column-header';
+import { TableLabelCell } from '@/components/tables/table-label-cell';
 import { StatusBadge } from '@/components/ui/status-badge';
 
 interface PermissionFlags {
@@ -58,27 +58,16 @@ export const getColumns = (
         className='pl-2'
       />
     ),
-    cell: ({ row }) => {
-      return (
-        <Tooltip delayDuration={500}>
-          <TooltipTrigger asChild>
-            <Button
-              variant='ghost'
-              className='text-foreground w-full pl-2 text-left hover:text-primary justify-start h-auto py-1'
-              onClick={() => navigateToProjectDetail(row.original)}
-              disabled={!permissionFlags.canRead}
-            >
-              <span className='block overflow-hidden text-ellipsis whitespace-nowrap'>
-                {row.original.name || ''}
-              </span>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{row.original.name || ''}</p>
-          </TooltipContent>
-        </Tooltip>
-      );
-    },
+    cell: ({ row }) => (
+      <TableLabelCell
+        label={row.original.name || ''}
+        onClick={() => navigateToProjectDetail(row.original)}
+        disabled={!permissionFlags.canRead}
+        className='pl-2'
+        buttonClassName='text-foreground hover:text-primary'
+        tooltipDelayDuration={500}
+      />
+    ),
     enableHiding: false,
     size: 400,
   },

@@ -55,6 +55,7 @@ export function parseClientAddresses(value: Json | null | undefined): ClientAddr
       pincode: asTrimmedString(entry.pincode),
       country: asTrimmedString(entry.country),
       type: asTrimmedString(entry.type),
+      gstin: asTrimmedString(entry.gstin),
     });
   }
   return out;
@@ -85,6 +86,7 @@ export function serializeClientAddresses(rows: ClientAddress[]): Json {
       pincode: asTrimmedString(row.pincode),
       country: asTrimmedString(row.country),
       type: asTrimmedString(row.type),
+      gstin: asTrimmedString(row.gstin),
     }))
     .filter(
       (row) =>
@@ -94,7 +96,8 @@ export function serializeClientAddresses(rows: ClientAddress[]): Json {
         row.state ||
         row.pincode ||
         row.country ||
-        row.type
+        row.type ||
+        row.gstin
     ) as Json;
 }
 

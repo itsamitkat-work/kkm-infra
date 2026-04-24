@@ -502,7 +502,6 @@ export type Database = {
           created_at: string
           display_name: string
           full_name: string | null
-          gstin: string | null
           id: string
           meta: Json
           status: string
@@ -515,7 +514,6 @@ export type Database = {
           created_at?: string
           display_name: string
           full_name?: string | null
-          gstin?: string | null
           id?: string
           meta?: Json
           status?: string
@@ -528,7 +526,6 @@ export type Database = {
           created_at?: string
           display_name?: string
           full_name?: string | null
-          gstin?: string | null
           id?: string
           meta?: Json
           status?: string
@@ -1915,7 +1912,6 @@ export type Database = {
           default_schedule_source_id: string
           display_name: string
           full_name: string
-          gstin: string
           id: string
           meta: Json
           status: string
@@ -1978,6 +1974,7 @@ export type Database = {
         Args: { p_alert_id: string; p_recipient?: string; p_status: string }
         Returns: Json
       }
+      project_boq_item_description_plain: { Args: { p: Json }; Returns: string }
       project_policy_ok: {
         Args: { p_action: string; p_project_id: string }
         Returns: boolean
@@ -2096,10 +2093,10 @@ export type Database = {
     }
     Enums: {
       project_boq_lines_type:
-        | "planned"
         | "estimation"
         | "measurement"
         | "billing"
+        | "planned"
       project_deviation_comparison: "GENvsEST" | "GENvsMSR" | "ESTvsMSR"
       record_status: "active" | "inactive" | "deprecated"
       schedule_annotation_type: "note" | "remark" | "condition" | "reference"
@@ -2239,10 +2236,10 @@ export const Constants = {
   public: {
     Enums: {
       project_boq_lines_type: [
-        "planned",
         "estimation",
         "measurement",
         "billing",
+        "planned",
       ],
       project_deviation_comparison: ["GENvsEST", "GENvsMSR", "ESTvsMSR"],
       record_status: ["active", "inactive", "deprecated"],

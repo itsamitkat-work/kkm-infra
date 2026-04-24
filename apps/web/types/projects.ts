@@ -6,8 +6,8 @@ export interface ProjectMeta {
   sanction_amount?: number | null;
   sanction_dos?: string | null;
   sanction_doc?: string | null;
-  client_address?: string | null;
-  client_gstn?: string | null;
+  /** Index into linked client's `addresses` JSON array (billing). */
+  client_billing_address_index?: number | null;
   client_label?: string | null;
   /** Linked client (projects created from client drawer flow). */
   client_id?: string | null;

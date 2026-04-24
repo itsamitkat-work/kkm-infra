@@ -24,7 +24,6 @@ export type ClientScheduleAssignment = {
 export type CreateClientPersistInput = {
   display_name: string;
   full_name: string | null;
-  gstin: string | null;
   status: string;
   meta: ClientMeta;
   addresses: ClientAddress[];
@@ -36,7 +35,6 @@ export type UpdateClientPersistInput = {
   clientId: string;
   display_name?: string;
   full_name?: string | null;
-  gstin?: string | null;
   status?: string;
   metaPatch?: ClientMeta;
   baseMeta?: Json | null;
@@ -139,7 +137,6 @@ export async function createClientWithRelations(
     id: clientId,
     display_name: input.display_name,
     full_name: input.full_name,
-    gstin: input.gstin,
     status: input.status,
     meta: metaJson,
     addresses: addressesJson,
@@ -159,7 +156,6 @@ export async function createClientWithRelations(
     tenant_id: tenantId,
     display_name: input.display_name,
     full_name: input.full_name,
-    gstin: input.gstin,
     status: input.status,
     meta: metaJson,
     addresses: addressesJson,
@@ -188,7 +184,6 @@ export async function updateClientWithRelations(
 
   if (input.display_name !== undefined) patch.display_name = input.display_name;
   if (input.full_name !== undefined) patch.full_name = input.full_name;
-  if (input.gstin !== undefined) patch.gstin = input.gstin;
   if (input.status !== undefined) patch.status = input.status;
   if (input.addresses !== undefined) {
     patch.addresses = serializeClientAddresses(input.addresses);

@@ -84,6 +84,12 @@ const addressSchema = z.object({
   pincode: z.string(),
   country: z.string(),
   type: z.string(),
+  gstin: z
+    .string()
+    .refine(
+      (val) => !val || GSTIN_REGEX.test(val),
+      'Invalid GSTIN format. E.g., 22AAAAA0000A1Z5'
+    ),
 });
 
 const contactSchema = z.object({
@@ -103,12 +109,6 @@ const STATUS_FORM_VALUES = ['Active', 'Inactive'] as const;
 const FORM_SCHEMA = z.object({
   display_name: z.string().min(1, 'Display name is required'),
   full_name: z.string(),
-  gstin: z
-    .string()
-    .refine(
-      (val) => !val || GSTIN_REGEX.test(val),
-      'Invalid GSTIN format. E.g., 22AAAAA0000A1Z5'
-    ),
   status: z.enum(STATUS_FORM_VALUES),
   schedules: z
     .array(scheduleAssignmentSchema)
@@ -149,6 +149,7 @@ function emptyAddress(): z.infer<typeof addressSchema> {
     pincode: '',
     country: '',
     type: '',
+    gstin: '',
   };
 }
 
@@ -167,6 +168,7 @@ function addressesToForm(
     pincode: row.pincode ?? '',
     country: row.country ?? '',
     type: row.type ?? '',
+    gstin: row.gstin ?? '',
   }));
 }
 
@@ -213,7 +215,6 @@ function emptyFormValues(): ClientFormValues {
   return {
     display_name: '',
     full_name: '',
-    gstin: '',
     status: 'Active',
     schedules: [],
     notes: '',
@@ -227,7 +228,6 @@ function detailToFormValues(detail: ClientDetail): ClientFormValues {
   return {
     display_name: detail.display_name ?? '',
     full_name: detail.full_name ?? '',
-    gstin: detail.gstin ?? '',
     status: dbStatusToForm(detail.status),
     schedules: schedulesFromDetail(detail),
     notes: (meta.notes as string | null | undefined) ?? '',
@@ -241,7 +241,6 @@ function listRowToFormValues(row: ClientsListRow): ClientFormValues {
   return {
     display_name: row.display_name ?? '',
     full_name: row.full_name ?? '',
-    gstin: row.gstin ?? '',
     status: dbStatusToForm(row.status),
     schedules: schedulesFromListRow(row),
     notes: (meta.notes as string | null | undefined) ?? '',
@@ -261,6 +260,7 @@ function formValuesToAddresses(
     pincode: row.pincode || null,
     country: row.country || null,
     type: row.type || null,
+    gstin: row.gstin?.trim() || null,
   }));
 }
 
@@ -375,7 +375,6 @@ function buildClientUpdatePayload(
     ...('full_name' in dirty
       ? { full_name: values.full_name?.trim() || null }
       : {}),
-    ...('gstin' in dirty ? { gstin: values.gstin?.trim() || null } : {}),
     ...('status' in dirty ? { status: formStatusToDb(values.status) } : {}),
     ...(addressesDirty
       ? { addresses: formValuesToAddresses(values.addresses) }
@@ -443,7 +442,6 @@ export function ClientDrawer({
         await createClientMutation.mutateAsync({
           display_name: values.display_name,
           full_name: values.full_name?.trim() || null,
-          gstin: values.gstin?.trim() || null,
           status: formStatusToDb(values.status),
           meta: buildMetaFromValues(values),
           addresses: formValuesToAddresses(values.addresses),
@@ -556,13 +554,6 @@ const BasicInformationSection = React.memo(
         name='full_name'
         label='Full Name'
         placeholder='Legal / full name'
-        readOnly={readOnly}
-      />
-      <FormInputField
-        control={control}
-        name='gstin'
-        label='GSTIN'
-        placeholder='22AAAAA0000A1Z5'
         readOnly={readOnly}
       />
       <FormSelectField
@@ -718,6 +709,13 @@ function AddressRow({
           readOnly={readOnly}
         />
       </div>
+      <FormInputField
+        control={control}
+        name={`addresses.${index}.gstin`}
+        label='GSTIN (optional)'
+        placeholder='22AAAAA0000A1Z5'
+        readOnly={readOnly}
+      />
     </div>
   );
 }

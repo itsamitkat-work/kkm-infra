@@ -171,6 +171,16 @@ export async function createProjectWithRelations(
     rpcPayload.p_schedule_source_id = input.schedule_source_id;
   }
 
+  const clientIdFromMeta =
+    input.meta &&
+    typeof input.meta.client_id === 'string' &&
+    input.meta.client_id.trim().length > 0
+      ? input.meta.client_id.trim()
+      : '';
+  if (clientIdFromMeta) {
+    rpcPayload.p_client_id = clientIdFromMeta;
+  }
+
   const { data: project, error: projectError } = await supabase.rpc(
     'create_project_with_relations',
     rpcPayload
