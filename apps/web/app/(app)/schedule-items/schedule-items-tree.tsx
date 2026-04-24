@@ -35,12 +35,11 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
-import {
-  fetchScheduleTreeChildren,
-  useScheduleSourceVersions,
-  useScheduleTreeRoots,
-  useScheduleTreeSearch,
-} from './use-schedule-items-tree-data';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import { useScheduleSourceVersions } from '@/app/(app)/schedules/hooks/use-schedule-source-versions-query';
+import { fetchScheduleTreeChildren } from './api/schedule-tree-api';
+import { useScheduleTreeRoots } from './hooks/use-schedule-tree-query';
+import { useScheduleTreeSearch } from './hooks/use-schedule-tree-search-query';
 import {
   normalizeScheduleNodeType,
   scheduleNodeTypeRowClasses,
@@ -665,7 +664,11 @@ export function ScheduleItemsTree({
             return next;
           });
           try {
-            const rows = await fetchScheduleTreeChildren(versionId, parentId);
+            const rows = await fetchScheduleTreeChildren(
+              createSupabaseBrowserClient(),
+              versionId,
+              parentId
+            );
             upsertRows(rows);
             setChildrenByParent((prev) => ({
               ...prev,

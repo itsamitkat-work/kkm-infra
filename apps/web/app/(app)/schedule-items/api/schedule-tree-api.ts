@@ -1,7 +1,8 @@
-'use client';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
-import { useQuery } from '@tanstack/react-query';
-import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import type { Database } from '@kkm/db';
+import { normalizeError } from '@/lib/supabase/errors';
+
 import type {
   ScheduleAnnotationMetadata,
   ScheduleAnnotationType,
@@ -9,7 +10,7 @@ import type {
   ScheduleItemContextRate,
   ScheduleTreeRow,
   ScheduleTreeSearchRow,
-} from './types';
+} from '../types';
 
 const ANNOTATION_TYPES = new Set<ScheduleAnnotationType>([
   'note',
@@ -28,11 +29,17 @@ function parseScheduleAnnotationMetadata(
 }
 
 function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
-  if (value == null) return [];
-  if (!Array.isArray(value)) return [];
+  if (value == null) {
+    return [];
+  }
+  if (!Array.isArray(value)) {
+    return [];
+  }
   const out: ScheduleItemAnnotation[] = [];
   for (const item of value) {
-    if (!item || typeof item !== 'object') continue;
+    if (!item || typeof item !== 'object') {
+      continue;
+    }
     const o = item as Record<string, unknown>;
     const rawType =
       typeof o.type === 'string' ? o.type.trim().toLowerCase() : '';
@@ -61,11 +68,17 @@ function parseScheduleAnnotations(value: unknown): ScheduleItemAnnotation[] {
 }
 
 function parseScheduleRates(value: unknown): ScheduleItemContextRate[] {
-  if (value == null) return [];
-  if (!Array.isArray(value)) return [];
+  if (value == null) {
+    return [];
+  }
+  if (!Array.isArray(value)) {
+    return [];
+  }
   const out: ScheduleItemContextRate[] = [];
   for (const item of value) {
-    if (!item || typeof item !== 'object') continue;
+    if (!item || typeof item !== 'object') {
+      continue;
+    }
     const o = item as Record<string, unknown>;
     const rateRaw = o.rate;
     let rate = 0;
@@ -115,90 +128,73 @@ function normalizeScheduleTreeRow(row: ScheduleTreeRow): ScheduleTreeRow {
   };
 }
 
-export {
-  useScheduleSourceVersions,
-  SCHEDULE_SOURCE_VERSIONS_QUERY_KEY as SCHEDULE_VERSIONS_QUERY_KEY,
-} from '@/app/(app)/schedules/hooks/use-schedule-source-versions-query';
-
-export const SCHEDULE_TREE_ROOTS_QUERY_KEY = ['schedule_tree_roots'] as const;
-
-export function scheduleTreeRootsQueryKey(versionId: string | null) {
-  return [...SCHEDULE_TREE_ROOTS_QUERY_KEY, versionId] as const;
-}
-
-export function scheduleTreeChildrenQueryKey(
-  versionId: string | null,
-  parentId: string,
-) {
-  return ['schedule_tree_children', versionId, parentId] as const;
-}
-
-export function scheduleTreeSearchQueryKey(versionId: string | null, q: string) {
-  return ['schedule_tree_search', versionId, q] as const;
-}
-
-export async function fetchScheduleTreeRoots(
+async function fetchScheduleTreeRoots(
+  supabase: SupabaseClient<Database>,
   versionId: string,
+  signal?: AbortSignal
 ): Promise<ScheduleTreeRow[]> {
-  const supabase = createSupabaseBrowserClient();
-  const { data, error } = await supabase.rpc('get_schedule_tree_roots', {
+  let rpc = supabase.rpc('get_schedule_tree_roots', {
     p_schedule_source_version_id: versionId,
   });
-  if (error) throw error;
+  if (signal) {
+    rpc = rpc.abortSignal(signal);
+  }
+  const { data, error } = await rpc;
+  if (error) {
+    throw normalizeError(error);
+  }
   return ((data ?? []) as ScheduleTreeRow[]).map(normalizeScheduleTreeRow);
 }
 
-export async function fetchScheduleTreeChildren(
+async function fetchScheduleTreeChildren(
+  supabase: SupabaseClient<Database>,
   versionId: string,
   parentId: string,
+  signal?: AbortSignal
 ): Promise<ScheduleTreeRow[]> {
-  const supabase = createSupabaseBrowserClient();
-  const { data, error } = await supabase.rpc('get_schedule_tree_children', {
+  let rpc = supabase.rpc('get_schedule_tree_children', {
     p_schedule_source_version_id: versionId,
     p_parent_item_id: parentId,
   });
-  if (error) throw error;
+  if (signal) {
+    rpc = rpc.abortSignal(signal);
+  }
+  const { data, error } = await rpc;
+  if (error) {
+    throw normalizeError(error);
+  }
   return ((data ?? []) as ScheduleTreeRow[]).map(normalizeScheduleTreeRow);
 }
 
-export function useScheduleTreeRoots(versionId: string | null) {
-  return useQuery({
-    queryKey: scheduleTreeRootsQueryKey(versionId),
-    queryFn: () => fetchScheduleTreeRoots(versionId as string),
-    enabled: Boolean(versionId),
-    staleTime: 1000 * 60 * 5,
+async function fetchScheduleTreeSearch(
+  supabase: SupabaseClient<Database>,
+  versionId: string,
+  query: string,
+  limit: number,
+  signal?: AbortSignal
+): Promise<ScheduleTreeSearchRow[]> {
+  let rpc = supabase.rpc('search_schedule_tree', {
+    p_schedule_source_version_id: versionId,
+    p_query: query,
+    p_limit: limit,
+    p_offset: 0,
+  });
+  if (signal) {
+    rpc = rpc.abortSignal(signal);
+  }
+  const { data, error } = await rpc;
+  if (error) {
+    throw normalizeError(error);
+  }
+  return ((data ?? []) as ScheduleTreeSearchRow[]).map((row) => {
+    const base = normalizeScheduleTreeRow(row);
+    return {
+      ...base,
+      ancestor_ids: Array.isArray(row.ancestor_ids)
+        ? row.ancestor_ids.map(String)
+        : [],
+    };
   });
 }
 
-export function useScheduleTreeSearch(
-  versionId: string | null,
-  q: string,
-  limit = 50,
-) {
-  const normalized = q.trim();
-  return useQuery({
-    queryKey: scheduleTreeSearchQueryKey(versionId, normalized),
-    queryFn: async (): Promise<ScheduleTreeSearchRow[]> => {
-      if (!versionId || normalized.length < 2) return [];
-      const supabase = createSupabaseBrowserClient();
-      const { data, error } = await supabase.rpc('search_schedule_tree', {
-        p_schedule_source_version_id: versionId,
-        p_query: normalized,
-        p_limit: limit,
-        p_offset: 0,
-      });
-      if (error) throw error;
-      return ((data ?? []) as ScheduleTreeSearchRow[]).map((row) => {
-        const base = normalizeScheduleTreeRow(row);
-        return {
-          ...base,
-          ancestor_ids: Array.isArray(row.ancestor_ids)
-            ? row.ancestor_ids.map(String)
-            : [],
-        };
-      });
-    },
-    enabled: Boolean(versionId && normalized.length >= 2),
-    staleTime: 1000 * 30,
-  });
-}
+export { fetchScheduleTreeChildren, fetchScheduleTreeRoots, fetchScheduleTreeSearch };
