@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 import type { Database } from '@kkm/db';
+import { normalizeError } from '@/lib/supabase/errors';
 
 type BasicRateTypeOptionRow = { id: string; name: string };
 
@@ -14,7 +15,7 @@ async function fetchBasicRateTypeOptions(
   }
   const { data, error } = await query;
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
   return (data ?? []) as BasicRateTypeOptionRow[];
 }
@@ -30,7 +31,7 @@ async function fetchBasicRateTypeIdByName(
   }
   const { data, error } = await query.single();
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
   return data.id;
 }

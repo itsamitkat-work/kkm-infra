@@ -2,6 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 
 import type { Database } from '@kkm/db';
 import type { ScheduleSourceVersionRow } from '@/hooks/use-schedule-source-versions';
+import { normalizeError } from '@/lib/supabase/errors';
 import type { PaginationResponse } from '@/types/common';
 
 import { fetchBasicRateTypeIdByName } from './basic-rate-type-api';
@@ -125,7 +126,7 @@ async function fetchBasicRates(
 
   const { data, error, count } = await query;
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
 
   const rows = (data ?? []) as BasicRate[];
@@ -156,7 +157,7 @@ async function createBasicRate(
   }
   const { error } = await query;
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
 }
 
@@ -175,7 +176,7 @@ async function updateBasicRate(
   }
   const { error } = await query;
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
 }
 
@@ -190,7 +191,7 @@ async function deleteBasicRate(
   }
   const { error } = await query;
   if (error) {
-    throw error;
+    throw normalizeError(error);
   }
 }
 

@@ -49,6 +49,21 @@ function isLikelyPostgrestApiCode(code: string): boolean {
  * Walks `cause` up to `maxDepth` and merges fields from each link. Prefer the
  * first Postgres SQLSTATE and first PostgREST API code encountered.
  */
+/**
+ * Converts PostgREST / Supabase client errors (and other `unknown` values) into
+ * a plain {@link Error} whose `message` comes from {@link parseSupabaseClientError}.
+ * Preserves the original value on `cause` for diagnostics and code helpers.
+ */
+export function normalizeError(error: unknown): Error {
+  if (typeof error === 'string') {
+    return new Error(error);
+  }
+  const parsed = parseSupabaseClientError(error);
+  const normalized = new Error(parsed.message);
+  normalized.cause = error;
+  return normalized;
+}
+
 export function parseSupabaseClientError(
   error: unknown,
   maxDepth = 8

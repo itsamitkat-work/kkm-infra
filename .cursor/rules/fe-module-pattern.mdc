@@ -1,0 +1,18 @@
+---
+description: Feature module structure for apps/web (Supabase API, TanStack Query, forms, tables). Apply when scaffolding or refactoring routes under app/(app) or splitting API vs hooks.
+alwaysApply: false
+---
+
+## Feature module pattern
+
+Follow the full guide: **`apps/web/docs/fe-module-pattern.md`**.
+
+**Summary**
+
+- Colocate per domain: `app/(app)/{feature}/api/`, `hooks/`, `components/`, thin `page.tsx`.
+- **API**: async Supabase functions + types only; on error use `throw normalizeError(error)` from `@/lib/supabase/errors`.
+- **Hooks**: separate **list query** hook (shared query key prefix + `invalidate*QueryCache`) from **mutations**; optional extra hooks for option lists.
+- **UI**: `DataTable` + `useDataTableControls`; columns/filters in dedicated files; drawer uses **Zod** + **`useAppForm`** (defaults for `mode` and empty edit patch); **`useConfirmationDialog`** for confirm flows.
+- **Forms**: FK selects store **id** in form state; labels are for display only.
+
+**Reference module:** `apps/web/app/(app)/basic-rates/`.
