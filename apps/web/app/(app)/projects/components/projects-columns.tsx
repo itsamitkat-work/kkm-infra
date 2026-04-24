@@ -66,11 +66,9 @@ export const getColumns = (
         disabled={!permissionFlags.canRead}
         className='pl-2'
         buttonClassName='text-foreground hover:text-primary'
-        tooltipDelayDuration={500}
       />
     ),
     enableHiding: false,
-    size: 400,
   },
   {
     id: 'sanctionamount',
