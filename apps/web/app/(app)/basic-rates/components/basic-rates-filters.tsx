@@ -22,8 +22,7 @@ export function getBasicRatesFilterFields(
           key: 'status',
           label: 'Status',
           type: 'multiselect',
-          className: 'w-[180px]',
-          selectedOptionsClassName: '-space-x-1',
+          popoverContentClassName: 'max-w-xs',
           options: RECORD_STATUS_FILTER_OPTIONS.map(
             ({ value, label, dotClass }) => ({
               value,

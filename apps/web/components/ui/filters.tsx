@@ -1234,7 +1234,9 @@ function SelectOptionsPopover<T = unknown>({
       <PopoverContent
         align='start'
         className={cn(
-          'w-[calc(100vw-32px)] max-w-md lg:min-w-[400px] lg:w-auto p-0',
+          'box-border p-0',
+          // Radix sets --radix-popover-trigger-width on content when open
+          'min-w-[var(--radix-popover-trigger-width)] w-auto max-w-md',
           field.popoverContentClassName
         )}
       >
@@ -1741,7 +1743,13 @@ function FilterValueSelector<T = unknown>({
           )}
         </div>
       </PopoverTrigger>
-      <PopoverContent className={cn('w-36 p-0', field.popoverContentClassName)}>
+      <PopoverContent
+        className={cn(
+          'box-border p-0',
+          'min-w-[var(--radix-popover-trigger-width)] w-auto max-w-md',
+          field.popoverContentClassName
+        )}
+      >
         <Command>
           {field.searchable !== false && (
             <CommandInput
