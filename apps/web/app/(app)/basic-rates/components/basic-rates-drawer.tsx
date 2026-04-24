@@ -219,7 +219,7 @@ export function BasicRatesDrawer({
                 placeholder='Select schedule'
                 options={scheduleSelectOptions}
                 required
-                readOnly={isRead || mode !== 'create'}
+                readOnly={isRead}
               />
 
               <FormInputField
