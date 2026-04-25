@@ -27,8 +27,8 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import {
+  filterRoleSlugsHiddenFromNonSystemAdmins,
   formatRoleSlugForDisplay,
-  getDistinctSortedRoleSlugs,
   switchActiveRole,
   useAuth,
 } from '@/hooks/auth';
@@ -106,8 +106,12 @@ export function TenantSwitcher() {
     tenants.find((t) => t.tenant_id === activeTenantId) ?? tenants[0];
 
   const roleOptions = React.useMemo(
-    () => getDistinctSortedRoleSlugs(roles),
-    [roles],
+    () =>
+      filterRoleSlugsHiddenFromNonSystemAdmins(
+        roles,
+        claims?.is_system_admin === true,
+      ),
+    [roles, claims?.is_system_admin],
   );
   const activeRoleSlug =
     typeof claims?.active_role === 'string'

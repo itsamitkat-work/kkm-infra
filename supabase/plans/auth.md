@@ -1,7 +1,7 @@
 # Multi-Tenant Auth & Authorization System
 
 > Living documentation of the implemented auth system.
-> Last updated: 2026-04-07
+> Last updated: 2026-04-24
 
 ---
 
@@ -124,6 +124,15 @@ flowchart LR
 `**role_templates**` — Global catalog of role templates (`tenant_admin`, `platform_admin`, …). When a tenant is created, `handle_new_tenant()` inserts one `authz.tenant_roles` row per template for that tenant.
 
 `**tenant_roles**` — Tenant-scoped role instances. `slug` is unique per `tenant_id`. Optional `template_key` FK → `role_templates.key` records which template the row came from.
+
+**`tenant_roles.is_system` (boolean)** — Marks **template-backed / catalog** role rows (see `public.handle_new_tenant()`: every role copied from `authz.role_templates` is inserted with `is_system = true`). It is **not** the same as:
+
+- **`profiles.is_system_admin`** or JWT **`is_system_admin`** — those describe a **user** who can bypass tenant-scoped RLS; they do not describe a role definition row.
+- **`slug = 'platform_admin'`** — that is a **specific template**; gating that role uses **`slug` / `template_key`** and RLS/RPC rules, **not** `is_system` (today every template role including `tenant_admin` and `project_*` shares `is_system = true`, so the flag cannot distinguish `platform_admin` from the others).
+
+**Use today:** mostly **UX** (e.g. “(system)” label in the admin user drawer) and documentation of provenance.
+
+**Use later:** if you add **custom tenant-defined roles**, set `is_system = false` for those rows so policies and UI can treat “built-in template roles” vs “customer-created roles” differently (delete/rename restrictions, migration tooling, support filters).
 
 `**tenant_role_permissions**` — Maps each `tenant_roles.id` to `permissions.id`. This is where **effective** grants live for RLS (`has_permission`). On tenant creation, `handle_new_tenant()` seeds rows from **`authz.role_template_permissions`** (defaults per `role_templates.key`); admins may add or remove rows later per tenant.
 

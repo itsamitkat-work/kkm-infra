@@ -2,7 +2,7 @@ begin;
 
 set search_path to tests, public, authz, private;
 
-select plan(8);
+select plan(16);
 
 do $$
 declare
@@ -13,6 +13,7 @@ declare
   tenant_1 uuid := 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
   tenant_2 uuid := 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
   acting_role_id uuid;
+  platform_role_id uuid;
   members_manage_permission uuid;
 begin
   insert into auth.users (
@@ -60,9 +61,17 @@ begin
     and r.slug = 'tenant_admin'
   limit 1;
 
+  select r.id
+  into platform_role_id
+  from authz.tenant_roles r
+  where r.tenant_id = tenant_1
+    and r.slug = 'platform_admin'
+  limit 1;
+
   insert into public.tenant_members (id, tenant_id, user_id, active_role_id)
   values
     ('55555555-5555-5555-5555-555555555555', tenant_1, user_a, acting_role_id),
+    ('77777777-7777-7777-7777-777777777777', tenant_1, managed_user, platform_role_id),
     ('66666666-6666-6666-6666-666666666666', tenant_2, user_b, null)
   on conflict (tenant_id, user_id) do nothing;
 
@@ -78,6 +87,10 @@ begin
 
   insert into authz.tenant_member_roles (tenant_member_id, tenant_role_id)
   values ('55555555-5555-5555-5555-555555555555', acting_role_id)
+  on conflict do nothing;
+
+  insert into authz.tenant_member_roles (tenant_member_id, tenant_role_id)
+  values ('77777777-7777-7777-7777-777777777777', platform_role_id)
   on conflict do nothing;
 
   update public.tenant_members
@@ -108,9 +121,67 @@ select is(
   'User can read their own tenant member row'
 );
 
+select is(
+  (
+    select count(*)::int
+    from public.tenant_members
+    where tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+      and user_id = 'aaaaaaaa-1111-1111-1111-111111111111'::uuid
+  ),
+  0,
+  'Non-platform users cannot read members having platform-scoped roles'
+);
+
+select is(
+  (
+    select count(*)::int
+    from authz.tenant_roles
+    where tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+      and slug = 'platform_admin'
+  ),
+  0,
+  'Non-platform users cannot read platform-scoped tenant roles'
+);
+
+select is(
+  (select count(*)::int from authz.permissions where key = 'tenants.manage'),
+  0,
+  'Non-platform users cannot read platform-scoped permissions'
+);
+
+select throws_ok(
+  $$
+    select public.replace_tenant_role_permissions(
+      (
+        select r.id
+        from authz.tenant_roles r
+        where r.tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid
+          and r.slug = 'tenant_admin'
+        limit 1
+      ),
+      array(
+        select p.id
+        from authz.permissions p
+      )::uuid[]
+    )
+  $$,
+  '42501'
+);
+
+select ok(
+  (
+    select count(*)::int
+    from authz.tenant_role_permissions trp
+    join authz.tenant_roles r on r.id = trp.tenant_role_id
+    where r.tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'::uuid
+      and r.slug = 'tenant_admin'
+  ) > 0,
+  'Failed self-role replace does not wipe existing role permissions'
+);
+
 -- Insert test: user has tenant_members.manage via tenant_role_permissions in the DB
 select lives_ok(
-  $$insert into public.tenant_members (tenant_id, user_id) values ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'aaaaaaaa-1111-1111-1111-111111111111')$$,
+  $$insert into public.tenant_members (tenant_id, user_id) values ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', '22222222-2222-2222-2222-222222222222')$$,
   'Insert works — tenant_members.manage resolved from DB tenant_role_permissions'
 );
 
@@ -187,6 +258,34 @@ select tests.set_auth_context(
 select ok(
   (select count(*)::int from public.tenant_members) >= 2,
   'System admin bypasses tenant isolation'
+);
+
+select is(
+  (
+    select count(*)::int
+    from public.tenant_members
+    where tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+      and user_id = 'aaaaaaaa-1111-1111-1111-111111111111'::uuid
+  ),
+  1,
+  'System admin can read members having platform-scoped roles'
+);
+
+select is(
+  (
+    select count(*)::int
+    from authz.tenant_roles
+    where tenant_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+      and slug = 'platform_admin'
+  ),
+  1,
+  'System admin can read platform-scoped tenant roles'
+);
+
+select is(
+  (select count(*)::int from authz.permissions where key = 'tenants.manage'),
+  1,
+  'System admin can read platform-scoped permissions'
 );
 
 select tests.set_auth_context(

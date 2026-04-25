@@ -19,6 +19,7 @@ import { Field, FieldLegend, FieldSet } from '@/components/ui/field';
 import { FieldGroupDense } from '@/components/field-group-dense';
 import { Spinner } from '@/components/ui/spinner';
 import { useAuth } from '@/hooks/auth';
+import { PLATFORM_ADMIN_ROLE_SLUG } from '@/lib/authz/platform-admin-role';
 import { resolveProfileAvatarSrc } from '@/lib/profile-avatar';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import { uploadProfileAvatarToStorage } from '@/lib/supabase/profile-avatar-storage';
@@ -52,11 +53,7 @@ function buildUserDrawerSchema(canEditProfiles: boolean) {
     : z.string().trim().max(254);
 
   return z.object({
-    displayName: z
-      .string()
-      .trim()
-      .min(1, 'Display name is required')
-      .max(200),
+    display_name: z.string().trim().min(1, 'Display name is required').max(200),
     username: usernameSchema,
     status: z.enum(['active', 'suspended']),
   });
@@ -66,7 +63,7 @@ type UserDrawerFormValues = z.infer<ReturnType<typeof buildUserDrawerSchema>>;
 
 function getDefaultFormValues(user: User): UserDrawerFormValues {
   return {
-    displayName: user.fullName?.trim() || '',
+    display_name: user.fullName?.trim() || '',
     username: user.userName?.trim() || '',
     status: user.isActive ? 'active' : 'suspended',
   };
@@ -109,11 +106,6 @@ function UserDrawerRoleRow({
         className='text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
       >
         {role.name}
-        {role.is_system ? (
-          <span className='text-muted-foreground ml-2 text-xs font-normal'>
-            (system)
-          </span>
-        ) : null}
       </label>
     </Field>
   );
@@ -168,7 +160,7 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
   const form = useForm<UserDrawerFormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      displayName: '',
+      display_name: '',
       username: '',
       status: 'active',
     },
@@ -182,14 +174,14 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
   const serverRoleIdsKey = React.useMemo(() => {
     const rows = userRolesQuery.data ?? [];
     return rows
-      .map((r) => r.roleId)
+      .map((r) => r.id)
       .sort()
       .join(',');
   }, [userRolesQuery.data]);
 
   const baselineRoleIdsRef = React.useRef<Set<string>>(new Set());
   const [draftRoleIds, setDraftRoleIds] = React.useState<Set<string>>(
-    () => new Set(),
+    () => new Set()
   );
 
   React.useEffect(() => {
@@ -203,16 +195,24 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
     if (!open || !userRolesQuery.isSuccess) {
       return;
     }
-    const next = new Set(
-      (userRolesQuery.data ?? []).map((row) => row.roleId),
-    );
+    const next = new Set((userRolesQuery.data ?? []).map((row) => row.id));
     baselineRoleIdsRef.current = next;
     setDraftRoleIds(new Set(next));
   }, [open, user?.id, serverRoleIdsKey, userRolesQuery.isSuccess]);
 
   const readOnly = !canManageMembers;
 
-  const catalogRoles = rolesCatalogQuery.data ?? [];
+  const catalogRoles = React.useMemo(() => {
+    const rows = rolesCatalogQuery.data ?? [];
+    if (claims?.is_system_admin === true) {
+      return rows;
+    }
+    return rows.filter(
+      (r) =>
+        r.slug !== PLATFORM_ADMIN_ROLE_SLUG &&
+        r.template_key !== PLATFORM_ADMIN_ROLE_SLUG
+    );
+  }, [rolesCatalogQuery.data, claims?.is_system_admin]);
 
   function handleAvatarFileChange(file: FileWithPreview | null) {
     if (!file || !(file.file instanceof File)) {
@@ -220,13 +220,13 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
       return;
     }
     setPendingAvatarFile(file.file);
-    const current = form.getValues('displayName');
-    form.setValue('displayName', current, { shouldDirty: true });
+    const current = form.getValues('display_name');
+    form.setValue('display_name', current, { shouldDirty: true });
   }
 
   const rolesDirty = !areRoleSetsEqual(
     draftRoleIds,
-    baselineRoleIdsRef.current,
+    baselineRoleIdsRef.current
   );
 
   function handleRoleToggle(roleId: string, checked: boolean) {
@@ -250,7 +250,7 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
     if (!user || !tenantMemberId) {
       return;
     }
-    let avatarUrl: string | null =
+    let avatar_url: string | null =
       user.avatarUrl?.trim() && user.avatarUrl.trim().length > 0
         ? user.avatarUrl.trim()
         : null;
@@ -258,14 +258,14 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
     if (pendingAvatarFile) {
       try {
         const supabase = createSupabaseBrowserClient();
-        avatarUrl = await uploadProfileAvatarToStorage(
+        avatar_url = await uploadProfileAvatarToStorage(
           supabase,
           user.id,
-          pendingAvatarFile,
+          pendingAvatarFile
         );
       } catch (e) {
         toast.error(
-          e instanceof Error ? e.message : 'Could not upload the image file.',
+          e instanceof Error ? e.message : 'Could not upload the image file.'
         );
         return;
       }
@@ -273,20 +273,20 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
 
     const profilesSync = canEditProfiles
       ? {
-          displayName: values.displayName.trim(),
+          display_name: values.display_name.trim(),
           username: values.username.trim(),
-          avatarUrl,
+          avatar_url,
         }
       : undefined;
 
     setIsSavingDrawer(true);
     try {
       await updateMutation.mutateAsync({
-        tenantMemberId,
-        userId: user.id,
-        displayName: values.displayName.trim(),
+        tenant_member_id: tenantMemberId,
+        user_id: user.id,
+        display_name: values.display_name.trim(),
         status: values.status,
-        avatarUrl,
+        avatar_url,
         profilesSync,
       });
 
@@ -295,23 +295,21 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
       const toRemove = [...baseline].filter((id) => !draftRoleIds.has(id));
 
       try {
-        for (const roleId of toAssign) {
+        for (const tenant_role_id of toAssign) {
           await assignRoleMutation.mutateAsync({
-            roleId,
-            tenantMemberId,
+            tenant_role_id,
+            tenant_member_id: tenantMemberId,
           });
         }
-        for (const roleId of toRemove) {
+        for (const tenant_role_id of toRemove) {
           await removeRoleMutation.mutateAsync({
-            roleId,
-            tenantMemberId,
+            tenant_role_id,
+            tenant_member_id: tenantMemberId,
           });
         }
       } catch (e) {
         const message =
-          e instanceof Error
-            ? e.message
-            : 'Could not update role assignments.';
+          e instanceof Error ? e.message : 'Could not update role assignments.';
         toast.error(message);
         return;
       }
@@ -339,9 +337,7 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
         control={form.control}
         readOnly={readOnly}
         isLoading={isSavingDrawer}
-        allowSubmitWhenNotDirty={
-          Boolean(pendingAvatarFile) || rolesDirty
-        }
+        allowSubmitWhenNotDirty={Boolean(pendingAvatarFile) || rolesDirty}
         onCancel={onClose}
       />
 
@@ -352,18 +348,6 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
         >
           <FieldGroupDense>
             <FieldSet>
-              {!canEditProfiles && canManageMembers ? (
-                <Alert>
-                  <AlertTitle>Profile fields</AlertTitle>
-                  <AlertDescription>
-                    Display name, avatar, and status are saved for this
-                    workspace. Email (profile username) and global profile sync
-                    require you to be this user or a system administrator
-                    (database policy).
-                  </AlertDescription>
-                </Alert>
-              ) : null}
-
               <div className='flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-8'>
                 <UserDrawerAvatar
                   key={user.id}
@@ -374,7 +358,7 @@ export function UserDrawer({ open, user, tenantId, onClose }: UserDrawerProps) {
                 <div className='flex min-w-0 flex-1 flex-col gap-4'>
                   <FormInputField
                     control={form.control}
-                    name='displayName'
+                    name='display_name'
                     label='Display name'
                     placeholder='Display name'
                     required

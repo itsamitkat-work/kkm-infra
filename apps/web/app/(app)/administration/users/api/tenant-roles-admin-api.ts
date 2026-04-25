@@ -8,7 +8,7 @@ export const TENANT_ROLES_ADMIN_QUERY_KEY = 'tenant-roles-admin' as const;
 /** Columns loaded for the tenant roles picker (matches `select(...)`). */
 export type TenantRolesAdminRow = Pick<
   Database['authz']['Tables']['tenant_roles']['Row'],
-  'id' | 'name' | 'slug' | 'is_system'
+  'id' | 'name' | 'slug' | 'template_key' | 'is_system'
 >;
 
 async function fetchTenantRolesAdmin(
@@ -19,7 +19,7 @@ async function fetchTenantRolesAdmin(
   let q = supabase
     .schema('authz')
     .from('tenant_roles')
-    .select('id, name, slug, is_system')
+    .select('id, name, slug, template_key, is_system')
     .eq('tenant_id', tenantId)
     .order('name', { ascending: true });
   if (signal) {

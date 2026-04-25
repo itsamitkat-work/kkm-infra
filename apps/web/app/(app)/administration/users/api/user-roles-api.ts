@@ -3,12 +3,11 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from '@kkm/db';
 import { normalizeError } from '@/lib/supabase/errors';
 
-export interface UserRoleRow {
-  roleId: string;
-  roleCode: string;
-  roleName: string;
-  isSystemRole: boolean;
-}
+/** Assigned-role slice of `authz.tenant_roles` (same names as DB / codegen). */
+export type UserRoleRow = Pick<
+  Database['authz']['Tables']['tenant_roles']['Row'],
+  'id' | 'name' | 'slug' | 'is_system'
+>;
 
 async function fetchUserRolesForMember(
   supabase: SupabaseClient<Database>,
@@ -31,20 +30,13 @@ async function fetchUserRolesForMember(
   for (const row of data ?? []) {
     const r = row as {
       tenant_role_id: string;
-      tenant_roles:
-        | { id: string; name: string; slug: string; is_system: boolean }
-        | null;
+      tenant_roles: UserRoleRow | null;
     };
     const role = r.tenant_roles;
     if (!role) {
       continue;
     }
-    rows.push({
-      roleId: role.id,
-      roleCode: role.slug,
-      roleName: role.name,
-      isSystemRole: role.is_system,
-    });
+    rows.push(role);
   }
   return rows;
 }

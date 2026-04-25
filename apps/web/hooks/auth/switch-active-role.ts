@@ -1,3 +1,4 @@
+import { PLATFORM_ADMIN_ROLE_SLUG } from '@/lib/authz/platform-admin-role';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 import {
   EdgeFunctionRateLimitedError,
@@ -30,6 +31,18 @@ export function getDistinctSortedRoleSlugs(
     }
   }
   return [...unique].sort((a, b) => a.localeCompare(b));
+}
+
+/** JWT `roles` slugs hidden from tenant-scoped users (not system administrators). */
+export function filterRoleSlugsHiddenFromNonSystemAdmins(
+  roleSlugs: readonly string[],
+  isSystemAdmin: boolean,
+): string[] {
+  const sorted = getDistinctSortedRoleSlugs(roleSlugs);
+  if (isSystemAdmin) {
+    return sorted;
+  }
+  return sorted.filter((slug) => slug !== PLATFORM_ADMIN_ROLE_SLUG);
 }
 
 /**

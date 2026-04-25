@@ -15,18 +15,21 @@ export type Database = {
           description: string | null
           id: string
           key: string
+          scope: Database["authz"]["Enums"]["permission_scope"]
         }
         Insert: {
           created_at?: string
           description?: string | null
           id?: string
           key: string
+          scope?: Database["authz"]["Enums"]["permission_scope"]
         }
         Update: {
           created_at?: string
           description?: string | null
           id?: string
           key?: string
+          scope?: Database["authz"]["Enums"]["permission_scope"]
         }
         Relationships: []
       }
@@ -70,6 +73,7 @@ export type Database = {
           id: string
           key: string
           name: string
+          scope: Database["authz"]["Enums"]["permission_scope"]
         }
         Insert: {
           created_at?: string
@@ -77,6 +81,7 @@ export type Database = {
           id?: string
           key: string
           name: string
+          scope?: Database["authz"]["Enums"]["permission_scope"]
         }
         Update: {
           created_at?: string
@@ -84,6 +89,7 @@ export type Database = {
           id?: string
           key?: string
           name?: string
+          scope?: Database["authz"]["Enums"]["permission_scope"]
         }
         Relationships: []
       }
@@ -211,11 +217,23 @@ export type Database = {
         Returns: boolean
       }
       is_account_locked: { Args: never; Returns: boolean }
+      is_reserved_role_template_key: {
+        Args: { p_key: string }
+        Returns: boolean
+      }
       is_session_valid: { Args: never; Returns: boolean }
       is_system_admin: { Args: never; Returns: boolean }
+      permission_scope_by_id: {
+        Args: { p_id: string }
+        Returns: Database["authz"]["Enums"]["permission_scope"]
+      }
+      role_template_scope: {
+        Args: { p_key: string }
+        Returns: Database["authz"]["Enums"]["permission_scope"]
+      }
     }
     Enums: {
-      [_ in never]: never
+      permission_scope: "tenant" | "platform"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -2025,6 +2043,7 @@ export type Database = {
           unit_symbol: string
         }[]
       }
+      session_permissions: { Args: never; Returns: string[] }
       set_default_client_schedule: {
         Args: { p_client_id: string; p_schedule_source_id: string }
         Returns: undefined
@@ -2033,7 +2052,6 @@ export type Database = {
         Args: { p_project_id: string; p_schedule_source_id: string }
         Returns: undefined
       }
-      session_permissions: { Args: never; Returns: string[] }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
       switch_active_role: {
@@ -2094,10 +2112,10 @@ export type Database = {
     }
     Enums: {
       project_boq_lines_type:
+        | "planned"
         | "estimation"
         | "measurement"
         | "billing"
-        | "planned"
       project_deviation_comparison: "GENvsEST" | "GENvsMSR" | "ESTvsMSR"
       record_status: "active" | "inactive" | "deprecated"
       schedule_annotation_type: "note" | "remark" | "condition" | "reference"
@@ -2229,7 +2247,9 @@ export type CompositeTypes<
 
 export const Constants = {
   authz: {
-    Enums: {},
+    Enums: {
+      permission_scope: ["tenant", "platform"],
+    },
   },
   graphql_public: {
     Enums: {},
@@ -2237,10 +2257,10 @@ export const Constants = {
   public: {
     Enums: {
       project_boq_lines_type: [
+        "planned",
         "estimation",
         "measurement",
         "billing",
-        "planned",
       ],
       project_deviation_comparison: ["GENvsEST", "GENvsMSR", "ESTvsMSR"],
       record_status: ["active", "inactive", "deprecated"],

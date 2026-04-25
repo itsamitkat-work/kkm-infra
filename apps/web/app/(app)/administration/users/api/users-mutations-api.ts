@@ -3,32 +3,32 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from '@kkm/db';
 import { normalizeError } from '@/lib/supabase/errors';
 
-export type AssignRoleInput = {
-  roleId: string;
-  tenantMemberId: string;
-};
+type TenantMemberRolesInsert =
+  Database['authz']['Tables']['tenant_member_roles']['Insert'];
 
-export type RemoveRoleInput = {
-  roleId: string;
-  tenantMemberId: string;
-};
+export type AssignRoleInput = Pick<
+  TenantMemberRolesInsert,
+  'tenant_member_id' | 'tenant_role_id'
+>;
+
+export type RemoveRoleInput = AssignRoleInput;
+
+type TenantMembersUpdate = Database['public']['Tables']['tenant_members']['Update'];
+type ProfilesUpdate = Database['public']['Tables']['profiles']['Update'];
 
 export type UpdateTenantMemberDirectoryInput = {
-  tenantMemberId: string;
-  userId: string;
-  displayName: string;
-  status: 'active' | 'suspended';
-  /** Stored on `tenant_members.avatar_url` (e.g. public storage URL or HTTPS). */
-  avatarUrl: string | null;
+  tenant_member_id: string;
+  user_id: string;
+} & Required<
+  Pick<TenantMembersUpdate, 'display_name' | 'status' | 'avatar_url'>
+> & {
   /**
    * When set, also updates `public.profiles` (requires system admin or self per RLS).
    * Use the same display name / avatar you persist on the member row when syncing.
    */
-  profilesSync?: {
-    displayName: string;
-    username: string;
-    avatarUrl: string | null;
-  };
+  profilesSync?: Required<
+    Pick<ProfilesUpdate, 'display_name' | 'username' | 'avatar_url'>
+  >;
 };
 
 async function assignTenantMemberRole(
@@ -37,8 +37,8 @@ async function assignTenantMemberRole(
   signal?: AbortSignal
 ): Promise<void> {
   let q = supabase.schema('authz').from('tenant_member_roles').insert({
-    tenant_member_id: request.tenantMemberId,
-    tenant_role_id: request.roleId,
+    tenant_member_id: request.tenant_member_id,
+    tenant_role_id: request.tenant_role_id,
   });
   if (signal) {
     q = q.abortSignal(signal);
@@ -58,8 +58,8 @@ async function removeTenantMemberRole(
     .schema('authz')
     .from('tenant_member_roles')
     .delete()
-    .eq('tenant_member_id', request.tenantMemberId)
-    .eq('tenant_role_id', request.roleId);
+    .eq('tenant_member_id', request.tenant_member_id)
+    .eq('tenant_role_id', request.tenant_role_id);
   if (signal) {
     q = q.abortSignal(signal);
   }
@@ -77,11 +77,11 @@ async function updateTenantMemberDirectory(
   let tmUpdate = supabase
     .from('tenant_members')
     .update({
-      display_name: input.displayName,
+      display_name: input.display_name,
       status: input.status,
-      avatar_url: input.avatarUrl,
+      avatar_url: input.avatar_url,
     })
-    .eq('id', input.tenantMemberId);
+    .eq('id', input.tenant_member_id);
   if (signal) {
     tmUpdate = tmUpdate.abortSignal(signal);
   }
@@ -95,11 +95,11 @@ async function updateTenantMemberDirectory(
     let profUpdate = supabase
       .from('profiles')
       .update({
-        display_name: input.profilesSync.displayName,
+        display_name: input.profilesSync.display_name,
         username: input.profilesSync.username,
-        avatar_url: input.profilesSync.avatarUrl,
+        avatar_url: input.profilesSync.avatar_url,
       })
-      .eq('id', input.userId);
+      .eq('id', input.user_id);
     if (signal) {
       profUpdate = profUpdate.abortSignal(signal);
     }

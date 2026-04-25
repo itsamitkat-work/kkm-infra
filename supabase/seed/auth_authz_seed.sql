@@ -29,115 +29,179 @@ create extension if not exists pgcrypto with schema extensions;
 -- --------------------------------------------------------------------------
 -- authz.role_templates (seed first: tenant insert copies each row → tenant_roles)
 -- --------------------------------------------------------------------------
-insert into authz.role_templates (key, name, description)
+insert into authz.role_templates (key, name, description, scope)
 values
   (
     'tenant_admin',
     'Tenant Admin',
-    'Administrative role for a single tenant (excludes tenants.manage)'
+    'Administrative role for a single tenant (excludes tenants.manage)',
+    'tenant'::authz.permission_scope
   ),
   (
     'platform_admin',
     'Platform Admin',
-    'Full permission set per tenant, including tenants.manage'
+    'Full permission set per tenant, including tenants.manage',
+    'platform'::authz.permission_scope
   ),
   (
     'project_head',
     'Project Head',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   ),
   (
     'project_engineer',
     'Project Engineer',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   ),
   (
     'project_supervisor',
     'Project Supervisor',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   ),
   (
     'project_maker',
     'Project Maker',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   ),
   (
     'project_checker',
     'Project Checker',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   ),
   (
     'project_verifier',
     'Project Verifier',
-    'Project team: projects read/write + read-only clients, schedules, basic rates'
+    'Project team: projects read/write + read-only clients, schedules, basic rates',
+    'tenant'::authz.permission_scope
   )
 on conflict (key) do update
 set
   name = excluded.name,
-  description = excluded.description;
+  description = excluded.description,
+  scope = excluded.scope;
 
 -- --------------------------------------------------------------------------
 -- authz.permissions (keys referenced by authz.has_permission in RLS migrations)
 -- --------------------------------------------------------------------------
 -- Add new rows here when you introduce a permission in a policy. Keys must
 -- exist before tenant_role_permissions can link them.
-insert into authz.permissions (key, description)
-select v.key, v.description
+insert into authz.permissions (key, description, scope)
+select v.key, v.description, v.scope::authz.permission_scope
 from (
   values
-    ('basic_rates.read', 'View basic rates and related reference data'),
-    ('basic_rates.manage', 'Create, update, and delete basic rates and types'),
-    ('clients.read', 'View clients'),
-    ('clients.manage', 'Create, update, and delete clients'),
-    ('tenant_members.read', 'View tenant member directory (read-only)'),
-    ('tenant_members.manage', 'Add, update, suspend, and remove tenant members'),
-    ('projects.read', 'View projects'),
-    ('projects.manage', 'Create, update, and delete projects'),
-    ('schedules.manage', 'Create, update, and manage schedule data'),
-    ('schedules.read', 'View schedule and schedule items'),
+    ('basic_rates.read', 'View basic rates and related reference data', 'tenant'),
+    ('basic_rates.manage', 'Create, update, and delete basic rates and types', 'platform'),
+    ('clients.read', 'View clients', 'tenant'),
+    ('clients.manage', 'Create, update, and delete clients', 'tenant'),
+    ('tenant_members.read', 'View tenant member directory (read-only)', 'tenant'),
+    ('tenant_members.manage', 'Add, update, suspend, and remove tenant members', 'tenant'),
+    ('tenant_roles.read', 'View workspace roles and their permissions', 'tenant'),
+    ('tenant_roles.manage', 'Create custom roles and edit role permissions', 'tenant'),
+    ('projects.read', 'View projects', 'tenant'),
+    ('projects.manage', 'Create, update, and delete projects', 'tenant'),
+    ('schedules.manage', 'Create, update, and manage schedule data', 'platform'),
+    ('schedules.read', 'View schedule and schedule items', 'tenant'),
     (
       'tenants.manage',
-      'Platform: create, update, and delete tenants (RLS uses is_system_admin only)'
+      'Create, update, and delete tenants (RLS uses is_system_admin only)',
+      'platform'
     )
-) as v (key, description)
+) as v (key, description, scope)
 on conflict (key) do update
-set description = excluded.description;
+set
+  description = excluded.description,
+  scope = excluded.scope;
 
 -- --------------------------------------------------------------------------
 -- authz.role_template_permissions (defaults copied per tenant by handle_new_tenant)
 -- --------------------------------------------------------------------------
--- tenants.manage is only on platform_admin; tenant_admin stays inside the tenant.
+-- Enforce template/permission scope compatibility:
+-- - platform templates may include all scopes
+-- - tenant templates may include tenant-scoped permissions only
+delete from authz.role_template_permissions rtp
+using authz.role_templates rt, authz.permissions p
+where rt.key = rtp.template_key
+  and p.id = rtp.permission_id
+  and rt.scope = 'tenant'::authz.permission_scope
+  and p.scope = 'platform'::authz.permission_scope;
+
+-- Tenant admin gets all tenant-scoped permissions.
 insert into authz.role_template_permissions (template_key, permission_id)
 select 'tenant_admin', p.id
 from authz.permissions p
-where p.key <> 'tenants.manage'
+where p.scope = 'tenant'::authz.permission_scope
 on conflict (template_key, permission_id) do nothing;
 
+-- Platform templates get all permissions from all scopes.
 insert into authz.role_template_permissions (template_key, permission_id)
-select 'platform_admin', p.id
-from authz.permissions p
+select rt.key, p.id
+from authz.role_templates rt
+cross join authz.permissions p
+where rt.scope = 'platform'::authz.permission_scope
 on conflict (template_key, permission_id) do nothing;
 
--- Project drawer roles: same catalog for each slug (JWT + RLS); no tenant_members / clients.manage.
+-- Project drawer roles: explicit per-template defaults (tenant-scope only).
+-- Edit this matrix to customize each template independently.
 insert into authz.role_template_permissions (template_key, permission_id)
-select t.template_key, p.id
+select defaults.template_key, p.id
 from (
   values
-    ('project_head'::text),
-    ('project_engineer'),
-    ('project_supervisor'),
-    ('project_maker'),
-    ('project_checker'),
-    ('project_verifier')
-) as t(template_key)
-cross join authz.permissions p
-where p.key in (
-  'projects.read',
-  'projects.manage',
-  'clients.read',
-  'schedules.read',
-  'basic_rates.read'
-)
+    ('project_head', 'projects.manage'),
+    ('project_head'::text, 'projects.read'::text),
+    ('project_head', 'clients.read'),
+    ('project_head', 'basic_rates.read'),
+    ('project_head', 'schedules.read'),
+    ('project_head', 'tenant_members.read'),
+    ('project_head', 'tenant_roles.read'),
+
+    ('project_engineer', 'projects.read'),
+    ('project_engineer', 'projects.manage'),
+    ('project_engineer'::text, 'projects.read'::text),
+    ('project_engineer', 'clients.read'),
+    ('project_engineer', 'basic_rates.read'),
+    ('project_engineer', 'schedules.read'),
+    ('project_engineer', 'tenant_members.read'),
+    ('project_engineer', 'tenant_roles.read'),
+
+    ('project_supervisor', 'projects.read'),
+    ('project_supervisor', 'projects.manage'),
+    ('project_supervisor', 'clients.read'),
+    ('project_supervisor', 'tenant_members.read'),
+    ('project_supervisor', 'tenant_roles.read'),
+    ('project_supervisor', 'basic_rates.read'),
+    ('project_supervisor', 'schedules.read'),
+
+    ('project_maker', 'projects.read'),
+    ('project_maker', 'projects.manage'),
+    ('project_maker', 'clients.read'),
+    ('project_maker', 'tenant_members.read'),
+    ('project_maker', 'tenant_roles.read'),
+    ('project_maker', 'basic_rates.read'),
+    ('project_maker', 'schedules.read'),
+
+    ('project_checker', 'projects.read'),
+    ('project_checker', 'projects.manage'),
+    ('project_checker', 'clients.read'),
+    ('project_checker', 'tenant_members.read'),
+    ('project_checker', 'tenant_roles.read'),
+    ('project_checker', 'basic_rates.read'),
+    ('project_checker', 'schedules.read'),
+
+    ('project_verifier', 'projects.read'),
+    ('project_verifier', 'projects.manage'),
+    ('project_verifier', 'clients.read'),
+    ('project_verifier', 'tenant_members.read'),
+    ('project_verifier', 'tenant_roles.read'),
+    ('project_verifier', 'basic_rates.read'),
+    ('project_verifier', 'schedules.read')
+) as defaults(template_key, permission_key)
+join authz.permissions p on p.key = defaults.permission_key
+where p.scope = 'tenant'::authz.permission_scope
 on conflict (template_key, permission_id) do nothing;
 
 -- --------------------------------------------------------------------------
@@ -211,6 +275,14 @@ where tr.tenant_id = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid
     'project_checker',
     'project_verifier'
   )
+on conflict (tenant_role_id, permission_id) do nothing;
+
+-- Add newly introduced template permissions to every template-backed tenant role (all tenants).
+insert into authz.tenant_role_permissions (tenant_role_id, permission_id)
+select tr.id, rtp.permission_id
+from authz.tenant_roles tr
+inner join authz.role_template_permissions rtp on rtp.template_key = tr.template_key
+where tr.template_key is not null
 on conflict (tenant_role_id, permission_id) do nothing;
 
 -- --------------------------------------------------------------------------

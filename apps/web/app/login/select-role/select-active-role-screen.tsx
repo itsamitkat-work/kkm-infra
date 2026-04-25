@@ -17,6 +17,7 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Spinner } from '@/components/ui/spinner';
 import {
+  filterRoleSlugsHiddenFromNonSystemAdmins,
   formatRoleSlugForDisplay,
   switchActiveRole,
 } from '@/hooks/auth';
@@ -73,12 +74,16 @@ export function SelectActiveRoleScreen() {
       const slugs = [...composed.roles].filter(
         (s) => typeof s === 'string' && s.trim().length > 0,
       );
-      if (slugs.length < 2) {
+      const visibleSlugs = filterRoleSlugsHiddenFromNonSystemAdmins(
+        slugs,
+        composed.claims?.is_system_admin === true,
+      );
+      if (visibleSlugs.length < 2) {
         router.replace('/dashboard');
         return;
       }
-      setRoleSlugs(slugs);
-      setSelectedSlug(slugs[0] ?? '');
+      setRoleSlugs(visibleSlugs);
+      setSelectedSlug(visibleSlugs[0] ?? '');
       setPhase('ready');
     }
 

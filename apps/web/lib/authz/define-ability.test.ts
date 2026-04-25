@@ -45,6 +45,24 @@ describe('defineAbilityFor', () => {
     expect(ability.can('manage', 'tenant_members')).toBe(false);
   });
 
+  it('maps tenant_roles.manage to manage tenant_roles and allows read via manage', () => {
+    const ability = defineAbilityFor({
+      permissions: ['tenant_roles.manage'],
+      claims: null,
+    });
+    expect(ability.can('manage', 'tenant_roles')).toBe(true);
+    expect(ability.can('read', 'tenant_roles')).toBe(true);
+  });
+
+  it('maps tenant_roles.read to read tenant_roles only', () => {
+    const ability = defineAbilityFor({
+      permissions: ['tenant_roles.read'],
+      claims: null,
+    });
+    expect(ability.can('read', 'tenant_roles')).toBe(true);
+    expect(ability.can('manage', 'tenant_roles')).toBe(false);
+  });
+
   it('grants manage on every app subject when is_system_admin', () => {
     const ability = defineAbilityFor({
       permissions: [],
@@ -55,6 +73,7 @@ describe('defineAbilityFor', () => {
     expect(ability.can('lock', 'attendance')).toBe(true);
     expect(ability.can('manage', 'basic_rates')).toBe(true);
     expect(ability.can('manage', 'tenants')).toBe(true);
+    expect(ability.can('manage', 'tenant_roles')).toBe(true);
   });
 
   it('maps tenants.manage to manage tenants when in permissions list', () => {

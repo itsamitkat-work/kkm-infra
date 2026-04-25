@@ -1,6 +1,8 @@
 export interface UserRole {
   name: string;
   hashId: string;
+  /** `authz.tenant_roles.slug` when loaded from the tenant directory. */
+  slug?: string;
 }
 
 export interface User extends Record<string, unknown> {

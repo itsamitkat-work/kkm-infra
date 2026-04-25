@@ -22,12 +22,12 @@ export function UsersTable() {
     (selected: User) => {
       userDrawer.open(selected, 'edit');
     },
-    [userDrawer],
+    [userDrawer]
   );
 
   const columns = React.useMemo(
     () => getColumns({ onSelectUser: handleSelectUser }),
-    [handleSelectUser],
+    [handleSelectUser]
   );
 
   const controls = useDataTableControls(USERS_TABLE_ID);
@@ -53,7 +53,7 @@ export function UsersTable() {
         controls={controls}
         filterFields={[]}
         columns={columns}
-        searchPlaceholder='Search by username or display name…'
+        searchPlaceholder='Search by name or email…'
         emptyState={{
           itemType: 'user',
         }}

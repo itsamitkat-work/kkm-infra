@@ -39,6 +39,8 @@ export interface CheckboxGridProps {
   columnMinWidth?: string;
   /** Empty state message */
   emptyMessage?: string;
+  /** When true, all checkboxes are disabled (e.g. read-only drawer). */
+  readOnly?: boolean;
 }
 
 export function CheckboxGrid({
@@ -50,6 +52,7 @@ export function CheckboxGrid({
   rowHeaderMinWidth = '200px',
   columnMinWidth = '120px',
   emptyMessage = 'No data found',
+  readOnly = false,
 }: CheckboxGridProps) {
   // Get row IDs that have cells for a specific column (for header checkbox)
   const getRowIdsForColumn = React.useCallback(
@@ -62,12 +65,15 @@ export function CheckboxGrid({
 
   return (
     <div className='rounded-md border overflow-auto'>
-      <Table>
+      <Table className='w-full table-fixed'>
         <TableHeader>
           <TableRow>
             <TableHead
               className='sticky left-0 z-10 bg-background border-r'
-              style={{ minWidth: rowHeaderMinWidth }}
+              style={{
+                minWidth: rowHeaderMinWidth,
+                width: rowHeaderMinWidth,
+              }}
             >
               {rowHeaderLabel}
             </TableHead>
@@ -78,6 +84,7 @@ export function CheckboxGrid({
                 gridState={gridState}
                 rowIds={getRowIdsForColumn(column.id)}
                 minWidth={columnMinWidth}
+                readOnly={readOnly}
               />
             ))}
           </TableRow>
@@ -95,7 +102,10 @@ export function CheckboxGrid({
           ) : (
             rows.map((row) => (
               <TableRow key={row.id}>
-                <TableCell className='sticky left-0 z-10 bg-background border-r font-medium'>
+                <TableCell
+                  className='sticky left-0 z-10 bg-background border-r font-medium'
+                  style={{ minWidth: rowHeaderMinWidth, width: rowHeaderMinWidth }}
+                >
                   {row.label}
                 </TableCell>
                 {columns.map((column) => (
@@ -105,6 +115,8 @@ export function CheckboxGrid({
                     columnId={column.id}
                     gridState={gridState}
                     exists={cellExists ? cellExists(row.id, column.id) : true}
+                    readOnly={readOnly}
+                    columnWidth={columnMinWidth}
                   />
                 ))}
               </TableRow>
@@ -123,6 +135,7 @@ interface CheckboxGridColumnHeaderProps {
   gridState: CheckboxGridState;
   rowIds: string[];
   minWidth: string;
+  readOnly: boolean;
 }
 
 function CheckboxGridColumnHeader({
@@ -130,6 +143,7 @@ function CheckboxGridColumnHeader({
   gridState,
   rowIds,
   minWidth,
+  readOnly,
 }: CheckboxGridColumnHeaderProps) {
   const headerState = gridState.getColumnHeaderState(column.id, rowIds);
 
@@ -138,21 +152,28 @@ function CheckboxGridColumnHeader({
   }
 
   return (
-    <TableHead className='text-center' style={{ minWidth }}>
-      <div className='flex flex-col items-center gap-1'>
-        <span className='text-xs font-medium'>{column.label}</span>
-        <Checkbox
-          checked={
-            headerState === true
-              ? true
-              : headerState === 'indeterminate'
-                ? ('indeterminate' as const)
-                : false
-          }
-          aria-label={`Select all ${column.label}`}
-          onCheckedChange={(checked) => handleCheckedChange(!!checked)}
-          className='mb-2'
-        />
+    <TableHead
+      className='h-auto min-h-10 py-2 text-center align-middle !px-2'
+      style={{ minWidth, width: minWidth }}
+    >
+      <div className='flex w-full flex-col items-center justify-center gap-1.5'>
+        <span className='text-xs font-medium leading-none'>
+          {column.label}
+        </span>
+        <div className='flex w-full shrink-0 justify-center'>
+          <Checkbox
+            checked={
+              headerState === true
+                ? true
+                : headerState === 'indeterminate'
+                  ? ('indeterminate' as const)
+                  : false
+            }
+            aria-label={`Select all ${column.label}`}
+            onCheckedChange={(checked) => handleCheckedChange(!!checked)}
+            disabled={readOnly}
+          />
+        </div>
       </div>
     </TableHead>
   );
@@ -163,6 +184,8 @@ interface CheckboxGridCellProps {
   columnId: string;
   gridState: CheckboxGridState;
   exists: boolean;
+  readOnly: boolean;
+  columnWidth: string;
 }
 
 function CheckboxGridCell({
@@ -170,10 +193,19 @@ function CheckboxGridCell({
   columnId,
   gridState,
   exists,
+  readOnly,
+  columnWidth,
 }: CheckboxGridCellProps) {
+  const cellStyle: React.CSSProperties = {
+    minWidth: columnWidth,
+    width: columnWidth,
+  };
+
   // Empty cell if it doesn't exist in the data
   if (!exists) {
-    return <TableCell className='text-center' />;
+    return (
+      <TableCell className='p-2 align-middle' style={cellStyle} />
+    );
   }
 
   const isChecked = gridState.isChecked(rowId, columnId);
@@ -191,12 +223,15 @@ function CheckboxGridCell({
   }
 
   return (
-    <TableCell className='text-center'>
-      <Checkbox
-        checked={isChecked}
-        onCheckedChange={(checked) => handleCheckedChange(!!checked)}
-        className={checkboxClassName}
-      />
+    <TableCell className='p-2 align-middle !px-2' style={cellStyle}>
+      <div className='flex w-full justify-center'>
+        <Checkbox
+          checked={isChecked}
+          onCheckedChange={(checked) => handleCheckedChange(!!checked)}
+          className={checkboxClassName}
+          disabled={readOnly}
+        />
+      </div>
     </TableCell>
   );
 }

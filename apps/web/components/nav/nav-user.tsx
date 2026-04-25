@@ -45,8 +45,8 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import {
+  filterRoleSlugsHiddenFromNonSystemAdmins,
   formatRoleSlugForDisplay,
-  getDistinctSortedRoleSlugs,
   switchActiveRole,
   useAuth,
 } from '@/hooks/auth';
@@ -174,8 +174,12 @@ export function NavUser() {
   const profileQuery = useMyProfileQuery(!isLoading && Boolean(user));
 
   const roleOptions = React.useMemo(
-    () => getDistinctSortedRoleSlugs(roles),
-    [roles],
+    () =>
+      filterRoleSlugsHiddenFromNonSystemAdmins(
+        roles,
+        claims?.is_system_admin === true,
+      ),
+    [roles, claims?.is_system_admin],
   );
   const canSwitchRoles = Boolean(user) && roleOptions.length > 1;
   const activeRoleSlug =

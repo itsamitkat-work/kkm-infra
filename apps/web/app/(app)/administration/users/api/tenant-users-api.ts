@@ -159,7 +159,11 @@ async function fetchTenantUsers(
       if (!roleObj) {
         continue;
       }
-      const ur: UserRole = { name: roleObj.name, hashId: roleObj.id };
+      const ur: UserRole = {
+        name: roleObj.name,
+        hashId: roleObj.id,
+        slug: roleObj.slug,
+      };
       const list = roleMap.get(row.tenant_member_id) ?? [];
       list.push(ur);
       roleMap.set(row.tenant_member_id, list);

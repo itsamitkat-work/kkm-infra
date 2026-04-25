@@ -44,7 +44,10 @@ function useAssignRole(options?: {
     mutationFn: (request: AssignRoleInput) =>
       assignTenantMemberRole(createSupabaseBrowserClient(), request),
     onSuccess: (_, variables) => {
-      invalidateUsersListAndMemberRoles(queryClient, variables.tenantMemberId);
+      invalidateUsersListAndMemberRoles(
+        queryClient,
+        variables.tenant_member_id
+      );
       if (!options?.suppressSuccessToast) {
         toast.success('Role assigned successfully');
       }
@@ -70,7 +73,10 @@ function useRemoveRole(options?: {
     mutationFn: (request: RemoveRoleInput) =>
       removeTenantMemberRole(createSupabaseBrowserClient(), request),
     onSuccess: (_, variables) => {
-      invalidateUsersListAndMemberRoles(queryClient, variables.tenantMemberId);
+      invalidateUsersListAndMemberRoles(
+        queryClient,
+        variables.tenant_member_id
+      );
       if (!options?.suppressSuccessToast) {
         toast.success('Role removed successfully');
       }
@@ -93,7 +99,10 @@ function useUpdateTenantMemberDirectoryMutation() {
     mutationFn: (input: UpdateTenantMemberDirectoryInput) =>
       updateTenantMemberDirectory(createSupabaseBrowserClient(), input),
     onSuccess: (_, variables) => {
-      invalidateUsersListAndMemberRoles(queryClient, variables.tenantMemberId);
+      invalidateUsersListAndMemberRoles(
+        queryClient,
+        variables.tenant_member_id
+      );
       toast.success('User updated');
     },
     onError: (error) => {

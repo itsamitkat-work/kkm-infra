@@ -16,6 +16,7 @@ export type AppSubject =
   | 'project_billing'
   | 'clients'
   | 'tenant_members'
+  | 'tenant_roles'
   | 'tenants';
 
 export type AppAction =
@@ -39,6 +40,8 @@ const CATALOG_PERMISSION_RULES: ReadonlyArray<readonly [key: string, action: App
     ['clients.manage', 'manage'],
     ['tenant_members.read', 'read'],
     ['tenant_members.manage', 'manage'],
+    ['tenant_roles.read', 'read'],
+    ['tenant_roles.manage', 'manage'],
     ['projects.read', 'read'],
     ['projects.manage', 'manage'],
     ['schedules.read', 'read'],
@@ -57,6 +60,7 @@ const ALL_APP_SUBJECTS: readonly AppSubject[] = [
   'project_billing',
   'clients',
   'tenant_members',
+  'tenant_roles',
   'tenants',
 ];
 

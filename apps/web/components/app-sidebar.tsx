@@ -6,6 +6,7 @@ import {
   FileText,
   HardHat,
   Home,
+  Shield,
   SquareTerminal,
   User,
   Users,
@@ -65,6 +66,11 @@ const administrationItems: NavItem[] = [
     url: '/administration/users',
     icon: User,
   },
+  {
+    title: 'Roles',
+    url: '/administration/roles',
+    icon: Shield,
+  },
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -74,12 +80,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const administrationNavItems = React.useMemo((): NavItem[] => {
     const items: NavItem[] = [];
     const isSystemAdmin = claims?.is_system_admin === true;
-    const canAccessTenantDirectory =
-      ability.can('read', 'tenant_members') ||
-      ability.can('manage', 'tenant_members');
+    const canAccessTenantDirectory = ability.can('manage', 'tenant_members');
+    const canAccessRoles = ability.can('manage', 'tenant_roles');
 
-    if (isSystemAdmin || canAccessTenantDirectory) {
-      items.push(...administrationItems);
+    if (isSystemAdmin || canAccessTenantDirectory || canAccessRoles) {
+      for (const item of administrationItems) {
+        if (item.url === '/administration/roles') {
+          if (isSystemAdmin || canAccessRoles) {
+            items.push(item);
+          }
+          continue;
+        }
+        if (isSystemAdmin || canAccessTenantDirectory) {
+          items.push(item);
+        }
+      }
     }
     if (isSystemAdmin) {
       items.push({

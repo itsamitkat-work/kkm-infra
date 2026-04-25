@@ -1,48 +1,64 @@
 'use client';
 
 import * as React from 'react';
-import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
+import {
+  useInfiniteQuery,
+  useQueryClient,
+  type QueryClient,
+} from '@tanstack/react-query';
 import type { SortingState } from '@tanstack/react-table';
 
 import type { Filter } from '@/components/ui/filters';
 import { useAuth } from '@/hooks/auth';
-import { PLATFORM_ADMIN_ROLE_SLUG } from '@/lib/authz/platform-admin-role';
 import { useDebounce } from '@/hooks/use-debounce';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
 import {
-  fetchTenantUsers,
-  type FetchTenantUsersParams,
-} from '../api/tenant-users-api';
+  fetchTenantRoles,
+  type TenantRolesListParams,
+} from '../api/tenant-roles-api';
 
-export const USERS_TABLE_ID = 'users' as const;
+/** Shared prefix for all tenant-roles query keys (list, detail, catalog). */
+const TENANT_ROLES_QUERY_KEY_PREFIX = ['tenant-roles'] as const;
 
-type UseUsersQueryParams = {
+/** Stable id for persisted table controls (search, sorting, column state). */
+const TENANT_ROLES_TABLE_ID = 'tenant-roles' as const;
+
+function tenantRolesListQueryKey(
+  tenantId: string | null,
+  listParams: Omit<TenantRolesListParams, 'tenantId' | 'page' | 'pageSize'>
+) {
+  return [...TENANT_ROLES_QUERY_KEY_PREFIX, 'list', tenantId, listParams] as const;
+}
+
+function invalidateTenantRolesQueryCache(queryClient: QueryClient): void {
+  void queryClient.invalidateQueries({
+    queryKey: [...TENANT_ROLES_QUERY_KEY_PREFIX],
+  });
+}
+
+function useTenantRolesQuery(params: {
   search: string;
   filters: Filter[];
   sorting: SortingState;
-};
+}) {
+  void params.filters;
 
-function useUsersQuery({ search, filters, sorting }: UseUsersQueryParams) {
-  void filters;
   const queryClient = useQueryClient();
   const { claims } = useAuth();
   const tenantId = claims?.tid ?? null;
-  const debouncedSearch = useDebounce(search, 400);
+  const debouncedSearch = useDebounce(params.search, 400);
 
   const listParams = React.useMemo(
     () => ({
-      tenantId: tenantId ?? '',
       search: debouncedSearch,
-      sorting,
+      sorting: params.sorting,
     }),
-    [tenantId, debouncedSearch, sorting]
+    [debouncedSearch, params.sorting]
   );
 
-  const isSystemAdmin = claims?.is_system_admin === true;
-
   const query = useInfiniteQuery({
-    queryKey: [USERS_TABLE_ID, listParams, isSystemAdmin],
+    queryKey: tenantRolesListQueryKey(tenantId, listParams),
     queryFn: ({ pageParam = 1, signal }) => {
       if (!tenantId) {
         return Promise.resolve({
@@ -58,14 +74,14 @@ function useUsersQuery({ search, filters, sorting }: UseUsersQueryParams) {
           message: '',
         });
       }
-      return fetchTenantUsers(
+      return fetchTenantRoles(
         createSupabaseBrowserClient(),
         {
           tenantId,
           search: debouncedSearch,
           page: pageParam as number,
           pageSize: 20,
-          sorting,
+          sorting: params.sorting,
         },
         signal
       );
@@ -79,32 +95,21 @@ function useUsersQuery({ search, filters, sorting }: UseUsersQueryParams) {
     initialPageParam: 1,
     staleTime: 30_000,
     enabled: Boolean(tenantId),
-    select: (data) => {
-      if (isSystemAdmin) {
-        return data;
-      }
-      return {
-        ...data,
-        pages: data.pages.map((page) => ({
-          ...page,
-          data: page.data.map((row) => ({
-            ...row,
-            roles: row.roles.filter(
-              (r) => r.slug !== PLATFORM_ADMIN_ROLE_SLUG,
-            ),
-          })),
-        })),
-      };
-    },
   });
 
   return {
     query,
     invalidate: () =>
-      queryClient.invalidateQueries({ queryKey: [USERS_TABLE_ID] }),
+      queryClient.invalidateQueries({
+        queryKey: [...TENANT_ROLES_QUERY_KEY_PREFIX, 'list'],
+      }),
   };
 }
 
-export { useUsersQuery };
-
-export type { FetchTenantUsersParams };
+export {
+  invalidateTenantRolesQueryCache,
+  TENANT_ROLES_QUERY_KEY_PREFIX,
+  TENANT_ROLES_TABLE_ID,
+  tenantRolesListQueryKey,
+  useTenantRolesQuery,
+};
